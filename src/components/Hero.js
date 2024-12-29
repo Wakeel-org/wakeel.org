@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
@@ -32,13 +33,16 @@ const Hero = () => {
                   text-base sm:text-lg font-medium">
                   Get Started
                 </button>
-                <button className="w-full sm:w-auto bg-white dark:bg-gray-800 
-                  text-blue-600 dark:text-blue-400 px-6 sm:px-8 py-3 sm:py-4 
-                  rounded-xl sm:rounded-2xl border-2 border-blue-200 dark:border-blue-800 
-                  hover:border-blue-600 transition transform hover:scale-105 
-                  hover:shadow-lg text-base sm:text-lg font-medium">
+                <Link
+                  href="/about"
+                  className="w-full sm:w-auto bg-white dark:bg-gray-800 
+                    text-blue-600 dark:text-blue-400 px-6 sm:px-8 py-3 sm:py-4 
+                    rounded-xl sm:rounded-2xl border-2 border-blue-200 dark:border-blue-800 
+                    hover:border-blue-600 transition transform hover:scale-105 
+                    hover:shadow-lg text-base sm:text-lg font-medium text-center"
+                >
                   Learn More
-                </button>
+                </Link>
               </div>
             </div>
             {/* Decorative elements */}

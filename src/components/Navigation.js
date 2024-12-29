@@ -9,7 +9,7 @@ const Navigation = () => {
   const menuItems = [
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
-    { label: 'Services', href: '/services' },
+    // { label: 'Services', href: '/services' }, // Commented out for now
     { label: 'Contact', href: '/contact' }
   ];
 

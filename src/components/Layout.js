@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Head>
         <title>Wakeel.org - Trusted Guardians of Legal Excellence</title>
         <meta name="description" content="Empowering Justice Through Reliable Solutions - Wakeel.org provides comprehensive legal research, case management, and policy development solutions." />
@@ -24,11 +24,11 @@ const Layout = ({ children }) => {
         <Navigation />
       </nav>
       
-      <main className="pt-16 sm:pt-20">
+      <main className="flex-grow pt-16">
         {children}
       </main>
       
-      <footer className="mt-4 sm:mt-8 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+      <footer className="mt-auto bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
             <div className="col-span-1 sm:col-span-2">
