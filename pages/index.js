@@ -25,7 +25,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 
             bg-gradient-to-r from-light-accent to-light-accent-light bg-clip-text text-transparent
             dark:from-dark-accent dark:to-dark-accent-light">
-            Your Heading Here
+            Ready to Transform Your Legal Practice?
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto">
             Join thousands of legal professionals who trust Wakeel.org for their legal technology needs.

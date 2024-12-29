@@ -11,6 +11,7 @@ const ContactPage = () => {
     subject: '',
     message: ''
   });
+  const [errors, setErrors] = useState({});
   const [status, setStatus] = useState({ type: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
@@ -32,25 +33,101 @@ const ContactPage = () => {
     loadFaqs();
   }, []);
 
+  // Validation rules
+  const validations = {
+    name: {
+      pattern: /^[a-zA-Z\s]{2,50}$/,
+      message: 'Name should only contain letters and spaces (2-50 characters)'
+    },
+    email: {
+      pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      message: 'Please enter a valid email address'
+    },
+    subject: {
+      pattern: /^[a-zA-Z0-9\s]{2,100}$/,
+      message: 'Subject should only contain letters, numbers and spaces (2-100 characters)'
+    },
+    message: {
+      pattern: /^[a-zA-Z0-9\s.,!?()-]{10,1000}$/,
+      message: 'Message should only contain letters, numbers, and basic punctuation (10-1000 characters)'
+    }
+  };
+
+  const validateField = (name, value) => {
+    if (!value) return 'This field is required';
+    if (!validations[name].pattern.test(value)) return validations[name].message;
+    return '';
+  };
+
   const handleChange = (e) => {
+    const { name, value } = e.target;
+    
+    // Remove any special characters as they're typed
+    let sanitizedValue = value;
+    if (name === 'message') {
+      sanitizedValue = value.replace(/[^a-zA-Z0-9\s.,!?()-]/g, '');
+    } else if (name === 'name') {
+      sanitizedValue = value.replace(/[^a-zA-Z\s]/g, '');
+    } else if (name === 'subject') {
+      sanitizedValue = value.replace(/[^a-zA-Z0-9\s]/g, '');
+    }
+
     setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [name]: sanitizedValue
     }));
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    Object.keys(formData).forEach(field => {
+      const error = validateField(field, formData[field]);
+      if (error) newErrors[field] = error;
+    });
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     setStatus({ type: '', message: '' });
 
+    if (!validateForm()) {
+      setStatus({
+        type: 'error',
+        message: 'Please correct the errors in the form'
+      });
+      return;
+    }
+
+    setLoading(true);
+
     try {
-      await addDoc(collection(db, 'website_queries'), {
-        ...formData,
+      // Additional security check before submission
+      const sanitizedData = {
+        name: formData.name.trim(),
+        email: formData.email.trim().toLowerCase(),
+        subject: formData.subject.trim(),
+        message: formData.message.trim(),
         createdAt: serverTimestamp(),
         status: 'new',
         source: 'website_contact_form'
-      });
+      };
+
+      // Final validation check
+      if (Object.keys(sanitizedData).some(key => !sanitizedData[key])) {
+        throw new Error('All fields are required');
+      }
+
+      await addDoc(collection(db, 'website_queries'), sanitizedData);
 
       setFormData({
         name: '',
@@ -154,8 +231,9 @@ const ContactPage = () => {
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Your Name
+                    <label htmlFor="name" className="block text-sm font-medium 
+                      text-light-secondary dark:text-dark-secondary mb-2">
+                      Name
                     </label>
                     <input
                       type="text"
@@ -163,16 +241,26 @@ const ContactPage = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 
-                        border-2 border-gray-200 dark:border-gray-700 
-                        focus:border-blue-600 dark:focus:border-blue-500
-                        focus:ring-2 focus:ring-blue-600/20 dark:focus:ring-blue-500/20
-                        text-gray-900 dark:text-white"
+                      className={`w-full px-4 py-3 rounded-xl 
+                        bg-light-surface dark:bg-dark-surface
+                        border-2 ${errors.name 
+                          ? 'border-red-500 dark:border-red-400' 
+                          : 'border-light-border dark:border-dark-border'}
+                        focus:border-light-accent dark:focus:border-dark-accent
+                        focus:ring-2 focus:ring-light-accent/20 dark:focus:ring-dark-accent/20
+                        text-light-primary dark:text-dark-primary`}
+                      placeholder="Your name"
+                      maxLength={50}
                     />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-500 dark:text-red-400">
+                        {errors.name}
+                      </p>
+                    )}
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="email" className="block text-sm font-medium 
+                      text-light-secondary dark:text-dark-secondary mb-2">
                       Email Address
                     </label>
                     <input
@@ -181,16 +269,25 @@ const ContactPage = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 
-                        border-2 border-gray-200 dark:border-gray-700 
-                        focus:border-blue-600 dark:focus:border-blue-500
-                        focus:ring-2 focus:ring-blue-600/20 dark:focus:ring-blue-500/20
-                        text-gray-900 dark:text-white"
+                      className={`w-full px-4 py-3 rounded-xl 
+                        bg-light-surface dark:bg-dark-surface
+                        border-2 ${errors.email 
+                          ? 'border-red-500 dark:border-red-400' 
+                          : 'border-light-border dark:border-dark-border'}
+                        focus:border-light-accent dark:focus:border-dark-accent
+                        focus:ring-2 focus:ring-light-accent/20 dark:focus:ring-dark-accent/20
+                        text-light-primary dark:text-dark-primary`}
+                      placeholder="Your email"
                     />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-500 dark:text-red-400">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="subject" className="block text-sm font-medium 
+                      text-light-secondary dark:text-dark-secondary mb-2">
                       Subject
                     </label>
                     <input
@@ -199,16 +296,26 @@ const ContactPage = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 
-                        border-2 border-gray-200 dark:border-gray-700 
-                        focus:border-blue-600 dark:focus:border-blue-500
-                        focus:ring-2 focus:ring-blue-600/20 dark:focus:ring-blue-500/20
-                        text-gray-900 dark:text-white"
+                      className={`w-full px-4 py-3 rounded-xl 
+                        bg-light-surface dark:bg-dark-surface
+                        border-2 ${errors.subject 
+                          ? 'border-red-500 dark:border-red-400' 
+                          : 'border-light-border dark:border-dark-border'}
+                        focus:border-light-accent dark:focus:border-dark-accent
+                        focus:ring-2 focus:ring-light-accent/20 dark:focus:ring-dark-accent/20
+                        text-light-primary dark:text-dark-primary`}
+                      placeholder="Subject"
+                      maxLength={100}
                     />
+                    {errors.subject && (
+                      <p className="mt-1 text-sm text-red-500 dark:text-red-400">
+                        {errors.subject}
+                      </p>
+                    )}
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label htmlFor="message" className="block text-sm font-medium 
+                      text-light-secondary dark:text-dark-secondary mb-2">
                       Message
                     </label>
                     <textarea
@@ -216,31 +323,45 @@ const ContactPage = () => {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      required
                       rows={6}
-                      className="w-full px-4 py-3 rounded-xl bg-white dark:bg-gray-900 
-                        border-2 border-gray-200 dark:border-gray-700 
-                        focus:border-blue-600 dark:focus:border-blue-500
-                        focus:ring-2 focus:ring-blue-600/20 dark:focus:ring-blue-500/20
-                        text-gray-900 dark:text-white resize-none"
+                      className={`w-full px-4 py-3 rounded-xl 
+                        bg-light-surface dark:bg-dark-surface
+                        border-2 ${errors.message 
+                          ? 'border-red-500 dark:border-red-400' 
+                          : 'border-light-border dark:border-dark-border'}
+                        focus:border-light-accent dark:focus:border-dark-accent
+                        focus:ring-2 focus:ring-light-accent/20 dark:focus:ring-dark-accent/20
+                        text-light-primary dark:text-dark-primary resize-none`}
+                      placeholder="Your message"
+                      maxLength={1000}
                     />
+                    {errors.message && (
+                      <p className="mt-1 text-sm text-red-500 dark:text-red-400">
+                        {errors.message}
+                      </p>
+                    )}
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-blue-600 text-white px-8 py-4 rounded-xl 
-                      hover:bg-blue-700 transition transform hover:scale-105 
-                      hover:shadow-lg text-base font-medium
-                      disabled:opacity-50 disabled:cursor-not-allowed
-                      disabled:hover:transform-none disabled:hover:shadow-none"
+                    className="w-full bg-light-accent dark:bg-dark-accent 
+                      text-white px-8 py-4 rounded-xl 
+                      hover:bg-light-accent/90 dark:hover:bg-dark-accent/90 
+                      transition transform hover:scale-105 
+                      hover:shadow-lg disabled:opacity-50 
+                      disabled:cursor-not-allowed
+                      disabled:hover:transform-none 
+                      disabled:hover:shadow-none"
                   >
                     {loading ? 'Sending...' : 'Send Message'}
                   </button>
 
                   {status.message && (
                     <div className={`text-sm ${
-                      status.type === 'error' ? 'text-red-500' : 'text-green-500'
+                      status.type === 'error' 
+                        ? 'text-red-500 dark:text-red-400' 
+                        : 'text-green-500 dark:text-green-400'
                     }`}>
                       {status.message}
                     </div>
