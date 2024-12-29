@@ -5,7 +5,9 @@ import Link from 'next/link';
 
 const Layout = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen flex flex-col 
+      bg-light-background dark:bg-dark-background
+      text-light-primary dark:text-dark-primary">
       <Head>
         <title>Wakeel.org - Trusted Guardians of Legal Excellence</title>
         <meta name="description" content="Empowering Justice Through Reliable Solutions - Wakeel.org provides comprehensive legal research, case management, and policy development solutions." />
@@ -20,7 +22,10 @@ const Layout = ({ children }) => {
         <meta property="og:image" content="https://wakeel.org/og-image.jpg" />
       </Head>
 
-      <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-50 border-b border-gray-200 dark:border-gray-800">
+      <nav className="fixed top-0 w-full 
+        bg-light-surface/80 dark:bg-dark-surface/80 
+        backdrop-blur-lg z-50 
+        border-b border-light-border dark:border-dark-border">
         <Navigation />
       </nav>
       
@@ -28,17 +33,20 @@ const Layout = ({ children }) => {
         {children}
       </main>
       
-      <footer className="mt-auto bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+      <footer className="mt-auto 
+        bg-light-surface dark:bg-dark-surface 
+        border-t border-light-border dark:border-dark-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
             <div className="col-span-1 sm:col-span-2">
               <Link 
                 href="/"
-                className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 mb-4 block"
+                className="text-2xl font-bold text-light-primary dark:text-dark-primary 
+                  hover:text-light-accent dark:hover:text-dark-accent transition-colors"
               >
                 Wakeel.org
               </Link>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 max-w-md">
+              <p className="text-light-secondary dark:text-dark-secondary mb-6 max-w-md">
                 Empowering legal professionals with innovative solutions and reliable support for a more efficient and just legal system.
               </p>
               <div className="flex space-x-4">
