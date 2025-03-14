@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../config/firebase';
+import { useTheme } from '../../context/ThemeContext';
 
 const SettingsModal = ({ isOpen, onClose, user, userData, updateUserSettings }) => {
+  const { darkMode, setDarkMode } = useTheme();
   const [displayName, setDisplayName] = useState(user?.displayName || '');
-  const [isDarkMode, setIsDarkMode] = useState(userData?.settings?.displaySettings?.darkMode || false);
   const [fontSize, setFontSize] = useState(userData?.settings?.displaySettings?.fontSize || 'medium');
   const [emailNotifications, setEmailNotifications] = useState(userData?.settings?.notifications?.email || false);
   const [researchAlerts, setResearchAlerts] = useState(userData?.settings?.notifications?.researchAlerts || false);
@@ -21,6 +22,13 @@ const SettingsModal = ({ isOpen, onClose, user, userData, updateUserSettings }) 
       setImagePreview(user.photoURL);
     }
   }, [user]);
+  
+  // Sync dark mode with ThemeContext initially
+  useEffect(() => {
+    if (userData?.settings?.displaySettings?.darkMode !== undefined) {
+      setDarkMode(userData.settings.displaySettings.darkMode);
+    }
+  }, [userData, setDarkMode]);
   
   if (!isOpen) return null;
 
@@ -58,7 +66,7 @@ const SettingsModal = ({ isOpen, onClose, user, userData, updateUserSettings }) 
       // Update user settings in Firestore
       await updateUserSettings({
         displaySettings: {
-          darkMode: isDarkMode,
+          darkMode: darkMode,
           fontSize: fontSize
         },
         notifications: {
@@ -69,13 +77,6 @@ const SettingsModal = ({ isOpen, onClose, user, userData, updateUserSettings }) 
       });
       
       setSuccessMessage('Settings saved successfully!');
-      
-      // Apply dark mode changes immediately
-      if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
       
       // Close the modal after a short delay
       setTimeout(() => {
@@ -201,8 +202,8 @@ const SettingsModal = ({ isOpen, onClose, user, userData, updateUserSettings }) 
               <label className="flex items-center space-x-3 mb-4">
                 <input
                   type="checkbox"
-                  checked={isDarkMode}
-                  onChange={(e) => setIsDarkMode(e.target.checked)}
+                  checked={darkMode}
+                  onChange={(e) => setDarkMode(e.target.checked)}
                   className="h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                 />
                 <span className="text-gray-900 dark:text-white">Dark mode</span>

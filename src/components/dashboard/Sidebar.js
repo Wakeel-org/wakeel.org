@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { signOut } from 'firebase/auth';
 import { useRouter } from 'next/router';
+import { signOutUser } from '../../lib/auth';
 
 const Sidebar = ({ 
   user, 
@@ -20,8 +20,12 @@ const Sidebar = ({
 
   const handleSignOut = async () => {
     try {
-      await signOut(auth);
-      router.push('/');
+      // Show confirmation dialog
+      if (window.confirm('Are you sure you want to sign out?')) {
+        // Use our utility function for signing out
+        await signOutUser();
+        router.push('/');
+      }
     } catch (error) {
       console.error('Error signing out:', error);
     }
@@ -29,12 +33,13 @@ const Sidebar = ({
 
   return (
     <div 
-      className={`${isSidebarCollapsed ? 'w-16' : 'w-64'} bg-white dark:bg-gray-800 shadow-xl flex flex-col h-screen transition-all duration-300 relative z-20 border-r border-gray-100 dark:border-gray-700`}
+      className={`${isSidebarCollapsed ? 'w-16' : 'w-64'} bg-white dark:bg-gray-800 shadow-xl flex flex-col h-screen transition-all duration-300 relative z-40 border-r border-gray-100 dark:border-gray-700`}
     >
       {/* Toggle Button */}
       <button 
         onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-        className="absolute -right-4 top-16 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md hover:shadow-lg transition-shadow"
+        className="absolute -right-4 top-16 bg-white dark:bg-gray-800 rounded-full p-2 shadow-md hover:shadow-lg transition-shadow z-50"
+        style={{ boxShadow: '0 0 10px rgba(0,0,0,0.1)', border: '1px solid rgba(0,0,0,0.05)' }}
       >
         <svg className={`w-4 h-4 text-blue-600 dark:text-blue-400 transition-transform duration-300 ${isSidebarCollapsed ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

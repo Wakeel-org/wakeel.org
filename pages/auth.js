@@ -8,7 +8,9 @@ import {
   GoogleAuthProvider,
   FacebookAuthProvider,
   signInWithPopup,
-  updateProfile
+  updateProfile,
+  setPersistence,
+  browserLocalPersistence
 } from 'firebase/auth';
 import { db, storage } from '../src/config/firebase';
 import { doc, setDoc } from 'firebase/firestore';
@@ -87,6 +89,9 @@ const Auth = () => {
     setLoading(true);
 
     try {
+      // Always set persistence to LOCAL before authentication
+      await setPersistence(auth, browserLocalPersistence);
+      
       if (isSignIn) {
         // Handle Sign In
         await signInWithEmailAndPassword(auth, email, password);
@@ -140,21 +145,25 @@ const Auth = () => {
     setLoading(true);
     
     try {
+      // Always set persistence to LOCAL before authentication
+      await setPersistence(auth, browserLocalPersistence);
+      
       const result = await signInWithPopup(auth, provider);
-      const user = result.user;
       
-      // If this is a new user, save their data to Firestore
-      if (result._tokenResponse?.isNewUser) {
-        await saveUserToFirestore(user.uid, {
-          email: user.email,
-          displayName: user.displayName || '',
-          role: 'student', // Default role for social sign-in
-          photoURL: user.photoURL || '',
-          gender: null,
-          dob: null,
-        });
-      }
+      // Check if user already exists in Firestore
+      const userDoc = await doc(db, 'users', result.user.uid);
       
+      // If new social login, save basic profile info to Firestore
+      await setDoc(userDoc, {
+        email: result.user.email,
+        displayName: result.user.displayName || '',
+        photoURL: result.user.photoURL || null,
+        role: 'student', // Default role for social sign-ins
+        createdAt: new Date(),
+        lastLogin: new Date()
+      }, { merge: true }); // Use merge to avoid overwriting existing data
+      
+      // Navigate to dashboard after successful authentication
       router.push('/dashboard');
     } catch (error) {
       console.error('Social authentication error:', error);

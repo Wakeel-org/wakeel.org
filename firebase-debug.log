@@ -1,0 +1,29 @@
+[debug] [2025-03-14T20:34:51.164Z] ----------------------------------------------------------------------
+[debug] [2025-03-14T20:34:51.166Z] Command:       /opt/homebrew/Cellar/node/22.10.0/bin/node /opt/homebrew/bin/firebase init
+[debug] [2025-03-14T20:34:51.166Z] CLI Version:   13.33.0
+[debug] [2025-03-14T20:34:51.166Z] Platform:      darwin
+[debug] [2025-03-14T20:34:51.167Z] Node Version:  v22.10.0
+[debug] [2025-03-14T20:34:51.167Z] Time:          Sat Mar 15 2025 01:34:51 GMT+0500 (Pakistan Standard Time)
+[debug] [2025-03-14T20:34:51.167Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-14T20:34:51.168Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-03-14T20:34:51.253Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-14T20:34:51.253Z] > authorizing via signed-in user (90skype@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Volumes/Personal/Github/wakeel.org
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+  * You are initializing within an existing Firebase project directory
+
+[debug] [2025-03-14T20:34:51.940Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-03-14T20:34:51.940Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
