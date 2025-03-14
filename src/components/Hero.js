@@ -1,8 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Hero = () => {
+  const router = useRouter();
+
+  const handleGetStarted = () => {
+    router.push('/auth');
+  };
+
   return (
     <section className="px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 lg:pt-20 pb-16 sm:pb-20 lg:pb-24 
       bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
@@ -27,10 +34,13 @@ const Hero = () => {
                 case management, and policy development solutions for legal professionals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                <button className="w-full sm:w-auto bg-blue-600 text-white px-6 sm:px-8 
-                  py-3 sm:py-4 rounded-xl sm:rounded-2xl hover:bg-blue-700 
-                  transition transform hover:scale-105 hover:shadow-lg 
-                  text-base sm:text-lg font-medium">
+                <button 
+                  className="w-full sm:w-auto bg-blue-600 text-white px-6 sm:px-8 
+                    py-3 sm:py-4 rounded-xl sm:rounded-2xl hover:bg-blue-700 
+                    transition transform hover:scale-105 hover:shadow-lg 
+                    text-base sm:text-lg font-medium"
+                  onClick={handleGetStarted}
+                >
                   Get Started
                 </button>
                 <Link

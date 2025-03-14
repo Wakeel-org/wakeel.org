@@ -39,6 +39,15 @@ module.exports = {
           'accent-dark': '#FFFFFF', // Pure white
         }
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        }
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.3s ease-out',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-subtle': 'linear-gradient(to bottom right, var(--tw-gradient-stops))',
