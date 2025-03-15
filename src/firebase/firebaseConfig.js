@@ -14,22 +14,32 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase
+// Helper to determine if we're in a browser or Node.js
+const isBrowser = typeof window !== 'undefined';
+
+// Initialize Firebase only on the client side
 let app;
-// Check if Firebase is already initialized
-if (typeof window !== 'undefined' && !getApps().length) {
-  app = initializeApp(firebaseConfig);
+let db;
+let storage;
+let auth;
+
+if (isBrowser) {
+  // Check if Firebase is already initialized to avoid duplicate apps
+  if (!getApps().length) {
+    app = initializeApp(firebaseConfig);
+  } else {
+    app = getApps()[0]; // if already initialized, use that one
+  }
+  
+  // Initialize services only on client side
+  db = getFirestore(app);
+  storage = getStorage(app);
+  auth = getAuth(app);
 } else {
-  app = getApps()[0]; // if already initialized, use that one
+  // Server-side: provide empty implementations or mocks if needed
+  db = null;
+  storage = null;
+  auth = null;
 }
-
-// Initialize Firestore
-const db = getFirestore(app);
-
-// Initialize Storage
-const storage = getStorage(app);
-
-// Initialize Auth
-const auth = getAuth(app);
 
 export { db, storage, auth }; 

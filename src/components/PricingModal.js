@@ -75,7 +75,7 @@ const PricingModal = ({ isOpen, onClose }) => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Basic</h3>
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">$29<span className="text-lg font-normal text-gray-600 dark:text-gray-400">/mo</span></div>
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">$5<span className="text-lg font-normal text-gray-600 dark:text-gray-400">/mo</span></div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">Perfect for individuals</p>
               </div>
               
@@ -121,7 +121,7 @@ const PricingModal = ({ isOpen, onClose }) => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Professional</h3>
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">$79<span className="text-lg font-normal text-gray-600 dark:text-gray-400">/mo</span></div>
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">$12.5<span className="text-lg font-normal text-gray-600 dark:text-gray-400">/mo</span></div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">For small law firms</p>
               </div>
               
@@ -169,7 +169,7 @@ const PricingModal = ({ isOpen, onClose }) => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Enterprise</h3>
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">$199<span className="text-lg font-normal text-gray-600 dark:text-gray-400">/mo</span></div>
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">$20<span className="text-lg font-normal text-gray-600 dark:text-gray-400">/mo</span></div>
                 <p className="text-sm text-gray-500 dark:text-gray-400">For large organizations</p>
               </div>
               

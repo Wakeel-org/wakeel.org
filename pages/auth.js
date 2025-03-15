@@ -10,9 +10,13 @@ import {
   signInWithPopup,
   updateProfile,
   setPersistence,
-  browserLocalPersistence
+  browserLocalPersistence,
+  fetchSignInMethodsForEmail,
+  signInWithCredential,
+  EmailAuthProvider,
+  linkWithCredential
 } from 'firebase/auth';
-import { db, storage } from '../src/config/firebase';
+import { db, storage } from '../src/firebase/firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import Link from 'next/link';
@@ -33,7 +37,23 @@ const Auth = () => {
   const [profileImage, setProfileImage] = useState(null);
   const [profileImageURL, setProfileImageURL] = useState('');
   const fileInputRef = useRef(null);
-  const auth = getAuth();
+  const [auth, setAuth] = useState(null);
+  const [isClient, setIsClient] = useState(false);
+  
+  // Initialize Firebase auth only on client-side
+  useEffect(() => {
+    setIsClient(true);
+    const authInstance = getAuth();
+    setAuth(authInstance);
+    
+    // Set persistence to LOCAL
+    if (authInstance) {
+      setPersistence(authInstance, browserLocalPersistence)
+        .catch((error) => {
+          console.error("Error setting auth persistence:", error);
+        });
+    }
+  }, []);
 
   // This will toggle between sign in and sign up forms
   const toggleAuthMode = () => setIsSignIn(!isSignIn);
@@ -87,6 +107,13 @@ const Auth = () => {
     e.preventDefault();
     setError('');
     setLoading(true);
+
+    // Ensure auth is initialized
+    if (!auth) {
+      setError('Authentication service is not available');
+      setLoading(false);
+      return;
+    }
 
     try {
       // Always set persistence to LOCAL before authentication
@@ -144,30 +171,61 @@ const Auth = () => {
     setError('');
     setLoading(true);
     
+    // Ensure auth is initialized
+    if (!auth) {
+      setError('Authentication service is not available');
+      setLoading(false);
+      return;
+    }
+    
     try {
-      // Always set persistence to LOCAL before authentication
+      // Set persistence to LOCAL
       await setPersistence(auth, browserLocalPersistence);
       
-      const result = await signInWithPopup(auth, provider);
-      
-      // Check if user already exists in Firestore
-      const userDoc = await doc(db, 'users', result.user.uid);
-      
-      // If new social login, save basic profile info to Firestore
-      await setDoc(userDoc, {
-        email: result.user.email,
-        displayName: result.user.displayName || '',
-        photoURL: result.user.photoURL || null,
-        role: 'student', // Default role for social sign-ins
-        createdAt: new Date(),
-        lastLogin: new Date()
-      }, { merge: true }); // Use merge to avoid overwriting existing data
-      
-      // Navigate to dashboard after successful authentication
-      router.push('/dashboard');
+      try {
+        // Attempt to sign in with the provider
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        
+        // Check if it's a new user
+        const isNewUser = result._tokenResponse.isNewUser;
+        
+        if (isNewUser) {
+          // Save user data to Firestore
+          await saveUserToFirestore(user.uid, {
+            email: user.email,
+            displayName: user.displayName,
+            role: 'student', // Default role for social sign-ins
+            photoURL: user.photoURL,
+          });
+        }
+        
+        // Navigate to dashboard
+        router.push('/dashboard');
+      } catch (error) {
+        // Handle the account-exists-with-different-credential error
+        if (error.code === 'auth/account-exists-with-different-credential') {
+          // Get the email from the error
+          const email = error.customData.email;
+          
+          // Fetch sign-in methods for this email
+          const methods = await fetchSignInMethodsForEmail(auth, email);
+          
+          if (methods.includes('google.com')) {
+            setError(`An account already exists with the same email address but different sign-in method. Please sign in using Google.`);
+          } else if (methods.includes('password')) {
+            setError(`An account already exists with the same email address but different sign-in method. Please sign in using your email and password.`);
+          } else {
+            setError(`An account already exists with the same email address but different sign-in method. Please sign in using one of the following methods: ${methods.join(', ')}`);
+          }
+        } else {
+          console.error('Social sign-in error:', error);
+          setError(error.message || 'An error occurred during social sign-in');
+        }
+      }
     } catch (error) {
-      console.error('Social authentication error:', error);
-      setError(error.message || 'An error occurred during authentication');
+      console.error('Social sign-in setup error:', error);
+      setError(error.message || 'An error occurred while setting up authentication');
     } finally {
       setLoading(false);
     }
@@ -182,6 +240,20 @@ const Auth = () => {
     const provider = new FacebookAuthProvider();
     handleSocialSignIn(provider);
   };
+
+  // If not client-side, show loading state
+  if (!isClient) {
+    return (
+      <Layout>
+        <div className="min-h-[80vh] flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+            <p className="mt-3 text-gray-600 dark:text-gray-300">Loading authentication...</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>

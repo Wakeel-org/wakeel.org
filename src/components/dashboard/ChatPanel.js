@@ -13,7 +13,7 @@ import { v4 as uuidv4 } from 'uuid';
  */
 const ChatPanel = ({ 
   chatMessages = [], 
-  setChatMessages,
+  setChatMessages, 
   userData = {},
   isLoading = false,
   setIsLoading = () => {},
@@ -32,11 +32,46 @@ const ChatPanel = ({
   const [isUploading, setIsUploading] = useState(false);
   const [uploadError, setUploadError] = useState(null);
   const [followupQuestions, setFollowupQuestions] = useState([]);
-
+  const [isStreaming, setIsStreaming] = useState(false);
+  const [streamedResponse, setStreamedResponse] = useState('');
+  const [initialSuggestions, setInitialSuggestions] = useState([]);
+  
   // Scroll to bottom of chat when new messages arrive
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [chatMessages]);
+
+  // Generate initial random suggestions for new chats
+  useEffect(() => {
+    if (chatMessages.length === 0) {
+      generateInitialSuggestions();
+    }
+  }, [chatMessages]);
+  
+  // Generate random initial suggestions for new chat
+  const generateInitialSuggestions = () => {
+    const allSuggestions = [
+      "What are my rights as a tenant under landlord-tenant law?",
+      "How do I file for divorce in my state?",
+      "What should I do after a car accident that wasn't my fault?",
+      "How can I protect my intellectual property?",
+      "What are the steps to start a small business legally?",
+      "Can you explain how child custody is determined?",
+      "What are my options if my employer violates labor laws?",
+      "How do I contest a will or trust?",
+      "What are the legal implications of a DUI charge?",
+      "How can I legally terminate a contract?",
+      "What's involved in filing for bankruptcy?",
+      "How do I create a legally binding power of attorney?",
+      "What should I know about personal injury claims?",
+      "How does immigration law work for family sponsorship?",
+      "What are my consumer rights for defective products?"
+    ];
+    
+    // Shuffle and pick 3 random suggestions
+    const shuffled = [...allSuggestions].sort(() => 0.5 - Math.random());
+    setInitialSuggestions(shuffled.slice(0, 3));
+  };
 
   // Generate follow-up questions based on conversation history
   useEffect(() => {
@@ -189,22 +224,48 @@ const ChatPanel = ({
   // Generate a response using Gemini AI
   const generateAIResponse = async (message, fileContent = null) => {
     try {
-      let response;
+      setIsStreaming(true);
+      setStreamedResponse('');
+      
+      // Simulate streaming by chunking the response
+      const simulateStreamingResponse = async (fullResponse) => {
+        // Break response into chunks (words)
+        const words = fullResponse.split(' ');
+        
+        // Stream each word with a small delay
+        for (let i = 0; i < words.length; i++) {
+          // Add each word with a space
+          setStreamedResponse(prev => 
+            i === 0 ? words[i] : `${prev} ${words[i]}`
+          );
+          
+          // Random delay between 30-70ms for natural typing feel
+          await new Promise(resolve => setTimeout(resolve, Math.random() * 40 + 30));
+        }
+        
+        setIsStreaming(false);
+        return fullResponse;
+      };
+      
+      // Get full response from API
+      let fullResponse;
       
       // If there's a file, analyze it with Gemini
       if (fileContent || currentFile) {
         const fileToAnalyze = fileContent || currentFile;
         console.log('Analyzing document with query:', message);
-        response = await analyzeDocumentWithGemini(message, fileToAnalyze);
+        fullResponse = await analyzeDocumentWithGemini(message, fileToAnalyze);
       } else {
         // Regular chat (use Gemini text generation without document)
         console.log('Sending query to Gemini without document:', message);
-        response = await analyzeDocumentWithGemini(message, []);
+        fullResponse = await analyzeDocumentWithGemini(message, []);
       }
       
-      return response;
+      // Simulate streaming of the response
+      return await simulateStreamingResponse(fullResponse);
     } catch (error) {
       console.error('Error generating AI response', error);
+      setIsStreaming(false);
       return `I apologize, but I encountered an error processing your request. ${error.message || 'Please try again later.'}`;
     }
   };
@@ -298,24 +359,42 @@ const ChatPanel = ({
         });
       }
       
-      // Generate AI response
+      // Add a temporary AI message to show streaming
+      const tempAiMessageId = uuidv4();
+      const tempAiMessage = {
+        id: tempAiMessageId,
+        content: '',
+        sender: 'ai',
+        timestamp: new Date(),
+        fileAnalysis: !!currentFile,
+        isStreaming: true
+      };
+      
+      // Add temporary AI message to chat
+      setChatMessages([...updatedMessages, tempAiMessage]);
+      
+      // Generate AI response with streaming
       const aiResponseText = await generateAIResponse(
         userMessage.content,
         currentFile
       );
       
-      // Create AI message object
+      // Create final AI message object
       const aiMessage = {
-        id: uuidv4(),
+        id: tempAiMessageId,
         content: aiResponseText,
         sender: 'ai',
         timestamp: new Date(),
-        fileAnalysis: !!currentFile
+        fileAnalysis: !!currentFile,
+        isStreaming: false
       };
       
-      // Add AI message to chat
-      const finalMessages = [...updatedMessages, aiMessage];
-      setChatMessages(finalMessages);
+      // Update the AI message in chat with complete response
+      setChatMessages(prev => 
+        prev.map(msg => 
+          msg.id === tempAiMessageId ? aiMessage : msg
+        )
+      );
       
       // Save AI message to Firestore if we have a chat ID
       if (sessionId) {
@@ -382,13 +461,13 @@ const ChatPanel = ({
             <a
               key={fileId}
               href={fileUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+                target="_blank" 
+                rel="noopener noreferrer"
               className="file-reference flex items-center p-1.5 px-3 bg-blue-50 text-blue-700 rounded-md text-sm hover:bg-blue-100 transition-colors"
-            >
+              >
               <DocumentIcon className="w-4 h-4 mr-1.5" />
               <span className="file-name">{fileName}</span>
-            </a>
+              </a>
           );
         })}
       </div>
@@ -416,11 +495,24 @@ const ChatPanel = ({
             : 'bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-100 dark:border-gray-700'
         }`}
       >
-        <div className={`message-content text-sm ${message.sender === 'ai' ? 'prose prose-sm max-w-none' : ''}`}>
+        <div className={`message-content text-sm ${message.sender === 'ai' ? 'prose prose-sm max-w-none whitespace-pre-wrap' : ''}`}>
           {message.sender === 'ai' ? (
-            <ReactMarkdown>
-              {message.content}
-            </ReactMarkdown>
+            <>
+              {message.isStreaming ? (
+        <div className="whitespace-pre-wrap">
+                  {streamedResponse}
+                  <span className="inline-block w-2 h-4 ml-1 bg-blue-500 animate-pulse"></span>
+                </div>
+              ) : (
+                <ReactMarkdown
+                  components={{
+                    p: ({node, ...props}) => <p className="whitespace-pre-wrap" {...props} />
+                  }}
+                >
+                  {message.content}
+                </ReactMarkdown>
+              )}
+            </>
           ) : (
             <div className="whitespace-pre-wrap">{message.content}</div>
           )}
@@ -428,7 +520,7 @@ const ChatPanel = ({
         
         {renderFileReferences(message.fileRefs)}
         
-        {message.sender === 'ai' && message.fileAnalysis && (
+        {message.sender === 'ai' && message.fileAnalysis && !message.isStreaming && (
           <div className="mt-2 text-xs text-blue-600 dark:text-blue-400 flex items-center">
             <svg className="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
@@ -464,9 +556,9 @@ const ChatPanel = ({
       </div>
       <h3 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-300">Wakeel Legal Assistant</h3>
       <p className="max-w-md mx-auto mb-6">
-        Your AI-powered legal research assistant. Upload documents for analysis or ask questions about legal matters. Designed for lawyers, judges, and law students.
+        Your AI-powered legal research assistant. Ask questions about legal matters. Designed for lawyers, judges, and law students.
       </p>
-      <div className="grid gap-3 max-w-md mx-auto">
+      {/* <div className="grid gap-3 max-w-md mx-auto">
         <button 
           onClick={() => {
             const text = "What are the critical elements I need to establish for a negligence claim?";
@@ -506,18 +598,47 @@ const ChatPanel = ({
         >
           Help me draft a demand letter for breach of contract
         </button>
-      </div>
+      </div> */}
     </div>
   );
 
   // Render follow-up questions based on conversation context
   const renderFollowupQuestions = () => {
+    if (chatMessages.length === 0) {
+      // Show initial suggestions for new chats
+      if (!initialSuggestions || initialSuggestions.length === 0) return null;
+      
+      return (
+        <div className="mb-4">
+          {/* <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">Suggested legal questions:</h4> */}
+          <div className="flex flex-wrap gap-1">
+            {initialSuggestions.map((question, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setChatInput(question);
+                  setTimeout(() => {
+                    const fakeEvent = { preventDefault: () => {} };
+                    handleSubmitAndClearFile(fakeEvent);
+                  }, 100);
+                }}
+                className="p-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-lg text-xs hover:bg-blue-100 dark:hover:bg-blue-800/30 transition-colors"
+              >
+                {question}
+              </button>
+            ))}
+          </div>
+        </div>
+      );
+    }
+    
+    // Show follow-up questions for existing chats
     if (!followupQuestions || followupQuestions.length === 0) return null;
     
     return (
-      <div className="mt-4">
-        <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">You might want to ask:</h4>
-        <div className="flex flex-wrap gap-2">
+      <div className="mb-4">
+        {/* <h4 className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">You might want to ask:</h4> */}
+        <div className="flex flex-wrap gap-1">
           {followupQuestions.map((question, index) => (
             <button
               key={index}
@@ -542,8 +663,8 @@ const ChatPanel = ({
   const renderRecentUploads = () => {
     if (!uploadedFiles || uploadedFiles.length === 0) {
       return (
-        <div className="text-gray-500 text-sm italic">
-          No recent documents. Upload a legal document to analyze.
+        <div className="text-gray-500 text-sm italic text-center">
+          Wakeel.org AI Search is in development. Results may not be perfect, so verify important information yourself.
         </div>
       );
     }
@@ -644,7 +765,6 @@ const ChatPanel = ({
         {chatMessages.length > 0 ? (
           <>
             {chatMessages.map((message, index) => renderMessage(message, index))}
-            {renderFollowupQuestions()}
             <div ref={chatEndRef} />
           </>
         ) : (
@@ -654,6 +774,9 @@ const ChatPanel = ({
 
       {/* Chat Input */}
       <div className="p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800">
+        {/* Follow-up Questions (now positioned above the input) */}
+        {renderFollowupQuestions()}
+      
         <form onSubmit={handleSubmitAndClearFile} className="flex gap-2 items-center">
           <input
             type="text"
@@ -661,13 +784,14 @@ const ChatPanel = ({
             onChange={(e) => setChatInput(e.target.value)}
             placeholder={currentFile ? "Ask questions about this legal document..." : "Ask about legal research, case analysis, or document drafting..."}
             className="flex-1 px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
-            disabled={isLoading}
+            disabled={isLoading || isStreaming}
           />
-          <div className="flex-shrink-0 relative">
+          {/* TODO: show the attach file */}
+          {/* <div className="flex-shrink-0 relative">
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              disabled={isUploading || isLoading}
+              disabled={isUploading || isLoading || isStreaming}
               className="px-3 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-xl transition-colors disabled:opacity-50 relative"
               title="Attach a legal document"
             >
@@ -687,21 +811,21 @@ const ChatPanel = ({
                 1
               </div>
             )}
-          </div>
+          </div> */}
           <input
             ref={fileInputRef}
             type="file"
             onChange={handleFileInputChange}
             className="hidden"
             accept=".pdf,.doc,.docx,.txt,.rtf,.odt,.wpd"
-            disabled={isLoading}
+            disabled={isLoading || isStreaming}
           />
           <button
             type="submit"
-            disabled={isLoading || (!chatInput.trim() && !currentFile)}
+            disabled={isLoading || isStreaming || (!chatInput.trim() && !currentFile)}
             className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl disabled:opacity-50 transition-colors shadow-md flex items-center"
           >
-            {isLoading ? (
+            {isLoading || isStreaming ? (
               <>
                 <svg className="w-5 h-5 animate-spin mr-2" viewBox="0 0 24 24">
                   <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
@@ -754,7 +878,7 @@ const ChatPanel = ({
                 setCurrentFile(null);
               }}
               className="text-gray-500 hover:text-red-500 dark:text-gray-400 dark:hover:text-red-400"
-              disabled={isLoading}
+              disabled={isLoading || isStreaming}
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -764,7 +888,7 @@ const ChatPanel = ({
         )}
         
         {/* Message about document analysis capabilities */}
-        {currentFile && !isLoading && (
+        {currentFile && !isLoading && !isStreaming && (
           <div className="mt-2 text-xs text-gray-500 dark:text-gray-400 p-2 bg-gray-50 dark:bg-gray-700 rounded-lg">
             <div className="flex items-center mb-1">
               <svg className="w-4 h-4 mr-1 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

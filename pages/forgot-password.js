@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
 import Layout from '../src/components/Layout';
 import Link from 'next/link';
@@ -8,12 +8,25 @@ const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
-  const auth = getAuth();
+  const [isClient, setIsClient] = useState(false);
+  const [auth, setAuth] = useState(null);
+  
+  // Initialize Firebase auth only on the client side
+  useEffect(() => {
+    setIsClient(true);
+    setAuth(getAuth());
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
+    
+    if (!auth) {
+      setError('Authentication service is not available');
+      setLoading(false);
+      return;
+    }
     
     try {
       await sendPasswordResetEmail(auth, email);
@@ -25,6 +38,20 @@ const ForgotPassword = () => {
       setLoading(false);
     }
   };
+
+  // Simple loading state for server-side rendering
+  if (!isClient) {
+    return (
+      <Layout>
+        <div className="max-w-md mx-auto my-16 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+            <p className="mt-3 text-gray-600 dark:text-gray-300">Loading...</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
@@ -85,7 +112,7 @@ const ForgotPassword = () => {
 
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || !auth}
               className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium py-2.5 px-4 rounded-lg transition-colors disabled:opacity-50"
             >
               {loading ? 

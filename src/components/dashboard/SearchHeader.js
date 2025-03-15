@@ -114,7 +114,7 @@ const SearchHeader = ({
           </form>
 
           {/* Search History Dropdown */}
-          {showHistory && searchHistory.length > 0 && (
+          {/* {showHistory && searchHistory.length > 0 && (
             <div className="absolute z-40 mt-2 w-full bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 max-h-64 overflow-y-auto">
               <div className="p-2">
                 <h3 className="text-sm font-medium text-gray-500 dark:text-gray-400 px-2 py-1">Recent Searches</h3>
@@ -145,10 +145,10 @@ const SearchHeader = ({
                 ))}
               </div>
             </div>
-          )}
+          )} */}
         </div>
 
-        <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+        <div className="text-sm text-gray-600 dark:text-gray-400 text-center">
           Wakeel.org AI Search is currently in development—early access stage; results may be imperfect. Please verify critical information independently.
         </div>
       </div>

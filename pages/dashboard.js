@@ -264,14 +264,14 @@ const Dashboard = () => {
         Debug.debug('SEARCH', 'Saving search history entry:', searchData);
         
         const searchHistoryRef = collection(db, "searchHistory");
-        await Debug.measurePerformance('FIRESTORE', 'addSearchHistory', 
+        const docRef = await Debug.measurePerformance('FIRESTORE', 'addSearchHistory', 
           () => addDoc(searchHistoryRef, searchData)
         );
         
-        // Update search history in state
+        // Update search history in state with the actual document ID
         setSearchHistory(prev => [
           { 
-            id: 'temp-' + Date.now(), 
+            id: docRef.id, 
             ...searchData,
             // Convert Timestamp to Date for consistent display
             timestamp: searchData.timestamp
@@ -280,30 +280,13 @@ const Dashboard = () => {
         ]);
       }
       
-      // TODO: Implement actual search functionality based on activeTab
-      const mockResults = [
-        {
-          id: '1',
-          title: 'Example Search Result 1',
-          excerpt: 'This is a sample search result that would match your query for "' + searchQuery + '". In a real implementation, this would contain relevant information from the database.',
-          relevance: 0.95,
-          source: 'Mock Database'
-        },
-        {
-          id: '2',
-          title: 'Example Search Result 2',
-          excerpt: 'Another sample result for demonstration purposes. Your search for "' + searchQuery + '" would fetch real data in a production environment.',
-          relevance: 0.88,
-          source: 'Mock Database'
-        }
-      ];
+      // Get actual search results based on the activeTab
+      const results = await simulateLegalSearch(searchQuery, activeTab);
       
-      setTimeout(() => {
-        setSearchResults(mockResults);
-        setIsSearching(false);
-        Debug.debug('SEARCH', `Search completed with ${mockResults.length} results`);
-      }, 1500);
-      
+      // Store the search results in state
+      setSearchResults(results);
+      setIsSearching(false);
+      Debug.debug('SEARCH', `Search completed with ${results.length} results`);
     } catch (error) {
       Debug.error('SEARCH', 'Search error', error);
       setIsSearching(false);
@@ -2022,6 +2005,33 @@ ${response}
     }
   };
 
+  // Handle click on search history item
+  const handleSearchHistoryClick = async (historyItem) => {
+    if (!historyItem || !historyItem.query) return;
+    
+    // Set the search query and active tab
+    setSearchQuery(historyItem.query);
+    if (historyItem.type && ['ai', 'case', 'keyword'].includes(historyItem.type)) {
+      setActiveTab(historyItem.type);
+    }
+    
+    // Execute the search
+    setIsSearching(true);
+    
+    try {
+      // Get results based on the history item's type
+      const results = await simulateLegalSearch(historyItem.query, historyItem.type || activeTab);
+      
+      // Update search results
+      setSearchResults(results);
+      setIsSearching(false);
+      Debug.debug('SEARCH', `Search history item clicked, found ${results.length} results`);
+    } catch (error) {
+      Debug.error('SEARCH', 'Error retrieving search history results', error);
+      setIsSearching(false);
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800">
@@ -2242,15 +2252,7 @@ ${response}
                             <div 
                               key={item.id} 
                               className="p-3 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg cursor-pointer transition-colors"
-                              onClick={() => {
-                                setSearchQuery(item.query);
-                                setActiveTab(item.type || 'ai');
-                                if (item.sessionId) {
-                                  loadChatSession(item.sessionId);
-                                } else {
-                                  handleSearch();
-                                }
-                              }}
+                              onClick={() => handleSearchHistoryClick(item)}
                             >
                               <div className="flex items-center">
                                 <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mr-3">
