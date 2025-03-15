@@ -18,6 +18,9 @@ import NotesModal from '../src/components/dashboard/NotesModal';
 import SettingsModal from '../src/components/dashboard/SettingsModal';
 import DebugPanel from '../src/components/debug/DebugPanel';
 
+// Import Heroicons
+import { ChevronRightIcon, PaperClipIcon, XCircleIcon, DocumentIcon } from '@heroicons/react/24/outline';
+
 const Dashboard = () => {
   const router = useRouter();
   const [user, setUser] = useState(null);
@@ -307,6 +310,380 @@ const Dashboard = () => {
     }
   };
 
+  // Update the simulateAIResponse function to use Gemini for file analysis
+  const simulateAIResponse = async (input, fileContents = {}) => {
+    // If files are provided and Gemini is available, use it for analysis
+    const fileNames = Object.keys(fileContents);
+    
+    if (fileNames.length > 0) {
+      try {
+        Debug.info('AI_RESPONSE', `Processing ${fileNames.length} legal document(s) with Gemini AI`);
+        
+        // Create document array for Gemini
+        const documents = [];
+        const contentExtractionErrors = [];
+        
+        for (const fileName of fileNames) {
+          const fileDetails = fileContents[fileName];
+          
+          // Enhanced error handling for missing file details
+          if (!fileDetails || typeof fileDetails !== 'object') {
+            contentExtractionErrors.push(`Invalid file details for "${fileName}"`);
+            continue;
+          }
+          
+          // First check if content is directly available in memory
+          if (fileDetails.content && typeof fileDetails.content === 'string' && fileDetails.content.trim().length > 0) {
+            Debug.info('AI_RESPONSE', `Using in-memory content for ${fileName}`);
+            documents.push({
+              name: fileName,
+              content: fileDetails.content,
+              type: fileDetails.type || 'unknown',
+              source: 'memory'
+            });
+            continue;
+          }
+          
+          // If file has extractedContent in memory, use that
+          if (fileDetails.extractedContent && typeof fileDetails.extractedContent === 'string' && fileDetails.extractedContent.trim().length > 0) {
+            Debug.info('AI_RESPONSE', `Using in-memory extracted content for ${fileName}`);
+            documents.push({
+              name: fileName,
+              content: fileDetails.extractedContent,
+              type: fileDetails.type || 'unknown',
+              source: 'memory-extracted'
+            });
+            continue;
+          }
+          
+          // If not, try to fetch content from Firestore
+          if (fileDetails.id) {
+            try {
+              Debug.info('AI_RESPONSE', `Fetching content for ${fileName} from Firestore with ID: ${fileDetails.id}`);
+              const fileDoc = await getDoc(doc(db, "uploadedFiles", fileDetails.id));
+              
+              if (fileDoc.exists()) {
+                const fileData = fileDoc.data();
+                
+                if (fileData.extractedContent && typeof fileData.extractedContent === 'string' && fileData.extractedContent.trim().length > 0) {
+                  Debug.info('AI_RESPONSE', `Retrieved extracted content from Firestore for ${fileName} (${fileData.extractedContent.length} chars)`);
+                  
+                  documents.push({
+                    name: fileName,
+                    content: fileData.extractedContent,
+                    type: fileData.fileType || fileDetails.type || 'unknown',
+                    source: 'firestore',
+                    truncated: fileData.contentTruncated
+                  });
+                  
+                  // Update in-memory content for future use
+                  fileDetails.extractedContent = fileData.extractedContent;
+                  continue;
+                } else {
+                  contentExtractionErrors.push(`No valid content found in Firestore for "${fileName}"`);
+                }
+              } else {
+                contentExtractionErrors.push(`File document not found in Firestore for "${fileName}" with ID ${fileDetails.id}`);
+              }
+            } catch (err) {
+              Debug.error('AI_RESPONSE', `Error fetching file content for ${fileName}:`, err);
+              contentExtractionErrors.push(`Error retrieving content from Firestore for "${fileName}": ${err.message}`);
+            }
+          }
+          
+          // Try to use URL directly for content extraction as a last resort
+          if (fileDetails.url || fileDetails.downloadURL) {
+            const fileUrl = fileDetails.url || fileDetails.downloadURL;
+            try {
+              Debug.info('AI_RESPONSE', `Creating placeholder for URL content: ${fileUrl}`);
+              // Create a placeholder indicating we would extract from URL in production
+              const placeholderContent = `This is the content of ${fileName} that would be extracted from ${fileUrl}.\n\nIn a production environment, the application would download this file from the URL and extract its content dynamically.`;
+              
+              documents.push({
+                name: fileName,
+                content: placeholderContent,
+                type: fileDetails.type || 'unknown',
+                source: 'url-placeholder'
+              });
+              
+              Debug.info('AI_RESPONSE', `Created placeholder content for ${fileName} from URL`);
+              continue;
+            } catch (err) {
+              Debug.error('AI_RESPONSE', `Error processing file URL for ${fileName}:`, err);
+              contentExtractionErrors.push(`Error processing URL for "${fileName}": ${err.message}`);
+            }
+          }
+          
+          // If we still don't have content, generate a detailed placeholder based on file type
+          const fileExtension = fileDetails.type || fileName.split('.').pop().toLowerCase() || 'unknown';
+          let placeholderContent;
+          
+          if (fileExtension.includes('pdf')) {
+            placeholderContent = `[Legal PDF Document: ${fileName}]
+            
+This PDF document could not be processed properly. 
+The system attempted to extract text but was unable to do so.
+This may be due to several reasons:
+1. The PDF may contain scanned images rather than text
+2. The PDF may be password protected or encrypted
+3. The PDF might be corrupted or in an unsupported format
+
+Document metadata:
+- Filename: ${fileName}
+- Type: ${fileExtension}
+- Size: ${fileDetails.fileSize ? `${(fileDetails.fileSize / 1024).toFixed(2)} KB` : 'Unknown'}`;
+          } else if (fileExtension.includes('doc') || fileExtension.includes('word')) {
+            placeholderContent = `[Legal Word Document: ${fileName}]
+            
+This Word document could not be processed properly.
+The system attempted to extract text but was unable to do so.
+This may be due to several reasons:
+1. The document may contain complex formatting
+2. The document may be password protected
+3. The document might be corrupted or in an unsupported format
+
+Document metadata:
+- Filename: ${fileName}
+- Type: ${fileExtension}
+- Size: ${fileDetails.fileSize ? `${(fileDetails.fileSize / 1024).toFixed(2)} KB` : 'Unknown'}`;
+          } else {
+            placeholderContent = `[Legal Document: ${fileName}]
+            
+This document could not be processed properly.
+The system attempted to extract text but was unable to do so.
+This may be due to several reasons:
+1. The file format may not be supported for content extraction
+2. The document may be password protected
+3. The document might be corrupted or in an unsupported format
+
+Document metadata:
+- Filename: ${fileName}
+- Type: ${fileExtension}
+- Size: ${fileDetails.fileSize ? `${(fileDetails.fileSize / 1024).toFixed(2)} KB` : 'Unknown'}`;
+          }
+          
+          documents.push({
+            name: fileName,
+            content: placeholderContent,
+            type: fileExtension,
+            source: 'placeholder'
+          });
+          
+          // Add to error list
+          contentExtractionErrors.push(`Could not extract content from "${fileName}", using placeholder content`);
+        }
+        
+        // Log document array and errors for debugging
+        Debug.debug('AI_RESPONSE', 'Legal documents prepared for Gemini:', documents);
+        if (contentExtractionErrors.length > 0) {
+          Debug.warn('AI_RESPONSE', 'Content extraction errors:', contentExtractionErrors);
+        }
+        
+        // Verify we have at least one document
+        if (documents.length === 0) {
+          throw new Error('No valid documents could be processed for analysis');
+        }
+        
+        // Use Gemini to analyze the documents
+        let geminiResponse;
+        try {
+          // If input is empty, ask for a comprehensive legal analysis
+          const query = input.trim() || "Please provide a comprehensive legal analysis of this document, including key facts, legal issues, relevant statutes, precedents, and potential implications.";
+          
+          Debug.info('AI_RESPONSE', `Sending query to Gemini API: "${query.substring(0, 100)}${query.length > 100 ? '...' : ''}"`);
+          geminiResponse = await analyzeDocumentWithGemini(query, documents);
+          
+          if (!geminiResponse || typeof geminiResponse !== 'string' || geminiResponse.trim().length === 0) {
+            throw new Error('Received empty or invalid response from Gemini API');
+          }
+          
+          Debug.info('AI_RESPONSE', `Received ${geminiResponse.length} character response from Gemini API`);
+          
+          // Add legal formatting to the response
+          return formatLegalResponse(geminiResponse, documents[0]?.name || 'document');
+        } catch (error) {
+          Debug.error('AI_RESPONSE', 'Error calling Gemini API:', error);
+          
+          return `I attempted to analyze your legal document, but encountered an error with the AI service: ${error.message}
+          
+To get the best legal document analysis:
+1. Ensure your document is properly uploaded and readable
+2. Try more specific questions about the document content
+3. For large documents, consider focusing on specific sections or pages
+${contentExtractionErrors.length > 0 ? `\nTechnical issues encountered:\n${contentExtractionErrors.map(err => `- ${err}`).join('\n')}` : ''}
+
+Would you like to try again or ask a different question about the document?`;
+        }
+      } catch (error) {
+        Debug.error('AI_RESPONSE', 'Error in document analysis with Gemini:', error);
+        
+        // Fallback to the original file analysis if Gemini fails
+        const fileAnalysisResponses = fileNames.map(fileName => {
+          const fileDetails = fileContents[fileName];
+          const fileExtension = fileDetails?.type || 'txt';
+          
+          return `I've attempted to analyze the legal document "${fileName}" but encountered technical difficulties with the AI processing.
+            
+This appears to be a ${fileExtension.toUpperCase()} legal document. Unfortunately, I couldn't perform a detailed analysis at this time.
+
+For better results, you could:
+1. Check that the document is properly formatted and readable
+2. Try uploading a different version of the document
+3. Ask specific questions about the document's content rather than requesting a full analysis`;
+        });
+        
+        return `${fileAnalysisResponses.join('\n\n')}\n\n${
+          input.trim() ? 
+          `Regarding your specific question "${input}": I'd be happy to answer once we resolve the document analysis issue.` : 
+          "Please let me know if you have any specific legal questions about these documents."
+        }`;
+      }
+    }
+    
+    // If no documents were provided, handle regular legal queries
+    if (input.toLowerCase().includes('negligence')) {
+      return `# Elements of Negligence
+
+To establish negligence in a legal claim, you must prove all four of the following elements:
+
+1. **Duty of Care**: The defendant owed a legal duty of care to the plaintiff
+2. **Breach of Duty**: The defendant breached that duty through action or inaction
+3. **Causation**: This breach directly caused the plaintiff's injuries (both actual/factual causation and proximate/legal causation)
+4. **Damages**: The plaintiff suffered actual damages (physical injury, property damage, etc.)
+
+## Important Considerations
+
+* The standard of care is often that of a "reasonable person" under similar circumstances
+* Comparative or contributory negligence may reduce or bar recovery in some jurisdictions
+* Statutes of limitations impose strict time limits on negligence claims
+
+Would you like a more detailed analysis of any specific element or how negligence applies to a particular situation?`;
+    } else if (input.toLowerCase().includes('supreme court')) {
+      return `# Recent Supreme Court IP Law Decisions
+
+## Google LLC v. Oracle America, Inc. (2021) 
+**Key Holdings:**
+* Google's copying of Oracle's Java SE API declaring code is fair use as a matter of law
+* Google's implementation created a new expression, fulfilled a transformative purpose, and used only necessary portions of the API
+* Significant implications for software development and interoperability
+
+## United States v. Arthrex, Inc. (2021)
+**Key Holdings:**
+* Administrative Patent Judges (APJs) were unconstitutionally appointed
+* The Director of the USPTO must have the authority to review PTAB decisions
+* Affects the structure of Patent Trial and Appeal Board proceedings
+
+## Minerva Surgical, Inc. v. Hologic, Inc. (2021)
+**Key Holdings:**
+* Affirmed the doctrine of assignor estoppel, limiting a patent owner from challenging validity
+* Added equitable limitations to prevent unfair application in certain circumstances
+* Important implications for patent assignments and licensing
+
+Would you like an analysis of how these decisions might impact a specific legal situation?`;
+    } else if (input.toLowerCase().includes('demand letter') || input.toLowerCase().includes('breach of contract') || input.toLowerCase().includes('draft')) {
+      return `# Demand Letter for Contract Breach
+
+[Your Name/Company]
+[Your Address]
+[City, State ZIP]
+[Your Email]
+[Your Phone]
+[Date]
+
+**VIA [DELIVERY METHOD: Certified Mail / Email / etc.]**
+
+[Recipient Name]
+[Recipient Company]
+[Recipient Address]
+[City, State ZIP]
+
+**RE: Notice of Breach of Contract dated [Contract Date]**
+
+Dear [Recipient Name],
+
+## Formal Notice of Breach
+
+This letter constitutes formal notice that you are in breach of our agreement dated [contract date] (the "Agreement"). Specifically, you have breached Section(s) [specific section numbers] of the Agreement by [detailed description of the breach, including:
+- What specific actions/inactions constituted the breach
+- When the breach occurred
+- Evidence documenting the breach
+- Previous attempts to resolve the issue].
+
+## Damages Incurred
+
+As a direct result of this breach, [I/we] have suffered damages in the amount of [specific amount or description of damages], which include [itemized list of damages with monetary values where applicable].
+
+## Demand for Remedy
+
+Pursuant to Section [remedies section] of the Agreement, [I/we] hereby demand:
+1. [Specific performance required]
+2. [Payment of $X amount]
+3. [Other specific remedies sought]
+
+This remedy must be completed no later than [specific deadline, typically 10-30 days from receipt].
+
+## Consequences of Non-Compliance
+
+If you fail to remedy this breach by the stated deadline, [I/we] will pursue all available legal remedies, including but not limited to:
+- Filing a lawsuit for breach of contract
+- Seeking monetary damages
+- Requesting specific performance
+- Recovering attorney's fees and costs as provided in the Agreement
+
+## Opportunity to Cure
+
+[I/we] remain open to resolving this matter amicably. Please contact me at [phone/email] by [date] to discuss resolution.
+
+This letter is without prejudice to any other rights or remedies available under the Agreement, at law, or in equity.
+
+Sincerely,
+
+[Your Signature]
+[Your Printed Name]
+[Your Title, if applicable]
+
+[Enclosures/Attachments, if any]`;
+    } else {
+      return `# Legal Analysis: ${input}
+
+Thank you for your query on "${input}". Here's my legal assessment:
+
+## General Legal Framework
+Legal questions typically require analysis across multiple dimensions:
+- Applicable jurisdiction and governing law
+- Relevant statutes, regulations, and case precedents
+- Procedural requirements and time limitations
+- Potential remedies and enforcement mechanisms
+
+## Important Considerations
+Without specific case details, I can provide general guidance only:
+1. **Jurisdiction matters**: Legal principles vary significantly across jurisdictions
+2. **Fact-specific analysis**: Small factual differences can lead to different legal outcomes
+3. **Time sensitivity**: Many legal matters have strict deadlines and statutes of limitations
+
+## Next Steps
+To provide more specific assistance:
+- Could you share more details about your particular situation?
+- Are there specific legal documents you'd like me to analyze?
+- Is there a particular jurisdiction whose laws apply to your question?
+
+While I can provide general legal information, remember that for specific legal advice tailored to your situation, consulting with a qualified attorney licensed in your jurisdiction is always recommended.`;
+    }
+  };
+
+  // Helper function to format legal responses
+  const formatLegalResponse = (response, documentName) => {
+    // Add informative legal formatting to the response
+    const formattedResponse = `# Legal Analysis of "${documentName}"
+
+${response}
+
+---
+*This analysis is based on the document you provided and general legal principles. For specific legal advice, please consult with a qualified attorney licensed in your jurisdiction.*`;
+    
+    return formattedResponse;
+  };
+
   // Handle chat message submission
   const handleChatSubmit = async (eventOrMessage) => {
     // Null check at the beginning
@@ -325,26 +702,39 @@ const Dashboard = () => {
       eventOrMessage.preventDefault();
       // Use the current chatInput value
       userMessage = chatInput || '';
-      if (!userMessage.trim() || isLoading) {
-        Debug.debug('CHAT', 'Empty message or still loading, not submitting');
+      if (!userMessage.trim() && !currentFile) {
+        Debug.debug('CHAT', 'Empty message with no file, not submitting');
         return;
       }
     } else {
       // Direct message input - ensure it's a string
       userMessage = String(eventOrMessage || '');
-      if (!userMessage.trim() || isLoading) {
-        Debug.debug('CHAT', 'Empty direct message or still loading, not submitting');
+      if (!userMessage.trim() && !currentFile) {
+        Debug.debug('CHAT', 'Empty direct message with no file, not submitting');
         return;
       }
     }
     
-    Debug.info('CHAT', `Submitting message: "${userMessage.substring(0, 50)}${userMessage.length > 50 ? '...' : ''}"`);
+    Debug.info('CHAT', `Submitting message: "${userMessage.substring(0, 50)}${userMessage.length > 50 ? '...' : ''}"${currentFile ? ` with file: ${currentFile.name}` : ''}`);
     
     setIsLoading(true);
     const tempMessageId = 'temp-' + Date.now();
     
     // Add user message to state immediately for UI responsiveness
-    const newUserMessage = { id: tempMessageId, sender: 'user', content: userMessage, timestamp: new Date() };
+    const newUserMessage = { 
+      id: tempMessageId, 
+      sender: 'user', 
+      content: userMessage || '', 
+      timestamp: new Date(),
+      // Add file references if there's a file, with proper validation
+      fileRefs: currentFile ? [{
+        name: currentFile.name || 'Document',
+        url: currentFile.url || '',
+        id: currentFile.id || `temp-file-${Date.now()}`,
+        type: currentFile.type || ''
+      }] : []
+    };
+    
     setChatMessages(prev => [...prev, newUserMessage]);
     setChatInput('');
     
@@ -353,27 +743,60 @@ const Dashboard = () => {
       
       // If no current chat, create a new session
       if (!sessionId) {
-        const title = userMessage.length > 30 ? `${userMessage.substring(0, 30)}...` : userMessage;
+        // Create a more descriptive title based on message or file
+        let title = userMessage || '';
+        if (currentFile) {
+          title = userMessage 
+            ? `Analysis of ${currentFile.name || 'Document'}: ${userMessage.substring(0, 30)}` 
+            : `Analysis of ${currentFile.name || 'Document'}`;
+        }
+        if (title.length > 50) title = `${title.substring(0, 47)}...`;
+        
+        // Ensure title is never empty
+        if (!title || title.trim().length === 0) {
+          title = 'New legal conversation';
+        }
         
         const chatSessionRef = collection(db, "chatSessions");
-        const chatSessionDoc = await Debug.measurePerformance('FIREBASE', 'createChatSession', async () => {
-          const docRef = await addDoc(chatSessionRef, {
-            userId: user.uid,
-            title: title,
-            createdAt: Timestamp.now(),
-            updatedAt: Timestamp.now(),
-            messages: [
-              {
-                role: 'user',
-                content: userMessage,
-                timestamp: new Date().toISOString()
-              }
-            ]
-          });
-          return docRef;
-        });
         
-        sessionId = chatSessionDoc.id;
+        try {
+          Debug.info('CHAT', 'Creating new chat session with validated data');
+          
+          // Construct a clean message object with no undefined values
+          const cleanMessageObject = {
+            role: 'user',
+            content: userMessage || '',
+            timestamp: new Date().toISOString()
+          };
+          
+          // Only add fileRefs if we have a valid file with required fields
+          if (currentFile && currentFile.id && currentFile.name) {
+            cleanMessageObject.fileRefs = [{
+              name: currentFile.name || 'Document',
+              url: currentFile.url || '',
+              id: currentFile.id || `file-${Date.now()}`,
+              type: currentFile.type || ''
+            }];
+          }
+          
+          const chatSessionDoc = await Debug.measurePerformance('FIREBASE', 'createChatSession', async () => {
+            const docRef = await addDoc(chatSessionRef, {
+              userId: user.uid,
+              title: title,
+              createdAt: Timestamp.now(),
+              updatedAt: Timestamp.now(),
+              messages: [cleanMessageObject]
+            });
+            return docRef;
+          });
+          
+          sessionId = chatSessionDoc.id;
+          Debug.info('CHAT', `Successfully created new chat session with ID: ${sessionId}`);
+        } catch (addError) {
+          Debug.error('CHAT', 'Error creating chat session', addError);
+          throw addError; // Rethrow to be caught by outer try/catch
+        }
+        
         setCurrentChatId(sessionId);
         
         // Add to chat sessions list
@@ -385,53 +808,110 @@ const Dashboard = () => {
           updatedAt: Timestamp.now()
         }, ...prev]);
         
-        Debug.info('CHAT', `Created new chat session with ID: ${sessionId}`);
       } else {
         // Add message to existing chat session
         const chatSessionRef = doc(db, "chatSessions", sessionId);
         
-        await Debug.measurePerformance('FIREBASE', 'updateChatSession', async () => {
-          return updateDoc(chatSessionRef, {
-            updatedAt: Timestamp.now(),
-            messages: arrayUnion({
-              role: 'user',
-              content: userMessage,
-              timestamp: new Date().toISOString()
-            })
-          });
-        });
-        
-        Debug.debug('CHAT', `Added message to existing chat session: ${sessionId}`);
-      }
-      
-      // Simulate AI response
-      setTimeout(async () => {
         try {
-          const aiResponseText = `I'm your AI assistant. You asked: "${userMessage}"\n\nThis is a simulated response for development purposes. In production, this would be an actual API response from an AI model.`;
+          // Construct a clean message object with no undefined values
+          const cleanMessageObject = {
+            role: 'user',
+            content: userMessage || '',
+            timestamp: new Date().toISOString()
+          };
           
-          // Add AI response to chat session
-          const chatSessionRef = doc(db, "chatSessions", sessionId);
-          await Debug.measurePerformance('FIREBASE', 'updateChatSessionWithAIResponse', async () => {
+          // Only add fileRefs if we have a valid file with required fields
+          if (currentFile && currentFile.id && currentFile.name) {
+            cleanMessageObject.fileRefs = [{
+              name: currentFile.name || 'Document',
+              url: currentFile.url || '',
+              id: currentFile.id || `file-${Date.now()}`,
+              type: currentFile.type || ''
+            }];
+          }
+          
+          await Debug.measurePerformance('FIREBASE', 'updateChatSession', async () => {
             return updateDoc(chatSessionRef, {
-              messages: arrayUnion({
-                role: 'assistant',
-                content: aiResponseText,
-                timestamp: new Date().toISOString()
-              })
+              updatedAt: Timestamp.now(),
+              messages: arrayUnion(cleanMessageObject)
             });
           });
           
-          // Add AI response to state
-          setChatMessages(prev => [...prev, { 
-            id: 'ai-' + Date.now(), 
-            sender: 'ai', 
-            content: aiResponseText, 
-            timestamp: new Date() 
-          }]);
+          Debug.debug('CHAT', `Added message to existing chat session: ${sessionId}`);
+        } catch (updateError) {
+          Debug.error('CHAT', 'Error updating chat session with new message', updateError);
+          throw updateError; // Rethrow to be caught by outer try/catch
+        }
+      }
+      
+      // Process the message with AI response
+      setTimeout(async () => {
+        try {
+          let aiResponseText;
           
-          Debug.debug('CHAT', 'AI response added to session');
+          // If there's a current file, use Gemini document analysis
+          if (currentFile && currentFile.id) {
+            Debug.info('CHAT', `Processing document with Gemini AI: ${currentFile.name || 'Document'}`);
+            
+            // Prepare file contents for Gemini
+            const fileContents = {
+              [currentFile.name || 'Document']: {
+                id: currentFile.id,
+                name: currentFile.name || 'Document',
+                type: currentFile.type || ''
+              }
+            };
+            
+            // Get document analysis from Gemini
+            aiResponseText = await simulateAIResponse(userMessage || '', fileContents);
+            
+            Debug.info('CHAT', `Received document analysis from Gemini AI (${aiResponseText?.length || 0} chars)`);
+          } else {
+            // Regular chat without document analysis
+            aiResponseText = await simulateAIResponse(userMessage || '');
+          }
+          
+          // Add AI response to chat session
+          try {
+            const chatSessionRef = doc(db, "chatSessions", sessionId);
+            
+            const cleanAIResponse = {
+              role: 'assistant',
+              content: aiResponseText || 'I apologize, but I could not generate a response at this time.',
+              timestamp: new Date().toISOString(),
+              fileAnalysis: !!currentFile // Mark as file analysis if relevant
+            };
+            
+            await Debug.measurePerformance('FIREBASE', 'updateChatSessionWithAIResponse', async () => {
+              return updateDoc(chatSessionRef, {
+                messages: arrayUnion(cleanAIResponse)
+              });
+            });
+            
+            // Add AI response to state
+            setChatMessages(prev => [...prev, { 
+              id: 'ai-' + Date.now(), 
+              sender: 'ai', 
+              content: aiResponseText || 'I apologize, but I could not generate a response at this time.', 
+              timestamp: new Date(),
+              fileAnalysis: !!currentFile // Mark as file analysis if relevant
+            }]);
+            
+            Debug.debug('CHAT', 'AI response added to session');
+          } catch (responseError) {
+            Debug.error('CHAT', 'Error saving AI response to Firestore', responseError);
+            throw responseError;
+          }
         } catch (error) {
-          Debug.error('CHAT', 'Error saving AI response', error);
+          Debug.error('CHAT', 'Error generating or saving AI response', error);
+          
+          // Add error message as AI response
+          setChatMessages(prev => [...prev, { 
+            id: 'ai-error-' + Date.now(), 
+            sender: 'ai', 
+            content: `I apologize, but I encountered an error while analyzing your request: ${error.message || 'Unknown error'}. Please try again or rephrase your question.`, 
+            timestamp: new Date()
+          }]);
         } finally {
           setIsLoading(false);
         }
@@ -441,80 +921,127 @@ const Dashboard = () => {
       Debug.error('CHAT', 'Chat error', error);
       setIsLoading(false);
       setChatMessages(prev => prev.filter(msg => msg.id !== tempMessageId));
+      // Show user an error message
+      alert(`An error occurred processing your message: ${error.message || 'Unknown error'}`);
     }
   };
 
-  // Handle file upload for chat
+  // Handle file uploads
   const handleFileUpload = async (file) => {
+    if (!user) {
+      Debug.warn('FILE_UPLOAD', 'Attempted file upload without logged in user');
+      throw new Error('You must be logged in to upload files');
+    }
+    
     if (!file) {
-      Debug.warn('FILE_UPLOAD', 'No file provided to handleFileUpload');
-      return null;
+      Debug.warn('FILE_UPLOAD', 'Attempted file upload with null/undefined file');
+      throw new Error('No file provided for upload');
     }
     
-    if (!currentChatId) {
-      Debug.warn('FILE_UPLOAD', 'No current chat session for file upload');
-      return null;
-    }
-    
-    if (!user || !user.uid) {
-      Debug.error('FILE_UPLOAD', 'No authenticated user for file upload');
-      return null;
-    }
-    
-    Debug.info('FILE_UPLOAD', `Starting file upload for: ${file.name} (${file.type}, ${file.size} bytes)`);
+    Debug.info('FILE_UPLOAD', `Starting file upload process for: ${file.name} (${file.type}, ${file.size} bytes)`);
     
     try {
       // Extract content from file if possible (for PDF, etc.)
       let fileContent = null;
+      let extractionSource = "none";
+      let extractionError = null;
+      
       try {
         Debug.info('FILE_UPLOAD', `Extracting content from file: ${file.name}`);
         fileContent = await extractTextFromFile(file);
+        extractionSource = "client";
         
-        if (fileContent) {
-          Debug.debug('FILE_UPLOAD', `Content extracted successfully, length: ${fileContent.length}`);
+        if (fileContent && typeof fileContent === 'string' && fileContent.trim().length > 0) {
+          Debug.info('FILE_UPLOAD', `Content extracted successfully, length: ${fileContent.length} characters`);
         } else {
-          Debug.warn('FILE_UPLOAD', `No content extracted from file: ${file.name}`);
+          Debug.warn('FILE_UPLOAD', `No valid content extracted from file: ${file.name}`);
+          fileContent = `Unable to extract text content from this ${file.type} file.\n\nFilename: ${file.name}\nFile type: ${file.type}\nFile size: ${(file.size / 1024).toFixed(2)} KB`;
+          extractionSource = "placeholder";
         }
       } catch (error) {
         Debug.error('FILE_UPLOAD', `Error extracting file content from ${file.name}`, error);
-        // Continue with upload even if content extraction fails
-        fileContent = null;
+        // Store the error for saving to Firebase
+        extractionError = {
+          message: error.message || 'Unknown extraction error',
+          name: error.name || 'ExtractionError',
+          timestamp: new Date().toISOString()
+        };
+        
+        // Create descriptive error message as content
+        fileContent = `Error extracting content: ${error.message || 'Unknown error'}\n\nFilename: ${file.name}\nFile type: ${file.type}\nFile size: ${(file.size / 1024).toFixed(2)} KB`;
+        extractionSource = "error";
       }
       
       // Upload file to Firebase Storage
       Debug.debug('FILE_UPLOAD', `Uploading to Firebase Storage: ${file.name}`);
       const storageRef = ref(storage, `uploads/${user.uid}/${Date.now()}_${file.name}`);
       
-      const uploadResult = await uploadBytes(storageRef, file);
-      if (!uploadResult) {
-        throw new Error('Firebase Storage upload failed with empty result');
+      let uploadResult;
+      try {
+        uploadResult = await uploadBytes(storageRef, file);
+        if (!uploadResult) {
+          throw new Error('Firebase Storage upload failed with empty result');
+        }
+        Debug.debug('FILE_UPLOAD', 'Firebase Storage upload successful');
+      } catch (uploadError) {
+        Debug.error('FILE_UPLOAD', 'Error uploading to Firebase Storage', uploadError);
+        throw new Error(`Upload failed: ${uploadError.message || 'Storage error'}`);
       }
       
-      const downloadURL = await getDownloadURL(storageRef);
-      if (!downloadURL) {
-        throw new Error('Failed to get download URL from Firebase Storage');
+      let downloadURL;
+      try {
+        downloadURL = await getDownloadURL(storageRef);
+        if (!downloadURL) {
+          throw new Error('Failed to get download URL from Firebase Storage');
+        }
+        Debug.debug('FILE_UPLOAD', 'Download URL obtained successfully');
+      } catch (urlError) {
+        Debug.error('FILE_UPLOAD', 'Error getting download URL', urlError);
+        throw new Error(`Failed to get download URL: ${urlError.message || 'URL error'}`);
       }
       
       Debug.info('FILE_UPLOAD', `File uploaded to Firebase, URL obtained successfully`);
       
+      // Limit content size to avoid Firestore document size limits (1MB)
+      const MAX_FIRESTORE_CONTENT_LENGTH = 800000; // ~800KB to be safe
+      let extractedContent = fileContent || '';
+      let contentTruncated = false;
+      
+      if (extractedContent.length > MAX_FIRESTORE_CONTENT_LENGTH) {
+        Debug.warn('FILE_UPLOAD', `Truncating extracted content from ${extractedContent.length} to ${MAX_FIRESTORE_CONTENT_LENGTH} characters for Firestore storage`);
+        extractedContent = extractedContent.substring(0, MAX_FIRESTORE_CONTENT_LENGTH);
+        contentTruncated = true;
+      }
+      
       // Store file metadata in Firestore
       const fileData = {
         userId: user.uid,
-        fileName: file.name,
-        fileType: file.type,
-        fileSize: file.size,
+        fileName: file.name || `uploaded_file_${Date.now()}`,
+        fileType: file.type || '',
+        fileSize: file.size || 0,
         uploadedAt: Timestamp.now(),
         downloadURL: downloadURL,
-        extractedContent: fileContent,
-        chatSessionId: currentChatId
+        extractedContent: extractedContent,
+        extractionSource: extractionSource,
+        contentTruncated: contentTruncated,
+        extractionError: extractionError,
+        chatSessionId: currentChatId || null,
+        processingStatus: 'completed'
       };
       
-      Debug.debug('FILE_UPLOAD', 'Saving file metadata to Firestore');
-      const filesCollection = collection(db, "uploadedFiles");
-      const fileDoc = await addDoc(filesCollection, fileData);
-      
-      if (!fileDoc || !fileDoc.id) {
-        throw new Error('Firestore document creation failed');
+      let fileDoc;
+      try {
+        Debug.debug('FILE_UPLOAD', 'Saving file metadata to Firestore');
+        const filesCollection = collection(db, "uploadedFiles");
+        fileDoc = await addDoc(filesCollection, fileData);
+        
+        if (!fileDoc || !fileDoc.id) {
+          throw new Error('Firestore document creation failed');
+        }
+        Debug.debug('FILE_UPLOAD', `File document created with ID: ${fileDoc.id}`);
+      } catch (firestoreError) {
+        Debug.error('FILE_UPLOAD', 'Error saving file metadata to Firestore', firestoreError);
+        throw new Error(`Metadata save failed: ${firestoreError.message || 'Database error'}`);
       }
       
       Debug.info('FILE_UPLOAD', `File metadata saved to Firestore with ID: ${fileDoc.id}`);
@@ -522,9 +1049,15 @@ const Dashboard = () => {
       // Update uploaded files state
       const newFile = {
         id: fileDoc.id,
-        name: file.name,
+        name: file.name || `uploaded_file_${Date.now()}`,
         url: downloadURL,
-        type: file.type,
+        downloadURL: downloadURL,
+        fileUrl: downloadURL,
+        fileName: file.name || `uploaded_file_${Date.now()}`,
+        type: file.type || '',
+        content: fileContent, // Keep the full content in memory for immediate use
+        extractionSource: extractionSource,
+        contentTruncated: contentTruncated,
         ...fileData
       };
       
@@ -545,18 +1078,12 @@ const Dashboard = () => {
           type: file.type,
           size: file.size,
           lastModified: file.lastModified
-        } : null,
-        currentChatId,
-        userAuth: user ? {
-          uid: user.uid,
-          isAnonymous: user.isAnonymous,
-          emailVerified: user.emailVerified
-        } : null,
-        storageInstance: !!storage,
-        databaseInstance: !!db
+        } : 'No file object',
+        currentChat: currentChatId,
+        userID: user?.uid
       });
       
-      return null;
+      throw error;
     }
   };
 
@@ -850,128 +1377,6 @@ const Dashboard = () => {
           analysis: 'In your situation, the key factors to consider would include whether there was a valid offer and acceptance, whether considerations were exchanged, and if there are any defenses to enforcement.'
         },
       ];
-    }
-  };
-
-  // Update the simulateAIResponse function to use Gemini for file analysis
-  const simulateAIResponse = async (input, fileContents = {}) => {
-    // If files are provided and Gemini is available, use it for analysis
-    const fileNames = Object.keys(fileContents);
-    
-    if (fileNames.length > 0) {
-      try {
-        // Create document array for Gemini
-        const documents = [];
-        
-        for (const fileName of fileNames) {
-          const fileDetails = fileContents[fileName];
-          
-          // First check if content is directly available in fileContents
-          if (fileDetails.content) {
-            documents.push({
-              name: fileName,
-              content: fileDetails.content,
-              type: fileDetails.type || 'unknown'
-            });
-            continue;
-          }
-          
-          // If not, try to fetch content from Firestore
-          if (fileDetails.id) {
-            try {
-              const fileDoc = await getDoc(doc(db, "uploadedFiles", fileDetails.id));
-              if (fileDoc.exists()) {
-                const fileData = fileDoc.data();
-                if (fileData.fileContent) {
-                  documents.push({
-                    name: fileName,
-                    content: fileData.fileContent,
-                    type: fileData.fileType || fileDetails.type || 'unknown'
-                  });
-                  continue;
-                }
-              }
-            } catch (err) {
-              console.error(`Error fetching file content for ${fileName}:`, err);
-            }
-          }
-          
-          // If we still don't have content, generate a placeholder based on file type
-          const fileExtension = fileDetails.type || fileName.split('.').pop().toLowerCase() || 'unknown';
-          let placeholderContent;
-          
-          if (fileExtension.includes('pdf')) {
-            placeholderContent = `[PDF Document: ${fileName}]
-            
-This is a placeholder for PDF content that couldn't be extracted.
-The document would contain PDF text content and structure.`;
-          } else if (fileExtension.includes('doc') || fileExtension.includes('word')) {
-            placeholderContent = `[Word Document: ${fileName}]
-            
-This is a placeholder for Word document content that couldn't be extracted.
-The document would contain formatted text and document structure.`;
-          } else {
-            placeholderContent = `[Document: ${fileName}]
-            
-This is a placeholder for document content that couldn't be extracted.
-File type: ${fileExtension}`;
-          }
-          
-          documents.push({
-            name: fileName,
-            content: placeholderContent,
-            type: fileExtension
-          });
-        }
-        
-        // Log document array for debugging
-        console.log('Documents prepared for Gemini:', documents);
-        
-        // Use Gemini to analyze the documents
-        let geminiResponse;
-        try {
-          // If input is empty, ask for a general document summary
-          const query = input.trim() || "Please summarize the key points from this document.";
-          geminiResponse = await analyzeDocumentWithGemini(query, documents);
-        } catch (error) {
-          console.error('Error calling Gemini API:', error);
-          geminiResponse = `I attempted to analyze your document, but encountered an error with the AI service. ${error.message}`;
-        }
-        
-        // Return Gemini's response
-        return geminiResponse;
-      } catch (error) {
-        console.error('Error in document analysis with Gemini:', error);
-        
-        // Fallback to the original file analysis if Gemini fails
-        const fileAnalysisResponses = fileNames.map(fileName => {
-          const fileDetails = fileContents[fileName];
-          const fileExtension = fileDetails.type || 'txt';
-          
-          return `I've analyzed the file "${fileName}" but encountered technical difficulties with the AI processing.
-            
-This appears to be a ${fileExtension.toUpperCase()} file. Unfortunately, I couldn't perform a detailed analysis at this time.
-
-Would you like me to try again or focus on specific aspects of the document?`;
-        });
-        
-        return `${fileAnalysisResponses.join('\n\n')}\n\n${
-          input.trim() ? 
-          `Regarding your question "${input}": I'd be happy to answer once we resolve the document analysis issue.` : 
-          "Please let me know if you have any specific questions about these documents."
-        }`;
-      }
-    }
-    
-    // Original function for non-document queries...
-    if (input.toLowerCase().includes('negligence')) {
-      return "The elements of negligence typically include:\n\n1. Duty of care\n2. Breach of duty\n3. Causation (actual and proximate)\n4. Damages\n\nTo establish negligence, the plaintiff must prove each of these elements. Would you like me to explain any particular element in more detail?";
-    } else if (input.toLowerCase().includes('supreme court')) {
-      return "Recent Supreme Court decisions on IP law include:\n\n1. Google LLC v. Oracle America, Inc. (2021) - Involving copyright protection for APIs\n2. United States v. Arthrex, Inc. (2021) - Addressing the constitutionality of Patent Trial and Appeal Board judge appointments\n\nThese decisions have significantly impacted how intellectual property is protected and challenged. Would you like more specific information about either case?";
-    } else if (input.toLowerCase().includes('demand letter') || input.toLowerCase().includes('draft')) {
-      return "I can help you draft a demand letter for contract breach. Here's a basic template:\n\n[Your Name/Company]\n[Your Address]\n[Date]\n\nRE: Notice of Contract Breach\n\nDear [Recipient],\n\nI am writing to notify you of your breach of our agreement dated [contract date].\n\n[Describe the specific breach and reference relevant contract sections]\n\nAs a result of this breach, I have suffered damages of [amount/description].\n\nPlease [specific demand] within [timeframe] to resolve this matter.\n\nSincerely,\n[Your name]\n\nWould you like me to customize this further based on your specific situation?";
-    } else {
-      return "I understand you're asking about " + input + ". Here's what I can tell you:\n\nLegal questions often require careful analysis of facts, jurisdiction, and applicable laws. While I can provide general information, specific legal advice should come from a qualified attorney familiar with your situation.\n\nCan you provide more details about your question so I can give you more relevant information?";
     }
   };
 
@@ -1410,36 +1815,45 @@ Would you like me to try again or focus on specific aspects of the document?`;
             if (queryError.code === 'failed-precondition' || queryError.message?.includes('index')) {
               Debug.error('DASHBOARD', 'Firestore index error on search history query', queryError);
               
-              // Check for automatic index creation link in error message
-              const indexUrl = getFirestoreIndexUrl(queryError.message);
-              console.log('Firebase Index Creation URL:', indexUrl);
-              
-              const indexErrorMessage = `
-                Search history query requires a Firestore index.
-
-                Required composite index on 'searchHistory' collection:
-                - userId (Ascending)
-                - timestamp (Descending)
-                
-                You can create this index in the Firebase console.
-              `;
-              
-              // Show alert with basic info and direct link
-              if (indexUrl) {
-                if (confirm(indexErrorMessage + '\n\nWould you like to open the Firebase console to create this index?')) {
-                  window.open(indexUrl, '_blank');
-                }
-              } else {
-                alert(indexErrorMessage + '\n\nPlease visit the Firebase console to create this index.');
-              }
-              
-              // Continue with fallback query (unordered, but still shows some data)
+              // First try to automatically repair the search history data
+              Debug.info('DASHBOARD', 'Attempting to auto-repair search history data due to error');
               try {
-                searchHistorySnapshot = await getDocs(testQuery);
-                Debug.info('DASHBOARD', 'Using fallback query without ordering for search history');
-              } catch (fallbackError) {
-                Debug.error('DASHBOARD', 'Even fallback search history query failed', fallbackError);
-                searchHistorySnapshot = { docs: [] };
+                await repairSearchHistoryData(currentUser.uid);
+                Debug.info('DASHBOARD', 'Auto-repair of search history completed, retrying query');
+                
+                // Try the query again after repair
+                try {
+                  searchHistorySnapshot = await getDocs(testQuery);
+                  Debug.info('DASHBOARD', 'Successfully retrieved search history after repair');
+                } catch (retryError) {
+                  Debug.error('DASHBOARD', 'Query still failed after search history repair', retryError);
+                  searchHistorySnapshot = { docs: [] };
+                }
+              } catch (repairError) {
+                Debug.error('DASHBOARD', 'Auto-repair of search history failed', repairError);
+                
+                // Check for automatic index creation link in error message
+                const indexUrl = getFirestoreIndexUrl(queryError.message);
+                console.log('Firebase Index Creation URL:', indexUrl);
+                
+                const indexErrorMessage = `
+                  Search history query requires a Firestore index.
+
+                  Required composite index on 'searchHistory' collection:
+                  - userId (Ascending)
+                  - timestamp (Descending)
+                  
+                  You can create this index in the Firebase console.
+                `;
+                
+                // Continue with fallback query (unordered, but still shows some data)
+                try {
+                  searchHistorySnapshot = await getDocs(testQuery);
+                  Debug.info('DASHBOARD', 'Using fallback query without ordering for search history');
+                } catch (fallbackError) {
+                  Debug.error('DASHBOARD', 'Even fallback search history query failed', fallbackError);
+                  searchHistorySnapshot = { docs: [] };
+                }
               }
             } else {
               // Re-throw other errors
@@ -1660,14 +2074,15 @@ Would you like me to try again or focus on specific aspects of the document?`;
                 setChatInput={setChatInput}
                 handleChatSubmit={handleChatSubmit}
                 isLoading={isLoading}
+                setIsLoading={setIsLoading}
                 userData={userData}
                 handleFileUpload={handleFileUpload}
                 uploadedFiles={uploadedFiles}
                 exportChat={exportChat}
-                isExporting={isExporting}
                 currentChatId={currentChatId}
                 currentFile={currentFile}
                 setCurrentFile={setCurrentFile}
+                isExporting={isExporting}
               />
             </div>
           </div>
