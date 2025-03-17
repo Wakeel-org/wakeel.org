@@ -14,6 +14,7 @@ const Sidebar = ({
   loadChatSession,
   startNewChat,
   deleteChatSession,
+  renameChatSession,
   currentChatId
 }) => {
   const router = useRouter();
@@ -47,47 +48,37 @@ const Sidebar = ({
       </button>
       
       {/* Logo */}
-      <div className="p-4 border-b border-gray-100 dark:border-gray-700">
-        <Link href="/" className="flex items-center justify-center md:justify-start">
-          {isSidebarCollapsed ? (
-            <div className="w-8 h-8 flex items-center justify-center bg-blue-600 rounded-xl text-white font-bold">
-              W
+      <div className="p-4 flex items-center justify-center border-b border-gray-100 dark:border-gray-700">
+        <Link href="/" className="flex items-center">
+          <div className="relative flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mr-2">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
             </div>
-          ) : (
-            <div className="flex items-center">
-              <div className="w-8 h-8 flex items-center justify-center bg-blue-600 rounded-xl text-white font-bold mr-2">
-                W
-              </div>
-              <h1 className="text-xl font-bold text-blue-600">Wakeel.org</h1>
+          </div>
+          {!isSidebarCollapsed && (
+            <div className="flex flex-col">
+              <span className="text-lg font-bold text-gray-800 dark:text-white">Wakeel</span>
+              <span className="text-xs text-gray-500 dark:text-gray-400">Legal AI Assistant</span>
             </div>
           )}
         </Link>
       </div>
       
-      {/* Navigation */}
+      {/* Main Navigation */}
       <div className="flex-1 flex flex-col overflow-hidden py-2">
-        <nav className="px-2 mb-6">
+        <nav className="px-3 mb-4">
           <ul className="space-y-1">
             <li>
               <Link 
                 href="/dashboard" 
-                className={`flex items-center p-2 ${isSidebarCollapsed ? 'justify-center' : ''} text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg`}
+                className={`flex items-center p-2 ${isSidebarCollapsed ? 'justify-center' : ''} text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg bg-blue-50 dark:bg-gray-700`}
               >
                 <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>
-                {!isSidebarCollapsed && <span className="ml-3">Legal Research</span>}
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href="#document-manager" 
-                className={`flex items-center p-2 ${isSidebarCollapsed ? 'justify-center' : ''} text-gray-800 dark:text-gray-200 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg`}
-              >
-                <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                {!isSidebarCollapsed && <span className="ml-3">Documents</span>}
+                {!isSidebarCollapsed && <span className="ml-3">Assistant</span>}
               </Link>
             </li>
             <li>
@@ -149,19 +140,37 @@ const Sidebar = ({
                         <span className="truncate flex-1">
                           {session.title || 'Chat Session'}
                         </span>
-                        <button 
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            if (window.confirm('Are you sure you want to delete this chat?')) {
-                              deleteChatSession(session.id);
-                            }
-                          }}
-                          className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-opacity ml-2"
-                        >
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                          </svg>
-                        </button>
+                        <div className="opacity-0 group-hover:opacity-100 flex items-center">
+                          <button 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              const newTitle = prompt('Rename chat session:', session.title);
+                              if (newTitle && newTitle.trim() !== '') {
+                                renameChatSession(session.id, newTitle.trim());
+                              }
+                            }}
+                            className="text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors ml-2"
+                            aria-label="Rename chat"
+                          >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                          </button>
+                          <button 
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              if (window.confirm('Are you sure you want to delete this chat?')) {
+                                deleteChatSession(session.id);
+                              }
+                            }}
+                            className="text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors ml-2"
+                            aria-label="Delete chat"
+                          >
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                            </svg>
+                          </button>
+                        </div>
                       </button>
                     </li>
                   ))
@@ -177,7 +186,7 @@ const Sidebar = ({
       </div>
       
       {/* Settings and Help - Now at the bottom above user profile */}
-      <div className="border-t border-gray-100 dark:border-gray-700 pt-2 px-2 pb-2">
+      <div className="p-3 mt-auto">
         <ul className="space-y-1">
           <li>
             <button 
@@ -205,56 +214,44 @@ const Sidebar = ({
         </ul>
       </div>
       
-      {/* User Profile Section */}
-      <div className="border-t border-gray-200 dark:border-gray-700 p-4">
-        {isSidebarCollapsed ? (
-          <div className="flex justify-center">
-            {user.photoURL ? (
+      {/* User Profile */}
+      <div className="p-3 border-t border-gray-100 dark:border-gray-700">
+        <div className={`flex ${isSidebarCollapsed ? 'justify-center' : 'justify-between'} items-center`}>
+          <div className="flex items-center">
+            {user?.photoURL ? (
               <img 
                 src={user.photoURL} 
-                alt="Profile" 
-                className="w-8 h-8 rounded-full object-cover"
+                alt={user.displayName || 'User'} 
+                className="w-8 h-8 rounded-full mr-2"
               />
             ) : (
-              <div className="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-semibold">
-                {user.displayName ? user.displayName.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase()}
+              <div className="w-8 h-8 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 mr-2">
+                {user?.displayName ? user.displayName.charAt(0).toUpperCase() : 'U'}
+              </div>
+            )}
+            {!isSidebarCollapsed && (
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
+                  {user?.displayName || 'User'}
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
+                  {user?.email || 'user@example.com'}
+                </p>
               </div>
             )}
           </div>
-        ) : (
-          <>
-            <div className="flex items-center mb-3">
-              {user.photoURL ? (
-                <img 
-                  src={user.photoURL} 
-                  alt="Profile" 
-                  className="w-9 h-9 rounded-full mr-3 object-cover"
-                />
-              ) : (
-                <div className="w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 font-semibold mr-3">
-                  {user.displayName ? user.displayName.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase()}
-                </div>
-              )}
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
-                  {user.displayName || user.email}
-                </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
-                  {userData?.role || 'User'}
-                </p>
-              </div>
-            </div>
-            <button
+          {!isSidebarCollapsed && (
+            <button 
               onClick={handleSignOut}
-              className="w-full flex items-center justify-center p-2 text-gray-800 dark:text-gray-200 hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-600 dark:hover:text-red-400 rounded-lg transition-colors"
+              className="ml-2 text-gray-500 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400"
+              title="Sign out"
             >
-              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
               </svg>
-              Log Out
             </button>
-          </>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
