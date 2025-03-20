@@ -25,10 +25,11 @@ let auth;
 
 if (isBrowser) {
   // Check if Firebase is already initialized to avoid duplicate apps
-  if (!getApps().length) {
+  const apps = getApps();
+  if (apps.length === 0) {
     app = initializeApp(firebaseConfig);
   } else {
-    app = getApps()[0]; // if already initialized, use that one
+    app = apps[0]; // if already initialized, use that one
   }
   
   // Initialize services only on client side
