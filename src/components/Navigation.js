@@ -32,7 +32,8 @@ const Navigation = () => {
   ];
 
   const handleGetStarted = () => {
-    router.push('/auth');
+    // router.push('/auth');
+    window.open('https://wakeel.web.app', '_blank');
   };
   
   const handleSignOut = async () => {
