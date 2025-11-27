@@ -5,6 +5,8 @@ import { useTheme } from '../context/ThemeContext';
 import ThemeToggle from './ThemeToggle';
 import PricingModal from './PricingModal';
 import { getCurrentUser, signOutUser } from '../lib/auth';
+import { Button } from './ui/button';
+import { Menu, X, User } from 'lucide-react';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,28 +56,23 @@ const Navigation = () => {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link 
             href="/" 
-            className="text-xl font-bold 
-              text-light-primary dark:text-dark-primary
-              hover:text-light-accent dark:hover:text-dark-accent 
-              transition-colors"
+            className="text-xl font-bold text-primary hover:text-primary/80 transition-colors"
           >
             Wakeel.org
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             {menuItems.map((item) => (
               item.href ? (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-light-secondary dark:text-dark-secondary
-                    hover:text-light-accent dark:hover:text-dark-accent
-                    transition-colors font-medium"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -83,9 +80,7 @@ const Navigation = () => {
                 <button
                   key={item.label}
                   onClick={item.onClick}
-                  className="text-light-secondary dark:text-dark-secondary
-                    hover:text-light-accent dark:hover:text-dark-accent
-                    transition-colors font-medium"
+                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
                 >
                   {item.label}
                 </button>
@@ -103,43 +98,37 @@ const Navigation = () => {
                     <img 
                       src={user.photoURL} 
                       alt="Profile" 
-                      className="w-8 h-8 rounded-full object-cover border-2 border-light-accent dark:border-dark-accent"
+                      className="w-8 h-8 rounded-full object-cover border border-border"
                     />
                   ) : (
-                    <div className="w-8 h-8 rounded-full bg-light-accent dark:bg-dark-accent flex items-center justify-center text-white dark:text-black font-semibold">
+                    <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-foreground font-semibold">
                       {user.displayName ? user.displayName.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase()}
                     </div>
                   )}
                 </button>
                 
                 {isUserMenuOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-1 z-50 border border-gray-200 dark:border-gray-700">
-                    <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
-                      <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
+                  <div className="absolute right-0 mt-2 w-48 bg-popover rounded-md shadow-md py-1 z-50 border border-border">
+                    <div className="px-4 py-2 border-b border-border">
+                      <p className="text-sm font-medium text-foreground truncate">
                         {user.displayName || user.email}
                       </p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
+                      <p className="text-xs text-muted-foreground truncate">
                         {user.email}
                       </p>
                     </div>
                     <button
-                      onClick={() => handleNavigate('/dashboard')}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    >
-                      Dashboard
-                    </button>
-                    <button
                       onClick={() => {
-                        handleNavigate('/dashboard');
+                        handleNavigate('/');
                         setIsUserMenuOpen(false);
                       }}
-                      className="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="block w-full text-left px-4 py-2 text-sm text-foreground hover:bg-muted"
                     >
-                      Settings
+                      Home
                     </button>
                     <button
                       onClick={handleSignOut}
-                      className="block w-full text-left px-4 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 border-t border-gray-200 dark:border-gray-700"
+                      className="block w-full text-left px-4 py-2 text-sm text-destructive hover:bg-muted border-t border-border"
                     >
                       Log Out
                     </button>
@@ -147,16 +136,9 @@ const Navigation = () => {
                 )}
               </div>
             ) : (
-              <button 
-                className="bg-light-accent text-white dark:bg-dark-accent dark:text-black 
-                  px-4 lg:px-6 py-2 rounded-xl 
-                  hover:bg-light-accent-light dark:hover:bg-dark-accent-light 
-                  transition transform hover:scale-105 hover:shadow-md
-                  text-sm lg:text-base font-medium whitespace-nowrap"
-                onClick={handleGetStarted}
-              >
+              <Button onClick={handleGetStarted}>
                 Get Started
-              </button>
+              </Button>
             )}
 
             <ThemeToggle />
@@ -176,43 +158,37 @@ const Navigation = () => {
                   <img 
                     src={user.photoURL} 
                     alt="Profile" 
-                    className="w-8 h-8 rounded-full object-cover border-2 border-light-accent dark:border-dark-accent"
+                    className="w-8 h-8 rounded-full object-cover border border-border"
                   />
                 ) : (
-                  <div className="w-8 h-8 rounded-full bg-light-accent dark:bg-dark-accent flex items-center justify-center text-white dark:text-black font-semibold">
+                  <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-foreground font-semibold">
                     {user.displayName ? user.displayName.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase()}
                   </div>
                 )}
               </button>
             )}
             
-            <button
-              className="p-2 rounded-xl hover:bg-light-surface-mixed dark:hover:bg-dark-surface-mixed transition-colors"
+            <Button
+              variant="ghost"
+              size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                  d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-              </svg>
-            </button>
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 absolute top-full left-0 right-0 
-            bg-light-surface/95 dark:bg-dark-surface/95 
-            backdrop-blur-lg border-b border-light-border dark:border-dark-border z-40">
+          <nav className="md:hidden py-4 absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border z-40">
             <div className="flex flex-col space-y-4 px-4 sm:px-6">
               {menuItems.map((item) => (
                 item.href ? (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-light-secondary dark:text-dark-secondary
-                      hover:text-light-accent dark:hover:text-dark-accent
-                      transition-colors font-medium text-lg"
+                    className="text-foreground hover:text-primary transition-colors font-medium text-lg"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
@@ -224,9 +200,7 @@ const Navigation = () => {
                       setIsMenuOpen(false);
                       item.onClick();
                     }}
-                    className="text-light-secondary dark:text-dark-secondary
-                      hover:text-light-accent dark:hover:text-dark-accent
-                      transition-colors font-medium text-lg text-left"
+                    className="text-foreground hover:text-primary transition-colors font-medium text-lg text-left"
                   >
                     {item.label}
                   </button>
@@ -234,53 +208,34 @@ const Navigation = () => {
               ))}
               
               {!user && (
-                <button 
-                  className="bg-light-accent dark:bg-dark-accent text-white 
-                    px-6 py-3 rounded-xl 
-                    hover:bg-light-accent/90 dark:hover:bg-dark-accent/90 
-                    transition transform hover:scale-105 hover:shadow-md
-                    text-base font-medium w-full"
+                <Button 
+                  className="w-full"
                   onClick={() => {
                     setIsMenuOpen(false);
                     handleGetStarted();
                   }}
                 >
                   Get Started
-                </button>
+                </Button>
               )}
               
               {user && (
                 <>
                   <button
                     onClick={() => {
-                      handleNavigate('/dashboard');
+                      handleNavigate('/');
                       setIsMenuOpen(false);
                     }}
-                    className="text-left text-light-secondary dark:text-dark-secondary
-                      hover:text-light-accent dark:hover:text-dark-accent
-                      transition-colors font-medium text-lg"
+                    className="text-left text-foreground hover:text-primary transition-colors font-medium text-lg"
                   >
-                    Dashboard
-                  </button>
-                  <button
-                    onClick={() => {
-                      handleNavigate('/dashboard');
-                      setIsMenuOpen(false);
-                    }}
-                    className="text-left text-light-secondary dark:text-dark-secondary
-                      hover:text-light-accent dark:hover:text-dark-accent
-                      transition-colors font-medium text-lg"
-                  >
-                    Settings
+                    Home
                   </button>
                   <button
                     onClick={() => {
                       handleSignOut();
                       setIsMenuOpen(false);
                     }}
-                    className="text-left text-red-600 dark:text-red-400
-                      hover:text-red-700 dark:hover:text-red-300
-                      transition-colors font-medium text-lg"
+                    className="text-left text-destructive hover:text-destructive/80 transition-colors font-medium text-lg"
                   >
                     Log Out
                   </button>
@@ -292,33 +247,27 @@ const Navigation = () => {
         
         {/* Mobile User Menu */}
         {isUserMenuOpen && user && (
-          <div className="md:hidden absolute top-full right-0 mt-2 mr-4 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg py-1 z-50 border border-gray-200 dark:border-gray-700">
-            <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
-              <p className="text-sm font-medium text-gray-900 dark:text-white truncate">
+          <div className="md:hidden absolute top-16 right-0 mt-2 mr-4 w-64 bg-popover rounded-md shadow-lg py-1 z-50 border border-border">
+            <div className="px-4 py-3 border-b border-border">
+              <p className="text-sm font-medium text-foreground truncate">
                 {user.displayName || user.email}
               </p>
-              <p className="text-xs text-gray-500 dark:text-gray-400 truncate">
+              <p className="text-xs text-muted-foreground truncate">
                 {user.email}
               </p>
             </div>
             <button
-              onClick={() => handleNavigate('/dashboard')}
-              className="block w-full text-left px-4 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-            >
-              Dashboard
-            </button>
-            <button
               onClick={() => {
-                handleNavigate('/dashboard');
+                handleNavigate('/');
                 setIsUserMenuOpen(false);
               }}
-              className="block w-full text-left px-4 py-3 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="block w-full text-left px-4 py-3 text-sm text-foreground hover:bg-muted"
             >
-              Settings
+              Home
             </button>
             <button
               onClick={handleSignOut}
-              className="block w-full text-left px-4 py-3 text-sm text-red-600 dark:text-red-400 hover:bg-gray-100 dark:hover:bg-gray-700 border-t border-gray-200 dark:border-gray-700"
+              className="block w-full text-left px-4 py-3 text-sm text-destructive hover:bg-muted border-t border-border"
             >
               Log Out
             </button>
