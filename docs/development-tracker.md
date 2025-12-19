@@ -266,38 +266,39 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
    | Tier | Monthly | Yearly | Target Audience | Savings |
    |------|---------|--------|-----------------|---------|
    | **Free** | PKR 0 | PKR 0 | Individuals & Beginners | - |
-   | **Students** | PKR 199 | PKR 1,999 | Law Students & Learners | 16% |
+   | **Students** | PKR 199 | PKR 1,999 | Law Students & Learners | 17% |
    | **Professionals** | PKR 4,999 | PKR 49,999 | Lawyers, Judges & Advocates | 17% |
    | **Organizations** | Starting from PKR 9,999 | Custom | Firms & Institutions | Custom |
 
    **Pricing Features:**
    
    ✨ **Free Tier**
-   - 5 Legal Document Templates
+   - 25 Daily Legal Queries
+   - 3 Daily Chats with Legal PDF Documents
    - Basic Legal Information
    - Know Your Rights Guide
    - Community Support
-   - 2 GB Storage
    - Mobile Access
    
    🎓 **Students Tier (Popular)**
+   - Includes Free Plan Features
+   - 50 Daily Legal Queries
    - 50 Legal Document Templates
+   - 10 Daily Chats with Legal PDF Documents
    - Advanced Legal Research
    - Study Resources & Guides
    - Case Analysis Tools
-   - Email Support
-   - 25 GB Storage
+   - Community Support
    - Mobile & Web Access
-   - Research Database Access
    
    ⚖️ **Professionals Tier**
+   - Includes Students Plan Features
    - Unlimited Document Templates
    - Premium Legal Research
    - Case Management Tools
    - Advanced Case Analytics
    - Client Portal Access
    - Priority Support
-   - 200 GB Storage
    - API Access
    - Document Automation
    - Precedent Database
@@ -307,7 +308,6 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
    - Unlimited Team Members
    - White-label Options
    - Dedicated Account Manager
-   - Unlimited Storage
    - Custom Workflows
    - Advanced Analytics Dashboard
    - On-premise Deployment Option

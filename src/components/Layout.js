@@ -14,9 +14,10 @@ const Layout = ({ children }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         {/* Favicon */}
-        <link rel="icon" type="image/svg+xml" href="/logo-light.svg" />
-        <link rel="icon" type="image/svg+xml" href="/logo-light.svg" media="(prefers-color-scheme: light)" />
-        <link rel="apple-touch-icon" href="/logo-light.svg" />
+        <link rel="icon" type="image/svg+xml" href="/logo-dark.svg" />
+        <link rel="icon" type="image/svg+xml" href="/logo-dark.svg" media="(prefers-color-scheme: light)" />
+        <link rel="icon" type="image/svg+xml" href="/logo-light.svg" media="(prefers-color-scheme: dark)" />
+        <link rel="apple-touch-icon" href="/logo-dark.svg" />
         
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,7 +49,7 @@ const Layout = ({ children }) => {
               >
                 <div className="relative w-12 h-12 flex-shrink-0">
                   <Image
-                    src="/logo-light.svg"
+                    src="/logo-dark.svg"
                     alt="Wakeel.org Logo"
                     width={48}
                     height={48}
@@ -56,7 +57,7 @@ const Layout = ({ children }) => {
                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   />
                   <Image
-                    src="/logo-dark.svg"
+                    src="/logo-light.svg"
                     alt="Wakeel.org Logo"
                     width={48}
                     height={48}
