@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useTheme } from '../context/ThemeContext';
 import ThemeToggle from './ThemeToggle';
@@ -32,9 +33,29 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           <Link 
             href="/" 
-            className="text-xl font-bold text-primary hover:text-primary/80 transition-colors"
+            className="flex items-center gap-2 sm:gap-3 text-xl font-bold text-primary hover:text-primary/80 transition-colors"
           >
-            Wakeel.org
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+              <Image
+                src="/logo-light.svg"
+                alt="Wakeel.org Logo"
+                width={48}
+                height={48}
+                className="dark:hidden"
+                priority
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              />
+              <Image
+                src="/logo-dark.svg"
+                alt="Wakeel.org Logo"
+                width={48}
+                height={48}
+                className="hidden dark:block"
+                priority
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              />
+            </div>
+            <span className="hidden sm:inline">Wakeel.org</span>
           </Link>
 
           {/* Desktop Navigation */}

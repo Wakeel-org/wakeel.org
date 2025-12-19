@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Image from 'next/image';
 import Navigation from './Navigation';
 import Link from 'next/link';
 import { Linkedin, Facebook, Instagram, Mail, MapPin } from 'lucide-react';
@@ -11,7 +12,15 @@ const Layout = ({ children }) => {
         <title>Wakeel.org - Trusted Guardians of Legal Excellence</title>
         <meta name="description" content="Empowering Justice Through Reliable Solutions - Wakeel.org provides comprehensive legal research, case management, and policy development solutions." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        
+        {/* Favicon */}
+        <link rel="icon" type="image/svg+xml" href="/logo-light.svg" />
+        <link rel="icon" type="image/svg+xml" href="/logo-dark.svg" media="(prefers-color-scheme: dark)" />
+        <link rel="apple-touch-icon" href="/logo-light.svg" />
+        
+        {/* Google Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         {/* Open Graph / Social Media Meta Tags */}
         <meta property="og:title" content="Wakeel.org - Trusted Guardians of Legal Excellence" />
@@ -35,9 +44,27 @@ const Layout = ({ children }) => {
             <div className="col-span-1 sm:col-span-2">
               <Link 
                 href="/"
-                className="text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
+                className="flex items-center gap-3 text-2xl font-bold text-primary hover:text-primary/80 transition-colors w-fit"
               >
-                Wakeel.org
+                <div className="relative w-12 h-12 flex-shrink-0">
+                  <Image
+                    src="/logo-light.svg"
+                    alt="Wakeel.org Logo"
+                    width={48}
+                    height={48}
+                    className="dark:hidden"
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  />
+                  <Image
+                    src="/logo-dark.svg"
+                    alt="Wakeel.org Logo"
+                    width={48}
+                    height={48}
+                    className="hidden dark:block"
+                    style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+                  />
+                </div>
+                <span>Wakeel.org</span>
               </Link>
               <p className="text-muted-foreground mb-6 max-w-md mt-4">
                 Empowering legal professionals with innovative solutions and reliable support for a more efficient and just legal system.

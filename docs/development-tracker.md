@@ -233,8 +233,8 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
 ---
 
 ### Phase 4: Professional Refinements ✅
-**Date:** December 19, 2025 (Current)  
-**Objective:** Professional title, add individuals as target, implement 4-tier Indian pricing
+**Date:** December 19, 2025  
+**Objective:** Professional title, add individuals as target, implement 4-tier Pakistani pricing
 
 #### Changes Made
 
@@ -322,19 +322,268 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
    - State management with React hooks
    - Removed "/month" and "/year" suffixes (clear from toggle)
 
+4. **Contact Sales Modal** 🆕
+   - Created ContactSalesModal.js component
+   - Form fields: name, email, phone, company, message
+   - Saves to `web_sales_query` Firestore collection
+   - Comprehensive validation to prevent spam:
+     - Name: min 2 chars, max 100, no numbers only
+     - Email: proper format, max 100 chars
+     - Phone: min 10 digits, max 15 digits
+     - Company: min 2 chars, max 100 chars
+     - Message: min 10 chars, max 1000 chars
+     - Spam detection: blocks URLs, HTML, keywords
+   - Success/error handling with auto-close
+   - Loading states with spinner
+
 #### Files Modified
 - `src/components/WhoIsThisFor.js`
 - `src/components/Pricing.js`
+- `src/components/ContactSalesModal.js` 🆕
 
 #### Key Improvements
 - 🌍 Professional and engaging title
 - 👥 Emphasis on common citizens (layman)
 - 💰 Pakistani pricing in PKR (Rupees)
 - 🆓 Free tier for accessibility
-- 💼 Professional tiers aligned with user roles (Students, Professionals, Organizations)
+- 💼 Professional tiers aligned with user roles
 - 📊 Monthly/Yearly billing flexibility
 - 💎 Up to 18% savings on annual plans
-- 🤝 "Contact Sales" option for Organizations tier
+- 🤝 "Contact Sales" option with lead capture
+
+---
+
+### Phase 5: Branding, Navigation & Contact Updates ✅
+**Date:** December 19, 2025  
+**Objective:** Complete branding overhaul, navigation restructure, contact info updates, responsive design
+
+#### 1. Database & Form Enhancements
+
+**Email Tracking Field:**
+- Added `email_sent: false` (boolean) to `subscribed_users` collection
+- Enables tracking of newsletter delivery status
+- Default value: `false` (not yet sent)
+
+**Updated Collections:**
+```javascript
+// subscribed_users
+{
+  email: string,
+  subscribedAt: timestamp,
+  status: 'active',
+  email_sent: boolean // 🆕
+}
+
+// web_sales_query (Organizations tier inquiries)
+{
+  name: string,
+  email: string,
+  phone: string,
+  company: string,
+  message: string,
+  timestamp: timestamp,
+  status: 'new',
+  source: 'pricing_page'
+}
+```
+
+#### 2. Contact Information Updates
+
+**Footer Updates:**
+- ✉️ Email: `info@wakeel.org`
+- 📍 Location: Lahore, Pakistan
+- 🔗 Social Media:
+  - Facebook: https://www.facebook.com/aiwakeel
+  - Instagram: https://www.instagram.com/wakeel_org
+  - LinkedIn: https://www.linkedin.com/company/wakeelai/
+- All links open in new tab with proper security attributes
+
+**Contact Page Updates:**
+- Same contact information as footer
+- Social media icons with hover effects
+- Clickable mailto link for email
+- MapPin icon for location
+
+**Files Modified:**
+- `src/components/Layout.js` (Footer)
+- `pages/contact.js`
+- `src/components/EmailSubscription.js`
+
+#### 3. Navigation Restructure
+
+**New Navigation Structure:**
+- Home → `/`
+- About → `#who-is-this-for` (section link)
+- Our Values → `#values` (section link) 🆕
+- Features → `#features` (section link)
+- Pricing → `#pricing` (section link)
+- Contact → `/contact` (separate page)
+
+**Smooth Scroll Implementation:**
+```css
+html {
+  scroll-behavior: smooth;
+}
+```
+
+**Section IDs Added:**
+- `#who-is-this-for` - About section
+- `#values` - Our Values section
+- `#features` - Features section
+- `#pricing` - Pricing section
+
+**Smart Navigation:**
+- Links adjust based on current page
+- Homepage: `#section`
+- Other pages: `/#section`
+- Smooth slide-to-section instead of jump
+
+**Files Modified:**
+- `src/components/Navigation.js`
+- `pages/index.js`
+- `styles/globals.css`
+
+#### 4. Responsive Design Overhaul
+
+**Mobile Optimizations (< 640px):**
+- Enhanced mobile menu with better spacing
+- Scrollable menu if content exceeds viewport
+- Touch-friendly tap targets (py-3 px-4)
+- Full-width buttons
+- Reduced padding and font sizes
+- Hidden decorative elements
+- Compact navigation bar
+
+**Tablet Optimizations (640px - 1024px):**
+- 2-column grid layouts
+- Medium-sized buttons and text
+- Balanced spacing
+
+**Desktop Optimizations (> 1024px):**
+- Full 3-4 column layouts
+- Maximum spacing and padding
+- All visual effects visible
+
+**Component-Specific Improvements:**
+
+**Navigation:**
+- Mobile menu: Opaque background, better organization
+- Logo: Responsive sizing (32px → 48px)
+- Text hidden on very small screens
+
+**Hero Section:**
+- Responsive padding: `py-8 md:py-16 lg:py-24`
+- Font sizes: `4xl sm:5xl md:6xl lg:7xl`
+- Buttons: Full width on mobile
+- Min height: 400px (mobile) → 500px (desktop)
+
+**WhoIsThisFor Section:**
+- Grid: 1 col (mobile) → 2 cols (tablet) → 3 cols (desktop)
+- Optimized card spacing
+- Responsive typography
+
+**Pricing Section:**
+- Billing toggle: Smaller on mobile
+- Grid: 1 col → 2 cols → 4 cols
+- Responsive card scaling
+
+**Files Modified:**
+- `src/components/Navigation.js`
+- `src/components/Hero.js`
+- `src/components/WhoIsThisFor.js`
+- `src/components/Pricing.js`
+- `src/components/Layout.js`
+
+#### 5. Typography & Branding
+
+**Font Family: Space Grotesk**
+- Source: Google Fonts
+- Weights: 300, 400, 500, 600, 700
+- Applied globally via CSS
+- Preconnect for faster loading
+
+**Implementation:**
+```css
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Space Grotesk', sans-serif;
+}
+```
+
+**Logo Design:**
+- **Arabic Text:** "الوكيل" (Al-Wakeel)
+- **English Subtitle:** "THE TRUSTEE, THE DISPOSER OF AFFAIRS"
+- **Format:** SVG with crisp rendering
+- **Variants:**
+  - `logo-light.svg` - Light gray background (#f5f5f5), black text
+  - `logo-dark.svg` - Dark background (#1a1a1a), white text
+- **Styling:** Rounded corners (rx="20", ry="20")
+- **Size:** 120x120px viewBox
+- **Optimization:** `shape-rendering: crispEdges`, `text-rendering: optimizeLegibility`
+
+**Logo Placement:**
+
+1. **Favicon:**
+   - Adaptive: Switches based on color scheme
+   - Default: Light version
+   - Dark mode: Dark version
+   - Apple touch icon support
+
+2. **Navigation:**
+   - Position: Before "Wakeel.org" text
+   - Size: 40px (mobile) → 48px (desktop)
+   - Theme-adaptive (light/dark switch)
+   - Text hidden on very small screens
+
+3. **Footer:**
+   - Position: Before "Wakeel.org" text
+   - Size: 48px fixed
+   - Theme-adaptive
+
+**Files Modified:**
+- `styles/globals.css`
+- `src/components/Layout.js`
+- `src/components/Navigation.js`
+- `public/logo-light.svg` 🆕
+- `public/logo-dark.svg` 🆕
+
+#### 6. FAQs Update
+
+**Updated seedData.js with 7 comprehensive FAQs:**
+1. What is Wakeel.org?
+2. Who can use Wakeel.org? (lists all 6 audiences)
+3. What are your pricing plans? (accurate PKR pricing)
+4. How do I get started? (mentions wakeel.web.app)
+5. What support do you provide? (tier-specific)
+6. How secure is my data?
+7. Where are you located? (Lahore, Pakistan + contact info)
+
+**Files Modified:**
+- `src/lib/firebase/seedData.js`
+
+#### Summary of Phase 5
+
+**Key Achievements:**
+- ✅ Complete branding with custom logos
+- ✅ Modern Space Grotesk typography
+- ✅ Fully responsive across all devices
+- ✅ Enhanced navigation with smooth scrolling
+- ✅ Updated contact information (Lahore-based)
+- ✅ Comprehensive form validation
+- ✅ Lead capture system for enterprise
+- ✅ Updated FAQs with current information
+- ✅ Theme-adaptive logos
+- ✅ Mobile-optimized experience
+
+**Impact:**
+- 🎨 Professional, cohesive brand identity
+- 📱 Seamless mobile experience
+- 🔗 Improved navigation UX
+- 📧 Better lead generation
+- 🌍 Accurate location and contact info
+- ♿ Enhanced accessibility
+- ⚡ Faster, smoother interactions
 
 ---
 
@@ -490,7 +739,23 @@ pages/
   id: string,
   email: string,
   timestamp: timestamp,
-  source: string // 'homepage', 'footer', etc.
+  source: string, // 'homepage', 'footer', etc.
+  email_sent: boolean // 🆕 Track newsletter delivery status (default: false)
+}
+```
+
+#### `web_sales_query` 🆕
+```javascript
+{
+  id: string,
+  name: string,
+  email: string,
+  phone: string,
+  company: string,
+  message: string,
+  timestamp: timestamp,
+  status: string, // 'new', 'contacted', 'closed'
+  source: string // 'pricing_page'
 }
 ```
 
@@ -662,5 +927,5 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
 ---
 
 **Last Updated:** December 19, 2025  
-**Document Version:** 1.0  
+**Document Version:** 2.0  
 **Next Review:** January 19, 2026
