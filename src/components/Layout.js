@@ -11,13 +11,19 @@ const Layout = ({ children }) => {
       <Head>
         <title>Wakeel.org - Trusted Guardians of Legal Excellence</title>
         <meta name="description" content="Empowering Justice Through Reliable Solutions - Wakeel.org provides comprehensive legal research, case management, and policy development solutions." />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, user-scalable=yes, viewport-fit=cover" />
+        <meta name="author" content="Wakeel.org" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
         
         {/* Favicon */}
-        <link rel="icon" type="image/svg+xml" href="/logo-dark.svg" />
-        <link rel="icon" type="image/svg+xml" href="/logo-dark.svg" media="(prefers-color-scheme: light)" />
+        <link rel="icon" type="image/svg+xml" href="/logo-light.svg" />
+        <link rel="icon" type="image/svg+xml" href="/logo-light.svg" media="(prefers-color-scheme: light)" />
         <link rel="icon" type="image/svg+xml" href="/logo-light.svg" media="(prefers-color-scheme: dark)" />
-        <link rel="apple-touch-icon" href="/logo-dark.svg" />
+        <link rel="apple-touch-icon" href="/logo-light.svg" />
+        <link rel="shortcut icon" href="/logo-light.svg" />
         
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,6 +35,11 @@ const Layout = ({ children }) => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://wakeel.org" />
         <meta property="og:image" content="https://wakeel.org/og-image.jpg" />
+        <meta property="og:site_name" content="Wakeel.org" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Additional Meta Tags for AI Search Engines */}
+        <meta name="AI-content-declaration" content="This website uses AI assistance for content creation while maintaining human oversight and accuracy" />
       </Head>
 
       <nav className="fixed top-0 w-full bg-background backdrop-blur-lg z-50 border-b border-border shadow-sm">
@@ -89,16 +100,30 @@ const Layout = ({ children }) => {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold text-foreground mb-4">Quick Links</h3>
               <ul className="space-y-3">
-                {['About', 'Services', 'Contact', 'Blog'].map((item, index) => (
-                  <li key={index}>
-                    <Link 
-                      href={`/${item.toLowerCase()}`}
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link 
+                    href="/about"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/contact"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Contact
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    href="/journal"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Journal
+                  </Link>
+                </li>
               </ul>
             </div>
 

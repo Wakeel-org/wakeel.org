@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
+import Head from 'next/head';
 import Layout from '../src/components/Layout';
 import Image from 'next/image';
 import { getTeamMembers, getCompanyTimeline } from '../src/lib/firebase/collections';
@@ -62,6 +63,59 @@ const AboutPage = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>About Us - Legal Technology Innovation Leaders | Wakeel.org</title>
+        <meta name="description" content="Learn about Wakeel.org, a pioneering legal technology company serving 50+ countries with AI-powered legal solutions. Meet our team and discover our mission to transform legal practice." />
+        <meta name="keywords" content="legal technology company, AI legal solutions, legal tech innovation, legal research platform, case management solutions, Wakeel.org team, legal software provider" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://wakeel.org/about" />
+        <meta property="og:title" content="About Us - Legal Technology Innovation Leaders | Wakeel.org" />
+        <meta property="og:description" content="Learn about Wakeel.org, a pioneering legal technology company serving 50+ countries with AI-powered legal solutions. Meet our team and discover our mission." />
+        <meta property="og:image" content="https://wakeel.org/og-about.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://wakeel.org/about" />
+        <meta name="twitter:title" content="About Us - Legal Technology Innovation Leaders | Wakeel.org" />
+        <meta name="twitter:description" content="Pioneering legal technology company serving 50+ countries with AI-powered legal solutions." />
+        <meta name="twitter:image" content="https://wakeel.org/og-about.jpg" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://wakeel.org/about" />
+        
+        {/* Structured Data for Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Wakeel.org",
+              "description": "Leading legal technology company providing AI-powered legal research, case management, and policy development solutions",
+              "url": "https://wakeel.org",
+              "logo": "https://wakeel.org/logo-dark.svg",
+              "foundingDate": "2020",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Lahore",
+                "addressCountry": "Pakistan"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "info@wakeel.org",
+                "contactType": "Customer Service"
+              },
+              "sameAs": [
+                "https://www.facebook.com/aiwakeel",
+                "https://www.instagram.com/wakeel_org",
+                "https://www.linkedin.com/company/wakeelai/"
+              ]
+            })
+          }}
+        />
+      </Head>
       {/* Hero Section */}
       <section className="pt-20 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto">

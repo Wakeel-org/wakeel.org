@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Layout from '../src/components/Layout';
 import Hero from '../src/components/Hero';
 import WhoIsThisFor from '../src/components/WhoIsThisFor';
@@ -9,6 +10,134 @@ import EmailSubscription from '../src/components/EmailSubscription';
 export default function Home() {
   return (
     <Layout>
+      <Head>
+        <title>Wakeel.org - AI-Powered Legal Technology Solutions | Case Management & Research</title>
+        <meta name="description" content="Transform your legal practice with Wakeel.org's AI-powered legal research, case management, and policy development solutions. Trusted by 10,000+ legal professionals in 50+ countries." />
+        <meta name="keywords" content="legal technology, AI legal research, case management software, legal AI tools, legal practice management, legal research platform, AI lawyer assistant, legal document automation, law firm software" />
+        
+        {/* PWA Support */}
+        <link rel="manifest" href="/manifest.json" />
+        
+        {/* Geo Tags */}
+        <meta name="geo.region" content="PK-PB" />
+        <meta name="geo.placename" content="Lahore" />
+        <meta name="geo.position" content="31.5204;74.3587" />
+        <meta name="ICBM" content="31.5204, 74.3587" />
+        
+        {/* Mobile Optimization */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Wakeel.org" />
+        
+        {/* Theme Color for different devices */}
+        <meta name="theme-color" content="#3b82f6" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#1e40af" media="(prefers-color-scheme: dark)" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://wakeel.org" />
+        <meta property="og:title" content="Wakeel.org - AI-Powered Legal Technology Solutions" />
+        <meta property="og:description" content="Transform your legal practice with AI-powered legal research, case management, and policy development solutions. Trusted by 10,000+ legal professionals." />
+        <meta property="og:image" content="https://wakeel.org/og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://wakeel.org" />
+        <meta name="twitter:title" content="Wakeel.org - AI-Powered Legal Technology Solutions" />
+        <meta name="twitter:description" content="Transform your legal practice with AI-powered legal research and case management solutions." />
+        <meta name="twitter:image" content="https://wakeel.org/og-image.jpg" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://wakeel.org" />
+        
+        {/* Structured Data for Website & Service */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Wakeel.org",
+              "url": "https://wakeel.org",
+              "description": "AI-powered legal technology platform for legal research, case management, and policy development",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Wakeel.org",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://wakeel.org/logo-dark.svg"
+                },
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Lahore",
+                  "addressRegion": "Punjab",
+                  "addressCountry": "PK"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "31.5204",
+                  "longitude": "74.3587"
+                },
+                "areaServed": {
+                  "@type": "GeoCircle",
+                  "geoMidpoint": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "31.5204",
+                    "longitude": "74.3587"
+                  },
+                  "geoRadius": "20000000"
+                }
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://wakeel.org/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "Wakeel.org Legal Technology Platform",
+              "applicationCategory": "BusinessApplication",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2020-01-01"
+              },
+              "operatingSystem": "Web, iOS, Android, Windows, MacOS, Linux",
+              "browserRequirements": "Requires JavaScript. Requires HTML5.",
+              "description": "Comprehensive legal technology solution offering AI-powered legal research, case management, and policy development tools",
+              "featureList": "Legal Research, Case Management, Document Automation, Policy Development, AI-Powered Analysis",
+              "screenshot": "https://wakeel.org/og-image.jpg",
+              "provider": {
+                "@type": "Organization",
+                "name": "Wakeel.org",
+                "url": "https://wakeel.org"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "ratingCount": "1500",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
+              "applicationSubCategory": "Legal Technology, Practice Management, Legal Research",
+              "downloadUrl": "https://wakeel.web.app",
+              "softwareVersion": "2.0",
+              "releaseNotes": "Enhanced AI capabilities, improved case management, and expanded legal research database"
+            })
+          }}
+        />
+      </Head>
       <Hero />
       
       {/* Who Is This For Section */}

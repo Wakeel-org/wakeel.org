@@ -37,7 +37,7 @@ const Navigation = () => {
           >
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
               <Image
-                src="/logo-light.svg"
+                src="/logo-dark.svg"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}
@@ -46,7 +46,7 @@ const Navigation = () => {
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
               <Image
-                src="/logo-dark.svg"
+                src="/logo-light.svg"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}

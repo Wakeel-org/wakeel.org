@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Head from 'next/head';
 import Layout from '../src/components/Layout';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from '../src/lib/firebase';
@@ -173,6 +174,58 @@ const ContactPage = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>Contact Us - Get in Touch with Legal Tech Experts | Wakeel.org</title>
+        <meta name="description" content="Contact Wakeel.org for legal technology solutions, support, and inquiries. Our team is available 24/7 to help you transform your legal practice with AI-powered tools." />
+        <meta name="keywords" content="contact Wakeel.org, legal tech support, legal technology inquiry, AI legal solutions contact, case management support, legal research help" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://wakeel.org/contact" />
+        <meta property="og:title" content="Contact Us - Get in Touch with Legal Tech Experts | Wakeel.org" />
+        <meta property="og:description" content="Contact Wakeel.org for legal technology solutions, support, and inquiries. Our team is available 24/7 to help you transform your legal practice." />
+        <meta property="og:image" content="https://wakeel.org/og-contact.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://wakeel.org/contact" />
+        <meta name="twitter:title" content="Contact Us - Get in Touch with Legal Tech Experts | Wakeel.org" />
+        <meta name="twitter:description" content="Contact Wakeel.org for legal technology solutions and support. Available 24/7." />
+        <meta name="twitter:image" content="https://wakeel.org/og-contact.jpg" />
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://wakeel.org/contact" />
+        
+        {/* Structured Data for Contact Page */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "name": "Contact Wakeel.org",
+              "description": "Get in touch with Wakeel.org for legal technology solutions and support",
+              "url": "https://wakeel.org/contact",
+              "mainEntity": {
+                "@type": "Organization",
+                "name": "Wakeel.org",
+                "email": "info@wakeel.org",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Lahore",
+                  "addressCountry": "Pakistan"
+                },
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "email": "info@wakeel.org",
+                  "contactType": "Customer Service",
+                  "availableLanguage": ["English", "Urdu"]
+                }
+              }
+            })
+          }}
+        />
+      </Head>
       {/* Hero Section */}
       <section className="pt-16 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 bg-muted/30 relative overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">

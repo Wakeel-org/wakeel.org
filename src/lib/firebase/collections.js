@@ -26,4 +26,13 @@ export const getFaqs = async () => {
     id: doc.id,
     ...doc.data()
   }));
+};
+
+export const getBlogPosts = async () => {
+  const q = query(collection(db, 'blog_posts'), orderBy('createdAt', 'desc'));
+  const querySnapshot = await getDocs(q);
+  return querySnapshot.docs.map(doc => ({
+    id: doc.id,
+    ...doc.data()
+  }));
 }; 
