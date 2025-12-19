@@ -32,8 +32,8 @@ const PricingModal = ({ isOpen, onClose }) => {
   const handleSelectPlan = (planId) => {
     // Close the modal
     onClose();
-    // Navigate to auth page with the selected plan as a query parameter
-    router.push(`/auth?plan=${planId}`);
+    // Open the main app with the selected plan
+    window.open('https://wakeel.web.app', '_blank');
   };
   
   if (!isOpen) return null;

@@ -1,7 +1,5 @@
 import { initializeApp, getApps } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage';
-import { getAuth } from 'firebase/auth';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,8 +18,6 @@ const isBrowser = typeof window !== 'undefined';
 // Initialize Firebase only on the client side
 let app;
 let db;
-let storage;
-let auth;
 
 if (isBrowser) {
   // Check if Firebase is already initialized to avoid duplicate apps
@@ -34,13 +30,9 @@ if (isBrowser) {
   
   // Initialize services only on client side
   db = getFirestore(app);
-  storage = getStorage(app);
-  auth = getAuth(app);
 } else {
   // Server-side: provide empty implementations or mocks if needed
   db = null;
-  storage = null;
-  auth = null;
 }
 
-export { db, storage, auth }; 
+export { db }; 
