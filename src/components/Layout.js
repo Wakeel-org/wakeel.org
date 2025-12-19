@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
         
         {/* Favicon */}
         <link rel="icon" type="image/svg+xml" href="/logo-light.svg" />
-        <link rel="icon" type="image/svg+xml" href="/logo-dark.svg" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" type="image/svg+xml" href="/logo-light.svg" media="(prefers-color-scheme: light)" />
         <link rel="apple-touch-icon" href="/logo-light.svg" />
         
         {/* Google Fonts */}

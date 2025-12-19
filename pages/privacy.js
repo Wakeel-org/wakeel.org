@@ -130,9 +130,9 @@ const PrivacyPolicy = () => {
               If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:
             </p>
             <div className="mt-4">
-              <p><strong>Email:</strong> privacy@wakeel.org</p>
-              <p><strong>Address:</strong> Wakeel.org Headquarters, 123 Legal Avenue, Suite 500, San Francisco, CA 94105</p>
-              <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+              <p><strong>Email:</strong> info@wakeel.org</p>
+              <p><strong>Location:</strong> Lahore, Pakistan</p>
+              <p><strong>Website:</strong> https://wakeel.org</p>
             </div>
           </section>
         </div>

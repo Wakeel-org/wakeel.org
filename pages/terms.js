@@ -32,7 +32,7 @@ const TermsOfService = () => {
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">2. Services Description</h2>
             <p>
-              Wakeel.org provides legal technology solutions, including legal research tools, case management software, document automation, and related services designed for legal professionals ("Services"). We reserve the right to modify, suspend, or discontinue any part of our Services at any time without prior notice.
+              Wakeel.org provides a comprehensive legal research platform designed for everyone in the legal ecosystem - from individuals and students to lawyers, judges, and organizations. Our platform includes access to case law, statutes, legal guides, and research tools ("Services"). We reserve the right to modify, suspend, or discontinue any part of our Services at any time without prior notice.
             </p>
           </section>
           
@@ -49,7 +49,7 @@ const TermsOfService = () => {
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">4. Subscription and Payment Terms</h2>
             <p>
-              Some of our Services require payment of fees on a subscription basis ("Subscription Services"). By subscribing to such Services, you agree to pay all applicable fees as specified at the time of purchase.
+              We offer multiple pricing tiers to serve different user needs: Free (PKR 0), Students (PKR 199/month or PKR 1,999/year), Professionals (PKR 4,999/month or PKR 49,999/year), and Organizations (custom pricing starting from PKR 9,999). By subscribing to paid Services, you agree to pay all applicable fees as specified at the time of purchase.
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-2">
               <li><strong>Billing Cycle:</strong> Subscription fees are billed in advance on either a monthly or annual basis, depending on the subscription plan you select.</li>
@@ -130,7 +130,7 @@ const TermsOfService = () => {
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">12. Governing Law and Jurisdiction</h2>
             <p>
-              These Terms shall be governed by and construed in accordance with the laws of the State of California, without regard to its conflict of law provisions. You agree to submit to the personal and exclusive jurisdiction of the courts located in San Francisco County, California for the resolution of any disputes arising out of or relating to these Terms or the Services.
+              These Terms shall be governed by and construed in accordance with the laws of Pakistan, without regard to its conflict of law provisions. You agree to submit to the personal and exclusive jurisdiction of the courts located in Lahore, Pakistan for the resolution of any disputes arising out of or relating to these Terms or the Services.
             </p>
           </section>
           
@@ -147,9 +147,9 @@ const TermsOfService = () => {
               If you have any questions about these Terms, please contact us at:
             </p>
             <div className="mt-4">
-              <p><strong>Email:</strong> legal@wakeel.org</p>
-              <p><strong>Address:</strong> Wakeel.org Headquarters, 123 Legal Avenue, Suite 500, San Francisco, CA 94105</p>
-              <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+              <p><strong>Email:</strong> info@wakeel.org</p>
+              <p><strong>Location:</strong> Lahore, Pakistan</p>
+              <p><strong>Website:</strong> https://wakeel.org</p>
             </div>
           </section>
         </div>
