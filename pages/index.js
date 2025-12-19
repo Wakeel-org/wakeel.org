@@ -12,18 +12,24 @@ export default function Home() {
       <Hero />
       
       {/* Who Is This For Section */}
-      <WhoIsThisFor />
+      <div id="who-is-this-for">
+        <WhoIsThisFor />
+      </div>
       
       {/* Values Section */}
-      <section className="py-20 sm:py-24 bg-background">
+      <section id="values" className="py-20 sm:py-24 bg-background">
         <Values />
       </section>
       
       {/* Features/Services Section */}
-      <Features />
+      <div id="features">
+        <Features />
+      </div>
       
       {/* Pricing Section */}
-      <Pricing />
+      <div id="pricing">
+        <Pricing />
+      </div>
       
       {/* Call to Action Section with Email Subscription */}
       <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/50 via-muted/30 to-background">

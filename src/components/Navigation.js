@@ -15,7 +15,8 @@ const Navigation = () => {
   
   const menuItems = [
     { label: 'Home', href: '/' },
-    { label: 'Who Is This For', href: isHomePage ? '#who-is-this-for' : '/#who-is-this-for' },
+    { label: 'About', href: isHomePage ? '#who-is-this-for' : '/#who-is-this-for' },
+    { label: 'Values', href: isHomePage ? '#values' : '/#values' },
     { label: 'Features', href: isHomePage ? '#features' : '/#features' },
     { label: 'Pricing', href: isHomePage ? '#pricing' : '/#pricing' },
     { label: 'Contact', href: '/contact' }
