@@ -240,7 +240,7 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
 
 1. **"Who Is This For" Section Refinement**
    
-   **New Title:** "Empowering Every Legal Mind"
+   **New Title:** "Empowering Every Mind"
    
    **Updated Description:**
    > "From individuals seeking to understand their rights to institutions shaping legal frameworks — our platform serves everyone in the legal ecosystem with tailored solutions for every need."

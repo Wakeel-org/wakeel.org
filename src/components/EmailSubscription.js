@@ -29,7 +29,8 @@ const EmailSubscription = () => {
       await addDoc(collection(db, 'subscribed_users'), {
         email,
         subscribedAt: Timestamp.now(),
-        status: 'active'
+        status: 'active',
+        email_sent: false
       });
 
       setEmail('');

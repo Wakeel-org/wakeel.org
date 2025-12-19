@@ -176,7 +176,7 @@ const PricingModal = ({ isOpen, onClose }) => {
           
           <div className="text-center text-sm text-muted-foreground bg-muted rounded-xl p-4">
             <p className="font-medium text-foreground mb-1">All plans include:</p>
-            <p>14-day free trial • No credit card required • Cancel anytime</p>
+            <p>7-day free trial • No credit card required • Cancel anytime</p>
           </div>
         </div>
       </div>

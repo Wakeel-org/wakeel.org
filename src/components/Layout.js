@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Navigation from './Navigation';
 import Link from 'next/link';
-import { Linkedin, Twitter, Mail, Phone } from 'lucide-react';
+import { Linkedin, Facebook, Instagram, Mail, MapPin } from 'lucide-react';
 
 const Layout = ({ children }) => {
   return (
@@ -43,13 +43,17 @@ const Layout = ({ children }) => {
                 Empowering legal professionals with innovative solutions and reliable support for a more efficient and just legal system.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://www.facebook.com/aiwakeel" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <span className="sr-only">Facebook</span>
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="https://www.instagram.com/wakeel_org" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <span className="sr-only">Instagram</span>
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="https://www.linkedin.com/company/wakeelai/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                   <span className="sr-only">LinkedIn</span>
                   <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                  <span className="sr-only">Twitter</span>
-                  <Twitter className="w-5 h-5" />
                 </a>
               </div>
             </div>
@@ -75,11 +79,13 @@ const Layout = ({ children }) => {
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-center">
                   <Mail className="w-4 h-4 mr-3 text-primary" />
-                  info@wakeel.org
+                  <a href="mailto:info@wakeel.org" className="hover:text-primary transition-colors">
+                    info@wakeel.org
+                  </a>
                 </li>
                 <li className="flex items-center">
-                  <Phone className="w-4 h-4 mr-3 text-primary" />
-                  +1 (555) 123-4567
+                  <MapPin className="w-4 h-4 mr-3 text-primary" />
+                  Lahore, Pakistan
                 </li>
               </ul>
             </div>

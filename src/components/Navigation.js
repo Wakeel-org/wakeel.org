@@ -11,12 +11,13 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPricingModalOpen, setIsPricingModalOpen] = useState(false);
   const router = useRouter();
+  const isHomePage = router.pathname === '/';
   
   const menuItems = [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    // { label: 'Services', href: '/services' }, // Commented out for now
-    { label: 'Pricing', onClick: () => setIsPricingModalOpen(true) },
+    { label: 'Who Is This For', href: isHomePage ? '#who-is-this-for' : '/#who-is-this-for' },
+    { label: 'Features', href: isHomePage ? '#features' : '/#features' },
+    { label: 'Pricing', href: isHomePage ? '#pricing' : '/#pricing' },
     { label: 'Contact', href: '/contact' }
   ];
 
@@ -38,23 +39,13 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {menuItems.map((item) => (
-              item.href ? (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <button
-                  key={item.label}
-                  onClick={item.onClick}
-                  className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-                >
-                  {item.label}
-                </button>
-              )
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                {item.label}
+              </Link>
             ))}
             
             <Button onClick={handleGetStarted}>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Check, Smartphone, GraduationCap, Scale, Building, Sparkles } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from './ui/card';
 import { Button } from './ui/button';
+import ContactSalesModal from './ContactSalesModal';
 
 const pricingPlans = [
   {
@@ -86,9 +87,14 @@ const pricingPlans = [
 
 const Pricing = () => {
   const [billingCycle, setBillingCycle] = useState('monthly'); // 'monthly' or 'yearly'
+  const [isContactSalesOpen, setIsContactSalesOpen] = useState(false);
 
-  const handleSelectPlan = (planName) => {
-    window.open('https://wakeel.web.app', '_blank');
+  const handleSelectPlan = (plan) => {
+    if (plan.contactSales) {
+      setIsContactSalesOpen(true);
+    } else {
+      window.open('https://wakeel.web.app', '_blank');
+    }
   };
 
   return (
@@ -103,7 +109,7 @@ const Pricing = () => {
             Choose Your Plan
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-[900px] mx-auto leading-relaxed mb-8">
-            Select the perfect plan for your legal needs. All paid plans include a 14-day free trial with no credit card required.
+            Select the perfect plan for your legal needs. All paid plans include a 7-day free trial with no credit card required.
           </p>
 
           {/* Billing Cycle Toggle */}
@@ -194,7 +200,7 @@ const Pricing = () => {
                       : 'hover:shadow-lg'
                   }`}
                   variant={plan.popular ? 'default' : plan.monthlyPrice === 'PKR 0' ? 'outline' : 'outline'}
-                  onClick={() => handleSelectPlan(plan.name)}
+                  onClick={() => handleSelectPlan(plan)}
                 >
                   {plan.contactSales ? 'Contact Sales' : plan.monthlyPrice === 'PKR 0' ? 'Get Started Free' : 'Get Started'}
                 </Button>
@@ -208,12 +214,18 @@ const Pricing = () => {
             <CardContent className="px-8 py-4">
               <p className="text-sm text-muted-foreground">
                 <span className="font-semibold text-foreground">All paid plans include:</span>
-                {' '}14-day free trial • No credit card required • Cancel anytime
+                {' '}7-day free trial • No credit card required • Cancel anytime
               </p>
             </CardContent>
           </Card>
         </div>
       </div>
+
+      {/* Contact Sales Modal */}
+      <ContactSalesModal 
+        isOpen={isContactSalesOpen}
+        onClose={() => setIsContactSalesOpen(false)}
+      />
     </section>
   );
 };

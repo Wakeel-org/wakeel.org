@@ -47,7 +47,7 @@ const WhoIsThisFor = () => {
       <div className="container max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">
-            Empowering Every Legal Mind
+            Empowering Every Mind
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-[900px] mx-auto leading-relaxed">
             From individuals seeking to understand their rights to institutions shaping legal frameworks — 

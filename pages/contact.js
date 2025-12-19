@@ -6,7 +6,7 @@ import { getFaqs } from '../src/lib/firebase/collections';
 import { Card, CardContent, CardHeader, CardTitle } from '../src/components/ui/card';
 import { Input } from '../src/components/ui/input';
 import { Button } from '../src/components/ui/button';
-import { Mail, Phone, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
+import { Mail, Phone, MapPin, ChevronDown, ChevronUp, Facebook, Instagram, Linkedin } from 'lucide-react';
 import { cn } from '../src/lib/utils';
 
 const ContactPage = () => {
@@ -159,18 +159,15 @@ const ContactPage = () => {
   const contactInfo = [
     {
       title: 'Email',
-      value: 'contact@wakeel.org',
-      icon: Mail
-    },
-    {
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
-      icon: Phone
+      value: 'info@wakeel.org',
+      icon: Mail,
+      link: 'mailto:info@wakeel.org'
     },
     {
       title: 'Location',
-      value: 'San Francisco, CA',
-      icon: MapPin
+      value: 'Lahore, Pakistan',
+      icon: MapPin,
+      link: null
     }
   ];
 
@@ -320,16 +317,42 @@ const ContactPage = () => {
                       <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
                         <info.icon className="w-5 h-5" />
                       </div>
-                      <div>
+                      <div className="flex-grow">
                         <h3 className="text-sm font-semibold text-foreground">
                           {info.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {info.value}
-                        </p>
+                        {info.link ? (
+                          <a href={info.link} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="text-sm text-muted-foreground">
+                            {info.value}
+                          </p>
+                        )}
                       </div>
                     </div>
                   ))}
+                  
+                  {/* Social Media Links */}
+                  <div className="pt-2">
+                    <div className="flex items-center space-x-3 p-3">
+                      <div className="flex gap-4">
+                        <a href="https://www.facebook.com/aiwakeel" target="_blank" rel="noopener noreferrer" 
+                          className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
+                          <Facebook className="w-5 h-5" />
+                        </a>
+                        <a href="https://www.instagram.com/wakeel_org" target="_blank" rel="noopener noreferrer" 
+                          className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
+                          <Instagram className="w-5 h-5" />
+                        </a>
+                        <a href="https://www.linkedin.com/company/wakeelai/" target="_blank" rel="noopener noreferrer" 
+                          className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
+                          <Linkedin className="w-5 h-5" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
