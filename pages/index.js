@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       
       {/* Values Section */}
-      <section className="py-16 sm:py-20 bg-background">
+      <section className="py-20 sm:py-24 bg-background">
         <Values />
       </section>
       
@@ -18,13 +18,13 @@ export default function Home() {
       <Features />
       
       {/* Call to Action Section with Email Subscription */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tighter text-foreground">
+      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/50 via-muted/30 to-background">
+        <div className="max-w-4xl mx-auto text-center space-y-10">
+          <div className="space-y-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter text-foreground">
               Ready to Transform Your Legal Practice?
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Join thousands of legal professionals who trust Wakeel.org for their legal technology needs.
             </p>
           </div>

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Search, Briefcase, FileText, GraduationCap, ArrowRight } from 'lucide-react';
+import { Search, Briefcase, FileText, GraduationCap } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
 
 const features = [
   {
@@ -34,40 +33,32 @@ const Features = () => {
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-muted/50">
       <div className="container max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">
             Comprehensive Legal Solutions
           </h2>
-          <p className="text-lg text-muted-foreground max-w-[800px] mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-[900px] mx-auto leading-relaxed">
             Empowering legal professionals with innovative tools and services designed to enhance 
             efficiency, accuracy, and excellence in legal practice.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <Card 
               key={index} 
-              className={`${feature.span} hover:shadow-lg transition-all duration-300 border-muted`}
+              className={`${feature.span} hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-muted/50 bg-card/50 backdrop-blur-sm`}
             >
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary">
-                  <feature.icon className="w-6 h-6" />
+                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300">
+                  <feature.icon className="w-7 h-7" />
                 </div>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl">{feature.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex flex-col h-[calc(100%-88px)] justify-between">
-                <p className="text-muted-foreground mb-6">
+              <CardContent>
+                <p className="text-muted-foreground leading-relaxed">
                   {feature.description}
                 </p>
-                
-                <div>
-                  <Button variant="link" className="p-0 h-auto text-primary group" asChild>
-                    <a href="#" className="flex items-center gap-1">
-                      Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  </Button>
-                </div>
               </CardContent>
             </Card>
           ))}
