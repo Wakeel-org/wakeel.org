@@ -43,19 +43,19 @@ const audiences = [
 
 const WhoIsThisFor = () => {
   return (
-    <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="container max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4 sm:mb-6">
             Empowering Every Mind
           </h2>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-[900px] mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-[900px] mx-auto leading-relaxed px-4">
             From individuals seeking to understand their rights to institutions shaping legal frameworks — 
             our platform serves everyone in the legal ecosystem with tailored solutions for every need.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {audiences.map((audience, index) => (
             <Card 
               key={index} 

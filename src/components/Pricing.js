@@ -116,7 +116,7 @@ const Pricing = () => {
           <div className="inline-flex items-center gap-1 p-1 bg-muted rounded-lg">
             <button
               onClick={() => setBillingCycle('monthly')}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-all ${
+              className={`px-4 sm:px-6 py-2 rounded-md text-xs sm:text-sm font-medium transition-all ${
                 billingCycle === 'monthly'
                   ? 'bg-background text-foreground shadow-sm'
                   : 'text-muted-foreground hover:text-foreground'
@@ -126,14 +126,14 @@ const Pricing = () => {
             </button>
             <button
               onClick={() => setBillingCycle('yearly')}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-all relative ${
+              className={`px-4 sm:px-6 py-2 rounded-md text-xs sm:text-sm font-medium transition-all relative ${
                 billingCycle === 'yearly'
                   ? 'bg-background text-foreground shadow-sm'
                   : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               Yearly
-              <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs px-2 py-0.5 rounded-full">
+              <span className="absolute -top-2 -right-1 sm:-right-2 bg-primary text-primary-foreground text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full">
                 Save 18%
               </span>
             </button>

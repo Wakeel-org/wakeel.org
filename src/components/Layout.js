@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
         <meta property="og:image" content="https://wakeel.org/og-image.jpg" />
       </Head>
 
-      <nav className="fixed top-0 w-full bg-background/80 backdrop-blur-lg z-50 border-b border-border">
+      <nav className="fixed top-0 w-full bg-background backdrop-blur-lg z-50 border-b border-border shadow-sm">
         <Navigation />
       </nav>
       

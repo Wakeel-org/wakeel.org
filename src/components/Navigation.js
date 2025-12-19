@@ -73,34 +73,21 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-border z-40">
-            <div className="flex flex-col space-y-4 px-4 sm:px-6">
+          <nav className="md:hidden py-6 absolute top-16 left-0 right-0 bg-background backdrop-blur-xl border-b border-border z-40 shadow-xl">
+            <div className="flex flex-col space-y-2 px-4 sm:px-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
               {menuItems.map((item) => (
-                item.href ? (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="text-foreground hover:text-primary transition-colors font-medium text-lg"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <button
-                    key={item.label}
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      item.onClick();
-                    }}
-                    className="text-foreground hover:text-primary transition-colors font-medium text-lg text-left"
-                  >
-                    {item.label}
-                  </button>
-                )
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
               ))}
               
               <Button 
-                className="w-full"
+                className="w-full mt-4"
                 onClick={() => {
                   setIsMenuOpen(false);
                   handleGetStarted();
