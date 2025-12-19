@@ -97,7 +97,7 @@ const faqsData = [
   },
   {
     question: "What are your pricing plans?",
-    answer: "We offer four pricing tiers: Free (PKR 0) for basic access, Students (PKR 199/month or PKR 1,999/year saving 16%), Professionals (PKR 4,999/month or PKR 49,000/year saving 18%), and Organizations (custom pricing from PKR 9,999+) with dedicated support.",
+    answer: "We offer four pricing tiers: Free (PKR 0) for basic access, Students (PKR 199/month or PKR 1,999/year saving 16%), Professionals (PKR 4,999/month or PKR 49,999/year saving 17%), and Organizations (custom pricing from PKR 9,999+) with dedicated support.",
     order: 3,
     isActive: true
   },

@@ -267,7 +267,7 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
    |------|---------|--------|-----------------|---------|
    | **Free** | PKR 0 | PKR 0 | Individuals & Beginners | - |
    | **Students** | PKR 199 | PKR 1,999 | Law Students & Learners | 16% |
-   | **Professionals** | PKR 4,999 | PKR 49,000 | Lawyers, Judges & Advocates | 18% |
+   | **Professionals** | PKR 4,999 | PKR 49,999 | Lawyers, Judges & Advocates | 17% |
    | **Organizations** | Starting from PKR 9,999 | Custom | Firms & Institutions | Custom |
 
    **Pricing Features:**
@@ -317,7 +317,7 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
 
 3. **Billing Cycle Toggle**
    - Monthly/Yearly switcher
-   - "Save 18%" badge on yearly option (maximum savings)
+   - "Save 17%" badge on yearly option (maximum savings)
    - Smooth transition animation
    - State management with React hooks
    - Removed "/month" and "/year" suffixes (clear from toggle)
@@ -348,7 +348,7 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
 - 🆓 Free tier for accessibility
 - 💼 Professional tiers aligned with user roles
 - 📊 Monthly/Yearly billing flexibility
-- 💎 Up to 18% savings on annual plans
+- 💎 Up to 17% savings on annual plans
 - 🤝 "Contact Sales" option with lead capture
 
 ---
