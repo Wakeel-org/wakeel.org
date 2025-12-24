@@ -59,20 +59,22 @@ const Layout = ({ children }) => {
                 className="flex items-center gap-3 text-2xl font-bold text-primary hover:text-primary/80 transition-colors w-fit"
               >
                 <div className="relative w-12 h-12 flex-shrink-0">
+                  {/* Dark logo for light theme */}
                   <Image
                     src="/logo-dark.svg"
                     alt="Wakeel.org Logo"
                     width={48}
                     height={48}
-                    className="dark:hidden"
+                    className="block dark:hidden absolute inset-0"
                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   />
+                  {/* Light logo for dark theme */}
                   <Image
                     src="/logo-light.svg"
                     alt="Wakeel.org Logo"
                     width={48}
                     height={48}
-                    className="hidden dark:block"
+                    className="hidden dark:block absolute inset-0"
                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   />
                 </div>

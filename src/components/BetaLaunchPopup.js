@@ -68,7 +68,9 @@ const BetaLaunchPopup = () => {
       await addDoc(betaWhitelistRef, {
         email,
         timestamp: new Date(),
-        source: 'homepage_beta_popup'
+        source: 'homepage_beta_popup',
+        status: 'active',
+        sent: false
       });
 
       setIsSuccess(true);

@@ -36,26 +36,28 @@ const Navigation = () => {
             className="flex items-center gap-2 sm:gap-3 text-xl font-bold text-primary hover:text-primary/80 transition-colors"
           >
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+              {/* Dark logo for light theme */}
               <Image
                 src="/logo-dark.svg"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}
-                className="dark:hidden"
+                className="block dark:hidden absolute inset-0"
                 priority
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
+              {/* Light logo for dark theme */}
               <Image
                 src="/logo-light.svg"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}
-                className="hidden dark:block"
+                className="hidden dark:block absolute inset-0"
                 priority
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
             </div>
-            <span className="hidden sm:inline">Wakeel.org</span>
+            <span className="hidden sm:inline text-foreground">Wakeel.org</span>
           </Link>
 
           {/* Desktop Navigation */}

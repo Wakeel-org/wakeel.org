@@ -55,7 +55,9 @@ const BetaWhitelistSection = () => {
       await addDoc(betaWhitelistRef, {
         email,
         timestamp: new Date(),
-        source: 'homepage_beta_whitelist'
+        source: 'homepage_beta_whitelist',
+        status: 'active',
+        sent: false
       });
 
       setIsSuccess(true);
