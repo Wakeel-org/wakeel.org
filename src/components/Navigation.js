@@ -35,14 +35,14 @@ const Navigation = () => {
             href="/" 
             className="flex items-center gap-2 sm:gap-3 text-xl font-bold text-primary hover:text-primary/80 transition-colors"
           >
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-lg overflow-hidden">
               {/* Dark logo for light theme */}
               <Image
                 src="/logo-dark.svg"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}
-                className="block dark:hidden absolute inset-0"
+                className="block dark:hidden absolute inset-0 rounded-lg"
                 priority
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
@@ -52,7 +52,7 @@ const Navigation = () => {
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}
-                className="hidden dark:block absolute inset-0"
+                className="hidden dark:block absolute inset-0 rounded-lg"
                 priority
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
