@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
         <meta property="og:description" content="Empowering Justice Through Reliable Solutions" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://wakeel.org" />
-        <meta property="og:image" content="https://wakeel.org/og-image.jpg" />
+        <meta property="og:image" content="https://wakeel.org/logo-dark.svg" />
         <meta property="og:site_name" content="Wakeel.org" />
         <meta property="og:locale" content="en_US" />
         

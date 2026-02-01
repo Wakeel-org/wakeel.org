@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Shield, Target } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
+import AppDownloadButtons from './AppDownloadButtons';
 
 const Hero = () => {
   const handleGetStarted = () => {
@@ -46,6 +47,12 @@ const Hero = () => {
                     Learn More
                   </Link>
                 </Button>
+              </div>
+
+              {/* Mobile App Download */}
+              <div className="pt-6 border-t border-primary/10">
+                <p className="text-sm font-medium text-muted-foreground mb-4">Also available on mobile</p>
+                <AppDownloadButtons className="justify-start" />
               </div>
             </div>
             

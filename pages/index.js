@@ -6,8 +6,10 @@ import Values from '../src/components/Values';
 import Features from '../src/components/Features';
 import Pricing from '../src/components/Pricing';
 import EmailSubscription from '../src/components/EmailSubscription';
-import BetaLaunchPopup from '../src/components/BetaLaunchPopup';
-import BetaWhitelistSection from '../src/components/BetaWhitelistSection';
+import AppDownloadButtons from '../src/components/AppDownloadButtons';
+// Beta components - commented out for production, can be re-enabled for future beta launches
+// import BetaLaunchPopup from '../src/components/BetaLaunchPopup';
+// import BetaWhitelistSection from '../src/components/BetaWhitelistSection';
 
 export default function Home() {
   return (
@@ -21,7 +23,7 @@ export default function Home() {
         <meta property="al:android:url" content="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel" />
         <meta property="al:android:package" content="pk.digit.aiwakeel" />
         <meta property="al:android:app_name" content="Wakeel" />
-        <meta property="al:ios:url" content="https://testflight.apple.com/join/ZVgHgqF7" />
+        <meta property="al:ios:url" content="https://apps.apple.com/app/wakeel" />
         <meta property="al:ios:app_name" content="Wakeel" />
         
         {/* PWA Support */}
@@ -47,18 +49,18 @@ export default function Home() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://wakeel.org" />
-        <meta property="og:title" content="Wakeel.org - AI-Powered Legal Technology Solutions | Now on Mobile" />
-        <meta property="og:description" content="Transform your legal practice with AI-powered legal research, case management, and policy development solutions. Now available on Android & iOS Beta. Trusted by 10,000+ legal professionals." />
-        <meta property="og:image" content="https://wakeel.org/og-image.jpg" />
+        <meta property="og:title" content="Wakeel.org - AI-Powered Legal Technology Solutions | Available on Web & Mobile" />
+        <meta property="og:description" content="Transform your legal practice with AI-powered legal research, case management, and policy development solutions. Available on Web, Android & iOS. Trusted by 10,000+ legal professionals in 50+ countries." />
+        <meta property="og:image" content="https://wakeel.org/logo-dark.svg" />
         <meta property="og:see_also" content="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel" />
-        <meta property="og:see_also" content="https://testflight.apple.com/join/ZVgHgqF7" />
+        <meta property="og:see_also" content="https://apps.apple.com/app/wakeel" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://wakeel.org" />
         <meta name="twitter:title" content="Wakeel.org - AI-Powered Legal Technology Solutions" />
         <meta name="twitter:description" content="Transform your legal practice with AI-powered legal research and case management solutions." />
-        <meta name="twitter:image" content="https://wakeel.org/og-image.jpg" />
+        <meta name="twitter:image" content="https://wakeel.org/logo-dark.svg" />
         
         {/* Canonical URL */}
         <link rel="canonical" href="https://wakeel.org" />
@@ -128,7 +130,7 @@ export default function Home() {
               "browserRequirements": "Requires JavaScript. Requires HTML5.",
               "description": "Comprehensive legal technology solution offering AI-powered legal research, case management, and policy development tools",
               "featureList": "Legal Research, Case Management, Document Automation, Policy Development, AI-Powered Analysis",
-              "screenshot": "https://wakeel.org/og-image.jpg",
+              "screenshot": "https://wakeel.org/logo-dark.svg",
               "provider": {
                 "@type": "Organization",
                 "name": "Wakeel.org",
@@ -150,8 +152,8 @@ export default function Home() {
         />
       </Head>
       
-      {/* Beta Launch Popup */}
-      <BetaLaunchPopup />
+      {/* Beta Launch Popup - Commented out for production, can be re-enabled for future beta campaigns */}
+      {/* <BetaLaunchPopup /> */}
       
       <Hero />
       
@@ -191,6 +193,11 @@ export default function Home() {
           </div>
 
           <EmailSubscription />
+
+          <div className="pt-10 border-t border-border/50">
+            <p className="text-base font-semibold text-muted-foreground mb-6">Download our mobile apps</p>
+            <AppDownloadButtons className="justify-center" />
+          </div>
         </div>
       </section>
     </Layout>
