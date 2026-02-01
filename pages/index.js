@@ -6,6 +6,7 @@ import Values from '../src/components/Values';
 import Features from '../src/components/Features';
 import Pricing from '../src/components/Pricing';
 import EmailSubscription from '../src/components/EmailSubscription';
+import AppDownloadButtons from '../src/components/AppDownloadButtons';
 // Beta components - commented out for production, can be re-enabled for future beta launches
 // import BetaLaunchPopup from '../src/components/BetaLaunchPopup';
 // import BetaWhitelistSection from '../src/components/BetaWhitelistSection';
@@ -50,7 +51,7 @@ export default function Home() {
         <meta property="og:url" content="https://wakeel.org" />
         <meta property="og:title" content="Wakeel.org - AI-Powered Legal Technology Solutions | Available on Web & Mobile" />
         <meta property="og:description" content="Transform your legal practice with AI-powered legal research, case management, and policy development solutions. Available on Web, Android & iOS. Trusted by 10,000+ legal professionals in 50+ countries." />
-        <meta property="og:image" content="https://wakeel.org/og-image.jpg" />
+        <meta property="og:image" content="https://wakeel.org/logo-dark.svg" />
         <meta property="og:see_also" content="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel" />
         <meta property="og:see_also" content="https://apps.apple.com/app/wakeel" />
         
@@ -59,7 +60,7 @@ export default function Home() {
         <meta name="twitter:url" content="https://wakeel.org" />
         <meta name="twitter:title" content="Wakeel.org - AI-Powered Legal Technology Solutions" />
         <meta name="twitter:description" content="Transform your legal practice with AI-powered legal research and case management solutions." />
-        <meta name="twitter:image" content="https://wakeel.org/og-image.jpg" />
+        <meta name="twitter:image" content="https://wakeel.org/logo-dark.svg" />
         
         {/* Canonical URL */}
         <link rel="canonical" href="https://wakeel.org" />
@@ -129,7 +130,7 @@ export default function Home() {
               "browserRequirements": "Requires JavaScript. Requires HTML5.",
               "description": "Comprehensive legal technology solution offering AI-powered legal research, case management, and policy development tools",
               "featureList": "Legal Research, Case Management, Document Automation, Policy Development, AI-Powered Analysis",
-              "screenshot": "https://wakeel.org/og-image.jpg",
+              "screenshot": "https://wakeel.org/logo-dark.svg",
               "provider": {
                 "@type": "Organization",
                 "name": "Wakeel.org",
@@ -192,6 +193,11 @@ export default function Home() {
           </div>
 
           <EmailSubscription />
+
+          <div className="pt-10 border-t border-border/50">
+            <p className="text-base font-semibold text-muted-foreground mb-6">Download our mobile apps</p>
+            <AppDownloadButtons className="justify-center" />
+          </div>
         </div>
       </section>
     </Layout>

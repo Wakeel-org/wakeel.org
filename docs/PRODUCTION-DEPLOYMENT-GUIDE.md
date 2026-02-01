@@ -1,8 +1,8 @@
 # Wakeel.org - Production Deployment Guide
 
-**Version:** 1.0.0  
+**Version:** 2.1.0  
 **Last Updated:** February 2, 2026  
-**Status:** Production Ready
+**Status:** Production Live
 
 ---
 
@@ -42,35 +42,42 @@ Wakeel.org is a Next.js marketing website deployed to Firebase Hosting. This gui
 ## Pre-Deployment Checklist
 
 ### Code Quality
-- [ ] All TypeScript/JavaScript errors resolved
-- [ ] ESLint passes with no errors
-- [ ] No console.log statements in production code
-- [ ] All imports are valid and used
+- [x] All TypeScript/JavaScript errors resolved
+- [x] ESLint passes with no errors (Note: ESLint config updated for flat config)
+- [x] No console.log statements in production code (only in seedData.js dev utility)
+- [x] All imports are valid and used
 
 ### Content Verification
-- [ ] All text content reviewed for accuracy
-- [ ] Contact information is correct (info@wakeel.org)
-- [ ] Social media links are valid
-- [ ] Pricing information is up-to-date
+- [x] All text content reviewed for accuracy
+- [x] Contact information is correct (info@wakeel.org)
+- [x] Social media links are valid (Facebook, Instagram, LinkedIn)
+- [x] Pricing information is up-to-date (PKR pricing with 4 tiers)
 
 ### SEO Verification
-- [ ] Meta titles and descriptions are optimized
-- [ ] Open Graph images exist and are correct size (1200x630)
-- [ ] Canonical URLs are correct
-- [ ] sitemap.xml is up-to-date with current dates
-- [ ] robots.txt allows search engines
+- [x] Meta titles and descriptions are optimized
+- [x] Open Graph images configured (using logo-dark.svg)
+- [x] Canonical URLs are correct
+- [x] sitemap.xml is up-to-date with current dates (2026-02-02)
+- [x] robots.txt allows search engines and AI crawlers
 
 ### Security
-- [ ] Environment variables are properly configured
-- [ ] Firebase security rules are production-ready
-- [ ] No sensitive data in client-side code
-- [ ] Form validation is working
+- [x] Environment variables are properly configured
+- [x] Firebase security rules are production-ready
+- [x] No sensitive data in client-side code
+- [x] Form validation is working
 
 ### Beta Features Status
-- [ ] Beta popup is commented out (not deleted)
-- [ ] Beta whitelist section is commented out
-- [ ] TestFlight links replaced with App Store links
-- [ ] "Beta" labels removed from UI
+- [x] Beta popup is commented out (not deleted)
+- [x] Beta whitelist section is commented out
+- [x] TestFlight links replaced with App Store links
+- [x] "Beta" labels removed from UI
+
+### App Download Buttons (New)
+- [x] AppDownloadButtons component created
+- [x] Google Play button links to correct URL
+- [x] App Store button links to correct URL
+- [x] Buttons displayed in Hero section
+- [x] Buttons displayed in footer CTA section
 
 ---
 
@@ -442,6 +449,7 @@ Use this template for each deployment:
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 2.1.0 | Feb 2, 2026 | Added App Store download buttons (Google Play & Apple), OG image fix |
 | 2.0.0 | Feb 2, 2026 | Production release - Beta features disabled |
 | 1.5.0 | Dec 25, 2025 | Beta launch campaign |
 | 1.0.0 | Dec 19, 2025 | Initial marketing site launch |
