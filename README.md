@@ -50,3 +50,5 @@ The layout is located in the `src/components/Layout.js` file.
 # Global Styles
 
 The global styles are located in the `styles/globals.css` file.
+
+

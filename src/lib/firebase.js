@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -12,5 +12,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+let app;
+const apps = getApps();
+if (apps.length === 0) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = apps[0]; // Use existing app
+}
+
 export const db = getFirestore(app); 

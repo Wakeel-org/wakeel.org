@@ -1,0 +1,4 @@
+// firebase firestore:indexes:create --collection searchHistory --fields "userId:ascending,timestamp:descending"
+// firebase firestore:indexes:create --collection notes --fields "userId:ascending,createdAt:descending"
+// firebase firestore:indexes:create --collection chatSessions --fields "userId:ascending,updatedAt:descending"
+// firebase firestore:indexes:create --collection chatMessages --fields "sessionId:ascending,timestamp:ascending"

@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -11,5 +11,14 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID
 };
 
-const app = initializeApp(firebaseConfig);
+// Check if Firebase is already initialized
+let app;
+const apps = getApps();
+if (apps.length === 0) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = apps[0]; // Use existing app
+}
+
 export const db = getFirestore(app);
+export default app;
