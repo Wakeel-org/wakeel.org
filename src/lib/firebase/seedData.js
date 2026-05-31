@@ -103,7 +103,7 @@ const faqsData = [
   },
   {
     question: "How do I get started?",
-    answer: "Simply choose your plan and visit wakeel.web.app to sign up. Free users can start immediately, Students and Professionals can select monthly or yearly billing, and Organizations can contact our sales team at info@wakeel.org for a customized solution.",
+    answer: "Simply choose your plan and visit app.wakeel.org to sign up. Free users can start immediately, Students and Professionals can select monthly or yearly billing, and Organizations can contact our sales team at support@wakeel.org for a customized solution.",
     order: 4,
     isActive: true
   },

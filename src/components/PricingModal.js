@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 import { Check, X, User, Briefcase, Building } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from './ui/card';
 import { Button } from './ui/button';
+import { openPlatformAppStore } from '../utils/platformDetection';
 
 const PricingModal = ({ isOpen, onClose }) => {
   const router = useRouter();
@@ -32,8 +33,8 @@ const PricingModal = ({ isOpen, onClose }) => {
   const handleSelectPlan = (planId) => {
     // Close the modal
     onClose();
-    // Open the main app with the selected plan
-    window.open('https://wakeel.web.app', '_blank');
+    // Open the appropriate platform app/store
+    openPlatformAppStore();
   };
   
   if (!isOpen) return null;

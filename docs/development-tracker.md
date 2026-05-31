@@ -93,7 +93,7 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
 
 2. **src/components/PricingModal.js**
    - Changed plan selection from auth route to external app
-   - All plans now open `wakeel.web.app`
+   - All plans now open `app.wakeel.org`
 
 3. **src/config/firebase.js**
    - Removed Firebase Auth initialization
@@ -110,7 +110,7 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
 #### Impact
 - ✅ Cleaner codebase focused on marketing
 - ✅ Faster load times (removed unused dependencies)
-- ✅ All CTAs route to main app (wakeel.web.app)
+- ✅ All CTAs route to main app (app.wakeel.org)
 - ✅ Maintained contact forms, FAQs, email subscriptions
 
 ---
@@ -205,7 +205,7 @@ Wakeel.org is a marketing and landing website for a legal technology platform th
      - Gradient backgrounds
      - Icon animations
      - Checkmark features with fade-in
-     - Links to wakeel.web.app
+     - Links to app.wakeel.org
 
 #### Animation System
 **File:** `styles/globals.css`
@@ -560,7 +560,7 @@ html {
 1. What is Wakeel.org?
 2. Who can use Wakeel.org? (lists all 6 audiences)
 3. What are your pricing plans? (accurate PKR pricing)
-4. How do I get started? (mentions wakeel.web.app)
+4. How do I get started? (mentions app.wakeel.org)
 5. What support do you provide? (tier-specific)
 6. How secure is my data?
 7. Where are you located? (Lahore, Pakistan + contact info)
@@ -1318,7 +1318,7 @@ html {
 - Heading: "Ready to Transform Your Legal Practice?"
 - Supporting description text
 - Two CTA buttons:
-  - Primary: "Get Started Free" → wakeel.web.app
+  - Primary: "Get Started Free" → app.wakeel.org
   - Secondary: "Talk to Sales" → /contact
 - Trust indicators:
   - No credit card required
@@ -1597,7 +1597,7 @@ html {
 - ✅ AI search engine optimization 🆕
 - ✅ Structured data (Schema.org) 🆕
 - ✅ robots.txt and sitemap.xml 🆕
-- ✅ External app linking (wakeel.web.app)
+- ✅ External app linking (app.wakeel.org)
 
 ---
 │   ├── EmailSubscription.js       # Newsletter signup
@@ -1912,7 +1912,7 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
 - **Development Tracker:** `/docs/development-tracker.md` (this file)
 
 ### External Resources
-- **Main Application:** https://wakeel.web.app
+- **Main Application:** https://app.wakeel.org
 - **Production URL:** https://wakeel.org
 - **Social Media:**
   - Facebook: https://www.facebook.com/aiwakeel
@@ -1939,7 +1939,7 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=
 **Project Lead:** Development Team  
 **Repository:** github.com/[username]/wakeel.org  
 **Production URL:** wakeel.org  
-**Main Application:** wakeel.web.app
+**Main Application:** app.wakeel.org
 
 ---
 

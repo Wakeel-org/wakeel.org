@@ -86,6 +86,218 @@ const PrivacyPolicy = () => {
           </section>
           
           <section className="mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">Role-Specific Data Collection and Privacy</h2>
+            <p className="mb-4">
+              Wakeel.org operates on a role-based subscription system where your tier (Free, Student, Professional, or Organization) determines what features you can access. **Importantly, it also determines what data we collect about you and how we handle it.** Different subscription tiers have different data requirements and privacy protections. Here's exactly what we collect and how we protect it for each role:
+            </p>
+            
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">FREE TIER - Basic Data Collection</h3>
+            <p className="mb-4">
+              Free users get essential services with minimal data collection:
+            </p>
+            <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+              <li><strong>What We Collect:</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>Email address and name (for account creation)</li>
+                  <li>Basic device information (browser type, operating system)</li>
+                  <li>IP address (for security and general location)</li>
+                  <li>Page views and search terms (which articles you read, what legal topics you search for)</li>
+                  <li>Session duration (how long you spend on the platform)</li>
+                </ul>
+              </li>
+              <li><strong>What We DON'T Collect:</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>NO payment information (free accounts don't need billing details)</li>
+                  <li>NO professional credentials or personal documents</li>
+                  <li>NO detailed research patterns or advanced analytics</li>
+                  <li>NO saved bookmarks or research history (this feature requires paid tier)</li>
+                </ul>
+              </li>
+              <li><strong>Data Retention:</strong> Usage analytics kept for 90 days, then automatically deleted. Account data kept as long as account is active.</li>
+              <li><strong>Privacy Protections:</strong> Standard encryption, basic security measures, no marketing use beyond platform updates</li>
+              <li><strong>Your Control:</strong> Can export basic account data, delete account anytime, opt out of analytics cookies</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">STUDENT TIER - Enhanced Educational Protections</h3>
+            <p className="mb-4">
+              Student accounts receive **special privacy protections** recognizing many students are under 18 or in educational settings:
+            </p>
+            <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+              <li><strong>What We Collect (in addition to Free tier):</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>School or university name (optional, helps verify student status)</li>
+                  <li>Student ID photo OR university email (for verification only)</li>
+                  <li>Expanded usage analytics (to improve educational features)</li>
+                  <li>Saved bookmarks and research history (for your study convenience)</li>
+                  <li>Document template usage (which templates you download)</li>
+                </ul>
+              </li>
+              <li><strong>Verification Documents:</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>Student IDs are encrypted and stored securely</li>
+                  <li>Reviewed by privacy-trained staff only</li>
+                  <li>**Deleted within 30 days after verification** (we only keep a "verified student" flag, not the actual document)</li>
+                  <li>Never shared with third parties or used for marketing</li>
+                </ul>
+              </li>
+              <li><strong>Enhanced Privacy Protections:</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>**NO marketing emails** - you only receive educational content and platform updates</li>
+                  <li>**FERPA-compliant data handling** (U.S. educational privacy law compliance)</li>
+                  <li>Age-appropriate content filtering for students under 18</li>
+                  <li>Enhanced parental controls available (parents can request account information)</li>
+                  <li>No data selling or third-party advertising - ever</li>
+                  <li>Data is never used to build detailed behavioral profiles</li>
+                </ul>
+              </li>
+              <li><strong>Data Retention:</strong> Research history kept for 1 academic year, then automatically archived. Account data kept during active subscription plus 1 year after.</li>
+              <li><strong>Special Rights:</strong> Parents/guardians of students under 18 can access, correct, or delete student data by contacting support@wakeel.org</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">PROFESSIONAL TIER - Confidentiality Considerations</h3>
+            <p className="mb-4">
+              Professional accounts (lawyers, judges, advocates) involve **sensitive legal work and confidentiality concerns**. We handle your data with extra care:
+            </p>
+            <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+              <li><strong>What We Collect (in addition to Student tier):</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>Professional credentials (bar license number, court enrollment - optional)</li>
+                  <li>Practice information (areas of specialty, firm affiliation - optional)</li>
+                  <li>Advanced research patterns (case analysis, citation tracking, precedent research)</li>
+                  <li>Document automation usage and customization</li>
+                  <li>API usage logs (if you integrate with other tools)</li>
+                  <li>Detailed analytics (to provide insights about your research patterns)</li>
+                </ul>
+              </li>
+              <li><strong>Attorney-Work-Product & Privilege Considerations:</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>**We recognize your research may be privileged attorney work product**</li>
+                  <li>Your search queries and research history are kept strictly confidential</li>
+                  <li>Never disclosed to third parties without your explicit consent or legal obligation</li>
+                  <li>Encrypted both in transit and at rest</li>
+                  <li>Access restricted to essential technical staff only (and they're bound by confidentiality)</li>
+                  <li>**However:** You are responsible for asserting privilege; our platform is a research tool, not a secured attorney-client communications platform</li>
+                </ul>
+              </li>
+              <li><strong>Professional Verification:</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>Bar licenses/certificates stored encrypted</li>
+                  <li>Manually reviewed by compliance team</li>
+                  <li>Original documents deleted after verification (we keep only "verified professional" status)</li>
+                  <li>Verification status displayed on your optional public profile (you control visibility)</li>
+                </ul>
+              </li>
+              <li><strong>Enhanced Security:</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>Additional encryption layers for professional accounts</li>
+                  <li>Advanced threat monitoring and intrusion detection</li>
+                  <li>Priority security incident response</li>
+                  <li>Optional two-factor authentication (highly recommended)</li>
+                  <li>Audit logs showing who accessed your data and when</li>
+                </ul>
+              </li>
+              <li><strong>Data Retention:</strong> Professional research history kept for 3 years (for your reference), then archived. Can request extended retention or early deletion.</li>
+              <li><strong>Confidentiality Promise:</strong> We will never voluntarily disclose your research to opposing counsel, courts, or anyone else. Only compelled disclosure by court order (and we'll notify you when legally permitted).</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">ORGANIZATION TIER - Enterprise Data Governance</h3>
+            <p className="mb-4">
+              Organization accounts involve multiple users and institutional oversight. Privacy is managed at both individual and organizational levels:
+            </p>
+            <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+              <li><strong>What We Collect (in addition to Professional tier):</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>Organization details (company name, business registration, industry)</li>
+                  <li>Admin contact information (organization owners and managers)</li>
+                  <li>Team structure (departments, groups, reporting hierarchy)</li>
+                  <li>Multi-user activity (team collaboration, shared research, workspace usage)</li>
+                  <li>Aggregated analytics (team productivity, department usage, ROI metrics)</li>
+                  <li>Billing and contract information (purchase orders, invoices, payment terms)</li>
+                  <li>Custom integration data (connections to your practice management or document systems)</li>
+                </ul>
+              </li>
+              <li><strong>Organization-Level Privacy:</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>Organization admins can view team usage statistics (e.g., "Legal Department made 500 searches this month")</li>
+                  <li>**Admins CANNOT see individual user's specific research queries** without user's explicit consent</li>
+                  <li>Shared workspace content is visible to team members with access permissions</li>
+                  <li>Billing information visible only to designated billing admins</li>
+                  <li>Organizations can set custom data retention and deletion policies</li>
+                </ul>
+              </li>
+              <li><strong>Individual User Privacy Within Organizations:</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>Personal research remains private unless explicitly shared</li>
+                  <li>Private bookmarks and notes not visible to organization or team</li>
+                  <li>Individual users can request their data even if organization admin doesn't authorize</li>
+                  <li>Clear indicators showing what's "private to you" vs "shared with team"</li>
+                </ul>
+              </li>
+              <li><strong>Compliance & Governance:</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>**Data Processing Agreements (DPA) available** for GDPR and compliance requirements</li>
+                  <li>Custom data residency options for larger organizations</li>
+                  <li>Regular security audits and compliance reports</li>
+                  <li>Dedicated support for data subject access requests (DSARs)</li>
+                  <li>Business Associate Agreements (BAA) for HIPAA if applicable</li>
+                  <li>ISO 27001, SOC 2 compliance documentation available</li>
+                </ul>
+              </li>
+              <li><strong>Data Retention:</strong> Organizational data kept per contract terms (typically 5-7 years). Individual user data follows Professional tier retention unless organization has custom policy.</li>
+              <li><strong>Departing Users:</strong> When user leaves organization, their data can be transferred to organization, deleted, or kept private per organization policy and user consent.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Cross-Tier Privacy Principles</h3>
+            <p className="mb-4">
+              Regardless of your subscription tier, these privacy principles always apply:
+            </p>
+            <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+              <li><strong>We NEVER Sell Your Data:</strong> Not to advertisers, data brokers, or anyone else. This applies to all tiers, always.</li>
+              <li><strong>Minimal Necessary Collection:</strong> We only collect data needed to provide tier-specific features.</li>
+              <li><strong>Purpose Limitation:</strong> Data collected for one purpose (e.g., billing) isn't used for other purposes (e.g., marketing) without consent.</li>
+              <li><strong>Encryption Everywhere:</strong> All data encrypted in transit (HTTPS/TLS) and at rest (AES-256).</li>
+              <li><strong>Your Control:</strong> You can access, correct, delete, or export your data at any tier.</li>
+              <li><strong>Transparent Practices:</strong> If we change how we handle data for your tier, we'll notify you 30 days in advance.</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Upgrading or Downgrading: What Happens to Your Data?</h3>
+            <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+              <li><strong>Upgrading (e.g., Free → Student → Professional):</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>All existing data is preserved</li>
+                  <li>New tier-specific features and data collection begin immediately</li>
+                  <li>Previous data continues under same protections</li>
+                  <li>You gain access to enhanced privacy features of higher tier</li>
+                </ul>
+              </li>
+              <li><strong>Downgrading (e.g., Professional → Student → Free):</strong>
+                <ul className="list-circle pl-6 mt-2 space-y-1">
+                  <li>Core account data (email, name) is preserved</li>
+                  <li>Tier-specific data (research history, bookmarks) may be archived or deleted after 90 days</li>
+                  <li>You can export all data before downgrading</li>
+                  <li>Privacy protections remain at previous tier level for 30 days after downgrade</li>
+                  <li>Can re-upgrade anytime to restore archived data (if still within retention period)</li>
+                </ul>
+              </li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Questions About Role-Based Privacy?</h3>
+            <p className="mb-4">
+              We know this is detailed and complex. If you have questions about:
+            </p>
+            <ul className="list-disc pl-6 mt-2 mb-4 space-y-2">
+              <li>What data we collect for your specific tier</li>
+              <li>How upgrading/downgrading affects your privacy</li>
+              <li>Professional confidentiality concerns</li>
+              <li>Organization-level data governance</li>
+              <li>Compliance requirements for your institution</li>
+            </ul>
+            <p className="mb-4">
+              **Please contact us at support@wakeel.org** - we're happy to explain in detail and address your specific concerns!
+            </p>
+          </section>
+          
+          <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">How Do We Use Your Information?</h2>
             <p className="mb-4">
               Now that you know what information we collect, let's talk about what we actually DO with it. We promise we only use your information in ways that help you and make Wakeel.org better. Here's every way we use your data:
@@ -331,7 +543,7 @@ const PrivacyPolicy = () => {
               <li>How long we plan to keep it</li>
             </ul>
             <p className="mb-4">
-              <strong>How to do this:</strong> Log into your account and go to Settings → Privacy → "Download My Data". Or email us at info@wakeel.org with subject "Data Access Request". We'll send you a complete copy of your data within 30 days, usually much sooner.
+              <strong>How to do this:</strong> Log into your account and go to Settings → Privacy → "Download My Data". Or email us at support@wakeel.org with subject "Data Access Request". We'll send you a complete copy of your data within 30 days, usually much sooner.
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">2. The Right to Fix Mistakes (Correction)</h3>
@@ -344,7 +556,7 @@ const PrivacyPolicy = () => {
               <li>Your professional details need updating? Change them.</li>
             </ul>
             <p className="mb-4">
-              <strong>How to do this:</strong> Most information you can edit yourself in Settings → Profile. For things you can't change yourself, email us at info@wakeel.org and we'll fix it within 5 business days.
+              <strong>How to do this:</strong> Most information you can edit yourself in Settings → Profile. For things you can't change yourself, email us at support@wakeel.org and we'll fix it within 5 business days.
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">3. The Right to Be Forgotten (Deletion)</h3>
@@ -366,7 +578,7 @@ const PrivacyPolicy = () => {
               <li>Anonymous usage statistics (with all identifying information removed)</li>
             </ul>
             <p className="mb-4">
-              <strong>How to do this:</strong> Go to Settings → Account → "Delete My Account" or email info@wakeel.org with subject "Account Deletion Request". We'll process it within 14 days and send you confirmation.
+              <strong>How to do this:</strong> Go to Settings → Account → "Delete My Account" or email support@wakeel.org with subject "Account Deletion Request". We'll process it within 14 days and send you confirmation.
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">4. The Right to Limit Use (Restriction)</h3>
@@ -379,7 +591,7 @@ const PrivacyPolicy = () => {
               <li>"Stop analyzing my usage patterns"</li>
             </ul>
             <p className="mb-4">
-              <strong>How to do this:</strong> Go to Settings → Privacy Preferences and toggle off what you don't want. Or email us at info@wakeel.org to request specific restrictions.
+              <strong>How to do this:</strong> Go to Settings → Privacy Preferences and toggle off what you don't want. Or email us at support@wakeel.org to request specific restrictions.
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">5. The Right to Object (Say No)</h3>
@@ -402,7 +614,7 @@ const PrivacyPolicy = () => {
               <li>Your subscription history</li>
             </ul>
             <p className="mb-4">
-              <strong>How to do this:</strong> Go to Settings → Privacy → "Export My Data" and choose your format. Or email info@wakeel.org with subject "Data Portability Request".
+              <strong>How to do this:</strong> Go to Settings → Privacy → "Export My Data" and choose your format. Or email support@wakeel.org with subject "Data Portability Request".
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">7. The Right to Withdraw Consent</h3>
@@ -423,7 +635,7 @@ const PrivacyPolicy = () => {
               If you think we've handled your data incorrectly or violated your privacy rights, you have the right to complain:
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
-              <li><strong>To Us First:</strong> Email info@wakeel.org with subject "Privacy Complaint". We'll investigate and respond within 15 days.</li>
+              <li><strong>To Us First:</strong> Email support@wakeel.org with subject "Privacy Complaint". We'll investigate and respond within 15 days.</li>
               <li><strong>To Authorities:</strong> You can also file a complaint with Pakistan's data protection authority or other relevant regulatory body.</li>
             </ul>
 
@@ -694,7 +906,7 @@ const PrivacyPolicy = () => {
 
             <p className="mb-3 mt-6"><strong>How to Exercise Parental Rights:</strong></p>
             <p className="mb-4">
-              Email us at info@wakeel.org with:
+              Email us at support@wakeel.org with:
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-2">
               <li>Subject line: "Parental Rights Request"</li>
@@ -715,7 +927,7 @@ const PrivacyPolicy = () => {
               <li><strong>FERPA Compliance:</strong> If applicable, we comply with the Family Educational Rights and Privacy Act.</li>
               <li><strong>Data Agreements:</strong> We can sign data processing agreements with your institution.</li>
               <li><strong>No Advertising:</strong> Student accounts never see advertisements or marketing.</li>
-              <li><strong>Educational Discounts:</strong> Contact us at info@wakeel.org about our Organizations plan for educational institutions.</li>
+              <li><strong>Educational Discounts:</strong> Contact us at support@wakeel.org about our Organizations plan for educational institutions.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">What If We Discover a Child Under 13?</h3>
@@ -742,7 +954,7 @@ const PrivacyPolicy = () => {
             </ul>
 
             <p className="mb-4 mt-6">
-              <strong>We take child privacy very seriously.</strong> If you're a parent with questions or concerns about your child's privacy on Wakeel.org, please don't hesitate to contact us at info@wakeel.org. We're here to help!
+              <strong>We take child privacy very seriously.</strong> If you're a parent with questions or concerns about your child's privacy on Wakeel.org, please don't hesitate to contact us at support@wakeel.org. We're here to help!
             </p>
           </section>
           
@@ -799,7 +1011,7 @@ const PrivacyPolicy = () => {
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
               <li><strong>Accept Changes:</strong> By continuing to use Wakeel.org after the new policy takes effect, you're agreeing to the changes. You don't need to do anything.</li>
-              <li><strong>Ask Questions:</strong> Email us at info@wakeel.org if anything is unclear or concerning. We're happy to explain.</li>
+              <li><strong>Ask Questions:</strong> Email us at support@wakeel.org if anything is unclear or concerning. We're happy to explain.</li>
               <li><strong>Adjust Settings:</strong> You can change your privacy settings to limit data collection or usage.</li>
               <li><strong>Opt Out of Optional Features:</strong> If new features involve optional data processing, you can choose not to participate.</li>
               <li><strong>Delete Your Account:</strong> If you disagree with major changes, you can delete your account before the changes take effect. We'll process all your data under the old policy until deletion is complete.</li>
@@ -838,7 +1050,7 @@ const PrivacyPolicy = () => {
             
             <p className="mb-3"><strong>Email (Fastest for Most Things):</strong></p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-2">
-              <li><strong>General Privacy Questions:</strong> info@wakeel.org</li>
+              <li><strong>General Privacy Questions:</strong> support@wakeel.org</li>
               <li><strong>Subject Line Examples:</strong>
                 <ul className="list-circle pl-6 mt-2 space-y-1">
                   <li>"Privacy Question About My Data"</li>
@@ -914,7 +1126,7 @@ const PrivacyPolicy = () => {
               We hope we can resolve any concerns directly. But if you're not satisfied with our response:
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
-              <li><strong>Escalate Within Wakeel.org:</strong> Ask to speak with our Privacy Officer by emailing info@wakeel.org with subject "Escalate Privacy Issue"</li>
+              <li><strong>Escalate Within Wakeel.org:</strong> Ask to speak with our Privacy Officer by emailing support@wakeel.org with subject "Escalate Privacy Issue"</li>
               <li><strong>File a Formal Complaint:</strong> Contact Pakistan's data protection authority or relevant regulatory body</li>
               <li><strong>Seek Legal Advice:</strong> You have the right to consult with a lawyer about privacy concerns</li>
             </ul>
@@ -931,12 +1143,12 @@ const PrivacyPolicy = () => {
               <li>❌ Be suspicious of emails from similar-looking domains like wakeel.com or wakel.org</li>
             </ul>
             <p className="mb-4">
-              If you receive a suspicious email claiming to be from us, forward it to info@wakeel.org and we'll verify if it's legitimate.
+              If you receive a suspicious email claiming to be from us, forward it to support@wakeel.org and we'll verify if it's legitimate.
             </p>
 
             <div className="mt-8 p-6 bg-muted/30 rounded-lg">
               <h4 className="font-bold mb-3 text-foreground">Quick Contact Summary:</h4>
-              <p className="mb-2"><strong>Email:</strong> info@wakeel.org</p>
+              <p className="mb-2"><strong>Email:</strong> support@wakeel.org</p>
               <p className="mb-2"><strong>Location:</strong> Lahore, Pakistan</p>
               <p className="mb-2"><strong>Website:</strong> https://wakeel.org</p>
               <p className="mb-4"><strong>Response Time:</strong> Within 48 hours for most inquiries</p>

@@ -4,10 +4,11 @@ import { Shield, Target } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
 import AppDownloadButtons from './AppDownloadButtons';
+import { openPlatformAppStore } from '../utils/platformDetection';
 
 const Hero = () => {
   const handleGetStarted = () => {
-    window.open('https://wakeel.web.app', '_blank');
+    openPlatformAppStore();
   };
 
   return (

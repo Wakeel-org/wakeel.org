@@ -17,6 +17,7 @@ import {
 } from "./ui/card";
 import { Button } from "./ui/button";
 import ContactSalesModal from "./ContactSalesModal";
+import { openPlatformAppStore } from "../utils/platformDetection";
 
 const pricingPlans = [
   {
@@ -107,7 +108,7 @@ const Pricing = () => {
     if (plan.contactSales) {
       setIsContactSalesOpen(true);
     } else {
-      window.open("https://wakeel.web.app", "_blank");
+      openPlatformAppStore();
     }
   };
 

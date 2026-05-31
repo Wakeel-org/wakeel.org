@@ -24,7 +24,7 @@ const TermsOfService = () => {
               Think of these Terms like the rules at a library or the agreement you make when renting an apartment. They explain what Wakeel.org promises to give you, what we expect from you in return, and what happens if things go wrong. We've tried to make everything fair and reasonable.
             </p>
             <p className="mb-4">
-              <strong>Here's the most important part:</strong> By creating an account or using Wakeel.org, you're agreeing to follow these Terms. If you don't agree with something here, please don't use our service - and feel free to contact us at info@wakeel.org to discuss your concerns.
+              <strong>Here's the most important part:</strong> By creating an account or using Wakeel.org, you're agreeing to follow these Terms. If you don't agree with something here, please don't use our service - and feel free to contact us at support@wakeel.org to discuss your concerns.
             </p>
             <p>
               Please read everything carefully. If anything is confusing, we're always happy to explain it better!
@@ -54,7 +54,7 @@ const TermsOfService = () => {
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-2">
               <li><strong>Don't Use Wakeel.org:</strong> We'll be sad to see you go, but we understand these Terms might not work for everyone.</li>
-              <li><strong>Contact Us:</strong> Email info@wakeel.org to discuss specific concerns. Sometimes we can work things out or provide clarification.</li>
+              <li><strong>Contact Us:</strong> Email support@wakeel.org to discuss specific concerns. Sometimes we can work things out or provide clarification.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Age and Capacity Requirements</h3>
@@ -220,7 +220,7 @@ const TermsOfService = () => {
               <li>Verify important information from multiple sources</li>
               <li>Check the date of any content to ensure it's current</li>
               <li>Consult a qualified lawyer for advice on important matters</li>
-              <li>Report errors to us at info@wakeel.org so we can fix them</li>
+              <li>Report errors to us at support@wakeel.org so we can fix them</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Beta Features and Experiments</h3>
@@ -304,7 +304,7 @@ const TermsOfService = () => {
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-2">
               <li><strong>Step 1:</strong> Change your password immediately (if you still can)</li>
-              <li><strong>Step 2:</strong> Email us at info@wakeel.org with subject "Account Compromised"</li>
+              <li><strong>Step 2:</strong> Email us at support@wakeel.org with subject "Account Compromised"</li>
               <li><strong>Step 3:</strong> Check your email for any password reset emails you didn't request</li>
               <li><strong>Step 4:</strong> Review your account activity to see what the intruder might have accessed</li>
               <li><strong>Step 5:</strong> If you used the same password on other websites, change those too</li>
@@ -321,7 +321,7 @@ const TermsOfService = () => {
               <li>Go to Settings → Profile to edit your name, professional details, preferences</li>
               <li>Go to Settings → Account to change your email address or password</li>
               <li>Go to Settings → Subscription to manage your subscription tier</li>
-              <li>For things you can't change yourself, email info@wakeel.org</li>
+              <li>For things you can't change yourself, email support@wakeel.org</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Closing Your Account</h3>
@@ -329,7 +329,7 @@ const TermsOfService = () => {
               You can delete your account at any time:
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
-              <li><strong>How:</strong> Go to Settings → Account → "Delete My Account" or email info@wakeel.org</li>
+              <li><strong>How:</strong> Go to Settings → Account → "Delete My Account" or email support@wakeel.org</li>
               <li><strong>What Happens:</strong>
                 <ul className="list-circle pl-6 mt-2 space-y-1">
                   <li>Your account will be permanently disabled</li>
@@ -367,7 +367,7 @@ const TermsOfService = () => {
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-2">
               <li>Try to warn you first and give you a chance to fix the problem (unless it's a severe violation)</li>
               <li>Explain why we're taking action</li>
-              <li>Give you a chance to appeal (email info@wakeel.org with subject "Account Termination Appeal")</li>
+              <li>Give you a chance to appeal (email support@wakeel.org with subject "Account Termination Appeal")</li>
               <li>Refund any unused portion of your subscription (at our discretion, depending on circumstances)</li>
             </ul>
 
@@ -383,12 +383,23 @@ const TermsOfService = () => {
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">4. Subscriptions, Payments, and Pricing</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">4. User Roles and Subscription-Based Access</h2>
             <p className="mb-4">
-              Wakeel.org offers different subscription tiers so you can choose what works best for your needs and budget. Let's break down everything about pricing, payments, and subscriptions:
+              Wakeel.org implements a comprehensive role-based access control system where your subscription tier determines what features, content, and tools you can access. Understanding these user roles and their permissions is crucial to getting the most out of our platform.
             </p>
             
-            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Our Pricing Tiers</h3>
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Role-Based Access Control System</h3>
+            <p className="mb-4">
+              We use a tiered permission system where each user role has specific access rights:
+            </p>
+            <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+              <li><strong>Role Assignment:</strong> Your role is automatically assigned based on your active subscription plan</li>
+              <li><strong>Dynamic Permissions:</strong> Upgrading or downgrading your subscription immediately changes your access level</li>
+              <li><strong>Access Restrictions:</strong> Attempting to access features above your role level will prompt an upgrade notification</li>
+              <li><strong>Role Verification:</strong> Certain roles (Student, Professional) may require verification of eligibility</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Detailed Subscription Tiers and Access Levels</h3>
             <p className="mb-4">
               We offer four subscription levels, each designed for different types of users:
             </p>
@@ -468,7 +479,7 @@ const TermsOfService = () => {
               You can cancel anytime - no questions asked, no cancellation fees:
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
-              <li><strong>How to Cancel:</strong> Go to Settings → Subscription → \"Cancel Subscription\" and follow the prompts. Or email info@wakeel.org with subject \"Cancel Subscription\".</li>
+              <li><strong>How to Cancel:</strong> Go to Settings → Subscription → \"Cancel Subscription\" and follow the prompts. Or email support@wakeel.org with subject \"Cancel Subscription\".</li>
               <li><strong>When It Takes Effect:</strong> Your cancellation takes effect at the END of your current billing period. So if you paid for a month/year, you get to use that full time you paid for.</li>
               <li><strong>Example:</strong> You subscribe on January 1st for PKR 4,999/month. On January 15th you decide to cancel. You'll still have full access until January 31st (end of the month you paid for). On February 1st, you'll be downgraded to Free tier.</li>
               <li><strong>Reactivating:</strong> If you cancel but change your mind later, you can resubscribe anytime. We'll be happy to have you back!</li>
@@ -517,8 +528,8 @@ const TermsOfService = () => {
                   <li>Required by Pakistani consumer protection law</li>
                 </ul>
               </li>
-              <li><strong>Money-Back Guarantee (First-Time Users):</strong> If you're a first-time paid subscriber and you're not satisfied within the first 7 days, email us at info@wakeel.org and we'll consider a full refund. Be honest about why you're unhappy - your feedback helps us improve!</li>
-              <li><strong>How to Request Refund:</strong> Email info@wakeel.org with subject \"Refund Request\" and explain the situation. We'll review within 3-5 business days. Approved refunds typically process within 7-10 business days.</li>
+              <li><strong>Money-Back Guarantee (First-Time Users):</strong> If you're a first-time paid subscriber and you're not satisfied within the first 7 days, email us at support@wakeel.org and we'll consider a full refund. Be honest about why you're unhappy - your feedback helps us improve!</li>
+              <li><strong>How to Request Refund:</strong> Email support@wakeel.org with subject \"Refund Request\" and explain the situation. We'll review within 3-5 business days. Approved refunds typically process within 7-10 business days.</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Price Changes</h3>
@@ -676,7 +687,7 @@ const TermsOfService = () => {
               If you have any questions about these Terms, please contact us at:
             </p>
             <div className="mt-4">
-              <p><strong>Email:</strong> info@wakeel.org</p>
+              <p><strong>Email:</strong> support@wakeel.org</p>
               <p><strong>Location:</strong> Lahore, Pakistan</p>
               <p><strong>Website:</strong> https://wakeel.org</p>
             </div>

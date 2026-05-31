@@ -184,7 +184,7 @@ const AboutPage = () => {
               },
               "contactPoint": {
                 "@type": "ContactPoint",
-                "email": "info@wakeel.org",
+                "email": "support@wakeel.org",
                 "contactType": "Customer Service",
                 "areaServed": "PK",
                 "availableLanguage": ["English", "Urdu"]

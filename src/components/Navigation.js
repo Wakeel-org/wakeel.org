@@ -7,6 +7,7 @@ import ThemeToggle from './ThemeToggle';
 import PricingModal from './PricingModal';
 import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
+import { openPlatformAppStore } from '../utils/platformDetection';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ const Navigation = () => {
   ];
 
   const handleGetStarted = () => {
-    window.open('https://wakeel.web.app', '_blank');
+    openPlatformAppStore();
   };
 
   return (
