@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaGooglePlay, FaApple } from 'react-icons/fa';
 import { Button } from './ui/button';
+import { APP_STORE_LINKS } from '../utils/platformDetection';
 
 const AppDownloadButtons = ({ className = "" }) => {
   return (
     <div className={`flex flex-col sm:flex-row gap-3 ${className}`}>
       <Button
-        onClick={() => window.open('https://play.google.com/store/apps/details?id=pk.digit.aiwakeel', '_blank')}
+        onClick={() => window.open(APP_STORE_LINKS.android, '_blank')}
         variant="outline"
         className="w-full sm:w-auto h-14 px-6 border-2 hover:bg-muted/50 transition-all group"
       >
@@ -18,7 +19,7 @@ const AppDownloadButtons = ({ className = "" }) => {
       </Button>
       
       <Button
-        onClick={() => window.open('https://apps.apple.com/app/wakeel', '_blank')}
+        onClick={() => window.open(APP_STORE_LINKS.ios, '_blank')}
         variant="outline"
         className="w-full sm:w-auto h-14 px-6 border-2 hover:bg-muted/50 transition-all group"
       >

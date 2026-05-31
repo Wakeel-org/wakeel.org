@@ -454,8 +454,8 @@ className="bg-gradient-to-br from-primary/20 to-primary/10"
 | Store | URL |
 |-------|-----|
 | Google Play | https://play.google.com/store/apps/details?id=pk.digit.aiwakeel |
-| App Store | https://apps.apple.com/app/wakeel |
-| Web App | https://wakeel.web.app |
+| App Store (TestFlight) | https://testflight.apple.com/join/ZVgHgqF7 |
+| Web App | https://app.wakeel.org |
 
 ---
 

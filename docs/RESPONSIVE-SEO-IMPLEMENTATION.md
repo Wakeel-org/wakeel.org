@@ -81,7 +81,7 @@ This document details the comprehensive SEO, GEO, and responsive design improvem
   "browserRequirements": "Requires JavaScript. Requires HTML5.",
   "featureList": "Legal Research, Case Management, Document Automation...",
   "applicationSubCategory": "Legal Technology, Practice Management",
-  "downloadUrl": "https://wakeel.web.app",
+  "downloadUrl": "https://app.wakeel.org",
   "softwareVersion": "2.0",
   "releaseNotes": "Enhanced AI capabilities..."
 }

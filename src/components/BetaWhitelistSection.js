@@ -5,6 +5,7 @@ import { Card, CardContent } from './ui/card';
 import { Input } from './ui/input';
 import { db } from '../lib/firebase';
 import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
+import { APP_STORE_LINKS } from '../utils/platformDetection';
 
 const BetaWhitelistSection = () => {
   const [email, setEmail] = useState('');
@@ -98,7 +99,7 @@ const BetaWhitelistSection = () => {
             {/* App Download Links */}
             <div className="flex flex-col sm:flex-row gap-3 pt-4">
               <Button
-                onClick={() => window.open('https://play.google.com/store/apps/details?id=pk.digit.aiwakeel', '_blank')}
+                onClick={() => window.open(APP_STORE_LINKS.android, '_blank')}
                 variant="outline"
                 className="border-2 transition-all"
               >
@@ -107,7 +108,7 @@ const BetaWhitelistSection = () => {
               </Button>
               
               <Button
-                onClick={() => window.open('https://testflight.apple.com/join/ZVgHgqF7', '_blank')}
+                onClick={() => window.open(APP_STORE_LINKS.ios, '_blank')}
                 variant="outline"
                 className="border-2 transition-all"
               >

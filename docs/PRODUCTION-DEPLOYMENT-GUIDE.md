@@ -33,7 +33,7 @@ Wakeel.org is a Next.js marketing website deployed to Firebase Hosting. This gui
 
 ### Production URLs
 - **Website:** https://wakeel.org
-- **Web App:** https://wakeel.web.app
+- **Web App:** https://app.wakeel.org
 - **Android App:** https://play.google.com/store/apps/details?id=pk.digit.aiwakeel
 - **iOS App:** https://apps.apple.com/app/wakeel
 

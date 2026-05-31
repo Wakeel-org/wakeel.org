@@ -160,9 +160,9 @@ const ContactPage = () => {
   const contactInfo = [
     {
       title: 'Email',
-      value: 'info@wakeel.org',
+      value: 'support@wakeel.org',
       icon: Mail,
-      link: 'mailto:info@wakeel.org'
+      link: 'mailto:support@wakeel.org'
     },
     {
       title: 'Location',
@@ -209,7 +209,7 @@ const ContactPage = () => {
               "mainEntity": {
                 "@type": "Organization",
                 "name": "Wakeel.org",
-                "email": "info@wakeel.org",
+                "email": "support@wakeel.org",
                 "address": {
                   "@type": "PostalAddress",
                   "addressLocality": "Lahore",
@@ -217,7 +217,7 @@ const ContactPage = () => {
                 },
                 "contactPoint": {
                   "@type": "ContactPoint",
-                  "email": "info@wakeel.org",
+                  "email": "support@wakeel.org",
                   "contactType": "Customer Service",
                   "availableLanguage": ["English", "Urdu"]
                 }

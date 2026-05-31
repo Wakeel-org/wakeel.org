@@ -144,7 +144,7 @@ export default function Home() {
                 "worstRating": "1"
               },
               "applicationSubCategory": "Legal Technology, Practice Management, Legal Research",
-              "downloadUrl": "https://wakeel.web.app",
+              "downloadUrl": "https://app.wakeel.org",
               "softwareVersion": "2.0",
               "releaseNotes": "Enhanced AI capabilities, improved case management, and expanded legal research database"
             })
