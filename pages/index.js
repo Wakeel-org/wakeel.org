@@ -318,6 +318,7 @@ export default function Home() {
                       </ul>
                       <Link
                         href={audience.href}
+                        aria-label={`Learn more about Wakeel for ${audience.title}`}
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
                       >
                         Learn more <ArrowRight className="h-3.5 w-3.5" />

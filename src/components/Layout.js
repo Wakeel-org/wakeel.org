@@ -72,10 +72,6 @@ const Layout = ({ children }) => {
         <link rel="apple-touch-icon" href="/logo-light.svg" />
         <link rel="shortcut icon" href="/logo-light.svg" />
         
-        {/* Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
         {/* Open Graph / Social Media Meta Tags */}
         <meta property="og:title" content="Wakeel.org - Pakistan's AI Legal Assistant" />
         <meta property="og:description" content={site.description} />

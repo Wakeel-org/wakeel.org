@@ -157,19 +157,19 @@ export const values = [
 ];
 
 export const team = [
+    {
+    name: "Dr. Sajid Mahmood",
+    role: "Co-founder",
+    initials: "SM",
+    photo: "/team/sajid-mahmood.jpg",
+    linkedin: "https://www.linkedin.com/in/sajid-mahmood-362a8536/",
+  },
   {
     name: "Majid Hussain Malik",
     role: "Co-founder",
     initials: "MH",
     photo: "/team/majid-hussain-malik.jpg",
     linkedin: "https://www.linkedin.com/in/majidhussainmalik/",
-  },
-  {
-    name: "Sajid Mahmood",
-    role: "Co-founder",
-    initials: "SM",
-    photo: "/team/sajid-mahmood.jpg",
-    linkedin: "https://www.linkedin.com/in/sajid-mahmood-362a8536/",
   },
   {
     name: "Usman Inayat",
