@@ -500,6 +500,18 @@ const TermsOfService = () => {
             <p className="mb-4">
               <strong>Important:</strong> We don't store your full credit card information on our servers. Payment processing is handled securely by third-party payment processors who are certified and compliant with international security standards.
             </p>
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">In-App Purchases and Subscriptions via Apple App Store (iOS)</h3>
+            <p className="mb-4">
+              If you purchase or subscribe to Wakeel.org through our iOS app on the Apple App Store, the following additional terms apply:
+            </p>
+            <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+              <li><strong>Apple ID Billing:</strong> Payment will be charged to your Apple ID account at confirmation of purchase. All billing for App Store subscriptions is processed by Apple — not directly by Wakeel.org.</li>
+              <li><strong>Automatic Renewal:</strong> Your subscription automatically renews unless auto-renewal is turned off at least 24 hours before the end of the current billing period. Your Apple ID account will be charged for renewal within 24 hours prior to the end of the current period, at the rate confirmed at the time of purchase.</li>
+              <li><strong>Managing or Cancelling Your Subscription:</strong> You can manage your subscription and turn off auto-renewal at any time through: <strong>iPhone/iPad Settings → [Your Name] → Subscriptions</strong>, or via the <strong>App Store → Your Account → Subscriptions</strong>. Cancelling through Wakeel.org's website or support email does not cancel an App Store subscription — you must cancel directly through Apple.</li>
+              <li><strong>Refunds:</strong> All refunds for App Store purchases are handled exclusively by Apple. Wakeel.org cannot process refunds for subscriptions purchased through the App Store. To request a refund, visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" className="underline">reportaproblem.apple.com</a> or contact Apple Support directly.</li>
+              <li><strong>Price Changes:</strong> If subscription pricing changes, Apple will notify you before the new price takes effect and will require your consent to continue the subscription at the updated rate.</li>
+              <li><strong>Free Trials:</strong> If a free trial is offered through the App Store, any unused portion of the free trial period will be forfeited upon purchase of a subscription.</li>
+            </ul>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Taxes</h3>
             <p className="mb-4">
@@ -599,9 +611,102 @@ const TermsOfService = () => {
               <li>If you owe money for Organization plans, we may pursue collection</li>
             </ul>
           </section>
+
+          <section className="mb-12">
+  <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">5. AI-Powered Features — How They Work, Limitations, and Your Responsibilities</h2>
+  <p className="mb-4">
+    Wakeel.org is not a simple search engine. It uses artificial intelligence to read, understand, and respond to your legal questions. This section explains exactly how our AI works, what it can and cannot do, which third-party AI providers are involved, and the rules around using these features. Please read this carefully — AI in legal research is powerful but has real limitations you must understand.
+  </p>
+
+  <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">How Our AI Actually Works</h3>
+  <p className="mb-4">
+    When you ask a legal question on Wakeel.org, here is what happens behind the scenes:
+  </p>
+  <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+    <li><strong>Step 1 — Understanding Your Question:</strong> Your query is converted into a mathematical representation (called an "embedding") using OpenAI's technology. This allows the system to understand the meaning of your question, not just the keywords.</li>
+    <li><strong>Step 2 — Searching Our Legal Database:</strong> The system searches our database of Pakistani legal documents — court judgments, statutes, regulations, and legal precedents — using a combination of keyword search and meaning-based search to find the most relevant sections.</li>
+    <li><strong>Step 3 — Selecting the Best Results:</strong> The top matching passages are ranked and re-evaluated so only the most relevant legal content forms the basis of your answer.</li>
+    <li><strong>Step 4 — Generating Your Response:</strong> The selected legal passages are passed to an AI language model which reads them and generates a clear, structured response. The AI provider used depends on your subscription tier:
+    </li>
+  </ul>
+  <p className="mb-4">
+    <strong>The most important point:</strong> Our AI only reads and responds based on legal documents in our own database. It does not use general internet knowledge, its own broad training data, or any information from outside our curated Pakistani legal document collection.
+  </p>
+
+  <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">What Our AI Can Do</h3>
+  <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+    <li>Search and retrieve relevant Pakistani case law, statutes, and legal precedents from our database</li>
+    <li>Summarise complex legal judgments in plain language</li>
+    <li>Explain legal concepts and principles found within our document collection</li>
+    <li>Help you understand what a specific law or court decision says</li>
+    <li>Identify relevant legal provisions for a research topic</li>
+    <li>Provide structured responses grounded in actual Pakistani legal documents</li>
+  </ul>
+
+  <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Critical Limitations — What Our AI Cannot Do</h3>
+  <p className="mb-4">
+    This is the most important part of this section:
+  </p>
+  <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+    <li><strong>❌ Cannot Give Legal Advice:</strong> Our AI provides legal information and research assistance only. It does not give personalised legal advice for your specific situation. No AI response on Wakeel.org constitutes legal advice or creates any attorney-client relationship.</li>
+    <li><strong>❌ Cannot Know What Is Not In Our Database:</strong> If a law was amended, a new judgment was delivered, or a regulation changed after our last database update, our AI will not know about it. Always verify time-sensitive legal information against official sources.</li>
+    <li><strong>❌ Cannot Guarantee Accuracy:</strong> AI systems can produce responses that sound confident but contain errors — a phenomenon known as "hallucination." Even with our retrieval-grounded approach, errors are possible. Never rely solely on AI responses for important legal decisions.</li>
+    <li><strong>❌ Cannot Replace a Qualified Lawyer:</strong> For any matter with real legal consequences — a court case, a contract, a criminal charge, a property dispute — consult a qualified and licensed lawyer. AI is a research tool, not a legal representative.</li>
+    <li><strong>❌ Limited to Pakistani Law:</strong> Our database covers Pakistani law only. Questions about foreign jurisdictions, international treaties not applicable in Pakistan, or laws of other countries cannot be answered accurately.</li>
+    <li><strong>❌ Cannot Access Real-Time Information:</strong> Our AI does not browse the internet and has no access to live legal databases, today's news, or real-time court records.</li>
+  </ul>
+
+  <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">AI Accuracy Warning</h3>
+  <p className="mb-4">
+    All AI systems, including ours, can occasionally produce inaccurate, incomplete, or misleading responses. In legal research this carries serious risk. You must:
+  </p>
+  <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+    <li>Always verify AI-generated legal information against the original source documents cited in the response</li>
+    <li>Never submit AI-generated content to a court, tribunal, or official body without independent verification by a qualified lawyer</li>
+    <li>Treat AI responses as a starting point for research, not a final authoritative answer</li>
+    <li>Report any inaccurate responses to support@wakeel.org — this helps us improve the system for all users</li>
+  </ul>
+  <p className="mb-4">
+    <strong>Wakeel.org accepts no liability for decisions made based solely on AI-generated responses.</strong> See Section 11 (Limitation of Liability) for the full legal disclaimer.
+  </p>
+
+  <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">AI Third-Party Providers</h3>
+  <p className="mb-4">
+    To deliver AI responses, your query is processed by the following third-party AI providers depending on your subscription tier:
+  </p>
+  <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+    <li><strong>OpenAI:</strong> Your query text is sent to OpenAI's API to generate an embedding used for legal document search.</li>
+    <li><strong>Anthropic — Claude:</strong> Your query and the top relevant legal document passages are sent to Anthropic's Claude API to generate your response.</li>
+    <li><strong>Google — Gemini:</strong> Your query and the top relevant legal document passages are sent to Google's Gemini API to generate your response.</li>
+  </ul>
+  <p className="mb-4">
+    Your personal identifying information — name, email, payment details, account ID — is never sent to any of these providers. Only your query text and retrieved legal document passages are transmitted. See our Privacy Policy at wakeel.org/privacy for complete details.
+  </p>
+
+  <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Acceptable Use of AI Features</h3>
+  <p className="mb-4">
+    When using Wakeel.org's AI features, you agree not to:
+  </p>
+  <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+    <li>Attempt to manipulate, jailbreak, or circumvent the AI's behaviour or safety guardrails</li>
+    <li>Submit queries designed to extract outputs that could facilitate illegal activity</li>
+    <li>Present AI-generated legal content in official proceedings as verified legal authority without independent review by a qualified lawyer</li>
+    <li>Systematically extract or scrape AI responses to build competing products or datasets</li>
+    <li>Submit fabricated legal scenarios intended to manipulate AI outputs</li>
+    <li>Attempt to reverse-engineer our legal database structure or AI pipeline</li>
+  </ul>
+
+  <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">No Liability for AI-Generated Responses</h3>
+  <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+    <li>Wakeel.org does not warrant that AI-generated responses are accurate, complete, or current</li>
+    <li>Wakeel.org is not liable for any loss, damage, or legal consequence arising from reliance on AI-generated content</li>
+    <li>AI responses do not constitute legal advice and must not be treated as such</li>
+    <li>You use AI features entirely at your own risk and are solely responsible for independently verifying all AI-generated legal information before acting on it</li>
+  </ul>
+</section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">5. User Conduct</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">6. User Conduct</h2>
             <p>
               When using our Services, you agree not to:
             </p>
@@ -617,7 +722,7 @@ const TermsOfService = () => {
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">6. Intellectual Property Rights</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">7. Intellectual Property Rights</h2>
             <p>
               The Services and their original content, features, and functionality are owned by Wakeel.org and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.
             </p>
@@ -627,7 +732,7 @@ const TermsOfService = () => {
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">7. User Content</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">8. User Content</h2>
             <p>
               You retain ownership of any content you submit, post, or display on or through the Services ("User Content"). By providing User Content, you grant us a worldwide, non-exclusive, royalty-free license to use, copy, modify, create derivative works from, distribute, publicly display, and publicly perform your User Content in connection with providing and improving the Services.
             </p>
@@ -637,7 +742,7 @@ const TermsOfService = () => {
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">8. Confidentiality and Data Security</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">9. Confidentiality and Data Security</h2>
             <p>
               We take appropriate measures to protect the confidentiality and security of any information you provide to us. However, you acknowledge that no method of transmission over the Internet or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your information, we cannot guarantee its absolute security.
             </p>
@@ -647,42 +752,42 @@ const TermsOfService = () => {
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">9. Disclaimer of Warranties</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">10. Disclaimer of Warranties</h2>
             <p>
               THE SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT THE SERVICES OR THE SERVERS THAT MAKE THEM AVAILABLE ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
             </p>
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">10. Limitation of Liability</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">11. Limitation of Liability</h2>
             <p>
               TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, WAKEEL.ORG AND ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, PARTNERS, AND SUPPLIERS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM (I) YOUR ACCESS TO OR USE OF OR INABILITY TO ACCESS OR USE THE SERVICES; (II) ANY CONDUCT OR CONTENT OF ANY THIRD PARTY ON THE SERVICES; (III) ANY CONTENT OBTAINED FROM THE SERVICES; AND (IV) UNAUTHORIZED ACCESS, USE, OR ALTERATION OF YOUR TRANSMISSIONS OR CONTENT, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY, WHETHER OR NOT WE HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGE.
             </p>
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">11. Indemnification</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">12. Indemnification</h2>
             <p>
               You agree to defend, indemnify, and hold harmless Wakeel.org and its officers, directors, employees, agents, and affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including but not limited to attorney's fees) arising from: (i) your use of and access to the Services; (ii) your violation of any term of these Terms; (iii) your violation of any third-party right, including without limitation any copyright, property, or privacy right; or (iv) any claim that your User Content caused damage to a third party.
             </p>
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">12. Governing Law and Jurisdiction</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">13. Governing Law and Jurisdiction</h2>
             <p>
               These Terms shall be governed by and construed in accordance with the laws of Pakistan, without regard to its conflict of law provisions. You agree to submit to the personal and exclusive jurisdiction of the courts located in Lahore, Pakistan for the resolution of any disputes arising out of or relating to these Terms or the Services.
             </p>
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">13. Changes to Terms</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">14. Changes to Terms</h2>
             <p>
               We reserve the right to modify or replace these Terms at any time at our sole discretion. The most current version will be posted on our website with the "Last Updated" date at the top. By continuing to access or use our Services after any revisions become effective, you agree to be bound by the revised Terms.
             </p>
           </section>
           
           <section className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">14. Contact Information</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">15. Contact Information</h2>
             <p>
               If you have any questions about these Terms, please contact us at:
             </p>

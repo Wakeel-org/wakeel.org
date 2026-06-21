@@ -1,27 +1,22 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { useTheme } from '../context/ThemeContext';
 import ThemeToggle from './ThemeToggle';
-import PricingModal from './PricingModal';
 import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
 import { openPlatformAppStore } from '../utils/platformDetection';
+import { productLinks, resourceLinks, site, solutionLinks } from '../data/marketing';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isPricingModalOpen, setIsPricingModalOpen] = useState(false);
-  const router = useRouter();
-  const isHomePage = router.pathname === '/';
-  
+
   const menuItems = [
     { label: 'Home', href: '/' },
-    { label: 'About', href: isHomePage ? '#who-is-this-for' : '/#who-is-this-for' },
-    { label: 'Values', href: isHomePage ? '#values' : '/#values' },
-    { label: 'Features', href: isHomePage ? '#features' : '/#features' },
-    { label: 'Pricing', href: isHomePage ? '#pricing' : '/#pricing' },
-    { label: 'Contact', href: '/contact' }
+    { label: 'Product', href: '/features' },
+    { label: 'Solutions', href: '/#solutions' },
+    { label: 'Resources', href: '/legal-sources' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   const handleGetStarted = () => {
@@ -38,23 +33,23 @@ const Navigation = () => {
           >
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-lg overflow-hidden">
               {/* Dark logo for light theme */}
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/logo-dark.svg"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}
                 className="block dark:hidden absolute inset-0 rounded-lg"
-                priority
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
               {/* Light logo for dark theme */}
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/logo-light.svg"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}
                 className="hidden dark:block absolute inset-0 rounded-lg"
-                priority
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
             </div>
@@ -62,7 +57,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-4">
             {menuItems.map((item) => (
               <Link
                 key={item.href}
@@ -72,16 +67,22 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
+
+            <Button asChild variant="outline" className="cta-download-android">
+              <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
+                Download App
+              </a>
+            </Button>
             
-            <Button onClick={handleGetStarted}>
-              Get Started
+            <Button onClick={handleGetStarted} className="cta-try-free">
+              Try Free
             </Button>
 
             <ThemeToggle />
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center md:hidden space-x-4">
+          <div className="flex items-center lg:hidden space-x-4">
             <ThemeToggle />
             
             <Button
@@ -97,9 +98,20 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="md:hidden py-6 absolute top-16 left-0 right-0 bg-background backdrop-blur-xl border-b border-border z-40 shadow-xl">
+          <nav className="lg:hidden py-6 absolute top-16 left-0 right-0 bg-background backdrop-blur-xl border-b border-border z-40 shadow-xl">
             <div className="flex flex-col space-y-2 px-4 sm:px-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
-              {menuItems.map((item) => (
+              <Link
+                href="/"
+                className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+
+              <p className="px-4 pt-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Product
+              </p>
+              {productLinks.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
@@ -109,26 +121,76 @@ const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
+
+              <p className="px-4 pt-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Solutions
+              </p>
+              {solutionLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+
+              <p className="px-4 pt-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                Resources
+              </p>
+              {resourceLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+
+              <Link
+                href="/pricing"
+                className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Pricing
+              </Link>
+              <Link
+                href="/about"
+                className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                href="/contact"
+                className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+
+              <Button asChild variant="outline" className="w-full mt-4 cta-download-android">
+                <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
+                  Download App
+                </a>
+              </Button>
               
               <Button 
-                className="w-full mt-4"
+                className="w-full cta-try-free"
                 onClick={() => {
                   setIsMenuOpen(false);
                   handleGetStarted();
                 }}
               >
-                Get Started
+                Try Free
               </Button>
             </div>
           </nav>
         )}
       </div>
-
-      {/* Pricing Modal */}
-      <PricingModal 
-        isOpen={isPricingModalOpen} 
-        onClose={() => setIsPricingModalOpen(false)} 
-      />
     </>
   );
 };

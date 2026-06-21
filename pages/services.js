@@ -27,8 +27,8 @@ const services = [
     icon: <Shield className="h-10 w-10 text-primary" />,
   },
   {
-    title: "24/7 Availability",
-    description: "Access legal insights and assistance anytime, anywhere, without waiting for office hours.",
+    title: "Mobile-First Access",
+    description: "Access legal information and document understanding from web or mobile when you need to prepare questions and notes.",
     icon: <Clock className="h-10 w-10 text-primary" />,
   },
   {
@@ -70,7 +70,7 @@ export default function Services() {
         <div className="bg-muted/30 rounded-3xl p-8 sm:p-12 text-center">
           <h2 className="text-3xl font-bold mb-4 text-foreground">Ready to get started?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of legal professionals who are transforming their practice with Wakeel.org.
+            Start with legal information, document understanding, and research support built around Pakistan's legal system.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/auth">
