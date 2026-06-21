@@ -39,6 +39,7 @@ export const resourceLinks = [
   { label: "Legal Sources", href: "/legal-sources" },
   { label: "Pakistan Legal Issues", href: "/legal-issues-pakistan" },
   { label: "GCC Legal Issues", href: "/legal-issues-gcc" },
+  { label: "Global Legal Issues", href: "/legal-issues-global" },
   { label: "Legal Guides", href: "/fir-refused-pakistan" },
   { label: "Journal", href: "/journal" },
   { label: "Comparisons", href: "/comparisons" },
@@ -1701,5 +1702,455 @@ export const guides = [
       "What consular services are available in GCC?",
     ],
     related: ["/criminal-law-gcc", "/expat-legal-resources-gcc", "/legal-issues-gcc"],
+  },
+  {
+    slug: "international-employment-law",
+    title: "International Employment Law and Worker Rights",
+    description:
+      "Understand employment law across different countries and legal systems for workers and employers operating internationally.",
+    problem:
+      "Employment law varies significantly by country, with different protections, contract requirements, and dispute procedures.",
+    help:
+      "Wakeel can explain employment laws by country, help compare regulations, organize employment facts, and prepare for international legal consultation.",
+    cannot:
+      "Wakeel cannot provide final legal advice by jurisdiction, guarantee employment outcomes, or replace country-specific lawyer consultation.",
+    questions: [
+      "How does employment law differ between countries?",
+      "What are my rights as a worker in different countries?",
+      "Explain employment contracts in different legal systems.",
+    ],
+    related: ["/international-business-law", "/expat-legal-guide-global", "/legal-systems-comparison"],
+  },
+  {
+    slug: "international-business-law",
+    title: "Cross-Border Business and International Commerce",
+    description:
+      "Understand international business law, cross-border contracts, trade regulations, and multinational business operations.",
+    problem:
+      "International business involves complex contracts, multiple jurisdictions, trade laws, and different regulatory frameworks.",
+    help:
+      "Wakeel can explain international business concepts, review cross-border contracts, organize business facts, and prepare for business law consultation.",
+    cannot:
+      "Wakeel cannot provide final legal advice for international deals, negotiate contracts, or replace international business lawyer consultation.",
+    questions: [
+      "How does business law differ internationally?",
+      "Explain cross-border contract enforcement.",
+      "What are trade and import/export regulations?",
+    ],
+    related: ["/international-employment-law", "/legal-systems-comparison", "/expat-legal-guide-global"],
+  },
+  {
+    slug: "uk-legal-guide",
+    title: "Legal Rights and Guidance for United Kingdom",
+    description:
+      "Understand UK legal system, rights, procedures, and guidance for living and working in England, Scotland, Wales, and Northern Ireland.",
+    problem:
+      "UK has common law system with different rules in each constituent country, specific procedures, and unique legal framework.",
+    help:
+      "Wakeel can explain UK law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace UK lawyer representation, or guarantee court outcomes.",
+    questions: [
+      "How does UK law differ from other countries?",
+      "What are my rights as a resident in the UK?",
+      "Explain employment law and contracts in the UK.",
+    ],
+    related: ["/us-legal-guide", "/international-employment-law", "/expat-legal-guide-global"],
+  },
+  {
+    slug: "us-legal-guide",
+    title: "Legal Rights and Guidance for United States",
+    description:
+      "Understand US legal system, federal and state laws, rights, and guidance for living and working in the United States.",
+    problem:
+      "US has complex federal and state legal systems with significant variations between states, requiring local legal knowledge.",
+    help:
+      "Wakeel can explain US law concepts, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace US lawyer representation, or guarantee court outcomes.",
+    questions: [
+      "How does US law differ from other countries?",
+      "What are my rights as a resident or worker in the US?",
+      "Explain federal vs. state law.",
+    ],
+    related: ["/canada-legal-guide", "/international-employment-law", "/expat-legal-guide-global"],
+  },
+  {
+    slug: "canada-legal-guide",
+    title: "Legal Rights and Guidance for Canada",
+    description:
+      "Understand Canadian legal system, provincial and federal law, rights, and guidance for living and working in Canada.",
+    problem:
+      "Canada combines federal law with 10 provincial and 3 territorial legal systems, each with distinct procedures and protections.",
+    help:
+      "Wakeel can explain Canadian law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace Canadian lawyer representation, or guarantee court outcomes.",
+    questions: [
+      "How does Canadian law differ from the US?",
+      "What are my rights as a resident or worker in Canada?",
+      "Explain provincial vs. federal law in Canada.",
+    ],
+    related: ["/us-legal-guide", "/australia-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "australia-legal-guide",
+    title: "Legal Rights and Guidance for Australia",
+    description:
+      "Understand Australian legal system, federal and state law, rights, and guidance for living and working in Australia.",
+    problem:
+      "Australia has federal law combined with state-based systems, plus unique employment, property, and immigration rules.",
+    help:
+      "Wakeel can explain Australian law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace Australian lawyer representation, or guarantee court outcomes.",
+    questions: [
+      "How does Australian law differ from other countries?",
+      "What are my rights as a worker in Australia?",
+      "Explain immigration and visa rules in Australia.",
+    ],
+    related: ["/uk-legal-guide", "/singapore-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "india-legal-guide",
+    title: "Legal Rights and Guidance for India",
+    description:
+      "Understand Indian legal system, federal and state law, rights, and guidance for living, working, and doing business in India.",
+    problem:
+      "India has common law system with significant state variations, complex regulations, and unique cultural/legal considerations.",
+    help:
+      "Wakeel can explain Indian law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace Indian lawyer representation, or guarantee court outcomes.",
+    questions: [
+      "How does Indian law work?",
+      "What are my legal rights in India?",
+      "Explain employment and business law in India.",
+    ],
+    related: ["/singapore-legal-guide", "/malaysia-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "singapore-legal-guide",
+    title: "Legal Rights and Guidance for Singapore",
+    description:
+      "Understand Singapore legal system, rights, procedures, and guidance for living, working, and business in Singapore.",
+    problem:
+      "Singapore has efficient but strict legal system combining common law with specific regulations and strict enforcement.",
+    help:
+      "Wakeel can explain Singapore law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace Singapore lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How does Singapore law compare to other countries?",
+      "What are my rights in Singapore?",
+      "Explain Singapore business and employment law.",
+    ],
+    related: ["/hong-kong-legal-guide", "/malaysia-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "hong-kong-legal-guide",
+    title: "Legal Rights and Guidance for Hong Kong",
+    description:
+      "Understand Hong Kong legal system, rights, business law, and guidance for living and working in Hong Kong.",
+    problem:
+      "Hong Kong combines common law (British legacy) with Chinese sovereignty under \"One Country, Two Systems\" framework.",
+    help:
+      "Wakeel can explain Hong Kong law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace Hong Kong lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How does Hong Kong law work?",
+      "What are my rights in Hong Kong?",
+      "Explain business and employment law in Hong Kong.",
+    ],
+    related: ["/singapore-legal-guide", "/malaysia-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "european-legal-guide",
+    title: "Legal Rights and Guidance for Europe",
+    description:
+      "Understand European legal systems across UK, Germany, France, Netherlands, Scandinavia, and other European countries.",
+    problem:
+      "Europe has multiple legal systems (common law, civil law, mixed) with EU regulations, national laws, and significant variations.",
+    help:
+      "Wakeel can explain European laws, help understand legal situations, organize facts, and guide toward legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace European lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How do European legal systems differ?",
+      "What are my rights in Europe as a resident or worker?",
+      "Explain EU law and national law differences.",
+    ],
+    related: ["/international-employment-law", "/legal-systems-comparison", "/expat-legal-guide-global"],
+  },
+  {
+    slug: "germany-legal-guide",
+    title: "Legal Rights and Guidance for Germany",
+    description:
+      "Understand German legal system, civil law framework, rights, and guidance for living, working, and business in Germany.",
+    problem:
+      "Germany has comprehensive civil law system with strong social protections, strict regulations, and EU compliance requirements.",
+    help:
+      "Wakeel can explain German law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace German lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How does German law work?",
+      "What are my rights as a worker in Germany?",
+      "Explain business and employment law in Germany.",
+    ],
+    related: ["/france-legal-guide", "/european-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "france-legal-guide",
+    title: "Legal Rights and Guidance for France",
+    description:
+      "Understand French legal system, civil law framework, rights, and guidance for living, working, and business in France.",
+    problem:
+      "France has civil law system with strong labor protections, complex regulations, and specific legal procedures.",
+    help:
+      "Wakeel can explain French law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace French lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How does French law work?",
+      "What are my rights as a worker in France?",
+      "Explain business and family law in France.",
+    ],
+    related: ["/germany-legal-guide", "/spain-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "netherlands-scandinavia-legal-guide",
+    title: "Legal Rights and Guidance for Netherlands and Scandinavia",
+    description:
+      "Understand legal systems for Netherlands, Sweden, Norway, Denmark, and Scandinavian countries.",
+    problem:
+      "Netherlands and Scandinavian countries have progressive civil law systems with strong social protections and specific regulations.",
+    help:
+      "Wakeel can explain their legal systems, help understand situations, organize facts, and guide toward legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How do Scandinavian legal systems work?",
+      "What are my rights in Netherlands or Scandinavia?",
+      "Explain employment and business law.",
+    ],
+    related: ["/germany-legal-guide", "/european-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "spain-southern-europe-legal-guide",
+    title: "Legal Rights and Guidance for Spain and Southern Europe",
+    description:
+      "Understand legal systems for Spain, Portugal, Italy, Greece, and Southern European countries.",
+    problem:
+      "Southern Europe has civil law systems with Latin/Mediterranean legal traditions and specific labor and property laws.",
+    help:
+      "Wakeel can explain their legal systems, help understand situations, organize facts, and guide toward legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How do Southern European legal systems work?",
+      "What are my rights in Spain or Southern Europe?",
+      "Explain employment and property law.",
+    ],
+    related: ["/france-legal-guide", "/european-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "malaysia-legal-guide",
+    title: "Legal Rights and Guidance for Malaysia",
+    description:
+      "Understand Malaysian legal system, common law framework, Islamic law integration, and guidance for living and working in Malaysia.",
+    problem:
+      "Malaysia combines common law with Islamic law (for Muslims), making it complex for expats and diverse populations.",
+    help:
+      "Wakeel can explain Malaysian law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace Malaysian lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How does Malaysian law work?",
+      "What are my rights in Malaysia?",
+      "Explain employment and Islamic law in Malaysia.",
+    ],
+    related: ["/singapore-legal-guide", "/indonesia-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "indonesia-legal-guide",
+    title: "Legal Rights and Guidance for Indonesia",
+    description:
+      "Understand Indonesian legal system, civil law framework, Islamic law integration, and guidance for living and working in Indonesia.",
+    problem:
+      "Indonesia has developing legal system with Islamic law influence, complex procedures, and enforcement variations.",
+    help:
+      "Wakeel can explain Indonesian law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace Indonesian lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How does Indonesian law work?",
+      "What are my rights in Indonesia?",
+      "Explain employment and business law in Indonesia.",
+    ],
+    related: ["/malaysia-legal-guide", "/thailand-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "thailand-southeast-asia-legal-guide",
+    title: "Legal Rights and Guidance for Thailand and Southeast Asia",
+    description:
+      "Understand legal systems for Thailand, Vietnam, Cambodia, and Southeast Asian countries.",
+    problem:
+      "Southeast Asia has diverse legal systems (civil law, common law hybrids) with developing frameworks and cultural considerations.",
+    help:
+      "Wakeel can explain their legal systems, help understand situations, organize facts, and guide toward legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How do Southeast Asian legal systems work?",
+      "What are my rights in Thailand or Southeast Asia?",
+      "Explain employment law in Southeast Asia.",
+    ],
+    related: ["/indonesia-legal-guide", "/malaysia-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "turkey-middle-east-legal-guide",
+    title: "Legal Rights and Guidance for Turkey and Middle East",
+    description:
+      "Understand legal systems for Turkey, Iran, Jordan, Lebanon, and other Middle Eastern countries beyond GCC.",
+    problem:
+      "Middle East has diverse legal systems combining Islamic law, civil law, and national frameworks with significant variations.",
+    help:
+      "Wakeel can explain their legal systems, help understand situations, organize facts, and guide toward legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How do Middle Eastern legal systems work?",
+      "What are my rights in Turkey or Middle East?",
+      "Explain employment and business law.",
+    ],
+    related: ["/egypt-legal-guide", "/international-employment-law", "/legal-systems-comparison"],
+  },
+  {
+    slug: "egypt-legal-guide",
+    title: "Legal Rights and Guidance for Egypt",
+    description:
+      "Understand Egyptian legal system, civil law framework, Islamic law integration, and guidance for living and working in Egypt.",
+    problem:
+      "Egypt has civil law system with Islamic law provisions, evolving legal framework, and specific employment and property rules.",
+    help:
+      "Wakeel can explain Egyptian law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace Egyptian lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How does Egyptian law work?",
+      "What are my rights in Egypt?",
+      "Explain employment and business law in Egypt.",
+    ],
+    related: ["/turkey-middle-east-legal-guide", "/south-africa-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "south-africa-legal-guide",
+    title: "Legal Rights and Guidance for South Africa",
+    description:
+      "Understand South African legal system, common law hybrid framework, constitutional law, and guidance for living and working.",
+    problem:
+      "South Africa has complex legal system combining common law, civil law, and customary law with constitutional protections.",
+    help:
+      "Wakeel can explain South African law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace South African lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How does South African law work?",
+      "What are my rights in South Africa?",
+      "Explain employment and business law in South Africa.",
+    ],
+    related: ["/nigeria-legal-guide", "/egypt-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "nigeria-legal-guide",
+    title: "Legal Rights and Guidance for Nigeria and West Africa",
+    description:
+      "Understand legal systems for Nigeria, Ghana, Cameroon, and West African countries.",
+    problem:
+      "West Africa has common law-based systems (colonial legacy) with national variations and developing legal frameworks.",
+    help:
+      "Wakeel can explain their legal systems, help understand situations, organize facts, and guide toward legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How do West African legal systems work?",
+      "What are my rights in Nigeria or West Africa?",
+      "Explain employment law in these countries.",
+    ],
+    related: ["/south-africa-legal-guide", "/egypt-legal-guide", "/international-employment-law"],
+  },
+  {
+    slug: "brazil-legal-guide",
+    title: "Legal Rights and Guidance for Brazil",
+    description:
+      "Understand Brazilian legal system, civil law framework, constitutional law, and guidance for living, working, and business in Brazil.",
+    problem:
+      "Brazil has civil law system with constitutional protections, complex labor law, and specific business regulations.",
+    help:
+      "Wakeel can explain Brazilian law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace Brazilian lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How does Brazilian law work?",
+      "What are my rights as a worker in Brazil?",
+      "Explain business and employment law in Brazil.",
+    ],
+    related: ["/mexico-latin-america-legal-guide", "/international-employment-law", "/international-business-law"],
+  },
+  {
+    slug: "mexico-latin-america-legal-guide",
+    title: "Legal Rights and Guidance for Mexico and Latin America",
+    description:
+      "Understand legal systems for Mexico, Colombia, Argentina, Chile, and Latin American countries.",
+    problem:
+      "Latin America has civil law systems (Spanish/Portuguese legacy) with significant development and enforcement variations.",
+    help:
+      "Wakeel can explain their legal systems, help understand situations, organize facts, and guide toward legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, replace lawyer representation, or guarantee outcomes.",
+    questions: [
+      "How do Latin American legal systems work?",
+      "What are my rights in Mexico or Latin America?",
+      "Explain employment and business law.",
+    ],
+    related: ["/brazil-legal-guide", "/international-employment-law", "/international-business-law"],
+  },
+  {
+    slug: "legal-systems-comparison",
+    title: "Comparison of Legal Systems Worldwide",
+    description:
+      "Compare different legal systems globally: common law, civil law, Islamic law, customary law, and mixed systems.",
+    problem:
+      "Different countries use fundamentally different legal systems that affect everything from contracts to court procedures.",
+    help:
+      "Wakeel can explain legal system differences, compare approaches by country, and help understand how law works in different systems.",
+    cannot:
+      "Wakeel cannot provide final legal advice for specific jurisdictions or replace jurisdiction-specific lawyer consultation.",
+    questions: [
+      "What's the difference between common law and civil law?",
+      "How do different legal systems approach contracts?",
+      "Explain Islamic law and customary law systems.",
+    ],
+    related: ["/international-employment-law", "/international-business-law", "/expat-legal-guide-global"],
+  },
+  {
+    slug: "expat-legal-guide-global",
+    title: "Global Expat Legal Guide and International Relocation",
+    description:
+      "Comprehensive guide for expats and people relocating internationally covering visas, work permits, taxes, and legal issues.",
+    problem:
+      "Expats face unique legal challenges: visa requirements, tax obligations, employment rules, and cultural legal differences.",
+    help:
+      "Wakeel can explain expat legal issues by country, help organize relocation facts, and guide toward appropriate resources.",
+    cannot:
+      "Wakeel cannot process visa applications, guarantee approval, provide final legal advice, or replace country-specific lawyer consultation.",
+    questions: [
+      "What are my legal obligations as an expat?",
+      "How do I navigate legal systems in different countries?",
+      "Explain tax obligations for expats.",
+    ],
+    related: ["/international-employment-law", "/international-business-law", "/legal-systems-comparison"],
   },
 ];

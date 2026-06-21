@@ -4,7 +4,53 @@ import Navigation from './Navigation';
 import AppDownloadButtons from './AppDownloadButtons';
 import Link from 'next/link';
 import { Linkedin, Facebook, Instagram, Mail, MapPin } from 'lucide-react';
-import { footerPrimaryLinks, productLinks, resourceLinks, site, solutionLinks } from '../data/marketing';
+import { site } from '../data/marketing';
+
+const footerColumns = [
+  {
+    title: "Product",
+    links: [
+      { label: "AI Legal Chat", href: "/features#ai-legal-chat" },
+      { label: "Document Analysis", href: "/features#document-analysis" },
+      { label: "Legal Research", href: "/features#legal-research" },
+      { label: "Drafting Support", href: "/features#drafting-support" },
+      { label: "All Features", href: "/features" },
+      { label: "Pricing", href: "/pricing" },
+    ],
+  },
+  {
+    title: "Solutions",
+    links: [
+      { label: "Citizens", href: "/citizens" },
+      { label: "Law Students", href: "/law-students" },
+      { label: "Lawyers", href: "/lawyers" },
+      { label: "Law Firms", href: "/law-firms" },
+      { label: "Judges", href: "/judges" },
+      { label: "Policymakers", href: "/policymakers" },
+      { label: "Legal Institutions", href: "/legal-institutions" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Legal Sources", href: "/legal-sources" },
+      { label: "Pakistan Legal Issues", href: "/legal-issues-pakistan" },
+      { label: "GCC Legal Issues", href: "/legal-issues-gcc" },
+      { label: "Legal Guides", href: "/fir-refused-pakistan" },
+      { label: "Comparisons", href: "/comparisons" },
+      { label: "Journal", href: "/journal" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Values", href: "/values" },
+      { label: "Contact", href: "/contact" },
+      { label: "Legal Disclaimer", href: "/disclaimer" },
+    ],
+  },
+];
 
 const Layout = ({ children }) => {
   return (
@@ -110,62 +156,20 @@ const Layout = ({ children }) => {
               </div>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Product</h3>
-              <ul className="space-y-3">
-                {productLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Company</h3>
-              <ul className="space-y-3">
-                {footerPrimaryLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Solutions</h3>
-              <ul className="space-y-3">
-                {solutionLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Resources</h3>
-              <ul className="space-y-3">
-                {resourceLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            {footerColumns.map((col) => (
+              <div key={col.title} className="space-y-4">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">{col.title}</h3>
+                <ul className="space-y-3">
+                  {col.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
           <div className="pt-8 mt-8 border-t border-border">
