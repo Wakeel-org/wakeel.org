@@ -31,7 +31,7 @@ const Navigation = () => {
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-lg overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo-dark.svg"
+                src="/logo-dark.png"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}
@@ -40,7 +40,7 @@ const Navigation = () => {
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo-light.svg"
+                src="/logo-light.png"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}

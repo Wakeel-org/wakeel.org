@@ -6,7 +6,7 @@ const MarketingSEO = ({
   description,
   path = "/",
   schema = [],
-  image = "/logo-dark.svg",
+  image = "/logo-og.png",
   region = "pk",
   language = "en",
   keywords = "",

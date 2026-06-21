@@ -140,7 +140,7 @@ const JournalPage = () => {
                 "name": "Wakeel.org",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://wakeel.org/logo-dark.svg"
+                  "url": "https://wakeel.org/logo-og.png"
                 }
               }
             })

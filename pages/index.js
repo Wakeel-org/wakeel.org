@@ -45,7 +45,7 @@ const homeSchema = [
     "@type": "Organization",
     name: "Wakeel.org",
     url: site.url,
-    logo: `${site.url}/logo-dark.svg`,
+    logo: `${site.url}/logo-og.png`,
     contactPoint: {
       "@type": "ContactPoint",
       email: site.contactEmail,
@@ -318,10 +318,9 @@ export default function Home() {
                       </ul>
                       <Link
                         href={audience.href}
-                        aria-label={`Learn more about Wakeel for ${audience.title}`}
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
                       >
-                        Learn more <ArrowRight className="h-3.5 w-3.5" />
+                        Wakeel for {audience.title} <ArrowRight className="h-3.5 w-3.5" />
                       </Link>
                     </CardContent>
                   </Card>
