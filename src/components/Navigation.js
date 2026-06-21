@@ -4,20 +4,17 @@ import ThemeToggle from './ThemeToggle';
 import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
 import { openPlatformAppStore } from '../utils/platformDetection';
-import { productLinks, resourceLinks, site, solutionLinks } from '../data/marketing';
+import { site } from '../data/marketing';
+
+const navLinks = [
+  { label: 'Features', href: '/features' },
+  { label: 'Pricing', href: '/pricing' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const menuItems = [
-    { label: 'Home', href: '/' },
-    { label: 'Product', href: '/features' },
-    { label: 'Solutions', href: '/#solutions' },
-    { label: 'Resources', href: '/legal-sources' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'About', href: '/about' },
-    { label: 'Contact', href: '/contact' },
-  ];
 
   const handleGetStarted = () => {
     openPlatformAppStore();
@@ -27,12 +24,11 @@ const Navigation = () => {
     <>
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="flex items-center gap-2 sm:gap-3 text-xl font-bold text-primary hover:text-primary/80 transition-colors"
           >
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-lg overflow-hidden">
-              {/* Dark logo for light theme */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo-dark.svg"
@@ -42,7 +38,6 @@ const Navigation = () => {
                 className="block dark:hidden absolute inset-0 rounded-lg"
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
-              {/* Light logo for dark theme */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo-light.svg"
@@ -57,8 +52,8 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-4">
-            {menuItems.map((item) => (
+          <nav className="hidden lg:flex items-center gap-6">
+            {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -67,126 +62,60 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
-
-            <Button asChild variant="outline" className="cta-download-android">
-              <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
-                Download App
-              </a>
-            </Button>
-            
-            <Button onClick={handleGetStarted} className="cta-try-free">
-              Try Free
-            </Button>
-
-            <ThemeToggle />
+            <div className="flex items-center gap-2 ml-2">
+              <Button asChild variant="outline" size="sm" className="cta-download-android">
+                <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
+                  Download App
+                </a>
+              </Button>
+              <Button size="sm" onClick={handleGetStarted} className="cta-try-free">
+                Try Free
+              </Button>
+              <ThemeToggle />
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center lg:hidden space-x-4">
+          <div className="flex items-center lg:hidden gap-2">
             <ThemeToggle />
-            
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="lg:hidden py-6 absolute top-16 left-0 right-0 bg-background backdrop-blur-xl border-b border-border z-40 shadow-xl">
-            <div className="flex flex-col space-y-2 px-4 sm:px-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
-              <Link
-                href="/"
-                className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Home
-              </Link>
-
-              <p className="px-4 pt-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Product
-              </p>
-              {productLinks.map((item) => (
+          <nav className="lg:hidden absolute top-16 left-0 right-0 bg-background border-b border-border z-40 shadow-lg">
+            <div className="flex flex-col px-4 sm:px-6 py-4 gap-1">
+              {[{ label: 'Home', href: '/' }, ...navLinks].map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
+                  className="text-sm font-medium text-foreground hover:text-primary hover:bg-muted/50 transition-colors py-2.5 px-3 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-
-              <p className="px-4 pt-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Solutions
-              </p>
-              {solutionLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
+              <div className="flex flex-col gap-2 pt-3 mt-2 border-t border-border">
+                <Button asChild variant="outline" className="w-full cta-download-android">
+                  <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
+                    Download App
+                  </a>
+                </Button>
+                <Button
+                  className="w-full cta-try-free"
+                  onClick={() => { setIsMenuOpen(false); handleGetStarted(); }}
                 >
-                  {item.label}
-                </Link>
-              ))}
-
-              <p className="px-4 pt-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                Resources
-              </p>
-              {resourceLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-
-              <Link
-                href="/pricing"
-                className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link
-                href="/about"
-                className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium text-base py-3 px-4 rounded-lg"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-
-              <Button asChild variant="outline" className="w-full mt-4 cta-download-android">
-                <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
-                  Download App
-                </a>
-              </Button>
-              
-              <Button 
-                className="w-full cta-try-free"
-                onClick={() => {
-                  setIsMenuOpen(false);
-                  handleGetStarted();
-                }}
-              >
-                Try Free
-              </Button>
+                  Try Free
+                </Button>
+              </div>
             </div>
           </nav>
         )}

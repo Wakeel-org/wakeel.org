@@ -37,7 +37,8 @@ export const solutionLinks = [
 
 export const resourceLinks = [
   { label: "Legal Sources", href: "/legal-sources" },
-  { label: "Legal Issues", href: "/legal-issues-pakistan" },
+  { label: "Pakistan Legal Issues", href: "/legal-issues-pakistan" },
+  { label: "GCC Legal Issues", href: "/legal-issues-gcc" },
   { label: "Legal Guides", href: "/fir-refused-pakistan" },
   { label: "Journal", href: "/journal" },
   { label: "Comparisons", href: "/comparisons" },
@@ -1340,5 +1341,365 @@ export const guides = [
       "How do I appeal a tax decision?",
     ],
     related: ["/business-commercial-law-pakistan", "/legal-notice-pakistan", "/lawyers"],
+  },
+  {
+    slug: "labor-law-gcc",
+    title: "Labor Law and Employment Rights in GCC Countries",
+    description:
+      "Understand employment contracts, worker rights, sponsorship system, and labor disputes in Saudi Arabia, UAE, Kuwait, and the Gulf region.",
+    problem:
+      "Expats and workers in GCC face complex labor laws, sponsorship (kafala) requirements, contract terms, and limited legal protections in case of disputes.",
+    help:
+      "Wakeel can explain GCC labor laws, summarize employment contracts, help organize facts for labor disputes, and prepare questions for legal consultation.",
+    cannot:
+      "Wakeel cannot modify contracts, file complaints with labor departments, guarantee job recovery, or replace lawyer representation in labor cases.",
+    questions: [
+      "What are my rights under GCC labor law?",
+      "Explain the sponsorship (kafala) system in simple English.",
+      "Summarize my employment contract and highlight risks under GCC law.",
+    ],
+    related: ["/visa-residency-gcc", "/contract-review-gcc", "/workers-rights-gcc"],
+  },
+  {
+    slug: "visa-residency-gcc",
+    title: "Visa, Residency, and Immigration in GCC Countries",
+    description:
+      "Understand visa types, residency requirements, sponsorship rules, and immigration procedures in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "GCC visa and residency rules are complex and vary by country, with tied sponsorship, exit restrictions, and specific renewal procedures.",
+    help:
+      "Wakeel can explain visa types, residency requirements, document needs, and help organize facts for visa or residency applications.",
+    cannot:
+      "Wakeel cannot process visa applications, guarantee approvals, contact government agencies, or replace immigration lawyer advice.",
+    questions: [
+      "What documents do I need for UAE residency?",
+      "Explain visa sponsorship rules in Saudi Arabia.",
+      "What are my options if my visa sponsorship is transferred?",
+    ],
+    related: ["/labor-law-gcc", "/family-law-gcc", "/legal-issues-gcc"],
+  },
+  {
+    slug: "family-law-gcc",
+    title: "Family Law and Personal Status in GCC Countries",
+    description:
+      "Understand marriage, divorce, custody, and family law under Sharia principles in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "Family law in GCC is based on Islamic law (Sharia), which differs significantly from Western law on marriage, divorce, custody, and inheritance.",
+    help:
+      "Wakeel can explain Sharia family law concepts, help organize family facts, and prepare questions for Sharia court or family lawyer consultation.",
+    cannot:
+      "Wakeel cannot file marriage or divorce cases, guarantee custody outcomes, or replace Sharia court judgment or lawyer advice.",
+    questions: [
+      "Explain Sharia divorce procedures in simple English.",
+      "What are my rights in GCC family courts?",
+      "Explain child custody rules under GCC law.",
+    ],
+    related: ["/legal-issues-gcc", "/women-rights-gcc", "/inheritance-gcc"],
+  },
+  {
+    slug: "workers-rights-gcc",
+    title: "Migrant Worker Rights and Protections in GCC",
+    description:
+      "Understand legal protections, complaint procedures, and support resources for migrant workers in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "Migrant workers in GCC face wage theft, unsafe conditions, contract violations, and limited legal recourse due to kafala system restrictions.",
+    help:
+      "Wakeel can explain worker protections, help document violations, organize evidence, and guide toward worker support agencies and legal help.",
+    cannot:
+      "Wakeel cannot file formal complaints, recover wages, provide immediate shelter, or replace NGO and government worker support services.",
+    questions: [
+      "What should I do if my employer isn't paying my wages?",
+      "Explain my rights as a migrant worker in GCC.",
+      "Where can I get help for unsafe working conditions?",
+    ],
+    related: ["/labor-law-gcc", "/legal-issues-gcc", "/women-rights-gcc"],
+  },
+  {
+    slug: "commercial-law-gcc",
+    title: "Business and Commercial Law in GCC Countries",
+    description:
+      "Understand business setup, commercial contracts, partnerships, and commercial disputes in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "Starting and operating a business in GCC requires understanding local regulations, sponsorship rules, licensing, and commercial law differences.",
+    help:
+      "Wakeel can explain business laws, summarize commercial contracts, help organize business facts, and prepare for business law consultation.",
+    cannot:
+      "Wakeel cannot register businesses, negotiate contracts, guarantee business success, or replace business lawyer and consultant advice.",
+    questions: [
+      "How do I start a business in UAE or Saudi Arabia?",
+      "Explain sponsorship requirements for GCC businesses.",
+      "Summarize this commercial contract and highlight risks.",
+    ],
+    related: ["/legal-issues-gcc", "/contract-review-gcc", "/taxation-gcc"],
+  },
+  {
+    slug: "real-estate-gcc",
+    title: "Real Estate and Property Law in GCC Countries",
+    description:
+      "Understand property purchase, rental agreements, property rights, and real estate disputes in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "GCC real estate laws vary by country and emirate, with restrictions on foreign ownership, tenancy rights, and transaction procedures.",
+    help:
+      "Wakeel can explain property laws, summarize property documents, help organize real estate facts, and prepare for property lawyer consultation.",
+    cannot:
+      "Wakeel cannot verify titles, close property deals, guarantee ownership rights, or replace property lawyer and surveyor expertise.",
+    questions: [
+      "What are the restrictions on foreign property ownership in UAE?",
+      "Explain tenant rights in Saudi Arabia.",
+      "Summarize this property purchase agreement.",
+    ],
+    related: ["/legal-issues-gcc", "/contract-review-gcc", "/inheritance-gcc"],
+  },
+  {
+    slug: "women-rights-gcc",
+    title: "Women's Rights and Legal Protections in GCC",
+    description:
+      "Understand women's legal rights, protections against harassment and violence, and family law in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "Women in GCC face legal restrictions, guardianship requirements, and limited protections in family law, employment, and personal matters.",
+    help:
+      "Wakeel can explain women's rights, help document violations, guide toward support organizations, and prepare for legal consultation.",
+    cannot:
+      "Wakeel cannot provide immediate shelter, contact authorities, guarantee court protection, or replace women's support organizations and lawyers.",
+    questions: [
+      "What are my rights as a woman in GCC countries?",
+      "Explain guardianship requirements in Saudi Arabia.",
+      "Where can I get help for domestic abuse in GCC?",
+    ],
+    related: ["/family-law-gcc", "/workers-rights-gcc", "/legal-issues-gcc"],
+  },
+  {
+    slug: "contract-review-gcc",
+    title: "Contract Review and Document Understanding in GCC",
+    description:
+      "Use Wakeel to understand employment contracts, rental agreements, commercial documents, and legal notices in GCC countries.",
+    problem:
+      "GCC contracts are often complex, in Arabic or English with legal terminology, and may contain unfavorable terms that aren't obvious.",
+    help:
+      "Wakeel can summarize contracts, explain terms, highlight risks, and help prepare questions for lawyer review before signing.",
+    cannot:
+      "Wakeel cannot approve contracts, negotiate terms, guarantee enforceability, or replace lawyer review before signing agreements.",
+    questions: [
+      "Summarize this employment contract and highlight risks.",
+      "Explain this rental agreement in simple English.",
+      "What should I ask a lawyer before signing this contract?",
+    ],
+    related: ["/labor-law-gcc", "/legal-issues-gcc", "/real-estate-gcc"],
+  },
+  {
+    slug: "criminal-law-gcc",
+    title: "Criminal Law and Legal Procedures in GCC Countries",
+    description:
+      "Understand criminal law, legal rights, police procedures, and court processes in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "GCC criminal law can differ significantly from Western law, with different penalties, fewer legal protections, and strict cultural/religious laws.",
+    help:
+      "Wakeel can explain criminal laws, help understand charges, organize facts, and guide toward legal representation and embassy contact.",
+    cannot:
+      "Wakeel cannot provide legal defense, guarantee court outcomes, intervene with authorities, or replace criminal lawyer representation.",
+    questions: [
+      "What are my legal rights if arrested in a GCC country?",
+      "Explain criminal procedures in GCC courts.",
+      "What should I do if facing charges in Saudi Arabia or UAE?",
+    ],
+    related: ["/legal-issues-gcc", "/workers-rights-gcc", "/embassy-help-gcc"],
+  },
+  {
+    slug: "taxation-gcc",
+    title: "Taxation and Financial Law in GCC Countries",
+    description:
+      "Understand income tax, VAT, business taxation, and financial regulations in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "GCC tax systems vary by country, with some having no income tax but VAT requirements, and complex rules for businesses and expats.",
+    help:
+      "Wakeel can explain tax obligations, summarize financial documents, and prepare questions for tax advisor or accountant consultation.",
+    cannot:
+      "Wakeel cannot file taxes, guarantee tax compliance, negotiate with tax authorities, or replace tax professional advice.",
+    questions: [
+      "Do I pay income tax in UAE or Saudi Arabia?",
+      "Explain VAT and business taxation in GCC.",
+      "What are my tax obligations as an expat in GCC?",
+    ],
+    related: ["/commercial-law-gcc", "/legal-issues-gcc", "/business-setup-gcc"],
+  },
+  {
+    slug: "inheritance-gcc",
+    title: "Inheritance and Succession under Islamic Law in GCC",
+    description:
+      "Understand Islamic inheritance law, wills, estate division, and succession procedures in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "GCC inheritance follows Islamic law (Sharia), with different rules for Muslim and non-Muslim heirs, and specific procedures.",
+    help:
+      "Wakeel can explain Islamic inheritance, help organize estate facts, and prepare questions for Sharia court or inheritance lawyer consultation.",
+    cannot:
+      "Wakeel cannot execute wills, settle disputes, guarantee inheritance rights, or replace Sharia court judgment and lawyer advice.",
+    questions: [
+      "Explain Islamic inheritance law in simple English.",
+      "How does inheritance work for non-Muslims in GCC?",
+      "What should my will contain under GCC law?",
+    ],
+    related: ["/family-law-gcc", "/legal-issues-gcc", "/contract-review-gcc"],
+  },
+  {
+    slug: "business-setup-gcc",
+    title: "Business Setup and Licensing in GCC Countries",
+    description:
+      "Understand procedures, requirements, and regulations for starting a business in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "Business setup in GCC involves complex licensing, sponsorship, local partnership requirements, and regulatory compliance that vary by country.",
+    help:
+      "Wakeel can explain requirements, help organize documentation, guide through procedures, and prepare questions for business consultants.",
+    cannot:
+      "Wakeel cannot process applications, guarantee approvals, register businesses, or replace government agencies and business consultants.",
+    questions: [
+      "What are the steps to start a business in UAE?",
+      "Explain local sponsorship requirements for GCC businesses.",
+      "What licenses do I need for my business in Saudi Arabia?",
+    ],
+    related: ["/commercial-law-gcc", "/legal-issues-gcc", "/taxation-gcc"],
+  },
+  {
+    slug: "consumer-rights-gcc",
+    title: "Consumer Rights and Product Protection in GCC",
+    description:
+      "Understand consumer protection laws, warranty rights, product liability, and dispute resolution in Saudi Arabia, UAE, Kuwait, and GCC.",
+    problem:
+      "Consumers in GCC have varying legal protections, with some countries having strong consumer laws while others have limited recourse.",
+    help:
+      "Wakeel can explain consumer rights, help document complaints, organize evidence, and guide toward consumer protection authorities.",
+    cannot:
+      "Wakeel cannot file complaints, guarantee refunds, contact authorities, or replace consumer protection agencies and lawyers.",
+    questions: [
+      "What are my consumer rights under GCC law?",
+      "How do I file a complaint for a defective product?",
+      "Explain warranty and guarantee rights in GCC.",
+    ],
+    related: ["/legal-issues-gcc", "/contract-review-gcc", "/workers-rights-gcc"],
+  },
+  {
+    slug: "gcc-legal-help",
+    title: "Legal Help and Guidance for GCC Countries",
+    description:
+      "Comprehensive overview of legal issues, rights, and guidance for living and working in Saudi Arabia, UAE, Kuwait, and GCC countries.",
+    problem:
+      "Expats and residents in GCC face unique legal challenges due to different legal systems, Sharia law, and kafala sponsorship restrictions.",
+    help:
+      "Wakeel can explain GCC laws, help understand legal situations, organize facts, and guide toward appropriate legal resources and consultation.",
+    cannot:
+      "Wakeel cannot represent you, guarantee outcomes, contact authorities, or replace qualified legal representation and government services.",
+    questions: [
+      "What legal issues should I be aware of in GCC?",
+      "How does GCC law differ from Western law?",
+      "Where can I get legal help as an expat in GCC?",
+    ],
+    related: ["/labor-law-gcc", "/family-law-gcc", "/visa-residency-gcc"],
+  },
+  {
+    slug: "saudi-arabia-legal-guide",
+    title: "Legal Rights and Guidance for Saudi Arabia",
+    description:
+      "Understand Saudi Arabian legal system, rights, procedures, and guidance for living and working in Saudi Arabia.",
+    problem:
+      "Saudi Arabia has unique legal system based on Islamic law, with specific rules for expats, workers, residents, and business operations.",
+    help:
+      "Wakeel can explain Saudi law, help understand legal situations, and guide toward appropriate resources and legal consultation.",
+    cannot:
+      "Wakeel cannot provide final legal advice, contact authorities, or replace Saudi lawyer representation and government services.",
+    questions: [
+      "How does Saudi law differ from Western legal systems?",
+      "What are my rights as an expat in Saudi Arabia?",
+      "Explain labor law and wages in Saudi Arabia.",
+    ],
+    related: ["/labor-law-gcc", "/family-law-gcc", "/business-setup-gcc"],
+  },
+  {
+    slug: "uae-legal-guide",
+    title: "Legal Rights and Guidance for UAE",
+    description:
+      "Understand UAE legal system, rights, procedures, and guidance for living and working in the United Arab Emirates.",
+    problem:
+      "UAE combines Islamic law with civil law, with different rules in each emirate, and specific regulations for expats and businesses.",
+    help:
+      "Wakeel can explain UAE law, help understand legal situations, organize facts, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, contact authorities, or replace UAE lawyer representation and government services.",
+    questions: [
+      "How does UAE law differ from other countries?",
+      "What are my rights as an expat in UAE?",
+      "Explain employment and visa rules in UAE.",
+    ],
+    related: ["/labor-law-gcc", "/real-estate-gcc", "/visa-residency-gcc"],
+  },
+  {
+    slug: "kuwait-legal-guide",
+    title: "Legal Rights and Guidance for Kuwait",
+    description:
+      "Understand Kuwaiti legal system, rights, procedures, and guidance for living and working in Kuwait.",
+    problem:
+      "Kuwait has a unique legal system based on Islamic law and constitutional law, with specific rules for expats and workers.",
+    help:
+      "Wakeel can explain Kuwaiti law, help understand legal situations, and guide toward appropriate legal resources and consultation.",
+    cannot:
+      "Wakeel cannot provide final legal advice, contact authorities, or replace Kuwaiti lawyer representation and government services.",
+    questions: [
+      "How does Kuwaiti law differ from other GCC countries?",
+      "What are my rights as a worker in Kuwait?",
+      "Explain sponsorship and residency in Kuwait.",
+    ],
+    related: ["/labor-law-gcc", "/visa-residency-gcc", "/legal-issues-gcc"],
+  },
+  {
+    slug: "qatar-bahrain-oman-legal-guide",
+    title: "Legal Rights and Guidance for Qatar, Bahrain, and Oman",
+    description:
+      "Understand legal systems, rights, and guidance for living and working in Qatar, Bahrain, and Oman.",
+    problem:
+      "Qatar, Bahrain, and Oman have unique legal systems combining Islamic law with constitutional frameworks, with specific expat regulations.",
+    help:
+      "Wakeel can explain their legal systems, help understand legal situations, and guide toward appropriate legal resources.",
+    cannot:
+      "Wakeel cannot provide final legal advice, contact authorities, or replace lawyer representation and government services.",
+    questions: [
+      "How do Qatar, Bahrain, and Oman legal systems differ?",
+      "What are my rights as an expat in these countries?",
+      "Explain employment and visa procedures.",
+    ],
+    related: ["/labor-law-gcc", "/family-law-gcc", "/legal-issues-gcc"],
+  },
+  {
+    slug: "expat-legal-resources-gcc",
+    title: "Expat Legal Resources and Support in GCC",
+    description:
+      "Find legal resources, support organizations, embassies, and help for expats facing legal issues in GCC countries.",
+    problem:
+      "Expats in GCC often don't know where to find legal help, support organizations, or how to contact their embassy for assistance.",
+    help:
+      "Wakeel can guide toward legal resources, embassies, support organizations, and help prepare information for seeking assistance.",
+    cannot:
+      "Wakeel cannot contact organizations on your behalf, guarantee services, or replace actual legal or embassy assistance.",
+    questions: [
+      "Where can I get legal help as an expat in GCC?",
+      "How do I contact my embassy for legal help?",
+      "What support organizations help expats in GCC?",
+    ],
+    related: ["/legal-issues-gcc", "/workers-rights-gcc", "/criminal-law-gcc"],
+  },
+  {
+    slug: "embassy-help-gcc",
+    title: "Embassy Assistance and Consular Services in GCC",
+    description:
+      "Understand how to contact your embassy, consular services available, and assistance for citizens in legal trouble in GCC.",
+    problem:
+      "Citizens facing legal problems in GCC may not know embassy can help, what services are available, or how to contact them.",
+    help:
+      "Wakeel can explain embassy services, help organize information for embassy contact, and guide on what to expect.",
+    cannot:
+      "Wakeel cannot contact embassies, guarantee assistance, provide diplomatic immunity, or replace actual embassy intervention.",
+    questions: [
+      "How do I contact my embassy in a GCC country?",
+      "What can my embassy do if I'm arrested?",
+      "What consular services are available in GCC?",
+    ],
+    related: ["/criminal-law-gcc", "/expat-legal-resources-gcc", "/legal-issues-gcc"],
   },
 ];

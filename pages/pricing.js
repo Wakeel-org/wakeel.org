@@ -3,7 +3,6 @@ import { useState } from "react";
 import { CheckCircle2, HelpCircle, ShieldCheck } from "lucide-react";
 import Layout from "../src/components/Layout";
 import MarketingSEO from "../src/components/MarketingSEO";
-import HeroSafetyNote from "../src/components/HeroSafetyNote";
 import { Button } from "../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
 import { pricingFaqs, pricingPlans, site } from "../src/data/marketing";
@@ -93,29 +92,24 @@ export default function PricingPage() {
       />
 
       <section className="bg-background">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-          <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-5 lg:gap-6 items-stretch">
-            <Card className="border-muted/60 bg-gradient-to-br from-card via-card to-muted/40 shadow-xl">
-              <CardContent className="p-5 sm:p-8 lg:p-10 space-y-5">
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-                  Pricing
-                </p>
-                <h1 className={`${heroHeading} ${headingGradient}`}>
-                  Plans for citizens, students, professionals, and organizations.
-                </h1>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                  Start with legal information and research support, then choose a plan for study, professional workflows, or organization access. Wakeel remains legal information and research support, not final legal advice.
-                </p>
-                <div className="grid sm:grid-cols-2 gap-3 pt-2">
-                  {["Free start", "Student study tools", "Professional workflows", "Organization access"].map((item) => (
-                    <div key={item} className="rounded-lg border border-border bg-muted/40 px-3 py-2 text-sm text-muted-foreground">
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-            <HeroSafetyNote />
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="space-y-5">
+            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+              Pricing
+            </p>
+            <h1 className={`${heroHeading} ${headingGradient}`}>
+              Plans for citizens, students, professionals, and organizations.
+            </h1>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              Start free and choose the workflow that fits your role. Confirm current pricing and availability inside the app before subscribing.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-1">
+              {["Free start", "Student study tools", "Professional workflows", "Organization access"].map((item) => (
+                <span key={item} className="rounded-full border border-border bg-muted/40 px-3 py-1.5 text-sm text-muted-foreground">
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>

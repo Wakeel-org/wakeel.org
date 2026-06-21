@@ -2,7 +2,6 @@ import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import Layout from "../src/components/Layout";
 import MarketingSEO from "../src/components/MarketingSEO";
-import HeroSafetyNote from "../src/components/HeroSafetyNote";
 import { Button } from "../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
 import { featureGroups, site } from "../src/data/marketing";
@@ -28,32 +27,27 @@ export default function FeaturesPage() {
       />
 
       <section className="bg-background">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-          <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-5 lg:gap-6 items-stretch">
-            <Card className="border-muted/60 bg-gradient-to-br from-card via-card to-muted/40 shadow-xl">
-              <CardContent className="p-5 sm:p-8 lg:p-10 space-y-5">
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-                  Product features
-                </p>
-                <h1 className={`${heroHeading} ${headingGradient}`}>
-                  Legal information workflows for Pakistan.
-                </h1>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                  Wakeel helps users ask better legal questions, understand documents, research sources, and organize legal work while keeping human verification central.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <Button asChild size="lg" className="cta-try-free">
-                    <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
-                      Try Wakeel Free
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link href="/legal-sources">View Legal Sources</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-            <HeroSafetyNote />
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="space-y-5">
+            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+              Product features
+            </p>
+            <h1 className={`${heroHeading} ${headingGradient}`}>
+              Legal information workflows for Pakistan.
+            </h1>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              Wakeel helps users ask better legal questions, understand documents, research sources, and organize legal work while keeping human verification central.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-1">
+              <Button asChild size="lg" className="cta-try-free">
+                <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
+                  Try Wakeel Free
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/legal-sources">View Legal Sources</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

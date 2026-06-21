@@ -244,27 +244,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="values" className="py-16 sm:py-20 lg:py-24 bg-background">
+      <section id="values" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-primary/5 via-background to-background">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <h2 className={sectionHeading}>Our vision &amp; mission</h2>
-            <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-              Why Wakeel.org exists, and what we are building for Pakistan.
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
+              Why we exist
             </p>
+            <h2 className={`${sectionHeading} ${headingGradient}`}>
+              Our vision &amp; mission
+            </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {visionMission.map((item) => {
               const Icon = item.title === "Vision" ? Eye : Target;
               return (
-                <Card key={item.title} className={cardBase}>
-                  <CardHeader>
-                    <div className={iconTile}>
-                      <Icon className="h-7 w-7" />
+                <Card key={item.title} className="relative overflow-hidden border-primary/20 bg-gradient-to-br from-primary/8 via-card to-card shadow-2xl">
+                  <div className="absolute top-0 right-0 w-40 h-40 rounded-bl-full bg-primary/5 pointer-events-none" />
+                  <CardContent className="relative p-7 sm:p-10 lg:p-12 space-y-5">
+                    <div className="w-16 h-16 rounded-2xl bg-primary/15 flex items-center justify-center text-primary">
+                      <Icon className="h-8 w-8" />
                     </div>
-                    <CardTitle className="text-2xl sm:text-3xl">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-xs font-bold uppercase tracking-widest text-primary">
+                      {item.title}
+                    </p>
+                    <p className="text-xl sm:text-2xl font-semibold text-foreground leading-snug">
                       {item.description}
                     </p>
                   </CardContent>
@@ -277,44 +280,52 @@ export default function Home() {
 
       <section id="solutions" className="py-16 sm:py-20 lg:py-24 bg-muted/40">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-12 sm:mb-16">
-            <h2 className={sectionHeading}>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 sm:mb-16">
+            <h2 className={`${sectionHeading} max-w-2xl`}>
               Built for the people who use Pakistani law every day.
             </h2>
+            <Link
+              href="/legal-issues-pakistan"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline shrink-0"
+            >
+              See all audiences <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {audiences.map((audience) => {
-              const Icon = audienceIcons[audience.title] || UsersRound;
-              return (
-                <Card key={audience.href} className={cardBase}>
-                  <CardHeader className="p-5">
-                    <div className={iconTile}>
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <CardTitle className="text-2xl">{audience.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4 p-5 pt-0">
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {audience.description}
-                    </p>
-                    <ul className="space-y-2">
-                      {audience.useCases.map((useCase) => (
-                        <li key={useCase} className="text-xs text-muted-foreground flex gap-2">
-                          <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
-                          {useCase}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link
-                      href={audience.href}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-                    >
-                      Learn more <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {audiences
+              .filter((a) => ["Citizens", "Law Students", "Lawyers", "Judges"].includes(a.title))
+              .map((audience) => {
+                const Icon = audienceIcons[audience.title] || UsersRound;
+                return (
+                  <Card key={audience.href} className={cardBase}>
+                    <CardHeader className="p-5">
+                      <div className={iconTile}>
+                        <Icon className="h-7 w-7" />
+                      </div>
+                      <CardTitle className="text-xl">{audience.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4 p-5 pt-0">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {audience.description}
+                      </p>
+                      <ul className="space-y-1.5">
+                        {audience.useCases.map((useCase) => (
+                          <li key={useCase} className="text-xs text-muted-foreground flex gap-2">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                            {useCase}
+                          </li>
+                        ))}
+                      </ul>
+                      <Link
+                        href={audience.href}
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                      >
+                        Learn more <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    </CardContent>
+                  </Card>
+                );
+              })}
           </div>
         </div>
       </section>
@@ -327,7 +338,7 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {values.map((value) => (
+            {values.slice(0, 6).map((value) => (
               <Card key={value.title} className={cardBase}>
                 <CardHeader>
                   <CardTitle className="text-xl">{value.title}</CardTitle>
@@ -504,41 +515,31 @@ export default function Home() {
       </section>
 
       <section className="py-16 sm:py-20 lg:py-24 bg-primary text-primary-foreground">
-        <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-7">
-          <h2 className={sectionHeading}>
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">
+            Get started free
+          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
             Start understanding Pakistani law with Wakeel.org.
           </h2>
-          <p className="text-primary-foreground/80 max-w-2xl mx-auto">
-            Ask legal questions, understand documents, and verify sources before taking important legal steps.
+          <p className="text-primary-foreground/75 max-w-xl mx-auto leading-relaxed">
+            Ask legal questions in English or Urdu, understand documents up to 100+ pages, and verify sources before taking important legal steps.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3">
+          <div className="flex flex-col sm:flex-row justify-center gap-3 pt-2">
             <Button asChild size="lg" variant="secondary" className="cta-try-free">
               <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
                 Try Wakeel Free
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground hover:text-primary cta-download-android">
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary cta-download-android">
               <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
-                Download Android App
+                Download App
               </a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              <a href={site.iosUrl} target="_blank" rel="noopener noreferrer">
-                Download iOS App
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/50 text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-              <Link href="/contact">Join Updates</Link>
             </Button>
           </div>
-          <div className="mx-auto max-w-xl rounded-lg border border-primary-foreground/20 bg-background p-4 text-foreground shadow-sm">
+          <div className="mx-auto max-w-md rounded-xl border border-primary-foreground/20 bg-background p-5 text-foreground shadow-md mt-4">
+            <p className="text-sm font-semibold text-foreground mb-3">Stay updated — no spam, ever.</p>
             <EmailSubscription />
-          </div>
-          <div className="pt-2">
-            <p className="text-sm font-semibold text-primary-foreground/80 mb-3">
-              Download our mobile apps
-            </p>
-            <AppDownloadButtons className="justify-center" />
           </div>
         </div>
       </section>

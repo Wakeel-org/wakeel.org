@@ -2,7 +2,6 @@ import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import Layout from "./Layout";
 import MarketingSEO from "./MarketingSEO";
-import HeroSafetyNote from "./HeroSafetyNote";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { site } from "../data/marketing";
@@ -35,32 +34,27 @@ const ComparisonPage = ({ comparison }) => {
       />
 
       <section className="bg-background">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
-          <div className="grid lg:grid-cols-[1.25fr_0.75fr] gap-5 lg:gap-6 items-stretch">
-            <Card className="border-muted/60 bg-gradient-to-br from-card via-card to-muted/40 shadow-xl">
-              <CardContent className="p-5 sm:p-8 lg:p-10 space-y-5">
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-                  Comparison
-                </p>
-                <h1 className={`${heroHeading} ${headingGradient}`}>
-                  {comparison.title}
-                </h1>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                  This comparison is based on publicly available information and may change over time. It is intended to help users evaluate legal-information tools carefully, not to attack any product.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <Button asChild size="lg" className="cta-try-free">
-                    <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
-                      Try Wakeel Free
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline" size="lg">
-                    <Link href="/legal-sources">View Legal Sources</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-            <HeroSafetyNote />
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="space-y-5">
+            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+              Comparison
+            </p>
+            <h1 className={`${heroHeading} ${headingGradient}`}>
+              {comparison.title}
+            </h1>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              This comparison is based on publicly available information and may change over time. It is intended to help users evaluate legal-information tools carefully, not to attack any product.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 pt-1">
+              <Button asChild size="lg" className="cta-try-free">
+                <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
+                  Try Wakeel Free
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link href="/legal-sources">View Legal Sources</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
