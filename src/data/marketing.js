@@ -156,6 +156,37 @@ export const values = [
   },
 ];
 
+export const team = [
+  {
+    name: "Majid Hussain Malik",
+    role: "Co-founder",
+    initials: "MH",
+    photo: "/team/majid-hussain-malik.jpg",
+    linkedin: "https://www.linkedin.com/in/majidhussainmalik/",
+  },
+  {
+    name: "Sajid Mahmood",
+    role: "Co-founder",
+    initials: "SM",
+    photo: "/team/sajid-mahmood.jpg",
+    linkedin: "https://www.linkedin.com/in/sajid-mahmood-362a8536/",
+  },
+  {
+    name: "Usman Inayat",
+    role: "CTO",
+    initials: "UI",
+    photo: "/team/usman-inayat.jpg",
+    linkedin: "https://www.linkedin.com/in/usman-inayat-b87806190/",
+  },
+  {
+    name: "Abdullah Munawar",
+    role: "Full Stack Developer",
+    initials: "AM",
+    photo: "/team/abdullah-munawar.jpg",
+    linkedin: "https://www.linkedin.com/in/abdullahmunawar/",
+  },
+];
+
 export const visionMission = [
   {
     title: "Vision",
@@ -502,7 +533,7 @@ export const corePages = {
         items: [
           "Wakeel.org is built from Pakistan for Pakistani legal information needs.",
           "The product is designed with careful legal positioning, bilingual access, and trust-focused workflows.",
-          "Founder and team details can be added here when final public bios are approved.",
+          "Founded by a team committed to making law more accessible, understandable, and actionable for everyone in Pakistan.",
         ],
       },
     ],
