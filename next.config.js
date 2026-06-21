@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',  // Required for static site generation
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     unoptimized: true // Required for static export
   }

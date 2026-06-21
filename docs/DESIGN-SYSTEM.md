@@ -8,8 +8,8 @@ A comprehensive guide to replicate the design and branding of Wakeel.org across 
 
 ### Brand Name
 - **Full Name:** Wakeel.org
-- **Tagline:** "Trusted Guardians of Legal Excellence"
-- **Secondary Tagline:** "Empowering Justice Through Reliable Solutions"
+- **Tagline:** "Pakistan's AI Legal Assistant — in your pocket"
+- **Secondary Tagline:** "Ask in English or Urdu, analyze documents, and research Pakistani law on Android, iOS, and web"
 
 ### Logos
 | Logo | File | Usage |
@@ -18,9 +18,9 @@ A comprehensive guide to replicate the design and branding of Wakeel.org across 
 | Light Logo | `/public/logo-light.svg` | Dark theme/backgrounds |
 
 ### Brand Positioning
-- AI-powered legal technology platform
-- Categories: Business, Productivity, Legal
-- Target: Legal professionals, law students, policymakers, judges, law firms
+- Mobile-first, Pakistan-focused AI legal assistant (Android, iOS & web)
+- Categories: Legal, Productivity, Business
+- Target: Citizens, law students, lawyers, law firms, judges, policymakers, and legal institutions
 
 ---
 

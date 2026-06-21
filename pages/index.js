@@ -1,205 +1,548 @@
-import Head from 'next/head';
-import Layout from '../src/components/Layout';
-import Hero from '../src/components/Hero';
-import WhoIsThisFor from '../src/components/WhoIsThisFor';
-import Values from '../src/components/Values';
-import Features from '../src/components/Features';
-import Pricing from '../src/components/Pricing';
-import EmailSubscription from '../src/components/EmailSubscription';
-import AppDownloadButtons from '../src/components/AppDownloadButtons';
-// Beta components - commented out for production, can be re-enabled for future beta launches
-// import BetaLaunchPopup from '../src/components/BetaLaunchPopup';
-// import BetaWhitelistSection from '../src/components/BetaWhitelistSection';
+import Link from "next/link";
+import {
+  ArrowRight,
+  BookOpen,
+  Briefcase,
+  Building2,
+  CheckCircle2,
+  Eye,
+  FileText,
+  Gavel,
+  Landmark,
+  MessageSquareText,
+  Scale,
+  ShieldCheck,
+  Smartphone,
+  Target,
+  UsersRound,
+} from "lucide-react";
+import Layout from "../src/components/Layout";
+import MarketingSEO from "../src/components/MarketingSEO";
+import AppDownloadButtons from "../src/components/AppDownloadButtons";
+import EmailSubscription from "../src/components/EmailSubscription";
+import { Button } from "../src/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
+import {
+  audiences,
+  examplePrompts,
+  featureCards,
+  pricingPlans,
+  site,
+  trustFramework,
+  values,
+  visionMission,
+} from "../src/data/marketing";
+import {
+  cardBase,
+  headingGradient,
+  iconTile,
+  sectionHeading,
+} from "../src/data/theme";
+
+const homeSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Wakeel.org",
+    url: site.url,
+    logo: `${site.url}/logo-dark.svg`,
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: site.contactEmail,
+      contactType: "customer support",
+      areaServed: "PK",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Wakeel.org",
+    applicationCategory: "LegalApplication",
+    operatingSystem: "Web, Android",
+    description: site.description,
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "PKR",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Wakeel.org",
+    url: site.url,
+    description: site.description,
+  },
+];
+
+const audienceIcons = {
+  Citizens: Smartphone,
+  "Law Students": BookOpen,
+  Lawyers: Scale,
+  "Law Firms": Briefcase,
+  Judges: Gavel,
+  Policymakers: Landmark,
+  "Legal Institutions": Building2,
+};
+
+const featureIcons = [
+  MessageSquareText,
+  FileText,
+  ShieldCheck,
+  BookOpen,
+  Scale,
+  CheckCircle2,
+  Briefcase,
+  UsersRound,
+];
+
+const heroCapabilities = [
+  {
+    icon: MessageSquareText,
+    label: "Ask in English or Urdu",
+    detail: "Plain-language answers grounded in Pakistani law.",
+  },
+  {
+    icon: FileText,
+    label: "Analyze 100+ page documents",
+    detail: "Summaries and clause breakdowns for notices, agreements, and PDFs.",
+  },
+  {
+    icon: Scale,
+    label: "Research law & case law",
+    detail: "Source-aware from official Pakistani legal repositories.",
+  },
+  {
+    icon: ShieldCheck,
+    label: "Source-aware, verify-first",
+    detail: "Built-in reminders to confirm with a licensed advocate.",
+  },
+];
 
 export default function Home() {
+  const homeKeywords = [
+    "AI legal assistant Pakistan",
+    "Pakistani law",
+    "legal help Pakistan",
+    "Wakeel",
+    "property law Pakistan",
+    "family law Pakistan",
+    "employment law Pakistan",
+    "consumer rights Pakistan",
+    "FIR Pakistan",
+    "legal guidance",
+    "Pakistan legal information",
+    "tenant rights",
+    "court procedures Pakistan",
+  ].join(", ");
+
   return (
     <Layout>
-      <Head>
-        <title>Wakeel.org - AI-Powered Legal Technology Solutions | Case Management & Research</title>
-        <meta name="description" content="Transform your legal practice with Wakeel.org's AI-powered legal research, case management, and policy development solutions. Trusted by 10,000+ legal professionals in 50+ countries." />
-        <meta name="keywords" content="legal technology, AI legal research, case management software, legal AI tools, legal practice management, legal research platform, AI lawyer assistant, legal document automation, law firm software, Wakeel mobile app, legal tech app, Android legal app, iOS legal app" />
-        
-        {/* Mobile App Links */}
-        <meta property="al:android:url" content="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel" />
-        <meta property="al:android:package" content="pk.digit.aiwakeel" />
-        <meta property="al:android:app_name" content="Wakeel" />
-        <meta property="al:ios:url" content="https://apps.apple.com/app/wakeel" />
-        <meta property="al:ios:app_name" content="Wakeel" />
-        
-        {/* PWA Support */}
-        <link rel="manifest" href="/manifest.json" />
-        
-        {/* Geo Tags */}
-        <meta name="geo.region" content="PK-PB" />
-        <meta name="geo.placename" content="Lahore" />
-        <meta name="geo.position" content="31.5204;74.3587" />
-        <meta name="ICBM" content="31.5204, 74.3587" />
-        
-        {/* Mobile Optimization */}
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Wakeel.org" />
-        
-        {/* Theme Color for different devices */}
-        <meta name="theme-color" content="#3b82f6" media="(prefers-color-scheme: light)" />
-        <meta name="theme-color" content="#1e40af" media="(prefers-color-scheme: dark)" />
-        
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://wakeel.org" />
-        <meta property="og:title" content="Wakeel.org - AI-Powered Legal Technology Solutions | Available on Web & Mobile" />
-        <meta property="og:description" content="Transform your legal practice with AI-powered legal research, case management, and policy development solutions. Available on Web, Android & iOS. Trusted by 10,000+ legal professionals in 50+ countries." />
-        <meta property="og:image" content="https://wakeel.org/logo-dark.svg" />
-        <meta property="og:see_also" content="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel" />
-        <meta property="og:see_also" content="https://apps.apple.com/app/wakeel" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://wakeel.org" />
-        <meta name="twitter:title" content="Wakeel.org - AI-Powered Legal Technology Solutions" />
-        <meta name="twitter:description" content="Transform your legal practice with AI-powered legal research and case management solutions." />
-        <meta name="twitter:image" content="https://wakeel.org/logo-dark.svg" />
-        
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://wakeel.org" />
-        
-        {/* Structured Data for Website & Service */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "Wakeel.org",
-              "url": "https://wakeel.org",
-              "description": "AI-powered legal technology platform for legal research, case management, and policy development",
-              "publisher": {
-                "@type": "Organization",
-                "name": "Wakeel.org",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://wakeel.org/logo-dark.svg"
-                },
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Lahore",
-                  "addressRegion": "Punjab",
-                  "addressCountry": "PK"
-                },
-                "geo": {
-                  "@type": "GeoCoordinates",
-                  "latitude": "31.5204",
-                  "longitude": "74.3587"
-                },
-                "areaServed": {
-                  "@type": "GeoCircle",
-                  "geoMidpoint": {
-                    "@type": "GeoCoordinates",
-                    "latitude": "31.5204",
-                    "longitude": "74.3587"
-                  },
-                  "geoRadius": "20000000"
-                }
-              },
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://wakeel.org/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            })
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "Wakeel.org Legal Technology Platform",
-              "applicationCategory": "BusinessApplication",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "validFrom": "2020-01-01"
-              },
-              "operatingSystem": "Web, iOS, Android, Windows, MacOS, Linux",
-              "browserRequirements": "Requires JavaScript. Requires HTML5.",
-              "description": "Comprehensive legal technology solution offering AI-powered legal research, case management, and policy development tools",
-              "featureList": "Legal Research, Case Management, Document Automation, Policy Development, AI-Powered Analysis",
-              "screenshot": "https://wakeel.org/logo-dark.svg",
-              "provider": {
-                "@type": "Organization",
-                "name": "Wakeel.org",
-                "url": "https://wakeel.org"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "ratingCount": "1500",
-                "bestRating": "5",
-                "worstRating": "1"
-              },
-              "applicationSubCategory": "Legal Technology, Practice Management, Legal Research",
-              "downloadUrl": "https://app.wakeel.org",
-              "softwareVersion": "2.0",
-              "releaseNotes": "Enhanced AI capabilities, improved case management, and expanded legal research database"
-            })
-          }}
-        />
-      </Head>
-      
-      {/* Beta Launch Popup - Commented out for production, can be re-enabled for future beta campaigns */}
-      {/* <BetaLaunchPopup /> */}
-      
-      <Hero />
-      
-      {/* Beta Whitelist Section - Hidden, using popup instead */}
-      {/* <BetaWhitelistSection /> */}
-      
-      {/* Who Is This For Section */}
-      <div id="who-is-this-for">
-        <WhoIsThisFor />
-      </div>
-      
-      {/* Values Section */}
-      <section id="values" className="py-20 sm:py-24 bg-background">
-        <Values />
+      <MarketingSEO
+        title="Pakistan's AI Legal Assistant | Wakeel.org"
+        description={site.description}
+        path="/"
+        schema={homeSchema}
+        keywords={homeKeywords}
+        region="pk"
+      />
+
+      <section className="bg-background">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
+          <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-5 lg:gap-6 items-stretch">
+            <Card className="overflow-hidden border-muted/60 shadow-2xl bg-gradient-to-br from-primary/10 via-card to-muted/40">
+              <CardContent className="p-5 sm:p-8 lg:p-10 space-y-6">
+                <p className="inline-flex w-fit rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                  Mobile-first legal AI for Pakistan
+                </p>
+                <div className="space-y-4">
+                  <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight ${headingGradient}`}>
+                    Pakistan's AI legal assistant, in your pocket.
+                  </h1>
+                  <p className="text-base sm:text-lg md:text-xl font-semibold text-foreground/90">
+                    For citizens, law students, lawyers, and institutions — ask in English or Urdu.
+                  </p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
+                    {site.description}
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                  <Button asChild size="lg" className="cta-try-free">
+                    <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
+                      Try Wakeel Free
+                    </a>
+                  </Button>
+                  <Button asChild size="lg" variant="outline" className="cta-download-android">
+                    <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
+                      Download App
+                    </a>
+                  </Button>
+                  <Button asChild size="lg" variant="link" className="cta-view-legal-sources px-0 sm:px-3">
+                    <Link href="/legal-sources">View Legal Sources</Link>
+                  </Button>
+                </div>
+
+                <p className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground">
+                  <ShieldCheck className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                  <span>
+                    Legal information &amp; research support — not a substitute for a licensed advocate.{" "}
+                    <Link href="/disclaimer" className="font-semibold text-primary hover:underline whitespace-nowrap">
+                      Read disclaimer
+                    </Link>
+                  </span>
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Capabilities panel — real features, no chat */}
+            <Card className="flex flex-col overflow-hidden border-primary/20 shadow-2xl bg-gradient-to-br from-primary/5 via-card to-muted/40">
+              <CardContent className="flex flex-1 flex-col p-5 sm:p-8 space-y-5">
+                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                  What you can do
+                </p>
+                <div className="flex flex-1 flex-col gap-3">
+                  {heroCapabilities.map((cap) => (
+                    <div
+                      key={cap.label}
+                      className="flex items-start gap-3 rounded-xl border border-border bg-background/70 p-4"
+                    >
+                      <div className="h-10 w-10 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                        <cap.icon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-foreground">{cap.label}</p>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{cap.detail}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="rounded-lg border border-border bg-muted/30 p-4">
+                  <p className="text-sm font-semibold text-foreground mb-3">Get the app</p>
+                  <AppDownloadButtons />
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
       </section>
-      
-      {/* Features/Services Section */}
-      <div id="features">
-        <Features />
-      </div>
-      
-      {/* Pricing Section */}
-      <div id="pricing">
-        <Pricing />
-      </div>
-      
-      {/* Call to Action Section with Email Subscription */}
-      <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-muted/50 via-muted/30 to-background">
-        <div className="max-w-4xl mx-auto text-center space-y-10">
-          <div className="space-y-6">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tighter text-foreground">
-              Ready to Transform Your Legal Practice?
-            </h1>
-            <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Join thousands of legal professionals who trust Wakeel.org for their legal technology needs.
+
+      <section className="border-y border-border bg-muted/40">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 text-center">
+            {[
+              "Built in Pakistan",
+              "Official legal sources",
+              "Encrypted document processing",
+              "Legal info, not a lawyer replacement",
+            ].map((item) => (
+              <div key={item} className="rounded-lg bg-background/70 border border-border px-3 py-3 text-sm font-medium text-muted-foreground">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="values" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-primary/5 via-background to-background">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
+              Why we exist
+            </p>
+            <h2 className={`${sectionHeading} ${headingGradient}`}>
+              Our vision &amp; mission
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            {visionMission.map((item) => {
+              const Icon = item.title === "Vision" ? Eye : Target;
+              return (
+                <Card key={item.title} className="relative overflow-hidden border-primary/20 bg-gradient-to-br from-primary/8 via-card to-card shadow-2xl">
+                  <div className="absolute top-0 right-0 w-40 h-40 rounded-bl-full bg-primary/5 pointer-events-none" />
+                  <CardContent className="relative p-7 sm:p-10 lg:p-12 space-y-5">
+                    <div className="w-16 h-16 rounded-2xl bg-primary/15 flex items-center justify-center text-primary">
+                      <Icon className="h-8 w-8" />
+                    </div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-primary">
+                      {item.title}
+                    </p>
+                    <p className="text-xl sm:text-2xl font-semibold text-foreground leading-snug">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="solutions" className="py-16 sm:py-20 lg:py-24 bg-muted/40">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 sm:mb-16">
+            <h2 className={`${sectionHeading} max-w-2xl`}>
+              Built for the people who use Pakistani law every day.
+            </h2>
+            <Link
+              href="/legal-issues-pakistan"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline shrink-0"
+            >
+              See all audiences <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {audiences
+              .filter((a) => ["Citizens", "Law Students", "Lawyers", "Judges"].includes(a.title))
+              .map((audience) => {
+                const Icon = audienceIcons[audience.title] || UsersRound;
+                return (
+                  <Card key={audience.href} className={cardBase}>
+                    <CardHeader className="p-5">
+                      <div className={iconTile}>
+                        <Icon className="h-7 w-7" />
+                      </div>
+                      <CardTitle className="text-xl">{audience.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-4 p-5 pt-0">
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {audience.description}
+                      </p>
+                      <ul className="space-y-1.5">
+                        {audience.useCases.map((useCase) => (
+                          <li key={useCase} className="text-xs text-muted-foreground flex gap-2">
+                            <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                            {useCase}
+                          </li>
+                        ))}
+                      </ul>
+                      <Link
+                        href={audience.href}
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                      >
+                        Learn more <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className={sectionHeading}>
+              Core values for responsible legal AI.
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {values.slice(0, 6).map((value) => (
+              <Card key={value.title} className={cardBase}>
+                <CardHeader>
+                  <CardTitle className="text-xl">{value.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {value.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Button asChild variant="outline">
+              <Link href="/values">View all values</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" className="py-16 sm:py-20 lg:py-24 bg-muted/40">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className={sectionHeading}>
+              Comprehensive legal information and research workflows.
+            </h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {featureCards.map((feature, index) => {
+              const Icon = featureIcons[index] || CheckCircle2;
+              return (
+                <Card key={feature.title} className={cardBase}>
+                  <CardHeader>
+                    <div className={iconTile}>
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <CardTitle className="text-xl">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+          <div className="text-center mt-8">
+            <Button asChild variant="outline">
+              <Link href="/features">Explore all features</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[0.8fr_1.2fr] gap-6 items-start">
+          <div className="space-y-5">
+            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+              Trust and safety
+            </p>
+            <h2 className={sectionHeading}>
+              Designed for careful legal understanding.
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Wakeel is useful when it helps people ask better questions, read documents more clearly, and verify sources before acting.
             </p>
           </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {trustFramework.map((point) => (
+              <div key={point} className="rounded-lg border border-border bg-card p-4 text-sm text-muted-foreground leading-relaxed">
+                <CheckCircle2 className="h-5 w-5 text-primary mb-3" />
+                {point}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <EmailSubscription />
+      <section className="py-16 sm:py-20 lg:py-24 bg-muted/40">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-[0.85fr_1.15fr] gap-8 items-start">
+            <div>
+              <h2 className={sectionHeading}>
+                Example prompts
+              </h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Start with a question, a document, or a legal concept you want to understand.
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {examplePrompts.map((item) => (
+                <div key={`${item.audience}-${item.prompt}`} className="rounded-lg border border-border bg-background p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
+                    {item.audience}
+                  </p>
+                  <p className="text-sm text-muted-foreground">"{item.prompt}"</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div className="pt-10 border-t border-border/50">
-            <p className="text-base font-semibold text-muted-foreground mb-6">Download our mobile apps</p>
-            <AppDownloadButtons className="justify-center" />
+      <section className="py-16 sm:py-20 lg:py-24 bg-muted/40">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">
+              Legal Guides
+            </p>
+            <h2 className={sectionHeading}>
+              Explore Pakistani legal issues and get clear guidance.
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Browse guides on property law, family law, employment rights, consumer protection, and 20+ other legal topics specific to Pakistan.
+            </p>
+          </div>
+          <div className="text-center">
+            <Button asChild size="lg">
+              <Link href="/legal-issues-pakistan">Browse All Legal Issues</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="py-16 sm:py-20 lg:py-24 bg-background">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <h2 className={sectionHeading}>
+              Plans for learning, practice, and teams.
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Start free and choose the workflow that fits your role. Exact paid access may be confirmed inside the app or during organization onboarding.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {pricingPlans.map((plan) => (
+              <Card key={plan.name} className={cardBase}>
+                <CardHeader>
+                  <p className="text-sm font-semibold text-primary">{plan.monthlyPrice}</p>
+                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-5">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {plan.description}
+                  </p>
+                  <ul className="space-y-2">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="text-xs text-muted-foreground flex gap-2">
+                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button asChild variant={plan.name === "Free" ? "default" : "outline"} className="w-full">
+                    {plan.href.startsWith("http") ? (
+                      <a href={plan.href} target="_blank" rel="noopener noreferrer">
+                        {plan.cta}
+                      </a>
+                    ) : (
+                      <Link href={plan.href}>{plan.cta}</Link>
+                    )}
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Button asChild variant="link">
+              <Link href="/pricing">Compare plans</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 lg:py-24 bg-primary text-primary-foreground">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary-foreground/70">
+            Get started free
+          </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+            Start understanding Pakistani law with Wakeel.org.
+          </h2>
+          <p className="text-primary-foreground/75 max-w-xl mx-auto leading-relaxed">
+            Ask legal questions in English or Urdu, understand documents up to 100+ pages, and verify sources before taking important legal steps.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-3 pt-2">
+            <Button asChild size="lg" variant="secondary" className="cta-try-free">
+              <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
+                Try Wakeel Free
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground hover:text-primary cta-download-android">
+              <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
+                Download App
+              </a>
+            </Button>
+          </div>
+          <div className="mx-auto max-w-md rounded-xl border border-primary-foreground/20 bg-background p-5 text-foreground shadow-md mt-4">
+            <p className="text-sm font-semibold text-foreground mb-3">Stay updated — no spam, ever.</p>
+            <EmailSubscription />
           </div>
         </div>
       </section>
     </Layout>
   );
-} 
+}

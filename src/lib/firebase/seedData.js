@@ -103,13 +103,13 @@ const faqsData = [
   },
   {
     question: "How do I get started?",
-    answer: "Simply choose your plan and visit app.wakeel.org to sign up. Free users can start immediately, Students and Professionals can select monthly or yearly billing, and Organizations can contact our sales team at support@wakeel.org for a customized solution.",
+    answer: "Simply choose your plan and visit app.wakeel.org to sign up. Free users can start immediately, Students and Professionals can select monthly or yearly billing, and Organizations can contact our team at info@wakeel.org for onboarding details.",
     order: 4,
     isActive: true
   },
   {
     question: "What support do you provide?",
-    answer: "Support varies by tier: Free and Students receive email support, Professionals get priority email and chat support, and Organizations enjoy 24/7 dedicated support through all channels with guaranteed response times.",
+    answer: "Support varies by tier: Free and Students receive email support, Professionals get priority support, and Organizations can agree response targets during onboarding.",
     order: 5,
     isActive: true
   },

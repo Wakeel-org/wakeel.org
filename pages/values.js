@@ -1,6 +1,6 @@
 import MarketingPage from "../src/components/MarketingPage";
 import { corePages } from "../src/data/marketing";
 
-export default function AboutPage() {
-  return <MarketingPage page={corePages["/about"]} path="/about" />;
+export default function ValuesPage() {
+  return <MarketingPage page={corePages["/values"]} path="/values" />;
 }

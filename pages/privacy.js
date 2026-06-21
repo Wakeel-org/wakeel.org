@@ -40,7 +40,7 @@ const PrivacyPolicy = () => {
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
               <li><strong>Your Name and Contact Details:</strong> When you sign up, we ask for your name and email address so we can send you important updates and help you if you need support. If you're a student, we might also ask which school or university you attend.</li>
-              <li><strong>Payment Information:</strong> If you choose a paid plan (like Students, Professionals, or Organizations), we need to collect your payment details. This is just like paying for a subscription to Netflix or Spotify. We use secure payment services to keep this information safe.</li>
+              <li><strong>Payment Information:</strong> If you choose a paid plan (like Students, Professionals, or Organizations), we need to collect your payment details. This is just like paying for a subscription to Netflix or Spotify. We use secure payment services to keep this information safe. If you subscribe through our iOS app, payment is processed by Apple Inc. via your Apple ID — we do not receive your Apple ID credentials or full payment card details in this case. Apple's Privacy Policy (available at <a href="https://www.apple.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="underline">apple.com/legal/privacy</a>) governs information Apple collects in connection with App Store transactions.</li>
               <li><strong>Professional Details:</strong> For lawyers, judges, or legal professionals, you might choose to add information about your practice, bar license number, or areas of expertise. This helps us give you more relevant legal content.</li>
               <li><strong>Your Preferences:</strong> We remember things like your preferred language, whether you like dark mode or light mode, and what type of legal topics interest you most. This way, we can make the website feel personalized for you.</li>
               <li><strong>Messages You Send Us:</strong> When you contact our support team or send us feedback, we keep those messages so we can help you better and improve our service.</li>
@@ -56,6 +56,7 @@ const PrivacyPolicy = () => {
               <li><strong>How You Use Our Website:</strong> We see which pages you visit, how long you spend reading them, which buttons you click, and what legal topics you search for. This is super helpful because it tells us what features people love and what needs improvement.</li>
               <li><strong>When You Visit:</strong> We keep track of when you use our service - like whether you prefer morning or evening. This helps us schedule maintenance at times when fewer people are online.</li>
               <li><strong>How You Found Us:</strong> If you clicked a link from Google, Facebook, or another website to get to Wakeel.org, we can see that. It helps us understand which of our marketing efforts are working.</li>
+              <li><strong>AI Queries and Interactions:</strong> When you use our AI-powered legal research features, we collect the questions and queries you submit, the AI-generated responses returned to you, and interaction signals such as whether you found a response helpful or flagged it as inaccurate. This data is used solely to operate and improve our AI systems. Your queries may relate to sensitive legal matters — see "With AI Processing Partners" below for how this data is handled and protected.</li>            
             </ul>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Information From Cookies</h3>
@@ -351,6 +352,8 @@ const PrivacyPolicy = () => {
               <li>Share your legal research with others (your searches and bookmarks are private)</li>
               <li>Discriminate against you based on your data</li>
               <li>Use it for any purpose you haven't agreed to</li>
+              <li>Use your AI queries or legal research history to train AI models — ours or any third party's</li>
+              <li>Share the content of your legal queries with any party not directly involved in processing and returning your response</li>
             </ul>
           </section>
           
@@ -366,11 +369,30 @@ const PrivacyPolicy = () => {
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
               <li><strong>Payment Processors:</strong> When you pay for a subscription, companies like Stripe or PayPal process your payment. They see your payment information but we make sure they keep it secure and private.</li>
+              <li><strong>Apple Inc. (App Store):</strong> If you subscribe through our iOS app, Apple processes your in-app purchase and subscription billing through your Apple ID. Apple operates as an independent data controller for those transactions — its handling of your payment and account data is governed by Apple's own Privacy Policy, not ours.</li>
               <li><strong>Email Services:</strong> We use email services to send you messages, newsletters, and receipts. These companies help deliver the emails but can't use your email address for their own purposes.</li>
               <li><strong>Cloud Hosting:</strong> Your account data is stored on secure servers provided by companies like Google Cloud or Amazon Web Services. They store the data but can't look at it or use it.</li>
               <li><strong>Analytics Tools:</strong> We use tools that help us understand how people use the website (like which pages are popular). These tools see usage data but not your personal details like name or email.</li>
               <li><strong>Customer Support Software:</strong> When you contact us for help, we use support software to manage and answer your questions efficiently.</li>
             </ul>
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">With AI Processing Partners</h3>
+<p className="mb-4">
+  To power our AI legal research features, parts of your query are processed by the following AI providers. Your personal identifying information — name, email address, payment details, account ID — is never shared with any of these providers. Only your query text and the relevant retrieved legal document passages are transmitted:
+</p>
+<ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+  <li><strong>OpenAI:</strong> Your query text is sent to OpenAI's API to generate a mathematical representation used for searching our legal database. OpenAI's privacy practices are governed by <a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener noreferrer" className="underline">OpenAI's Privacy Policy</a>.</li>
+  <li><strong>Anthropic — Claude:</strong> your query may be sent and the top relevant legal document passages retrieved from our database are sent to Anthropic's Claude API to generate your response. Anthropic's privacy practices are governed by <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer" className="underline">Anthropic's Privacy Policy</a>.</li>
+  <li><strong>Google — Gemini:</strong> your query will be reranking or thinking with the gemini and the top relevant legal document passages retrieved from our database are sent to Google's Gemini API to generate your response. Google's privacy practices are governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline">Google's Privacy Policy</a>.</li>
+</ul>
+<p className="mb-4">
+  <strong>Key assurances about AI data handling:</strong>
+</p>
+<ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
+  <li><strong>No Personal Identification Sent:</strong> We never transmit your name, email, account ID, payment details, or any identifying information to AI providers. Only query text and retrieved document excerpts are transmitted.</li>
+  <li><strong>No AI Training:</strong> We do not permit and have opted out of any data-use arrangements that would allow your queries to be used for training AI models — by us or by any third-party AI provider.</li>
+  <li><strong>Query Confidentiality:</strong> Your legal queries — which may relate to sensitive personal matters, active cases, or professional legal work — are treated as confidential. They are transmitted to AI providers solely to generate your response and for no other purpose.</li>
+  <li><strong>Sensitive Legal Queries:</strong> We recognise that questions about criminal cases, family disputes, property matters, and professional legal research are deeply sensitive. We apply the highest standard of care to ensure these queries are handled with appropriate confidentiality at every stage of the AI pipeline.</li>
+</ul>
             <p className="mb-4">
               <strong>Important:</strong> All these partner companies sign strict agreements promising to keep your data safe and use it ONLY for helping us run Wakeel.org. They can't sell your data, use it for their own marketing, or share it with anyone else.
             </p>
