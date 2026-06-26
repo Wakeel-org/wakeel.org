@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { X, Smartphone, Apple, Sparkles, CheckCircle2 } from 'lucide-react';
 import { Button } from './ui/button';
 import { Card, CardContent } from './ui/card';
@@ -6,18 +6,21 @@ import { Input } from './ui/input';
 import { db } from '../lib/firebase';
 import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
 import { APP_STORE_LINKS } from '../utils/platformDetection';
+import { validateEmail, isHoneypotFilled, isTooFast, isRateLimited, normalizeEmailForDedup } from '../utils/spamProtection';
 
 const BetaLaunchPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [email, setEmail] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
+  const formStartTime = useRef(null);
 
   useEffect(() => {
-    // Show popup after 2 seconds on every page load
     const timer = setTimeout(() => {
       setIsOpen(true);
+      formStartTime.current = Date.now();
     }, 2000);
     return () => clearTimeout(timer);
   }, []);
@@ -28,25 +31,25 @@ const BetaLaunchPopup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Basic email validation
-    if (!email || !email.includes('@')) {
-      setError('Please enter a valid email address');
+
+    // Honeypot: silently discard bot submissions
+    if (isHoneypotFilled(honeypot)) return;
+
+    // Timing: reject submissions under 3 seconds from popup open
+    if (formStartTime.current && isTooFast(formStartTime.current)) {
+      setError('Please try again.');
       return;
     }
 
-    // Check for common disposable/spam email patterns
-    const emailLower = email.toLowerCase();
-    const disposableDomains = ['tempmail', 'throwaway', '10minutemail', 'guerrillamail', 'mailinator'];
-    if (disposableDomains.some(domain => emailLower.includes(domain))) {
-      setError('Please use a valid personal or business email address');
+    // Rate limiting
+    if (isRateLimited('beta_popup')) {
+      setError('Too many attempts. Please try again later.');
       return;
     }
 
-    // Basic email format validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address');
+    const emailError = validateEmail(email);
+    if (emailError) {
+      setError(emailError);
       return;
     }
 
@@ -54,9 +57,9 @@ const BetaLaunchPopup = () => {
     setError('');
 
     try {
-      // Check if email already exists
+      const normalizedEmail = normalizeEmailForDedup(email);
       const betaWhitelistRef = collection(db, 'beta_whitelist');
-      const q = query(betaWhitelistRef, where('email', '==', email));
+      const q = query(betaWhitelistRef, where('email', '==', normalizedEmail));
       const querySnapshot = await getDocs(q);
 
       if (!querySnapshot.empty) {
@@ -65,19 +68,17 @@ const BetaLaunchPopup = () => {
         return;
       }
 
-      // Add email to beta_whitelist collection
       await addDoc(betaWhitelistRef, {
-        email,
+        email: normalizedEmail,
         timestamp: new Date(),
         source: 'homepage_beta_popup',
         status: 'active',
-        sent: false
+        sent: false,
       });
 
       setIsSuccess(true);
       setEmail('');
-      
-      // Reset success message after 5 seconds
+
       setTimeout(() => {
         setIsSuccess(false);
       }, 5000);
@@ -164,6 +165,18 @@ const BetaLaunchPopup = () => {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Honeypot — hidden from humans, filled by bots */}
+                    <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} aria-hidden="true">
+                      <input
+                        type="text"
+                        name="website"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
+
                     <div className="space-y-2">
                       <h3 className="text-2xl font-bold tracking-tight">
                         Reserve Your Spot

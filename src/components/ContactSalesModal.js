@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { X, Building, Mail, User, Phone, MessageSquare, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from './ui/card';
@@ -6,6 +6,7 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { db } from '../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { isHoneypotFilled, isTooFast, isRateLimited, isGibberishText } from '../utils/spamProtection';
 
 const ContactSalesModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -15,12 +16,13 @@ const ContactSalesModal = ({ isOpen, onClose }) => {
     company: '',
     message: ''
   });
+  const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
   const [validationErrors, setValidationErrors] = useState({});
+  const formStartTime = useRef(null);
 
-  // Handle escape key press
-  React.useEffect(() => {
+  useEffect(() => {
     const handleEscKey = (event) => {
       if (event.key === 'Escape') {
         onClose();
@@ -28,6 +30,7 @@ const ContactSalesModal = ({ isOpen, onClose }) => {
     };
 
     if (isOpen) {
+      formStartTime.current = Date.now();
       document.addEventListener('keydown', handleEscKey);
       document.body.style.overflow = 'hidden';
     }
@@ -51,13 +54,15 @@ const ContactSalesModal = ({ isOpen, onClose }) => {
   const validateForm = () => {
     const errors = {};
 
-    // Name validation: min 2 characters, max 100, no numbers only
+    // Name validation: min 2 characters, max 100, no numbers only, no gibberish
     if (!formData.name.trim() || formData.name.trim().length < 2) {
       errors.name = 'Name must be at least 2 characters';
     } else if (formData.name.trim().length > 100) {
       errors.name = 'Name must be less than 100 characters';
     } else if (/^[0-9]+$/.test(formData.name.trim())) {
       errors.name = 'Name cannot contain only numbers';
+    } else if (isGibberishText(formData.name.trim())) {
+      errors.name = 'Please enter a valid full name';
     }
 
     // Email validation: proper format
@@ -87,11 +92,13 @@ const ContactSalesModal = ({ isOpen, onClose }) => {
       errors.company = 'Company name must be less than 100 characters';
     }
 
-    // Message validation: min 10 characters, max 1000
+    // Message validation: min 10 characters, max 1000, no gibberish
     if (!formData.message.trim() || formData.message.trim().length < 10) {
       errors.message = 'Message must be at least 10 characters';
     } else if (formData.message.trim().length > 1000) {
       errors.message = 'Message must be less than 1000 characters';
+    } else if (isGibberishText(formData.message.trim())) {
+      errors.message = 'Please enter a meaningful message';
     }
 
     // Check for spam patterns
@@ -115,6 +122,23 @@ const ContactSalesModal = ({ isOpen, onClose }) => {
     e.preventDefault();
     setValidationErrors({});
     setSubmitStatus(null);
+
+    // Honeypot: silently discard bot submissions
+    if (isHoneypotFilled(honeypot)) return;
+
+    // Timing: reject submissions under 3 seconds from modal open
+    if (formStartTime.current && isTooFast(formStartTime.current)) {
+      setValidationErrors({ spam: 'Please try again.' });
+      setSubmitStatus('error');
+      return;
+    }
+
+    // Rate limiting
+    if (isRateLimited('contact_sales')) {
+      setValidationErrors({ spam: 'Too many attempts. Please try again later.' });
+      setSubmitStatus('error');
+      return;
+    }
 
     // Validate form
     const errors = validateForm();
@@ -203,6 +227,18 @@ const ContactSalesModal = ({ isOpen, onClose }) => {
 
         <CardContent className="pt-6">
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Honeypot — hidden from humans, filled by bots */}
+            <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} aria-hidden="true">
+              <input
+                type="text"
+                name="website"
+                value={honeypot}
+                onChange={(e) => setHoneypot(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
             {/* Name */}
             <div className="space-y-2">
               <label htmlFor="name" className="text-sm font-medium flex items-center gap-2">

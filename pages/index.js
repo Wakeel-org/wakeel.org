@@ -173,11 +173,11 @@ export default function Home() {
                       Try Wakeel Free
                     </a>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="cta-download-android">
+                  {/* <Button asChild size="lg" variant="outline" className="cta-download-android">
                     <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
                       Download App
                     </a>
-                  </Button>
+                  </Button> */}
                   <Button asChild size="lg" variant="link" className="cta-view-legal-sources px-0 sm:px-3">
                     <Link href="/legal-sources">View Legal Sources</Link>
                   </Button>

@@ -1,23 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { db } from '../lib/firebase';
-import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { collection, addDoc, Timestamp, query, where, getDocs } from 'firebase/firestore';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { Loader2 } from 'lucide-react';
+import { validateEmail, isHoneypotFilled, isTooFast, isRateLimited, normalizeEmailForDedup } from '../utils/spamProtection';
 
 const EmailSubscription = () => {
   const [email, setEmail] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const [status, setStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const formStartTime = useRef(Date.now());
+
+  useEffect(() => {
+    formStartTime.current = Date.now();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (!email) {
-      setStatus({
-        type: 'error',
-        message: 'Please enter your email address'
-      });
+
+    // Honeypot: silently discard bot submissions
+    if (isHoneypotFilled(honeypot)) return;
+
+    // Timing: reject submissions under 3 seconds
+    if (isTooFast(formStartTime.current)) {
+      setStatus({ type: 'error', message: 'Please try again.' });
+      return;
+    }
+
+    // Rate limiting
+    if (isRateLimited('newsletter')) {
+      setStatus({ type: 'error', message: 'Too many attempts. Please try again later.' });
+      return;
+    }
+
+    const emailError = validateEmail(email);
+    if (emailError) {
+      setStatus({ type: 'error', message: emailError });
       return;
     }
 
@@ -25,25 +45,27 @@ const EmailSubscription = () => {
       setIsSubmitting(true);
       setStatus({ type: '', message: '' });
 
-      // Add email to Firestore
-      await addDoc(collection(db, 'subscribed_users'), {
-        email,
+      const normalizedEmail = normalizeEmailForDedup(email);
+      const ref = collection(db, 'subscribed_users');
+      const existing = await getDocs(query(ref, where('email', '==', normalizedEmail)));
+      if (!existing.empty) {
+        setStatus({ type: 'error', message: 'This email is already subscribed.' });
+        return;
+      }
+
+      await addDoc(ref, {
+        email: normalizedEmail,
         subscribedAt: Timestamp.now(),
         status: 'active',
-        email_sent: false
+        email_sent: false,
+        source: 'homepage_newsletter',
       });
 
       setEmail('');
-      setStatus({
-        type: 'success',
-        message: 'Thank you for subscribing!'
-      });
+      setStatus({ type: 'success', message: 'Thank you for subscribing!' });
     } catch (error) {
       console.error('Error adding subscriber:', error);
-      setStatus({
-        type: 'error',
-        message: 'Something went wrong. Please try again.'
-      });
+      setStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -51,19 +73,28 @@ const EmailSubscription = () => {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
+      {/* Honeypot — hidden from humans, filled by bots */}
+      <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} aria-hidden="true">
+        <input
+          type="text"
+          name="website"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       <div className="flex flex-col sm:flex-row gap-2">
-        <Input 
-          type="email" 
+        <Input
+          type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email address" 
+          placeholder="Enter your email address"
           disabled={isSubmitting}
           className="flex-grow"
         />
-        <Button 
-          type="submit"
-          disabled={isSubmitting}
-        >
+        <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -75,11 +106,8 @@ const EmailSubscription = () => {
         </Button>
       </div>
 
-      {/* Status Messages */}
       {status.message && (
-        <div className={`text-sm ${
-          status.type === 'error' ? 'text-destructive' : 'text-green-600 dark:text-green-500'
-        }`}>
+        <div className={`text-sm ${status.type === 'error' ? 'text-destructive' : 'text-green-600 dark:text-green-500'}`}>
           {status.message}
         </div>
       )}
@@ -91,4 +119,4 @@ const EmailSubscription = () => {
   );
 };
 
-export default EmailSubscription; 
+export default EmailSubscription;

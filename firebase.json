@@ -3,7 +3,7 @@
     "public": "out",
     "ignore": [
       "firebase.json",
-      "**/.*",
+      "**/.DS_Store",
       "**/node_modules/**"
     ],
     "cleanUrls": true,

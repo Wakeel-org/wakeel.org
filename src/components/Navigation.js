@@ -63,11 +63,11 @@ const Navigation = () => {
               </Link>
             ))}
             <div className="flex items-center gap-2 ml-2">
-              <Button asChild variant="outline" size="sm" className="cta-download-android">
+              {/* <Button asChild variant="outline" size="sm" className="cta-download-android">
                 <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
                   Download App
                 </a>
-              </Button>
+              </Button> */}
               <Button size="sm" onClick={handleGetStarted} className="cta-try-free">
                 Try Free
               </Button>

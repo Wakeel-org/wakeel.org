@@ -10,7 +10,8 @@ export const site = {
   mobileTagline: "Legal help in your pocket — Android, iOS & web.",
   disclaimer:
     "Wakeel.org provides legal information and research support. It does not provide final legal advice, does not guarantee outcomes, and does not replace consultation with a licensed advocate.",
-  appUrl: "https://app.wakeel.org",
+  // appUrl: "https://app.wakeel.org", // temporarily disabled
+  appUrl: "https://play.google.com/store/apps/details?id=pk.digit.aiwakeel", // using Android link until web app is live
   androidUrl:
     "https://play.google.com/store/apps/details?id=pk.digit.aiwakeel",
   iosUrl: "https://testflight.apple.com/join/ZVgHgqF7",
