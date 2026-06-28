@@ -7,6 +7,7 @@ import { Input } from './ui/input';
 import { db } from '../config/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { isHoneypotFilled, isTooFast, isRateLimited, isGibberishText } from '../utils/spamProtection';
+import { getRecaptchaToken } from '../utils/recaptcha';
 
 const ContactSalesModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -151,7 +152,8 @@ const ContactSalesModal = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
 
     try {
-      // Add to Firestore with trimmed values
+      const recaptchaToken = await getRecaptchaToken('contact_sales');
+
       await addDoc(collection(db, 'web_sales_query'), {
         name: formData.name.trim(),
         email: formData.email.trim().toLowerCase(),
@@ -160,7 +162,8 @@ const ContactSalesModal = ({ isOpen, onClose }) => {
         message: formData.message.trim(),
         timestamp: serverTimestamp(),
         status: 'new',
-        source: 'pricing_page'
+        source: 'pricing_page',
+        recaptchaToken: recaptchaToken || null,
       });
 
       setSubmitStatus('success');

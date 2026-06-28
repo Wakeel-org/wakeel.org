@@ -7,6 +7,7 @@ import { db } from '../lib/firebase';
 import { collection, addDoc, query, where, getDocs } from 'firebase/firestore';
 import { APP_STORE_LINKS } from '../utils/platformDetection';
 import { validateEmail, isHoneypotFilled, isTooFast, isRateLimited, normalizeEmailForDedup } from '../utils/spamProtection';
+import { getRecaptchaToken } from '../utils/recaptcha';
 
 const BetaLaunchPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,6 +58,7 @@ const BetaLaunchPopup = () => {
     setError('');
 
     try {
+      const recaptchaToken = await getRecaptchaToken('beta_popup_signup');
       const normalizedEmail = normalizeEmailForDedup(email);
       const betaWhitelistRef = collection(db, 'beta_whitelist');
       const q = query(betaWhitelistRef, where('email', '==', normalizedEmail));
@@ -74,6 +76,7 @@ const BetaLaunchPopup = () => {
         source: 'homepage_beta_popup',
         status: 'active',
         sent: false,
+        recaptchaToken: recaptchaToken || null,
       });
 
       setIsSuccess(true);

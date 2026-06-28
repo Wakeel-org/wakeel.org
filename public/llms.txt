@@ -71,6 +71,11 @@
 - [Australia Legal Guide](https://wakeel.org/australia-legal-guide): Legal rights and guidance for Australia.
 - [India Legal Guide](https://wakeel.org/india-legal-guide): Legal rights and guidance for India.
 
+## Compare
+
+- [Best AI Legal Apps in Pakistan](https://wakeel.org/best-ai-legal-apps-pakistan): Honest comparison of AI legal tools for Pakistani users and the criteria that matter (Pakistani-law grounding, Urdu support, document analysis, safety, free plans).
+- [Will AI Replace Lawyers? AI vs Hiring a Lawyer](https://wakeel.org/ai-vs-lawyer-pakistan): What AI legal tools do well, what only a licensed advocate can do, and when to use each in Pakistan.
+
 ## Optional
 
 - [Journal](https://wakeel.org/journal): Articles and updates on legal information and AI.

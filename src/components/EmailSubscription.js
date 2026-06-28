@@ -5,6 +5,7 @@ import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { Loader2 } from 'lucide-react';
 import { validateEmail, isHoneypotFilled, isTooFast, isRateLimited, normalizeEmailForDedup } from '../utils/spamProtection';
+import { getRecaptchaToken } from '../utils/recaptcha';
 
 const EmailSubscription = () => {
   const [email, setEmail] = useState('');
@@ -45,6 +46,7 @@ const EmailSubscription = () => {
       setIsSubmitting(true);
       setStatus({ type: '', message: '' });
 
+      const recaptchaToken = await getRecaptchaToken('newsletter_subscribe');
       const normalizedEmail = normalizeEmailForDedup(email);
       const ref = collection(db, 'subscribed_users');
       const existing = await getDocs(query(ref, where('email', '==', normalizedEmail)));
@@ -59,6 +61,7 @@ const EmailSubscription = () => {
         status: 'active',
         email_sent: false,
         source: 'homepage_newsletter',
+        recaptchaToken: recaptchaToken || null,
       });
 
       setEmail('');
