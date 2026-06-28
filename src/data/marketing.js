@@ -852,21 +852,29 @@ export const comparisons = [
     slug: "wakeel-vs-pakistanlawbot",
     competitor: "PakistanLawBot",
     title: "Wakeel.org vs PakistanLawBot",
+    positioning:
+      "PakistanLawBot is positioned as an AI chatbot for answering Pakistani legal questions.",
   },
   {
     slug: "wakeel-vs-lawgpt",
     competitor: "LawGPT",
     title: "Wakeel.org vs LawGPT",
+    positioning:
+      "“LawGPT” refers to several general and academic legal-AI projects. Most are not built specifically for Pakistani law, so check which one you are using and which jurisdiction it actually covers.",
   },
   {
     slug: "wakeel-vs-ai-attorney",
     competitor: "AI Attorney",
     title: "Wakeel.org vs AI Attorney",
+    positioning:
+      "AI Attorney is marketed as a legal AI assistant for Pakistani users.",
   },
   {
     slug: "wakeel-vs-yourmunshi",
     competitor: "YourMunshi",
     title: "Wakeel.org vs YourMunshi",
+    positioning:
+      "YourMunshi offers legal and paperwork assistance for Pakistani users.",
   },
 ];
 
