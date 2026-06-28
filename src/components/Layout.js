@@ -33,12 +33,12 @@ const footerColumns = [
   {
     title: "Resources",
     links: [
+      { label: "Free Legal Advice", href: "/free-legal-advice-pakistan" },
       { label: "Legal Sources", href: "/legal-sources" },
       { label: "Pakistan Legal Issues", href: "/legal-issues-pakistan" },
       { label: "GCC Legal Issues", href: "/legal-issues-gcc" },
       { label: "Best AI Legal Apps", href: "/best-ai-legal-apps-pakistan" },
       { label: "AI vs a Lawyer", href: "/ai-vs-lawyer-pakistan" },
-      { label: "Legal Guides", href: "/fir-refused-pakistan" },
       { label: "Journal", href: "/journal" },
     ],
   },
