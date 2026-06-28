@@ -44,8 +44,15 @@ const homeSchema = [
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Wakeel.org",
+    alternateName: ["Wakeel AI", "AI Wakeel"],
     url: site.url,
     logo: `${site.url}/logo-og.png`,
+    sameAs: [
+      "https://www.facebook.com/aiwakeel",
+      "https://www.instagram.com/wakeel_org",
+      "https://www.linkedin.com/company/wakeelai/",
+      site.androidUrl,
+    ],
     contactPoint: {
       "@type": "ContactPoint",
       email: site.contactEmail,
@@ -57,8 +64,9 @@ const homeSchema = [
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "Wakeel.org",
+    alternateName: "Wakeel AI",
     applicationCategory: "LegalApplication",
-    operatingSystem: "Web, Android",
+    operatingSystem: "Web, Android, iOS",
     description: site.description,
     offers: {
       "@type": "Offer",
@@ -70,6 +78,7 @@ const homeSchema = [
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Wakeel.org",
+    alternateName: "Wakeel AI",
     url: site.url,
     description: site.description,
   },
@@ -121,6 +130,10 @@ const heroCapabilities = [
 
 export default function Home() {
   const homeKeywords = [
+    "Wakeel AI",
+    "AI Wakeel",
+    "Wakeel AI app",
+    "AI wakeel app Pakistan",
     "AI legal assistant Pakistan",
     "Pakistani law",
     "legal help Pakistan",
@@ -128,19 +141,19 @@ export default function Home() {
     "property law Pakistan",
     "family law Pakistan",
     "employment law Pakistan",
-    "consumer rights Pakistan",
     "FIR Pakistan",
-    "legal guidance",
     "Pakistan legal information",
-    "tenant rights",
     "court procedures Pakistan",
   ].join(", ");
+
+  const homeDescription =
+    "Wakeel.org — also known as Wakeel AI — is Pakistan's AI legal assistant. Ask legal questions in simple English or Urdu, understand legal documents, explore Pakistani laws, and get source-aware legal guidance on Android, iOS, and web.";
 
   return (
     <Layout>
       <MarketingSEO
-        title="Pakistan's AI Legal Assistant | Wakeel.org"
-        description={site.description}
+        title="Wakeel AI — Pakistan's AI Legal Assistant | Wakeel.org"
+        description={homeDescription}
         path="/"
         schema={homeSchema}
         keywords={homeKeywords}
@@ -153,7 +166,7 @@ export default function Home() {
             <Card className="overflow-hidden border-muted/60 shadow-2xl bg-gradient-to-br from-primary/10 via-card to-muted/40">
               <CardContent className="p-5 sm:p-8 lg:p-10 space-y-6">
                 <p className="inline-flex w-fit rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
-                  Mobile-first legal AI for Pakistan
+                  Wakeel AI · Mobile-first legal AI for Pakistan
                 </p>
                 <div className="space-y-4">
                   <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight ${headingGradient}`}>

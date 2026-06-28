@@ -485,7 +485,7 @@ export const corePages = {
     eyebrow: "About Wakeel.org",
     heading: "Pakistan-focused legal AI for clearer legal understanding.",
     intro:
-      "Wakeel.org is a Pakistan-focused AI legal assistant built to help people understand legal information, documents, and research more clearly. It supports citizens, law students, lawyers, law firms, and institutions through AI-assisted legal chat, document analysis, and research workflows.",
+      "Wakeel.org — also known as Wakeel AI — is a Pakistan-focused AI legal assistant built to help people understand legal information, documents, and research more clearly. It supports citizens, law students, lawyers, law firms, and institutions through AI-assisted legal chat, document analysis, and research workflows.",
     cta: "Try Wakeel Free",
     sections: [
       {
