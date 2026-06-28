@@ -860,7 +860,7 @@ export const comparisons = [
     competitor: "LawGPT",
     title: "Wakeel.org vs LawGPT",
     positioning:
-      "“LawGPT” refers to several general and academic legal-AI projects. Most are not built specifically for Pakistani law, so check which one you are using and which jurisdiction it actually covers.",
+      "There is a Pakistan-focused LawGPT (lawgpt.pk) aimed at legal practice and research. Note that “LawGPT” is also used by unrelated global and academic projects, so confirm which product and jurisdiction you are actually using.",
   },
   {
     slug: "wakeel-vs-ai-attorney",
@@ -875,6 +875,27 @@ export const comparisons = [
     title: "Wakeel.org vs YourMunshi",
     positioning:
       "YourMunshi offers legal and paperwork assistance for Pakistani users.",
+  },
+  {
+    slug: "wakeel-vs-digilawyer",
+    competitor: "DigiLawyer",
+    title: "Wakeel.org vs DigiLawyer",
+    positioning:
+      "DigiLawyer is positioned around AI legal drafting for Pakistani users — generating pleadings, petitions, contracts, and case summaries.",
+  },
+  {
+    slug: "wakeel-vs-qanoonai",
+    competitor: "QanoonAI",
+    title: "Wakeel.org vs QanoonAI",
+    positioning:
+      "QanoonAI is positioned around AI-generated case briefs and specialized legal tools for areas such as Muslim personal law, tax, and property.",
+  },
+  {
+    slug: "wakeel-vs-draftify",
+    competitor: "Draftify",
+    title: "Wakeel.org vs Draftify",
+    positioning:
+      "Draftify is positioned around AI legal drafting — generating legal documents — and is aimed more at lawyers than everyday citizens.",
   },
 ];
 

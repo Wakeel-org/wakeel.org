@@ -84,10 +84,40 @@ const apps = [
       "Marketed as a legal AI assistant for Pakistani users. Worth comparing on bilingual support, document analysis depth, and pricing.",
   },
   {
+    name: "QanoonAI",
+    tag: "Case briefs & legal calculators",
+    blurb:
+      "Positioned around AI-generated case briefs plus specialized tools for areas like Muslim personal law, tax, and property. Compare on Urdu support, document handling, and how it cites sources.",
+  },
+  {
+    name: "DigiLawyer",
+    tag: "AI legal drafting",
+    blurb:
+      "Focused on AI legal drafting — generating pleadings, petitions, contracts, and case summaries. Check the quality of Pakistani-law grounding and whether drafts come with verification prompts.",
+  },
+  {
+    name: "LawGPT.pk",
+    tag: "AI for legal practice",
+    blurb:
+      "A Pakistan-focused legal AI (lawgpt.pk) aimed at legal practice and research. Note that \"LawGPT\" is also used by unrelated global and academic projects, so confirm you're using the Pakistani product.",
+  },
+  {
+    name: "Draftify",
+    tag: "AI legal drafting",
+    blurb:
+      "An AI drafting tool for legal documents. Aimed more at lawyers than everyday citizens; check its Pakistani-law grounding and whether drafts include verification prompts before filing.",
+  },
+  {
     name: "YourMunshi",
     tag: "Legal & paperwork assistance",
     blurb:
       "A Pakistani legal/paperwork assistance service. Check whether it offers genuine AI document understanding versus human-assisted form filling.",
+  },
+  {
+    name: "Other Pakistani legal-tech tools",
+    tag: "Drafting, research, e-signing & practice software",
+    blurb:
+      "Pakistan's legal-tech space also includes research assistants (e.g., bahaq, QanoonMate), cloud legal/practice-management software (e.g., Eastlaw), and e-signature tools (e.g., Wukla, Paksign). These serve lawyers and firms more than everyday citizens — match the tool to whether you need legal understanding, drafting, or law-firm workflow.",
   },
   {
     name: "General AI (ChatGPT, Claude, Gemini)",
