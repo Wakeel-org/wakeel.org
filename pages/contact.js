@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { Mail, MapPin, MessageSquareWarning, Send } from "lucide-react";
 import Layout from "../src/components/Layout";
 import MarketingSEO from "../src/components/MarketingSEO";
 import { Button } from "../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
 import { Input } from "../src/components/ui/input";
-import { db } from "../src/lib/firebase";
 import { contactTopics, site } from "../src/data/marketing";
 import { cardBase, headingGradient, heroHeading, iconTile, sectionHeading } from "../src/data/theme";
 
@@ -74,6 +72,12 @@ export default function ContactPage() {
     setLoading(true);
 
     try {
+      // Load Firebase only on submit so it stays out of the initial page bundle.
+      const [{ db }, { addDoc, collection, serverTimestamp }] = await Promise.all([
+        import("../src/lib/firebase"),
+        import("firebase/firestore"),
+      ]);
+
       await addDoc(collection(db, "website_queries"), {
         name: formData.name.trim(),
         email: formData.email.trim().toLowerCase(),

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Layout from '../src/components/Layout';
-import { getBlogPosts } from '../src/lib/firebase/collections';
 import { Card, CardContent, CardHeader, CardTitle } from '../src/components/ui/card';
 import { Button } from '../src/components/ui/button';
 import { Input } from '../src/components/ui/input';
@@ -31,6 +30,8 @@ const JournalPage = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
+        // Load Firebase lazily so it stays out of the journal's initial bundle.
+        const { getBlogPosts } = await import('../src/lib/firebase/collections');
         const blogPosts = await getBlogPosts();
         setPosts(blogPosts);
         setFilteredPosts(blogPosts);
