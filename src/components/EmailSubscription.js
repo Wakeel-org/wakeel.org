@@ -1,6 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { db } from '../lib/firebase';
-import { collection, addDoc, Timestamp, query, where, getDocs } from 'firebase/firestore';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { Loader2 } from 'lucide-react';
@@ -45,6 +43,12 @@ const EmailSubscription = () => {
     try {
       setIsSubmitting(true);
       setStatus({ type: '', message: '' });
+
+      // Load Firebase only on submit so it stays out of the initial page bundle.
+      const [{ db }, { collection, addDoc, Timestamp, query, where, getDocs }] = await Promise.all([
+        import('../lib/firebase'),
+        import('firebase/firestore'),
+      ]);
 
       const recaptchaToken = await getRecaptchaToken('newsletter_subscribe');
       const normalizedEmail = normalizeEmailForDedup(email);
