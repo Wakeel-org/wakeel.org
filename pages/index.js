@@ -138,6 +138,7 @@ export default function Home() {
     "Pakistani law",
     "legal help Pakistan",
     "Wakeel",
+    "Wakeel.org",
     "property law Pakistan",
     "family law Pakistan",
     "employment law Pakistan",
@@ -166,7 +167,7 @@ export default function Home() {
             <Card className="overflow-hidden border-muted/60 shadow-2xl bg-gradient-to-br from-primary/10 via-card to-muted/40">
               <CardContent className="p-5 sm:p-8 lg:p-10 space-y-6">
                 <p className="inline-flex w-fit rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
-                  Wakeel AI · Mobile-first legal AI for Pakistan
+                  Wakeel.org · Mobile-first legal AI for Pakistani People
                 </p>
                 <div className="space-y-4">
                   <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight ${headingGradient}`}>

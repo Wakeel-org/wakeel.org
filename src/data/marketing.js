@@ -179,6 +179,13 @@ export const team = [
     photo: "/team/usman-inayat.jpg",
     linkedin: "https://www.linkedin.com/in/usman-inayat-b87806190/",
   },
+    {
+    name: "Sikandar Azam",
+    role: "Advocate High Court & Legal Researcher",
+    initials: "SA",
+    photo: "/team/sikandar-azam.jpg",
+    linkedin: "#",
+  },
   {
     name: "Abdullah Munawar",
     role: "Full Stack Developer",
