@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Layout from '../src/components/Layout';
 import Link from 'next/link';
 import { Button } from '../src/components/ui/button';
@@ -5,6 +6,10 @@ import { Button } from '../src/components/ui/button';
 export default function Custom404() {
   return (
     <Layout>
+      <Head>
+        <title>Page not found - Wakeel.org</title>
+        <meta name="robots" content="noindex, follow" />
+      </Head>
       <div className="min-h-[60vh] flex flex-col items-center justify-center">
         <h1 className="text-6xl font-bold text-foreground mb-4">404</h1>
         <p className="text-xl text-muted-foreground mb-8">Page not found</p>
@@ -16,4 +21,4 @@ export default function Custom404() {
       </div>
     </Layout>
   );
-} 
+}

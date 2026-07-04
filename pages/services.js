@@ -1,9 +1,20 @@
 import React from 'react';
 import Layout from '../src/components/Layout';
+import MarketingSEO from '../src/components/MarketingSEO';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '../src/components/ui/card';
 import { Button } from '../src/components/ui/button';
 import { Scale, FileText, Search, Shield, Clock, Zap } from 'lucide-react';
 import Link from 'next/link';
+import { site } from '../src/data/marketing';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Wakeel.org Services",
+  description:
+    "Legal technology services from Wakeel.org: AI legal assistance, document analysis, case research, compliance checking, and rapid drafting for Pakistan's legal system.",
+  url: `${site.url}/services`,
+};
 
 const services = [
   {
@@ -41,6 +52,13 @@ const services = [
 export default function Services() {
   return (
     <Layout>
+      <MarketingSEO
+        title="Wakeel.org Services"
+        description="Legal technology services from Wakeel.org: AI legal assistance, document analysis, case research, compliance checking, and rapid drafting for Pakistan's legal system."
+        path="/services"
+        schema={schema}
+      />
+
       <div className="pt-16 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
@@ -73,11 +91,11 @@ export default function Services() {
             Start with legal information, document understanding, and research support built around Pakistan's legal system.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/auth">
+            <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="w-full sm:w-auto">
                 Start Free Trial
               </Button>
-            </Link>
+            </a>
             <Link href="/contact">
               <Button variant="outline" size="lg" className="w-full sm:w-auto">
                 Contact Sales
