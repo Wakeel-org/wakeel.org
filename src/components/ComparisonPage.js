@@ -94,14 +94,15 @@ const makeSchemas = (comparison, path, faqs) => [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: site.url },
-      { "@type": "ListItem", position: 2, name: "Comparisons", item: `${site.url}/comparisons` },
-      { "@type": "ListItem", position: 3, name: comparison.title, item: `${site.url}${path}` },
+      { "@type": "ListItem", position: 2, name: "Journal", item: `${site.url}/journal` },
+      { "@type": "ListItem", position: 3, name: "Comparisons", item: `${site.url}/journal/comparisons` },
+      { "@type": "ListItem", position: 4, name: comparison.title, item: `${site.url}${path}` },
     ],
   },
 ];
 
 const ComparisonPage = ({ comparison }) => {
-  const path = `/${comparison.slug}`;
+  const path = `/journal/article/${comparison.slug}`;
   const { competitor } = comparison;
   const faqs = makeFaqs(competitor);
   const keywords = [
@@ -143,7 +144,7 @@ const ComparisonPage = ({ comparison }) => {
                 </a>
               </Button>
               <Button asChild variant="outline" size="lg">
-                <Link href="/best-ai-legal-apps-pakistan">See all AI legal apps</Link>
+                <Link href="/journal/article/best-ai-legal-apps-pakistan">See all AI legal apps</Link>
               </Button>
             </div>
           </div>
@@ -237,8 +238,8 @@ const ComparisonPage = ({ comparison }) => {
             </CardHeader>
             <CardContent className="space-y-3">
               {[
-                { label: "Best AI legal apps in Pakistan", href: "/best-ai-legal-apps-pakistan" },
-                { label: "AI vs hiring a lawyer", href: "/ai-vs-lawyer-pakistan" },
+                { label: "Best AI legal apps in Pakistan", href: "/journal/article/best-ai-legal-apps-pakistan" },
+                { label: "AI vs hiring a lawyer", href: "/journal/article/ai-vs-lawyer-pakistan" },
                 { label: "Wakeel trust framework", href: "/legal-sources" },
               ].map((l) => (
                 <Link

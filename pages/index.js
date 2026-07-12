@@ -316,20 +316,13 @@ export default function Home() {
 
       <section id="solutions" className="py-16 sm:py-20 lg:py-24 bg-muted/40">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 sm:mb-16">
+          <div className="mb-12 sm:mb-16">
             <h2 className={`${sectionHeading} max-w-2xl`}>
               Built for the people who use Pakistani law every day.
             </h2>
-            <Link
-              href="/legal-issues-pakistan"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline shrink-0"
-            >
-              See all audiences <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {audiences
-              .filter((a) => ["Citizens", "Law Students", "Lawyers", "Judges"].includes(a.title))
               .map((audience) => {
                 const Icon = audienceIcons[audience.title] || UsersRound;
                 return (
@@ -483,18 +476,21 @@ export default function Home() {
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">
-              Legal Guides
+              Wakeel Journal
             </p>
             <h2 className={sectionHeading}>
               Explore Pakistani legal issues and get clear guidance.
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Browse guides on property law, family law, employment rights, consumer protection, and 20+ other legal topics specific to Pakistan.
+              Browse guides on property law, family law, employment rights, consumer protection, and 80+ other legal topics covering Pakistan, the GCC, and global jurisdictions — all in the Journal.
             </p>
           </div>
-          <div className="text-center">
+          <div className="text-center flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg">
-              <Link href="/legal-issues-pakistan">Browse All Legal Issues</Link>
+              <Link href="/journal">Visit the Journal</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/journal/legal-issues-pakistan">Browse All Legal Issues</Link>
             </Button>
           </div>
         </div>

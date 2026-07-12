@@ -15,7 +15,9 @@ export async function getBlogPostsServer() {
 
   try {
     const snapshot = await db.collection("blog_posts").orderBy("createdAt", "desc").get();
-    return snapshot.docs.map(serializeDoc);
+    return snapshot.docs
+      .map(serializeDoc)
+      .filter((post) => post.status !== "draft");
   } catch (error) {
     console.error("Failed to fetch blog posts at build time:", error.message);
     return [];

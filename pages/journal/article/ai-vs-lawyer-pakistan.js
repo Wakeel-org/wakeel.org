@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { ArrowRight, Check, X, HelpCircle, Bot, Scale } from "lucide-react";
-import Layout from "../src/components/Layout";
-import MarketingSEO from "../src/components/MarketingSEO";
-import { Button } from "../src/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
-import { site } from "../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../src/data/theme";
+import Layout from "../../../src/components/Layout";
+import MarketingSEO from "../../../src/components/MarketingSEO";
+import { Button } from "../../../src/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
+import { site } from "../../../src/data/marketing";
+import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const aiDoesWell = [
   "Explain legal terms and procedures in plain English or Urdu",
@@ -83,7 +83,7 @@ const schema = [
     name: "Will AI Replace Lawyers? AI Legal Help vs Hiring a Lawyer in Pakistan",
     description:
       "A clear look at what AI legal tools can and cannot do compared with a licensed advocate in Pakistan — and how to use each one well.",
-    url: `${site.url}/ai-vs-lawyer-pakistan`,
+    url: `${site.url}/journal/article/ai-vs-lawyer-pakistan`,
   },
   {
     "@context": "https://schema.org",
@@ -99,11 +99,12 @@ const schema = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Journal", item: `${site.url}/journal` },
       {
         "@type": "ListItem",
-        position: 2,
+        position: 3,
         name: "AI vs Hiring a Lawyer",
-        item: `${site.url}/ai-vs-lawyer-pakistan`,
+        item: `${site.url}/journal/article/ai-vs-lawyer-pakistan`,
       },
     ],
   },
@@ -132,7 +133,7 @@ export default function AIvsLawyerPakistan() {
       <MarketingSEO
         title="Will AI Replace Lawyers? AI vs Hiring a Lawyer in Pakistan"
         description="Will AI replace lawyers in Pakistan? A clear, honest comparison of what AI legal tools do well, what only a licensed advocate can do, and when to use each. AI helps you prepare — it does not replace a lawyer."
-        path="/ai-vs-lawyer-pakistan"
+        path="/journal/article/ai-vs-lawyer-pakistan"
         schema={schema}
         keywords={keywords}
         region="pk"
@@ -300,7 +301,7 @@ export default function AIvsLawyerPakistan() {
               <a href={site.appUrl} target="_blank" rel="noopener noreferrer">Try Wakeel Free</a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/best-ai-legal-apps-pakistan">Compare AI legal apps →</Link>
+              <Link href="/journal/article/best-ai-legal-apps-pakistan">Compare AI legal apps →</Link>
             </Button>
           </div>
         </div>

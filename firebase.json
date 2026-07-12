@@ -12,24 +12,917 @@
       {
         "source": "**",
         "headers": [
-          { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self' data:; connect-src 'self' https://firestore.googleapis.com https://firebaseinstallations.googleapis.com https://content-firebaseappcheck.googleapis.com https://www.google.com; frame-src https://www.google.com https://recaptcha.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'" },
-          { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-          { "key": "X-Content-Type-Options", "value": "nosniff" },
-          { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-          { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" }
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'self'; script-src 'self' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.unsplash.com; font-src 'self' data:; connect-src 'self' https://firestore.googleapis.com https://firebaseinstallations.googleapis.com https://content-firebaseappcheck.googleapis.com https://www.google.com; frame-src https://www.google.com https://recaptcha.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+          }
         ]
       },
       {
         "source": "**/*.@(js|css|woff|woff2|ttf|otf)",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
         ]
       },
       {
         "source": "**/*.@(svg|png|jpg|jpeg|webp|ico)",
         "headers": [
-          { "key": "Cache-Control", "value": "public, max-age=2592000" }
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=2592000"
+          }
         ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/fir-refused-pakistan",
+        "destination": "/journal/legal-issues-pakistan/fir-refused-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/legal-notice-pakistan",
+        "destination": "/journal/legal-issues-pakistan/legal-notice-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/tenant-rights-pakistan",
+        "destination": "/journal/legal-issues-pakistan/tenant-rights-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/online-fraud-complaint-pakistan",
+        "destination": "/journal/legal-issues-pakistan/online-fraud-complaint-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/property-document-check-pakistan",
+        "destination": "/journal/legal-issues-pakistan/property-document-check-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/family-law-guidance-pakistan",
+        "destination": "/journal/legal-issues-pakistan/family-law-guidance-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/ppc-sections-explained",
+        "destination": "/journal/legal-issues-pakistan/ppc-sections-explained",
+        "type": 301
+      },
+      {
+        "source": "/crpc-sections-explained",
+        "destination": "/journal/legal-issues-pakistan/crpc-sections-explained",
+        "type": 301
+      },
+      {
+        "source": "/constitution-of-pakistan-notes",
+        "destination": "/journal/legal-issues-pakistan/constitution-of-pakistan-notes",
+        "type": 301
+      },
+      {
+        "source": "/lgat-preparation-pakistan",
+        "destination": "/journal/legal-issues-pakistan/lgat-preparation-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/case-law-research-pakistan",
+        "destination": "/journal/legal-issues-pakistan/case-law-research-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/legal-document-review-ai-pakistan",
+        "destination": "/journal/legal-issues-pakistan/legal-document-review-ai-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/employment-law-pakistan",
+        "destination": "/journal/legal-issues-pakistan/employment-law-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/consumer-rights-pakistan",
+        "destination": "/journal/legal-issues-pakistan/consumer-rights-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/loan-debt-pakistan",
+        "destination": "/journal/legal-issues-pakistan/loan-debt-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/harassment-violence-pakistan",
+        "destination": "/journal/legal-issues-pakistan/harassment-violence-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/business-commercial-law-pakistan",
+        "destination": "/journal/legal-issues-pakistan/business-commercial-law-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/inheritance-succession-pakistan",
+        "destination": "/journal/legal-issues-pakistan/inheritance-succession-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/divorce-separation-pakistan",
+        "destination": "/journal/legal-issues-pakistan/divorce-separation-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/property-disputes-pakistan",
+        "destination": "/journal/legal-issues-pakistan/property-disputes-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/know-your-rights-pakistan",
+        "destination": "/journal/legal-issues-pakistan/know-your-rights-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/vehicle-traffic-law-pakistan",
+        "destination": "/journal/legal-issues-pakistan/vehicle-traffic-law-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/cybercrime-online-safety-pakistan",
+        "destination": "/journal/legal-issues-pakistan/cybercrime-online-safety-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/court-procedures-pakistan",
+        "destination": "/journal/legal-issues-pakistan/court-procedures-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/registration-documentation-pakistan",
+        "destination": "/journal/legal-issues-pakistan/registration-documentation-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/insurance-claims-pakistan",
+        "destination": "/journal/legal-issues-pakistan/insurance-claims-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/education-rights-pakistan",
+        "destination": "/journal/legal-issues-pakistan/education-rights-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/tax-law-pakistan",
+        "destination": "/journal/legal-issues-pakistan/tax-law-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/labor-law-gcc",
+        "destination": "/journal/legal-issues-gcc/labor-law-gcc",
+        "type": 301
+      },
+      {
+        "source": "/visa-residency-gcc",
+        "destination": "/journal/legal-issues-gcc/visa-residency-gcc",
+        "type": 301
+      },
+      {
+        "source": "/family-law-gcc",
+        "destination": "/journal/legal-issues-gcc/family-law-gcc",
+        "type": 301
+      },
+      {
+        "source": "/workers-rights-gcc",
+        "destination": "/journal/legal-issues-gcc/workers-rights-gcc",
+        "type": 301
+      },
+      {
+        "source": "/commercial-law-gcc",
+        "destination": "/journal/legal-issues-gcc/commercial-law-gcc",
+        "type": 301
+      },
+      {
+        "source": "/real-estate-gcc",
+        "destination": "/journal/legal-issues-gcc/real-estate-gcc",
+        "type": 301
+      },
+      {
+        "source": "/women-rights-gcc",
+        "destination": "/journal/legal-issues-gcc/women-rights-gcc",
+        "type": 301
+      },
+      {
+        "source": "/contract-review-gcc",
+        "destination": "/journal/legal-issues-gcc/contract-review-gcc",
+        "type": 301
+      },
+      {
+        "source": "/criminal-law-gcc",
+        "destination": "/journal/legal-issues-gcc/criminal-law-gcc",
+        "type": 301
+      },
+      {
+        "source": "/taxation-gcc",
+        "destination": "/journal/legal-issues-gcc/taxation-gcc",
+        "type": 301
+      },
+      {
+        "source": "/inheritance-gcc",
+        "destination": "/journal/legal-issues-gcc/inheritance-gcc",
+        "type": 301
+      },
+      {
+        "source": "/business-setup-gcc",
+        "destination": "/journal/legal-issues-gcc/business-setup-gcc",
+        "type": 301
+      },
+      {
+        "source": "/consumer-rights-gcc",
+        "destination": "/journal/legal-issues-gcc/consumer-rights-gcc",
+        "type": 301
+      },
+      {
+        "source": "/gcc-legal-help",
+        "destination": "/journal/legal-issues-gcc/gcc-legal-help",
+        "type": 301
+      },
+      {
+        "source": "/saudi-arabia-legal-guide",
+        "destination": "/journal/legal-issues-gcc/saudi-arabia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/uae-legal-guide",
+        "destination": "/journal/legal-issues-gcc/uae-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/kuwait-legal-guide",
+        "destination": "/journal/legal-issues-gcc/kuwait-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/qatar-bahrain-oman-legal-guide",
+        "destination": "/journal/legal-issues-gcc/qatar-bahrain-oman-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/expat-legal-resources-gcc",
+        "destination": "/journal/legal-issues-gcc/expat-legal-resources-gcc",
+        "type": 301
+      },
+      {
+        "source": "/embassy-help-gcc",
+        "destination": "/journal/legal-issues-gcc/embassy-help-gcc",
+        "type": 301
+      },
+      {
+        "source": "/international-employment-law",
+        "destination": "/journal/legal-issues-global/international-employment-law",
+        "type": 301
+      },
+      {
+        "source": "/international-business-law",
+        "destination": "/journal/legal-issues-global/international-business-law",
+        "type": 301
+      },
+      {
+        "source": "/uk-legal-guide",
+        "destination": "/journal/legal-issues-global/uk-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/us-legal-guide",
+        "destination": "/journal/legal-issues-global/us-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/canada-legal-guide",
+        "destination": "/journal/legal-issues-global/canada-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/australia-legal-guide",
+        "destination": "/journal/legal-issues-global/australia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/india-legal-guide",
+        "destination": "/journal/legal-issues-global/india-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/singapore-legal-guide",
+        "destination": "/journal/legal-issues-global/singapore-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/hong-kong-legal-guide",
+        "destination": "/journal/legal-issues-global/hong-kong-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/european-legal-guide",
+        "destination": "/journal/legal-issues-global/european-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/germany-legal-guide",
+        "destination": "/journal/legal-issues-global/germany-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/france-legal-guide",
+        "destination": "/journal/legal-issues-global/france-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/netherlands-scandinavia-legal-guide",
+        "destination": "/journal/legal-issues-global/netherlands-scandinavia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/spain-southern-europe-legal-guide",
+        "destination": "/journal/legal-issues-global/spain-southern-europe-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/malaysia-legal-guide",
+        "destination": "/journal/legal-issues-global/malaysia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/indonesia-legal-guide",
+        "destination": "/journal/legal-issues-global/indonesia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/thailand-southeast-asia-legal-guide",
+        "destination": "/journal/legal-issues-global/thailand-southeast-asia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/turkey-middle-east-legal-guide",
+        "destination": "/journal/legal-issues-global/turkey-middle-east-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/egypt-legal-guide",
+        "destination": "/journal/legal-issues-global/egypt-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/south-africa-legal-guide",
+        "destination": "/journal/legal-issues-global/south-africa-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/nigeria-legal-guide",
+        "destination": "/journal/legal-issues-global/nigeria-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/brazil-legal-guide",
+        "destination": "/journal/legal-issues-global/brazil-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/mexico-latin-america-legal-guide",
+        "destination": "/journal/legal-issues-global/mexico-latin-america-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/legal-systems-comparison",
+        "destination": "/journal/legal-issues-global/legal-systems-comparison",
+        "type": 301
+      },
+      {
+        "source": "/expat-legal-guide-global",
+        "destination": "/journal/legal-issues-global/expat-legal-guide-global",
+        "type": 301
+      },
+      {
+        "source": "/fir-registration-pakistan",
+        "destination": "/journal/legal-issues-pakistan/fir-registration-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/rent-agreement-pakistan",
+        "destination": "/journal/legal-issues-pakistan/rent-agreement-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/power-of-attorney-pakistan",
+        "destination": "/journal/legal-issues-pakistan/power-of-attorney-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/child-custody-pakistan",
+        "destination": "/journal/legal-issues-pakistan/child-custody-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/wrongful-termination-pakistan",
+        "destination": "/journal/legal-issues-pakistan/wrongful-termination-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/property-law-pakistan",
+        "destination": "/journal/legal-issues-pakistan/property-law-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/overseas-pakistanis-legal-guide",
+        "destination": "/journal/legal-issues-pakistan/overseas-pakistanis-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/fir-refused-pakistan",
+        "destination": "/journal/legal-issues-pakistan/fir-refused-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/legal-notice-pakistan",
+        "destination": "/journal/legal-issues-pakistan/legal-notice-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/tenant-rights-pakistan",
+        "destination": "/journal/legal-issues-pakistan/tenant-rights-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/online-fraud-complaint-pakistan",
+        "destination": "/journal/legal-issues-pakistan/online-fraud-complaint-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/property-document-check-pakistan",
+        "destination": "/journal/legal-issues-pakistan/property-document-check-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/family-law-guidance-pakistan",
+        "destination": "/journal/legal-issues-pakistan/family-law-guidance-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/ppc-sections-explained",
+        "destination": "/journal/legal-issues-pakistan/ppc-sections-explained",
+        "type": 301
+      },
+      {
+        "source": "/journal/crpc-sections-explained",
+        "destination": "/journal/legal-issues-pakistan/crpc-sections-explained",
+        "type": 301
+      },
+      {
+        "source": "/journal/constitution-of-pakistan-notes",
+        "destination": "/journal/legal-issues-pakistan/constitution-of-pakistan-notes",
+        "type": 301
+      },
+      {
+        "source": "/journal/lgat-preparation-pakistan",
+        "destination": "/journal/legal-issues-pakistan/lgat-preparation-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/case-law-research-pakistan",
+        "destination": "/journal/legal-issues-pakistan/case-law-research-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/legal-document-review-ai-pakistan",
+        "destination": "/journal/legal-issues-pakistan/legal-document-review-ai-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/employment-law-pakistan",
+        "destination": "/journal/legal-issues-pakistan/employment-law-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/consumer-rights-pakistan",
+        "destination": "/journal/legal-issues-pakistan/consumer-rights-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/loan-debt-pakistan",
+        "destination": "/journal/legal-issues-pakistan/loan-debt-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/harassment-violence-pakistan",
+        "destination": "/journal/legal-issues-pakistan/harassment-violence-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/business-commercial-law-pakistan",
+        "destination": "/journal/legal-issues-pakistan/business-commercial-law-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/inheritance-succession-pakistan",
+        "destination": "/journal/legal-issues-pakistan/inheritance-succession-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/divorce-separation-pakistan",
+        "destination": "/journal/legal-issues-pakistan/divorce-separation-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/property-disputes-pakistan",
+        "destination": "/journal/legal-issues-pakistan/property-disputes-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/know-your-rights-pakistan",
+        "destination": "/journal/legal-issues-pakistan/know-your-rights-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/vehicle-traffic-law-pakistan",
+        "destination": "/journal/legal-issues-pakistan/vehicle-traffic-law-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/cybercrime-online-safety-pakistan",
+        "destination": "/journal/legal-issues-pakistan/cybercrime-online-safety-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/court-procedures-pakistan",
+        "destination": "/journal/legal-issues-pakistan/court-procedures-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/registration-documentation-pakistan",
+        "destination": "/journal/legal-issues-pakistan/registration-documentation-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/insurance-claims-pakistan",
+        "destination": "/journal/legal-issues-pakistan/insurance-claims-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/education-rights-pakistan",
+        "destination": "/journal/legal-issues-pakistan/education-rights-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/tax-law-pakistan",
+        "destination": "/journal/legal-issues-pakistan/tax-law-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/labor-law-gcc",
+        "destination": "/journal/legal-issues-gcc/labor-law-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/visa-residency-gcc",
+        "destination": "/journal/legal-issues-gcc/visa-residency-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/family-law-gcc",
+        "destination": "/journal/legal-issues-gcc/family-law-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/workers-rights-gcc",
+        "destination": "/journal/legal-issues-gcc/workers-rights-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/commercial-law-gcc",
+        "destination": "/journal/legal-issues-gcc/commercial-law-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/real-estate-gcc",
+        "destination": "/journal/legal-issues-gcc/real-estate-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/women-rights-gcc",
+        "destination": "/journal/legal-issues-gcc/women-rights-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/contract-review-gcc",
+        "destination": "/journal/legal-issues-gcc/contract-review-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/criminal-law-gcc",
+        "destination": "/journal/legal-issues-gcc/criminal-law-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/taxation-gcc",
+        "destination": "/journal/legal-issues-gcc/taxation-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/inheritance-gcc",
+        "destination": "/journal/legal-issues-gcc/inheritance-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/business-setup-gcc",
+        "destination": "/journal/legal-issues-gcc/business-setup-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/consumer-rights-gcc",
+        "destination": "/journal/legal-issues-gcc/consumer-rights-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/gcc-legal-help",
+        "destination": "/journal/legal-issues-gcc/gcc-legal-help",
+        "type": 301
+      },
+      {
+        "source": "/journal/saudi-arabia-legal-guide",
+        "destination": "/journal/legal-issues-gcc/saudi-arabia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/uae-legal-guide",
+        "destination": "/journal/legal-issues-gcc/uae-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/kuwait-legal-guide",
+        "destination": "/journal/legal-issues-gcc/kuwait-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/qatar-bahrain-oman-legal-guide",
+        "destination": "/journal/legal-issues-gcc/qatar-bahrain-oman-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/expat-legal-resources-gcc",
+        "destination": "/journal/legal-issues-gcc/expat-legal-resources-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/embassy-help-gcc",
+        "destination": "/journal/legal-issues-gcc/embassy-help-gcc",
+        "type": 301
+      },
+      {
+        "source": "/journal/international-employment-law",
+        "destination": "/journal/legal-issues-global/international-employment-law",
+        "type": 301
+      },
+      {
+        "source": "/journal/international-business-law",
+        "destination": "/journal/legal-issues-global/international-business-law",
+        "type": 301
+      },
+      {
+        "source": "/journal/uk-legal-guide",
+        "destination": "/journal/legal-issues-global/uk-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/us-legal-guide",
+        "destination": "/journal/legal-issues-global/us-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/canada-legal-guide",
+        "destination": "/journal/legal-issues-global/canada-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/australia-legal-guide",
+        "destination": "/journal/legal-issues-global/australia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/india-legal-guide",
+        "destination": "/journal/legal-issues-global/india-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/singapore-legal-guide",
+        "destination": "/journal/legal-issues-global/singapore-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/hong-kong-legal-guide",
+        "destination": "/journal/legal-issues-global/hong-kong-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/european-legal-guide",
+        "destination": "/journal/legal-issues-global/european-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/germany-legal-guide",
+        "destination": "/journal/legal-issues-global/germany-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/france-legal-guide",
+        "destination": "/journal/legal-issues-global/france-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/netherlands-scandinavia-legal-guide",
+        "destination": "/journal/legal-issues-global/netherlands-scandinavia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/spain-southern-europe-legal-guide",
+        "destination": "/journal/legal-issues-global/spain-southern-europe-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/malaysia-legal-guide",
+        "destination": "/journal/legal-issues-global/malaysia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/indonesia-legal-guide",
+        "destination": "/journal/legal-issues-global/indonesia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/thailand-southeast-asia-legal-guide",
+        "destination": "/journal/legal-issues-global/thailand-southeast-asia-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/turkey-middle-east-legal-guide",
+        "destination": "/journal/legal-issues-global/turkey-middle-east-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/egypt-legal-guide",
+        "destination": "/journal/legal-issues-global/egypt-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/south-africa-legal-guide",
+        "destination": "/journal/legal-issues-global/south-africa-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/nigeria-legal-guide",
+        "destination": "/journal/legal-issues-global/nigeria-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/brazil-legal-guide",
+        "destination": "/journal/legal-issues-global/brazil-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/mexico-latin-america-legal-guide",
+        "destination": "/journal/legal-issues-global/mexico-latin-america-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/journal/legal-systems-comparison",
+        "destination": "/journal/legal-issues-global/legal-systems-comparison",
+        "type": 301
+      },
+      {
+        "source": "/journal/expat-legal-guide-global",
+        "destination": "/journal/legal-issues-global/expat-legal-guide-global",
+        "type": 301
+      },
+      {
+        "source": "/journal/fir-registration-pakistan",
+        "destination": "/journal/legal-issues-pakistan/fir-registration-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/rent-agreement-pakistan",
+        "destination": "/journal/legal-issues-pakistan/rent-agreement-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/power-of-attorney-pakistan",
+        "destination": "/journal/legal-issues-pakistan/power-of-attorney-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/child-custody-pakistan",
+        "destination": "/journal/legal-issues-pakistan/child-custody-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/wrongful-termination-pakistan",
+        "destination": "/journal/legal-issues-pakistan/wrongful-termination-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/property-law-pakistan",
+        "destination": "/journal/legal-issues-pakistan/property-law-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/journal/overseas-pakistanis-legal-guide",
+        "destination": "/journal/legal-issues-pakistan/overseas-pakistanis-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/legal-issues-pakistan",
+        "destination": "/journal/legal-issues-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/legal-issues-gcc",
+        "destination": "/journal/legal-issues-gcc",
+        "type": 301
+      },
+      {
+        "source": "/legal-issues-global",
+        "destination": "/journal/legal-issues-global",
+        "type": 301
+      },
+      {
+        "source": "/comparisons",
+        "destination": "/journal/comparisons",
+        "type": 301
+      },
+      {
+        "source": "/best-ai-legal-apps-pakistan",
+        "destination": "/journal/article/best-ai-legal-apps-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/ai-vs-lawyer-pakistan",
+        "destination": "/journal/article/ai-vs-lawyer-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/free-legal-advice-pakistan",
+        "destination": "/journal/article/free-legal-advice-pakistan",
+        "type": 301
+      },
+      {
+        "source": "/wakeel-vs-pakistanlawbot",
+        "destination": "/journal/article/wakeel-vs-pakistanlawbot",
+        "type": 301
+      },
+      {
+        "source": "/wakeel-vs-lawgpt",
+        "destination": "/journal/article/wakeel-vs-lawgpt",
+        "type": 301
+      },
+      {
+        "source": "/wakeel-vs-ai-attorney",
+        "destination": "/journal/article/wakeel-vs-ai-attorney",
+        "type": 301
+      },
+      {
+        "source": "/wakeel-vs-yourmunshi",
+        "destination": "/journal/article/wakeel-vs-yourmunshi",
+        "type": 301
+      },
+      {
+        "source": "/wakeel-vs-digilawyer",
+        "destination": "/journal/article/wakeel-vs-digilawyer",
+        "type": 301
+      },
+      {
+        "source": "/wakeel-vs-qanoonai",
+        "destination": "/journal/article/wakeel-vs-qanoonai",
+        "type": 301
+      },
+      {
+        "source": "/wakeel-vs-draftify",
+        "destination": "/journal/article/wakeel-vs-draftify",
+        "type": 301
       }
     ]
   }

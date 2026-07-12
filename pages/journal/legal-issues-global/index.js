@@ -10,12 +10,12 @@ import {
   MapPin,
   Gavel,
 } from "lucide-react";
-import Layout from "../src/components/Layout";
-import MarketingSEO from "../src/components/MarketingSEO";
-import { Button } from "../src/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
-import { site, guides } from "../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../src/data/theme";
+import Layout from "../../../src/components/Layout";
+import MarketingSEO from "../../../src/components/MarketingSEO";
+import { Button } from "../../../src/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
+import { site, guides, getGuidePath } from "../../../src/data/marketing";
+import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const globalCategories = [
   {
@@ -101,7 +101,7 @@ const schema = [
     name: "Global Legal Issues & Guidance",
     description:
       "Comprehensive guides for legal issues across 15+ countries and different legal systems worldwide.",
-    url: `${site.url}/legal-issues-global`,
+    url: `${site.url}/journal/legal-issues-global`,
   },
   {
     "@context": "https://schema.org",
@@ -116,21 +116,20 @@ const schema = [
       {
         "@type": "ListItem",
         position: 2,
+        name: "Journal",
+        item: `${site.url}/journal`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
         name: "Global Legal Issues",
-        item: `${site.url}/legal-issues-global`,
+        item: `${site.url}/journal/legal-issues-global`,
       },
     ],
   },
 ];
 
 export default function GlobalLegalIssuesPage() {
-  const globalGuides = guides.filter((g) =>
-    g.slug.includes("legal-guide") ||
-    g.slug.includes("international") ||
-    g.slug.includes("comparison") ||
-    g.slug.includes("expat-legal-guide")
-  );
-
   const keywords = [
     "international legal help",
     "global legal guidance",
@@ -149,7 +148,7 @@ export default function GlobalLegalIssuesPage() {
       <MarketingSEO
         title="Global Legal Issues & Guidance Worldwide | Wakeel"
         description="Legal guidance for 15+ countries across common law, civil law, and Islamic law systems. Expat guides, international business law, employment law, and more."
-        path="/legal-issues-global"
+        path="/journal/legal-issues-global"
         schema={schema}
         keywords={keywords}
         region="global"
@@ -208,7 +207,7 @@ export default function GlobalLegalIssuesPage() {
                     {categoryGuides.map((guide) => (
                       <Link
                         key={guide.slug}
-                        href={`/${guide.slug}`}
+                        href={getGuidePath(guide.slug)}
                         className={`group ${cardBase} hover:shadow-md hover:border-primary/50 transition-all`}
                       >
                         <CardContent className="p-4 sm:p-5">

@@ -13,12 +13,12 @@ import {
   HelpCircle,
   CheckCircle2,
 } from "lucide-react";
-import Layout from "../src/components/Layout";
-import MarketingSEO from "../src/components/MarketingSEO";
-import { Button } from "../src/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
-import { site } from "../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../src/data/theme";
+import Layout from "../../../src/components/Layout";
+import MarketingSEO from "../../../src/components/MarketingSEO";
+import { Button } from "../../../src/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
+import { site } from "../../../src/data/marketing";
+import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const freeWithWakeel = [
   {
@@ -48,15 +48,15 @@ const freeWithWakeel = [
 ];
 
 const commonIssues = [
-  { label: "Police refused my FIR", href: "/fir-refused-pakistan" },
-  { label: "I received a legal notice", href: "/legal-notice-pakistan" },
-  { label: "Rent / tenant problem", href: "/tenant-rights-pakistan" },
-  { label: "Family law & divorce", href: "/family-law-guidance-pakistan" },
-  { label: "Online fraud / scam", href: "/online-fraud-complaint-pakistan" },
-  { label: "Property documents", href: "/property-document-check-pakistan" },
-  { label: "Unpaid salary / job issue", href: "/employment-law-pakistan" },
-  { label: "Consumer complaint", href: "/consumer-rights-pakistan" },
-  { label: "Know your basic rights", href: "/know-your-rights-pakistan" },
+  { label: "Police refused my FIR", href: "/journal/legal-issues-pakistan/fir-refused-pakistan" },
+  { label: "I received a legal notice", href: "/journal/legal-issues-pakistan/legal-notice-pakistan" },
+  { label: "Rent / tenant problem", href: "/journal/legal-issues-pakistan/tenant-rights-pakistan" },
+  { label: "Family law & divorce", href: "/journal/legal-issues-pakistan/family-law-guidance-pakistan" },
+  { label: "Online fraud / scam", href: "/journal/legal-issues-pakistan/online-fraud-complaint-pakistan" },
+  { label: "Property documents", href: "/journal/legal-issues-pakistan/property-document-check-pakistan" },
+  { label: "Unpaid salary / job issue", href: "/journal/legal-issues-pakistan/employment-law-pakistan" },
+  { label: "Consumer complaint", href: "/journal/legal-issues-pakistan/consumer-rights-pakistan" },
+  { label: "Know your basic rights", href: "/journal/legal-issues-pakistan/know-your-rights-pakistan" },
 ];
 
 const freeHelpSources = [
@@ -127,7 +127,7 @@ const schema = [
     name: "Free & Online Legal Advice in Pakistan",
     description:
       "How to get free and online legal help in Pakistan — free legal information with Wakeel.org plus government legal aid, helplines, bar associations, and legal aid NGOs.",
-    url: `${site.url}/free-legal-advice-pakistan`,
+    url: `${site.url}/journal/article/free-legal-advice-pakistan`,
   },
   {
     "@context": "https://schema.org",
@@ -143,11 +143,12 @@ const schema = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Journal", item: `${site.url}/journal` },
       {
         "@type": "ListItem",
-        position: 2,
+        position: 3,
         name: "Free Legal Advice in Pakistan",
-        item: `${site.url}/free-legal-advice-pakistan`,
+        item: `${site.url}/journal/article/free-legal-advice-pakistan`,
       },
     ],
   },
@@ -172,7 +173,7 @@ export default function FreeLegalAdvicePakistan() {
       <MarketingSEO
         title="Free AI Lawyer & Online Legal Advice in Pakistan"
         description="Wakeel.org is a free AI lawyer for Pakistan — get free legal information in English or Urdu, plus where to find free legal aid, helplines, and bar association programmes. Legal information, not a substitute for a licensed advocate."
-        path="/free-legal-advice-pakistan"
+        path="/journal/article/free-legal-advice-pakistan"
         schema={schema}
         keywords={keywords}
         region="pk"
@@ -198,7 +199,7 @@ export default function FreeLegalAdvicePakistan() {
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/legal-issues-pakistan">Browse legal topics</Link>
+              <Link href="/journal/legal-issues-pakistan">Browse legal topics</Link>
             </Button>
           </div>
         </div>
@@ -348,7 +349,7 @@ export default function FreeLegalAdvicePakistan() {
               <a href={site.appUrl} target="_blank" rel="noopener noreferrer">Try Wakeel Free</a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/ai-vs-lawyer-pakistan">AI vs hiring a lawyer →</Link>
+              <Link href="/journal/article/ai-vs-lawyer-pakistan">AI vs hiring a lawyer →</Link>
             </Button>
           </div>
         </div>

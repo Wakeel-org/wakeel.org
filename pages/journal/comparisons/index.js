@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import Layout from "../src/components/Layout";
-import MarketingSEO from "../src/components/MarketingSEO";
-import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
-import { comparisons, site } from "../src/data/marketing";
+import Layout from "../../../src/components/Layout";
+import MarketingSEO from "../../../src/components/MarketingSEO";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
+import { comparisons, site } from "../../../src/data/marketing";
 
 export default function ComparisonsPage() {
   return (
@@ -11,14 +11,14 @@ export default function ComparisonsPage() {
       <MarketingSEO
         title="Wakeel.org Comparisons"
         description="Professional comparison pages for Wakeel.org and other legal AI tools, based on publicly available information."
-        path="/comparisons"
+        path="/journal/comparisons"
         schema={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: "Wakeel.org Comparisons",
           description:
             "Professional comparison pages for Wakeel.org and other legal AI tools, based on publicly available information.",
-          url: `${site.url}/comparisons`,
+          url: `${site.url}/journal/comparisons`,
         }}
       />
 
@@ -47,7 +47,7 @@ export default function ComparisonsPage() {
               </CardHeader>
               <CardContent>
                 <Link
-                  href={`/${comparison.slug}`}
+                  href={`/journal/article/${comparison.slug}`}
                   className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
                 >
                   View comparison <ArrowRight className="h-4 w-4" />

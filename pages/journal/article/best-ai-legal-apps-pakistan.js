@@ -10,12 +10,12 @@ import {
   Wallet,
   HelpCircle,
 } from "lucide-react";
-import Layout from "../src/components/Layout";
-import MarketingSEO from "../src/components/MarketingSEO";
-import { Button } from "../src/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
-import { site } from "../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../src/data/theme";
+import Layout from "../../../src/components/Layout";
+import MarketingSEO from "../../../src/components/MarketingSEO";
+import { Button } from "../../../src/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
+import { site } from "../../../src/data/marketing";
+import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const criteria = [
   {
@@ -171,7 +171,7 @@ const schema = [
     name: "Best AI Legal Apps in Pakistan (2026)",
     description:
       "An honest comparison of the best AI legal apps available in Pakistan, with the criteria that matter most: Pakistani-law grounding, Urdu support, document analysis, and safety.",
-    url: `${site.url}/best-ai-legal-apps-pakistan`,
+    url: `${site.url}/journal/article/best-ai-legal-apps-pakistan`,
   },
   {
     "@context": "https://schema.org",
@@ -197,11 +197,12 @@ const schema = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: site.url },
+      { "@type": "ListItem", position: 2, name: "Journal", item: `${site.url}/journal` },
       {
         "@type": "ListItem",
-        position: 2,
+        position: 3,
         name: "Best AI Legal Apps in Pakistan",
-        item: `${site.url}/best-ai-legal-apps-pakistan`,
+        item: `${site.url}/journal/article/best-ai-legal-apps-pakistan`,
       },
     ],
   },
@@ -225,7 +226,7 @@ export default function BestAILegalAppsPakistan() {
       <MarketingSEO
         title="Best AI Legal Apps in Pakistan (2026)"
         description="An honest comparison of the best AI legal apps in Pakistan — judged on Pakistani-law grounding, English/Urdu support, document analysis, source-awareness, and free plans. See how the top legal AI tools stack up."
-        path="/best-ai-legal-apps-pakistan"
+        path="/journal/article/best-ai-legal-apps-pakistan"
         schema={schema}
         keywords={keywords}
         region="pk"
@@ -406,7 +407,7 @@ export default function BestAILegalAppsPakistan() {
               <a href={site.appUrl} target="_blank" rel="noopener noreferrer">Try Wakeel Free</a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href="/ai-vs-lawyer-pakistan">AI vs hiring a lawyer →</Link>
+              <Link href="/journal/article/ai-vs-lawyer-pakistan">AI vs hiring a lawyer →</Link>
             </Button>
           </div>
         </div>

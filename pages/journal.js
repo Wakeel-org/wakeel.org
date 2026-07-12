@@ -19,6 +19,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '../src/lib/utils';
 import { getBlogPostsServer } from '../src/lib/firebase/admin-collections';
+import { pakistanGuides, gccGuides, globalGuides, getGuidePath } from '../src/data/marketing';
+
+const guideLibrary = [
+  {
+    title: 'Pakistan Legal Guides',
+    description: 'FIR, property, family law, employment, and more for Pakistani citizens.',
+    browseAllHref: '/journal/legal-issues-pakistan',
+    guides: pakistanGuides,
+  },
+  {
+    title: 'GCC Legal Guides',
+    description: 'Labor law, visas, family law, and business guidance across the Gulf.',
+    browseAllHref: '/journal/legal-issues-gcc',
+    guides: gccGuides,
+  },
+  {
+    title: 'Global Legal Guides',
+    description: 'Country-specific guides and cross-border legal topics worldwide.',
+    browseAllHref: '/journal/legal-issues-global',
+    guides: globalGuides,
+  },
+];
 
 // Static export (output: 'export') only supports build-time data fetching —
 // posts are baked into the HTML here so crawlers see real content without
@@ -196,9 +218,11 @@ const JournalPage = ({ initialPosts = [] }) => {
                       <span>{calculateReadTime(featuredPost.content)}</span>
                     </div>
                   </div>
-                  <Button className="w-fit group">
-                    Read Article
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Button asChild className="w-fit group">
+                    <Link href={`/journal/article/${featuredPost.id}`}>
+                      Read Article
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -206,6 +230,51 @@ const JournalPage = ({ initialPosts = [] }) => {
           </div>
         </section>
       )}
+
+      {/* Legal Guides Library */}
+      <section className="py-12 sm:py-16 bg-muted/30">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+              Legal Guides Library
+            </h2>
+            <p className="text-muted-foreground">
+              In-depth, plain-language guides on Pakistani, GCC, and global legal topics — all part of the Wakeel Journal.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            {guideLibrary.map((section) => (
+              <Card key={section.title} className="flex flex-col">
+                <CardHeader>
+                  <CardTitle className="text-lg">{section.title}</CardTitle>
+                  <p className="text-sm text-muted-foreground">{section.description}</p>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col">
+                  <ul className="space-y-2.5 mb-6">
+                    {section.guides.slice(0, 6).map((guide) => (
+                      <li key={guide.slug}>
+                        <Link
+                          href={getGuidePath(guide.slug)}
+                          className="text-sm text-foreground hover:text-primary transition-colors flex items-start gap-2 group"
+                        >
+                          <ArrowRight className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-primary/60 group-hover:translate-x-0.5 transition-transform" />
+                          <span className="line-clamp-1">{guide.title}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button asChild variant="outline" size="sm" className="w-fit mt-auto">
+                    <Link href={section.browseAllHref}>
+                      Browse all {section.guides.length} guides
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Search and Filter Section */}
       <section className="py-12">
@@ -250,8 +319,12 @@ const JournalPage = ({ initialPosts = [] }) => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredPosts.map((post) => (
-                <Card 
-                  key={post.id} 
+                <Link
+                  key={post.id}
+                  href={`/journal/article/${post.id}`}
+                  className="block h-full"
+                >
+                <Card
                   className="group overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="relative h-48 bg-muted overflow-hidden">
@@ -305,6 +378,7 @@ const JournalPage = ({ initialPosts = [] }) => {
                     </div>
                   </CardContent>
                 </Card>
+                </Link>
               ))}
             </div>
           )}
