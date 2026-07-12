@@ -328,6 +328,32 @@ export const examplePrompts = [
   { audience: "General", prompt: "Help me understand this legal notice." },
 ];
 
+// Fixed, pre-written sample answers for the homepage "try before you install"
+// widget. These are illustrative only (no live AI call from the marketing
+// site) — text-answerable questions only, since document upload/analysis
+// needs the app. Keep the same source-aware, verify-first tone as the rest
+// of the site.
+export const demoQA = [
+  {
+    audience: "FIR",
+    prompt: "Police refused to register my FIR. What can I do?",
+    answer:
+      "Under Section 154 of the Code of Criminal Procedure, an officer in charge of a police station must register an FIR for a cognizable offence. If they refuse, you can send your complaint in writing to the Superintendent of Police, who can direct an FIR to be registered or investigate the matter personally. You can also approach a Magistrate under Section 22-A/22-B Cr.P.C. to direct registration of the FIR.",
+  },
+  {
+    audience: "PPC 420",
+    prompt: "Explain PPC Section 420 in simple terms.",
+    answer:
+      "Section 420 of the Pakistan Penal Code deals with cheating and dishonestly inducing delivery of property. It applies when someone deceives another person into handing over property, money, or a valuable security, or into altering/destroying a valuable document, as a result of that deception. It's a common section cited in fraud-related complaints.",
+  },
+  {
+    audience: "Rent deposit",
+    prompt: "My landlord won't return my security deposit. What are my options?",
+    answer:
+      "Tenancy laws vary by province in Pakistan, but most require landlords to return a security deposit at the end of a lease, minus any documented damages beyond normal wear and tear. You can send a written demand notice first, and if unresolved, file a complaint with the rent tribunal / controller in your district under the applicable provincial rent ordinance.",
+  },
+];
+
 export const pricingPlans = [
   {
     name: "Free",
@@ -360,6 +386,22 @@ export const pricingPlans = [
       "PDF chat for notes and books",
       "Study resources and guides",
       "Case analysis tools",
+    ],
+  },
+  {
+    name: "Practitioner",
+    monthlyPrice: "PKR 1,499/mo",
+    yearlyPrice: "PKR 14,999/yr",
+    priceNote: "For solo practitioners and junior associates",
+    description: "For solo practitioners, junior associates, and paralegals who need more than study tools but not a full team workflow.",
+    cta: "Try Practitioner",
+    href: "/lawyers",
+    features: [
+      "Student plan features",
+      "Expanded legal research support",
+      "Client document review (solo use)",
+      "Document drafting assistance",
+      "Standard support",
     ],
   },
   {
@@ -624,9 +666,9 @@ export const corePages = {
   "/citizens": {
     title: "Wakeel for Citizens",
     description:
-      "Understand your legal rights in simple Urdu and English with Wakeel.org's Pakistan-focused AI legal assistant.",
+      "Wakeel is a free AI lawyer and legal assistant for Pakistani citizens — understand your legal rights in simple Urdu and English.",
     eyebrow: "For citizens",
-    heading: "Understand your legal rights in simple Urdu and English.",
+    heading: "Your AI lawyer for everyday legal questions, in Urdu and English.",
     intro:
       "Wakeel helps Pakistani citizens understand common legal situations, documents, notices, and complaint options before deciding whether to contact a lawyer or public office.",
     cta: "Ask your legal question",
@@ -684,10 +726,10 @@ export const corePages = {
   "/lawyers": {
     title: "Wakeel for Lawyers",
     description:
-      "Research, draft, summarize, and organize legal work faster with Pakistan-specific AI support.",
+      "Wakeel's lawyer AI assistant helps you research, draft, summarize, and organize legal work faster with Pakistan-specific AI support.",
     eyebrow: "For lawyers",
     heading:
-      "Research, draft, summarize, and organize legal work faster with Pakistan-specific AI support.",
+      "A lawyer AI assistant that helps you research, draft, and organize legal work faster.",
     intro:
       "Wakeel is built to assist legal professionals with research and document workflows while keeping final judgment, client advice, and court strategy with the advocate.",
     cta: "Try Wakeel for Legal Research",

@@ -44,7 +44,7 @@ const TermsOfService = () => {
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
               <li><strong>Create an Account:</strong> When you click "Sign Up" and fill out the registration form, you're saying "Yes, I agree to these Terms."</li>
               <li><strong>Use Our Services:</strong> Even if you don't have an account, browsing our public content or using our tools means you agree to follow these rules.</li>
-              <li><strong>Subscribe to a Plan:</strong> Choosing a Free, Student, Professional, or Organization plan means you agree to the specific terms for that subscription tier.</li>
+              <li><strong>Subscribe to a Plan:</strong> Choosing a Free, Student, Practitioner, Professional, or Organization plan means you agree to the specific terms for that subscription tier.</li>
               <li><strong>Continue Using After Updates:</strong> If we update these Terms and you keep using Wakeel.org after the changes take effect, you're agreeing to the new version.</li>
             </ul>
 
@@ -131,7 +131,7 @@ const TermsOfService = () => {
               <li><strong>Document Resources:</strong> Templates, forms, and examples of legal documents.</li>
               <li><strong>News and Updates:</strong> Latest developments in Pakistani law, new court decisions, and legislative changes.</li>
               <li><strong>User Accounts:</strong> Personal profiles where you can save favorite cases, bookmark articles, and track your research history.</li>
-              <li><strong>Subscription Tiers:</strong> Different access levels (Free, Student, Professional, Organization) with varying features and content depth.</li>
+              <li><strong>Subscription Tiers:</strong> Different access levels (Free, Student, Practitioner, Professional, Organization) with varying features and content depth.</li>
               <li><strong>Search and Filtering:</strong> Advanced tools to find exactly what you're looking for quickly.</li>
               <li><strong>Customer Support:</strong> Help from our team when you have questions or technical issues.</li>
             </ul>
@@ -396,7 +396,7 @@ const TermsOfService = () => {
               <li><strong>Role Assignment:</strong> Your role is automatically assigned based on your active subscription plan</li>
               <li><strong>Dynamic Permissions:</strong> Upgrading or downgrading your subscription immediately changes your access level</li>
               <li><strong>Access Restrictions:</strong> Attempting to access features above your role level will prompt an upgrade notification</li>
-              <li><strong>Role Verification:</strong> Certain roles (Student, Professional) may require verification of eligibility</li>
+              <li><strong>Role Verification:</strong> Certain roles (Student, Practitioner, Professional) may require verification of eligibility</li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">Detailed Subscription Tiers and Access Levels</h3>

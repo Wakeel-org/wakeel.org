@@ -20,6 +20,9 @@ import Layout from "../src/components/Layout";
 import MarketingSEO from "../src/components/MarketingSEO";
 import AppDownloadButtons from "../src/components/AppDownloadButtons";
 import EmailSubscription from "../src/components/EmailSubscription";
+import Disclaimer from "../src/components/Disclaimer";
+import TrustStrip from "../src/components/TrustStrip";
+import WebTrialDemo from "../src/components/WebTrialDemo";
 import { Button } from "../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
 import {
@@ -105,6 +108,13 @@ const featureIcons = [
   UsersRound,
 ];
 
+// Toggle to bring back the "What you can do" capabilities list in the hero
+// instead of the sample-question demo. Kept (not deleted) for later reuse.
+const SHOW_HERO_CAPABILITIES = false;
+// Toggle to bring back the "Get the app" download-buttons block under the
+// hero demo. Kept (not deleted) for later reuse.
+const SHOW_HERO_GET_APP = false;
+
 const heroCapabilities = [
   {
     icon: MessageSquareText,
@@ -135,6 +145,10 @@ export default function Home() {
     "Wakeel AI app",
     "AI wakeel app Pakistan",
     "AI legal assistant Pakistan",
+    "AI lawyer",
+    "AI lawyer free",
+    "lawyer AI",
+    "free AI lawyer",
     "Pakistani law",
     "legal help Pakistan",
     "Wakeel",
@@ -148,12 +162,12 @@ export default function Home() {
   ].join(", ");
 
   const homeDescription =
-    "Wakeel.org — also known as Wakeel AI — is Pakistan's AI legal assistant. Ask legal questions in simple English or Urdu, understand legal documents, explore Pakistani laws, and get source-aware legal guidance on Android, iOS, and web.";
+    "Wakeel.org — also known as Wakeel AI — is Pakistan's AI lawyer and legal assistant. Ask legal questions in simple English or Urdu, understand legal documents, explore Pakistani laws, and get source-aware legal guidance on Android, iOS, and web.";
 
   return (
     <Layout>
       <MarketingSEO
-        title="Wakeel AI — Pakistan's AI Legal Assistant | Wakeel.org"
+        title="Wakeel AI — Pakistan's AI Lawyer & Legal Assistant | Wakeel.org"
         description={homeDescription}
         path="/"
         schema={homeSchema}
@@ -171,7 +185,7 @@ export default function Home() {
                 </p>
                 <div className="space-y-4">
                   <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight ${headingGradient}`}>
-                    Pakistan's AI legal assistant, in your pocket.
+                    Your AI lawyer and legal assistant, in your pocket.
                   </h1>
                   <p className="text-base sm:text-lg md:text-xl font-semibold text-foreground/90">
                     For citizens, law students, lawyers, and institutions — ask in English or Urdu.
@@ -180,6 +194,8 @@ export default function Home() {
                     {site.description}
                   </p>
                 </div>
+
+                <TrustStrip />
 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-3">
                   <Button asChild size="lg" className="cta-try-free">
@@ -197,44 +213,45 @@ export default function Home() {
                   </Button>
                 </div>
 
-                <p className="flex items-start gap-2 text-xs sm:text-sm text-muted-foreground">
-                  <ShieldCheck className="h-4 w-4 text-primary shrink-0 mt-0.5" />
-                  <span>
-                    Legal information &amp; research support — not a substitute for a licensed advocate.{" "}
-                    <Link href="/disclaimer" className="font-semibold text-primary hover:underline whitespace-nowrap">
-                      Read disclaimer
-                    </Link>
-                  </span>
-                </p>
+                <Disclaimer />
               </CardContent>
             </Card>
 
             {/* Capabilities panel — real features, no chat */}
             <Card className="flex flex-col overflow-hidden border-primary/20 shadow-2xl bg-gradient-to-br from-primary/5 via-card to-muted/40">
               <CardContent className="flex flex-1 flex-col p-5 sm:p-8 space-y-5">
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-                  What you can do
-                </p>
-                <div className="flex flex-1 flex-col gap-3">
-                  {heroCapabilities.map((cap) => (
-                    <div
-                      key={cap.label}
-                      className="flex items-start gap-3 rounded-xl border border-border bg-background/70 p-4"
-                    >
-                      <div className="h-10 w-10 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                        <cap.icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold text-foreground">{cap.label}</p>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{cap.detail}</p>
-                      </div>
+                {SHOW_HERO_CAPABILITIES && (
+                  <>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                      What you can do
+                    </p>
+                    <div className="flex flex-1 flex-col gap-3">
+                      {heroCapabilities.map((cap) => (
+                        <div
+                          key={cap.label}
+                          className="flex items-start gap-3 rounded-xl border border-border bg-background/70 p-4"
+                        >
+                          <div className="h-10 w-10 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                            <cap.icon className="h-5 w-5" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-foreground">{cap.label}</p>
+                            <p className="text-xs text-muted-foreground leading-relaxed">{cap.detail}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-                <div className="rounded-lg border border-border bg-muted/30 p-4">
-                  <p className="text-sm font-semibold text-foreground mb-3">Get the app</p>
-                  <AppDownloadButtons />
-                </div>
+                  </>
+                )}
+
+                <WebTrialDemo embedded />
+
+                {SHOW_HERO_GET_APP && (
+                  <div className="rounded-lg border border-border bg-muted/30 p-4">
+                    <p className="text-sm font-semibold text-foreground mb-3">Get the app</p>
+                    <AppDownloadButtons />
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>
@@ -288,6 +305,11 @@ export default function Home() {
                 </Card>
               );
             })}
+          </div>
+          <div className="text-center mt-8">
+            <Button asChild variant="outline">
+              <Link href="/about">Learn more about us</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -488,7 +510,7 @@ export default function Home() {
               Start free and choose the workflow that fits your role. Exact paid access may be confirmed inside the app or during organization onboarding.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {pricingPlans.map((plan) => (
               <Card key={plan.name} className={cardBase}>
                 <CardHeader>

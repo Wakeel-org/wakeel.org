@@ -161,14 +161,17 @@ const keywords = [
   "free legal advice online chat pakistan",
   "free legal aid pakistan",
   "legal help pakistan",
+  "ai lawyer free",
+  "free ai lawyer",
+  "best free ai lawyer",
 ].join(", ");
 
 export default function FreeLegalAdvicePakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Free & Online Legal Advice in Pakistan"
-        description="Get free and online legal help in Pakistan. Use Wakeel.org for free legal information in English or Urdu, plus where to find free legal aid, helplines, and bar association programmes. Legal information, not a substitute for a licensed advocate."
+        title="Free AI Lawyer & Online Legal Advice in Pakistan"
+        description="Wakeel.org is a free AI lawyer for Pakistan — get free legal information in English or Urdu, plus where to find free legal aid, helplines, and bar association programmes. Legal information, not a substitute for a licensed advocate."
         path="/free-legal-advice-pakistan"
         schema={schema}
         keywords={keywords}

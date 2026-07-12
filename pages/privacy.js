@@ -89,7 +89,7 @@ const PrivacyPolicy = () => {
           <section className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">Role-Specific Data Collection and Privacy</h2>
             <p className="mb-4">
-              Wakeel.org operates on a role-based subscription system where your tier (Free, Student, Professional, or Organization) determines what features you can access. **Importantly, it also determines what data we collect about you and how we handle it.** Different subscription tiers have different data requirements and privacy protections. Here's exactly what we collect and how we protect it for each role:
+              Wakeel.org operates on a role-based subscription system where your tier (Free, Student, Practitioner, Professional, or Organization) determines what features you can access. **Importantly, it also determines what data we collect about you and how we handle it.** Different subscription tiers have different data requirements and privacy protections. Here's exactly what we collect and how we protect it for each role:
             </p>
             
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">FREE TIER - Basic Data Collection</h3>
@@ -155,9 +155,9 @@ const PrivacyPolicy = () => {
               <li><strong>Special Rights:</strong> Parents/guardians of students under 18 can access, correct, or delete student data by contacting support@wakeel.org</li>
             </ul>
 
-            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">PROFESSIONAL TIER - Confidentiality Considerations</h3>
+            <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">PRACTITIONER & PROFESSIONAL TIERS - Confidentiality Considerations</h3>
             <p className="mb-4">
-              Professional accounts (lawyers, judges, advocates) involve **sensitive legal work and confidentiality concerns**. We handle your data with extra care:
+              Practitioner and Professional accounts (solo practitioners, junior associates, lawyers, judges, advocates) involve **sensitive legal work and confidentiality concerns**. We handle your data with extra care, at the same protection level across both tiers:
             </p>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
               <li><strong>What We Collect (in addition to Student tier):</strong>
@@ -307,7 +307,7 @@ const PrivacyPolicy = () => {
             <h3 className="text-xl font-semibold mt-6 mb-3 text-foreground">To Provide Our Service</h3>
             <ul className="list-disc pl-6 mt-2 mb-4 space-y-3">
               <li><strong>Create and Manage Your Account:</strong> When you sign up, we use your email and name to create your personal account. This lets you save your favorite cases, bookmark articles, and track your research history.</li>
-              <li><strong>Give You Access to Content:</strong> Depending on your subscription tier (Free, Student, Professional, or Organization), we use your account information to unlock the right features for you. Students get student pricing, professionals get advanced tools, etc.</li>
+              <li><strong>Give You Access to Content:</strong> Depending on your subscription tier (Free, Student, Practitioner, Professional, or Organization), we use your account information to unlock the right features for you. Students get student pricing, professionals get advanced tools, etc.</li>
               <li><strong>Process Your Payments:</strong> If you're on a paid plan, we use your payment information to charge you monthly or yearly (depending on what you chose). We'll always send you a receipt.</li>
               <li><strong>Remember Your Preferences:</strong> We save your settings so every time you log in, you see dark mode (if that's what you like), your preferred language, and your customized dashboard.</li>
             </ul>

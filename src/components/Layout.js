@@ -21,6 +21,7 @@ const footerColumns = [
   {
     title: "Solutions",
     links: [
+      { label: "Who it's for", href: "/#solutions" },
       { label: "Citizens", href: "/citizens" },
       { label: "Law Students", href: "/law-students" },
       { label: "Lawyers", href: "/lawyers" },
@@ -57,7 +58,7 @@ const Layout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans antialiased">
       <Head>
-        <title>Wakeel.org - Pakistan's AI Legal Assistant</title>
+        <title>Wakeel.org - Pakistan's AI Lawyer & Legal Assistant</title>
         <meta name="description" content={site.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, user-scalable=yes, viewport-fit=cover" />
         <meta name="author" content="Wakeel.org" />
@@ -72,7 +73,7 @@ const Layout = ({ children }) => {
         <link rel="shortcut icon" href="/logo-light.png" />
         
         {/* Open Graph / Social Media Meta Tags */}
-        <meta property="og:title" content="Wakeel.org - Pakistan's AI Legal Assistant" />
+        <meta property="og:title" content="Wakeel.org - Pakistan's AI Lawyer & Legal Assistant" />
         <meta property="og:description" content={site.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://wakeel.org" />

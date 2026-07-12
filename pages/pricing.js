@@ -7,19 +7,20 @@ import { Button } from "../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
 import { pricingFaqs, pricingPlans, site } from "../src/data/marketing";
 import { cardBase, headingGradient, heroHeading, sectionHeading } from "../src/data/theme";
+import Disclaimer from "../src/components/Disclaimer";
 
 const comparisonRows = [
-  { label: "Basic legal chat", Free: "Included", Student: "Expanded", Professional: "Expanded", Organization: "Team access" },
-  { label: "Know Your Rights guidance", Free: "Included", Student: "Included", Professional: "Included", Organization: "Included" },
-  { label: "Document understanding", Free: "Basic", Student: "Study PDFs", Professional: "Client documents", Organization: "Shared workflows" },
-  { label: "Legal document templates", Free: "-", Student: "Included", Professional: "Included", Organization: "Team templates" },
-  { label: "PPC, CrPC, and Constitution study support", Free: "-", Student: "Included", Professional: "Reference use", Organization: "Training use" },
-  { label: "Case analysis and research notes", Free: "-", Student: "Included", Professional: "Advanced", Organization: "Shared research" },
-  { label: "Drafting assistance", Free: "-", Student: "Learning support", Professional: "Professional workflow", Organization: "Team workflow" },
-  { label: "Case management support", Free: "-", Student: "-", Professional: "Included", Organization: "Team workflow" },
-  { label: "Client portal or team dashboard", Free: "-", Student: "-", Professional: "Where available", Organization: "Organization setup" },
-  { label: "Admin controls and onboarding", Free: "-", Student: "-", Professional: "-", Organization: "Included" },
-  { label: "Support", Free: "Community", Student: "Community", Professional: "Priority", Organization: "Response targets" },
+  { label: "Basic legal chat", Free: "Included", Student: "Expanded", Practitioner: "Expanded", Professional: "Expanded", Organization: "Team access" },
+  { label: "Know Your Rights guidance", Free: "Included", Student: "Included", Practitioner: "Included", Professional: "Included", Organization: "Included" },
+  { label: "Document understanding", Free: "Basic", Student: "Study PDFs", Practitioner: "Client documents", Professional: "Client documents", Organization: "Shared workflows" },
+  { label: "Legal document templates", Free: "-", Student: "Included", Practitioner: "Included", Professional: "Included", Organization: "Team templates" },
+  { label: "PPC, CrPC, and Constitution study support", Free: "-", Student: "Included", Practitioner: "Reference use", Professional: "Reference use", Organization: "Training use" },
+  { label: "Case analysis and research notes", Free: "-", Student: "Included", Practitioner: "Included", Professional: "Advanced", Organization: "Shared research" },
+  { label: "Drafting assistance", Free: "-", Student: "Learning support", Practitioner: "Solo workflow", Professional: "Professional workflow", Organization: "Team workflow" },
+  { label: "Case management support", Free: "-", Student: "-", Practitioner: "-", Professional: "Included", Organization: "Team workflow" },
+  { label: "Client portal or team dashboard", Free: "-", Student: "-", Practitioner: "-", Professional: "Where available", Organization: "Organization setup" },
+  { label: "Admin controls and onboarding", Free: "-", Student: "-", Practitioner: "-", Professional: "-", Organization: "Included" },
+  { label: "Support", Free: "Community", Student: "Community", Practitioner: "Standard", Professional: "Priority", Organization: "Response targets" },
 ];
 
 const planGuidance = [
@@ -34,6 +35,12 @@ const planGuidance = [
     plan: "Student",
     description:
       "Use Student for PPC, CrPC, Constitution notes, case summaries, templates, PDF chat, and exam-style study support.",
+  },
+  {
+    title: "For solo practice and junior roles",
+    plan: "Practitioner",
+    description:
+      "Use Practitioner for expanded research, document drafting, and client document review as a solo practitioner or junior associate — without a full team workflow.",
   },
   {
     title: "For legal practice workflows",
@@ -150,7 +157,7 @@ export default function PricingPage() {
               </button>
             </div>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {pricingPlans.map((plan) => (
               <Card
                 key={plan.name}
@@ -206,7 +213,7 @@ export default function PricingPage() {
               Choose based on the workflow you need today. You can start small, then move to a study, professional, or organization workflow when the need is clearer.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {planGuidance.map((item) => (
               <Card key={item.title} className={cardBase}>
                 <CardHeader>
@@ -311,9 +318,7 @@ export default function PricingPage() {
           </div>
           <Card className="mt-8 border-primary/20 bg-primary/5">
             <CardContent className="p-6">
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {site.disclaimer}
-              </p>
+              <Disclaimer />
             </CardContent>
           </Card>
         </div>

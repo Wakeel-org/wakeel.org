@@ -7,9 +7,10 @@ import { openPlatformAppStore } from '../utils/platformDetection';
 import { site } from '../data/marketing';
 
 const navLinks = [
-  { label: 'Features', href: '/features' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'About', href: '/about' },
+  { label: 'Who it\'s for', href: '/#solutions' },
+  { label: 'Features', href: '/#features' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'About', href: '/#values' },
   { label: 'Contact', href: '/contact' },
 ];
 

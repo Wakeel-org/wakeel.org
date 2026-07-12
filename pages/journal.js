@@ -4,12 +4,12 @@ import Layout from '../src/components/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '../src/components/ui/card';
 import { Button } from '../src/components/ui/button';
 import { Input } from '../src/components/ui/input';
-import { 
-  Calendar, 
-  Clock, 
-  User, 
-  Tag, 
-  Search, 
+import {
+  Calendar,
+  Clock,
+  User,
+  Tag,
+  Search,
   ArrowRight,
   BookOpen,
   TrendingUp,
@@ -18,36 +18,24 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '../src/lib/utils';
+import { getBlogPostsServer } from '../src/lib/firebase/admin-collections';
 
-const JournalPage = () => {
-  const [posts, setPosts] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+// Static export (output: 'export') only supports build-time data fetching —
+// posts are baked into the HTML here so crawlers see real content without
+// running JS. New posts require a rebuild/redeploy to appear.
+export async function getStaticProps() {
+  const posts = await getBlogPostsServer();
+  return { props: { initialPosts: posts } };
+}
+
+const JournalPage = ({ initialPosts = [] }) => {
+  const [posts] = useState(initialPosts);
+  const [filteredPosts, setFilteredPosts] = useState(initialPosts);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [featuredPost, setFeaturedPost] = useState(null);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        // Load Firebase lazily so it stays out of the journal's initial bundle.
-        const { getBlogPosts } = await import('../src/lib/firebase/collections');
-        const blogPosts = await getBlogPosts();
-        setPosts(blogPosts);
-        setFilteredPosts(blogPosts);
-        
-        // Set the first post as featured or find one marked as featured
-        const featured = blogPosts.find(post => post.featured) || blogPosts[0];
-        setFeaturedPost(featured);
-      } catch (error) {
-        console.error('Error fetching blog posts:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchPosts();
-  }, []);
+  const [featuredPost] = useState(
+    initialPosts.find((post) => post.featured) || initialPosts[0] || null
+  );
 
   // Get unique categories from posts
   const categories = ['All', ...new Set(posts.map(post => post.category).filter(Boolean))];
@@ -88,19 +76,6 @@ const JournalPage = () => {
     const minutes = Math.ceil(wordCount / wordsPerMinute);
     return `${minutes} min read`;
   };
-
-  if (loading) {
-    return (
-      <Layout>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="animate-pulse flex flex-col items-center gap-4">
-            <BookOpen className="w-12 h-12 text-primary" />
-            <p className="text-muted-foreground">Loading journal entries...</p>
-          </div>
-        </div>
-      </Layout>
-    );
-  }
 
   return (
     <Layout>
