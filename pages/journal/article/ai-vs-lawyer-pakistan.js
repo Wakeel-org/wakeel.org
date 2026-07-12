@@ -307,6 +307,27 @@ export default function AIvsLawyerPakistan() {
         </div>
       </section>
 
+      {/* Further reading */}
+      <section className="bg-background py-14 sm:py-16">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-lg font-semibold text-foreground mb-4">Keep exploring</h2>
+          <div className="space-y-3">
+            {[
+              { label: "Can AI replace a lawyer for Pakistani legal questions?", href: "/journal/article/can-ai-replace-a-lawyer-pakistan" },
+              { label: "When should you use an AI legal assistant instead of a lawyer?", href: "/journal/article/when-to-use-ai-legal-assistant-vs-lawyer-pakistan" },
+            ].map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="flex items-center justify-between rounded-md border border-border px-4 py-3 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+              >
+                {l.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

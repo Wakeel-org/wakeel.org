@@ -19,7 +19,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '../src/lib/utils';
 import { getBlogPostsServer } from '../src/lib/firebase/admin-collections';
-import { pakistanGuides, gccGuides, globalGuides, getGuidePath } from '../src/data/marketing';
+import { pakistanGuides, gccGuides, globalGuides, getGuidePath, articles } from '../src/data/marketing';
+
+// Standalone article pages (src/data/marketing.js `articles`) aren't stored in
+// Firestore, so they're normalized here to the same shape as a `blog_posts`
+// doc and merged with CMS posts for the grid below.
+const staticArticlePosts = articles.map((article) => ({
+  id: article.slug,
+  title: article.title,
+  excerpt: article.excerpt,
+  category: article.category,
+  createdAt: article.publishedAt,
+  readTime: article.readTime,
+  isStatic: true,
+}));
 
 const guideLibrary = [
   {
@@ -51,12 +64,16 @@ export async function getStaticProps() {
 }
 
 const JournalPage = ({ initialPosts = [] }) => {
-  const [posts] = useState(initialPosts);
-  const [filteredPosts, setFilteredPosts] = useState(initialPosts);
+  const [posts] = useState(() =>
+    [...initialPosts, ...staticArticlePosts].sort(
+      (a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0)
+    )
+  );
+  const [filteredPosts, setFilteredPosts] = useState(posts);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [featuredPost] = useState(
-    initialPosts.find((post) => post.featured) || initialPosts[0] || null
+    posts.find((post) => post.featured) || posts[0] || null
   );
 
   // Get unique categories from posts
@@ -215,7 +232,7 @@ const JournalPage = ({ initialPosts = [] }) => {
                     )}
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
-                      <span>{calculateReadTime(featuredPost.content)}</span>
+                      <span>{featuredPost.readTime || calculateReadTime(featuredPost.content)}</span>
                     </div>
                   </div>
                   <Button asChild className="w-fit group">
@@ -373,7 +390,7 @@ const JournalPage = ({ initialPosts = [] }) => {
                       </div>
                       <div className="flex items-center gap-1">
                         <Clock className="w-3 h-3" />
-                        <span>{calculateReadTime(post.content)}</span>
+                        <span>{post.readTime || calculateReadTime(post.content)}</span>
                       </div>
                     </div>
                   </CardContent>

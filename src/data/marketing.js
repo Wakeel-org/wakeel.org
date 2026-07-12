@@ -947,6 +947,58 @@ export const comparisons = [
   },
 ];
 
+// Standalone long-form articles at /journal/article/<slug>. Unlike `guides`
+// (short educational entries rendered by GuidePage) and `comparisons`
+// (rendered by ComparisonPage), each of these has its own hand-built page
+// component — this array only exists so the Journal page can list them.
+export const articles = [
+  {
+    slug: "can-ai-replace-a-lawyer-pakistan",
+    title: "Can AI Replace a Lawyer for Pakistani Legal Questions?",
+    excerpt:
+      "A direct, honest answer to whether AI can replace a lawyer in Pakistan — plus what AI legal assistants are genuinely good for today.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-07-12",
+  },
+  {
+    slug: "when-to-use-ai-legal-assistant-vs-lawyer-pakistan",
+    title: "When Should You Use an AI Legal Assistant Instead of a Lawyer in Pakistan?",
+    excerpt:
+      "A practical checklist for when an AI legal assistant is enough for your Pakistani legal question, and when you should see a licensed advocate first.",
+    category: "AI & the Law",
+    readTime: "7 min read",
+    publishedAt: "2026-07-12",
+  },
+  {
+    slug: "ai-vs-lawyer-pakistan",
+    title: "Will AI Replace Lawyers? AI vs Hiring a Lawyer in Pakistan",
+    excerpt:
+      "A clear, honest comparison of what AI legal tools do well, what only a licensed advocate can do, and when to use each.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-06-28",
+  },
+  {
+    slug: "best-ai-legal-apps-pakistan",
+    title: "Best AI Legal Apps in Pakistan (2026)",
+    excerpt:
+      "An honest comparison of the best AI legal apps available in Pakistan, with the criteria that matter most: Pakistani-law grounding, Urdu support, document analysis, and safety.",
+    category: "AI & the Law",
+    readTime: "8 min read",
+    publishedAt: "2026-06-28",
+  },
+  {
+    slug: "free-legal-advice-pakistan",
+    title: "Free & Online Legal Advice in Pakistan",
+    excerpt:
+      "How to get free and online legal help in Pakistan — free legal information with Wakeel.org plus government legal aid, helplines, bar associations, and legal aid NGOs.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-06-28",
+  },
+];
+
 export const guides = [
   {
     slug: "fir-refused-pakistan",

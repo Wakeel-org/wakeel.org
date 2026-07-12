@@ -472,7 +472,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24 bg-muted/40">
+      <section id="journal" className="py-16 sm:py-20 lg:py-24 bg-muted/40">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-4">
