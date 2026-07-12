@@ -5,8 +5,8 @@
 export const detectPlatform = () => {
   if (typeof window === 'undefined') {
     return {
-      platform: 'web',
-      url: 'https://app.wakeel.org'
+      platform: 'android',
+      url: 'https://play.google.com/store/apps/details?id=pk.digit.aiwakeel'
     };
   }
 
@@ -28,10 +28,11 @@ export const detectPlatform = () => {
     };
   }
 
-  // Default to web app
+  // Web app temporarily disabled — default to Android
+  // return { platform: 'web', url: 'https://app.wakeel.org' };
   return {
-    platform: 'web',
-    url: 'https://app.wakeel.org'
+    platform: 'android',
+    url: 'https://play.google.com/store/apps/details?id=pk.digit.aiwakeel'
   };
 };
 
@@ -47,5 +48,5 @@ export const openPlatformAppStore = () => {
 export const APP_STORE_LINKS = {
   ios: 'https://testflight.apple.com/join/ZVgHgqF7',
   android: 'https://play.google.com/store/apps/details?id=pk.digit.aiwakeel',
-  web: 'https://app.wakeel.org'
+  // web: 'https://app.wakeel.org' // temporarily disabled
 };

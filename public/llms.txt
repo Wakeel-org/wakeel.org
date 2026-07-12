@@ -1,0 +1,88 @@
+# Wakeel.org
+
+> Wakeel.org is an AI-powered legal assistant that helps citizens, law students, lawyers, and institutions understand legal information, analyze documents, and research law. Originally built around Pakistan's legal system, it now provides legal guidance for the GCC and 15+ countries worldwide. Ask questions in plain English or Urdu, analyze documents up to 100+ pages, and get source-aware legal guidance. Wakeel provides legal information and research support — it is not a substitute for a licensed advocate and does not provide final legal advice.
+
+## Core pages
+
+- [Home](https://wakeel.org/): Overview of Wakeel.org, its AI legal assistant capabilities, and who it serves.
+- [About](https://wakeel.org/about): Why Wakeel.org exists, its approach, and what it does and does not replace.
+- [Features](https://wakeel.org/features): AI legal chat, document analysis, legal research, drafting support, and professional workflows.
+- [Pricing](https://wakeel.org/pricing): Free, Student, Professional, and Organization plans.
+- [Legal Sources & Trust Framework](https://wakeel.org/legal-sources): How Wakeel uses sources, source-aware answers, and human verification requirements.
+- [Legal Disclaimer](https://wakeel.org/disclaimer): Information-only scope, verification requirements, and lawyer-client boundaries.
+- [Contact](https://wakeel.org/contact): Partnership, demo, organization access, and support inquiries.
+
+## Who Wakeel serves
+
+- [Citizens](https://wakeel.org/citizens): Understand legal rights, notices, and documents in simple English and Urdu.
+- [Law Students](https://wakeel.org/law-students): Study support, case summaries, and legal research for Pakistani law.
+- [Lawyers](https://wakeel.org/lawyers): Research, drafting, document review, and matter organization.
+- [Law Firms](https://wakeel.org/law-firms): Shared research and document workflows for teams.
+- [Judges](https://wakeel.org/judges): Neutral research aid for statutes, precedents, and document summaries.
+- [Policymakers](https://wakeel.org/policymakers): Policy and regulation research support.
+- [Legal Institutions](https://wakeel.org/legal-institutions): Education, legal aid, and research workflow support.
+
+## Legal issue hubs
+
+- [Pakistan Legal Issues](https://wakeel.org/legal-issues-pakistan): 27 guides across property, family, employment, consumer, criminal, and court matters.
+- [GCC Legal Issues](https://wakeel.org/legal-issues-gcc): 20 guides for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman.
+- [Global Legal Issues](https://wakeel.org/legal-issues-global): 24 guides across common law, civil law, Islamic law, and mixed systems for 15+ countries.
+
+## Pakistan legal guides
+
+- [FIR Refused in Pakistan](https://wakeel.org/fir-refused-pakistan): What to do if police refuse to register an FIR.
+- [Understand a Legal Notice](https://wakeel.org/legal-notice-pakistan): How to read, verify, and respond to a legal notice.
+- [Tenant Rights and Rent Issues](https://wakeel.org/tenant-rights-pakistan): Tenancy, rent agreements, eviction, and deposits.
+- [Online Fraud Complaint](https://wakeel.org/online-fraud-complaint-pakistan): Evidence and cyber complaint preparation.
+- [Property Document Check](https://wakeel.org/property-document-check-pakistan): Understanding property documents and sale agreements.
+- [Family Law Guidance](https://wakeel.org/family-law-guidance-pakistan): Marriage, divorce, maintenance, and custody basics.
+- [Divorce and Separation](https://wakeel.org/divorce-separation-pakistan): Divorce procedures, maintenance, and custody.
+- [Inheritance and Succession](https://wakeel.org/inheritance-succession-pakistan): Islamic inheritance, wills, and estate division.
+- [Employment and Labour Law](https://wakeel.org/employment-law-pakistan): Employment rights, contracts, and workplace disputes.
+- [Consumer Rights and Complaints](https://wakeel.org/consumer-rights-pakistan): Consumer protection, warranties, and complaints.
+- [Property Disputes](https://wakeel.org/property-disputes-pakistan): Ownership, possession, and boundary disputes.
+- [Know Your Legal Rights](https://wakeel.org/know-your-rights-pakistan): Fundamental rights and constitutional protections.
+- [Cybercrime and Online Safety](https://wakeel.org/cybercrime-online-safety-pakistan): Cyber laws, online harassment, and reporting.
+- [Court Procedures](https://wakeel.org/court-procedures-pakistan): Civil and criminal court procedures and appeals.
+- [PPC Sections Explained](https://wakeel.org/ppc-sections-explained): Pakistan Penal Code sections in plain language.
+- [CrPC Sections Explained](https://wakeel.org/crpc-sections-explained): Criminal Procedure Code sections and procedures.
+- [Constitution of Pakistan Notes](https://wakeel.org/constitution-of-pakistan-notes): Study notes on the Constitution.
+
+## GCC legal guides
+
+- [GCC Labor Law](https://wakeel.org/labor-law-gcc): Employment contracts, the kafala system, and labor disputes.
+- [Visa, Residency, and Immigration](https://wakeel.org/visa-residency-gcc): Visa types, residency, and sponsorship rules.
+- [GCC Family Law](https://wakeel.org/family-law-gcc): Marriage, divorce, and custody under Sharia principles.
+- [Migrant Worker Rights](https://wakeel.org/workers-rights-gcc): Protections and complaint procedures for migrant workers.
+- [Saudi Arabia Legal Guide](https://wakeel.org/saudi-arabia-legal-guide): Legal rights and guidance for Saudi Arabia.
+- [UAE Legal Guide](https://wakeel.org/uae-legal-guide): Legal rights and guidance for the United Arab Emirates.
+- [Kuwait Legal Guide](https://wakeel.org/kuwait-legal-guide): Legal rights and guidance for Kuwait.
+- [Expat Legal Resources](https://wakeel.org/expat-legal-resources-gcc): Legal resources, support organizations, and embassy help.
+
+## Global legal guides
+
+- [Legal Systems Comparison](https://wakeel.org/legal-systems-comparison): Common law, civil law, Islamic law, and mixed systems explained.
+- [International Employment Law](https://wakeel.org/international-employment-law): Worker rights across different countries.
+- [International Business Law](https://wakeel.org/international-business-law): Cross-border contracts and trade regulations.
+- [Global Expat Legal Guide](https://wakeel.org/expat-legal-guide-global): Visas, taxes, and legal issues for international relocation.
+- [UK Legal Guide](https://wakeel.org/uk-legal-guide): Legal rights and guidance for the United Kingdom.
+- [US Legal Guide](https://wakeel.org/us-legal-guide): Legal rights and guidance for the United States.
+- [Canada Legal Guide](https://wakeel.org/canada-legal-guide): Legal rights and guidance for Canada.
+- [Australia Legal Guide](https://wakeel.org/australia-legal-guide): Legal rights and guidance for Australia.
+- [India Legal Guide](https://wakeel.org/india-legal-guide): Legal rights and guidance for India.
+
+## Free legal help
+
+- [Free & Online Legal Advice in Pakistan](https://wakeel.org/free-legal-advice-pakistan): How to get free and online legal help in Pakistan — free legal information with Wakeel.org plus government legal aid, helplines, bar associations, and legal aid NGOs.
+
+## Compare
+
+- [Best AI Legal Apps in Pakistan](https://wakeel.org/best-ai-legal-apps-pakistan): Honest comparison of AI legal tools for Pakistani users and the criteria that matter (Pakistani-law grounding, Urdu support, document analysis, safety, free plans).
+- [Will AI Replace Lawyers? AI vs Hiring a Lawyer](https://wakeel.org/ai-vs-lawyer-pakistan): What AI legal tools do well, what only a licensed advocate can do, and when to use each in Pakistan.
+
+## Optional
+
+- [Journal](https://wakeel.org/journal): Articles and updates on legal information and AI.
+- [Comparisons](https://wakeel.org/comparisons): How Wakeel.org compares to other legal AI tools.
+- [Privacy Policy](https://wakeel.org/privacy): How Wakeel.org handles data and documents.
+- [Terms of Service](https://wakeel.org/terms): Terms governing use of Wakeel.org.

@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Layout from '../src/components/Layout';
-import { getBlogPosts } from '../src/lib/firebase/collections';
 import { Card, CardContent, CardHeader, CardTitle } from '../src/components/ui/card';
 import { Button } from '../src/components/ui/button';
 import { Input } from '../src/components/ui/input';
-import { 
-  Calendar, 
-  Clock, 
-  User, 
-  Tag, 
-  Search, 
+import {
+  Calendar,
+  Clock,
+  User,
+  Tag,
+  Search,
   ArrowRight,
   BookOpen,
   TrendingUp,
@@ -19,34 +18,63 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '../src/lib/utils';
+import { getBlogPostsServer } from '../src/lib/firebase/admin-collections';
+import { pakistanGuides, gccGuides, globalGuides, getGuidePath, articles } from '../src/data/marketing';
 
-const JournalPage = () => {
-  const [posts, setPosts] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+// Standalone article pages (src/data/marketing.js `articles`) aren't stored in
+// Firestore, so they're normalized here to the same shape as a `blog_posts`
+// doc and merged with CMS posts for the grid below.
+const staticArticlePosts = articles.map((article) => ({
+  id: article.slug,
+  title: article.title,
+  excerpt: article.excerpt,
+  category: article.category,
+  createdAt: article.publishedAt,
+  readTime: article.readTime,
+  isStatic: true,
+}));
+
+const guideLibrary = [
+  {
+    title: 'Pakistan Legal Guides',
+    description: 'FIR, property, family law, employment, and more for Pakistani citizens.',
+    browseAllHref: '/journal/legal-issues-pakistan',
+    guides: pakistanGuides,
+  },
+  {
+    title: 'GCC Legal Guides',
+    description: 'Labor law, visas, family law, and business guidance across the Gulf.',
+    browseAllHref: '/journal/legal-issues-gcc',
+    guides: gccGuides,
+  },
+  {
+    title: 'Global Legal Guides',
+    description: 'Country-specific guides and cross-border legal topics worldwide.',
+    browseAllHref: '/journal/legal-issues-global',
+    guides: globalGuides,
+  },
+];
+
+// Static export (output: 'export') only supports build-time data fetching —
+// posts are baked into the HTML here so crawlers see real content without
+// running JS. New posts require a rebuild/redeploy to appear.
+export async function getStaticProps() {
+  const posts = await getBlogPostsServer();
+  return { props: { initialPosts: posts } };
+}
+
+const JournalPage = ({ initialPosts = [] }) => {
+  const [posts] = useState(() =>
+    [...initialPosts, ...staticArticlePosts].sort(
+      (a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0)
+    )
+  );
+  const [filteredPosts, setFilteredPosts] = useState(posts);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [featuredPost, setFeaturedPost] = useState(null);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const blogPosts = await getBlogPosts();
-        setPosts(blogPosts);
-        setFilteredPosts(blogPosts);
-        
-        // Set the first post as featured or find one marked as featured
-        const featured = blogPosts.find(post => post.featured) || blogPosts[0];
-        setFeaturedPost(featured);
-      } catch (error) {
-        console.error('Error fetching blog posts:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchPosts();
-  }, []);
+  const [featuredPost] = useState(
+    posts.find((post) => post.featured) || posts[0] || null
+  );
 
   // Get unique categories from posts
   const categories = ['All', ...new Set(posts.map(post => post.category).filter(Boolean))];
@@ -88,19 +116,6 @@ const JournalPage = () => {
     return `${minutes} min read`;
   };
 
-  if (loading) {
-    return (
-      <Layout>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="animate-pulse flex flex-col items-center gap-4">
-            <BookOpen className="w-12 h-12 text-primary" />
-            <p className="text-muted-foreground">Loading journal entries...</p>
-          </div>
-        </div>
-      </Layout>
-    );
-  }
-
   return (
     <Layout>
       <Head>
@@ -140,7 +155,7 @@ const JournalPage = () => {
                 "name": "Wakeel.org",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://wakeel.org/logo-dark.svg"
+                  "url": "https://wakeel.org/logo-og.png"
                 }
               }
             })
@@ -217,12 +232,14 @@ const JournalPage = () => {
                     )}
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4" />
-                      <span>{calculateReadTime(featuredPost.content)}</span>
+                      <span>{featuredPost.readTime || calculateReadTime(featuredPost.content)}</span>
                     </div>
                   </div>
-                  <Button className="w-fit group">
-                    Read Article
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <Button asChild className="w-fit group">
+                    <Link href={`/journal/article/${featuredPost.id}`}>
+                      Read Article
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -230,6 +247,51 @@ const JournalPage = () => {
           </div>
         </section>
       )}
+
+      {/* Legal Guides Library */}
+      <section className="py-12 sm:py-16 bg-muted/30">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+              Legal Guides Library
+            </h2>
+            <p className="text-muted-foreground">
+              In-depth, plain-language guides on Pakistani, GCC, and global legal topics — all part of the Wakeel Journal.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            {guideLibrary.map((section) => (
+              <Card key={section.title} className="flex flex-col">
+                <CardHeader>
+                  <CardTitle className="text-lg">{section.title}</CardTitle>
+                  <p className="text-sm text-muted-foreground">{section.description}</p>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col">
+                  <ul className="space-y-2.5 mb-6">
+                    {section.guides.slice(0, 6).map((guide) => (
+                      <li key={guide.slug}>
+                        <Link
+                          href={getGuidePath(guide.slug)}
+                          className="text-sm text-foreground hover:text-primary transition-colors flex items-start gap-2 group"
+                        >
+                          <ArrowRight className="w-3.5 h-3.5 mt-0.5 flex-shrink-0 text-primary/60 group-hover:translate-x-0.5 transition-transform" />
+                          <span className="line-clamp-1">{guide.title}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button asChild variant="outline" size="sm" className="w-fit mt-auto">
+                    <Link href={section.browseAllHref}>
+                      Browse all {section.guides.length} guides
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Search and Filter Section */}
       <section className="py-12">
@@ -274,8 +336,12 @@ const JournalPage = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredPosts.map((post) => (
-                <Card 
-                  key={post.id} 
+                <Link
+                  key={post.id}
+                  href={`/journal/article/${post.id}`}
+                  className="block h-full"
+                >
+                <Card
                   className="group overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="relative h-48 bg-muted overflow-hidden">
@@ -324,11 +390,12 @@ const JournalPage = () => {
                       </div>
                       <div className="flex items-center gap-1">
                         <Clock className="w-3 h-3" />
-                        <span>{calculateReadTime(post.content)}</span>
+                        <span>{post.readTime || calculateReadTime(post.content)}</span>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
+                </Link>
               ))}
             </div>
           )}

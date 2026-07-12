@@ -12,12 +12,12 @@ import {
   Globe,
   AlertCircle,
 } from "lucide-react";
-import Layout from "../src/components/Layout";
-import MarketingSEO from "../src/components/MarketingSEO";
-import { Button } from "../src/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
-import { site, guides } from "../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../src/data/theme";
+import Layout from "../../../src/components/Layout";
+import MarketingSEO from "../../../src/components/MarketingSEO";
+import { Button } from "../../../src/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
+import { site, guides, getGuidePath } from "../../../src/data/marketing";
+import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const gccCategories = [
   {
@@ -108,7 +108,7 @@ const schema = [
     name: "GCC Legal Issues & Guidance",
     description:
       "Comprehensive guides for GCC legal issues covering labor law, family law, business law, and more for Saudi Arabia, UAE, Kuwait, and Gulf countries.",
-    url: `${site.url}/legal-issues-gcc`,
+    url: `${site.url}/journal/legal-issues-gcc`,
   },
   {
     "@context": "https://schema.org",
@@ -123,15 +123,20 @@ const schema = [
       {
         "@type": "ListItem",
         position: 2,
+        name: "Journal",
+        item: `${site.url}/journal`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
         name: "GCC Legal Issues",
-        item: `${site.url}/legal-issues-gcc`,
+        item: `${site.url}/journal/legal-issues-gcc`,
       },
     ],
   },
 ];
 
 export default function GCCLegalIssuesPage() {
-  const gccGuides = guides.filter((g) => g.slug.includes("gcc"));
 
   const keywords = [
     "GCC legal help",
@@ -154,7 +159,7 @@ export default function GCCLegalIssuesPage() {
       <MarketingSEO
         title="GCC Legal Issues & Guidance | Wakeel"
         description="Comprehensive guides for GCC legal issues including labor law, family law, business law, expat rights, and immigration for Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman."
-        path="/legal-issues-gcc"
+        path="/journal/legal-issues-gcc"
         schema={schema}
         keywords={keywords}
         region="sa"
@@ -213,7 +218,7 @@ export default function GCCLegalIssuesPage() {
                     {categoryGuides.map((guide) => (
                       <Link
                         key={guide.slug}
-                        href={`/${guide.slug}`}
+                        href={getGuidePath(guide.slug)}
                         className={`group ${cardBase} hover:shadow-md hover:border-primary/50 transition-all`}
                       >
                         <CardContent className="p-4 sm:p-5">
@@ -253,32 +258,32 @@ export default function GCCLegalIssuesPage() {
             {[
               {
                 name: "Saudi Arabia",
-                href: "/saudi-arabia-legal-guide",
+                href: "/journal/legal-issues-gcc/saudi-arabia-legal-guide",
                 description: "Islamic law system with specific rules for residents and workers",
               },
               {
                 name: "UAE",
-                href: "/uae-legal-guide",
+                href: "/journal/legal-issues-gcc/uae-legal-guide",
                 description: "Islamic law combined with civil law, varies by emirate",
               },
               {
                 name: "Kuwait",
-                href: "/kuwait-legal-guide",
+                href: "/journal/legal-issues-gcc/kuwait-legal-guide",
                 description: "Islamic and constitutional law framework",
               },
               {
                 name: "Qatar, Bahrain & Oman",
-                href: "/qatar-bahrain-oman-legal-guide",
+                href: "/journal/legal-issues-gcc/qatar-bahrain-oman-legal-guide",
                 description: "Unique legal systems for these three countries",
               },
               {
                 name: "Expat Resources",
-                href: "/expat-legal-resources-gcc",
+                href: "/journal/legal-issues-gcc/expat-legal-resources-gcc",
                 description: "Legal help, support organizations, and embassy assistance",
               },
               {
                 name: "General GCC Legal Help",
-                href: "/gcc-legal-help",
+                href: "/journal/legal-issues-gcc/gcc-legal-help",
                 description: "Overview of GCC legal systems and comprehensive guidance",
               },
             ].map((country) => (

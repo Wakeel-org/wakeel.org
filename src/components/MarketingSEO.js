@@ -6,7 +6,7 @@ const MarketingSEO = ({
   description,
   path = "/",
   schema = [],
-  image = "/logo-dark.svg",
+  image = "/logo-og.png",
   region = "pk",
   language = "en",
   keywords = "",
@@ -40,7 +40,6 @@ const MarketingSEO = ({
 
       {/* Alternate language/region versions */}
       <link rel="alternate" hrefLang="en-PK" href={canonical} />
-      <link rel="alternate" hrefLang="ur-PK" href={`${canonical}?lang=ur`} />
       <link rel="alternate" hrefLang="en" href={canonical} />
       <link rel="alternate" hrefLang="x-default" href={canonical} />
 
@@ -64,10 +63,8 @@ const MarketingSEO = ({
       {/* Additional SEO */}
       <meta name="author" content="Wakeel.org" />
       <meta name="publisher" content="Wakeel.org" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       {/* Pakistan-specific markers */}
-      <meta name="google-site-verification" content="" />
       <meta name="country" content="PK" />
 
       {/* Schema.org structured data */}

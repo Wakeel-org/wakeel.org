@@ -5,11 +5,17 @@ import MarketingSEO from "./MarketingSEO";
 import HeroSafetyNote from "./HeroSafetyNote";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { guides, site } from "../data/marketing";
+import { guides, site, getGuidePath, getGuideBasePath, getGuideRegion } from "../data/marketing";
 import { cardBase, headingGradient, heroHeading, iconTile, sectionHeading } from "../data/theme";
 
+const REGION_HUB_LABELS = {
+  pakistan: "Pakistan Legal Issues",
+  gcc: "GCC Legal Issues",
+  global: "Global Legal Issues",
+};
+
 const getRelatedTitle = (href) => {
-  const guide = guides.find((item) => `/${item.slug}` === href);
+  const guide = guides.find((item) => getGuidePath(item.slug) === href);
   if (guide) return guide.title;
 
   const labels = {
@@ -39,6 +45,11 @@ const makeKeywords = (guide) => {
     "fir": ["FIR Pakistan", "police complaint", "complaint registration"],
     "legal notice": ["legal notice Pakistan", "notice reply", "legal notice response"],
     "tenant": ["tenant rights Pakistan", "rent issues", "eviction", "landlord tenant"],
+    "rent agreement": ["rent agreement Pakistan", "tenancy agreement", "landlord tenant"],
+    "power of attorney": ["power of attorney Pakistan", "general power of attorney", "special power of attorney"],
+    "custody": ["child custody Pakistan", "guardianship", "family court"],
+    "wrongful termination": ["wrongful termination Pakistan", "labor law", "employee rights"],
+    "overseas": ["overseas Pakistanis", "diaspora legal help", "Pakistan property abroad"],
     "online fraud": ["online fraud Pakistan", "cyber complaint", "scam Pakistan"],
     "property": ["property law Pakistan", "land disputes", "property documents"],
     "family law": ["family law Pakistan", "divorce Pakistan", "marriage law"],
@@ -83,54 +94,65 @@ const makeFaqs = (guide) => [
   },
 ];
 
-const makeSchemas = (guide, path, faqs) => [
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: guide.title,
-    description: guide.description,
-    url: `${site.url}${path}`,
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: site.url,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Legal Guides",
-        item: `${site.url}/fir-refused-pakistan`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: guide.title,
-        item: `${site.url}${path}`,
-      },
-    ],
-  },
-];
+const makeSchemas = (guide, path, faqs) => {
+  const region = getGuideRegion(guide.slug);
+  const basePath = getGuideBasePath(guide.slug);
+
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: guide.title,
+      description: guide.description,
+      url: `${site.url}${path}`,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: site.url,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Journal",
+          item: `${site.url}/journal`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: REGION_HUB_LABELS[region],
+          item: `${site.url}${basePath}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 4,
+          name: guide.title,
+          item: `${site.url}${path}`,
+        },
+      ],
+    },
+  ];
+};
 
 const GuidePage = ({ guide }) => {
-  const path = `/${guide.slug}`;
+  const path = getGuidePath(guide.slug);
   const faqs = makeFaqs(guide);
   const keywords = makeKeywords(guide);
 

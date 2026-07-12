@@ -7,9 +7,11 @@ import { openPlatformAppStore } from '../utils/platformDetection';
 import { site } from '../data/marketing';
 
 const navLinks = [
-  { label: 'Features', href: '/features' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'About', href: '/about' },
+  { label: 'Who it\'s for', href: '/#solutions' },
+  { label: 'Features', href: '/#features' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Journal', href: '/#journal' },
+  { label: 'About', href: '/#values' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -31,7 +33,7 @@ const Navigation = () => {
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-lg overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo-dark.svg"
+                src="/logo-dark.png"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}
@@ -40,7 +42,7 @@ const Navigation = () => {
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo-light.svg"
+                src="/logo-light.png"
                 alt="Wakeel.org Logo"
                 width={48}
                 height={48}
@@ -63,11 +65,11 @@ const Navigation = () => {
               </Link>
             ))}
             <div className="flex items-center gap-2 ml-2">
-              <Button asChild variant="outline" size="sm" className="cta-download-android">
+              {/* <Button asChild variant="outline" size="sm" className="cta-download-android">
                 <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
                   Download App
                 </a>
-              </Button>
+              </Button> */}
               <Button size="sm" onClick={handleGetStarted} className="cta-try-free">
                 Try Free
               </Button>

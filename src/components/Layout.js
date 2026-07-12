@@ -21,6 +21,7 @@ const footerColumns = [
   {
     title: "Solutions",
     links: [
+      { label: "Who it's for", href: "/#solutions" },
       { label: "Citizens", href: "/citizens" },
       { label: "Law Students", href: "/law-students" },
       { label: "Lawyers", href: "/lawyers" },
@@ -33,11 +34,12 @@ const footerColumns = [
   {
     title: "Resources",
     links: [
+      { label: "Free Legal Advice", href: "/journal/article/free-legal-advice-pakistan" },
       { label: "Legal Sources", href: "/legal-sources" },
-      { label: "Pakistan Legal Issues", href: "/legal-issues-pakistan" },
-      { label: "GCC Legal Issues", href: "/legal-issues-gcc" },
-      { label: "Legal Guides", href: "/fir-refused-pakistan" },
-      { label: "Comparisons", href: "/comparisons" },
+      { label: "Pakistan Legal Issues", href: "/journal/legal-issues-pakistan" },
+      { label: "GCC Legal Issues", href: "/journal/legal-issues-gcc" },
+      { label: "Best AI Legal Apps", href: "/journal/article/best-ai-legal-apps-pakistan" },
+      { label: "AI vs a Lawyer", href: "/journal/article/ai-vs-lawyer-pakistan" },
       { label: "Journal", href: "/journal" },
     ],
   },
@@ -56,7 +58,7 @@ const Layout = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans antialiased">
       <Head>
-        <title>Wakeel.org - Pakistan's AI Legal Assistant</title>
+        <title>Wakeel.org - Pakistan's AI Lawyer & Legal Assistant</title>
         <meta name="description" content={site.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, user-scalable=yes, viewport-fit=cover" />
         <meta name="author" content="Wakeel.org" />
@@ -66,22 +68,16 @@ const Layout = ({ children }) => {
         <link rel="manifest" href="/manifest.json" />
         
         {/* Favicon */}
-        <link rel="icon" type="image/svg+xml" href="/logo-light.svg" />
-        <link rel="icon" type="image/svg+xml" href="/logo-light.svg" media="(prefers-color-scheme: light)" />
-        <link rel="icon" type="image/svg+xml" href="/logo-light.svg" media="(prefers-color-scheme: dark)" />
-        <link rel="apple-touch-icon" href="/logo-light.svg" />
-        <link rel="shortcut icon" href="/logo-light.svg" />
-        
-        {/* Google Fonts */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="icon" type="image/png" href="/logo-light.png" />
+        <link rel="apple-touch-icon" href="/logo-light.png" />
+        <link rel="shortcut icon" href="/logo-light.png" />
         
         {/* Open Graph / Social Media Meta Tags */}
-        <meta property="og:title" content="Wakeel.org - Pakistan's AI Legal Assistant" />
+        <meta property="og:title" content="Wakeel.org - Pakistan's AI Lawyer & Legal Assistant" />
         <meta property="og:description" content={site.description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://wakeel.org" />
-        <meta property="og:image" content="https://wakeel.org/logo-dark.svg" />
+        <meta property="og:image" content="https://wakeel.org/logo-og.png" />
         <meta property="og:site_name" content="Wakeel.org" />
         <meta property="og:locale" content="en_US" />
         
@@ -108,7 +104,7 @@ const Layout = ({ children }) => {
                   {/* Dark logo for light theme */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/logo-dark.svg"
+                    src="/logo-dark.png"
                     alt="Wakeel.org Logo"
                     width={48}
                     height={48}
@@ -118,7 +114,7 @@ const Layout = ({ children }) => {
                   {/* Light logo for dark theme */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/logo-light.svg"
+                    src="/logo-light.png"
                     alt="Wakeel.org Logo"
                     width={48}
                     height={48}

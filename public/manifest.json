@@ -9,27 +9,31 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/logo-light.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/logo-og.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/logo-dark.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/logo-light.png",
+      "sizes": "128x128",
+      "type": "image/png",
       "purpose": "any"
     }
   ],
-  "categories": ["business", "productivity", "legal"],
+  "categories": [
+    "business",
+    "productivity",
+    "legal"
+  ],
   "lang": "en-US",
   "dir": "ltr",
   "scope": "/",
   "screenshots": [
     {
-      "src": "/logo-dark.svg",
-      "sizes": "120x120",
-      "type": "image/svg+xml"
+      "src": "/logo-og.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ],
   "shortcuts": [
@@ -40,9 +44,9 @@
       "url": "/",
       "icons": [
         {
-          "src": "/logo-light.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "/logo-light.png",
+          "sizes": "128x128",
+          "type": "image/png"
         }
       ]
     },
@@ -53,9 +57,9 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "/logo-light.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "/logo-light.png",
+          "sizes": "128x128",
+          "type": "image/png"
         }
       ]
     },
@@ -66,9 +70,9 @@
       "url": "/journal",
       "icons": [
         {
-          "src": "/logo-light.svg",
-          "sizes": "any",
-          "type": "image/svg+xml"
+          "src": "/logo-light.png",
+          "sizes": "128x128",
+          "type": "image/png"
         }
       ]
     }

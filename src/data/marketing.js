@@ -10,7 +10,8 @@ export const site = {
   mobileTagline: "Legal help in your pocket — Android, iOS & web.",
   disclaimer:
     "Wakeel.org provides legal information and research support. It does not provide final legal advice, does not guarantee outcomes, and does not replace consultation with a licensed advocate.",
-  appUrl: "https://app.wakeel.org",
+  // appUrl: "https://app.wakeel.org", // temporarily disabled
+  appUrl: "https://play.google.com/store/apps/details?id=pk.digit.aiwakeel", // using Android link until web app is live
   androidUrl:
     "https://play.google.com/store/apps/details?id=pk.digit.aiwakeel",
   iosUrl: "https://testflight.apple.com/join/ZVgHgqF7",
@@ -37,12 +38,11 @@ export const solutionLinks = [
 
 export const resourceLinks = [
   { label: "Legal Sources", href: "/legal-sources" },
-  { label: "Pakistan Legal Issues", href: "/legal-issues-pakistan" },
-  { label: "GCC Legal Issues", href: "/legal-issues-gcc" },
-  { label: "Global Legal Issues", href: "/legal-issues-global" },
-  { label: "Legal Guides", href: "/fir-refused-pakistan" },
+  { label: "Pakistan Legal Issues", href: "/journal/legal-issues-pakistan" },
+  { label: "GCC Legal Issues", href: "/journal/legal-issues-gcc" },
+  { label: "Global Legal Issues", href: "/journal/legal-issues-global" },
   { label: "Journal", href: "/journal" },
-  { label: "Comparisons", href: "/comparisons" },
+  { label: "Comparisons", href: "/journal/comparisons" },
   { label: "Legal Disclaimer", href: "/disclaimer" },
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms of Service", href: "/terms" },
@@ -157,6 +157,13 @@ export const values = [
 ];
 
 export const team = [
+    {
+    name: "Dr. Sajid Mahmood",
+    role: "Co-founder",
+    initials: "SM",
+    photo: "/team/sajid-mahmood.jpg",
+    linkedin: "https://www.linkedin.com/in/sajid-mahmood-362a8536/",
+  },
   {
     name: "Majid Hussain Malik",
     role: "Co-founder",
@@ -165,18 +172,18 @@ export const team = [
     linkedin: "https://www.linkedin.com/in/majidhussainmalik/",
   },
   {
-    name: "Sajid Mahmood",
-    role: "Co-founder",
-    initials: "SM",
-    photo: "/team/sajid-mahmood.jpg",
-    linkedin: "https://www.linkedin.com/in/sajid-mahmood-362a8536/",
-  },
-  {
     name: "Usman Inayat",
     role: "CTO",
     initials: "UI",
     photo: "/team/usman-inayat.jpg",
     linkedin: "https://www.linkedin.com/in/usman-inayat-b87806190/",
+  },
+    {
+    name: "Sikandar Azam",
+    role: "Advocate High Court & Legal Researcher",
+    initials: "SA",
+    photo: "/team/sikandar-azam.jpg",
+    linkedin: "#",
   },
   {
     name: "Abdullah Munawar",
@@ -320,6 +327,32 @@ export const examplePrompts = [
   { audience: "General", prompt: "Help me understand this legal notice." },
 ];
 
+// Fixed, pre-written sample answers for the homepage "try before you install"
+// widget. These are illustrative only (no live AI call from the marketing
+// site) — text-answerable questions only, since document upload/analysis
+// needs the app. Keep the same source-aware, verify-first tone as the rest
+// of the site.
+export const demoQA = [
+  {
+    audience: "FIR",
+    prompt: "Police refused to register my FIR. What can I do?",
+    answer:
+      "Under Section 154 of the Code of Criminal Procedure, an officer in charge of a police station must register an FIR for a cognizable offence. If they refuse, you can send your complaint in writing to the Superintendent of Police, who can direct an FIR to be registered or investigate the matter personally. You can also approach a Magistrate under Section 22-A/22-B Cr.P.C. to direct registration of the FIR.",
+  },
+  {
+    audience: "PPC 420",
+    prompt: "Explain PPC Section 420 in simple terms.",
+    answer:
+      "Section 420 of the Pakistan Penal Code deals with cheating and dishonestly inducing delivery of property. It applies when someone deceives another person into handing over property, money, or a valuable security, or into altering/destroying a valuable document, as a result of that deception. It's a common section cited in fraud-related complaints.",
+  },
+  {
+    audience: "Rent deposit",
+    prompt: "My landlord won't return my security deposit. What are my options?",
+    answer:
+      "Tenancy laws vary by province in Pakistan, but most require landlords to return a security deposit at the end of a lease, minus any documented damages beyond normal wear and tear. You can send a written demand notice first, and if unresolved, file a complaint with the rent tribunal / controller in your district under the applicable provincial rent ordinance.",
+  },
+];
+
 export const pricingPlans = [
   {
     name: "Free",
@@ -352,6 +385,22 @@ export const pricingPlans = [
       "PDF chat for notes and books",
       "Study resources and guides",
       "Case analysis tools",
+    ],
+  },
+  {
+    name: "Practitioner",
+    monthlyPrice: "PKR 1,499/mo",
+    yearlyPrice: "PKR 14,999/yr",
+    priceNote: "For solo practitioners and junior associates",
+    description: "For solo practitioners, junior associates, and paralegals who need more than study tools but not a full team workflow.",
+    cta: "Try Practitioner",
+    href: "/lawyers",
+    features: [
+      "Student plan features",
+      "Expanded legal research support",
+      "Client document review (solo use)",
+      "Document drafting assistance",
+      "Standard support",
     ],
   },
   {
@@ -484,7 +533,7 @@ export const corePages = {
     eyebrow: "About Wakeel.org",
     heading: "Pakistan-focused legal AI for clearer legal understanding.",
     intro:
-      "Wakeel.org is a Pakistan-focused AI legal assistant built to help people understand legal information, documents, and research more clearly. It supports citizens, law students, lawyers, law firms, and institutions through AI-assisted legal chat, document analysis, and research workflows.",
+      "Wakeel.org — also known as Wakeel AI — is a Pakistan-focused AI legal assistant built to help people understand legal information, documents, and research more clearly. It supports citizens, law students, lawyers, law firms, and institutions through AI-assisted legal chat, document analysis, and research workflows.",
     cta: "Try Wakeel Free",
     sections: [
       {
@@ -616,9 +665,9 @@ export const corePages = {
   "/citizens": {
     title: "Wakeel for Citizens",
     description:
-      "Understand your legal rights in simple Urdu and English with Wakeel.org's Pakistan-focused AI legal assistant.",
+      "Wakeel is a free AI lawyer and legal assistant for Pakistani citizens — understand your legal rights in simple Urdu and English.",
     eyebrow: "For citizens",
-    heading: "Understand your legal rights in simple Urdu and English.",
+    heading: "Your AI lawyer for everyday legal questions, in Urdu and English.",
     intro:
       "Wakeel helps Pakistani citizens understand common legal situations, documents, notices, and complaint options before deciding whether to contact a lawyer or public office.",
     cta: "Ask your legal question",
@@ -676,10 +725,10 @@ export const corePages = {
   "/lawyers": {
     title: "Wakeel for Lawyers",
     description:
-      "Research, draft, summarize, and organize legal work faster with Pakistan-specific AI support.",
+      "Wakeel's lawyer AI assistant helps you research, draft, summarize, and organize legal work faster with Pakistan-specific AI support.",
     eyebrow: "For lawyers",
     heading:
-      "Research, draft, summarize, and organize legal work faster with Pakistan-specific AI support.",
+      "A lawyer AI assistant that helps you research, draft, and organize legal work faster.",
     intro:
       "Wakeel is built to assist legal professionals with research and document workflows while keeping final judgment, client advice, and court strategy with the advocate.",
     cta: "Try Wakeel for Legal Research",
@@ -851,21 +900,102 @@ export const comparisons = [
     slug: "wakeel-vs-pakistanlawbot",
     competitor: "PakistanLawBot",
     title: "Wakeel.org vs PakistanLawBot",
+    positioning:
+      "PakistanLawBot is positioned as an AI chatbot for answering Pakistani legal questions.",
   },
   {
     slug: "wakeel-vs-lawgpt",
     competitor: "LawGPT",
     title: "Wakeel.org vs LawGPT",
+    positioning:
+      "There is a Pakistan-focused LawGPT (lawgpt.pk) aimed at legal practice and research. Note that “LawGPT” is also used by unrelated global and academic projects, so confirm which product and jurisdiction you are actually using.",
   },
   {
     slug: "wakeel-vs-ai-attorney",
     competitor: "AI Attorney",
     title: "Wakeel.org vs AI Attorney",
+    positioning:
+      "AI Attorney is marketed as a legal AI assistant for Pakistani users.",
   },
   {
     slug: "wakeel-vs-yourmunshi",
     competitor: "YourMunshi",
     title: "Wakeel.org vs YourMunshi",
+    positioning:
+      "YourMunshi offers legal and paperwork assistance for Pakistani users.",
+  },
+  {
+    slug: "wakeel-vs-digilawyer",
+    competitor: "DigiLawyer",
+    title: "Wakeel.org vs DigiLawyer",
+    positioning:
+      "DigiLawyer is positioned around AI legal drafting for Pakistani users — generating pleadings, petitions, contracts, and case summaries.",
+  },
+  {
+    slug: "wakeel-vs-qanoonai",
+    competitor: "QanoonAI",
+    title: "Wakeel.org vs QanoonAI",
+    positioning:
+      "QanoonAI is positioned around AI-generated case briefs and specialized legal tools for areas such as Muslim personal law, tax, and property.",
+  },
+  {
+    slug: "wakeel-vs-draftify",
+    competitor: "Draftify",
+    title: "Wakeel.org vs Draftify",
+    positioning:
+      "Draftify is positioned around AI legal drafting — generating legal documents — and is aimed more at lawyers than everyday citizens.",
+  },
+];
+
+// Standalone long-form articles at /journal/article/<slug>. Unlike `guides`
+// (short educational entries rendered by GuidePage) and `comparisons`
+// (rendered by ComparisonPage), each of these has its own hand-built page
+// component — this array only exists so the Journal page can list them.
+export const articles = [
+  {
+    slug: "can-ai-replace-a-lawyer-pakistan",
+    title: "Can AI Replace a Lawyer for Pakistani Legal Questions?",
+    excerpt:
+      "A direct, honest answer to whether AI can replace a lawyer in Pakistan — plus what AI legal assistants are genuinely good for today.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-07-12",
+  },
+  {
+    slug: "when-to-use-ai-legal-assistant-vs-lawyer-pakistan",
+    title: "When Should You Use an AI Legal Assistant Instead of a Lawyer in Pakistan?",
+    excerpt:
+      "A practical checklist for when an AI legal assistant is enough for your Pakistani legal question, and when you should see a licensed advocate first.",
+    category: "AI & the Law",
+    readTime: "7 min read",
+    publishedAt: "2026-07-12",
+  },
+  {
+    slug: "ai-vs-lawyer-pakistan",
+    title: "Will AI Replace Lawyers? AI vs Hiring a Lawyer in Pakistan",
+    excerpt:
+      "A clear, honest comparison of what AI legal tools do well, what only a licensed advocate can do, and when to use each.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-06-28",
+  },
+  {
+    slug: "best-ai-legal-apps-pakistan",
+    title: "Best AI Legal Apps in Pakistan (2026)",
+    excerpt:
+      "An honest comparison of the best AI legal apps available in Pakistan, with the criteria that matter most: Pakistani-law grounding, Urdu support, document analysis, and safety.",
+    category: "AI & the Law",
+    readTime: "8 min read",
+    publishedAt: "2026-06-28",
+  },
+  {
+    slug: "free-legal-advice-pakistan",
+    title: "Free & Online Legal Advice in Pakistan",
+    excerpt:
+      "How to get free and online legal help in Pakistan — free legal information with Wakeel.org plus government legal aid, helplines, bar associations, and legal aid NGOs.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-06-28",
   },
 ];
 
@@ -886,7 +1016,7 @@ export const guides = [
       "What does cognizable offence mean in simple Urdu?",
       "Which documents should I show a lawyer about an FIR issue?",
     ],
-    related: ["/citizens", "/legal-sources", "/online-fraud-complaint-pakistan"],
+    related: ["/citizens", "/legal-sources", "/journal/legal-issues-pakistan/online-fraud-complaint-pakistan"],
   },
   {
     slug: "legal-notice-pakistan",
@@ -904,7 +1034,7 @@ export const guides = [
       "What deadlines or risks should I discuss with a lawyer?",
       "What information should I collect before replying?",
     ],
-    related: ["/citizens", "/lawyers", "/legal-document-review-ai-pakistan"],
+    related: ["/citizens", "/lawyers", "/journal/legal-issues-pakistan/legal-document-review-ai-pakistan"],
   },
   {
     slug: "tenant-rights-pakistan",
@@ -922,7 +1052,7 @@ export const guides = [
       "What should I ask a lawyer about this eviction notice?",
       "Explain security deposit rights in simple Urdu.",
     ],
-    related: ["/citizens", "/property-document-check-pakistan", "/legal-notice-pakistan"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/property-document-check-pakistan", "/journal/legal-issues-pakistan/legal-notice-pakistan"],
   },
   {
     slug: "online-fraud-complaint-pakistan",
@@ -940,7 +1070,7 @@ export const guides = [
       "Draft a simple incident summary for a cyber complaint.",
       "Explain cyber complaint steps in simple Urdu.",
     ],
-    related: ["/citizens", "/fir-refused-pakistan", "/legal-sources"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/fir-refused-pakistan", "/legal-sources"],
   },
   {
     slug: "property-document-check-pakistan",
@@ -958,7 +1088,7 @@ export const guides = [
       "What property documents should a lawyer check?",
       "Explain mutation and registry in simple Urdu.",
     ],
-    related: ["/citizens", "/tenant-rights-pakistan", "/legal-document-review-ai-pakistan"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/tenant-rights-pakistan", "/journal/legal-issues-pakistan/legal-document-review-ai-pakistan"],
   },
   {
     slug: "family-law-guidance-pakistan",
@@ -976,7 +1106,7 @@ export const guides = [
       "What documents should I collect for a family law consultation?",
       "Summarize this family court notice.",
     ],
-    related: ["/citizens", "/legal-notice-pakistan", "/disclaimer"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/legal-notice-pakistan", "/disclaimer"],
   },
   {
     slug: "ppc-sections-explained",
@@ -994,7 +1124,7 @@ export const guides = [
       "What are the ingredients of this offence?",
       "Make exam notes for this PPC section.",
     ],
-    related: ["/law-students", "/crpc-sections-explained", "/constitution-of-pakistan-notes"],
+    related: ["/law-students", "/journal/legal-issues-pakistan/crpc-sections-explained", "/journal/legal-issues-pakistan/constitution-of-pakistan-notes"],
   },
   {
     slug: "crpc-sections-explained",
@@ -1012,7 +1142,7 @@ export const guides = [
       "Compare FIR, complaint, and investigation steps.",
       "Make short notes for CrPC revision.",
     ],
-    related: ["/law-students", "/ppc-sections-explained", "/case-law-research-pakistan"],
+    related: ["/law-students", "/journal/legal-issues-pakistan/ppc-sections-explained", "/journal/legal-issues-pakistan/case-law-research-pakistan"],
   },
   {
     slug: "constitution-of-pakistan-notes",
@@ -1030,7 +1160,7 @@ export const guides = [
       "Explain Article 199 in simple Urdu.",
       "Make an exam outline on separation of powers.",
     ],
-    related: ["/law-students", "/lgat-preparation-pakistan", "/case-law-research-pakistan"],
+    related: ["/law-students", "/journal/legal-issues-pakistan/lgat-preparation-pakistan", "/journal/legal-issues-pakistan/case-law-research-pakistan"],
   },
   {
     slug: "lgat-preparation-pakistan",
@@ -1048,7 +1178,7 @@ export const guides = [
       "Explain common legal terms for LGAT.",
       "Create practice questions on constitutional law.",
     ],
-    related: ["/law-students", "/constitution-of-pakistan-notes", "/ppc-sections-explained"],
+    related: ["/law-students", "/journal/legal-issues-pakistan/constitution-of-pakistan-notes", "/journal/legal-issues-pakistan/ppc-sections-explained"],
   },
   {
     slug: "case-law-research-pakistan",
@@ -1084,7 +1214,7 @@ export const guides = [
       "What clauses should I ask a lawyer about?",
       "Explain this document in simple Urdu.",
     ],
-    related: ["/legal-notice-pakistan", "/property-document-check-pakistan", "/lawyers"],
+    related: ["/journal/legal-issues-pakistan/legal-notice-pakistan", "/journal/legal-issues-pakistan/property-document-check-pakistan", "/lawyers"],
   },
   {
     slug: "employment-law-pakistan",
@@ -1102,7 +1232,7 @@ export const guides = [
       "Summarize my employment contract and highlight risks.",
       "Explain workplace harassment laws in Pakistan in simple Urdu.",
     ],
-    related: ["/citizens", "/legal-document-review-ai-pakistan", "/legal-notice-pakistan"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/legal-document-review-ai-pakistan", "/journal/legal-issues-pakistan/legal-notice-pakistan"],
   },
   {
     slug: "consumer-rights-pakistan",
@@ -1120,7 +1250,7 @@ export const guides = [
       "How do I file a consumer complaint in Pakistan?",
       "Explain warranty and guarantee rights in simple English.",
     ],
-    related: ["/citizens", "/legal-notice-pakistan", "/online-fraud-complaint-pakistan"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/legal-notice-pakistan", "/journal/legal-issues-pakistan/online-fraud-complaint-pakistan"],
   },
   {
     slug: "loan-debt-pakistan",
@@ -1138,7 +1268,7 @@ export const guides = [
       "Explain interest and markup in Islamic finance.",
       "Summarize my loan agreement and highlight obligations.",
     ],
-    related: ["/citizens", "/legal-notice-pakistan", "/property-document-check-pakistan"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/legal-notice-pakistan", "/journal/legal-issues-pakistan/property-document-check-pakistan"],
   },
   {
     slug: "harassment-violence-pakistan",
@@ -1156,7 +1286,7 @@ export const guides = [
       "How do I apply for a protective order in Pakistan?",
       "Explain domestic violence laws in simple Urdu.",
     ],
-    related: ["/citizens", "/family-law-guidance-pakistan", "/legal-notice-pakistan"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/family-law-guidance-pakistan", "/journal/legal-issues-pakistan/legal-notice-pakistan"],
   },
   {
     slug: "business-commercial-law-pakistan",
@@ -1174,7 +1304,7 @@ export const guides = [
       "Summarize this commercial contract and highlight risks.",
       "What are the steps to register a business in Pakistan?",
     ],
-    related: ["/lawyers", "/legal-document-review-ai-pakistan", "/property-document-check-pakistan"],
+    related: ["/lawyers", "/journal/legal-issues-pakistan/legal-document-review-ai-pakistan", "/journal/legal-issues-pakistan/property-document-check-pakistan"],
   },
   {
     slug: "inheritance-succession-pakistan",
@@ -1192,7 +1322,7 @@ export const guides = [
       "What should a will contain in Pakistan?",
       "How does succession work if there is no will?",
     ],
-    related: ["/family-law-guidance-pakistan", "/property-document-check-pakistan", "/citizens"],
+    related: ["/journal/legal-issues-pakistan/family-law-guidance-pakistan", "/journal/legal-issues-pakistan/property-document-check-pakistan", "/citizens"],
   },
   {
     slug: "divorce-separation-pakistan",
@@ -1210,7 +1340,7 @@ export const guides = [
       "What are my child custody rights?",
       "How is maintenance calculated in Pakistan?",
     ],
-    related: ["/family-law-guidance-pakistan", "/legal-notice-pakistan", "/disclaimer"],
+    related: ["/journal/legal-issues-pakistan/family-law-guidance-pakistan", "/journal/legal-issues-pakistan/legal-notice-pakistan", "/disclaimer"],
   },
   {
     slug: "property-disputes-pakistan",
@@ -1228,7 +1358,7 @@ export const guides = [
       "Explain adverse possession in simple English.",
       "What should I do about a boundary dispute with my neighbor?",
     ],
-    related: ["/property-document-check-pakistan", "/tenant-rights-pakistan", "/legal-notice-pakistan"],
+    related: ["/journal/legal-issues-pakistan/property-document-check-pakistan", "/journal/legal-issues-pakistan/tenant-rights-pakistan", "/journal/legal-issues-pakistan/legal-notice-pakistan"],
   },
   {
     slug: "know-your-rights-pakistan",
@@ -1246,7 +1376,7 @@ export const guides = [
       "Can police search my home without a warrant?",
       "Explain right to free speech in simple Urdu.",
     ],
-    related: ["/citizens", "/fir-refused-pakistan", "/constitution-of-pakistan-notes"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/fir-refused-pakistan", "/journal/legal-issues-pakistan/constitution-of-pakistan-notes"],
   },
   {
     slug: "vehicle-traffic-law-pakistan",
@@ -1264,7 +1394,7 @@ export const guides = [
       "Explain traffic violation and penalty in simple English.",
       "How do I claim motor vehicle insurance?",
     ],
-    related: ["/citizens", "/legal-notice-pakistan", "/legal-document-review-ai-pakistan"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/legal-notice-pakistan", "/journal/legal-issues-pakistan/legal-document-review-ai-pakistan"],
   },
   {
     slug: "cybercrime-online-safety-pakistan",
@@ -1282,7 +1412,7 @@ export const guides = [
       "Explain cybercrime laws in Pakistan in simple Urdu.",
       "How do I report online harassment?",
     ],
-    related: ["/online-fraud-complaint-pakistan", "/fir-refused-pakistan", "/citizens"],
+    related: ["/journal/legal-issues-pakistan/online-fraud-complaint-pakistan", "/journal/legal-issues-pakistan/fir-refused-pakistan", "/citizens"],
   },
   {
     slug: "court-procedures-pakistan",
@@ -1300,7 +1430,7 @@ export const guides = [
       "What are the steps in a civil case?",
       "How long does a case usually take in Pakistan?",
     ],
-    related: ["/legal-notice-pakistan", "/lawyers", "/case-law-research-pakistan"],
+    related: ["/journal/legal-issues-pakistan/legal-notice-pakistan", "/lawyers", "/journal/legal-issues-pakistan/case-law-research-pakistan"],
   },
   {
     slug: "registration-documentation-pakistan",
@@ -1318,7 +1448,7 @@ export const guides = [
       "Explain business registration steps in Pakistan.",
       "What is a verification certificate and how do I get one?",
     ],
-    related: ["/property-document-check-pakistan", "/business-commercial-law-pakistan", "/citizens"],
+    related: ["/journal/legal-issues-pakistan/property-document-check-pakistan", "/journal/legal-issues-pakistan/business-commercial-law-pakistan", "/citizens"],
   },
   {
     slug: "insurance-claims-pakistan",
@@ -1336,7 +1466,7 @@ export const guides = [
       "What should I do if my insurance claim is denied?",
       "Summarize my insurance policy and highlight coverage.",
     ],
-    related: ["/legal-document-review-ai-pakistan", "/vehicle-traffic-law-pakistan", "/citizens"],
+    related: ["/journal/legal-issues-pakistan/legal-document-review-ai-pakistan", "/journal/legal-issues-pakistan/vehicle-traffic-law-pakistan", "/citizens"],
   },
   {
     slug: "education-rights-pakistan",
@@ -1354,7 +1484,7 @@ export const guides = [
       "How do I file a complaint about unfair grading?",
       "Explain educational discrimination laws in simple English.",
     ],
-    related: ["/citizens", "/harassment-violence-pakistan", "/know-your-rights-pakistan"],
+    related: ["/citizens", "/journal/legal-issues-pakistan/harassment-violence-pakistan", "/journal/legal-issues-pakistan/know-your-rights-pakistan"],
   },
   {
     slug: "tax-law-pakistan",
@@ -1372,7 +1502,7 @@ export const guides = [
       "Explain a tax assessment notice in simple Urdu.",
       "How do I appeal a tax decision?",
     ],
-    related: ["/business-commercial-law-pakistan", "/legal-notice-pakistan", "/lawyers"],
+    related: ["/journal/legal-issues-pakistan/business-commercial-law-pakistan", "/journal/legal-issues-pakistan/legal-notice-pakistan", "/lawyers"],
   },
   {
     slug: "labor-law-gcc",
@@ -1390,7 +1520,7 @@ export const guides = [
       "Explain the sponsorship (kafala) system in simple English.",
       "Summarize my employment contract and highlight risks under GCC law.",
     ],
-    related: ["/visa-residency-gcc", "/contract-review-gcc", "/workers-rights-gcc"],
+    related: ["/journal/legal-issues-gcc/visa-residency-gcc", "/journal/legal-issues-gcc/contract-review-gcc", "/journal/legal-issues-gcc/workers-rights-gcc"],
   },
   {
     slug: "visa-residency-gcc",
@@ -1408,7 +1538,7 @@ export const guides = [
       "Explain visa sponsorship rules in Saudi Arabia.",
       "What are my options if my visa sponsorship is transferred?",
     ],
-    related: ["/labor-law-gcc", "/family-law-gcc", "/legal-issues-gcc"],
+    related: ["/journal/legal-issues-gcc/labor-law-gcc", "/journal/legal-issues-gcc/family-law-gcc", "/journal/legal-issues-gcc"],
   },
   {
     slug: "family-law-gcc",
@@ -1426,7 +1556,7 @@ export const guides = [
       "What are my rights in GCC family courts?",
       "Explain child custody rules under GCC law.",
     ],
-    related: ["/legal-issues-gcc", "/women-rights-gcc", "/inheritance-gcc"],
+    related: ["/journal/legal-issues-gcc", "/journal/legal-issues-gcc/women-rights-gcc", "/journal/legal-issues-gcc/inheritance-gcc"],
   },
   {
     slug: "workers-rights-gcc",
@@ -1444,7 +1574,7 @@ export const guides = [
       "Explain my rights as a migrant worker in GCC.",
       "Where can I get help for unsafe working conditions?",
     ],
-    related: ["/labor-law-gcc", "/legal-issues-gcc", "/women-rights-gcc"],
+    related: ["/journal/legal-issues-gcc/labor-law-gcc", "/journal/legal-issues-gcc", "/journal/legal-issues-gcc/women-rights-gcc"],
   },
   {
     slug: "commercial-law-gcc",
@@ -1462,7 +1592,7 @@ export const guides = [
       "Explain sponsorship requirements for GCC businesses.",
       "Summarize this commercial contract and highlight risks.",
     ],
-    related: ["/legal-issues-gcc", "/contract-review-gcc", "/taxation-gcc"],
+    related: ["/journal/legal-issues-gcc", "/journal/legal-issues-gcc/contract-review-gcc", "/journal/legal-issues-gcc/taxation-gcc"],
   },
   {
     slug: "real-estate-gcc",
@@ -1480,7 +1610,7 @@ export const guides = [
       "Explain tenant rights in Saudi Arabia.",
       "Summarize this property purchase agreement.",
     ],
-    related: ["/legal-issues-gcc", "/contract-review-gcc", "/inheritance-gcc"],
+    related: ["/journal/legal-issues-gcc", "/journal/legal-issues-gcc/contract-review-gcc", "/journal/legal-issues-gcc/inheritance-gcc"],
   },
   {
     slug: "women-rights-gcc",
@@ -1498,7 +1628,7 @@ export const guides = [
       "Explain guardianship requirements in Saudi Arabia.",
       "Where can I get help for domestic abuse in GCC?",
     ],
-    related: ["/family-law-gcc", "/workers-rights-gcc", "/legal-issues-gcc"],
+    related: ["/journal/legal-issues-gcc/family-law-gcc", "/journal/legal-issues-gcc/workers-rights-gcc", "/journal/legal-issues-gcc"],
   },
   {
     slug: "contract-review-gcc",
@@ -1516,7 +1646,7 @@ export const guides = [
       "Explain this rental agreement in simple English.",
       "What should I ask a lawyer before signing this contract?",
     ],
-    related: ["/labor-law-gcc", "/legal-issues-gcc", "/real-estate-gcc"],
+    related: ["/journal/legal-issues-gcc/labor-law-gcc", "/journal/legal-issues-gcc", "/journal/legal-issues-gcc/real-estate-gcc"],
   },
   {
     slug: "criminal-law-gcc",
@@ -1534,7 +1664,7 @@ export const guides = [
       "Explain criminal procedures in GCC courts.",
       "What should I do if facing charges in Saudi Arabia or UAE?",
     ],
-    related: ["/legal-issues-gcc", "/workers-rights-gcc", "/embassy-help-gcc"],
+    related: ["/journal/legal-issues-gcc", "/journal/legal-issues-gcc/workers-rights-gcc", "/journal/legal-issues-gcc/embassy-help-gcc"],
   },
   {
     slug: "taxation-gcc",
@@ -1552,7 +1682,7 @@ export const guides = [
       "Explain VAT and business taxation in GCC.",
       "What are my tax obligations as an expat in GCC?",
     ],
-    related: ["/commercial-law-gcc", "/legal-issues-gcc", "/business-setup-gcc"],
+    related: ["/journal/legal-issues-gcc/commercial-law-gcc", "/journal/legal-issues-gcc", "/journal/legal-issues-gcc/business-setup-gcc"],
   },
   {
     slug: "inheritance-gcc",
@@ -1570,7 +1700,7 @@ export const guides = [
       "How does inheritance work for non-Muslims in GCC?",
       "What should my will contain under GCC law?",
     ],
-    related: ["/family-law-gcc", "/legal-issues-gcc", "/contract-review-gcc"],
+    related: ["/journal/legal-issues-gcc/family-law-gcc", "/journal/legal-issues-gcc", "/journal/legal-issues-gcc/contract-review-gcc"],
   },
   {
     slug: "business-setup-gcc",
@@ -1588,7 +1718,7 @@ export const guides = [
       "Explain local sponsorship requirements for GCC businesses.",
       "What licenses do I need for my business in Saudi Arabia?",
     ],
-    related: ["/commercial-law-gcc", "/legal-issues-gcc", "/taxation-gcc"],
+    related: ["/journal/legal-issues-gcc/commercial-law-gcc", "/journal/legal-issues-gcc", "/journal/legal-issues-gcc/taxation-gcc"],
   },
   {
     slug: "consumer-rights-gcc",
@@ -1606,7 +1736,7 @@ export const guides = [
       "How do I file a complaint for a defective product?",
       "Explain warranty and guarantee rights in GCC.",
     ],
-    related: ["/legal-issues-gcc", "/contract-review-gcc", "/workers-rights-gcc"],
+    related: ["/journal/legal-issues-gcc", "/journal/legal-issues-gcc/contract-review-gcc", "/journal/legal-issues-gcc/workers-rights-gcc"],
   },
   {
     slug: "gcc-legal-help",
@@ -1624,7 +1754,7 @@ export const guides = [
       "How does GCC law differ from Western law?",
       "Where can I get legal help as an expat in GCC?",
     ],
-    related: ["/labor-law-gcc", "/family-law-gcc", "/visa-residency-gcc"],
+    related: ["/journal/legal-issues-gcc/labor-law-gcc", "/journal/legal-issues-gcc/family-law-gcc", "/journal/legal-issues-gcc/visa-residency-gcc"],
   },
   {
     slug: "saudi-arabia-legal-guide",
@@ -1642,7 +1772,7 @@ export const guides = [
       "What are my rights as an expat in Saudi Arabia?",
       "Explain labor law and wages in Saudi Arabia.",
     ],
-    related: ["/labor-law-gcc", "/family-law-gcc", "/business-setup-gcc"],
+    related: ["/journal/legal-issues-gcc/labor-law-gcc", "/journal/legal-issues-gcc/family-law-gcc", "/journal/legal-issues-gcc/business-setup-gcc"],
   },
   {
     slug: "uae-legal-guide",
@@ -1660,7 +1790,7 @@ export const guides = [
       "What are my rights as an expat in UAE?",
       "Explain employment and visa rules in UAE.",
     ],
-    related: ["/labor-law-gcc", "/real-estate-gcc", "/visa-residency-gcc"],
+    related: ["/journal/legal-issues-gcc/labor-law-gcc", "/journal/legal-issues-gcc/real-estate-gcc", "/journal/legal-issues-gcc/visa-residency-gcc"],
   },
   {
     slug: "kuwait-legal-guide",
@@ -1678,7 +1808,7 @@ export const guides = [
       "What are my rights as a worker in Kuwait?",
       "Explain sponsorship and residency in Kuwait.",
     ],
-    related: ["/labor-law-gcc", "/visa-residency-gcc", "/legal-issues-gcc"],
+    related: ["/journal/legal-issues-gcc/labor-law-gcc", "/journal/legal-issues-gcc/visa-residency-gcc", "/journal/legal-issues-gcc"],
   },
   {
     slug: "qatar-bahrain-oman-legal-guide",
@@ -1696,7 +1826,7 @@ export const guides = [
       "What are my rights as an expat in these countries?",
       "Explain employment and visa procedures.",
     ],
-    related: ["/labor-law-gcc", "/family-law-gcc", "/legal-issues-gcc"],
+    related: ["/journal/legal-issues-gcc/labor-law-gcc", "/journal/legal-issues-gcc/family-law-gcc", "/journal/legal-issues-gcc"],
   },
   {
     slug: "expat-legal-resources-gcc",
@@ -1714,7 +1844,7 @@ export const guides = [
       "How do I contact my embassy for legal help?",
       "What support organizations help expats in GCC?",
     ],
-    related: ["/legal-issues-gcc", "/workers-rights-gcc", "/criminal-law-gcc"],
+    related: ["/journal/legal-issues-gcc", "/journal/legal-issues-gcc/workers-rights-gcc", "/journal/legal-issues-gcc/criminal-law-gcc"],
   },
   {
     slug: "embassy-help-gcc",
@@ -1732,7 +1862,7 @@ export const guides = [
       "What can my embassy do if I'm arrested?",
       "What consular services are available in GCC?",
     ],
-    related: ["/criminal-law-gcc", "/expat-legal-resources-gcc", "/legal-issues-gcc"],
+    related: ["/journal/legal-issues-gcc/criminal-law-gcc", "/journal/legal-issues-gcc/expat-legal-resources-gcc", "/journal/legal-issues-gcc"],
   },
   {
     slug: "international-employment-law",
@@ -1750,7 +1880,7 @@ export const guides = [
       "What are my rights as a worker in different countries?",
       "Explain employment contracts in different legal systems.",
     ],
-    related: ["/international-business-law", "/expat-legal-guide-global", "/legal-systems-comparison"],
+    related: ["/journal/legal-issues-global/international-business-law", "/journal/legal-issues-global/expat-legal-guide-global", "/journal/legal-issues-global/legal-systems-comparison"],
   },
   {
     slug: "international-business-law",
@@ -1768,7 +1898,7 @@ export const guides = [
       "Explain cross-border contract enforcement.",
       "What are trade and import/export regulations?",
     ],
-    related: ["/international-employment-law", "/legal-systems-comparison", "/expat-legal-guide-global"],
+    related: ["/journal/legal-issues-global/international-employment-law", "/journal/legal-issues-global/legal-systems-comparison", "/journal/legal-issues-global/expat-legal-guide-global"],
   },
   {
     slug: "uk-legal-guide",
@@ -1786,7 +1916,7 @@ export const guides = [
       "What are my rights as a resident in the UK?",
       "Explain employment law and contracts in the UK.",
     ],
-    related: ["/us-legal-guide", "/international-employment-law", "/expat-legal-guide-global"],
+    related: ["/journal/legal-issues-global/us-legal-guide", "/journal/legal-issues-global/international-employment-law", "/journal/legal-issues-global/expat-legal-guide-global"],
   },
   {
     slug: "us-legal-guide",
@@ -1804,7 +1934,7 @@ export const guides = [
       "What are my rights as a resident or worker in the US?",
       "Explain federal vs. state law.",
     ],
-    related: ["/canada-legal-guide", "/international-employment-law", "/expat-legal-guide-global"],
+    related: ["/journal/legal-issues-global/canada-legal-guide", "/journal/legal-issues-global/international-employment-law", "/journal/legal-issues-global/expat-legal-guide-global"],
   },
   {
     slug: "canada-legal-guide",
@@ -1822,7 +1952,7 @@ export const guides = [
       "What are my rights as a resident or worker in Canada?",
       "Explain provincial vs. federal law in Canada.",
     ],
-    related: ["/us-legal-guide", "/australia-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/us-legal-guide", "/journal/legal-issues-global/australia-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "australia-legal-guide",
@@ -1840,7 +1970,7 @@ export const guides = [
       "What are my rights as a worker in Australia?",
       "Explain immigration and visa rules in Australia.",
     ],
-    related: ["/uk-legal-guide", "/singapore-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/uk-legal-guide", "/journal/legal-issues-global/singapore-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "india-legal-guide",
@@ -1858,7 +1988,7 @@ export const guides = [
       "What are my legal rights in India?",
       "Explain employment and business law in India.",
     ],
-    related: ["/singapore-legal-guide", "/malaysia-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/singapore-legal-guide", "/journal/legal-issues-global/malaysia-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "singapore-legal-guide",
@@ -1876,7 +2006,7 @@ export const guides = [
       "What are my rights in Singapore?",
       "Explain Singapore business and employment law.",
     ],
-    related: ["/hong-kong-legal-guide", "/malaysia-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/hong-kong-legal-guide", "/journal/legal-issues-global/malaysia-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "hong-kong-legal-guide",
@@ -1894,7 +2024,7 @@ export const guides = [
       "What are my rights in Hong Kong?",
       "Explain business and employment law in Hong Kong.",
     ],
-    related: ["/singapore-legal-guide", "/malaysia-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/singapore-legal-guide", "/journal/legal-issues-global/malaysia-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "european-legal-guide",
@@ -1912,7 +2042,7 @@ export const guides = [
       "What are my rights in Europe as a resident or worker?",
       "Explain EU law and national law differences.",
     ],
-    related: ["/international-employment-law", "/legal-systems-comparison", "/expat-legal-guide-global"],
+    related: ["/journal/legal-issues-global/international-employment-law", "/journal/legal-issues-global/legal-systems-comparison", "/journal/legal-issues-global/expat-legal-guide-global"],
   },
   {
     slug: "germany-legal-guide",
@@ -1930,7 +2060,7 @@ export const guides = [
       "What are my rights as a worker in Germany?",
       "Explain business and employment law in Germany.",
     ],
-    related: ["/france-legal-guide", "/european-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/france-legal-guide", "/journal/legal-issues-global/european-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "france-legal-guide",
@@ -1948,7 +2078,7 @@ export const guides = [
       "What are my rights as a worker in France?",
       "Explain business and family law in France.",
     ],
-    related: ["/germany-legal-guide", "/spain-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/germany-legal-guide", "/spain-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "netherlands-scandinavia-legal-guide",
@@ -1966,7 +2096,7 @@ export const guides = [
       "What are my rights in Netherlands or Scandinavia?",
       "Explain employment and business law.",
     ],
-    related: ["/germany-legal-guide", "/european-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/germany-legal-guide", "/journal/legal-issues-global/european-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "spain-southern-europe-legal-guide",
@@ -1984,7 +2114,7 @@ export const guides = [
       "What are my rights in Spain or Southern Europe?",
       "Explain employment and property law.",
     ],
-    related: ["/france-legal-guide", "/european-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/france-legal-guide", "/journal/legal-issues-global/european-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "malaysia-legal-guide",
@@ -2002,7 +2132,7 @@ export const guides = [
       "What are my rights in Malaysia?",
       "Explain employment and Islamic law in Malaysia.",
     ],
-    related: ["/singapore-legal-guide", "/indonesia-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/singapore-legal-guide", "/journal/legal-issues-global/indonesia-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "indonesia-legal-guide",
@@ -2020,7 +2150,7 @@ export const guides = [
       "What are my rights in Indonesia?",
       "Explain employment and business law in Indonesia.",
     ],
-    related: ["/malaysia-legal-guide", "/thailand-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/malaysia-legal-guide", "/thailand-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "thailand-southeast-asia-legal-guide",
@@ -2038,7 +2168,7 @@ export const guides = [
       "What are my rights in Thailand or Southeast Asia?",
       "Explain employment law in Southeast Asia.",
     ],
-    related: ["/indonesia-legal-guide", "/malaysia-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/indonesia-legal-guide", "/journal/legal-issues-global/malaysia-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "turkey-middle-east-legal-guide",
@@ -2056,7 +2186,7 @@ export const guides = [
       "What are my rights in Turkey or Middle East?",
       "Explain employment and business law.",
     ],
-    related: ["/egypt-legal-guide", "/international-employment-law", "/legal-systems-comparison"],
+    related: ["/journal/legal-issues-global/egypt-legal-guide", "/journal/legal-issues-global/international-employment-law", "/journal/legal-issues-global/legal-systems-comparison"],
   },
   {
     slug: "egypt-legal-guide",
@@ -2074,7 +2204,7 @@ export const guides = [
       "What are my rights in Egypt?",
       "Explain employment and business law in Egypt.",
     ],
-    related: ["/turkey-middle-east-legal-guide", "/south-africa-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/turkey-middle-east-legal-guide", "/journal/legal-issues-global/south-africa-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "south-africa-legal-guide",
@@ -2092,7 +2222,7 @@ export const guides = [
       "What are my rights in South Africa?",
       "Explain employment and business law in South Africa.",
     ],
-    related: ["/nigeria-legal-guide", "/egypt-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/nigeria-legal-guide", "/journal/legal-issues-global/egypt-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "nigeria-legal-guide",
@@ -2110,7 +2240,7 @@ export const guides = [
       "What are my rights in Nigeria or West Africa?",
       "Explain employment law in these countries.",
     ],
-    related: ["/south-africa-legal-guide", "/egypt-legal-guide", "/international-employment-law"],
+    related: ["/journal/legal-issues-global/south-africa-legal-guide", "/journal/legal-issues-global/egypt-legal-guide", "/journal/legal-issues-global/international-employment-law"],
   },
   {
     slug: "brazil-legal-guide",
@@ -2128,7 +2258,7 @@ export const guides = [
       "What are my rights as a worker in Brazil?",
       "Explain business and employment law in Brazil.",
     ],
-    related: ["/mexico-latin-america-legal-guide", "/international-employment-law", "/international-business-law"],
+    related: ["/journal/legal-issues-global/mexico-latin-america-legal-guide", "/journal/legal-issues-global/international-employment-law", "/journal/legal-issues-global/international-business-law"],
   },
   {
     slug: "mexico-latin-america-legal-guide",
@@ -2146,7 +2276,7 @@ export const guides = [
       "What are my rights in Mexico or Latin America?",
       "Explain employment and business law.",
     ],
-    related: ["/brazil-legal-guide", "/international-employment-law", "/international-business-law"],
+    related: ["/journal/legal-issues-global/brazil-legal-guide", "/journal/legal-issues-global/international-employment-law", "/journal/legal-issues-global/international-business-law"],
   },
   {
     slug: "legal-systems-comparison",
@@ -2164,7 +2294,7 @@ export const guides = [
       "How do different legal systems approach contracts?",
       "Explain Islamic law and customary law systems.",
     ],
-    related: ["/international-employment-law", "/international-business-law", "/expat-legal-guide-global"],
+    related: ["/journal/legal-issues-global/international-employment-law", "/journal/legal-issues-global/international-business-law", "/journal/legal-issues-global/expat-legal-guide-global"],
   },
   {
     slug: "expat-legal-guide-global",
@@ -2182,6 +2312,172 @@ export const guides = [
       "How do I navigate legal systems in different countries?",
       "Explain tax obligations for expats.",
     ],
-    related: ["/international-employment-law", "/international-business-law", "/legal-systems-comparison"],
+    related: ["/journal/legal-issues-global/international-employment-law", "/journal/legal-issues-global/international-business-law", "/journal/legal-issues-global/legal-systems-comparison"],
+  },
+  {
+    slug: "fir-registration-pakistan",
+    title: "How to Register an FIR in Pakistan",
+    description:
+      "Plain-language guide on filing a police complaint and registering an FIR in Pakistan, plus what to prepare before you go to the station.",
+    problem:
+      "People often don't know what a cognizable offence is, which police station has jurisdiction, or what facts and documents to bring when reporting a crime.",
+    help:
+      "Wakeel can explain the FIR process step by step, help you organize incident facts and evidence, and prepare a clear written statement to hand to the duty officer.",
+    cannot:
+      "Wakeel cannot register an FIR for you, contact police on your behalf, or guarantee that an officer will act on your complaint.",
+    questions: [
+      "What information do I need before reporting a crime to police?",
+      "Explain the difference between a cognizable and non-cognizable offence.",
+      "Draft a clear incident statement for a police complaint.",
+    ],
+    related: ["/citizens", "/journal/legal-issues-pakistan/fir-refused-pakistan", "/journal/legal-issues-pakistan/online-fraud-complaint-pakistan"],
+  },
+  {
+    slug: "rent-agreement-pakistan",
+    title: "Rent Agreement Guide for Pakistan",
+    description:
+      "Understand the essential clauses, tenant and landlord rights, and common pitfalls in Pakistani rental agreements before you sign.",
+    problem:
+      "Rent agreements often contain security deposit, maintenance, notice period, and renewal clauses that are easy to overlook and hard to interpret without legal training.",
+    help:
+      "Wakeel can summarize a rent agreement clause by clause, flag unusual or one-sided terms, and list questions to raise with a lawyer or the other party before signing.",
+    cannot:
+      "Wakeel cannot negotiate terms for you, notarize a document, or confirm that a specific clause is enforceable in your jurisdiction.",
+    questions: [
+      "Summarize this rent agreement and highlight risky clauses.",
+      "What should a standard tenancy agreement in Pakistan include?",
+      "Explain security deposit and notice period rules in simple Urdu.",
+    ],
+    related: ["/journal/legal-issues-pakistan/tenant-rights-pakistan", "/journal/legal-issues-pakistan/legal-notice-pakistan", "/journal/legal-issues-pakistan/property-document-check-pakistan"],
+  },
+  {
+    slug: "power-of-attorney-pakistan",
+    title: "Power of Attorney in Pakistan Explained",
+    description:
+      "Learn what a general or special power of attorney covers in Pakistan, how it's typically used, and what to verify before granting one.",
+    problem:
+      "People confuse general and special power of attorney, are unsure what powers are being granted, and often don't know what registration or attestation steps apply.",
+    help:
+      "Wakeel can explain the difference between general and special power of attorney, summarize a draft document, and list verification questions for a lawyer.",
+    cannot:
+      "Wakeel cannot draft a legally binding power of attorney, notarize or register the document, or confirm it meets requirements in your specific case.",
+    questions: [
+      "What is the difference between general and special power of attorney?",
+      "Summarize this power of attorney document and flag concerns.",
+      "What should I verify before signing a power of attorney?",
+    ],
+    related: ["/journal/legal-issues-pakistan/property-document-check-pakistan", "/journal/legal-issues-pakistan/legal-document-review-ai-pakistan", "/journal/legal-issues-pakistan/registration-documentation-pakistan"],
+  },
+  {
+    slug: "child-custody-pakistan",
+    title: "Child Custody Law in Pakistan",
+    description:
+      "Educational overview of how child custody matters are typically approached in Pakistan, including guardianship and welfare considerations.",
+    problem:
+      "Custody disputes involve guardianship law, welfare-of-the-child standards, and procedural steps that vary by facts and are emotionally difficult to navigate alone.",
+    help:
+      "Wakeel can explain common custody and guardianship concepts, help organize relevant facts and dates, and prepare questions for a family law advocate.",
+    cannot:
+      "Wakeel cannot predict a custody outcome, represent you in court, or replace consultation with a licensed family law advocate.",
+    questions: [
+      "Explain guardianship and custody law basics in Pakistan.",
+      "What facts should I organize before meeting a family lawyer about custody?",
+      "Explain welfare of the child standard in simple Urdu.",
+    ],
+    related: ["/journal/legal-issues-pakistan/family-law-guidance-pakistan", "/journal/legal-issues-pakistan/divorce-separation-pakistan", "/legal-sources"],
+  },
+  {
+    slug: "wrongful-termination-pakistan",
+    title: "Wrongful Termination and Employee Rights in Pakistan",
+    description:
+      "Understand what counts as wrongful termination under Pakistani labor law and what steps to consider if you believe you were dismissed unfairly.",
+    problem:
+      "Employees often don't know whether their dismissal followed proper notice, cause, and procedure requirements, or what remedies may be available.",
+    help:
+      "Wakeel can explain notice and termination requirements, help you organize your employment timeline and documents, and prepare questions for a labor lawyer.",
+    cannot:
+      "Wakeel cannot determine whether your termination was unlawful, file a labor complaint for you, or guarantee reinstatement or compensation.",
+    questions: [
+      "What makes a termination wrongful under Pakistani labor law?",
+      "What documents should I gather after being dismissed from a job?",
+      "Explain notice period and severance rules in simple Urdu.",
+    ],
+    related: ["/journal/legal-issues-pakistan/employment-law-pakistan", "/journal/legal-issues-pakistan/legal-notice-pakistan", "/legal-sources"],
+  },
+  {
+    slug: "property-law-pakistan",
+    title: "Understanding Pakistani Property Law Basics",
+    description:
+      "A plain-language introduction to property rights, ownership records, and real estate law fundamentals in Pakistan.",
+    problem:
+      "Property matters involve ownership records, mutation, registry, stamp duty, and possession concepts that are difficult to piece together without legal background.",
+    help:
+      "Wakeel can explain core property law concepts, summarize ownership or sale documents, and help you build a checklist of questions for a property lawyer.",
+    cannot:
+      "Wakeel cannot verify title or ownership records, inspect land registry entries, or guarantee that a property transaction is safe.",
+    questions: [
+      "Explain mutation, registry, and stamp duty in simple terms.",
+      "What are the basics of property ownership rights in Pakistan?",
+      "What should I verify before buying property in Pakistan?",
+    ],
+    related: ["/journal/legal-issues-pakistan/property-document-check-pakistan", "/journal/legal-issues-pakistan/property-disputes-pakistan", "/journal/legal-issues-pakistan/tenant-rights-pakistan"],
+  },
+  {
+    slug: "overseas-pakistanis-legal-guide",
+    title: "Legal Help in Pakistan for Overseas Pakistanis",
+    description:
+      "Guidance for overseas Pakistanis on getting legal help remotely, understanding property inheritance abroad, and navigating Pakistani law from outside the country.",
+    problem:
+      "Overseas Pakistanis often need to handle inheritance, property, or family law matters in Pakistan while living abroad, without easy access to local legal advice.",
+    help:
+      "Wakeel can explain relevant Pakistani law in plain English, help you organize documents and facts for a Pakistan-based advocate, and clarify terms used in inheritance or property matters from abroad.",
+    cannot:
+      "Wakeel cannot represent you before a Pakistani court or authority, verify property records remotely, or replace a licensed advocate engaged in Pakistan.",
+    questions: [
+      "How can I handle a property inheritance matter in Pakistan while living in the USA?",
+      "What documents do overseas Pakistanis usually need for property or inheritance issues?",
+      "Explain succession and inheritance law in Pakistan in simple English.",
+    ],
+    related: ["/journal/legal-issues-pakistan/inheritance-succession-pakistan", "/journal/legal-issues-pakistan/property-document-check-pakistan", "/journal/legal-issues-global/expat-legal-guide-global"],
   },
 ];
+
+// Guides are grouped under three journal regions. Membership here is the single
+// source of truth for building each guide's URL (see getGuideBasePath) and for
+// splitting the guides array across the three /journal/legal-issues-* hubs.
+export const GCC_GUIDE_SLUGS = new Set([
+  "labor-law-gcc", "visa-residency-gcc", "family-law-gcc", "workers-rights-gcc",
+  "commercial-law-gcc", "real-estate-gcc", "women-rights-gcc", "contract-review-gcc",
+  "criminal-law-gcc", "taxation-gcc", "inheritance-gcc", "business-setup-gcc",
+  "consumer-rights-gcc", "gcc-legal-help", "saudi-arabia-legal-guide", "uae-legal-guide",
+  "kuwait-legal-guide", "qatar-bahrain-oman-legal-guide", "expat-legal-resources-gcc",
+  "embassy-help-gcc",
+]);
+
+export const GLOBAL_GUIDE_SLUGS = new Set([
+  "international-employment-law", "international-business-law", "uk-legal-guide",
+  "us-legal-guide", "canada-legal-guide", "australia-legal-guide", "india-legal-guide",
+  "singapore-legal-guide", "hong-kong-legal-guide", "european-legal-guide",
+  "germany-legal-guide", "france-legal-guide", "netherlands-scandinavia-legal-guide",
+  "spain-southern-europe-legal-guide", "malaysia-legal-guide", "indonesia-legal-guide",
+  "thailand-southeast-asia-legal-guide", "turkey-middle-east-legal-guide", "egypt-legal-guide",
+  "south-africa-legal-guide", "nigeria-legal-guide", "brazil-legal-guide",
+  "mexico-latin-america-legal-guide", "legal-systems-comparison", "expat-legal-guide-global",
+]);
+
+export const getGuideRegion = (slug) => {
+  if (GCC_GUIDE_SLUGS.has(slug)) return "gcc";
+  if (GLOBAL_GUIDE_SLUGS.has(slug)) return "global";
+  return "pakistan";
+};
+
+export const getGuideBasePath = (slug) =>
+  `/journal/legal-issues-${getGuideRegion(slug)}`;
+
+export const getGuidePath = (slug) => `${getGuideBasePath(slug)}/${slug}`;
+
+export const pakistanGuides = guides.filter(
+  (g) => !GCC_GUIDE_SLUGS.has(g.slug) && !GLOBAL_GUIDE_SLUGS.has(g.slug)
+);
+export const gccGuides = guides.filter((g) => GCC_GUIDE_SLUGS.has(g.slug));
+export const globalGuides = guides.filter((g) => GLOBAL_GUIDE_SLUGS.has(g.slug));
