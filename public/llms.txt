@@ -94,6 +94,16 @@
 - [Pakistani Law vs Common Law: What's Different](https://wakeel.org/journal/article/pakistani-law-vs-common-law): How Pakistan's legal system inherited common law method, then diverged through codification and Islamic law review.
 - [Wakeel AI for Law Students in Pakistan](https://wakeel.org/journal/article/wakeel-ai-for-law-students-pakistan): Statute explanations, case law research, bilingual study notes, and LGAT prep for LLB students.
 - [AI Legal Research Tools for Lawyers in Pakistan](https://wakeel.org/journal/article/ai-legal-research-tools-lawyers-pakistan): How AI research and document review tools fit into a Pakistani lawyer's practice, and their real limits.
+- [How to File a Civil Suit in Pakistan](https://wakeel.org/journal/article/civil-suit-pakistan): Jurisdiction, drafting the plaint, court fees, and a realistic timeline under the CPC 1908.
+- [How to Draft a Legal Contract in Pakistan](https://wakeel.org/journal/article/draft-legal-contract-pakistan): The essential elements of an enforceable contract under the Contract Act 1872, and template risks.
+- [Finding a Property Dispute Lawyer in Pakistan](https://wakeel.org/journal/article/property-dispute-lawyer-pakistan): How to vet and hire a property lawyer — bar council verification, experience checks, and red flags.
+- [Using AI to Review Contracts in Pakistan](https://wakeel.org/journal/article/ai-contract-review-pakistan): What AI contract review does well, and where a lawyer's review is still required.
+- [Property Transfer and Mutation Process in Pakistan](https://wakeel.org/journal/article/property-transfer-mutation-pakistan): Sale deed registration, stamp duty, and the mutation (intiqal) process explained.
+- [How to File a Cyber Crime Complaint in Pakistan](https://wakeel.org/journal/article/nccia-cyber-crime-complaint-pakistan): Filing under PECA 2016, evidence to collect, and the FIA / NCCIA agency transition.
+- [How to Register a Nikah Nama in Pakistan](https://wakeel.org/journal/article/nikah-nama-registration-pakistan): What the nikah nama records, who registers it, and the columns worth reading carefully.
+- [Section 420 PPC: Fraud and Cheating in Pakistan](https://wakeel.org/journal/article/section-420-ppc-fraud-pakistan): What the section covers, its legal ingredients, and how it differs from a civil dispute.
+- [NADRA Biometric Verification Issues in Pakistan](https://wakeel.org/journal/article/nadra-biometric-verification-pakistan): Why verification fails, SIM and bank account impacts, and how to resolve it.
+- [The Exit Control List (ECL) in Pakistan](https://wakeel.org/journal/article/exit-control-list-ecl-pakistan): What the ECL is, who can place a name on it, and the removal process.
 
 ## Optional
 

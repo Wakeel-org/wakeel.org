@@ -1087,6 +1087,96 @@ export const articles = [
     readTime: "6 min read",
     publishedAt: "2026-07-29",
   },
+  {
+    slug: "civil-suit-pakistan",
+    title: "How to File a Civil Suit in Pakistan",
+    excerpt:
+      "A practical walkthrough of filing a civil suit in Pakistan under the CPC 1908 — jurisdiction, drafting the plaint, court fees, and a realistic timeline.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-07-31",
+  },
+  {
+    slug: "draft-legal-contract-pakistan",
+    title: "How to Draft a Legal Contract in Pakistan",
+    excerpt:
+      "The essential elements of an enforceable contract in Pakistan under the Contract Act 1872 — what to include, when stamping and registration apply, and template risks.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-08-01",
+  },
+  {
+    slug: "property-dispute-lawyer-pakistan",
+    title: "Finding a Property Dispute Lawyer in Pakistan",
+    excerpt:
+      "How to vet and hire a property dispute lawyer in Pakistan — bar council verification, real experience checks, fee conversations, and red flags to walk away from.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-02",
+  },
+  {
+    slug: "ai-contract-review-pakistan",
+    title: "Using AI to Review Contracts in Pakistan",
+    excerpt:
+      "What AI contract review can genuinely do for Pakistani businesses and citizens, what it misses, and how to use it as a fast first pass rather than a final sign-off.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-08-03",
+  },
+  {
+    slug: "property-transfer-mutation-pakistan",
+    title: "Property Transfer and Mutation Process in Pakistan",
+    excerpt:
+      "How property transfer and mutation actually work in Pakistan — sale deed registration, stamp duty, the Patwar Khana process, and what to verify before you buy.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-08-04",
+  },
+  {
+    slug: "nccia-cyber-crime-complaint-pakistan",
+    title: "How to File a Cyber Crime Complaint in Pakistan",
+    excerpt:
+      "How to file a cybercrime complaint in Pakistan under PECA 2016 — evidence to collect, the FIA / NCCIA agency transition, and how to track your case.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-04",
+  },
+  {
+    slug: "nikah-nama-registration-pakistan",
+    title: "How to Register a Nikah Nama in Pakistan",
+    excerpt:
+      "What the nikah nama actually records, who registers it, the columns worth reading carefully (including talaq-e-tafweez), and how to get a certified copy.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-04",
+  },
+  {
+    slug: "section-420-ppc-fraud-pakistan",
+    title: "Section 420 PPC: Fraud and Cheating in Pakistan",
+    excerpt:
+      "What Section 420 of the Pakistan Penal Code actually covers, the ingredients that must be proven, and how it differs from a civil money dispute.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-04",
+  },
+  {
+    slug: "nadra-biometric-verification-pakistan",
+    title: "NADRA Biometric Verification Issues in Pakistan",
+    excerpt:
+      "Why NADRA biometric verification fails, how it affects SIM cards and bank accounts in Pakistan, and the practical steps to actually resolve it.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-08-04",
+  },
+  {
+    slug: "exit-control-list-ecl-pakistan",
+    title: "The Exit Control List (ECL) in Pakistan",
+    excerpt:
+      "What the Exit Control List is under the Exit from Pakistan (Control) Ordinance 1981, who can place a name on it, and the removal process.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-08-04",
+  },
 ];
 
 export const guides = [

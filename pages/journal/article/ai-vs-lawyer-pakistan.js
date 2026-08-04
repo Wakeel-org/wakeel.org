@@ -74,6 +74,16 @@ const faqs = [
     answer:
       "A licensed advocate can give advice tailored to your exact facts and jurisdiction, represent you in court, sign and file documents with legal authority, and owe you a professional duty of care. AI does none of these.",
   },
+  {
+    question: "Legal AI vs a human lawyer — what's the actual difference in practice?",
+    answer:
+      "Legal AI is fast, available any time, and good at explaining concepts, summarizing documents, and organizing your facts — but it has no professional accountability, can't appear in court, and can produce confidently wrong answers if not properly grounded in the relevant law. A human lawyer is slower and costs more per hour, but brings judgment, negotiation skill, and legal accountability for the advice given. The realistic pairing is AI for preparation and understanding, a lawyer for anything that needs representation or final sign-off.",
+  },
+  {
+    question: "How do I know if an AI legal chatbot's answer about Pakistani law is trustworthy?",
+    answer:
+      "Check whether it cites the actual statute or section it's relying on (so you can verify the text yourself, for example against the Ministry of Law and Justice's official legislation on pakistancode.gov.pk), whether it flags uncertainty instead of answering everything with false confidence, and whether it clearly tells you when to see a licensed advocate. A tool that never admits a limitation is a bigger red flag than one that regularly reminds you to verify with a lawyer — and if you do engage an advocate, you can confirm their enrollment through your Provincial Bar Council.",
+  },
 ];
 
 const schema = [
@@ -117,6 +127,9 @@ const keywords = [
   "ai legal help vs lawyer",
   "can ai replace lawyers pakistan",
   "ai legal assistant pakistan",
+  "legal ai vs human lawyer",
+  "is ai legal advice trustworthy pakistan",
+  "ai lawyer pakistan",
 ].join(", ");
 
 const Cell = ({ value }) => {

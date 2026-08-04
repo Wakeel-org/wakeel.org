@@ -100,6 +100,16 @@ const faqs = [
     answer:
       "Yes — Wakeel.org can analyze long documents (100+ pages), summarize key clauses and obligations, and produce plain-language summaries for client communication in English or Urdu. It cannot certify a document's legal sufficiency or replace the lawyer's own review and sign-off before it's relied on.",
   },
+  {
+    question: "Is there a case law search tool for Pakistan?",
+    answer:
+      "Several platforms index Pakistani case law from the Supreme Court, High Courts, and reported judgments, with varying search quality and coverage. When evaluating any case law search tool, check how current its database is, whether it covers your relevant court, and whether it links back to the original judgment text rather than just a summary — always confirm a case's current status (not overruled or distinguished) against the primary source before relying on it.",
+  },
+  {
+    question: "What legal research tools are available for lawyers in Pakistan?",
+    answer:
+      "The landscape includes AI legal assistants for research and drafting support (like Wakeel.org), case law search platforms, and cloud-based practice management software for firms. Most lawyers in Pakistan still rely heavily on physical law reports and direct statute reading for anything filed or argued — treat digital tools as an accelerant for the research process, not a replacement for verifying the primary source.",
+  },
 ];
 
 const schema = [
@@ -147,6 +157,8 @@ const keywords = [
   "ai legal research pakistan",
   "law firm software pakistan",
   "legal document analysis ai pakistan",
+  "pakistan case law search",
+  "legal research tools pakistan",
 ].join(", ");
 
 export default function AiLegalResearchToolsLawyersPakistan() {

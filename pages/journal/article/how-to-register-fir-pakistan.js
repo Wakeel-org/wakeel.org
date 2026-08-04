@@ -101,6 +101,16 @@ const faqs = [
     answer:
       "For refusal to register a cognizable offence, use the Section 154(3) written complaint to the SP or a Section 22-A/22-B application to a Magistrate — both are described above. For broader police misconduct (harassment, corruption, abuse), complaints can be filed with the relevant Police Complaints Authority where one exists in your province, or with the SP/DPO's office directly. Keep a written, dated record of the officer's name, station, and what happened — vague complaints are far harder to act on than specific ones.",
   },
+  {
+    question: "How do I register an FIR in Pakistan step by step?",
+    answer:
+      "Write down what happened while it's fresh — date, time, location, people involved, witnesses. Go to the police station covering the area where it happened and ask the duty officer to record it under Section 154 CrPC. If it's a cognizable offence, they're required to register it in the FIR book and give you a free copy on request. Note the FIR number before you leave — you'll need it for anything that follows.",
+  },
+  {
+    question: "What happens after an FIR is filed in Pakistan?",
+    answer:
+      "Once registered, the police begin investigating — collecting evidence, recording statements, and, depending on the offence, potentially making arrests. The investigation typically concludes with a report (challan) submitted to the court, after which the matter proceeds to trial if there's sufficient evidence. This process can take anywhere from weeks to well over a year depending on the case's complexity and the court's caseload — ask the investigating officer or your lawyer for updates rather than assuming no news means no progress.",
+  },
 ];
 
 const schema = [
@@ -161,6 +171,10 @@ const keywords = [
   "cognizable offence pakistan",
   "what can i do if police refuse to register my fir in pakistan",
   "how do i file a complaint against police in pakistan",
+  "police complaint pakistan",
+  "how to register fir",
+  "how do i register an fir in pakistan",
+  "what happens after an fir is filed in pakistan",
 ].join(", ");
 
 export default function HowToRegisterFirPakistan() {

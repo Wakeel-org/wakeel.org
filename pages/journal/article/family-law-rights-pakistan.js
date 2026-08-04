@@ -101,6 +101,16 @@ const faqs = [
     answer:
       "The wife files a suit for dissolution of marriage in the Family Court under the Dissolution of Muslim Marriages Act 1939, stating that she cannot continue the marriage within the limits prescribed by Allah — she does not need to prove the husband is at fault. The court typically attempts reconciliation first through the Union Council's Arbitration Council. If reconciliation fails, the court grants the khula decree, often on the condition that the wife returns some or all of her haq mehr. The overall timeline varies by court and contested facts, so ask your lawyer for a realistic estimate for your specific case.",
   },
+  {
+    question: "What is the divorce process in Pakistan, step by step?",
+    answer:
+      "For a husband-initiated talaq, written notice goes to the Union Council, and the divorce takes effect 90 days later unless revoked. For a wife seeking to end the marriage, the route is typically khula (or talaq-e-tafweez if delegated in the nikahnama) filed as a suit in the Family Court. Either route generally involves an attempted reconciliation through the Arbitration Council before the matter is finalized, along with separate proceedings for custody, maintenance, or mehr if those are contested.",
+  },
+  {
+    question: "What does the Family Court in Pakistan actually handle?",
+    answer:
+      "Family Courts, established under the Family Courts Act 1964, handle dissolution of marriage (including khula), maintenance (nafaqa), child custody (hizanat), dower (haq mehr) recovery, and related matrimonial matters. They're a specialized forum separate from the ordinary civil courts, generally intended to resolve family disputes somewhat faster than regular civil litigation — though timelines still depend heavily on how contested the facts are.",
+  },
 ];
 
 const schema = [
@@ -151,6 +161,8 @@ const keywords = [
   "maintenance nafaqa pakistan",
   "what are a woman's rights in divorce under pakistani law",
   "how does khula work in pakistan",
+  "divorce process pakistan",
+  "family court pakistan",
 ].join(", ");
 
 export default function FamilyLawRightsPakistan() {
