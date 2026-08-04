@@ -225,7 +225,7 @@ export default function BestAILegalAppsPakistan() {
     <Layout>
       <MarketingSEO
         title="Best AI Legal Apps in Pakistan (2026)"
-        description="An honest comparison of the best AI legal apps in Pakistan — judged on Pakistani-law grounding, English/Urdu support, document analysis, source-awareness, and free plans. See how the top legal AI tools stack up."
+        description="An honest comparison of the best AI legal apps in Pakistan, judged on Pakistani-law grounding, Urdu support, document analysis, and free plans."
         path="/journal/article/best-ai-legal-apps-pakistan"
         schema={schema}
         keywords={keywords}

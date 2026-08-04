@@ -997,6 +997,96 @@ export const articles = [
     readTime: "7 min read",
     publishedAt: "2026-06-28",
   },
+  {
+    slug: "how-to-register-fir-pakistan",
+    title: "How to Register an FIR in Pakistan",
+    excerpt:
+      "A plain-language, fact-checked walkthrough of FIR registration under Section 154 CrPC — what officers must legally do, and what to do if they refuse.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-05-03",
+  },
+  {
+    slug: "consumer-complaint-pakistan",
+    title: "How to File a Consumer Complaint in Pakistan",
+    excerpt:
+      "How consumer courts work under Pakistan's provincial Consumer Protection Acts, what evidence to collect, and how to build a complaint that gets a hearing.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-05-14",
+  },
+  {
+    slug: "tenant-rights-rent-law-pakistan",
+    title: "Tenant Rights Under Pakistan's Rent Laws",
+    excerpt:
+      "What tenants are entitled to under provincial rent laws — written agreements, protection from arbitrary eviction, rent increase rules, and dispute resolution.",
+    category: "Legal Help",
+    readTime: "8 min read",
+    publishedAt: "2026-05-26",
+  },
+  {
+    slug: "family-law-rights-pakistan",
+    title: "Common Family Law Rights in Pakistan",
+    excerpt:
+      "A grounded guide to khula, talaq, custody, maintenance, and haq mehr under Pakistani family law — with the actual statutes and case law behind each.",
+    category: "Legal Help",
+    readTime: "9 min read",
+    publishedAt: "2026-06-05",
+  },
+  {
+    slug: "understanding-legal-notices-pakistan",
+    title: "Understanding Legal Notices in Pakistan",
+    excerpt:
+      "What a legal notice actually means, why lawyers send them, what your deadline really requires, and how to respond without panicking.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-06-14",
+  },
+  {
+    slug: "understand-legal-document-without-lawyer-pakistan",
+    title: "How to Understand a Legal Document Without a Lawyer",
+    excerpt:
+      "A step-by-step method for reading contracts and agreements in Pakistan on your own — what to look for, red flags to catch, and when to still call a lawyer.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-06-22",
+  },
+  {
+    slug: "pakistani-law-vs-common-law",
+    title: "Pakistani Law vs Common Law: What's Actually Different",
+    excerpt:
+      "Is Pakistan a common law country? How it inherited common law method, and where codification, the Constitution, and Islamic law review make it a hybrid system.",
+    category: "Law Study & Research",
+    readTime: "8 min read",
+    publishedAt: "2026-07-01",
+  },
+  {
+    slug: "wakeel-ai-for-law-students-pakistan",
+    title: "Wakeel AI for Law Students in Pakistan",
+    excerpt:
+      "How LLB students use Wakeel.org for statute explanations, case law research, bilingual study notes, and LGAT prep — and the honest limits of AI for coursework.",
+    category: "Law Study & Research",
+    readTime: "7 min read",
+    publishedAt: "2026-07-10",
+  },
+  {
+    slug: "ai-legal-research-tools-lawyers-pakistan",
+    title: "AI Legal Research Tools for Lawyers in Pakistan",
+    excerpt:
+      "How AI research and document review tools actually fit into a Pakistani lawyer's practice — real time savings, genuine risks, and what to evaluate first.",
+    category: "AI & the Law",
+    readTime: "7 min read",
+    publishedAt: "2026-07-19",
+  },
+  {
+    slug: "best-legal-apps-pakistani-citizens",
+    title: "Best Legal Apps for Pakistani Citizens",
+    excerpt:
+      "Beyond AI chatbots: a category-by-category guide to legal apps in Pakistan — AI assistants, drafting tools, case trackers, and lawyer directories.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-07-29",
+  },
 ];
 
 export const guides = [

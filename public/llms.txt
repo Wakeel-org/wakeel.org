@@ -79,6 +79,21 @@
 
 - [Best AI Legal Apps in Pakistan](https://wakeel.org/best-ai-legal-apps-pakistan): Honest comparison of AI legal tools for Pakistani users and the criteria that matter (Pakistani-law grounding, Urdu support, document analysis, safety, free plans).
 - [Will AI Replace Lawyers? AI vs Hiring a Lawyer](https://wakeel.org/ai-vs-lawyer-pakistan): What AI legal tools do well, what only a licensed advocate can do, and when to use each in Pakistan.
+- [Can AI Replace a Lawyer for Pakistani Legal Questions?](https://wakeel.org/journal/article/can-ai-replace-a-lawyer-pakistan): A direct answer on whether AI can replace a lawyer in Pakistan, and what AI legal assistants are genuinely good for today.
+- [When Should You Use an AI Legal Assistant Instead of a Lawyer?](https://wakeel.org/journal/article/when-to-use-ai-legal-assistant-vs-lawyer-pakistan): A practical checklist for when an AI legal assistant is enough, and when to see a licensed advocate first.
+- [Best Legal Apps for Pakistani Citizens](https://wakeel.org/journal/article/best-legal-apps-pakistani-citizens): AI legal assistants, drafting tools, case trackers, and lawyer directories, and how to judge each category.
+
+## Journal articles — practical legal how-tos
+
+- [How to Register an FIR in Pakistan](https://wakeel.org/journal/article/how-to-register-fir-pakistan): FIR registration under Section 154 CrPC, what officers must legally do, and what to do if police refuse.
+- [How to File a Consumer Complaint in Pakistan](https://wakeel.org/journal/article/consumer-complaint-pakistan): Provincial Consumer Protection Acts, evidence to collect, and how consumer courts actually work.
+- [Tenant Rights Under Pakistan's Rent Laws](https://wakeel.org/journal/article/tenant-rights-rent-law-pakistan): Written agreements, protection from arbitrary eviction, rent rules, and landlord-tenant dispute resolution.
+- [Common Family Law Rights in Pakistan](https://wakeel.org/journal/article/family-law-rights-pakistan): Khula, talaq, custody, maintenance, and haq mehr, grounded in the actual statutes and case law.
+- [Understanding Legal Notices in Pakistan](https://wakeel.org/journal/article/understanding-legal-notices-pakistan): What a legal notice means, why lawyers send them, and how to respond properly and on time.
+- [How to Understand a Legal Document Without a Lawyer](https://wakeel.org/journal/article/understand-legal-document-without-lawyer-pakistan): A step-by-step method for reading contracts and agreements, red flags to catch, and when to call a lawyer.
+- [Pakistani Law vs Common Law: What's Different](https://wakeel.org/journal/article/pakistani-law-vs-common-law): How Pakistan's legal system inherited common law method, then diverged through codification and Islamic law review.
+- [Wakeel AI for Law Students in Pakistan](https://wakeel.org/journal/article/wakeel-ai-for-law-students-pakistan): Statute explanations, case law research, bilingual study notes, and LGAT prep for LLB students.
+- [AI Legal Research Tools for Lawyers in Pakistan](https://wakeel.org/journal/article/ai-legal-research-tools-lawyers-pakistan): How AI research and document review tools fit into a Pakistani lawyer's practice, and their real limits.
 
 ## Optional
 

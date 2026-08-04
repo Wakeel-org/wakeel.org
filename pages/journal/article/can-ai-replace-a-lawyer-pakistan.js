@@ -118,7 +118,7 @@ export default function CanAiReplaceALawyerPakistan() {
     <Layout>
       <MarketingSEO
         title="Can AI Replace a Lawyer for Pakistani Legal Questions?"
-        description="Can AI replace a lawyer in Pakistan? A direct answer: no — here's what AI legal assistants can do well today, and why licensed advocates remain essential for anything consequential."
+        description="Can AI replace a lawyer in Pakistan? A direct answer: no. Here's what AI legal assistants do well today, and why advocates remain essential."
         path="/journal/article/can-ai-replace-a-lawyer-pakistan"
         schema={schema}
         keywords={keywords}

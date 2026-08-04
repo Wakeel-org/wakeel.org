@@ -141,7 +141,7 @@ export default function WhenToUseAiLegalAssistantVsLawyer() {
   return (
     <Layout>
       <MarketingSEO
-        title="When Should You Use an AI Legal Assistant Instead of a Lawyer in Pakistan?"
+        title="When to Use an AI Legal Assistant vs a Lawyer"
         description="A practical checklist for when an AI legal assistant is enough for your Pakistani legal question, and when you should see a licensed advocate first."
         path="/journal/article/when-to-use-ai-legal-assistant-vs-lawyer-pakistan"
         schema={schema}

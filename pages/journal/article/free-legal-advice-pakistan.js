@@ -172,7 +172,7 @@ export default function FreeLegalAdvicePakistan() {
     <Layout>
       <MarketingSEO
         title="Free AI Lawyer & Online Legal Advice in Pakistan"
-        description="Wakeel.org is a free AI lawyer for Pakistan — get free legal information in English or Urdu, plus where to find free legal aid, helplines, and bar association programmes. Legal information, not a substitute for a licensed advocate."
+        description="Free legal advice in Pakistan — free AI legal information in English or Urdu, plus government legal aid, helplines, and bar association programmes."
         path="/journal/article/free-legal-advice-pakistan"
         schema={schema}
         keywords={keywords}

@@ -131,8 +131,8 @@ export default function AIvsLawyerPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Will AI Replace Lawyers? AI vs Hiring a Lawyer in Pakistan"
-        description="Will AI replace lawyers in Pakistan? A clear, honest comparison of what AI legal tools do well, what only a licensed advocate can do, and when to use each. AI helps you prepare — it does not replace a lawyer."
+        title="AI vs Hiring a Lawyer in Pakistan"
+        description="Will AI replace lawyers in Pakistan? An honest comparison of what AI legal tools do well, what only a licensed advocate can do, and when to use each."
         path="/journal/article/ai-vs-lawyer-pakistan"
         schema={schema}
         keywords={keywords}
