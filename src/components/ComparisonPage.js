@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle2, HelpCircle, ArrowRight } from "lucide-react";
+import { BookOpen, CheckCircle2, ExternalLink, HelpCircle, ArrowRight } from "lucide-react";
 import Layout from "./Layout";
 import MarketingSEO from "./MarketingSEO";
 import { Button } from "./ui/button";
@@ -104,7 +104,7 @@ const makeSchemas = (comparison, path, faqs) => [
 const ComparisonPage = ({ comparison }) => {
   const path = `/journal/article/${comparison.slug}`;
   const { competitor, positioning } = comparison;
-  const faqs = makeFaqs(competitor, positioning);
+  const faqs = comparison.faqs?.length ? comparison.faqs : makeFaqs(competitor, positioning);
   const keywords = [
     `wakeel vs ${competitor.toLowerCase()}`,
     `${competitor.toLowerCase()} alternative`,
@@ -233,6 +233,51 @@ const ComparisonPage = ({ comparison }) => {
           </Card>
         </div>
       </section>
+
+      {comparison.body?.length ? (
+        <section className="bg-background py-14 sm:py-16">
+          <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            {comparison.body.map((block) => (
+              <div key={block.heading} className="space-y-3">
+                <h2 className={sectionHeading}>{block.heading}</h2>
+                {block.paragraphs.map((paragraph, idx) => (
+                  <p key={idx} className="text-muted-foreground leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ))}
+
+            {comparison.sources?.length ? (
+              <Card className={cardBase}>
+                <CardHeader>
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="h-5 w-5 text-primary" />
+                    <CardTitle className="text-xl">Sources and further reading</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {comparison.sources.map((source) => (
+                      <li key={source.url}>
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          className="inline-flex items-start gap-2 text-sm text-primary hover:underline"
+                        >
+                          <ExternalLink className="h-4 w-4 mt-0.5 shrink-0" />
+                          <span>{source.label}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
 
       {/* How to choose */}
       <section className="bg-background py-14 sm:py-16">

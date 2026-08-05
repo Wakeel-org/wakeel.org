@@ -11,6 +11,8 @@ import {
   Gavel,
   Globe,
   AlertCircle,
+  BookOpen,
+  ExternalLink,
 } from "lucide-react";
 import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
@@ -189,6 +191,64 @@ export default function GCCLegalIssuesPage() {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Why GCC law needs careful, country-specific navigation */}
+      <section className="bg-background py-16 sm:py-20 lg:py-24">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="space-y-3">
+            <h2 className={sectionHeading}>Why GCC legal systems need careful, country-specific navigation</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Two structural features set the GCC apart from most legal systems covered on this journal, and
+              both cut across every category below. First, Islamic law (Sharia) functions as an actual source
+              of binding legal rules — not just a moral backdrop — most visibly in family and personal status
+              law, though the degree of codification differs sharply by country and by year: Qatar codified
+              its Family Law in 2006, while Saudi Arabia only codified its first Personal Status Law in 2022,
+              having relied on uncodified Sharia principles and judicial discretion before that. Second, the
+              kafala (sponsorship) system ties a foreign worker's legal right to live and work in most GCC
+              countries to a specific employer — a genuinely different structure than residency systems where
+              legal status is independent of any one job.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Neither feature is static. Qatar dismantled its exit-permit and No Objection Certificate
+              requirements in 2020; the UAE introduced a federal corporate tax in 2023 and a separate civil
+              personal-status framework for non-Muslim expats in 2022; and Saudi Arabia opened real estate
+              ownership to non-Saudis in specially designated zones under a law taking effect in 2026. Because
+              each of the six GCC countries — Saudi Arabia, UAE, Kuwait, Qatar, Bahrain, and Oman — legislates
+              independently and reforms at its own pace, a rule that's accurate for one country is often wrong
+              for its neighbor, even within the same guide category.
+            </p>
+          </div>
+
+          <Card className={cardBase}>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-primary" />
+                <CardTitle className="text-xl">Sources and further reading</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                {[
+                  { label: "Saudi Personal Status Law, 2022 — Family Affairs Council overview", url: "https://fac.gov.sa/en/legislations-posts/personal-status-system/" },
+                  { label: "Landmark labour reforms signal end of kafala system in Qatar — ILO", url: "https://www.ilo.org/resource/news/landmark-labour-reforms-signal-end-kafala-system-qatar" },
+                ].map((source) => (
+                  <li key={source.url}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="inline-flex items-start gap-2 text-sm text-primary hover:underline"
+                    >
+                      <ExternalLink className="h-4 w-4 mt-0.5 shrink-0" />
+                      <span>{source.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

@@ -9,6 +9,8 @@ import {
   FileText,
   MapPin,
   Gavel,
+  BookOpen,
+  ExternalLink,
 } from "lucide-react";
 import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
@@ -178,6 +180,65 @@ export default function GlobalLegalIssuesPage() {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Why we organize guides by legal family, not just by country */}
+      <section className="bg-background py-16 sm:py-20 lg:py-24">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="space-y-3">
+            <h2 className={sectionHeading}>Why these guides are grouped by legal family, not just geography</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Comparative law generally sorts the world's legal systems into five families — common law,
+              civil law, religious law, customary law, and mixed systems — and that classification, not
+              geography alone, is what actually determines which rules apply to a given situation. It's why
+              the categories below group the UK, the US, Canada, Australia, India, Singapore, and Hong Kong
+              together as common-law jurisdictions (precedent-driven, adversarial courts) even though they
+              span five continents, while Germany, France, the Netherlands, and Spain sit together as civil
+              law (codified statutes, judge-applied rather than judge-made). Nordic law is a genuine edge
+              case comparative law scholars still debate: often grouped with civil law, but distinct enough —
+              no comprehensive codes like France's or Germany's — that some treat it as its own family
+              entirely.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Most countries today are mixed systems rather than a pure single family — Nigeria blends common
+              law with Sharia and customary law; Malaysia runs parallel civil and Syariah court systems;
+              Indonesia layers Dutch-colonial civil law with religious courts and, in Aceh specifically, its
+              own Sharia bylaws. This is exactly why a single country's guide can't be assumed to generalize
+              to its "family" — the specific statute and its current year matter more than the family label,
+              which is why every guide below names its actual governing law rather than just its legal
+              tradition.
+            </p>
+          </div>
+
+          <Card className={cardBase}>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-primary" />
+                <CardTitle className="text-xl">Sources and further reading</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                {[
+                  { label: "Modern Legal Systems of the World — Business LibreTexts (comparative law overview)", url: "https://biz.libretexts.org/Bookshelves/Civil_Law/Fundamentals_of_Business_Law_(Randall_et_al.)/01%3A_Introduction_to_Law_and_Types_of_Legal_Systems/1.03%3A_Modern_Legal_Systems_of_the_World" },
+                  { label: "Scandinavian Law as a distinct legal family — Encyclopedia of Early Modern History Online", url: "https://www.ieg-ego.eu/en/threads/crossroads/legal-families/wilhelm-brauneder-the-scandinavian-legal-system" },
+                ].map((source) => (
+                  <li key={source.url}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="inline-flex items-start gap-2 text-sm text-primary hover:underline"
+                    >
+                      <ExternalLink className="h-4 w-4 mt-0.5 shrink-0" />
+                      <span>{source.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </section>
 

@@ -257,6 +257,30 @@ export default function AIvsLawyerPakistan() {
         </div>
       </section>
 
+      {/* Why this isn't close to replacing lawyers yet */}
+      <section className="bg-background py-16 sm:py-20">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+          <h2 className={sectionHeading}>The actual evidence on AI legal accuracy</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            This isn't just a theoretical caution — it's measured. A 2024 Stanford RegLab and
+            Institute for Human-Centered AI study, later peer-reviewed in the Journal of Empirical
+            Legal Studies, tested leading AI legal research tools and found hallucination rates of
+            17% for Lexis+ AI, 33% for Westlaw AI-Assisted Research, and 43% for a general-purpose
+            GPT-4 setup — even though the vendors of those specialized legal tools had claimed
+            "hallucination-free" or "avoid hallucinations" performance. An earlier 2023 Stanford
+            study on general-purpose models found hallucination rates as high as 58–88% on specific
+            legal queries.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            The practical takeaway isn't that AI legal tools are useless — it's that even the
+            best commercial legal AI products, built specifically for legal research, still
+            fabricate case citations and legal claims often enough that every citation needs
+            independent verification before you rely on it. That's exactly why source-checking
+            and a licensed advocate's sign-off matter more than which specific AI tool you use.
+          </p>
+        </div>
+      </section>
+
       {/* When to use which */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -327,7 +351,7 @@ export default function AIvsLawyerPakistan() {
           <div className="space-y-3">
             {[
               { label: "Can AI replace a lawyer for Pakistani legal questions?", href: "/journal/article/can-ai-replace-a-lawyer-pakistan" },
-              { label: "When should you use an AI legal assistant instead of a lawyer?", href: "/journal/article/when-to-use-ai-legal-assistant-vs-lawyer-pakistan" },
+              { label: "When should you use an AI legal assistant instead of a lawyer? (scenario-by-scenario guide)", href: "/journal/article/when-to-use-ai-legal-assistant-vs-lawyer-pakistan" },
             ].map((l) => (
               <Link
                 key={l.href}
@@ -338,6 +362,30 @@ export default function AIvsLawyerPakistan() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Sources */}
+      <section className="bg-muted/40 py-14 sm:py-16">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-lg font-semibold text-foreground mb-4">Sources and further reading</h2>
+          <ul className="space-y-2">
+            {[
+              { label: "Hallucinating Law: Legal Mistakes with Large Language Models are Pervasive — Stanford Law School", href: "https://law.stanford.edu/2024/01/11/hallucinating-law-legal-mistakes-with-large-language-models-are-pervasive/" },
+              { label: "Stanford RegLab / HAI study on AI legal research tool hallucination rates — LawSites coverage", href: "https://www.lawnext.com/2024/05/stanford-will-augment-its-study-finding-that-ai-legal-research-tools-hallucinate-in-17-of-queries-as-some-raise-questions-about-the-results.html" },
+            ].map((s) => (
+              <li key={s.href}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-sm text-primary hover:underline"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

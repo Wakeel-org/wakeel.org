@@ -14,6 +14,8 @@ import {
   DollarSign,
   Building,
   Zap,
+  BookOpen,
+  ExternalLink,
 } from "lucide-react";
 import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
@@ -209,6 +211,65 @@ export default function LegalIssuesPage() {
               </Button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Why Pakistani law is layered, not singular */}
+      <section className="bg-background py-16 sm:py-20 lg:py-24">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          <div className="space-y-3">
+            <h2 className={sectionHeading}>Why Pakistani law is layered, not singular</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Pakistan's legal system runs on colonial-era procedural codes that are still, genuinely, the
+              law today — the Pakistan Penal Code, 1860 (PPC), the Code of Criminal Procedure, 1898 (CrPC),
+              and the Code of Civil Procedure, 1908 (CPC) remain the backbone of criminal and civil practice,
+              alongside the Constitution of Pakistan, 1973, which is itself a much newer, home-grown document
+              built around fundamental rights (Chapter II, Articles 8–28) and the High Courts' writ
+              jurisdiction under Article 199. On top of this base, Islamic law applies directly in specific
+              areas — most clearly family law and inheritance, governed for Muslims through the West Pakistan
+              Muslim Personal Law (Shariat) Application Act, 1962 — while everyday criminal and civil practice
+              runs on the older common-law-derived codes.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              This layering is also actively changing. The 18th Amendment (2010) devolved subjects like
+              consumer protection, education, and labor regulation to the provinces, meaning the applicable
+              statute for a rent dispute or a workplace complaint now depends on which province you're in, not
+              a single federal law. And criminal procedure itself keeps evolving — the 2002 introduction of
+              Sections 22-A/22-B CrPC gave citizens a direct remedy against police inaction, and 2025
+              amendments handed the National Cyber Crime Investigation Agency exclusive authority over
+              cybercrime cases under PECA 2016. None of this is static, which is exactly why each guide below
+              names its specific statute and year rather than describing "Pakistani law" as one fixed thing.
+            </p>
+          </div>
+
+          <Card className={cardBase}>
+            <CardHeader>
+              <div className="flex items-center gap-2">
+                <BookOpen className="h-5 w-5 text-primary" />
+                <CardTitle className="text-xl">Sources and further reading</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2">
+                {[
+                  { label: "The Constitution of Pakistan, 1973 — Article 199 writ jurisdiction overview", url: "https://en.wikipedia.org/wiki/Article_199_of_the_Constitution_of_Pakistan" },
+                  { label: "Section 22-A & 22-B CrPC — Punjab Advocate General's Office explainer", url: "https://advocategeneral.punjab.gov.pk/22A_22B" },
+                ].map((source) => (
+                  <li key={source.url}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="inline-flex items-start gap-2 text-sm text-primary hover:underline"
+                    >
+                      <ExternalLink className="h-4 w-4 mt-0.5 shrink-0" />
+                      <span>{source.label}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
