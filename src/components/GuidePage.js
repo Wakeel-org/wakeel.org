@@ -88,9 +88,12 @@ const makeFaqs = (guide) => [
     answer: guide.cannot,
   },
   {
-    question: "Should I verify the information before acting?",
-    answer:
-      "Yes. Legal outcomes depend on facts, jurisdiction, current law, procedure, and evidence. Verify sources and consult a licensed advocate before taking action.",
+    question: `Should I verify ${guide.title.toLowerCase()} information before acting on it?`,
+    answer: `Yes. ${guide.title} depends on your specific facts, current procedure, and the applicable law, which can vary by case and change over time. Before you act, cross-check anything important — especially ${
+      guide.questions?.[0]
+        ? `something like "${guide.questions[0]}"`
+        : "the specifics of your situation"
+    } — against a primary source, and confirm your next steps with a licensed advocate.`,
   },
 ];
 
