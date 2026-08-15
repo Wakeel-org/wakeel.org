@@ -1026,6 +1026,150 @@ export const comparisons = [
 // component — this array only exists so the Journal page can list them.
 export const articles = [
   {
+    slug: "how-to-complete-fir-registration-pakistan",
+    title: "How to Complete FIR Registration in Pakistan",
+    excerpt:
+      "What a properly completed FIR must actually contain under Section 154 CrPC, and the checklist to confirm before you leave the police station.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-01-20",
+  },
+  {
+    slug: "should-i-use-ai-or-hire-a-lawyer-pakistan",
+    title: "Should I Use AI or Hire a Lawyer in Pakistan?",
+    excerpt:
+      "A five-question self-check to decide whether an AI legal tool is enough for your situation, or whether it's time to bring in a licensed advocate.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-02-14",
+  },
+  {
+    slug: "fir-registration-step-by-step-guide-pakistan",
+    title: "FIR Registration in Pakistan: A Step-by-Step Guide",
+    excerpt:
+      "A numbered, practical walkthrough of registering an FIR in Pakistan under Section 154 CrPC — from the right station to what happens after registration.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-03-22",
+  },
+  {
+    slug: "ai-vs-lawyer-whats-right-for-you-pakistan",
+    title: "AI vs Lawyer in Pakistan: What's Right for You?",
+    excerpt:
+      "A cost-and-value comparison of AI legal tools versus hiring a lawyer in Pakistan — what each actually costs, what free legal aid exists, and how to decide.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-04-16",
+  },
+  {
+    slug: "what-you-must-know-fir-registration-pakistan",
+    title: "What You Must Know About FIR Registration in Pakistan",
+    excerpt:
+      "Common misconceptions about FIR registration in Pakistan, corrected — plus the rights every citizen actually has under Section 154 CrPC.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-05-29",
+  },
+  {
+    slug: "ai-legal-help-vs-real-lawyer-pakistan",
+    title: "When to Use AI Legal Help vs a Real Lawyer in Pakistan",
+    excerpt:
+      "Why AI legal help and a real lawyer work best as a sequence, not a binary choice — a five-stage workflow for using both on the same matter.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-07-08",
+  },
+  {
+    slug: "pakistan-legal-system-guide",
+    title: "Pakistan Law: Complete Guide to the Legal System",
+    excerpt:
+      "How Pakistan's legal system actually works — the Constitution, common law method, the federal-provincial split, and how civil and criminal law fit together.",
+    category: "Law Study & Research",
+    readTime: "8 min read",
+    publishedAt: "2026-08-15",
+  },
+  {
+    slug: "constitution-of-pakistan-1973-fundamental-rights",
+    title: "Constitution of Pakistan 1973: Complete Guide to Fundamental Rights",
+    excerpt:
+      "What Articles 8 to 28 of Pakistan's 1973 Constitution actually protect, what the 18th Amendment added, and how fundamental rights get enforced.",
+    category: "Law Study & Research",
+    readTime: "8 min read",
+    publishedAt: "2026-08-15",
+  },
+  {
+    slug: "common-legal-sections-dafaat-pakistan",
+    title: "Common Legal Sections (Dafaat) in Pakistan Explained",
+    excerpt:
+      "Plain-language explanations of the PPC and CrPC sections cited most often in Pakistan — murder, theft, fraud, FIR registration, bail, and more.",
+    category: "Law Study & Research",
+    readTime: "7 min read",
+    publishedAt: "2026-08-15",
+  },
+  {
+    slug: "civil-law-in-pakistan-guide",
+    title: "Civil Law in Pakistan: Complete Guide",
+    excerpt:
+      "How civil law works in Pakistan — the key statutes, the stages of a civil suit under the CPC 1908, and how civil law differs from criminal law.",
+    category: "Law Study & Research",
+    readTime: "7 min read",
+    publishedAt: "2026-08-15",
+  },
+  {
+    slug: "criminal-law-in-pakistan-guide",
+    title: "Criminal Law in Pakistan: Complete Guide",
+    excerpt:
+      "How criminal law works in Pakistan — the Pakistan Penal Code, the CrPC's investigation and trial process, and where special laws take over.",
+    category: "Law Study & Research",
+    readTime: "7 min read",
+    publishedAt: "2026-08-15",
+  },
+  {
+    slug: "how-courts-work-in-pakistan",
+    title: "How Courts Work in Pakistan: Complete Guide to Court Procedures",
+    excerpt:
+      "Pakistan's court hierarchy explained — the Supreme Court, High Courts, Federal Shariat Court, district judiciary, and special tribunals.",
+    category: "Law Study & Research",
+    readTime: "7 min read",
+    publishedAt: "2026-08-15",
+  },
+  {
+    slug: "writ-jurisdiction-high-courts-pakistan",
+    title: "Writ Jurisdiction of High Courts in Pakistan Explained",
+    excerpt:
+      "What Article 199 of Pakistan's Constitution covers — the five writs, when they apply, and how they differ from the Supreme Court's Article 184(3) jurisdiction.",
+    category: "Law Study & Research",
+    readTime: "6 min read",
+    publishedAt: "2026-08-15",
+  },
+  {
+    slug: "how-to-file-legal-complaint-pakistan",
+    title: "How to File a Legal Complaint in Pakistan: Step-by-Step Guide",
+    excerpt:
+      "Where to file a legal complaint in Pakistan depending on what happened — criminal, consumer, cyber, labour, civil, or against a public authority.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-08-15",
+  },
+  {
+    slug: "wrongful-termination-pakistan",
+    title: "Wrongful Termination in Pakistan: Know Your Rights",
+    excerpt:
+      "What counts as wrongful termination under the Standing Orders Ordinance 1968 and Industrial Relations Act 2012 — notice, misconduct inquiries, retrenchment rules, and how to challenge an unlawful dismissal.",
+    category: "Legal Help",
+    readTime: "8 min read",
+    publishedAt: "2026-08-15",
+  },
+  {
+    slug: "can-ai-review-legal-document-pakistan",
+    title: "Can AI Review a Legal Document in Pakistan?",
+    excerpt:
+      "What AI-powered tools can genuinely catch in a contract or legal notice in Pakistan, what still needs a licensed advocate, and what to check before uploading a document.",
+    category: "AI & the Law",
+    readTime: "7 min read",
+    publishedAt: "2026-08-15",
+  },
+  {
     slug: "can-ai-replace-a-lawyer-pakistan",
     title: "Can AI Replace a Lawyer for Pakistani Legal Questions?",
     excerpt:
