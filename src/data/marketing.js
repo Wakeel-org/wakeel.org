@@ -1026,6 +1026,150 @@ export const comparisons = [
 // component — this array only exists so the Journal page can list them.
 export const articles = [
   {
+    slug: "property-laws-pakistan-complete-guide",
+    title: "Property Laws in Pakistan: Complete Guide to Buying, Selling and Ownership",
+    excerpt:
+      "The core legal framework behind property in Pakistan — the Transfer of Property Act, Registration Act, Stamp Act, and land revenue system — and how buying, selling, and ownership actually work.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "how-to-verify-property-before-buying-pakistan",
+    title: "How to Verify Property Before Buying in Pakistan",
+    excerpt:
+      "A practical due-diligence checklist for verifying property in Pakistan before you pay — the fard, encumbrances, seller identity, development authority approval, and benami risk.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "property-ownership-transfer-laws-pakistan",
+    title: "Property Ownership and Transfer Laws in Pakistan",
+    excerpt:
+      "The types of property ownership in Pakistan — freehold, leasehold, co-ownership — and the legal instruments used to transfer it: sale, gift, will, and court decree.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "inheritance-and-property-rights-pakistan",
+    title: "Inheritance and Property Rights in Pakistan",
+    excerpt:
+      "How inheritance works in Pakistan — the governing law for Muslims and non-Muslims, who typically inherits, and the inheritance mutation process.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "daughters-inheritance-rights-pakistan",
+    title: "Daughters' Inheritance Rights in Pakistan: Islamic and Legal Perspective",
+    excerpt:
+      "A daughter's inheritance rights in Pakistan — the Islamic legal basis, Section 498-A PPC, and the Punjab Enforcement of Women's Property Rights Act 2021 remedy.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "punjab-property-protection-law-pakistan",
+    title: "Punjab Property Protection Law: Complete Guide",
+    excerpt:
+      "What the Punjab Protection of Ownership of Immovable Property Act 2025 (and its 2026 amendment) actually does — targeting illegal occupation and land grabbing in Punjab.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "property-laws-overseas-pakistanis-pakistan",
+    title: "Property Laws for Overseas Pakistanis",
+    excerpt:
+      "How overseas Pakistanis can buy, verify, and defend property in Pakistan — power of attorney, NICOP requirements, benami risk, and the new special courts.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "section-302-ppc-murder-law-pakistan",
+    title: "Section 302 PPC: Murder Law and Punishment in Pakistan",
+    excerpt:
+      "What Section 302 of the Pakistan Penal Code covers — qatl-i-amd, the Qisas and Diyat framework, and how punishment and procedure actually work in a murder case.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "sections-375-376-ppc-rape-law-pakistan",
+    title: "Sections 375 & 376 PPC: Rape Laws and Punishment in Pakistan",
+    excerpt:
+      "What Sections 375 and 376 PPC cover, and how the Anti-Rape (Investigation and Trial) Act 2021 changed investigation and trial timelines for these cases.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "robbery-theft-dacoity-laws-pakistan",
+    title: "Sections 392–402 PPC: Robbery, Theft and Dacoity Laws",
+    excerpt:
+      "What Sections 379 through 402 of the Pakistan Penal Code cover — the legal difference between theft, robbery, and dacoity, and how punishment escalates with each.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "section-377-ppc-explained-pakistan",
+    title: "Section 377 PPC: Law Explained in Pakistan",
+    excerpt:
+      "What Section 377 of the Pakistan Penal Code actually states, its origin, and how it fits into Pakistan's criminal procedure — a factual, statute-focused explainer.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "how-to-get-bail-in-pakistan",
+    title: "Bail in Pakistan: How to Get Bail in a Criminal Case",
+    excerpt:
+      "How bail actually works in Pakistan under Sections 497 and 498 CrPC — bailable vs non-bailable offences, pre-arrest vs post-arrest bail, and the application process.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "arrest-without-warrant-pakistan",
+    title: "Arrest Without Warrant in Pakistan: When Is It Legal?",
+    excerpt:
+      "The specific grounds under Section 54 CrPC that let police arrest without a warrant, and the constitutional safeguards (Article 10) that apply immediately after arrest.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "false-fir-pakistan-legal-remedies",
+    title: "False FIR in Pakistan: Legal Remedies and Consequences",
+    excerpt:
+      "The legal routes available for a false FIR in Pakistan — quashing under Section 561-A CrPC, and prosecuting false information under Sections 182 and 211 PPC.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "kidnapping-extortion-sexual-assault-laws-pakistan",
+    title: "Kidnapping, Extortion and Sexual Assault Laws in Pakistan",
+    excerpt:
+      "What the Pakistan Penal Code says about kidnapping, extortion, and assault on modesty — the relevant sections, punishment, and how they're procedurally treated.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
+    slug: "drug-laws-pakistan-offences-penalties",
+    title: "Drug Laws in Pakistan: Offences, Penalties and Bail",
+    excerpt:
+      "How the Control of Narcotic Substances Act, 1997 structures drug offences in Pakistan — quantity-based punishment, special courts, and how bail is approached.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-17",
+  },
+  {
     slug: "how-to-complete-fir-registration-pakistan",
     title: "How to Complete FIR Registration in Pakistan",
     excerpt:
