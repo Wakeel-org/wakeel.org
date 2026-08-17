@@ -100,8 +100,8 @@ const schema = [
       "A plain-language guide to the Fundamental Rights chapter of Pakistan's 1973 Constitution — what Articles 8 to 28 actually protect, what the 18th Amendment added, and how these rights get enforced.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-15",
-    dateModified: "2026-08-15",
+    datePublished: "2026-03-12",
+    dateModified: "2026-03-12",
     mainEntityOfPage: `${site.url}/journal/article/constitution-of-pakistan-1973-fundamental-rights`,
   },
   {
@@ -156,7 +156,7 @@ export default function ConstitutionFundamentalRights() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Law Study & Research · Published August 15, 2026
+            Law Study & Research · Published March 12, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Constitution of Pakistan 1973: Complete Guide to Fundamental Rights

@@ -128,6 +128,8 @@ const schema = [
     description:
       "How to get free and online legal help in Pakistan — free legal information with Wakeel.org plus government legal aid, helplines, bar associations, and legal aid NGOs.",
     url: `${site.url}/journal/article/free-legal-advice-pakistan`,
+    datePublished: "2026-06-21",
+    dateModified: "2026-06-21",
   },
   {
     "@context": "https://schema.org",

@@ -66,8 +66,8 @@ const schema = [
       "How criminal law works in Pakistan — the Pakistan Penal Code, the CrPC's investigation and trial process, cognizable vs non-cognizable offences, and where special laws take over.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-15",
-    dateModified: "2026-08-15",
+    datePublished: "2026-04-08",
+    dateModified: "2026-04-08",
     mainEntityOfPage: `${site.url}/journal/article/criminal-law-in-pakistan-guide`,
   },
   {
@@ -121,7 +121,7 @@ export default function CriminalLawInPakistanGuide() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Law Study & Research · Published August 15, 2026
+            Law Study & Research · Published April 8, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Criminal Law in Pakistan: Complete Guide

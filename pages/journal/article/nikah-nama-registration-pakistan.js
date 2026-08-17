@@ -95,8 +95,8 @@ const schema = [
       "What the nikah nama actually records, who registers it, the columns worth reading carefully (including talaq-e-tafweez), and how to get a certified copy.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-04",
-    dateModified: "2026-08-04",
+    datePublished: "2026-07-14",
+    dateModified: "2026-07-14",
     mainEntityOfPage: `${site.url}/journal/article/nikah-nama-registration-pakistan`,
   },
   {
@@ -150,7 +150,7 @@ export default function NikahNamaRegistrationPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Legal Help · Published August 4, 2026
+            Legal Help · Published July 14, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             How to Register a Nikah Nama in Pakistan

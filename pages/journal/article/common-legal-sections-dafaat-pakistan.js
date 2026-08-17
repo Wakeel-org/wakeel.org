@@ -77,8 +77,8 @@ const schema = [
       "Plain-language explanations of the PPC and CrPC sections cited most often in Pakistan — murder, theft, fraud, FIR registration, bail, and more — with what each one actually covers.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-15",
-    dateModified: "2026-08-15",
+    datePublished: "2026-03-21",
+    dateModified: "2026-03-21",
     mainEntityOfPage: `${site.url}/journal/article/common-legal-sections-dafaat-pakistan`,
   },
   {
@@ -134,7 +134,7 @@ export default function CommonLegalSectionsDafaatPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Law Study & Research · Published August 15, 2026
+            Law Study & Research · Published March 21, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Common Legal Sections (Dafaat) in Pakistan Explained

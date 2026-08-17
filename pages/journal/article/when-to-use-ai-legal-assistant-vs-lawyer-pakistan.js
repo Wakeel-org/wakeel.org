@@ -102,6 +102,8 @@ const schema = [
     description:
       "A practical decision framework for when an AI legal assistant is enough, and when you need a licensed advocate in Pakistan.",
     url: `${site.url}/journal/article/when-to-use-ai-legal-assistant-vs-lawyer-pakistan`,
+    datePublished: "2026-06-02",
+    dateModified: "2026-06-02",
   },
   {
     "@context": "https://schema.org",

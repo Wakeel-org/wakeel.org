@@ -95,8 +95,8 @@ const schema = [
       "What Section 420 of the Pakistan Penal Code actually covers, the ingredients that must be proven, how it differs from a civil dispute, and what to do if you're involved in a case.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-04",
-    dateModified: "2026-08-04",
+    datePublished: "2026-07-23",
+    dateModified: "2026-07-23",
     mainEntityOfPage: `${site.url}/journal/article/section-420-ppc-fraud-pakistan`,
   },
   {
@@ -150,7 +150,7 @@ export default function Section420PpcFraudPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Legal Help · Published August 4, 2026
+            Legal Help · Published July 23, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Section 420 PPC: Fraud and Cheating in Pakistan

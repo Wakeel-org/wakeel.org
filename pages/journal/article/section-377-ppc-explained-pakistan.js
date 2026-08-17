@@ -64,8 +64,8 @@ const schema = [
       "What Section 377 of the Pakistan Penal Code actually states, its colonial-era origin, and how it fits into Pakistan's criminal procedure — a factual, statute-focused explainer.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-17",
-    dateModified: "2026-08-17",
+    datePublished: "2026-01-18",
+    dateModified: "2026-01-18",
     mainEntityOfPage: `${site.url}/journal/article/section-377-ppc-explained-pakistan`,
   },
   {
@@ -116,7 +116,7 @@ export default function Section377PpcExplainedPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Legal Help · Published August 17, 2026
+            Legal Help · Published January 18, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Section 377 PPC: Law Explained in Pakistan

@@ -65,8 +65,8 @@ const schema = [
       "What Sections 379 through 402 of the Pakistan Penal Code cover — the legal difference between theft, robbery, and dacoity, and how punishment escalates with each.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-17",
-    dateModified: "2026-08-17",
+    datePublished: "2026-01-10",
+    dateModified: "2026-01-10",
     mainEntityOfPage: `${site.url}/journal/article/robbery-theft-dacoity-laws-pakistan`,
   },
   {
@@ -119,7 +119,7 @@ export default function RobberyTheftDacoityLawsPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Legal Help · Published August 17, 2026
+            Legal Help · Published January 10, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Sections 392–402 PPC: Robbery, Theft and Dacoity Laws

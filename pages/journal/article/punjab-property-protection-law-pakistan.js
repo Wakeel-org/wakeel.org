@@ -66,8 +66,8 @@ const schema = [
       "What the Punjab Protection of Ownership of Immovable Property Act 2025 (and its 2026 amendment) actually does — targeting illegal occupation and land grabbing in Punjab.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-17",
-    dateModified: "2026-08-17",
+    datePublished: "2026-07-24",
+    dateModified: "2026-07-24",
     mainEntityOfPage: `${site.url}/journal/article/punjab-property-protection-law-pakistan`,
   },
   {
@@ -119,7 +119,7 @@ export default function PunjabPropertyProtectionLawPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Legal Help · Published August 17, 2026
+            Legal Help · Published July 24, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Punjab Property Protection Law: Complete Guide

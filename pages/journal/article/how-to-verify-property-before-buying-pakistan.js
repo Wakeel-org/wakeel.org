@@ -69,8 +69,8 @@ const schema = [
       "A practical due-diligence checklist for verifying property in Pakistan before you pay — the fard, encumbrances, seller identity, development authority approval, and benami risk.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-17",
-    dateModified: "2026-08-17",
+    datePublished: "2026-02-11",
+    dateModified: "2026-02-11",
     mainEntityOfPage: `${site.url}/journal/article/how-to-verify-property-before-buying-pakistan`,
   },
   {
@@ -123,7 +123,7 @@ export default function HowToVerifyPropertyBeforeBuyingPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Legal Help · Published August 17, 2026
+            Legal Help · Published February 11, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             How to Verify Property Before Buying in Pakistan

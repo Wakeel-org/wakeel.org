@@ -109,8 +109,8 @@ const schema = [
       "A practical guide to what AI-powered tools can and cannot do when reviewing contracts, agreements, and legal notices in Pakistan — what to check before uploading a document, and when you still need a licensed advocate.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-15",
-    dateModified: "2026-08-15",
+    datePublished: "2026-05-23",
+    dateModified: "2026-05-23",
     mainEntityOfPage: `${site.url}/journal/article/can-ai-review-legal-document-pakistan`,
   },
   {
@@ -163,7 +163,7 @@ export default function CanAiReviewLegalDocumentPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            AI & the Law · Published August 15, 2026
+            AI & the Law · Published May 23, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Can AI Review a Legal Document in Pakistan?

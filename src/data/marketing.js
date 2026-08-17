@@ -1032,7 +1032,7 @@ export const articles = [
       "The core legal framework behind property in Pakistan — the Transfer of Property Act, Registration Act, Stamp Act, and land revenue system — and how buying, selling, and ownership actually work.",
     category: "Legal Help",
     readTime: "7 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-01-08",
   },
   {
     slug: "how-to-verify-property-before-buying-pakistan",
@@ -1041,7 +1041,7 @@ export const articles = [
       "A practical due-diligence checklist for verifying property in Pakistan before you pay — the fard, encumbrances, seller identity, development authority approval, and benami risk.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-02-11",
   },
   {
     slug: "property-ownership-transfer-laws-pakistan",
@@ -1050,7 +1050,7 @@ export const articles = [
       "The types of property ownership in Pakistan — freehold, leasehold, co-ownership — and the legal instruments used to transfer it: sale, gift, will, and court decree.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-03-09",
   },
   {
     slug: "inheritance-and-property-rights-pakistan",
@@ -1059,7 +1059,7 @@ export const articles = [
       "How inheritance works in Pakistan — the governing law for Muslims and non-Muslims, who typically inherits, and the inheritance mutation process.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-04-06",
   },
   {
     slug: "daughters-inheritance-rights-pakistan",
@@ -1068,7 +1068,7 @@ export const articles = [
       "A daughter's inheritance rights in Pakistan — the Islamic legal basis, Section 498-A PPC, and the Punjab Enforcement of Women's Property Rights Act 2021 remedy.",
     category: "Legal Help",
     readTime: "7 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-05-08",
   },
   {
     slug: "punjab-property-protection-law-pakistan",
@@ -1077,7 +1077,7 @@ export const articles = [
       "What the Punjab Protection of Ownership of Immovable Property Act 2025 (and its 2026 amendment) actually does — targeting illegal occupation and land grabbing in Punjab.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-07-24",
   },
   {
     slug: "property-laws-overseas-pakistanis-pakistan",
@@ -1086,7 +1086,7 @@ export const articles = [
       "How overseas Pakistanis can buy, verify, and defend property in Pakistan — power of attorney, NICOP requirements, benami risk, and the new special courts.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-06-16",
   },
   {
     slug: "section-302-ppc-murder-law-pakistan",
@@ -1104,7 +1104,7 @@ export const articles = [
       "What Sections 375 and 376 PPC cover, and how the Anti-Rape (Investigation and Trial) Act 2021 changed investigation and trial timelines for these cases.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-01-01",
   },
   {
     slug: "robbery-theft-dacoity-laws-pakistan",
@@ -1113,7 +1113,7 @@ export const articles = [
       "What Sections 379 through 402 of the Pakistan Penal Code cover — the legal difference between theft, robbery, and dacoity, and how punishment escalates with each.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-01-10",
   },
   {
     slug: "section-377-ppc-explained-pakistan",
@@ -1122,7 +1122,7 @@ export const articles = [
       "What Section 377 of the Pakistan Penal Code actually states, its origin, and how it fits into Pakistan's criminal procedure — a factual, statute-focused explainer.",
     category: "Legal Help",
     readTime: "5 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-01-18",
   },
   {
     slug: "how-to-get-bail-in-pakistan",
@@ -1131,7 +1131,7 @@ export const articles = [
       "How bail actually works in Pakistan under Sections 497 and 498 CrPC — bailable vs non-bailable offences, pre-arrest vs post-arrest bail, and the application process.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-01-28",
   },
   {
     slug: "arrest-without-warrant-pakistan",
@@ -1140,7 +1140,7 @@ export const articles = [
       "The specific grounds under Section 54 CrPC that let police arrest without a warrant, and the constitutional safeguards (Article 10) that apply immediately after arrest.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-02-05",
   },
   {
     slug: "false-fir-pakistan-legal-remedies",
@@ -1149,7 +1149,7 @@ export const articles = [
       "The legal routes available for a false FIR in Pakistan — quashing under Section 561-A CrPC, and prosecuting false information under Sections 182 and 211 PPC.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-02-15",
   },
   {
     slug: "kidnapping-extortion-sexual-assault-laws-pakistan",
@@ -1158,7 +1158,7 @@ export const articles = [
       "What the Pakistan Penal Code says about kidnapping, extortion, and assault on modesty — the relevant sections, punishment, and how they're procedurally treated.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-02-23",
   },
   {
     slug: "drug-laws-pakistan-offences-penalties",
@@ -1167,7 +1167,7 @@ export const articles = [
       "How the Control of Narcotic Substances Act, 1997 structures drug offences in Pakistan — quantity-based punishment, special courts, and how bail is approached.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-17",
+    publishedAt: "2026-03-03",
   },
   {
     slug: "how-to-complete-fir-registration-pakistan",
@@ -1239,7 +1239,7 @@ export const articles = [
       "What Articles 8 to 28 of Pakistan's 1973 Constitution actually protect, what the 18th Amendment added, and how fundamental rights get enforced.",
     category: "Law Study & Research",
     readTime: "8 min read",
-    publishedAt: "2026-08-15",
+    publishedAt: "2026-03-12",
   },
   {
     slug: "common-legal-sections-dafaat-pakistan",
@@ -1248,7 +1248,7 @@ export const articles = [
       "Plain-language explanations of the PPC and CrPC sections cited most often in Pakistan — murder, theft, fraud, FIR registration, bail, and more.",
     category: "Law Study & Research",
     readTime: "7 min read",
-    publishedAt: "2026-08-15",
+    publishedAt: "2026-03-21",
   },
   {
     slug: "civil-law-in-pakistan-guide",
@@ -1257,7 +1257,7 @@ export const articles = [
       "How civil law works in Pakistan — the key statutes, the stages of a civil suit under the CPC 1908, and how civil law differs from criminal law.",
     category: "Law Study & Research",
     readTime: "7 min read",
-    publishedAt: "2026-08-15",
+    publishedAt: "2026-03-30",
   },
   {
     slug: "criminal-law-in-pakistan-guide",
@@ -1266,7 +1266,7 @@ export const articles = [
       "How criminal law works in Pakistan — the Pakistan Penal Code, the CrPC's investigation and trial process, and where special laws take over.",
     category: "Law Study & Research",
     readTime: "7 min read",
-    publishedAt: "2026-08-15",
+    publishedAt: "2026-04-08",
   },
   {
     slug: "how-courts-work-in-pakistan",
@@ -1275,7 +1275,7 @@ export const articles = [
       "Pakistan's court hierarchy explained — the Supreme Court, High Courts, Federal Shariat Court, district judiciary, and special tribunals.",
     category: "Law Study & Research",
     readTime: "7 min read",
-    publishedAt: "2026-08-15",
+    publishedAt: "2026-04-17",
   },
   {
     slug: "writ-jurisdiction-high-courts-pakistan",
@@ -1284,7 +1284,7 @@ export const articles = [
       "What Article 199 of Pakistan's Constitution covers — the five writs, when they apply, and how they differ from the Supreme Court's Article 184(3) jurisdiction.",
     category: "Law Study & Research",
     readTime: "6 min read",
-    publishedAt: "2026-08-15",
+    publishedAt: "2026-04-25",
   },
   {
     slug: "how-to-file-legal-complaint-pakistan",
@@ -1293,7 +1293,7 @@ export const articles = [
       "Where to file a legal complaint in Pakistan depending on what happened — criminal, consumer, cyber, labour, civil, or against a public authority.",
     category: "Legal Help",
     readTime: "7 min read",
-    publishedAt: "2026-08-15",
+    publishedAt: "2026-05-04",
   },
   {
     slug: "wrongful-termination-pakistan",
@@ -1302,7 +1302,7 @@ export const articles = [
       "What counts as wrongful termination under the Standing Orders Ordinance 1968 and Industrial Relations Act 2012 — notice, misconduct inquiries, retrenchment rules, and how to challenge an unlawful dismissal.",
     category: "Legal Help",
     readTime: "8 min read",
-    publishedAt: "2026-08-15",
+    publishedAt: "2026-05-15",
   },
   {
     slug: "can-ai-review-legal-document-pakistan",
@@ -1311,7 +1311,7 @@ export const articles = [
       "What AI-powered tools can genuinely catch in a contract or legal notice in Pakistan, what still needs a licensed advocate, and what to check before uploading a document.",
     category: "AI & the Law",
     readTime: "7 min read",
-    publishedAt: "2026-08-15",
+    publishedAt: "2026-05-23",
   },
   {
     slug: "can-ai-replace-a-lawyer-pakistan",
@@ -1329,7 +1329,7 @@ export const articles = [
       "A practical checklist for when an AI legal assistant is enough for your Pakistani legal question, and when you should see a licensed advocate first.",
     category: "AI & the Law",
     readTime: "7 min read",
-    publishedAt: "2026-07-12",
+    publishedAt: "2026-06-02",
   },
   {
     slug: "ai-vs-lawyer-pakistan",
@@ -1347,7 +1347,7 @@ export const articles = [
       "An honest comparison of the best AI legal apps available in Pakistan, with the criteria that matter most: Pakistani-law grounding, Urdu support, document analysis, and safety.",
     category: "AI & the Law",
     readTime: "8 min read",
-    publishedAt: "2026-06-28",
+    publishedAt: "2026-06-11",
   },
   {
     slug: "free-legal-advice-pakistan",
@@ -1356,7 +1356,7 @@ export const articles = [
       "How to get free and online legal help in Pakistan — free legal information with Wakeel.org plus government legal aid, helplines, bar associations, and legal aid NGOs.",
     category: "Legal Help",
     readTime: "7 min read",
-    publishedAt: "2026-06-28",
+    publishedAt: "2026-06-21",
   },
   {
     slug: "how-to-register-fir-pakistan",
@@ -1500,7 +1500,7 @@ export const articles = [
       "How to file a cybercrime complaint in Pakistan under PECA 2016 — evidence to collect, the FIA / NCCIA agency transition, and how to track your case.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-04",
+    publishedAt: "2026-07-02",
   },
   {
     slug: "nikah-nama-registration-pakistan",
@@ -1509,7 +1509,7 @@ export const articles = [
       "What the nikah nama actually records, who registers it, the columns worth reading carefully (including talaq-e-tafweez), and how to get a certified copy.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-04",
+    publishedAt: "2026-07-14",
   },
   {
     slug: "section-420-ppc-fraud-pakistan",
@@ -1518,7 +1518,7 @@ export const articles = [
       "What Section 420 of the Pakistan Penal Code actually covers, the ingredients that must be proven, and how it differs from a civil money dispute.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-08-04",
+    publishedAt: "2026-07-23",
   },
   {
     slug: "nadra-biometric-verification-pakistan",
@@ -1527,7 +1527,7 @@ export const articles = [
       "Why NADRA biometric verification fails, how it affects SIM cards and bank accounts in Pakistan, and the practical steps to actually resolve it.",
     category: "Legal Help",
     readTime: "5 min read",
-    publishedAt: "2026-08-04",
+    publishedAt: "2026-08-07",
   },
   {
     slug: "exit-control-list-ecl-pakistan",
@@ -1536,7 +1536,7 @@ export const articles = [
       "What the Exit Control List is under the Exit from Pakistan (Control) Ordinance 1981, who can place a name on it, and the removal process.",
     category: "Legal Help",
     readTime: "5 min read",
-    publishedAt: "2026-08-04",
+    publishedAt: "2026-08-16",
   },
 ];
 

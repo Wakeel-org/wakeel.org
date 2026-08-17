@@ -172,6 +172,8 @@ const schema = [
     description:
       "An honest comparison of the best AI legal apps available in Pakistan, with the criteria that matter most: Pakistani-law grounding, Urdu support, document analysis, and safety.",
     url: `${site.url}/journal/article/best-ai-legal-apps-pakistan`,
+    datePublished: "2026-06-11",
+    dateModified: "2026-06-11",
   },
   {
     "@context": "https://schema.org",
