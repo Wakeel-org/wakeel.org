@@ -1026,6 +1026,78 @@ export const comparisons = [
 // component — this array only exists so the Journal page can list them.
 export const articles = [
   {
+    slug: "marriage-laws-pakistan-complete-guide",
+    title: "Marriage Laws in Pakistan: Complete Guide",
+    excerpt:
+      "How marriage law actually works in Pakistan — the essentials of a valid nikah, mandatory registration, the nikah nama, provincial minimum age rules, and second marriage requirements.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-01-15",
+  },
+  {
+    slug: "nikah-nama-rights-clauses-pakistan",
+    title: "Nikah Nama in Pakistan: Rights, Clauses and Legal Requirements",
+    excerpt:
+      "What each key clause of the nikah nama actually means legally — haq mehr, talaq-e-tafweez (column 18), conditions, and prior-marriage disclosure.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-02-09",
+  },
+  {
+    slug: "divorce-in-pakistan-procedure-rights",
+    title: "Divorce in Pakistan: Procedure, Rights and Legal Requirements",
+    excerpt:
+      "How divorce actually works in Pakistan — talaq, khula, judicial divorce, and talaq-e-tafweez — the Union Council notice procedure and the Family Court process.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-03-08",
+  },
+  {
+    slug: "second-marriage-pakistan-wife-permission",
+    title: "Second Marriage in Pakistan: Is Wife's Permission Required?",
+    excerpt:
+      "What Section 6 of the Muslim Family Laws Ordinance 1961 actually requires before a second marriage — the Arbitration Council process and the consequences of skipping it.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-04-03",
+  },
+  {
+    slug: "haq-mehr-rights-before-after-rukhsati-pakistan",
+    title: "Haq Mehr in Pakistan: Rights Before and After Rukhsati",
+    excerpt:
+      "What haq mehr actually is under Pakistani and Islamic law, the difference between prompt and deferred mehr, and how it's enforced through the Family Court if unpaid.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-04-30",
+  },
+  {
+    slug: "talaq-in-pakistan-legal-procedure",
+    title: "Talaq in Pakistan: Legal Procedure and Requirements",
+    excerpt:
+      "The exact statutory procedure for talaq in Pakistan under Section 7 of the Muslim Family Laws Ordinance 1961 — Union Council notice and the 90-day period.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-05-28",
+  },
+  {
+    slug: "child-marriage-laws-pakistan-punjab",
+    title: "Child Marriage Laws in Pakistan and Punjab",
+    excerpt:
+      "How child marriage law differs by province in Pakistan — Sindh, Islamabad, and Punjab's 2026 reform set 18 for both sexes, while KP and Balochistan still apply the older 1929 standard.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-06-27",
+  },
+  {
+    slug: "inheritance-rights-women-daughters-pakistan",
+    title: "Inheritance Rights of Women and Daughters in Pakistan",
+    excerpt:
+      "The inheritance rights of wives, mothers, daughters, and sisters in Pakistan under Islamic law, and the legal remedies when those rights are denied.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-28",
+  },
+  {
     slug: "property-laws-pakistan-complete-guide",
     title: "Property Laws in Pakistan: Complete Guide to Buying, Selling and Ownership",
     excerpt:
