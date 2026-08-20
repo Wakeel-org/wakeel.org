@@ -1026,6 +1026,168 @@ export const comparisons = [
 // component — this array only exists so the Journal page can list them.
 export const articles = [
   {
+    slug: "womens-legal-rights-pakistan-complete-guide",
+    title: "Women's Legal Rights in Pakistan: Complete Guide",
+    excerpt:
+      "A foundational guide to women's legal rights in Pakistan — constitutional equality, marriage and inheritance protections, anti-violence laws, and workplace harassment remedies.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-01-07",
+  },
+  {
+    slug: "human-rights-pakistan-constitutional-remedies",
+    title: "Human Rights in Pakistan: Constitutional Rights and Remedies",
+    excerpt:
+      "How human rights are protected in Pakistan — the Fundamental Rights chapter, writ jurisdiction, Article 184(3), and the National Commission for Human Rights.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-01-21",
+  },
+  {
+    slug: "womens-rights-wani-swara-cases-pakistan",
+    title: "Women's Rights in Wani and Swara Cases",
+    excerpt:
+      "What Vani and Swara are, why they're criminal offences under Section 310-A PPC, and what a woman's legal options are if she's being compelled into one.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-01-31",
+  },
+  {
+    slug: "minority-rights-pakistan-constitutional-legal-protections",
+    title: "Minority Rights in Pakistan: Constitutional and Legal Protections",
+    excerpt:
+      "The constitutional protections for religious minorities in Pakistan — Articles 20, 22, and 36 — and the National Commission for Minorities Act 2023.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-02-12",
+  },
+  {
+    slug: "peca-act-pakistan-complete-guide-cybercrime-laws",
+    title: "PECA Act Pakistan: Complete Guide to Cybercrime Laws",
+    excerpt:
+      "How the Prevention of Electronic Crimes Act 2016 works — unauthorized access, offences against dignity and modesty, cyberstalking, and the 2025 amendment.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-02-24",
+  },
+  {
+    slug: "cybercrime-in-pakistan-types-punishments-remedies",
+    title: "Cybercrime in Pakistan: Types, Punishments and Legal Remedies",
+    excerpt:
+      "The main types of cybercrime in Pakistan under PECA 2016 — unauthorized access, dignity and modesty offences, cyberstalking — with punishments and remedies.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-03-06",
+  },
+  {
+    slug: "how-to-file-cybercrime-complaint-pakistan",
+    title: "How to File a Cybercrime Complaint in Pakistan",
+    excerpt:
+      "A step-by-step guide to filing a cybercrime complaint with the NCCIA in Pakistan — preserving evidence, identifying the right PECA offence, and following up.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-03-18",
+  },
+  {
+    slug: "cyberbullying-online-harassment-laws-pakistan",
+    title: "Cyberbullying and Online Harassment Laws in Pakistan",
+    excerpt:
+      "The PECA provisions that cover cyberbullying and online harassment in Pakistan — cyberstalking, dignity, and modesty offences — and the remedies available.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-03-29",
+  },
+  {
+    slug: "deepfakes-in-pakistan-legal-risks-punishment",
+    title: "Deepfakes in Pakistan: Legal Risks and Punishment",
+    excerpt:
+      "How Pakistani law treats deepfakes — the PECA provisions used to prosecute AI-manipulated content, punishment, and what to do if you're targeted.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-04-11",
+  },
+  {
+    slug: "can-police-check-mobile-phone-without-permission-pakistan",
+    title: "Can Police Check Your Mobile Phone Without Permission?",
+    excerpt:
+      "The constitutional and statutory principles that govern police access to a phone in Pakistan — Article 14 privacy, CrPC search powers, and self-incrimination.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-04-23",
+  },
+  {
+    slug: "privacy-recording-without-consent-pakistan",
+    title: "Privacy and Recording Someone Without Consent in Pakistan",
+    excerpt:
+      "The legal framework around recording and sharing someone without consent in Pakistan — Article 14 privacy, PECA Section 21, and lawful interception.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-05-06",
+  },
+  {
+    slug: "social-media-laws-pakistan-what-you-can-post",
+    title: "Social Media Laws in Pakistan: What You Can and Cannot Post",
+    excerpt:
+      "What Pakistani law actually restricts on social media — defamation, non-consensual content, cyberstalking, and the debated new Section 26-A offence.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-05-18",
+  },
+  {
+    slug: "best-ai-legal-assistant-pakistan-complete-guide",
+    title: "Best AI Legal Assistant for Pakistan: Complete Guide",
+    excerpt:
+      "The evaluation criteria that actually matter when choosing an AI legal assistant in Pakistan — source-awareness, bilingual support, and data handling.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-05-31",
+  },
+  {
+    slug: "best-ai-tools-for-lawyers-pakistan",
+    title: "Best AI Tools for Lawyers in Pakistan",
+    excerpt:
+      "The categories of AI tools genuinely useful for a Pakistani lawyer's practice — legal research, document review and drafting, intake, and case management.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-06-12",
+  },
+  {
+    slug: "how-ai-transforming-legal-practice-pakistan",
+    title: "How AI Is Transforming Legal Practice in Pakistan",
+    excerpt:
+      "The real shifts AI is bringing to legal practice in Pakistan — accelerating adoption, research and drafting as entry points, and verification discipline.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-06-25",
+  },
+  {
+    slug: "ai-hallucinations-legal-research-pakistani-lawyers",
+    title: "AI Hallucinations in Legal Research: Risks for Pakistani Lawyers",
+    excerpt:
+      "What AI hallucination actually means for legal research, the measured rates even in leading tools, and the specific risks for Pakistani law.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-07-09",
+  },
+  {
+    slug: "ai-legal-research-pakistan-benefits-risks-best-practices",
+    title: "AI Legal Research in Pakistan: Benefits, Risks and Best Practices",
+    excerpt:
+      "The genuine benefits and real risks of using AI for legal research in Pakistan, and the best practices that make it safe to use.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-07-22",
+  },
+  {
+    slug: "ai-legal-drafting-pakistan-lawyers-citizens",
+    title: "AI Legal Drafting in Pakistan: How Lawyers and Citizens Can Use AI",
+    excerpt:
+      "Where AI drafting genuinely helps in Pakistan — contracts, legal notices, pleadings — and where it cannot substitute for a licensed advocate's judgment.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-08-10",
+  },
+  {
     slug: "marriage-laws-pakistan-complete-guide",
     title: "Marriage Laws in Pakistan: Complete Guide",
     excerpt:
