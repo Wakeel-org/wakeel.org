@@ -18,6 +18,12 @@ const MarketingSEO = ({
   const imageUrl = image.startsWith("http") ? image : `${site.url}${image}`;
   const schemaItems = Array.isArray(schema) ? schema : [schema];
 
+  // Derive article-specific OG/meta signals from an Article schema block when
+  // present, so per-article freshness and authorship signals reach crawlers
+  // and AI answer engines without every article page needing new props.
+  const articleSchema = schemaItems.find((item) => item?.["@type"] === "Article");
+  const ogType = articleSchema ? "article" : "website";
+
   // Language and region metadata
   const regionNames = {
     pk: "Pakistan",
@@ -44,7 +50,7 @@ const MarketingSEO = ({
       <link rel="alternate" hrefLang="x-default" href={canonical} />
 
       {/* Open Graph */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content={ogType} />
       <meta property="og:url" content={canonical} />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={description} />
@@ -53,6 +59,14 @@ const MarketingSEO = ({
       <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="Wakeel.org" />
       <meta property="og:locale" content={language === "ur" ? "ur_PK" : "en_PK"} />
+      {articleSchema?.datePublished && (
+        <meta property="article:published_time" content={articleSchema.datePublished} />
+      )}
+      {articleSchema?.dateModified && (
+        <meta property="article:modified_time" content={articleSchema.dateModified} />
+      )}
+      {articleSchema && <meta property="article:publisher" content={site.url} />}
+      {articleSchema && <meta property="article:section" content="Legal Help" />}
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
@@ -63,6 +77,9 @@ const MarketingSEO = ({
       {/* Additional SEO */}
       <meta name="author" content="Wakeel.org" />
       <meta name="publisher" content="Wakeel.org" />
+      {articleSchema?.dateModified && (
+        <meta name="last-modified" content={articleSchema.dateModified} />
+      )}
 
       {/* Pakistan-specific markers */}
       <meta name="country" content="PK" />
