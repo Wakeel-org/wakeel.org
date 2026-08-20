@@ -13,7 +13,9 @@ import {
   ArrowRight,
   BookOpen,
   TrendingUp,
-  FileText
+  FileText,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -33,6 +35,8 @@ const staticArticlePosts = articles.map((article) => ({
   readTime: article.readTime,
   isStatic: true,
 }));
+
+const POSTS_PER_PAGE = 12;
 
 const guideLibrary = [
   {
@@ -72,6 +76,7 @@ const JournalPage = ({ initialPosts = [] }) => {
   const [filteredPosts, setFilteredPosts] = useState(posts);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
   const [featuredPost] = useState(
     posts.find((post) => post.featured) || posts[0] || null
   );
@@ -96,7 +101,37 @@ const JournalPage = ({ initialPosts = [] }) => {
     }
 
     setFilteredPosts(filtered);
+    setCurrentPage(1);
   }, [searchQuery, selectedCategory, posts]);
+
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
+  const paginatedPosts = filteredPosts.slice(
+    (currentPage - 1) * POSTS_PER_PAGE,
+    currentPage * POSTS_PER_PAGE
+  );
+
+  const goToPage = (page) => {
+    const clamped = Math.min(Math.max(page, 1), totalPages);
+    setCurrentPage(clamped);
+    if (typeof window !== 'undefined') {
+      const grid = document.getElementById('journal-articles');
+      if (grid) grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  // A compact page-number list: always show first, last, current, and one
+  // neighbour on each side, with '…' gaps in between for large page counts.
+  const getPageNumbers = () => {
+    const pages = [];
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === 1 || i === totalPages || Math.abs(i - currentPage) <= 1) {
+        pages.push(i);
+      } else if (pages[pages.length - 1] !== '…') {
+        pages.push('…');
+      }
+    }
+    return pages;
+  };
 
   const formatDate = (timestamp) => {
     if (!timestamp) return '';
@@ -323,19 +358,25 @@ const JournalPage = ({ initialPosts = [] }) => {
           </div>
 
           {/* Blog Posts Grid */}
+          <div id="journal-articles" className="scroll-mt-24">
           {filteredPosts.length === 0 ? (
             <div className="text-center py-16">
               <FileText className="w-16 h-16 text-muted-foreground/50 mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-foreground mb-2">No articles found</h3>
               <p className="text-muted-foreground">
-                {searchQuery || selectedCategory !== 'All' 
+                {searchQuery || selectedCategory !== 'All'
                   ? 'Try adjusting your search or filters'
                   : 'Check back soon for new content'}
               </p>
             </div>
           ) : (
+            <>
+            <p className="text-sm text-muted-foreground mb-4">
+              Showing {(currentPage - 1) * POSTS_PER_PAGE + 1}
+              –{Math.min(currentPage * POSTS_PER_PAGE, filteredPosts.length)} of {filteredPosts.length} article{filteredPosts.length === 1 ? '' : 's'}
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredPosts.map((post) => (
+              {paginatedPosts.map((post) => (
                 <Link
                   key={post.id}
                   href={`/journal/article/${post.id}`}
@@ -398,7 +439,58 @@ const JournalPage = ({ initialPosts = [] }) => {
                 </Link>
               ))}
             </div>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <nav
+                aria-label="Journal article pages"
+                className="flex flex-wrap items-center justify-center gap-2 mt-10"
+              >
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => goToPage(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  aria-label="Previous page"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                  <span className="hidden sm:inline ml-1">Previous</span>
+                </Button>
+
+                {getPageNumbers().map((page, idx) =>
+                  page === '…' ? (
+                    <span key={`ellipsis-${idx}`} className="px-2 text-muted-foreground text-sm">
+                      …
+                    </span>
+                  ) : (
+                    <Button
+                      key={page}
+                      variant={page === currentPage ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => goToPage(page)}
+                      aria-current={page === currentPage ? 'page' : undefined}
+                      className="min-w-9"
+                    >
+                      {page}
+                    </Button>
+                  )
+                )}
+
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => goToPage(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  aria-label="Next page"
+                >
+                  <span className="hidden sm:inline mr-1">Next</span>
+                  <ChevronRight className="w-4 h-4" />
+                </Button>
+              </nav>
+            )}
+            </>
           )}
+          </div>
         </div>
       </section>
 

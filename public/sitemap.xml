@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Last updated: 2026-07-12 -->
+<!-- Last updated: 2026-08-17 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://wakeel.org/</loc><lastmod>2026-06-13</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://wakeel.org/about</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
@@ -94,11 +94,11 @@
   <url><loc>https://wakeel.org/journal/legal-issues-global/expat-legal-guide-global</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
   <url><loc>https://wakeel.org/journal</loc><lastmod>2026-07-12</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://wakeel.org/journal/comparisons</loc><lastmod>2026-06-13</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://wakeel.org/journal/article/best-ai-legal-apps-pakistan</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://wakeel.org/journal/article/ai-vs-lawyer-pakistan</loc><lastmod>2026-07-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/best-ai-legal-apps-pakistan</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/ai-vs-lawyer-pakistan</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://wakeel.org/journal/article/can-ai-replace-a-lawyer-pakistan</loc><lastmod>2026-07-12</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://wakeel.org/journal/article/when-to-use-ai-legal-assistant-vs-lawyer-pakistan</loc><lastmod>2026-07-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://wakeel.org/journal/article/free-legal-advice-pakistan</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://wakeel.org/journal/article/when-to-use-ai-legal-assistant-vs-lawyer-pakistan</loc><lastmod>2026-06-02</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://wakeel.org/journal/article/free-legal-advice-pakistan</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://wakeel.org/journal/article/wakeel-vs-pakistanlawbot</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://wakeel.org/journal/article/wakeel-vs-lawgpt</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://wakeel.org/journal/article/wakeel-vs-ai-attorney</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
@@ -106,6 +106,84 @@
   <url><loc>https://wakeel.org/journal/article/wakeel-vs-digilawyer</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://wakeel.org/journal/article/wakeel-vs-qanoonai</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://wakeel.org/journal/article/wakeel-vs-draftify</loc><lastmod>2026-06-28</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://wakeel.org/journal/article/how-to-register-fir-pakistan</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/consumer-complaint-pakistan</loc><lastmod>2026-05-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/tenant-rights-rent-law-pakistan</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/family-law-rights-pakistan</loc><lastmod>2026-06-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/understanding-legal-notices-pakistan</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/understand-legal-document-without-lawyer-pakistan</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/pakistani-law-vs-common-law</loc><lastmod>2026-07-01</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://wakeel.org/journal/article/wakeel-ai-for-law-students-pakistan</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/ai-legal-research-tools-lawyers-pakistan</loc><lastmod>2026-07-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/best-legal-apps-pakistani-citizens</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://wakeel.org/journal/article/civil-suit-pakistan</loc><lastmod>2026-07-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/draft-legal-contract-pakistan</loc><lastmod>2026-08-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/property-dispute-lawyer-pakistan</loc><lastmod>2026-08-02</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://wakeel.org/journal/article/ai-contract-review-pakistan</loc><lastmod>2026-08-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/property-transfer-mutation-pakistan</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/nccia-cyber-crime-complaint-pakistan</loc><lastmod>2026-07-02</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/nikah-nama-registration-pakistan</loc><lastmod>2026-07-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/marriage-laws-pakistan-complete-guide</loc><lastmod>2026-01-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://wakeel.org/journal/article/nikah-nama-rights-clauses-pakistan</loc><lastmod>2026-02-09</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/divorce-in-pakistan-procedure-rights</loc><lastmod>2026-03-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/second-marriage-pakistan-wife-permission</loc><lastmod>2026-04-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/haq-mehr-rights-before-after-rukhsati-pakistan</loc><lastmod>2026-04-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/talaq-in-pakistan-legal-procedure</loc><lastmod>2026-05-28</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/child-marriage-laws-pakistan-punjab</loc><lastmod>2026-06-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/inheritance-rights-women-daughters-pakistan</loc><lastmod>2026-07-28</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/womens-legal-rights-pakistan-complete-guide</loc><lastmod>2026-01-07</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://wakeel.org/journal/article/human-rights-pakistan-constitutional-remedies</loc><lastmod>2026-01-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/womens-rights-wani-swara-cases-pakistan</loc><lastmod>2026-01-31</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/minority-rights-pakistan-constitutional-legal-protections</loc><lastmod>2026-02-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/peca-act-pakistan-complete-guide-cybercrime-laws</loc><lastmod>2026-02-24</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://wakeel.org/journal/article/cybercrime-in-pakistan-types-punishments-remedies</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/how-to-file-cybercrime-complaint-pakistan</loc><lastmod>2026-03-18</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/cyberbullying-online-harassment-laws-pakistan</loc><lastmod>2026-03-29</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/deepfakes-in-pakistan-legal-risks-punishment</loc><lastmod>2026-04-11</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/can-police-check-mobile-phone-without-permission-pakistan</loc><lastmod>2026-04-23</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/privacy-recording-without-consent-pakistan</loc><lastmod>2026-05-06</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/social-media-laws-pakistan-what-you-can-post</loc><lastmod>2026-05-18</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/best-ai-legal-assistant-pakistan-complete-guide</loc><lastmod>2026-05-31</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/best-ai-tools-for-lawyers-pakistan</loc><lastmod>2026-06-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/how-ai-transforming-legal-practice-pakistan</loc><lastmod>2026-06-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/ai-hallucinations-legal-research-pakistani-lawyers</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/ai-legal-research-pakistan-benefits-risks-best-practices</loc><lastmod>2026-07-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/ai-legal-drafting-pakistan-lawyers-citizens</loc><lastmod>2026-08-10</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/section-420-ppc-fraud-pakistan</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/nadra-biometric-verification-pakistan</loc><lastmod>2026-08-07</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://wakeel.org/journal/article/exit-control-list-ecl-pakistan</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://wakeel.org/journal/article/wrongful-termination-pakistan</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/can-ai-review-legal-document-pakistan</loc><lastmod>2026-05-23</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/pakistan-legal-system-guide</loc><lastmod>2026-08-15</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://wakeel.org/journal/article/constitution-of-pakistan-1973-fundamental-rights</loc><lastmod>2026-03-12</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://wakeel.org/journal/article/common-legal-sections-dafaat-pakistan</loc><lastmod>2026-03-21</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/civil-law-in-pakistan-guide</loc><lastmod>2026-03-30</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/criminal-law-in-pakistan-guide</loc><lastmod>2026-04-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/how-courts-work-in-pakistan</loc><lastmod>2026-04-17</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/writ-jurisdiction-high-courts-pakistan</loc><lastmod>2026-04-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/how-to-file-legal-complaint-pakistan</loc><lastmod>2026-05-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://wakeel.org/journal/article/how-to-complete-fir-registration-pakistan</loc><lastmod>2026-01-20</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://wakeel.org/journal/article/should-i-use-ai-or-hire-a-lawyer-pakistan</loc><lastmod>2026-02-14</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://wakeel.org/journal/article/fir-registration-step-by-step-guide-pakistan</loc><lastmod>2026-03-22</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://wakeel.org/journal/article/ai-vs-lawyer-whats-right-for-you-pakistan</loc><lastmod>2026-04-16</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://wakeel.org/journal/article/what-you-must-know-fir-registration-pakistan</loc><lastmod>2026-05-29</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://wakeel.org/journal/article/ai-legal-help-vs-real-lawyer-pakistan</loc><lastmod>2026-07-08</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://wakeel.org/journal/article/section-302-ppc-murder-law-pakistan</loc><lastmod>2026-08-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/sections-375-376-ppc-rape-law-pakistan</loc><lastmod>2026-01-01</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/robbery-theft-dacoity-laws-pakistan</loc><lastmod>2026-01-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/section-377-ppc-explained-pakistan</loc><lastmod>2026-01-18</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://wakeel.org/journal/article/how-to-get-bail-in-pakistan</loc><lastmod>2026-01-28</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/arrest-without-warrant-pakistan</loc><lastmod>2026-02-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/false-fir-pakistan-legal-remedies</loc><lastmod>2026-02-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/kidnapping-extortion-sexual-assault-laws-pakistan</loc><lastmod>2026-02-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/drug-laws-pakistan-offences-penalties</loc><lastmod>2026-03-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://wakeel.org/journal/article/property-laws-pakistan-complete-guide</loc><lastmod>2026-01-08</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://wakeel.org/journal/article/how-to-verify-property-before-buying-pakistan</loc><lastmod>2026-02-11</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/property-ownership-transfer-laws-pakistan</loc><lastmod>2026-03-09</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/inheritance-and-property-rights-pakistan</loc><lastmod>2026-04-06</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/daughters-inheritance-rights-pakistan</loc><lastmod>2026-05-08</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/property-laws-overseas-pakistanis-pakistan</loc><lastmod>2026-06-16</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://wakeel.org/journal/article/punjab-property-protection-law-pakistan</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
   <url><loc>https://wakeel.org/journal/legal-issues-pakistan/fir-registration-pakistan</loc><lastmod>2026-07-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://wakeel.org/journal/legal-issues-pakistan/rent-agreement-pakistan</loc><lastmod>2026-07-12</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://wakeel.org/journal/legal-issues-pakistan/power-of-attorney-pakistan</loc><lastmod>2026-07-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>

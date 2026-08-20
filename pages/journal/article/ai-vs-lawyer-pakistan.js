@@ -74,6 +74,21 @@ const faqs = [
     answer:
       "A licensed advocate can give advice tailored to your exact facts and jurisdiction, represent you in court, sign and file documents with legal authority, and owe you a professional duty of care. AI does none of these.",
   },
+  {
+    question: "Legal AI vs a human lawyer — what's the actual difference in practice?",
+    answer:
+      "Legal AI is fast, available any time, and good at explaining concepts, summarizing documents, and organizing your facts — but it has no professional accountability, can't appear in court, and can produce confidently wrong answers if not properly grounded in the relevant law. A human lawyer is slower and costs more per hour, but brings judgment, negotiation skill, and legal accountability for the advice given. The realistic pairing is AI for preparation and understanding, a lawyer for anything that needs representation or final sign-off.",
+  },
+  {
+    question: "How do I know if an AI legal chatbot's answer about Pakistani law is trustworthy?",
+    answer:
+      "Check whether it cites the actual statute or section it's relying on (so you can verify the text yourself, for example against the Ministry of Law and Justice's official legislation on pakistancode.gov.pk), whether it flags uncertainty instead of answering everything with false confidence, and whether it clearly tells you when to see a licensed advocate. A tool that never admits a limitation is a bigger red flag than one that regularly reminds you to verify with a lawyer — and if you do engage an advocate, you can confirm their enrollment through your Provincial Bar Council.",
+  },
+  {
+    question: "Has anything changed in the AI-vs-lawyer picture since mid-2026?",
+    answer:
+      "The core answer hasn't changed — AI still isn't replacing lawyers. But two 2026 data points sharpen the picture: the original Stanford hallucination findings were formally peer-reviewed and published in the Journal of Empirical Legal Studies in 2025, confirming rather than softening the earlier error rates, and Thomson Reuters' 2026 AI in Professional Services Report found generative AI use among law firms and corporate legal departments jumped to 41% and 47% respectively, up from 28% and 23% in 2025. In short: legal AI is being adopted faster, by lawyers themselves, as a supervised tool — not as a replacement for their judgment.",
+  },
 ];
 
 const schema = [
@@ -84,6 +99,8 @@ const schema = [
     description:
       "A clear look at what AI legal tools can and cannot do compared with a licensed advocate in Pakistan — and how to use each one well.",
     url: `${site.url}/journal/article/ai-vs-lawyer-pakistan`,
+    datePublished: "2026-06-28",
+    dateModified: "2026-08-15",
   },
   {
     "@context": "https://schema.org",
@@ -117,6 +134,9 @@ const keywords = [
   "ai legal help vs lawyer",
   "can ai replace lawyers pakistan",
   "ai legal assistant pakistan",
+  "legal ai vs human lawyer",
+  "is ai legal advice trustworthy pakistan",
+  "ai lawyer pakistan",
 ].join(", ");
 
 const Cell = ({ value }) => {
@@ -131,8 +151,8 @@ export default function AIvsLawyerPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Will AI Replace Lawyers? AI vs Hiring a Lawyer in Pakistan"
-        description="Will AI replace lawyers in Pakistan? A clear, honest comparison of what AI legal tools do well, what only a licensed advocate can do, and when to use each. AI helps you prepare — it does not replace a lawyer."
+        title="AI vs Hiring a Lawyer in Pakistan"
+        description="Will AI replace lawyers in Pakistan? An honest comparison of what AI legal tools do well, what only a licensed advocate can do, and when to use each."
         path="/journal/article/ai-vs-lawyer-pakistan"
         schema={schema}
         keywords={keywords}
@@ -143,7 +163,7 @@ export default function AIvsLawyerPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-            AI &amp; the law
+            AI &amp; the law · Published June 28, 2026 · Updated August 15, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Will AI replace lawyers?
@@ -244,6 +264,69 @@ export default function AIvsLawyerPakistan() {
         </div>
       </section>
 
+      {/* Why this isn't close to replacing lawyers yet */}
+      <section className="bg-background py-16 sm:py-20">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+          <h2 className={sectionHeading}>The actual evidence on AI legal accuracy</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            This isn't just a theoretical caution — it's measured. A 2024 Stanford RegLab and
+            Institute for Human-Centered AI study, later peer-reviewed in the Journal of Empirical
+            Legal Studies, tested leading AI legal research tools and found hallucination rates of
+            17% for Lexis+ AI, 33% for Westlaw AI-Assisted Research, and 43% for a general-purpose
+            GPT-4 setup — even though the vendors of those specialized legal tools had claimed
+            "hallucination-free" or "avoid hallucinations" performance. An earlier 2023 Stanford
+            study on general-purpose models found hallucination rates as high as 58–88% on specific
+            legal queries.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            The practical takeaway isn't that AI legal tools are useless — it's that even the
+            best commercial legal AI products, built specifically for legal research, still
+            fabricate case citations and legal claims often enough that every citation needs
+            independent verification before you rely on it. That's exactly why source-checking
+            and a licensed advocate's sign-off matter more than which specific AI tool you use.
+          </p>
+        </div>
+      </section>
+
+      {/* Dated update — added Aug 15, 2026, original evidence section above left as published */}
+      <section className="bg-muted/40 py-16 sm:py-20">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              Updated August 15, 2026
+            </span>
+          </div>
+          <h2 className={sectionHeading}>What's changed since this article first published</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            The Stanford RegLab findings cited above are no longer just a preprint — they were
+            formally peer-reviewed and published in the <em>Journal of Empirical Legal Studies</em>{" "}
+            in 2025 as "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research
+            Tools," confirming the original 17% (Lexis+ AI), 33% (Westlaw AI-Assisted Research),
+            and 43% (general-purpose GPT-4) hallucination rates rather than revising them downward.
+            Stanford RegLab has indicated it plans a further update covering a wider set of legal
+            AI tools later in 2026.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            On adoption: Thomson Reuters' <em>2026 AI in Professional Services Report</em> found
+            that 41% of law firms and 47% of corporate legal departments now say their legal teams
+            use generative AI day-to-day, up from 28% and 23% respectively in 2025 — and that 43%
+            of firms and departments now have an enterprise-wide GenAI tool, versus just 14% at the
+            start of 2024. Read together with the hallucination data above, the pattern is
+            consistent with what this article has argued from the start: lawyers are adopting AI as
+            a working tool under supervision, not being replaced by it.
+          </p>
+          <p className="text-muted-foreground leading-relaxed">
+            In Pakistan specifically, the case for using AI to prepare well before you see a lawyer
+            has arguably gotten stronger, not weaker: reporting on Pakistan's district judiciary
+            put pending cases at roughly 1.86 million in the lower (District and Session) courts
+            versus 0.39 million at the higher court levels as of 2025, with civil litigation
+            making up about 64% of the district-level backlog. System-wide delay doesn't change
+            what only a licensed advocate can do — but it's one more reason to walk into that
+            consultation with your facts, documents, and questions already organized.
+          </p>
+        </div>
+      </section>
+
       {/* When to use which */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -314,7 +397,7 @@ export default function AIvsLawyerPakistan() {
           <div className="space-y-3">
             {[
               { label: "Can AI replace a lawyer for Pakistani legal questions?", href: "/journal/article/can-ai-replace-a-lawyer-pakistan" },
-              { label: "When should you use an AI legal assistant instead of a lawyer?", href: "/journal/article/when-to-use-ai-legal-assistant-vs-lawyer-pakistan" },
+              { label: "When should you use an AI legal assistant instead of a lawyer? (scenario-by-scenario guide)", href: "/journal/article/when-to-use-ai-legal-assistant-vs-lawyer-pakistan" },
             ].map((l) => (
               <Link
                 key={l.href}
@@ -325,6 +408,33 @@ export default function AIvsLawyerPakistan() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Sources */}
+      <section className="bg-muted/40 py-14 sm:py-16">
+        <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-lg font-semibold text-foreground mb-4">Sources and further reading</h2>
+          <ul className="space-y-2">
+            {[
+              { label: "Hallucinating Law: Legal Mistakes with Large Language Models are Pervasive — Stanford Law School", href: "https://law.stanford.edu/2024/01/11/hallucinating-law-legal-mistakes-with-large-language-models-are-pervasive/" },
+              { label: "Stanford RegLab / HAI study on AI legal research tool hallucination rates — LawSites coverage", href: "https://www.lawnext.com/2024/05/stanford-will-augment-its-study-finding-that-ai-legal-research-tools-hallucinate-in-17-of-queries-as-some-raise-questions-about-the-results.html" },
+              { label: "Added Aug 15, 2026 — Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (2025, peer-reviewed) — Journal of Empirical Legal Studies / Stanford RegLab", href: "https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/" },
+              { label: "Added Aug 15, 2026 — 2026 AI in Professional Services Report — Thomson Reuters Institute", href: "https://www.thomsonreuters.com/en-us/posts/technology/ai-in-professional-services-report-2026/" },
+              { label: "Added Aug 15, 2026 — The Endless Wait: Crisis of Backlog in Pakistan's District Judiciary (2025 case-pendency figures) — Daily Pakistan", href: "https://en.dailypakistan.com.pk/25-Nov-2025/the-endless-wait-crisis-of-backlog-in-pakistans-district-judiciary" },
+            ].map((s) => (
+              <li key={s.href}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-sm text-primary hover:underline"
+                >
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

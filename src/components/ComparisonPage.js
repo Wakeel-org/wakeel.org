@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle2, HelpCircle, ArrowRight } from "lucide-react";
+import { BookOpen, CheckCircle2, ExternalLink, HelpCircle, ArrowRight } from "lucide-react";
 import Layout from "./Layout";
 import MarketingSEO from "./MarketingSEO";
 import { Button } from "./ui/button";
@@ -53,22 +53,22 @@ const wakeelStrengths = [
   "Android, iOS & web",
 ];
 
-const makeFaqs = (competitor) => [
+const makeFaqs = (competitor, positioning) => [
   {
     question: `What is the difference between Wakeel.org and ${competitor}?`,
-    answer: `Wakeel.org is a Pakistan-focused AI legal assistant offering bilingual (English and Urdu) legal information, document analysis up to 100+ pages, and source-aware answers, with a free plan across Android, iOS, and web. ${competitor} should be evaluated on the same criteria — Pakistani-law grounding, Urdu support, document handling, sources, pricing, and platforms. Confirm its current features directly, as products change over time.`,
+    answer: `${positioning} Wakeel.org, by contrast, is a Pakistan-focused AI legal assistant offering bilingual (English and Urdu) legal information, document analysis up to 100+ pages, and source-aware answers, with a free plan across Android, iOS, and web. Evaluate ${competitor} on the same criteria — Pakistani-law grounding, Urdu support, document handling, sources, pricing, and platforms — and confirm its current features directly, since products change over time.`,
   },
   {
     question: `Is Wakeel.org or ${competitor} better for Pakistani law?`,
-    answer: `"Better" depends on your need. Use the checklist on this page — grounding in Pakistani law, English and Urdu support, document analysis, source-awareness, a usable free plan, and platform availability — to compare both for yourself. Wakeel.org is built around all of these.`,
+    answer: `"Better" depends on your need. ${positioning} Use the checklist on this page — grounding in Pakistani law, English and Urdu support, document analysis, source-awareness, a usable free plan, and platform availability — to compare ${competitor} against Wakeel.org for yourself rather than taking either product's marketing at face value.`,
   },
   {
     question: `Can I use ${competitor} for free?`,
-    answer: `Check ${competitor}'s current pricing directly, and confirm whether any free tier is genuinely usable or just a trial. Wakeel.org offers a free plan for basic legal questions and document understanding.`,
+    answer: `Check ${competitor}'s current pricing directly, and confirm whether any free tier is genuinely usable or just a short trial before a paywall — this is one of the most common gaps between marketing and reality for AI legal tools in Pakistan. Wakeel.org offers a free plan for basic legal questions and document understanding.`,
   },
   {
     question: `Do Wakeel.org and ${competitor} replace a lawyer?`,
-    answer: `No. AI legal tools provide legal information and research support to help you prepare — they do not give final legal advice or represent you. For anything you intend to file, sign, pay, or argue in court, consult a licensed advocate.`,
+    answer: `No. Neither Wakeel.org nor ${competitor}, nor any AI legal tool, should be treated as a replacement for a licensed advocate. AI legal tools provide legal information and research support to help you prepare — they do not give final legal advice or represent you. For anything you intend to file, sign, pay, or argue in court, consult a licensed advocate.`,
   },
 ];
 
@@ -77,7 +77,7 @@ const makeSchemas = (comparison, path, faqs) => [
     "@context": "https://schema.org",
     "@type": "WebPage",
     name: comparison.title,
-    description: `A factual comparison of Wakeel.org and ${comparison.competitor} for Pakistani legal help, based on publicly available information.`,
+    description: `${comparison.positioning} A factual comparison of Wakeel.org and ${comparison.competitor} for Pakistani legal help, based on publicly available information.`,
     url: `${site.url}${path}`,
   },
   {
@@ -103,8 +103,8 @@ const makeSchemas = (comparison, path, faqs) => [
 
 const ComparisonPage = ({ comparison }) => {
   const path = `/journal/article/${comparison.slug}`;
-  const { competitor } = comparison;
-  const faqs = makeFaqs(competitor);
+  const { competitor, positioning } = comparison;
+  const faqs = comparison.faqs?.length ? comparison.faqs : makeFaqs(competitor, positioning);
   const keywords = [
     `wakeel vs ${competitor.toLowerCase()}`,
     `${competitor.toLowerCase()} alternative`,
@@ -117,7 +117,7 @@ const ComparisonPage = ({ comparison }) => {
     <Layout>
       <MarketingSEO
         title={comparison.title}
-        description={`Wakeel.org vs ${competitor}: a factual side-by-side for Pakistani legal help — covering Pakistani-law grounding, English/Urdu support, document analysis, sources, and pricing. Based on publicly available information.`}
+        description={`${positioning} See how Wakeel.org compares on Pakistani-law grounding, English/Urdu support, document analysis, sources, and pricing.`}
         path={path}
         schema={makeSchemas(comparison, path, faqs)}
         keywords={keywords}
@@ -151,8 +151,28 @@ const ComparisonPage = ({ comparison }) => {
         </div>
       </section>
 
-      {/* Wakeel at a glance */}
+      {/* About the competitor */}
       <section className="bg-muted/40 py-14 sm:py-16">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Card className={cardBase}>
+            <CardHeader>
+              <CardTitle>About {competitor}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground leading-relaxed">{comparison.positioning}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed mt-3">
+                This page focuses on the criteria that actually matter for Pakistani legal
+                help — Pakistani-law grounding, Urdu support, document handling, source
+                transparency, pricing, and platform availability — so you can judge {competitor}{" "}
+                against Wakeel.org on facts rather than marketing claims from either side.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Wakeel at a glance */}
+      <section className="bg-background py-14 sm:py-16">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <Card className={cardBase}>
             <CardHeader>
@@ -173,7 +193,7 @@ const ComparisonPage = ({ comparison }) => {
       </section>
 
       {/* Side-by-side table */}
-      <section className="bg-background py-14 sm:py-16">
+      <section className="bg-muted/40 py-14 sm:py-16">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
             <h2 className={sectionHeading}>Side-by-side comparison</h2>
@@ -214,8 +234,53 @@ const ComparisonPage = ({ comparison }) => {
         </div>
       </section>
 
+      {comparison.body?.length ? (
+        <section className="bg-background py-14 sm:py-16">
+          <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            {comparison.body.map((block) => (
+              <div key={block.heading} className="space-y-3">
+                <h2 className={sectionHeading}>{block.heading}</h2>
+                {block.paragraphs.map((paragraph, idx) => (
+                  <p key={idx} className="text-muted-foreground leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ))}
+
+            {comparison.sources?.length ? (
+              <Card className={cardBase}>
+                <CardHeader>
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="h-5 w-5 text-primary" />
+                    <CardTitle className="text-xl">Sources and further reading</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {comparison.sources.map((source) => (
+                      <li key={source.url}>
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          className="inline-flex items-start gap-2 text-sm text-primary hover:underline"
+                        >
+                          <ExternalLink className="h-4 w-4 mt-0.5 shrink-0" />
+                          <span>{source.label}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
+
       {/* How to choose */}
-      <section className="bg-muted/40 py-14 sm:py-16">
+      <section className="bg-background py-14 sm:py-16">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-4">
           <Card className={cardBase}>
             <CardHeader>
@@ -257,7 +322,7 @@ const ComparisonPage = ({ comparison }) => {
       </section>
 
       {/* FAQ */}
-      <section className="bg-background py-14 sm:py-16">
+      <section className="bg-muted/40 py-14 sm:py-16">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className={sectionHeading}>Frequently asked questions</h2>

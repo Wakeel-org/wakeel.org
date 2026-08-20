@@ -128,6 +128,8 @@ const schema = [
     description:
       "How to get free and online legal help in Pakistan — free legal information with Wakeel.org plus government legal aid, helplines, bar associations, and legal aid NGOs.",
     url: `${site.url}/journal/article/free-legal-advice-pakistan`,
+    datePublished: "2026-06-21",
+    dateModified: "2026-06-21",
   },
   {
     "@context": "https://schema.org",
@@ -172,7 +174,7 @@ export default function FreeLegalAdvicePakistan() {
     <Layout>
       <MarketingSEO
         title="Free AI Lawyer & Online Legal Advice in Pakistan"
-        description="Wakeel.org is a free AI lawyer for Pakistan — get free legal information in English or Urdu, plus where to find free legal aid, helplines, and bar association programmes. Legal information, not a substitute for a licensed advocate."
+        description="Free legal advice in Pakistan — free AI legal information in English or Urdu, plus government legal aid, helplines, and bar association programmes."
         path="/journal/article/free-legal-advice-pakistan"
         schema={schema}
         keywords={keywords}

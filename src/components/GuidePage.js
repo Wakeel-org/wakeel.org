@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Ban, HelpCircle, Info, Lightbulb } from "lucide-react";
+import { ArrowRight, Ban, BookOpen, ExternalLink, HelpCircle, Info, Lightbulb } from "lucide-react";
 import Layout from "./Layout";
 import MarketingSEO from "./MarketingSEO";
 import HeroSafetyNote from "./HeroSafetyNote";
@@ -25,6 +25,7 @@ const getRelatedTitle = (href) => {
     "/law-firms": "Wakeel for Law Firms",
     "/legal-sources": "Legal Sources",
     "/disclaimer": "Legal Disclaimer",
+    "/journal/article/family-law-rights-pakistan": "Common Family Law Rights in Pakistan",
   };
 
   return labels[href] || href.replace("/", "").replaceAll("-", " ");
@@ -88,9 +89,12 @@ const makeFaqs = (guide) => [
     answer: guide.cannot,
   },
   {
-    question: "Should I verify the information before acting?",
-    answer:
-      "Yes. Legal outcomes depend on facts, jurisdiction, current law, procedure, and evidence. Verify sources and consult a licensed advocate before taking action.",
+    question: `Should I verify ${guide.title.toLowerCase()} information before acting on it?`,
+    answer: `Yes. ${guide.title} depends on your specific facts, current procedure, and the applicable law, which can vary by case and change over time. Before you act, cross-check anything important — especially ${
+      guide.questions?.[0]
+        ? `something like "${guide.questions[0]}"`
+        : "the specifics of your situation"
+    } — against a primary source, and confirm your next steps with a licensed advocate.`,
   },
 ];
 
@@ -153,7 +157,7 @@ const makeSchemas = (guide, path, faqs) => {
 
 const GuidePage = ({ guide }) => {
   const path = getGuidePath(guide.slug);
-  const faqs = makeFaqs(guide);
+  const faqs = guide.faqs?.length ? guide.faqs : makeFaqs(guide);
   const keywords = makeKeywords(guide);
 
   return (
@@ -245,6 +249,51 @@ const GuidePage = ({ guide }) => {
           </div>
         </div>
       </section>
+
+      {guide.body?.length ? (
+        <section className="bg-background py-16 sm:py-20 lg:py-24">
+          <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+            {guide.body.map((block) => (
+              <div key={block.heading} className="space-y-3">
+                <h2 className={sectionHeading}>{block.heading}</h2>
+                {block.paragraphs.map((paragraph, idx) => (
+                  <p key={idx} className="text-muted-foreground leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            ))}
+
+            {guide.sources?.length ? (
+              <Card className={cardBase}>
+                <CardHeader>
+                  <div className={iconTile}>
+                    <BookOpen className="h-7 w-7" />
+                  </div>
+                  <CardTitle className="text-xl">Sources and further reading</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {guide.sources.map((source) => (
+                      <li key={source.url}>
+                        <a
+                          href={source.url}
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          className="inline-flex items-start gap-2 text-sm text-primary hover:underline"
+                        >
+                          <ExternalLink className="h-4 w-4 mt-0.5 shrink-0" />
+                          <span>{source.label}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ) : null}
+          </div>
+        </section>
+      ) : null}
 
       <section className="py-16 sm:py-20 lg:py-24 bg-background">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1fr_0.8fr] gap-4">
