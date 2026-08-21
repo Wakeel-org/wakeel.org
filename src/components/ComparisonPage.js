@@ -310,7 +310,7 @@ const ComparisonPage = ({ comparison }) => {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                  className="flex items-center justify-between rounded-md border-2 border-foreground/15 px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
                 >
                   {l.label}
                   <ArrowRight className="h-4 w-4" />
@@ -329,7 +329,7 @@ const ComparisonPage = ({ comparison }) => {
           </div>
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <details key={faq.question} className="group rounded-lg border border-border bg-card p-5">
+              <details key={faq.question} className="group rounded-lg border-2 border-foreground/15 bg-card p-5">
                 <summary className="flex cursor-pointer items-center gap-3 text-base font-semibold">
                   <HelpCircle className="h-5 w-5 text-primary shrink-0" />
                   {faq.question}

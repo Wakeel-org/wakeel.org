@@ -4,8 +4,10 @@ import Layout from "./Layout";
 import MarketingSEO from "./MarketingSEO";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { PortalStamp } from "./ui/chip";
 import { site } from "../data/marketing";
 import { cardBase, headingGradient, heroHeading } from "../data/theme";
+import { portals } from "../data/designSystem";
 
 const makePageSchema = (page, path) => ({
   "@context": "https://schema.org",
@@ -21,7 +23,13 @@ const makePageSchema = (page, path) => ({
   },
 });
 
-const MarketingPage = ({ page, path }) => (
+const MarketingPage = ({ page, path }) => {
+  const portal = page.portal ? portals[page.portal] : null;
+  const ctaStyle = portal
+    ? { backgroundColor: portal.primary, borderColor: portal.primary, color: "#FFFFFF" }
+    : undefined;
+
+  return (
   <Layout>
     <MarketingSEO
       title={page.title}
@@ -30,9 +38,15 @@ const MarketingPage = ({ page, path }) => (
       schema={makePageSchema(page, path)}
     />
 
-    <section className="bg-background">
+    {/* Portal identity accent — 3px top rule in the portal's primary color.
+        Applied only to this hero band; never tints backgrounds or cards. */}
+    <section
+      className="bg-background"
+      style={portal ? { borderTop: `3px solid ${portal.primary}` } : undefined}
+    >
       <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="space-y-5">
+          {portal && <PortalStamp portal={portal} />}
           <p className="text-sm font-semibold uppercase tracking-wide text-primary">
             {page.eyebrow}
           </p>
@@ -43,7 +57,7 @@ const MarketingPage = ({ page, path }) => (
             {page.intro}
           </p>
           <div className="flex flex-col sm:flex-row gap-3 pt-1">
-            <Button asChild size="lg" className="cta-try-free">
+            <Button asChild size="lg" className="cta-try-free" style={ctaStyle}>
               {page.ctaHref?.startsWith("/") ? (
                 <Link href={page.ctaHref}>{page.cta || "Try Wakeel Free"}</Link>
               ) : (
@@ -85,6 +99,7 @@ const MarketingPage = ({ page, path }) => (
     </section>
 
   </Layout>
-);
+  );
+};
 
 export default MarketingPage;

@@ -663,6 +663,8 @@ export const corePages = {
     ],
   },
   "/citizens": {
+    portal: "citizen",
+    heroIcon: "Smartphone",
     title: "Wakeel for Citizens",
     description:
       "Wakeel is a free AI lawyer and legal assistant for Pakistani citizens — understand your legal rights in simple Urdu and English.",
@@ -671,6 +673,12 @@ export const corePages = {
     intro:
       "Wakeel helps Pakistani citizens understand common legal situations, documents, notices, and complaint options before deciding whether to contact a lawyer or public office.",
     cta: "Ask your legal question",
+    workflow: [
+      { title: "Describe your situation", description: "Type your question in plain English or Urdu — no legal jargon required." },
+      { title: "Get a plain-language answer", description: "Wakeel explains the relevant law, your options, and what typically happens next." },
+      { title: "See the sources", description: "Every answer links back to the statute, ordinance, or official source it drew from." },
+      { title: "Decide your next step", description: "Use the answer to prepare, or to know exactly what to ask a lawyer or public office." },
+    ],
     sections: [
       {
         title: "Everyday legal questions",
@@ -696,6 +704,8 @@ export const corePages = {
     ],
   },
   "/law-students": {
+    portal: "student",
+    heroIcon: "GraduationCap",
     title: "Wakeel for Law Students",
     description:
       "Study Pakistani law faster with AI-powered explanations, notes, case summaries, and legal research support.",
@@ -705,6 +715,12 @@ export const corePages = {
     intro:
       "Wakeel supports law students with simpler explanations, structured notes, and research prompts while encouraging original-source reading and teacher guidance.",
     cta: "Start Student Mode",
+    workflow: [
+      { title: "Ask a concept or paste a case", description: "Get a structured explanation of PPC, CrPC, Constitution, or case law topics." },
+      { title: "Study with generated notes", description: "Turn dense readings into summarised, exam-ready notes and glossaries." },
+      { title: "Chat with your PDFs", description: "Upload textbooks, lecture slides, or judgments and ask questions directly against them." },
+      { title: "Verify against primary sources", description: "Cross-check every answer with your casebook, statute, or teacher before relying on it." },
+    ],
     sections: [
       {
         title: "Study support",
@@ -723,6 +739,8 @@ export const corePages = {
     ],
   },
   "/lawyers": {
+    portal: "lawyer",
+    heroIcon: "Scale",
     title: "Wakeel for Lawyers",
     description:
       "Wakeel's lawyer AI assistant helps you research, draft, summarize, and organize legal work faster with Pakistan-specific AI support.",
@@ -732,6 +750,12 @@ export const corePages = {
     intro:
       "Wakeel is built to assist legal professionals with research and document workflows while keeping final judgment, client advice, and court strategy with the advocate.",
     cta: "Try Wakeel for Legal Research",
+    workflow: [
+      { title: "Research a question or citation", description: "Pull relevant statutes, precedents, and commentary in seconds." },
+      { title: "Draft with AI assistance", description: "Generate first drafts of notices, summaries, and matter notes to edit and finalise." },
+      { title: "Review client documents", description: "Upload case files and get structured summaries of facts, issues, and risk points." },
+      { title: "Apply your professional judgment", description: "Wakeel supports the workflow — final strategy, advice, and filings remain yours." },
+    ],
     sections: [
       {
         title: "Professional workflows",
@@ -750,6 +774,8 @@ export const corePages = {
     ],
   },
   "/law-firms": {
+    portal: "lawFirm",
+    heroIcon: "Building2",
     title: "Wakeel for Law Firms",
     description:
       "AI-assisted legal workflow support for Pakistani law offices and legal teams.",
@@ -760,6 +786,12 @@ export const corePages = {
       "Wakeel can support shared legal research, drafting, document review, and organization workflows for Pakistani legal teams.",
     cta: "Contact for Organization Access",
     ctaHref: "/contact",
+    workflow: [
+      { title: "Onboard your team", description: "Set up shared accounts, roles, and admin controls for your firm." },
+      { title: "Centralise research and drafts", description: "Keep matter research, drafting templates, and documents in one shared workspace." },
+      { title: "Assign and track work", description: "Route matters and documents across associates with a shared dashboard view." },
+      { title: "Scale with organization pricing", description: "Talk to us about firm-wide access, billing, and deployment." },
+    ],
     sections: [
       {
         title: "Team workflows",
@@ -777,6 +809,8 @@ export const corePages = {
     ],
   },
   "/judges": {
+    portal: "judge",
+    heroIcon: "Gavel",
     title: "Wakeel for Judges and Judicial Research",
     description:
       "Neutral legal research support for judges and judicial research teams, with strict limits around decision-making.",
@@ -786,6 +820,12 @@ export const corePages = {
       "Wakeel can help organize legal research, statutes, precedents, issues, and documents. It is only a research aid and must never be treated as a decision-making tool.",
     cta: "View Legal Sources",
     ctaHref: "/legal-sources",
+    workflow: [
+      { title: "Look up statutes and precedent", description: "Search Pakistani statutes, ordinances, and reported case law in one place." },
+      { title: "Get a neutral summary", description: "Wakeel organises the material — it does not argue a position or suggest an outcome." },
+      { title: "Map the issues", description: "See related provisions, cross-references, and prior treatment of a legal issue." },
+      { title: "Verify from official sources", description: "Every output is a starting point for research, confirmed against primary sources before use." },
+    ],
     sections: [
       {
         title: "Research support",
@@ -809,6 +849,8 @@ export const corePages = {
     ],
   },
   "/policymakers": {
+    portal: "policymaker",
+    heroIcon: "Landmark",
     title: "Wakeel for Policymakers",
     description:
       "AI-assisted legal and policy research support for Pakistani policymakers, institutions, and public-interest teams.",
@@ -818,6 +860,12 @@ export const corePages = {
       "Wakeel helps policy teams summarize legal materials, compare obligations, and organize legal research for careful human review.",
     cta: "Contact for Policy Workflows",
     ctaHref: "/contact",
+    workflow: [
+      { title: "Bring your legal materials", description: "Upload statutes, regulations, consultation papers, or draft policy text." },
+      { title: "Get structured summaries", description: "Wakeel condenses lengthy legal text into organised, citable summaries." },
+      { title: "Compare obligations", description: "Line up requirements across laws, jurisdictions, or draft versions." },
+      { title: "Route for human review", description: "Every summary is a starting point for your team's own policy judgment." },
+    ],
     sections: [
       {
         title: "Policy research workflows",
@@ -833,6 +881,8 @@ export const corePages = {
     ],
   },
   "/legal-institutions": {
+    portal: "institution",
+    heroIcon: "BookOpen",
     title: "Wakeel for Legal Institutions",
     description:
       "Legal education, research, and organization workflow support for Pakistani law colleges, legal aid centers, and institutions.",
@@ -842,6 +892,12 @@ export const corePages = {
       "Wakeel can support legal education, legal aid, research repositories, and structured organization workflows while keeping human oversight central.",
     cta: "Request Institutional Access",
     ctaHref: "/contact",
+    workflow: [
+      { title: "Set up your institution", description: "Onboard a university, legal aid center, or research team onto a shared workspace." },
+      { title: "Support education and casework", description: "Give students and staff structured research, drafting, and study tools." },
+      { title: "Build a research repository", description: "Organise institutional research, notes, and case materials in one place." },
+      { title: "Keep human oversight central", description: "Faculty, supervisors, and staff review and approve all substantive output." },
+    ],
     sections: [
       {
         title: "Institutional support",

@@ -5,8 +5,10 @@ import MarketingSEO from "./MarketingSEO";
 import HeroSafetyNote from "./HeroSafetyNote";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { CategoryChip } from "./ui/chip";
 import { guides, site, getGuidePath, getGuideBasePath, getGuideRegion } from "../data/marketing";
 import { cardBase, headingGradient, heroHeading, iconTile, sectionHeading } from "../data/theme";
+import { getGuideCategory } from "../data/designSystem";
 
 const REGION_HUB_LABELS = {
   pakistan: "Pakistan Legal Issues",
@@ -175,11 +177,14 @@ const GuidePage = ({ guide }) => {
       <section className="bg-background">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-5 lg:gap-6">
-            <Card className="border-muted/60 shadow-xl bg-gradient-to-br from-card via-card to-muted/40">
+            <Card className="border-2 border-foreground/15 shadow-none bg-card">
               <CardContent className="p-5 sm:p-8 lg:p-10 space-y-5">
-                <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-                  Pakistan legal guide
-                </p>
+                <div className="flex flex-wrap items-center gap-3">
+                  <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+                    Pakistan legal guide
+                  </p>
+                  <CategoryChip category={getGuideCategory(guide)} />
+                </div>
                 <h1 className={`${heroHeading} ${headingGradient}`}>
                   {guide.title}
                 </h1>
@@ -305,7 +310,7 @@ const GuidePage = ({ guide }) => {
               {guide.questions.map((question) => (
                 <div
                   key={question}
-                  className="rounded-lg border border-border bg-muted/30 p-4 text-sm text-muted-foreground"
+                  className="rounded-lg border-2 border-foreground/15 bg-muted/30 p-4 text-sm text-muted-foreground"
                 >
                   "{question}"
                 </div>
@@ -322,7 +327,7 @@ const GuidePage = ({ guide }) => {
                 <Link
                   key={href}
                   href={href}
-                  className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                  className="flex items-center justify-between rounded-md border-2 border-foreground/15 px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
                 >
                   {getRelatedTitle(href)}
                   <ArrowRight className="h-4 w-4" />
@@ -344,7 +349,7 @@ const GuidePage = ({ guide }) => {
             {faqs.map((faq) => (
               <details
                 key={faq.question}
-                className="group rounded-lg border border-border bg-card p-5"
+                className="group rounded-lg border-2 border-foreground/15 bg-card p-5"
               >
                 <summary className="flex cursor-pointer items-center gap-3 text-base font-semibold">
                   <HelpCircle className="h-5 w-5 text-primary" />

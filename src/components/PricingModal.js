@@ -50,7 +50,7 @@ const PricingModal = ({ isOpen, onClose }) => {
         }
       }}
     >
-      <div className="bg-card rounded-xl shadow-2xl max-w-5xl w-full my-8 mx-auto relative overflow-hidden animate-fadeIn border border-border">
+      <div className="bg-card rounded-xl shadow-none max-w-5xl w-full my-8 mx-auto relative overflow-hidden animate-fadeIn border-2 border-foreground/15">
         {/* Header */}
         <div className="relative p-6 sm:p-8 border-b border-border">
           <div className="flex justify-between items-center">
@@ -69,7 +69,7 @@ const PricingModal = ({ isOpen, onClose }) => {
             {/* Basic Plan */}
             <Card className="flex flex-col">
               <CardHeader className="text-center">
-                <div className="w-12 h-12 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+                <div className="w-12 h-12 mx-auto rounded-lg border-2 border-primary/30 bg-primary/5 flex items-center justify-center mb-4 text-primary">
                   <User className="w-6 h-6" />
                 </div>
                 <CardTitle>Basic</CardTitle>
@@ -101,12 +101,12 @@ const PricingModal = ({ isOpen, onClose }) => {
             </Card>
             
             {/* Pro Plan */}
-            <Card className="flex flex-col border-primary shadow-lg relative scale-105 z-10">
-              <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+            <Card className="flex flex-col border-primary border-[3px] shadow-none relative z-10">
+              <div className="absolute top-0 right-0 bg-primary text-primary-foreground font-mono text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-lg rounded-tr-lg">
                 POPULAR
               </div>
               <CardHeader className="text-center">
-                <div className="w-12 h-12 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+                <div className="w-12 h-12 mx-auto rounded-lg border-2 border-primary/30 bg-primary/5 flex items-center justify-center mb-4 text-primary">
                   <Briefcase className="w-6 h-6" />
                 </div>
                 <CardTitle>Professional</CardTitle>
@@ -141,7 +141,7 @@ const PricingModal = ({ isOpen, onClose }) => {
             {/* Enterprise Plan */}
             <Card className="flex flex-col">
               <CardHeader className="text-center">
-                <div className="w-12 h-12 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+                <div className="w-12 h-12 mx-auto rounded-lg border-2 border-primary/30 bg-primary/5 flex items-center justify-center mb-4 text-primary">
                   <Building className="w-6 h-6" />
                 </div>
                 <CardTitle>Enterprise</CardTitle>

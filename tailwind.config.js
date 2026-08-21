@@ -16,12 +16,36 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        mono: ["var(--font-jetbrains-mono)", "ui-monospace", "monospace"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        // Kitab Edition v1.0 — Pakistan Green verified/status semantics.
+        // Reserved for verified/approved/confirmed states only; never
+        // portal-tinted, never decorative.
+        verified: {
+          DEFAULT: "hsl(var(--verified))",
+          surface: "hsl(var(--verified-surface))",
+        },
+        "kitab-error": {
+          DEFAULT: "hsl(var(--kitab-error))",
+          surface: "hsl(var(--kitab-error-surface))",
+        },
+        "kitab-warning": {
+          DEFAULT: "hsl(var(--kitab-warning))",
+          surface: "hsl(var(--kitab-warning-surface))",
+        },
+        "kitab-info": {
+          DEFAULT: "hsl(var(--kitab-info))",
+          surface: "hsl(var(--kitab-info-surface))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

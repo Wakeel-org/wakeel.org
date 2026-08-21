@@ -28,7 +28,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           <Link
             href="/"
-            className="flex items-center gap-2 sm:gap-3 text-xl font-bold text-primary hover:text-primary/80 transition-colors"
+            className="flex items-center gap-2 sm:gap-3 font-display text-xl font-bold text-primary hover:text-primary/80 transition-colors"
           >
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-lg overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -93,7 +93,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <nav className="lg:hidden absolute top-16 left-0 right-0 bg-background border-b border-border z-40 shadow-lg">
+          <nav className="lg:hidden absolute top-16 left-0 right-0 bg-background border-b-2 border-foreground/15 z-40 shadow-none">
             <div className="flex flex-col px-4 sm:px-6 py-4 gap-1">
               {[{ label: 'Home', href: '/' }, ...navLinks].map((item) => (
                 <Link

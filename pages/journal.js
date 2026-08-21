@@ -4,6 +4,7 @@ import Layout from '../src/components/Layout';
 import { Card, CardContent, CardHeader, CardTitle } from '../src/components/ui/card';
 import { Button } from '../src/components/ui/button';
 import { Input } from '../src/components/ui/input';
+import { CategoryChip } from '../src/components/ui/chip';
 import {
   Calendar,
   Clock,
@@ -22,6 +23,7 @@ import Link from 'next/link';
 import { cn } from '../src/lib/utils';
 import { getBlogPostsServer } from '../src/lib/firebase/admin-collections';
 import { pakistanGuides, gccGuides, globalGuides, getGuidePath, articles } from '../src/data/marketing';
+import { getCategoryStyle, getGuideCategory } from '../src/data/designSystem';
 
 // Standalone article pages (src/data/marketing.js `articles`) aren't stored in
 // Firestore, so they're normalized here to the same shape as a `blog_posts`
@@ -198,10 +200,10 @@ const JournalPage = ({ initialPosts = [] }) => {
         />
       </Head>
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary/5 via-background to-background py-16 sm:py-20">
+      <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded border-2 border-primary/30 bg-primary/5 text-primary mb-6">
               <BookOpen className="w-4 h-4" />
               <span className="text-sm font-medium">Wakeel Journal</span>
             </div>
@@ -223,7 +225,7 @@ const JournalPage = ({ initialPosts = [] }) => {
               <TrendingUp className="w-5 h-5 text-primary" />
               <h2 className="text-2xl font-bold text-foreground">Featured Article</h2>
             </div>
-            <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 border-primary/20">
+            <Card className="overflow-hidden border-2 border-primary/30 hover:border-primary shadow-none transition-all duration-300">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-64 md:h-full min-h-[300px] bg-muted">
                   {featuredPost.imageUrl ? (
@@ -234,18 +236,21 @@ const JournalPage = ({ initialPosts = [] }) => {
                       className="object-cover"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-primary/5">
+                    <div className="w-full h-full flex items-center justify-center border-2 border-primary/20 bg-primary/5">
                       <FileText className="w-16 h-16 text-primary/40" />
                     </div>
                   )}
                 </div>
                 <div className="p-8 flex flex-col justify-center">
-                  {featuredPost.category && (
-                    <span className="inline-flex items-center gap-1 w-fit px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                      <Tag className="w-3 h-3" />
-                      {featuredPost.category}
-                    </span>
-                  )}
+                  <div className="flex flex-wrap items-center gap-2 mb-4">
+                    <CategoryChip category={featuredPost.category} className="text-xs px-3 py-1.5" />
+                    <CategoryChip
+                      category={getGuideCategory({ title: featuredPost.title, slug: featuredPost.id })}
+                      showIcon={false}
+                      className="text-xs px-3 py-1.5"
+                    />
+                  </div>
+
                   <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-4 hover:text-primary transition-colors">
                     {featuredPost.title}
                   </h3>
@@ -343,17 +348,24 @@ const JournalPage = ({ initialPosts = [] }) => {
               />
             </div>
             <div className="flex gap-2 overflow-x-auto pb-2">
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => setSelectedCategory(category)}
-                  className="whitespace-nowrap"
-                >
-                  {category}
-                </Button>
-              ))}
+              {categories.map((category) => {
+                const style =
+                  category !== 'All' && selectedCategory === category
+                    ? getCategoryStyle(category)
+                    : null;
+                return (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? 'default' : 'outline'}
+                    size="sm"
+                    onClick={() => setSelectedCategory(category)}
+                    className="whitespace-nowrap"
+                    style={style ? { backgroundColor: style.text, borderColor: style.text, color: '#FFFFFF' } : undefined}
+                  >
+                    {category}
+                  </Button>
+                );
+              })}
             </div>
           </div>
 
@@ -383,7 +395,7 @@ const JournalPage = ({ initialPosts = [] }) => {
                   className="block h-full"
                 >
                 <Card
-                  className="group overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col h-full"
+                  className="group overflow-hidden border-2 border-foreground/15 hover:border-foreground/50 shadow-none transition-all duration-300 flex flex-col h-full"
                 >
                   <div className="relative h-48 bg-muted overflow-hidden">
                     {post.imageUrl ? (
@@ -394,18 +406,20 @@ const JournalPage = ({ initialPosts = [] }) => {
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5">
+                      <div className="w-full h-full flex items-center justify-center border-2 border-primary/15 bg-primary/5">
                         <FileText className="w-12 h-12 text-primary/40" />
                       </div>
                     )}
                   </div>
                   <CardHeader className="flex-grow">
-                    {post.category && (
-                      <span className="inline-flex items-center gap-1 w-fit px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium mb-2">
-                        <Tag className="w-3 h-3" />
-                        {post.category}
-                      </span>
-                    )}
+                    <div className="flex flex-wrap items-center gap-1.5 mb-2">
+                      <CategoryChip category={post.category} />
+                      <CategoryChip
+                        category={getGuideCategory({ title: post.title, slug: post.id })}
+                        showIcon={false}
+                      />
+                    </div>
+
                     <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
                       {post.title}
                     </CardTitle>
@@ -495,7 +509,7 @@ const JournalPage = ({ initialPosts = [] }) => {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-16 bg-gradient-to-r from-primary/10 via-primary/5 to-background">
+      <section className="py-16 bg-muted/40 border-y-2 border-foreground/10">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <BookOpen className="w-12 h-12 text-primary mx-auto mb-6" />
           <h2 className="text-3xl font-bold text-foreground mb-4">

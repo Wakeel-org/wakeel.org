@@ -25,6 +25,7 @@ import TrustStrip from "../src/components/TrustStrip";
 import WebTrialDemo from "../src/components/WebTrialDemo";
 import { Button } from "../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
+import { PortalStamp } from "../src/components/ui/chip";
 import {
   audiences,
   examplePrompts,
@@ -41,6 +42,22 @@ import {
   iconTile,
   sectionHeading,
 } from "../src/data/theme";
+import { portals, portalByPath, planPortals, resolvePortalColors } from "../src/data/designSystem";
+import { useTheme } from "../src/context/ThemeContext";
+
+// Core Values aren't role-specific, so instead of leaving them with no
+// accent at all (the one section on the page with no color, per feedback),
+// they cycle through the same 6 portal colors used everywhere else on the
+// site — decorative here rather than identity-bearing, but keeping the
+// "colored top border" pattern consistent across every card section.
+const VALUE_ACCENTS = [
+  portals.citizen,
+  portals.student,
+  portals.lawyer,
+  portals.lawFirm,
+  portals.policymaker,
+  portals.institution,
+];
 
 const homeSchema = [
   {
@@ -139,6 +156,7 @@ const heroCapabilities = [
 ];
 
 export default function Home() {
+  const { darkMode } = useTheme();
   const homeKeywords = [
     "Wakeel AI",
     "AI Wakeel",
@@ -178,9 +196,9 @@ export default function Home() {
       <section className="bg-background">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
           <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-5 lg:gap-6 items-stretch">
-            <Card className="overflow-hidden border-muted/60 shadow-2xl bg-gradient-to-br from-primary/10 via-card to-muted/40">
+            <Card className="overflow-hidden border-2 border-foreground/15 shadow-none bg-card">
               <CardContent className="p-5 sm:p-8 lg:p-10 space-y-6">
-                <p className="inline-flex w-fit rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                <p className="inline-flex w-fit rounded border-2 border-primary/30 bg-primary/5 px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wider text-primary">
                   Wakeel.org · Mobile-first legal AI for Pakistani People
                 </p>
                 <div className="space-y-4">
@@ -218,7 +236,7 @@ export default function Home() {
             </Card>
 
             {/* Capabilities panel — real features, no chat */}
-            <Card className="flex flex-col overflow-hidden border-primary/20 shadow-2xl bg-gradient-to-br from-primary/5 via-card to-muted/40">
+            <Card className="flex flex-col overflow-hidden border-2 border-primary/30 shadow-none bg-card">
               <CardContent className="flex flex-1 flex-col p-5 sm:p-8 space-y-5">
                 {SHOW_HERO_CAPABILITIES && (
                   <>
@@ -229,9 +247,9 @@ export default function Home() {
                       {heroCapabilities.map((cap) => (
                         <div
                           key={cap.label}
-                          className="flex items-start gap-3 rounded-xl border border-border bg-background/70 p-4"
+                          className="flex items-start gap-3 rounded-xl border-2 border-foreground/15 bg-background/70 p-4"
                         >
-                          <div className="h-10 w-10 shrink-0 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                          <div className="h-10 w-10 shrink-0 rounded-lg border-2 border-primary/30 bg-primary/5 text-primary flex items-center justify-center">
                             <cap.icon className="h-5 w-5" />
                           </div>
                           <div>
@@ -247,7 +265,7 @@ export default function Home() {
                 <WebTrialDemo embedded />
 
                 {SHOW_HERO_GET_APP && (
-                  <div className="rounded-lg border border-border bg-muted/30 p-4">
+                  <div className="rounded-lg border-2 border-foreground/15 bg-muted/30 p-4">
                     <p className="text-sm font-semibold text-foreground mb-3">Get the app</p>
                     <AppDownloadButtons />
                   </div>
@@ -267,7 +285,7 @@ export default function Home() {
               "Encrypted document processing",
               "Legal info, not a lawyer replacement",
             ].map((item) => (
-              <div key={item} className="rounded-lg bg-background/70 border border-border px-3 py-3 text-sm font-medium text-muted-foreground">
+              <div key={item} className="rounded-lg bg-background/70 border-2 border-foreground/15 px-3 py-3 text-sm font-medium text-muted-foreground">
                 {item}
               </div>
             ))}
@@ -275,7 +293,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="values" className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-primary/5 via-background to-background">
+      <section id="values" className="py-16 sm:py-20 lg:py-24 bg-background">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
@@ -289,10 +307,9 @@ export default function Home() {
             {visionMission.map((item) => {
               const Icon = item.title === "Vision" ? Eye : Target;
               return (
-                <Card key={item.title} className="relative overflow-hidden border-primary/20 bg-gradient-to-br from-primary/8 via-card to-card shadow-2xl">
-                  <div className="absolute top-0 right-0 w-40 h-40 rounded-bl-full bg-primary/5 pointer-events-none" />
+                <Card key={item.title} className="relative overflow-hidden border-2 border-primary/30 bg-card shadow-none">
                   <CardContent className="relative p-7 sm:p-10 lg:p-12 space-y-5">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/15 flex items-center justify-center text-primary">
+                    <div className="w-16 h-16 rounded-lg border-2 border-primary/30 bg-primary/5 flex items-center justify-center text-primary">
                       <Icon className="h-8 w-8" />
                     </div>
                     <p className="text-xs font-bold uppercase tracking-widest text-primary">
@@ -325,11 +342,27 @@ export default function Home() {
             {audiences
               .map((audience) => {
                 const Icon = audienceIcons[audience.title] || UsersRound;
+                const portal = portals[portalByPath[audience.href]];
+                const panelColors = resolvePortalColors(portal, darkMode);
                 return (
-                  <Card key={audience.href} className={cardBase}>
+                  <Card
+                    key={audience.href}
+                    className={cardBase}
+                    style={portal ? { borderTopColor: portal.primary, borderTopWidth: "3px" } : undefined}
+                  >
                     <CardHeader className="p-5">
-                      <div className={iconTile}>
-                        <Icon className="h-7 w-7" />
+                      <div className="flex items-start justify-between gap-2 mb-1">
+                        <div
+                          className="w-14 h-14 rounded-lg border-2 flex items-center justify-center transition-all duration-300"
+                          style={
+                            portal
+                              ? { borderColor: panelColors.primary, backgroundColor: panelColors.surface, color: panelColors.primary }
+                              : undefined
+                          }
+                        >
+                          <Icon className="h-7 w-7" />
+                        </div>
+                        {portal && <PortalStamp portal={portal} />}
                       </div>
                       <CardTitle className="text-xl">{audience.title}</CardTitle>
                     </CardHeader>
@@ -340,14 +373,18 @@ export default function Home() {
                       <ul className="space-y-1.5">
                         {audience.useCases.map((useCase) => (
                           <li key={useCase} className="text-xs text-muted-foreground flex gap-2">
-                            <CheckCircle2 className="h-3.5 w-3.5 text-primary shrink-0 mt-0.5" />
+                            <CheckCircle2
+                              className="h-3.5 w-3.5 shrink-0 mt-0.5"
+                              style={{ color: portal ? portal.primary : undefined }}
+                            />
                             {useCase}
                           </li>
                         ))}
                       </ul>
                       <Link
                         href={audience.href}
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold hover:underline"
+                        style={{ color: portal ? portal.primary : undefined }}
                       >
                         Wakeel for {audience.title} <ArrowRight className="h-3.5 w-3.5" />
                       </Link>
@@ -367,18 +404,30 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {values.slice(0, 6).map((value) => (
-              <Card key={value.title} className={cardBase}>
-                <CardHeader>
-                  <CardTitle className="text-xl">{value.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {value.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+            {values.slice(0, 6).map((value, index) => {
+              const accent = VALUE_ACCENTS[index % VALUE_ACCENTS.length];
+              return (
+                <Card
+                  key={value.title}
+                  className={cardBase}
+                  style={{ borderTopColor: accent.primary, borderTopWidth: "3px" }}
+                >
+                  <CardHeader>
+                    <span
+                      className="mb-2 inline-block h-2 w-2 rounded-full"
+                      style={{ backgroundColor: accent.primary }}
+                      aria-hidden="true"
+                    />
+                    <CardTitle className="text-xl">{value.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {value.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
           <div className="text-center mt-8">
             <Button asChild variant="outline">
@@ -438,7 +487,7 @@ export default function Home() {
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
             {trustFramework.map((point) => (
-              <div key={point} className="rounded-lg border border-border bg-card p-4 text-sm text-muted-foreground leading-relaxed">
+              <div key={point} className="rounded-lg border-2 border-foreground/15 bg-card p-4 text-sm text-muted-foreground leading-relaxed">
                 <CheckCircle2 className="h-5 w-5 text-primary mb-3" />
                 {point}
               </div>
@@ -460,7 +509,7 @@ export default function Home() {
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
               {examplePrompts.map((item) => (
-                <div key={`${item.audience}-${item.prompt}`} className="rounded-lg border border-border bg-background p-4">
+                <div key={`${item.audience}-${item.prompt}`} className="rounded-lg border-2 border-foreground/15 bg-background p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
                     {item.audience}
                   </p>
@@ -507,36 +556,51 @@ export default function Home() {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            {pricingPlans.map((plan) => (
-              <Card key={plan.name} className={cardBase}>
-                <CardHeader>
-                  <p className="text-sm font-semibold text-primary">{plan.monthlyPrice}</p>
-                  <CardTitle className="text-2xl">{plan.name}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-5">
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {plan.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="text-xs text-muted-foreground flex gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild variant={plan.name === "Free" ? "default" : "outline"} className="w-full">
-                    {plan.href.startsWith("http") ? (
-                      <a href={plan.href} target="_blank" rel="noopener noreferrer">
-                        {plan.cta}
-                      </a>
-                    ) : (
-                      <Link href={plan.href}>{plan.cta}</Link>
-                    )}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+            {pricingPlans.map((plan) => {
+              const portal = planPortals[plan.name];
+              return (
+                <Card
+                  key={plan.name}
+                  className={cardBase}
+                  style={portal ? { borderTopColor: portal.primary, borderTopWidth: "3px" } : undefined}
+                >
+                  <CardHeader>
+                    {portal && <PortalStamp portal={portal} className="mb-2 w-fit" />}
+                    <p className="text-sm font-semibold" style={{ color: portal?.primary }}>{plan.monthlyPrice}</p>
+                    <CardTitle className="text-2xl">{plan.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-5">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {plan.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {plan.features.map((feature) => (
+                        <li key={feature} className="text-xs text-muted-foreground flex gap-2">
+                          <CheckCircle2
+                            className="h-4 w-4 shrink-0"
+                            style={{ color: portal?.primary }}
+                          />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <Button
+                      asChild
+                      className="w-full"
+                      style={portal ? { backgroundColor: portal.primary, borderColor: portal.primary, color: "#FFFFFF" } : undefined}
+                    >
+                      {plan.href.startsWith("http") ? (
+                        <a href={plan.href} target="_blank" rel="noopener noreferrer">
+                          {plan.cta}
+                        </a>
+                      ) : (
+                        <Link href={plan.href}>{plan.cta}</Link>
+                      )}
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
           <div className="text-center mt-8">
             <Button asChild variant="link">
@@ -569,7 +633,7 @@ export default function Home() {
               </a>
             </Button>
           </div>
-          <div className="mx-auto max-w-md rounded-xl border border-primary-foreground/20 bg-background p-5 text-foreground shadow-md mt-4">
+          <div className="mx-auto max-w-md rounded-xl border-2 border-primary-foreground/20 bg-background p-5 text-foreground shadow-none mt-4">
             <p className="text-sm font-semibold text-foreground mb-3">Stay updated — no spam, ever.</p>
             <EmailSubscription />
           </div>

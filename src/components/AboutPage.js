@@ -22,8 +22,8 @@ const makePageSchema = (page, path) => ({
 });
 
 const TeamCard = ({ member }) => (
-  <div className={`${cardBase} rounded-xl border p-6 flex flex-col items-center text-center gap-4`}>
-    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center text-primary font-bold text-2xl tracking-tight select-none">
+  <div className={`${cardBase} rounded-2xl p-6 flex flex-col items-center text-center gap-4`}>
+    <div className="w-20 h-20 rounded-full border-2 border-primary/30 bg-primary/5 flex items-center justify-center text-primary font-bold text-2xl tracking-tight select-none">
       {member.initials}
     </div>
     <div className="space-y-0.5">

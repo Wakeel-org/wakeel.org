@@ -3,7 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Calendar, Clock, User, Tag, FileText } from "lucide-react";
 import Layout from "../../../src/components/Layout";
+import { CategoryChip } from "../../../src/components/ui/chip";
 import { site } from "../../../src/data/marketing";
+import { getGuideCategory } from "../../../src/data/designSystem";
 import { getBlogPostsServer } from "../../../src/lib/firebase/admin-collections";
 
 export async function getStaticPaths() {
@@ -106,12 +108,14 @@ const ArticlePage = ({ post }) => {
             Back to Journal
           </Link>
 
-          {post.category && (
-            <span className="inline-flex items-center gap-1 w-fit px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-              <Tag className="w-3 h-3" />
-              {post.category}
-            </span>
-          )}
+          <div className="flex flex-wrap items-center gap-2 mb-4">
+            <CategoryChip category={post.category} className="text-xs px-3 py-1.5" />
+            <CategoryChip
+              category={getGuideCategory({ title: post.title, slug: post.id })}
+              showIcon={false}
+              className="text-xs px-3 py-1.5"
+            />
+          </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
             {post.title}
@@ -141,7 +145,7 @@ const ArticlePage = ({ post }) => {
               <Image src={post.imageUrl} alt={post.title} fill className="object-cover" />
             </div>
           ) : (
-            <div className="w-full h-48 rounded-lg mb-10 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
+            <div className="w-full h-48 rounded-lg mb-10 border-2 border-primary/20 bg-primary/5 flex items-center justify-center">
               <FileText className="w-12 h-12 text-primary/40" />
             </div>
           )}

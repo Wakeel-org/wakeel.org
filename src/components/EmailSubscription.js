@@ -114,7 +114,7 @@ const EmailSubscription = () => {
       </div>
 
       {status.message && (
-        <div className={`text-sm ${status.type === 'error' ? 'text-destructive' : 'text-green-600 dark:text-green-500'}`}>
+        <div className={`text-sm ${status.type === 'error' ? 'text-destructive' : 'text-verified'}`}>
           {status.message}
         </div>
       )}

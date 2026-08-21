@@ -6,7 +6,7 @@ import { site } from "../data/marketing";
 // Shared right-hand hero panel used across inner-page heroes so every page
 // gets the same two-column treatment as the homepage.
 const HeroSafetyNote = () => (
-  <Card className="border-primary/20 bg-primary/5 shadow-xl">
+  <Card className="border-2 border-primary/20 bg-primary/5 shadow-none">
     <CardHeader>
       <CardTitle className="flex items-center gap-2 text-xl">
         <AlertTriangle className="h-5 w-5 text-primary" />

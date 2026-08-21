@@ -6,14 +6,37 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Kitab Edition v1.0 type system — Inter for body/UI, Space Grotesk for
+   display/headings, JetBrains Mono for labels/stamps/metadata. */
 * {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-display {
   font-family: var(--font-space-grotesk), system-ui, sans-serif;
+}
+
+.font-mono-label {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+
+    /* Kitab Edition v1.0 — semantic tokens (verified / status), layered on
+       top of the shadcn neutral scale above. Portal identity colors live in
+       src/data/designSystem.js and are applied inline per-page. */
+    --verified: 145 55% 27%;
+    --verified-surface: 120 47% 92%;
+    --kitab-error: 0 63% 33%;
+    --kitab-error-surface: 0 76% 94%;
+    --kitab-warning: 33 76% 31%;
+    --kitab-warning-surface: 33 77% 90%;
+    --kitab-info: 210 71% 27%;
+    --kitab-info-surface: 210 71% 93%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -71,6 +94,15 @@ html {
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    --verified: 145 46% 47%;
+    --verified-surface: 145 30% 14%;
+    --kitab-error: 0 60% 55%;
+    --kitab-error-surface: 0 40% 16%;
+    --kitab-warning: 33 70% 50%;
+    --kitab-warning-surface: 33 40% 15%;
+    --kitab-info: 210 60% 55%;
+    --kitab-info-surface: 210 40% 15%;
   }
 }
  
