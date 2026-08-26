@@ -10,7 +10,11 @@ const EmailSubscription = () => {
   const [honeypot, setHoneypot] = useState('');
   const [status, setStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const formStartTime = useRef(Date.now());
+  // Set in the effect below, not here — calling `Date.now()` directly as a
+  // `useRef` initializer runs during render, which React's purity rule
+  // flags (render must stay side-effect-free). The effect fires immediately
+  // after mount, well before a real user could submit the form.
+  const formStartTime = useRef(null);
 
   useEffect(() => {
     formStartTime.current = Date.now();

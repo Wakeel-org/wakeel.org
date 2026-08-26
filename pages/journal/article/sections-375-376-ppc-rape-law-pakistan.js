@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
   { icon: Scale, title: "Section 375 defines the offence, Section 376 punishes it", detail: "Section 375 PPC sets out what legally constitutes rape; Section 376 PPC prescribes the punishment, which can extend to death or life imprisonment depending on the circumstances, including aggravated categories carrying enhanced punishment." },
@@ -119,7 +119,7 @@ export default function Sections375376PpcRapeLawPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published January 1, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

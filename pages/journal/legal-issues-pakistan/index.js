@@ -24,7 +24,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../../../src/component
 import { CategoryChip } from "../../../src/components/ui/chip";
 import { site, guides, getGuidePath } from "../../../src/data/marketing";
 import { getGuideCategory } from "../../../src/data/designSystem";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const legalCategories = [
   {
@@ -194,7 +194,7 @@ export default function LegalIssuesPage() {
       <section className="bg-background border-b-2 border-foreground/10 py-16 sm:py-20 lg:py-24">
         <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            <p className={eyebrow}>
               Legal Guidance
             </p>
             <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

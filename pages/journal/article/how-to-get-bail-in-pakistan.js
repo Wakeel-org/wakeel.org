@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const concepts = [
   { icon: Scale, title: "Bailable vs non-bailable offences", detail: "For a bailable offence, bail is close to a right — the police officer or court is generally bound to grant it. For a non-bailable offence, it's discretionary, decided by a court weighing the specific facts under Sections 497 and 498 CrPC." },
@@ -120,7 +120,7 @@ export default function HowToGetBailInPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published January 28, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

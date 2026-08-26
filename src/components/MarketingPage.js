@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { PortalStamp } from "./ui/chip";
 import { site } from "../data/marketing";
-import { cardBase, headingGradient, heroHeading } from "../data/theme";
+import { cardBase, eyebrow, headingGradient, heroHeading } from "../data/theme";
 import { portals } from "../data/designSystem";
 
 const makePageSchema = (page, path) => ({
@@ -47,7 +47,7 @@ const MarketingPage = ({ page, path }) => {
       <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="space-y-5">
           {portal && <PortalStamp portal={portal} />}
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             {page.eyebrow}
           </p>
           <h1 className={`${heroHeading} ${headingGradient}`}>

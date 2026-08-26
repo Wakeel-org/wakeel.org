@@ -44,9 +44,17 @@ h1, h2, h3, h4, h5, h6,
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
  
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
- 
+    /* Kitab Edition v2 — brand blue (matches --brand in
+       styles/HomeKitab.module.css exactly) replaces the old neutral-ink
+       primary. This is the single highest-leverage lever for sitewide
+       design consistency: ~90 pages already consume `text-primary` /
+       `bg-primary` / `border-primary` via the cardBase/monoLabel/
+       heroHeading tokens in src/data/theme.js, so every button, link,
+       and accent across the site picks up the new brand color from this
+       one change. See docs/HOMEPAGE-REDESIGN-2026.md, Phase 9. */
+    --primary: 211 72% 28%;
+    --primary-foreground: 0 0% 100%;
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
  
@@ -76,9 +84,10 @@ h1, h2, h3, h4, h5, h6,
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
  
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
- 
+    /* Matches --brand in the dark variant of HomeKitab.module.css. */
+    --primary: 210 70% 70%;
+    --primary-foreground: 212 48% 11%;
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
  

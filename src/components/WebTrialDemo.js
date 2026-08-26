@@ -4,6 +4,7 @@ import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { demoQA, site } from "../data/marketing";
+import { eyebrow } from "../data/theme";
 
 // `embedded` drops the outer Card chrome so this can sit inside another
 // Card (e.g. the homepage hero) without a card-in-card look.
@@ -26,10 +27,13 @@ const WebTrialDemo = ({ className = "", embedded = false }) => {
       <Inner {...innerProps}>
         <div className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-primary" />
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Try a sample question — no install needed
           </p>
         </div>
+        <p className="text-xs text-muted-foreground -mt-3">
+          Wakeel works agentically: it plans a research step, checks it against Pakistani sources, then answers — not a single-turn chatbot reply.
+        </p>
 
         <div className="flex flex-wrap gap-2">
           {demoQA.map((item, index) => (

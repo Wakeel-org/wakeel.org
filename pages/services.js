@@ -6,7 +6,7 @@ import { Button } from '../src/components/ui/button';
 import { Scale, FileText, Search, Shield, Clock, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { site } from '../src/data/marketing';
-import { cardBase, headingGradient, heroHeading, iconTile } from '../src/data/theme';
+import { cardBase, eyebrow, headingGradient, heroHeading, iconTile } from '../src/data/theme';
 
 const schema = {
   "@context": "https://schema.org",
@@ -62,6 +62,7 @@ export default function Services() {
 
       <div className="pt-16 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-16">
+          <p className={`${eyebrow} mb-3`}>Services</p>
           <h1 className={`${heroHeading} ${headingGradient} mb-6`}>
             Our Services
           </h1>

@@ -12,7 +12,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
   { icon: ShieldAlert, title: "The Control of Narcotic Substances Act, 1997", detail: "The primary federal law governing narcotic drugs and psychotropic substances in Pakistan — it consolidates and amends earlier legislation and covers production, possession, trafficking, and financing of drug-related activity." },
@@ -116,7 +116,7 @@ export default function DrugLawsPakistanOffencesPenalties() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published March 3, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

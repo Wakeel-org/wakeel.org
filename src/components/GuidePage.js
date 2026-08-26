@@ -7,13 +7,29 @@ import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { CategoryChip } from "./ui/chip";
 import { guides, site, getGuidePath, getGuideBasePath, getGuideRegion } from "../data/marketing";
-import { cardBase, headingGradient, heroHeading, iconTile, sectionHeading } from "../data/theme";
+import { cardBase, eyebrow, headingGradient, heroHeading, iconTile, sectionHeading } from "../data/theme";
 import { getGuideCategory } from "../data/designSystem";
 
 const REGION_HUB_LABELS = {
   pakistan: "Pakistan Legal Issues",
   gcc: "GCC Legal Issues",
   global: "Global Legal Issues",
+};
+
+// Eyebrow label and keyword-region term per guide region. Previously the
+// hero eyebrow and every generated keyword hardcoded "Pakistan legal guide" /
+// "Pakistan" regardless of the guide's actual region, so GCC and global
+// guide pages (~70 of them, served via the [slug] routes) advertised
+// themselves as Pakistan content. Fixed to derive from the real region.
+const REGION_EYEBROW_LABELS = {
+  pakistan: "Pakistan legal guide",
+  gcc: "GCC legal guide",
+  global: "Global legal guide",
+};
+const REGION_KEYWORD_TERMS = {
+  pakistan: "Pakistan",
+  gcc: "GCC",
+  global: "international",
 };
 
 const getRelatedTitle = (href) => {
@@ -34,13 +50,14 @@ const getRelatedTitle = (href) => {
 };
 
 const makeKeywords = (guide) => {
-  const titleWords = guide.title.toLowerCase().split(" ");
+  const region = getGuideRegion(guide.slug);
+  const regionTerm = REGION_KEYWORD_TERMS[region] || REGION_KEYWORD_TERMS.pakistan;
   const baseKeywords = [
     guide.title,
-    `${guide.title} Pakistan`,
-    `Pakistan ${guide.title.toLowerCase()}`,
-    "Pakistani law",
-    "legal help Pakistan",
+    `${guide.title} ${regionTerm}`,
+    `${regionTerm} ${guide.title.toLowerCase()}`,
+    region === "pakistan" ? "Pakistani law" : `${regionTerm} law`,
+    `legal help ${regionTerm}`,
     "Wakeel",
   ];
 
@@ -74,7 +91,11 @@ const makeKeywords = (guide) => {
   let allKeywords = [...baseKeywords];
   Object.entries(categoryKeywords).forEach(([keyword, words]) => {
     if (guide.title.toLowerCase().includes(keyword)) {
-      allKeywords.push(...words);
+      // These category keywords are written with a literal "Pakistan" —
+      // swap it for the guide's actual region term rather than mislabeling
+      // GCC/global guides as Pakistan content.
+      const regionWords = region === "pakistan" ? words : words.map((w) => w.replace(/Pakistan/g, regionTerm));
+      allKeywords.push(...regionWords);
     }
   });
 
@@ -157,10 +178,19 @@ const makeSchemas = (guide, path, faqs) => {
   ];
 };
 
+// GuidePage's own region vocabulary ("pakistan"/"gcc"/"global") maps onto
+// MarketingSEO's country-code `region` prop ("pk"/"sa"/etc). "gcc" isn't a
+// single country, so it uses "sa" as the representative code — the same
+// convention the GCC hub page (pages/journal/legal-issues-gcc/index.js)
+// already uses. "global" is passed through as-is; MarketingSEO has no entry
+// for it, which correctly omits geo-specific meta tags for global content.
+const SEO_REGION_CODES = { pakistan: "pk", gcc: "sa", global: "global" };
+
 const GuidePage = ({ guide }) => {
   const path = getGuidePath(guide.slug);
   const faqs = guide.faqs?.length ? guide.faqs : makeFaqs(guide);
   const keywords = makeKeywords(guide);
+  const region = getGuideRegion(guide.slug);
 
   return (
     <Layout>
@@ -170,7 +200,7 @@ const GuidePage = ({ guide }) => {
         path={path}
         schema={makeSchemas(guide, path, faqs)}
         keywords={keywords}
-        region="pk"
+        region={SEO_REGION_CODES[region] || "pk"}
         language="en"
       />
 
@@ -180,8 +210,8 @@ const GuidePage = ({ guide }) => {
             <Card className="border-2 border-foreground/15 shadow-none bg-card">
               <CardContent className="p-5 sm:p-8 lg:p-10 space-y-5">
                 <div className="flex flex-wrap items-center gap-3">
-                  <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-                    Pakistan legal guide
+                  <p className={eyebrow}>
+                    {REGION_EYEBROW_LABELS[region] || REGION_EYEBROW_LABELS.pakistan}
                   </p>
                   <CategoryChip category={getGuideCategory(guide)} />
                 </div>

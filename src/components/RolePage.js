@@ -18,7 +18,7 @@ import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { PortalStamp } from "./ui/chip";
 import { site, solutionLinks } from "../data/marketing";
-import { cardBase, headingGradient, heroHeading, iconTile, sectionHeading } from "../data/theme";
+import { cardBase, eyebrow, headingGradient, heroHeading, iconTile, sectionHeading } from "../data/theme";
 import { portals, resolvePortalColors } from "../data/designSystem";
 import { useTheme } from "../context/ThemeContext";
 
@@ -80,7 +80,7 @@ const RolePage = ({ page, path }) => {
           <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-8 lg:gap-10 items-center">
             <div className="space-y-5">
               {portal && <PortalStamp portal={portal} />}
-              <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+              <p className={eyebrow}>
                 {page.eyebrow}
               </p>
               <h1 className={`${heroHeading} ${headingGradient}`}>

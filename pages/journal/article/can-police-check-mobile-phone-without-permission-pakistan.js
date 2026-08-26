@@ -12,7 +12,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
   { icon: ShieldCheck, title: "Article 14 protects the dignity and privacy of the home", detail: "The Constitution's Article 14 guarantees the dignity of man and, subject to law, the privacy of home — courts have generally read this as extending a privacy interest to personal digital devices too, though the exact boundaries are still being worked out case by case." },
@@ -117,7 +117,7 @@ export default function CanPoliceCheckMobilePhoneWithoutPermissionPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published April 23, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

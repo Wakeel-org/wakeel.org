@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const useCases = [
   { icon: FileText, title: "First drafts of routine contracts", detail: "AI can produce a solid starting draft of a rent agreement, employment contract, or NDA based on the terms you describe — a genuine head start compared to a blank page or a generic template found online." },
@@ -111,7 +111,7 @@ export default function AiLegalDraftingPakistanLawyersCitizens() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             AI & the Law · Published August 10, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

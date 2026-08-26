@@ -5,7 +5,7 @@ import MarketingSEO from "../src/components/MarketingSEO";
 import { Button } from "../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
 import { featureGroups, site } from "../src/data/marketing";
-import { cardBase, headingGradient, heroHeading, sectionHeading } from "../src/data/theme";
+import { cardBase, eyebrow, headingGradient, heroHeading, sectionHeading } from "../src/data/theme";
 
 const schema = {
   "@context": "https://schema.org",
@@ -29,7 +29,7 @@ export default function FeaturesPage() {
       <section className="bg-background">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="space-y-5">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            <p className={eyebrow}>
               Product features
             </p>
             <h1 className={`${heroHeading} ${headingGradient}`}>
@@ -61,7 +61,7 @@ export default function FeaturesPage() {
               </CardHeader>
               <CardContent className="space-y-5">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
+                  <p className={`${eyebrow} mb-2`}>
                     What it does
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
@@ -69,7 +69,7 @@ export default function FeaturesPage() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">
+                  <p className={`${eyebrow} mb-2`}>
                     Who it helps
                   </p>
                   <p className="text-sm text-muted-foreground leading-relaxed">

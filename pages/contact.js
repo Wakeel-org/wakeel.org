@@ -6,7 +6,7 @@ import { Button } from "../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
 import { Input } from "../src/components/ui/input";
 import { contactTopics, site } from "../src/data/marketing";
-import { cardBase, headingGradient, heroHeading, iconTile, sectionHeading } from "../src/data/theme";
+import { cardBase, eyebrow, headingGradient, heroHeading, iconTile, sectionHeading } from "../src/data/theme";
 
 const schema = {
   "@context": "https://schema.org",
@@ -114,7 +114,7 @@ export default function ContactPage() {
       <section className="bg-background">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            <p className={eyebrow}>
               Contact
             </p>
             <h1 className={`${heroHeading} ${headingGradient}`}>

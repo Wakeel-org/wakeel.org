@@ -5,7 +5,7 @@ import MarketingSEO from "./MarketingSEO";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { site, team } from "../data/marketing";
-import { cardBase, headingGradient, heroHeading, sectionHeading, sectionPad } from "../data/theme";
+import { cardBase, eyebrow, headingGradient, heroHeading, sectionHeading, sectionPad } from "../data/theme";
 
 const makePageSchema = (page, path) => ({
   "@context": "https://schema.org",
@@ -55,7 +55,7 @@ const AboutPage = ({ page, path }) => (
     <section className="bg-background">
       <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="space-y-5">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             {page.eyebrow}
           </p>
           <h1 className={`${heroHeading} ${headingGradient}`}>
@@ -111,7 +111,7 @@ const AboutPage = ({ page, path }) => (
     <section className={`bg-background ${sectionPad}`}>
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-3 mb-12">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">Team</p>
+          <p className={eyebrow}>Team</p>
           <h2 className={`${sectionHeading} ${headingGradient}`}>The people behind Wakeel</h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto">
             Built in Pakistan by a team focused on making legal information more accessible for everyone.

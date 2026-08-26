@@ -15,7 +15,8 @@ const BetaWhitelistSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
-  const formStartTime = useRef(Date.now());
+  // Set in the effect below, not here — see EmailSubscription.js for why.
+  const formStartTime = useRef(null);
 
   useEffect(() => {
     formStartTime.current = Date.now();

@@ -7,7 +7,7 @@ import { Button } from "../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
 import { PortalStamp } from "../src/components/ui/chip";
 import { pricingFaqs, pricingPlans, site } from "../src/data/marketing";
-import { cardBase, headingGradient, heroHeading, sectionHeading } from "../src/data/theme";
+import { cardBase, eyebrow, headingGradient, heroHeading, sectionHeading } from "../src/data/theme";
 import { planPortals } from "../src/data/designSystem";
 import Disclaimer from "../src/components/Disclaimer";
 
@@ -107,7 +107,7 @@ export default function PricingPage() {
       <section className="bg-background">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="space-y-5">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            <p className={eyebrow}>
               Pricing
             </p>
             <h1 className={`${heroHeading} ${headingGradient}`}>

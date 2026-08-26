@@ -36,6 +36,15 @@ export const iconTile =
   "w-14 h-14 rounded-lg border-2 border-primary/30 bg-primary/5 flex items-center justify-center text-primary mb-4 group-hover:border-primary group-hover:bg-primary/10 transition-all duration-300";
 
 // JetBrains-Mono label treatment — uppercase, wide-tracked, bold. Use for
-// eyebrows, stamps, and metadata rows.
+// neutral stamps and metadata rows (docket numbers, dates, muted tags).
 export const monoLabel =
   "font-mono text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground";
+
+// Kitab Edition v2 — the brand-colored mono eyebrow used above hero/section
+// headings sitewide (see docs/HOMEPAGE-REDESIGN-2026.md, Phase 10). Same
+// mono/tracking treatment as `monoLabel`, but in `text-primary` since an
+// eyebrow is meant to draw the eye, not recede like a metadata stamp.
+// Replaces the old ad-hoc `text-sm font-semibold uppercase tracking-wide
+// text-primary` pattern that was duplicated across ~10 files.
+export const eyebrow =
+  "font-mono text-xs font-bold uppercase tracking-[0.14em] text-primary";

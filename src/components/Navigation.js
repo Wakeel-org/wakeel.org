@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
-import { Button } from './ui/button';
 import { Menu, X } from 'lucide-react';
 import { openPlatformAppStore } from '../utils/platformDetection';
 import { site } from '../data/marketing';
+import kitab from '../../styles/HomeKitab.module.css';
 
 const navLinks = [
   { label: 'Who it\'s for', href: '/#solutions' },
@@ -24,13 +24,10 @@ const Navigation = () => {
 
   return (
     <>
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link
-            href="/"
-            className="flex items-center gap-2 sm:gap-3 font-display text-xl font-bold text-primary hover:text-primary/80 transition-colors"
-          >
-            <div className="relative w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-lg overflow-hidden">
+      <div className={`${kitab.container} ${kitab.railOffset}`}>
+        <div className={kitab.navInner}>
+          <Link href="/" className={kitab.navBrand}>
+            <div className="relative w-10 h-10 flex-shrink-0 rounded-lg overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo-dark.png"
@@ -50,29 +47,20 @@ const Navigation = () => {
                 style={{ width: '100%', height: '100%', objectFit: 'contain' }}
               />
             </div>
-            <span className="hidden sm:inline text-foreground">Wakeel.org</span>
+            <span className="hidden sm:inline">Wakeel.org</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-6">
+          <nav className={kitab.navLinks}>
             {navLinks.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
+              <Link key={item.href} href={item.href}>
                 {item.label}
               </Link>
             ))}
-            <div className="flex items-center gap-2 ml-2">
-              {/* <Button asChild variant="outline" size="sm" className="cta-download-android">
-                <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
-                  Download App
-                </a>
-              </Button> */}
-              <Button size="sm" onClick={handleGetStarted} className="cta-try-free">
+            <div className={kitab.navActions}>
+              <button type="button" onClick={handleGetStarted} className={`${kitab.btnPrimary} ${kitab.btnSm} cta-try-free`}>
                 Try Free
-              </Button>
+              </button>
               <ThemeToggle />
             </div>
           </nav>
@@ -80,50 +68,55 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <div className="flex items-center lg:hidden gap-2">
             <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
+            <button
+              type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
+              className={kitab.btnOutline}
+              style={{ padding: '0.5rem', border: 'none' }}
             >
               {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
+            </button>
           </div>
         </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <nav className="lg:hidden absolute top-16 left-0 right-0 bg-background border-b-2 border-foreground/15 z-40 shadow-none">
-            <div className="flex flex-col px-4 sm:px-6 py-4 gap-1">
-              {[{ label: 'Home', href: '/' }, ...navLinks].map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm font-medium text-foreground hover:text-primary hover:bg-muted/50 transition-colors py-2.5 px-3 rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <div className="flex flex-col gap-2 pt-3 mt-2 border-t border-border">
-                <Button asChild variant="outline" className="w-full cta-download-android">
-                  <a href={site.androidUrl} target="_blank" rel="noopener noreferrer">
-                    Download App
-                  </a>
-                </Button>
-                <Button
-                  className="w-full cta-try-free"
-                  onClick={() => { setIsMenuOpen(false); handleGetStarted(); }}
-                >
-                  Try Free
-                </Button>
-              </div>
-            </div>
-          </nav>
-        )}
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <nav className={`lg:hidden absolute top-16 left-0 right-0 z-40 ${kitab.navMobilePanel}`}>
+          <div className={`${kitab.container} ${kitab.railOffset} flex flex-col py-4 gap-1`}>
+            {[{ label: 'Home', href: '/' }, ...navLinks].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={kitab.navMobileLink}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <div className="flex flex-col gap-2 pt-3 mt-2" style={{ borderTop: '1px solid var(--line)' }}>
+              <a
+                href={site.androidUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${kitab.btnOutline} ${kitab.btnBlock} cta-download-android`}
+              >
+                Download App
+              </a>
+              <button
+                type="button"
+                className={`${kitab.btnPrimary} ${kitab.btnBlock} cta-try-free`}
+                onClick={() => { setIsMenuOpen(false); handleGetStarted(); }}
+              >
+                Try Free
+              </button>
+            </div>
+          </div>
+        </nav>
+      )}
     </>
   );
 };
 
-export default Navigation; 
+export default Navigation;

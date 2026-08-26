@@ -14,7 +14,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const checks = [
   { icon: Landmark, title: "Get a current fard, not an old one", detail: "Request a fresh fard (record-of-rights extract) from the Patwar Khana or the provincial digital land record system — an outdated copy can hide a change of owner, a mortgage, or a dispute registered after it was issued." },
@@ -122,7 +122,7 @@ export default function HowToVerifyPropertyBeforeBuyingPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published February 11, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

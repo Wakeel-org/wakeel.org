@@ -205,7 +205,7 @@ const JournalPage = ({ initialPosts = [] }) => {
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded border-2 border-primary/30 bg-primary/5 text-primary mb-6">
               <BookOpen className="w-4 h-4" />
-              <span className="text-sm font-medium">Wakeel Journal</span>
+              <span className="font-mono text-xs font-bold uppercase tracking-[0.14em]">Wakeel Journal</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Insights & Updates
