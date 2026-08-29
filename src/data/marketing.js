@@ -1828,6 +1828,213 @@ export const articles = [
     readTime: "5 min read",
     publishedAt: "2026-08-16",
   },
+  {
+    slug: "online-defamation-law-pakistan",
+    title: "Online Defamation Law in Pakistan",
+    excerpt:
+      "How online defamation works in Pakistan — the civil route under the Defamation Ordinance 2002, the criminal route under PECA Section 20, and how the two interact.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-29",
+  },
+  {
+    slug: "online-fraud-scams-legal-remedies-pakistan",
+    title: "Online Fraud and Scams: Legal Remedies in Pakistan",
+    excerpt:
+      "What to do after an online scam or bank fraud in Pakistan — the PECA sections that apply, how to freeze a transaction, and how to file with the NCCIA and the Banking Mohtasib.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "digital-evidence-pakistani-courts",
+    title: "Digital Evidence in Pakistani Courts",
+    excerpt:
+      "How digital evidence gets admitted in Pakistani courts — Article 164 of the Qanun-e-Shahadat Order 1984, the authenticity test, and how NCCIA forensic reports fit in.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-09",
+  },
+  {
+    slug: "cybercrime-punishments-pakistan-peca-penalties",
+    title: "Cybercrime Punishments in Pakistan: The PECA Penalties Guide",
+    excerpt:
+      "A section-by-section reference to PECA 2016 punishments — imprisonment terms and fines for hacking, electronic fraud, online defamation, cyberstalking, and more.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-09-15",
+  },
+  {
+    slug: "khula-in-pakistan-procedure-rights",
+    title: "Khula in Pakistan: Procedure and Rights",
+    excerpt:
+      "How khula works in Pakistan — a wife's right to dissolve a marriage without her husband's consent, the Family Court procedure, and the dower trade-off involved.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-21",
+  },
+  {
+    slug: "child-custody-laws-pakistan",
+    title: "Child Custody Laws in Pakistan",
+    excerpt:
+      "How child custody works in Pakistan under the Guardian and Wards Act 1890 — the welfare-of-the-minor standard, the hizanat principle, and how guardianship and custody can split between parents.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-27",
+  },
+  {
+    slug: "maintenance-nafaqah-rights-pakistan",
+    title: "Maintenance (Nafaqah) Rights in Pakistan",
+    excerpt:
+      "How maintenance (nafaqah) works in Pakistan — the Arbitration Council route under the Muslim Family Laws Ordinance 1961, the Family Court route, and interim maintenance.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-10-03",
+  },
+  {
+    slug: "shia-family-law-pakistan",
+    title: "Shia Family Law in Pakistan",
+    excerpt:
+      "How Shia family law works in Pakistan — statutory recognition, how Shia inheritance differs structurally from Sunni inheritance, and the mut'ah marriage distinction.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-10-09",
+  },
+  {
+    slug: "fia-pakistan-role-jurisdiction-complaints",
+    title: "FIA Pakistan: Role, Jurisdiction, and How to File a Complaint",
+    excerpt:
+      "What the Federal Investigation Agency actually handles in Pakistan today, and why cybercrime complaints now go to the NCCIA instead of the FIA Cybercrime Wing.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-10-15",
+  },
+  {
+    slug: "police-complaint-against-police-pakistan",
+    title: "How to File a Complaint Against the Police in Pakistan",
+    excerpt:
+      "How to escalate a complaint against police misconduct in Pakistan — the SHO-to-CCPO chain, Section 155-C of the Police Order 2002, and the Public Safety Commissions.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-10-21",
+  },
+  {
+    slug: "section-22a-22b-crpc-pakistan",
+    title: "Section 22-A/22-B CrPC: The Justice of Peace Explained",
+    excerpt:
+      "How Sections 22-A and 22-B CrPC work in Pakistan — the Ex-Officio Justice of Peace's power to direct FIR registration and investigation transfers when police refuse to act.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-10-27",
+  },
+  {
+    slug: "how-to-respond-to-a-legal-notice-pakistan",
+    title: "How to Respond to a Legal Notice in Pakistan",
+    excerpt:
+      "What to do after receiving a legal notice in Pakistan — the deadline, evidence to preserve, and how to prepare a measured, document-based response.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-11-02",
+  },
+  {
+    slug: "best-ai-lawyer-pakistan",
+    title: "Best AI Lawyer in Pakistan (2026 Guide)",
+    excerpt:
+      "What people actually mean by \"AI lawyer,\" the criteria that separate a genuinely useful Pakistan-specific legal AI assistant from a generic chatbot, and how to evaluate your options.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-11-08",
+  },
+  {
+    slug: "fir-status-check-pakistan",
+    title: "How to Check FIR Status in Pakistan",
+    excerpt:
+      "A simple guide to checking your FIR status online in Pakistan — which portal to use for Punjab, Sindh, and other provinces, and what information you need.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-11-14",
+  },
+  {
+    slug: "police-refuse-fir-what-to-do-pakistan",
+    title: "Police Refuse to Register FIR: What Can You Do?",
+    excerpt:
+      "A plain-language, step-by-step guide for what to do when police in Pakistan refuse to register your FIR — escalating to the SHO, the SP, and the Justice of Peace.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-11-19",
+  },
+  {
+    slug: "fard-vs-intiqal-vs-registry-pakistan",
+    title: "Fard vs Intiqal vs Registry: The Difference Explained",
+    excerpt:
+      "A plain-language explanation of fard, intiqal, and registry in Pakistan — three different property documents that prove three different things, and why you need all of them.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-11-24",
+  },
+  {
+    slug: "illegal-property-occupation-pakistan",
+    title: "Illegal Property Occupation in Pakistan",
+    excerpt:
+      "A plain-language guide to illegal property occupation (qabza) in Pakistan — the Illegal Dispossession Act 2005, criminal trespass, and the civil injunction route.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-11-29",
+  },
+  {
+    slug: "whatsapp-blackmail-legal-action-pakistan",
+    title: "Blackmail on WhatsApp: Legal Action in Pakistan",
+    excerpt:
+      "What to do if someone is blackmailing you on WhatsApp in Pakistan — the PECA sections that apply, what evidence to preserve, and how to report it to the NCCIA.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-12-04",
+  },
+  {
+    slug: "whatsapp-messages-evidence-pakistani-courts",
+    title: "WhatsApp Messages as Evidence in Pakistani Courts",
+    excerpt:
+      "Can WhatsApp chats be used as evidence in Pakistan? A plain-language explanation of Article 164 of the Qanun-e-Shahadat Order 1984 and how to preserve chat evidence properly.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-12-09",
+  },
+  {
+    slug: "salary-not-paid-employee-rights-pakistan",
+    title: "Salary Not Paid: Employee Legal Rights in Pakistan",
+    excerpt:
+      "What to do if your employer hasn't paid your salary in Pakistan — the Payment of Wages Act 1936, the Section 9-A Authority, and the escalation path to the Labour Court.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-12-14",
+  },
+  {
+    slug: "section-489f-ppc-cheque-dishonour-pakistan",
+    title: "Section 489-F PPC: Cheque Dishonour Explained",
+    excerpt:
+      "How Section 489-F of the Pakistan Penal Code works when a cheque bounces — what has to be proven, the punishment, and why it's not a substitute for a civil recovery suit.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-12-19",
+  },
+  {
+    slug: "debt-recovery-legal-procedure-pakistan",
+    title: "Debt Recovery in Pakistan: Legal Procedure",
+    excerpt:
+      "How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-12-24",
+  },
+  {
+    slug: "how-to-send-a-legal-notice-pakistan",
+    title: "How to Send a Legal Notice in Pakistan",
+    excerpt:
+      "A plain-language guide to sending a legal notice in Pakistan — what it should include, when it's legally required, and how it's properly delivered.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-12-29",
+  },
 ];
 
 export const guides = [
