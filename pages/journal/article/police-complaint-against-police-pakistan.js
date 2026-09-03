@@ -58,8 +58,8 @@ const schema = [
       "How to escalate a complaint against police misconduct in Pakistan — the SHO-to-CCPO chain, Section 155-C of the Police Order 2002, and the Public Safety Commissions.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-10-21",
-    dateModified: "2026-10-21",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/police-complaint-against-police-pakistan`,
   },
   {

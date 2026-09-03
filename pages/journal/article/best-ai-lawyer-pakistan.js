@@ -67,8 +67,8 @@ const schema = [
       "What people actually mean by \"AI lawyer,\" the criteria that separate a genuinely useful Pakistan-specific legal AI assistant from a generic chatbot, and how to evaluate your options.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-11-08",
-    dateModified: "2026-11-08",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/best-ai-lawyer-pakistan`,
   },
   {

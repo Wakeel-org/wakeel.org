@@ -58,8 +58,8 @@ const schema = [
       "What to do after receiving a legal notice in Pakistan — the deadline, evidence to preserve, and how to prepare a measured, document-based response.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-11-02",
-    dateModified: "2026-11-02",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/how-to-respond-to-a-legal-notice-pakistan`,
   },
   {

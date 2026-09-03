@@ -58,8 +58,8 @@ const schema = [
       "How maintenance (nafaqah) works in Pakistan — the Arbitration Council route under the Muslim Family Laws Ordinance 1961, the Family Court route, and interim maintenance.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-10-03",
-    dateModified: "2026-10-03",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/maintenance-nafaqah-rights-pakistan`,
   },
   {

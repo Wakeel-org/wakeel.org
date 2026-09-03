@@ -74,8 +74,8 @@ const schema = [
       "A section-by-section reference to PECA 2016 punishments — imprisonment terms and fines for hacking, electronic fraud, online defamation, cyberstalking, and more.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-15",
-    dateModified: "2026-09-15",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/cybercrime-punishments-pakistan-peca-penalties`,
   },
   {

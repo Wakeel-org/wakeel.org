@@ -58,8 +58,8 @@ const schema = [
       "A plain-language explanation of fard, intiqal, and registry in Pakistan — three different property documents that prove three different things, and why you need all of them.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-11-24",
-    dateModified: "2026-11-24",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/fard-vs-intiqal-vs-registry-pakistan`,
   },
   {

@@ -58,8 +58,8 @@ const schema = [
       "How Section 489-F of the Pakistan Penal Code works when a cheque bounces — what has to be proven, the punishment, and why it's not a substitute for a civil recovery suit.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-12-19",
-    dateModified: "2026-12-19",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/section-489f-ppc-cheque-dishonour-pakistan`,
   },
   {

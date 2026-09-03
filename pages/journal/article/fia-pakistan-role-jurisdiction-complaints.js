@@ -58,8 +58,8 @@ const schema = [
       "What the Federal Investigation Agency actually handles in Pakistan today — immigration, human smuggling, and federal crimes — and why cybercrime complaints now go to the NCCIA instead.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-10-15",
-    dateModified: "2026-10-15",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/fia-pakistan-role-jurisdiction-complaints`,
   },
   {

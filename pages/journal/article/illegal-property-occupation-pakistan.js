@@ -58,8 +58,8 @@ const schema = [
       "A plain-language guide to illegal property occupation (qabza) in Pakistan — the Illegal Dispossession Act 2005, criminal trespass, and the civil injunction route.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-11-29",
-    dateModified: "2026-11-29",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/illegal-property-occupation-pakistan`,
   },
   {

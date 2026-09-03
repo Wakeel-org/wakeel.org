@@ -58,8 +58,8 @@ const schema = [
       "A plain-language guide to sending a legal notice in Pakistan — what it should include, when it's legally required, and how it's properly delivered.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-12-29",
-    dateModified: "2026-12-29",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/how-to-send-a-legal-notice-pakistan`,
   },
   {

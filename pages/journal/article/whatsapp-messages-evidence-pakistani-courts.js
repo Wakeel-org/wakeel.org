@@ -58,8 +58,8 @@ const schema = [
       "Can WhatsApp chats be used as evidence in Pakistan? A plain-language explanation of Article 164 of the Qanun-e-Shahadat Order 1984 and how to preserve chat evidence properly.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-12-09",
-    dateModified: "2026-12-09",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/whatsapp-messages-evidence-pakistani-courts`,
   },
   {

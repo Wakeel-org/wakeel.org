@@ -58,8 +58,8 @@ const schema = [
       "How Shia family law works in Pakistan — statutory recognition, how Shia inheritance differs structurally from Sunni inheritance, and the mut'ah marriage distinction.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-10-09",
-    dateModified: "2026-10-09",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/shia-family-law-pakistan`,
   },
   {

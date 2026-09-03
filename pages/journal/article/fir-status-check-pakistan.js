@@ -58,8 +58,8 @@ const schema = [
       "A simple guide to checking your FIR status online in Pakistan — which portal to use for Punjab, Sindh, and other provinces, and what information you need.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-11-14",
-    dateModified: "2026-11-14",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/fir-status-check-pakistan`,
   },
   {

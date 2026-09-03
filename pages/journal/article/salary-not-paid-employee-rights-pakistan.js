@@ -58,8 +58,8 @@ const schema = [
       "What to do if your employer hasn't paid your salary in Pakistan — the Payment of Wages Act 1936, the Section 9-A Authority, and the escalation path to the Labour Court.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-12-14",
-    dateModified: "2026-12-14",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/salary-not-paid-employee-rights-pakistan`,
   },
   {

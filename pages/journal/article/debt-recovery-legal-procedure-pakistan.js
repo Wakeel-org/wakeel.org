@@ -58,8 +58,8 @@ const schema = [
       "How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-12-24",
-    dateModified: "2026-12-24",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/debt-recovery-legal-procedure-pakistan`,
   },
   {

@@ -58,8 +58,8 @@ const schema = [
       "What to do if someone is blackmailing you on WhatsApp in Pakistan — the PECA sections that apply, what evidence to preserve, and how to report it to the NCCIA.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-12-04",
-    dateModified: "2026-12-04",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/whatsapp-blackmail-legal-action-pakistan`,
   },
   {

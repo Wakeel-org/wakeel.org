@@ -58,8 +58,8 @@ const schema = [
       "How khula works in Pakistan — the wife's right to dissolve a marriage without her husband's consent under the Family Courts Act 1964, the Khurshid Bibi principle, and the dower trade-off.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-21",
-    dateModified: "2026-09-21",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/khula-in-pakistan-procedure-rights`,
   },
   {

@@ -58,8 +58,8 @@ const schema = [
       "A plain-language, step-by-step guide for what to do when police in Pakistan refuse to register your FIR — escalating to the SHO, the SP, and the Justice of Peace.",
     author: { "@type": "Organization", name: "Wakeel.org" },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-11-19",
-    dateModified: "2026-11-19",
+    datePublished: "2026-09-03",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/police-refuse-fir-what-to-do-pakistan`,
   },
   {
