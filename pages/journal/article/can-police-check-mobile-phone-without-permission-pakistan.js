@@ -12,7 +12,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
   { icon: ShieldCheck, title: "Article 14 protects the dignity and privacy of the home", detail: "The Constitution's Article 14 guarantees the dignity of man and, subject to law, the privacy of home — courts have generally read this as extending a privacy interest to personal digital devices too, though the exact boundaries are still being worked out case by case." },
@@ -63,11 +63,15 @@ const schema = [
     headline: "Can Police Check Your Mobile Phone Without Permission?",
     description:
       "The constitutional and statutory principles that govern police access to a phone in Pakistan — Article 14 privacy, CrPC search powers, self-incrimination, and the Investigation for Fair Trial Act 2013.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-23",
     dateModified: "2026-04-23",
     mainEntityOfPage: `${site.url}/journal/article/can-police-check-mobile-phone-without-permission-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Investigation for Fair Trial Act, 2013 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2FqbZw=-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -117,7 +121,7 @@ export default function CanPoliceCheckMobilePhoneWithoutPermissionPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published April 23, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

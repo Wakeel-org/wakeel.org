@@ -5,7 +5,7 @@ import MarketingSEO from "./MarketingSEO";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { site } from "../data/marketing";
-import { cardBase, headingGradient, heroHeading, sectionHeading } from "../data/theme";
+import { cardBase, eyebrow, headingGradient, heroHeading, sectionHeading } from "../data/theme";
 
 // Wakeel.org capabilities are stated as verified facts (our own product).
 // Competitor cells are framed as "what to verify" rather than asserted claims,
@@ -79,6 +79,12 @@ const makeSchemas = (comparison, path, faqs) => [
     name: comparison.title,
     description: `${comparison.positioning} A factual comparison of Wakeel.org and ${comparison.competitor} for Pakistani legal help, based on publicly available information.`,
     url: `${site.url}${path}`,
+    author: {
+      "@type": "Person",
+      name: "Majid Hussain Malik",
+      jobTitle: "Co-Founder",
+      sameAs: ["https://www.linkedin.com/in/majidhussainmalik/"],
+    },
   },
   {
     "@context": "https://schema.org",
@@ -128,7 +134,7 @@ const ComparisonPage = ({ comparison }) => {
       <section className="bg-background">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="space-y-5">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            <p className={eyebrow}>
               Comparison
             </p>
             <h1 className={`${heroHeading} ${headingGradient}`}>{comparison.title}</h1>
@@ -310,7 +316,7 @@ const ComparisonPage = ({ comparison }) => {
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="flex items-center justify-between rounded-md border border-border px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
+                  className="flex items-center justify-between rounded-md border-2 border-foreground/15 px-3 py-2 text-sm text-muted-foreground hover:text-primary hover:bg-muted/50 transition-colors"
                 >
                   {l.label}
                   <ArrowRight className="h-4 w-4" />
@@ -329,7 +335,7 @@ const ComparisonPage = ({ comparison }) => {
           </div>
           <div className="space-y-4">
             {faqs.map((faq) => (
-              <details key={faq.question} className="group rounded-lg border border-border bg-card p-5">
+              <details key={faq.question} className="group rounded-lg border-2 border-foreground/15 bg-card p-5">
                 <summary className="flex cursor-pointer items-center gap-3 text-base font-semibold">
                   <HelpCircle className="h-5 w-5 text-primary shrink-0" />
                   {faq.question}

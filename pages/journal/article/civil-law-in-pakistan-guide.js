@@ -15,7 +15,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const statutes = [
   { icon: Handshake, title: "Contract Act, 1872", detail: "The foundation of contract law — offer, acceptance, consideration, capacity, and what makes an agreement enforceable (or void or voidable) in Pakistan." },
@@ -70,11 +70,15 @@ const schema = [
     headline: "Civil Law in Pakistan: Complete Guide",
     description:
       "How civil law works in Pakistan — the key statutes (Contract Act, CPC 1908, Transfer of Property Act, Limitation Act), the stages of a civil suit, and how it differs from criminal law.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-30",
     dateModified: "2026-03-30",
     mainEntityOfPage: `${site.url}/journal/article/civil-law-in-pakistan-guide`,
+    citation: [
+      { "@type": "CreativeWork", name: "Code of Civil Procedure, 1908 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apeb-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "The Endless Wait: Crisis of Backlog in Pakistan's District Judiciary (2025 case-pendency figures) — Daily Pakistan", url: "https://en.dailypakistan.com.pk/25-Nov-2025/the-endless-wait-crisis-of-backlog-in-pakistans-district-judiciary" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -126,7 +130,7 @@ export default function CivilLawInPakistanGuide() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Law Study & Research · Published March 30, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
   { icon: Scale, title: "Section 6 requires Arbitration Council permission, not the wife's signature", detail: "Section 6 of the Muslim Family Laws Ordinance 1961 requires a man who wants to contract a second marriage, while already married, to apply to the Arbitration Council for permission first. It's a permission process through a formal body, not simply a matter of the existing wife signing a consent form." },
@@ -64,11 +64,14 @@ const schema = [
     headline: "Second Marriage in Pakistan: Is Wife's Permission Required?",
     description:
       "What Section 6 of the Muslim Family Laws Ordinance 1961 actually requires before a second marriage in Pakistan — the Arbitration Council process, the existing wife's role, and the consequences of skipping it.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-03",
     dateModified: "2026-04-03",
     mainEntityOfPage: `${site.url}/journal/article/second-marriage-pakistan-wife-permission`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -119,7 +122,7 @@ export default function SecondMarriagePakistanWifePermission() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published April 3, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

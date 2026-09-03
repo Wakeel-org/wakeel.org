@@ -12,7 +12,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
   { icon: ScrollText, title: "Muslim personal law governs Muslim succession", detail: "For Muslims, inheritance is governed by Islamic law as applied through the West Pakistan Muslim Personal Law (Shariat) Application Act 1962 and related principles — property passes to legal heirs according to fixed Quranic shares and residuary rules, not purely by a deceased person's preference." },
@@ -63,11 +63,15 @@ const schema = [
     headline: "Inheritance and Property Rights in Pakistan",
     description:
       "How inheritance works in Pakistan — the governing law for Muslims and non-Muslims, who typically inherits, and the inheritance mutation process that formally transfers ownership.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-06",
     dateModified: "2026-04-06",
     mainEntityOfPage: `${site.url}/journal/article/inheritance-and-property-rights-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+      { "@type": "CreativeWork", name: "The Criminal Law (Third Amendment) Act, 2011 (Section 498-A PPC) — National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/1329729400_262.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -118,7 +122,7 @@ export default function InheritanceAndPropertyRightsPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published April 6, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

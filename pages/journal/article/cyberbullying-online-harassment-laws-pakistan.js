@@ -12,7 +12,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const provisions = [
   { icon: Users, title: "Section 24 PECA — cyberstalking", detail: "Covers repeated, unwanted contact intended to coerce, intimidate, or harass someone, or monitoring their online activity, despite a clear indication of disinterest — the core provision behind most cyberbullying and online harassment cases." },
@@ -56,11 +56,14 @@ const schema = [
     headline: "Cyberbullying and Online Harassment Laws in Pakistan",
     description:
       "The PECA provisions that cover cyberbullying and online harassment in Pakistan — cyberstalking, dignity, and modesty offences — and the removal and complaint remedies available.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-29",
     dateModified: "2026-03-29",
     mainEntityOfPage: `${site.url}/journal/article/cyberbullying-online-harassment-laws-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -110,7 +113,7 @@ export default function CyberbullyingOnlineHarassmentLawsPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published March 29, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

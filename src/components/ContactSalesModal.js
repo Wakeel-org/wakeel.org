@@ -202,11 +202,11 @@ const ContactSalesModal = ({ isOpen, onClose }) => {
         }
       }}
     >
-      <Card className="w-full max-w-2xl bg-card shadow-2xl border-border animate-fadeIn my-8">
+      <Card className="w-full max-w-2xl bg-card shadow-none border-2 border-foreground/15 animate-fadeIn my-8">
         <CardHeader className="border-b border-border pb-6">
           <div className="flex justify-between items-start">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center text-primary">
+              <div className="w-12 h-12 rounded-lg border-2 border-primary/30 bg-primary/5 flex items-center justify-center text-primary">
                 <Building className="w-6 h-6" />
               </div>
               <div>
@@ -328,19 +328,19 @@ const ContactSalesModal = ({ isOpen, onClose }) => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="w-full px-3 py-2 bg-background border border-input rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                className="w-full px-3 py-2 bg-background border-2 border-foreground/20 rounded-md text-sm focus:outline-none focus:border-foreground transition-colors resize-none"
               />
             </div>
 
             {/* Status Messages */}
             {submitStatus === 'success' && (
-              <div className="p-4 rounded-lg bg-green-500/10 border border-green-500/20 text-green-700 dark:text-green-400 text-sm animate-fadeIn">
+              <div className="p-4 rounded-lg bg-verified-surface border-2 border-verified/30 text-verified text-sm animate-fadeIn">
                 ✓ Thank you! Our sales team will contact you shortly.
               </div>
             )}
 
             {submitStatus === 'error' && (
-              <div className="p-4 rounded-lg bg-destructive/10 border border-destructive/20 text-destructive text-sm animate-fadeIn space-y-1">
+              <div className="p-4 rounded-lg bg-destructive/10 border-2 border-destructive/30 text-destructive text-sm animate-fadeIn space-y-1">
                 {Object.keys(validationErrors).length > 0 ? (
                   <>
                     <div className="font-medium">✗ Please fix the following errors:</div>

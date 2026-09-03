@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const facts = [
   { icon: ShieldAlert, title: "What Vani and Swara actually are", detail: "Both are customary practices where a girl or woman is given in marriage — often to a rival family — to settle a civil dispute or resolve criminal liability (such as a murder or feud), effectively using her marriage as compensation rather than treating her as a party with her own consent." },
@@ -57,11 +57,15 @@ const schema = [
     headline: "Women's Rights in Wani and Swara Cases",
     description:
       "What Vani and Swara are, why they're criminal offences under Section 310-A of the Pakistan Penal Code, and what a woman's legal options are if she's being compelled into one.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-31",
     dateModified: "2026-01-31",
     mainEntityOfPage: `${site.url}/journal/article/womens-rights-wani-swara-cases-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Prevention of Anti-Women Practices Act, 2011 — Punjab Commission on the Status of Women", url: "https://pcsw.punjab.gov.pk/prevention_of_anti_women_practices" },
+      { "@type": "CreativeWork", name: "The Criminal Law (Third Amendment) Act, 2011 — National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/1329729400_262.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -112,7 +116,7 @@ export default function WomensRightsWaniSwaraCasesPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published January 31, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

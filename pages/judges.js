@@ -1,6 +1,6 @@
-import MarketingPage from "../src/components/MarketingPage";
+import RolePage from "../src/components/RolePage";
 import { corePages } from "../src/data/marketing";
 
 export default function JudgesPage() {
-  return <MarketingPage page={corePages["/judges"]} path="/judges" />;
+  return <RolePage page={corePages["/judges"]} path="/judges" />;
 }

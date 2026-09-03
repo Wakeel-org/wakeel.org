@@ -14,7 +14,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const ownershipTypes = [
   { icon: Home, title: "Freehold ownership", detail: "The owner holds the property outright, with the right to sell, gift, mortgage, or bequeath it, subject to general law — the most complete form of ownership recognized." },
@@ -64,11 +64,14 @@ const schema = [
     headline: "Property Ownership and Transfer Laws in Pakistan",
     description:
       "The types of property ownership in Pakistan — freehold, leasehold, and co-ownership — and the legal instruments used to transfer it: sale, gift, will, and court decree.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-09",
     dateModified: "2026-03-09",
     mainEntityOfPage: `${site.url}/journal/article/property-ownership-transfer-laws-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -119,7 +122,7 @@ export default function PropertyOwnershipTransferLawsPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published March 9, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

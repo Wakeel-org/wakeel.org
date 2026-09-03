@@ -12,7 +12,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
   { icon: ShieldAlert, title: "The Control of Narcotic Substances Act, 1997", detail: "The primary federal law governing narcotic drugs and psychotropic substances in Pakistan — it consolidates and amends earlier legislation and covers production, possession, trafficking, and financing of drug-related activity." },
@@ -62,11 +62,14 @@ const schema = [
     headline: "Drug Laws in Pakistan: Offences, Penalties and Bail",
     description:
       "How the Control of Narcotic Substances Act, 1997 structures drug offences in Pakistan — quantity-based punishment, special courts, and how bail is approached.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-03",
     dateModified: "2026-03-03",
     mainEntityOfPage: `${site.url}/journal/article/drug-laws-pakistan-offences-penalties`,
+    citation: [
+      { "@type": "CreativeWork", name: "Control of Narcotic Substances Act, 1997 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npaplr-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -116,7 +119,7 @@ export default function DrugLawsPakistanOffencesPenalties() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published March 3, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

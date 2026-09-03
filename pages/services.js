@@ -6,6 +6,7 @@ import { Button } from '../src/components/ui/button';
 import { Scale, FileText, Search, Shield, Clock, Zap } from 'lucide-react';
 import Link from 'next/link';
 import { site } from '../src/data/marketing';
+import { cardBase, eyebrow, headingGradient, heroHeading, iconTile } from '../src/data/theme';
 
 const schema = {
   "@context": "https://schema.org",
@@ -20,32 +21,32 @@ const services = [
   {
     title: "AI Legal Assistant",
     description: "Get instant answers to complex legal questions powered by advanced AI models trained on vast legal databases.",
-    icon: <Scale className="h-10 w-10 text-primary" />,
+    icon: <Scale className="h-7 w-7" />,
   },
   {
     title: "Document Analysis",
     description: "Upload legal documents for instant summarization, risk assessment, and key clause extraction.",
-    icon: <FileText className="h-10 w-10 text-primary" />,
+    icon: <FileText className="h-7 w-7" />,
   },
   {
     title: "Case Research",
     description: "Comprehensive case law research with intelligent citations and relevance scoring.",
-    icon: <Search className="h-10 w-10 text-primary" />,
+    icon: <Search className="h-7 w-7" />,
   },
   {
     title: "Compliance Checking",
     description: "Automated compliance verification against current regulations and statutes.",
-    icon: <Shield className="h-10 w-10 text-primary" />,
+    icon: <Shield className="h-7 w-7" />,
   },
   {
     title: "Mobile-First Access",
     description: "Access legal information and document understanding from web or mobile when you need to prepare questions and notes.",
-    icon: <Clock className="h-10 w-10 text-primary" />,
+    icon: <Clock className="h-7 w-7" />,
   },
   {
     title: "Rapid Drafting",
     description: "Generate legal document drafts, letters, and memos in seconds.",
-    icon: <Zap className="h-10 w-10 text-primary" />,
+    icon: <Zap className="h-7 w-7" />,
   }
 ];
 
@@ -61,7 +62,8 @@ export default function Services() {
 
       <div className="pt-16 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
+          <p className={`${eyebrow} mb-3`}>Services</p>
+          <h1 className={`${heroHeading} ${headingGradient} mb-6`}>
             Our Services
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -71,9 +73,9 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <Card key={index} className="border-border/50 hover:border-primary/50 transition-colors">
+            <Card key={index} className={cardBase}>
               <CardHeader>
-                <div className="mb-4 p-3 bg-primary/10 w-fit rounded-xl">
+                <div className={iconTile}>
                   {service.icon}
                 </div>
                 <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
@@ -85,8 +87,8 @@ export default function Services() {
           ))}
         </div>
 
-        <div className="bg-muted/30 rounded-3xl p-8 sm:p-12 text-center">
-          <h2 className="text-3xl font-bold mb-4 text-foreground">Ready to get started?</h2>
+        <div className="bg-muted/30 rounded-2xl border-2 border-foreground/10 p-8 sm:p-12 text-center">
+          <h2 className="font-display text-3xl font-bold mb-4 text-foreground">Ready to get started?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Start with legal information, document understanding, and research support built around Pakistan's legal system.
           </p>

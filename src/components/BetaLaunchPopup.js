@@ -97,7 +97,7 @@ const BetaLaunchPopup = () => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300">
-      <Card className="relative max-w-6xl w-full bg-background border-2 shadow-2xl animate-in zoom-in duration-300">
+      <Card className="relative max-w-6xl w-full bg-background border-2 border-foreground/20 shadow-none animate-in zoom-in duration-300">
         <button
           onClick={handleClose}
           className="absolute top-4 right-4 p-2 rounded-full hover:bg-muted transition-colors z-10"
@@ -110,9 +110,9 @@ const BetaLaunchPopup = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Left Side - Info */}
             <div className="space-y-6">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-muted border border-border">
+              <div className="inline-flex items-center px-3 py-1.5 rounded border-2 border-foreground/15 bg-muted">
                 <Sparkles className="h-4 w-4 mr-2" />
-                <span className="text-sm font-semibold text-foreground">Exclusive Beta Access</span>
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-foreground">Exclusive Beta Access</span>
               </div>
 
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
@@ -147,7 +147,7 @@ const BetaLaunchPopup = () => {
             </div>
 
             {/* Right Side - Whitelist Form */}
-            <Card className="border-2 border-muted shadow-xl bg-gradient-to-br from-background to-muted/20">
+            <Card className="border-2 border-foreground/15 shadow-none bg-card">
               <CardContent className="p-6 sm:p-8">
                 {isSuccess ? (
                   <div className="text-center space-y-4 py-8">
@@ -204,7 +204,7 @@ const BetaLaunchPopup = () => {
                       />
                       
                       {error && (
-                        <p className="text-sm text-red-500 font-medium">
+                        <p className="text-sm text-destructive font-medium">
                           {error}
                         </p>
                       )}
@@ -213,7 +213,7 @@ const BetaLaunchPopup = () => {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full h-12 text-base font-semibold shadow-lg hover:shadow-xl transition-all"
+                      className="w-full h-12 text-base font-semibold transition-all"
                     >
                       {isSubmitting ? (
                         <>

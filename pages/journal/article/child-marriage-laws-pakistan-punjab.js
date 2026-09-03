@@ -11,7 +11,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const byRegion = [
   { icon: MapPin, title: "Punjab — 18 for both, since a 2026 Ordinance", detail: "The Punjab Child Marriage Restraint Ordinance 2026, signed into law in February 2026, replaced the province's older 1929-based rules and set the minimum marriage age at 18 for both males and females, removing the previous gender-based gap. Child marriage under it is a non-bailable offence, and marriage registrars can themselves face penalties for registering one." },
@@ -62,11 +62,17 @@ const schema = [
     headline: "Child Marriage Laws in Pakistan and Punjab",
     description:
       "How child marriage law differs by province in Pakistan — Sindh, Islamabad, and Punjab's 2026 reform set 18 for both sexes, while KP and Balochistan still apply the older 1929 standard.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-27",
     dateModified: "2026-06-27",
     mainEntityOfPage: `${site.url}/journal/article/child-marriage-laws-pakistan-punjab`,
+    citation: [
+      { "@type": "CreativeWork", name: "Punjab Child Marriage Restraint Ordinance, 2026 — Punjab Code (official)", url: "https://punjabcode.punjab.gov.pk/en/show_article/BjYCNgA2BjZTOg--" },
+      { "@type": "CreativeWork", name: "The Sindh Child Marriages Restraint Act, 2013 — Sindh Laws (official)", url: "https://www.sindhlaws.gov.pk/setup/publications_SindhCode/PUB-15-000083-S.pdf" },
+      { "@type": "CreativeWork", name: "Islamabad Capital Territory Child Marriage Restraint Act, 2025 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5tlZg==-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "The Child Marriage Restraint Act, 1929 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/147a.html" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -117,7 +123,7 @@ export default function ChildMarriageLawsPakistanPunjab() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published June 27, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

@@ -663,6 +663,8 @@ export const corePages = {
     ],
   },
   "/citizens": {
+    portal: "citizen",
+    heroIcon: "Smartphone",
     title: "Wakeel for Citizens",
     description:
       "Wakeel is a free AI lawyer and legal assistant for Pakistani citizens — understand your legal rights in simple Urdu and English.",
@@ -671,6 +673,12 @@ export const corePages = {
     intro:
       "Wakeel helps Pakistani citizens understand common legal situations, documents, notices, and complaint options before deciding whether to contact a lawyer or public office.",
     cta: "Ask your legal question",
+    workflow: [
+      { title: "Describe your situation", description: "Type your question in plain English or Urdu — no legal jargon required." },
+      { title: "Get a plain-language answer", description: "Wakeel explains the relevant law, your options, and what typically happens next." },
+      { title: "See the sources", description: "Every answer links back to the statute, ordinance, or official source it drew from." },
+      { title: "Decide your next step", description: "Use the answer to prepare, or to know exactly what to ask a lawyer or public office." },
+    ],
     sections: [
       {
         title: "Everyday legal questions",
@@ -696,6 +704,8 @@ export const corePages = {
     ],
   },
   "/law-students": {
+    portal: "student",
+    heroIcon: "GraduationCap",
     title: "Wakeel for Law Students",
     description:
       "Study Pakistani law faster with AI-powered explanations, notes, case summaries, and legal research support.",
@@ -705,6 +715,12 @@ export const corePages = {
     intro:
       "Wakeel supports law students with simpler explanations, structured notes, and research prompts while encouraging original-source reading and teacher guidance.",
     cta: "Start Student Mode",
+    workflow: [
+      { title: "Ask a concept or paste a case", description: "Get a structured explanation of PPC, CrPC, Constitution, or case law topics." },
+      { title: "Study with generated notes", description: "Turn dense readings into summarised, exam-ready notes and glossaries." },
+      { title: "Chat with your PDFs", description: "Upload textbooks, lecture slides, or judgments and ask questions directly against them." },
+      { title: "Verify against primary sources", description: "Cross-check every answer with your casebook, statute, or teacher before relying on it." },
+    ],
     sections: [
       {
         title: "Study support",
@@ -723,6 +739,8 @@ export const corePages = {
     ],
   },
   "/lawyers": {
+    portal: "lawyer",
+    heroIcon: "Scale",
     title: "Wakeel for Lawyers",
     description:
       "Wakeel's lawyer AI assistant helps you research, draft, summarize, and organize legal work faster with Pakistan-specific AI support.",
@@ -732,6 +750,12 @@ export const corePages = {
     intro:
       "Wakeel is built to assist legal professionals with research and document workflows while keeping final judgment, client advice, and court strategy with the advocate.",
     cta: "Try Wakeel for Legal Research",
+    workflow: [
+      { title: "Research a question or citation", description: "Pull relevant statutes, precedents, and commentary in seconds." },
+      { title: "Draft with AI assistance", description: "Generate first drafts of notices, summaries, and matter notes to edit and finalise." },
+      { title: "Review client documents", description: "Upload case files and get structured summaries of facts, issues, and risk points." },
+      { title: "Apply your professional judgment", description: "Wakeel supports the workflow — final strategy, advice, and filings remain yours." },
+    ],
     sections: [
       {
         title: "Professional workflows",
@@ -750,6 +774,8 @@ export const corePages = {
     ],
   },
   "/law-firms": {
+    portal: "lawFirm",
+    heroIcon: "Building2",
     title: "Wakeel for Law Firms",
     description:
       "AI-assisted legal workflow support for Pakistani law offices and legal teams.",
@@ -760,6 +786,12 @@ export const corePages = {
       "Wakeel can support shared legal research, drafting, document review, and organization workflows for Pakistani legal teams.",
     cta: "Contact for Organization Access",
     ctaHref: "/contact",
+    workflow: [
+      { title: "Onboard your team", description: "Set up shared accounts, roles, and admin controls for your firm." },
+      { title: "Centralise research and drafts", description: "Keep matter research, drafting templates, and documents in one shared workspace." },
+      { title: "Assign and track work", description: "Route matters and documents across associates with a shared dashboard view." },
+      { title: "Scale with organization pricing", description: "Talk to us about firm-wide access, billing, and deployment." },
+    ],
     sections: [
       {
         title: "Team workflows",
@@ -777,6 +809,8 @@ export const corePages = {
     ],
   },
   "/judges": {
+    portal: "judge",
+    heroIcon: "Gavel",
     title: "Wakeel for Judges and Judicial Research",
     description:
       "Neutral legal research support for judges and judicial research teams, with strict limits around decision-making.",
@@ -786,6 +820,12 @@ export const corePages = {
       "Wakeel can help organize legal research, statutes, precedents, issues, and documents. It is only a research aid and must never be treated as a decision-making tool.",
     cta: "View Legal Sources",
     ctaHref: "/legal-sources",
+    workflow: [
+      { title: "Look up statutes and precedent", description: "Search Pakistani statutes, ordinances, and reported case law in one place." },
+      { title: "Get a neutral summary", description: "Wakeel organises the material — it does not argue a position or suggest an outcome." },
+      { title: "Map the issues", description: "See related provisions, cross-references, and prior treatment of a legal issue." },
+      { title: "Verify from official sources", description: "Every output is a starting point for research, confirmed against primary sources before use." },
+    ],
     sections: [
       {
         title: "Research support",
@@ -809,6 +849,8 @@ export const corePages = {
     ],
   },
   "/policymakers": {
+    portal: "policymaker",
+    heroIcon: "Landmark",
     title: "Wakeel for Policymakers",
     description:
       "AI-assisted legal and policy research support for Pakistani policymakers, institutions, and public-interest teams.",
@@ -818,6 +860,12 @@ export const corePages = {
       "Wakeel helps policy teams summarize legal materials, compare obligations, and organize legal research for careful human review.",
     cta: "Contact for Policy Workflows",
     ctaHref: "/contact",
+    workflow: [
+      { title: "Bring your legal materials", description: "Upload statutes, regulations, consultation papers, or draft policy text." },
+      { title: "Get structured summaries", description: "Wakeel condenses lengthy legal text into organised, citable summaries." },
+      { title: "Compare obligations", description: "Line up requirements across laws, jurisdictions, or draft versions." },
+      { title: "Route for human review", description: "Every summary is a starting point for your team's own policy judgment." },
+    ],
     sections: [
       {
         title: "Policy research workflows",
@@ -833,6 +881,8 @@ export const corePages = {
     ],
   },
   "/legal-institutions": {
+    portal: "institution",
+    heroIcon: "BookOpen",
     title: "Wakeel for Legal Institutions",
     description:
       "Legal education, research, and organization workflow support for Pakistani law colleges, legal aid centers, and institutions.",
@@ -842,6 +892,12 @@ export const corePages = {
       "Wakeel can support legal education, legal aid, research repositories, and structured organization workflows while keeping human oversight central.",
     cta: "Request Institutional Access",
     ctaHref: "/contact",
+    workflow: [
+      { title: "Set up your institution", description: "Onboard a university, legal aid center, or research team onto a shared workspace." },
+      { title: "Support education and casework", description: "Give students and staff structured research, drafting, and study tools." },
+      { title: "Build a research repository", description: "Organise institutional research, notes, and case materials in one place." },
+      { title: "Keep human oversight central", description: "Faculty, supervisors, and staff review and approve all substantive output." },
+    ],
     sections: [
       {
         title: "Institutional support",
@@ -920,6 +976,11 @@ export const comparisons = [
     sources: [
       { label: "Pakistan Law Bot — pakistanlawbot.com (official site)", url: "https://pakistanlawbot.com/" },
     ],
+    faqs: [
+      { question: "Does PakistanLawBot have a lawyer marketplace?", answer: "Based on its own public site, PakistanLawBot describes itself as including a lawyer marketplace where verified lawyers can receive leads and manage cases, alongside its citizen-facing Q&A. Wakeel.org does not include a lawyer marketplace — it focuses on helping you understand your situation and prepare for a consultation you arrange yourself." },
+      { question: "What is the difference between Wakeel.org and PakistanLawBot?", answer: "PakistanLawBot positions itself more broadly — citizen Q&A plus a stated lawyer marketplace and practice-management tools for lawyers. Wakeel.org stays narrower and citizen-first: understanding your situation, summarizing documents, and preparing you for a lawyer consultation, without a marketplace layer." },
+      { question: "Do PakistanLawBot and Wakeel.org both combine AI with human review?", answer: "PakistanLawBot describes its approach as AI plus human expertise. Ask any AI legal tool, including Wakeel, exactly where human review happens in the pipeline and whether it applies to every answer — 'AI plus human expertise' can mean very different actual workflows depending on the product." },
+    ],
   },
   {
     slug: "wakeel-vs-lawgpt",
@@ -946,6 +1007,11 @@ export const comparisons = [
     sources: [
       { label: "LawGPT — lawgpt.pk (official site)", url: "https://lawgpt.pk/" },
     ],
+    faqs: [
+      { question: "Is LawGPT the same product as the LawGPT used internationally?", answer: "No — \"LawGPT\" is used by multiple unrelated products globally and academically. The Pakistan-focused LawGPT (lawgpt.pk) referenced here is a separate product from any other tool using the same name. Confirm which product and jurisdiction you're actually looking at before comparing." },
+      { question: "Is LawGPT built for lawyers or citizens?", answer: "Based on lawgpt.pk's own site, its feature set — petition drafting, case management, statute and case-law search — is oriented toward legal practitioners, researchers, and law students, not citizens with a one-off legal question. Wakeel.org is built for the citizen side first, while remaining useful to students and researchers." },
+      { question: "Is LawGPT free to use?", answer: "Publicly available information suggests LawGPT has operated with a beta-phase access model, with listed pricing tiers described as reflecting a future structure rather than final live pricing — verify current pricing directly on lawgpt.pk. Wakeel.org offers a free plan for basic legal questions and document understanding." },
+    ],
   },
   {
     slug: "wakeel-vs-ai-attorney",
@@ -971,27 +1037,103 @@ export const comparisons = [
     sources: [
       { label: "AI Attorney — aiattorney.com.pk (official site)", url: "https://www.aiattorney.com.pk/" },
     ],
+    faqs: [
+      { question: "Is AI Attorney built for lawyers or citizens?", answer: "Based on its own public site, AI Attorney is built as a 'digital co-counsel' for practicing lawyers — case diary syncing, hearing tracking, and drafting tools for an active caseload. Wakeel.org is built the other way around: for a citizen, student, or lawyer prepping for a client meeting, asking about their own situation in plain English or Urdu." },
+      { question: "Does AI Attorney train external AI models on client data?", answer: "AI Attorney's site states client inputs are not used to train external public models — a meaningful claim for lawyers under confidentiality obligations, worth verifying directly against its current terms of service before relying on it for client matters." },
+      { question: "What is the difference between Wakeel.org and AI Attorney?", answer: "AI Attorney is positioned as a practice-management and research co-counsel for lawyers with an active caseload. Wakeel.org is positioned for understanding your own legal situation, a document, or the law itself — useful before you even engage a lawyer, not as a case-management tool for one." },
+    ],
   },
   {
     slug: "wakeel-vs-yourmunshi",
     competitor: "YourMunshi",
     title: "Wakeel.org vs YourMunshi",
     positioning:
-      "YourMunshi offers legal and paperwork assistance for Pakistani users.",
+      "YourMunshi is an AI legal assistant built for Pakistan's legal system, offering case-law research, predictive analysis of past judgments, and document drafting for legal professionals.",
+    body: [
+      {
+        heading: "A practice tool with predictive features, not a citizen-first explainer",
+        paragraphs: [
+          "Based on YourMunshi's own public site (yourmunshi.net), its stated feature set centers on legal professionals and students: case law research across Pakistani precedents, predictive analysis that evaluates past judgments to forecast likely outcomes, application and contract drafting, and court-date tracking to help avoid missed hearings. That combination — research plus prediction plus practice management — is aimed at how a lawyer or law office actually runs a caseload.",
+          "Wakeel.org is built for the other end of that journey: a citizen (or student, or lawyer prepping for a client meeting) trying to understand their own situation, a document, or the law itself, in plain English or Urdu — without needing to manage hearings or predict case outcomes. If you're an advocate who wants predictive case-outcome tooling and court-date tracking, that's YourMunshi's stated focus; if you need a plain-language starting point before you even reach a lawyer, that's the problem Wakeel solves.",
+        ],
+      },
+      {
+        heading: "Predictive-outcome claims are worth scrutinizing for any legal AI tool",
+        paragraphs: [
+          "Any tool that claims to forecast legal outcomes from past judgments is making a strong claim — Pakistani case outcomes depend heavily on specific facts, evidence, the presiding judge, and procedure, not pattern-matching against precedent alone. Ask YourMunshi directly how its predictive analysis is validated and what its accuracy has actually been measured against before relying on it. Wakeel.org does not attempt outcome prediction; it sticks to explaining what the law and available sources say, and flags where a licensed advocate's judgment is required.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "YourMunshi — yourmunshi.net (official site)", url: "https://yourmunshi.net/" },
+      { label: "Meet YourMunshi — Pakistan's First AI Legal Assistant (LinkedIn)", url: "https://www.linkedin.com/pulse/meet-yourmunshi-pakistans-first-ai-legal-assistant-yourmunshipk-naref" },
+    ],
+    faqs: [
+      { question: "What does YourMunshi do differently from Wakeel.org?", answer: "Based on its public site, YourMunshi focuses on legal professionals — case law research, predictive analysis of past judgments, contract drafting, and court-date tracking. Wakeel.org focuses on citizens, students, and lawyers preparing for a consultation, with bilingual plain-language explanations and document summarization rather than predictive case-outcome tooling." },
+      { question: "Can YourMunshi predict the outcome of my legal case?", answer: "YourMunshi describes a predictive-analysis feature that evaluates past judgments to forecast likely outcomes. Treat any such claim cautiously — outcomes depend on case-specific facts, evidence, and judicial discretion — and ask directly how the prediction is validated. Wakeel.org does not attempt outcome prediction." },
+      { question: "Is Wakeel.org or YourMunshi better for understanding a legal notice?", answer: "For a citizen trying to understand a document or notice in plain English or Urdu, Wakeel.org's bilingual, explanation-first approach is the more direct fit. YourMunshi's stated tools are oriented toward practicing lawyers managing case research and drafting." },
+    ],
   },
   {
     slug: "wakeel-vs-digilawyer",
     competitor: "DigiLawyer",
     title: "Wakeel.org vs DigiLawyer",
     positioning:
-      "DigiLawyer is positioned around AI legal drafting for Pakistani users — generating pleadings, petitions, contracts, and case summaries.",
+      "DigiLawyer is a Pakistani AI legal platform developed with UET Lahore, built around two components — an AI research associate and an AI drafting associate — for lawyers, courts, and institutions.",
+    body: [
+      {
+        heading: "Built for the judiciary and legal institutions, not individual citizens",
+        paragraphs: [
+          "According to its launch coverage and the Sindh High Court Bar Association's own announcement, DigiLawyer pairs an AI research tool (described in reporting as \"ARK,\" providing legal answers backed by source citations) with an AI drafting tool (\"MIKE,\" for pleadings, applications, replies, notices, and contracts), built on a corpus of Pakistani statutes and judgments. Its reported early adoption is institutional — government offices, the judiciary, and law firms — rather than a consumer-facing product for citizens.",
+          "Wakeel.org is a consumer-facing product first: bilingual (English/Urdu) legal explanations, document summarization, and preparation support for a lawyer consultation, available directly to citizens, students, and lawyers via web and app. If you're an institution evaluating an AI research-and-drafting platform, DigiLawyer's stated positioning is institutional; if you're an individual trying to understand your own situation, Wakeel.org is built for that directly and is available without an institutional deployment.",
+        ],
+      },
+      {
+        heading: "Verify current access and pricing directly",
+        paragraphs: [
+          "Public coverage of DigiLawyer centers on institutional launch announcements (UET, SHCBA) rather than a self-serve consumer product page, so if you're an individual rather than an institution, confirm directly with DigiLawyer whether individual access and pricing even exist. Wakeel.org offers a free plan for basic legal questions and document understanding, directly self-serve, on Android, iOS, and web.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "SHCBA — DigiLawyer AI-powered platform announcement", url: "https://www.shcba.org/shcba-with-the-collobration-of-m-s-codxperts-soultions-pvt-ltd-introduced-digi-lawyer-ai-powered-platform/" },
+      { label: "Dawn — AI-powered legal platform launched at UET", url: "https://www.dawn.com/news/1961688" },
+    ],
+    faqs: [
+      { question: "Is DigiLawyer available to individual citizens, or only institutions?", answer: "Public coverage of DigiLawyer focuses on institutional adoption — government offices, courts, and law firms — following its launch with UET Lahore and the Sindh High Court Bar Association. If you're an individual rather than an institution, confirm directly whether self-serve access exists. Wakeel.org is directly self-serve for individuals today, with a free plan on Android, iOS, and web." },
+      { question: "What is the difference between Wakeel.org and DigiLawyer?", answer: "DigiLawyer pairs an AI legal-research tool with an AI drafting tool aimed at institutional legal workflows — courts, government offices, law firms. Wakeel.org is a bilingual (English/Urdu) legal information and document-understanding assistant built for citizens, students, and lawyers preparing for a consultation." },
+      { question: "Does DigiLawyer or Wakeel.org support Urdu?", answer: "Public information about DigiLawyer does not specify Urdu support — confirm directly. Wakeel.org supports both English and Urdu." },
+    ],
   },
   {
     slug: "wakeel-vs-qanoonai",
     competitor: "QanoonAI",
     title: "Wakeel.org vs QanoonAI",
     positioning:
-      "QanoonAI is positioned around AI-generated case briefs and specialized legal tools for areas such as Muslim personal law, tax, and property.",
+      "QanoonAI is an AI legal intelligence platform built around a corpus of 186,000+ Pakistani court judgments, offering case briefs, drafting, deterministic calculators, and a free Urdu/English chatbot.",
+    body: [
+      {
+        heading: "A judgment-corpus research tool with deterministic calculators, aimed broadly at judges, lawyers, and citizens",
+        paragraphs: [
+          "Based on QanoonAI's own public site (qanoonai.pk), its core is a large judgment database — reportedly 186,000+ Pakistani court judgments — used for AI case-brief generation, semantic legal research, and citation-verified drafting, alongside 18 deterministic calculators for things like inheritance shares, tax, zakat, and limitation periods. It offers a free tier for citizens (a chatbot, QAI, for basic guidance) alongside paid professional and institutional tiers for lawyers, firms, and courts.",
+          "Wakeel.org's core differs in scope and depth per interaction: rather than a judgment-search engine with calculators, it's built around long-document analysis (up to 100+ pages), conversational plain-English/Urdu explanation, and preparation support for a real consultation. QanoonAI's calculators are a genuinely distinct feature — if you need a deterministic inheritance-share or limitation-period calculation, that's worth checking directly; Wakeel.org does not offer calculator tools and instead explains the applicable rules in context.",
+        ],
+      },
+      {
+        heading: "Citation-verification claims are worth testing directly, on any legal AI tool",
+        paragraphs: [
+          "QanoonAI states that every citation it produces resolves to a real judgment in its corpus, and that its AI \"does not invent case law.\" That's a meaningful claim worth testing yourself with a few queries before relying on it for real work, as is true for any AI legal tool's citation claims — including Wakeel's own source-aware answers, which similarly encourage verification against primary sources rather than blind trust.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "QanoonAI — qanoonai.pk (official site)", url: "https://qanoonai.pk/" },
+    ],
+    faqs: [
+      { question: "What is the difference between Wakeel.org and QanoonAI?", answer: "QanoonAI centers on a large Pakistani judgment corpus (186,000+ judgments) with AI case briefs, citation-verified drafting, and deterministic calculators for things like inheritance and tax. Wakeel.org centers on long-document analysis, bilingual (English/Urdu) plain-language explanation, and preparation support for a lawyer consultation. Both offer a free citizen tier — compare the specific tools each provides against what you actually need." },
+      { question: "Does QanoonAI or Wakeel.org offer inheritance or tax calculators?", answer: "QanoonAI states it offers 18 deterministic calculators covering areas like inheritance shares, zakat, tax, and limitation periods. Wakeel.org does not offer standalone calculator tools; it explains the applicable rules conversationally instead. If you specifically need a calculator, verify QanoonAI's current tool against your exact case." },
+      { question: "Can I trust the case citations from an AI legal tool like QanoonAI or Wakeel.org?", answer: "QanoonAI states every citation resolves to a real judgment in its database. Wakeel.org is similarly source-aware and flags uncertainty rather than presenting output as final. For any AI legal tool, test citation claims yourself with a few queries and verify against primary sources before relying on them for real work." },
+    ],
   },
   {
     slug: "wakeel-vs-draftify",
@@ -1016,6 +1158,11 @@ export const comparisons = [
     ],
     sources: [
       { label: "Draftify — draftify.org (official site)", url: "https://www.draftify.org/" },
+    ],
+    faqs: [
+      { question: "Is Draftify built for lawyers or citizens?", answer: "Based on its own public site, Draftify is a legal drafting automation platform built for advocates — generating bail applications, constitutional petitions, and family suits from templates, reportedly used by over 3,000 advocates in Pakistan. Wakeel.org is built for citizens (and lawyers preparing for a client meeting) trying to understand a situation, not generate a court filing." },
+      { question: "Can Draftify or Wakeel.org file documents for me?", answer: "Neither can. Draftify generates draft documents that still require an advocate's professional review and sign-off before filing. Wakeel.org helps you understand a situation and prepare for a lawyer, but cannot draft court-ready filings or file anything on your behalf." },
+      { question: "What is the difference between Wakeel.org and Draftify?", answer: "Draftify automates document drafting for practicing advocates. Wakeel.org helps a citizen, student, or lawyer understand a legal situation, a document, or the law itself in plain English or Urdu, before any filing is drafted." },
     ],
   },
 ];
@@ -1771,6 +1918,213 @@ export const articles = [
     category: "Legal Help",
     readTime: "5 min read",
     publishedAt: "2026-08-16",
+  },
+  {
+    slug: "online-defamation-law-pakistan",
+    title: "Online Defamation Law in Pakistan",
+    excerpt:
+      "How online defamation works in Pakistan — the civil route under the Defamation Ordinance 2002, the criminal route under PECA Section 20, and how the two interact.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-29",
+  },
+  {
+    slug: "online-fraud-scams-legal-remedies-pakistan",
+    title: "Online Fraud and Scams: Legal Remedies in Pakistan",
+    excerpt:
+      "What to do after an online scam or bank fraud in Pakistan — the PECA sections that apply, how to freeze a transaction, and how to file with the NCCIA and the Banking Mohtasib.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "digital-evidence-pakistani-courts",
+    title: "Digital Evidence in Pakistani Courts",
+    excerpt:
+      "How digital evidence gets admitted in Pakistani courts — Article 164 of the Qanun-e-Shahadat Order 1984, the authenticity test, and how NCCIA forensic reports fit in.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "cybercrime-punishments-pakistan-peca-penalties",
+    title: "Cybercrime Punishments in Pakistan: The PECA Penalties Guide",
+    excerpt:
+      "A section-by-section reference to PECA 2016 punishments — imprisonment terms and fines for hacking, electronic fraud, online defamation, cyberstalking, and more.",
+    category: "Legal Help",
+    readTime: "7 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "khula-in-pakistan-procedure-rights",
+    title: "Khula in Pakistan: Procedure and Rights",
+    excerpt:
+      "How khula works in Pakistan — a wife's right to dissolve a marriage without her husband's consent, the Family Court procedure, and the dower trade-off involved.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "child-custody-laws-pakistan",
+    title: "Child Custody Laws in Pakistan",
+    excerpt:
+      "How child custody works in Pakistan under the Guardian and Wards Act 1890 — the welfare-of-the-minor standard, the hizanat principle, and how guardianship and custody can split between parents.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "maintenance-nafaqah-rights-pakistan",
+    title: "Maintenance (Nafaqah) Rights in Pakistan",
+    excerpt:
+      "How maintenance (nafaqah) works in Pakistan — the Arbitration Council route under the Muslim Family Laws Ordinance 1961, the Family Court route, and interim maintenance.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "shia-family-law-pakistan",
+    title: "Shia Family Law in Pakistan",
+    excerpt:
+      "How Shia family law works in Pakistan — statutory recognition, how Shia inheritance differs structurally from Sunni inheritance, and the mut'ah marriage distinction.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "fia-pakistan-role-jurisdiction-complaints",
+    title: "FIA Pakistan: Role, Jurisdiction, and How to File a Complaint",
+    excerpt:
+      "What the Federal Investigation Agency actually handles in Pakistan today, and why cybercrime complaints now go to the NCCIA instead of the FIA Cybercrime Wing.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "police-complaint-against-police-pakistan",
+    title: "How to File a Complaint Against the Police in Pakistan",
+    excerpt:
+      "How to escalate a complaint against police misconduct in Pakistan — the SHO-to-CCPO chain, Section 155-C of the Police Order 2002, and the Public Safety Commissions.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "section-22a-22b-crpc-pakistan",
+    title: "Section 22-A/22-B CrPC: The Justice of Peace Explained",
+    excerpt:
+      "How Sections 22-A and 22-B CrPC work in Pakistan — the Ex-Officio Justice of Peace's power to direct FIR registration and investigation transfers when police refuse to act.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "how-to-respond-to-a-legal-notice-pakistan",
+    title: "How to Respond to a Legal Notice in Pakistan",
+    excerpt:
+      "What to do after receiving a legal notice in Pakistan — the deadline, evidence to preserve, and how to prepare a measured, document-based response.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "best-ai-lawyer-pakistan",
+    title: "Best AI Lawyer in Pakistan (2026 Guide)",
+    excerpt:
+      "What people actually mean by \"AI lawyer,\" the criteria that separate a genuinely useful Pakistan-specific legal AI assistant from a generic chatbot, and how to evaluate your options.",
+    category: "AI & the Law",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "fir-status-check-pakistan",
+    title: "How to Check FIR Status in Pakistan",
+    excerpt:
+      "A simple guide to checking your FIR status online in Pakistan — which portal to use for Punjab, Sindh, and other provinces, and what information you need.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "police-refuse-fir-what-to-do-pakistan",
+    title: "Police Refuse to Register FIR: What Can You Do?",
+    excerpt:
+      "A plain-language, step-by-step guide for what to do when police in Pakistan refuse to register your FIR — escalating to the SHO, the SP, and the Justice of Peace.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "fard-vs-intiqal-vs-registry-pakistan",
+    title: "Fard vs Intiqal vs Registry: The Difference Explained",
+    excerpt:
+      "A plain-language explanation of fard, intiqal, and registry in Pakistan — three different property documents that prove three different things, and why you need all of them.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "illegal-property-occupation-pakistan",
+    title: "Illegal Property Occupation in Pakistan",
+    excerpt:
+      "A plain-language guide to illegal property occupation (qabza) in Pakistan — the Illegal Dispossession Act 2005, criminal trespass, and the civil injunction route.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "whatsapp-blackmail-legal-action-pakistan",
+    title: "Blackmail on WhatsApp: Legal Action in Pakistan",
+    excerpt:
+      "What to do if someone is blackmailing you on WhatsApp in Pakistan — the PECA sections that apply, what evidence to preserve, and how to report it to the NCCIA.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "whatsapp-messages-evidence-pakistani-courts",
+    title: "WhatsApp Messages as Evidence in Pakistani Courts",
+    excerpt:
+      "Can WhatsApp chats be used as evidence in Pakistan? A plain-language explanation of Article 164 of the Qanun-e-Shahadat Order 1984 and how to preserve chat evidence properly.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "salary-not-paid-employee-rights-pakistan",
+    title: "Salary Not Paid: Employee Legal Rights in Pakistan",
+    excerpt:
+      "What to do if your employer hasn't paid your salary in Pakistan — the Payment of Wages Act 1936, the Section 9-A Authority, and the escalation path to the Labour Court.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "section-489f-ppc-cheque-dishonour-pakistan",
+    title: "Section 489-F PPC: Cheque Dishonour Explained",
+    excerpt:
+      "How Section 489-F of the Pakistan Penal Code works when a cheque bounces — what has to be proven, the punishment, and why it's not a substitute for a civil recovery suit.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "debt-recovery-legal-procedure-pakistan",
+    title: "Debt Recovery in Pakistan: Legal Procedure",
+    excerpt:
+      "How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-03",
+  },
+  {
+    slug: "how-to-send-a-legal-notice-pakistan",
+    title: "How to Send a Legal Notice in Pakistan",
+    excerpt:
+      "A plain-language guide to sending a legal notice in Pakistan — what it should include, when it's legally required, and how it's properly delivered.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-09-03",
   },
 ];
 

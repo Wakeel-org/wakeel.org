@@ -10,7 +10,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const offences = [
   { code: "Sections 359–362 PPC", title: "Kidnapping", detail: "Defines kidnapping from Pakistan and kidnapping from lawful guardianship as distinct categories — the second is particularly relevant to cases involving minors taken without the consent of a parent or lawful guardian." },
@@ -62,11 +62,14 @@ const schema = [
     headline: "Kidnapping, Extortion and Sexual Assault Laws in Pakistan",
     description:
       "What the Pakistan Penal Code says about kidnapping, extortion, and assault on modesty — the relevant sections, punishment, and how they're procedurally treated.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-23",
     dateModified: "2026-02-23",
     mainEntityOfPage: `${site.url}/journal/article/kidnapping-extortion-sexual-assault-laws-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Pakistan Penal Code, 1860 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lo-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -117,7 +120,7 @@ export default function KidnappingExtortionSexualAssaultLawsPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published February 23, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

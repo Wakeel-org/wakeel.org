@@ -1,6 +1,7 @@
 import React from 'react';
 import { Search, Briefcase, FileText, GraduationCap } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { cardBase, iconTile, sectionHeading } from '../data/theme';
 
 const features = [
   {
@@ -34,23 +35,23 @@ const Features = () => {
     <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-muted/50">
       <div className="container max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">
+          <h2 className={`${sectionHeading} mb-6`}>
             Comprehensive Legal Solutions
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-[900px] mx-auto leading-relaxed">
-            Empowering legal professionals with innovative tools and services designed to enhance 
+            Empowering legal professionals with innovative tools and services designed to enhance
             efficiency, accuracy, and excellence in legal practice.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className={`${feature.span} hover:shadow-xl hover:scale-[1.02] transition-all duration-300 border-muted/50 bg-card/50 backdrop-blur-sm`}
+            <Card
+              key={index}
+              className={`${feature.span} ${cardBase}`}
             >
               <CardHeader>
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 transition-transform duration-300">
+                <div className={iconTile}>
                   <feature.icon className="w-7 h-7" />
                 </div>
                 <CardTitle className="text-xl sm:text-2xl">{feature.title}</CardTitle>

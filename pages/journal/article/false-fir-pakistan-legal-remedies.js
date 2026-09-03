@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const legalRoutes = [
   { icon: FileText, title: "Section 182 PPC — false information to a public servant", detail: "Criminalises knowingly giving false information to a public servant with intent to cause that public servant to act (or refrain from acting) in a way they wouldn't have, had the true facts been known — including to cause an unjustified investigation." },
@@ -64,11 +64,16 @@ const schema = [
     headline: "False FIR in Pakistan: Legal Remedies and Consequences",
     description:
       "The legal routes available for a false FIR in Pakistan — quashing under Section 561-A CrPC, and prosecuting false information under Sections 182 and 211 PPC.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-15",
     dateModified: "2026-02-15",
     mainEntityOfPage: `${site.url}/journal/article/false-fir-pakistan-legal-remedies`,
+    citation: [
+      { "@type": "CreativeWork", name: "Pakistan Penal Code, 1860 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lo-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Code of Criminal Procedure, 1898 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lp-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Inherent Powers, Quashments, Acquittals — Prosecutor General Punjab", url: "https://pg.punjab.gov.pk/inherent_powers_quashments_acquittals" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -119,7 +124,7 @@ export default function FalseFirPakistanLegalRemedies() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published February 15, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const pillars = [
   { icon: Landmark, title: "The Fundamental Rights chapter is the core", detail: "Articles 8 to 28 of the Constitution guarantee life and liberty, fair trial, equality, freedom of expression and religion, and more — covered fully in our dedicated Constitution guide." },
@@ -57,11 +57,15 @@ const schema = [
     headline: "Human Rights in Pakistan: Constitutional Rights and Remedies",
     description:
       "How human rights are protected in Pakistan — the Fundamental Rights chapter, the writ jurisdiction and Article 184(3) enforcement routes, and the National Commission for Human Rights.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-21",
     dateModified: "2026-01-21",
     mainEntityOfPage: `${site.url}/journal/article/human-rights-pakistan-constitutional-remedies`,
+    citation: [
+      { "@type": "CreativeWork", name: "The National Commission for Human Rights Act, 2012 — Senate of Pakistan (official)", url: "https://senate.gov.pk/uploads/documents/1358919417_548.pdf" },
+      { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -112,7 +116,7 @@ export default function HumanRightsPakistanConstitutionalRemedies() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published January 21, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

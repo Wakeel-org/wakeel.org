@@ -6,7 +6,7 @@ import { Button } from "../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../src/components/ui/card";
 import { Input } from "../src/components/ui/input";
 import { contactTopics, site } from "../src/data/marketing";
-import { cardBase, headingGradient, heroHeading, iconTile, sectionHeading } from "../src/data/theme";
+import { cardBase, eyebrow, headingGradient, heroHeading, iconTile, sectionHeading } from "../src/data/theme";
 
 const schema = {
   "@context": "https://schema.org",
@@ -114,7 +114,7 @@ export default function ContactPage() {
       <section className="bg-background">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            <p className={eyebrow}>
               Contact
             </p>
             <h1 className={`${heroHeading} ${headingGradient}`}>
@@ -151,7 +151,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right — form */}
-            <Card className="border-muted/60 bg-card shadow-xl">
+            <Card className="border-2 border-foreground/15 bg-card shadow-none">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-2 text-2xl">
                   <Send className="h-5 w-5 text-primary" />
@@ -187,7 +187,7 @@ export default function ContactPage() {
                       name="topic"
                       value={formData.topic}
                       onChange={updateField}
-                      className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                      className="flex h-10 w-full rounded-md border-2 border-foreground/20 bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:border-foreground transition-colors"
                     >
                       {contactTopics.map((topic) => (
                         <option key={topic} value={topic}>
@@ -204,11 +204,11 @@ export default function ContactPage() {
                       onChange={updateField}
                       rows={6}
                       placeholder="How can we help?"
-                      className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 resize-none"
+                      className="flex w-full rounded-md border-2 border-foreground/20 bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:border-foreground transition-colors resize-none"
                     />
                   </label>
                   {status.message && (
-                    <p className={status.type === "success" ? "text-sm text-green-600" : "text-sm text-destructive"}>
+                    <p className={status.type === "success" ? "text-sm text-verified" : "text-sm text-destructive"}>
                       {status.message}
                     </p>
                   )}

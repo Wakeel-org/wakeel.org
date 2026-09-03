@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const foundations = [
   { icon: ScrollText, title: "A daughter's share is a fixed legal right, not a family favour", detail: "Under Islamic inheritance law, a daughter is a legal heir with a defined share that depends on which other relatives survive the deceased — she inherits by operation of law, not because her family chooses to include her." },
@@ -64,11 +64,16 @@ const schema = [
     headline: "Daughters' Inheritance Rights in Pakistan: Islamic and Legal Perspective",
     description:
       "A daughter's inheritance rights in Pakistan — the Islamic legal basis, Section 498-A PPC, and the Punjab Enforcement of Women's Property Rights Act 2021 remedy for deprivation.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-08",
     dateModified: "2026-05-08",
     mainEntityOfPage: `${site.url}/journal/article/daughters-inheritance-rights-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Criminal Law (Third Amendment) Act, 2011 (Section 498-A PPC) — National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/1329729400_262.pdf" },
+      { "@type": "CreativeWork", name: "The Punjab Enforcement of Women's Property Rights Act, 2021 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/2789.html" },
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -119,7 +124,7 @@ export default function DaughtersInheritanceRightsPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published May 8, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

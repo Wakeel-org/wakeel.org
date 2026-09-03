@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const routes = [
   { icon: Gavel, title: "Talaq — divorce by the husband", detail: "A husband pronounces talaq and must give written notice to the Union Council Chairman under Section 7 of the Muslim Family Laws Ordinance 1961, with a copy to the wife. It does not take legal effect until 90 days pass, during which an Arbitration Council attempts reconciliation." },
@@ -65,11 +65,22 @@ const schema = [
     headline: "Divorce in Pakistan: Procedure, Rights and Legal Requirements",
     description:
       "How divorce actually works in Pakistan — talaq, khula, judicial divorce, and talaq-e-tafweez — the Union Council notice procedure, the 90-day period, and the Family Court process.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-08",
     dateModified: "2026-03-08",
     mainEntityOfPage: `${site.url}/journal/article/divorce-in-pakistan-procedure-rights`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+      { "@type": "CreativeWork", name: "The Dissolution of Muslim Marriages Act, 1939 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-cJaW-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "The West Pakistan Family Courts Act, 1964 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lraQ==-sg-jjjjjjjjjjjjj" },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How the divorce process moves in Pakistan",
+    step: procedureSteps.map((s, i) => ({ "@type": "HowToStep", name: `Step ${i + 1}`, text: s })),
   },
   {
     "@context": "https://schema.org",
@@ -120,7 +131,7 @@ export default function DivorceInPakistanProcedureRights() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published March 8, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

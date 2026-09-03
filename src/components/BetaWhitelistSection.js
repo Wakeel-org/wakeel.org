@@ -15,7 +15,8 @@ const BetaWhitelistSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
-  const formStartTime = useRef(Date.now());
+  // Set in the effect below, not here — see EmailSubscription.js for why.
+  const formStartTime = useRef(null);
 
   useEffect(() => {
     formStartTime.current = Date.now();
@@ -85,14 +86,14 @@ const BetaWhitelistSection = () => {
   };
 
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-muted/30">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Left Side - Info */}
           <div className="space-y-6">
-            <div className="inline-flex items-center px-3 py-1 rounded-full bg-muted border border-border">
+            <div className="inline-flex items-center px-3 py-1.5 rounded border-2 border-foreground/15 bg-muted">
               <Sparkles className="h-4 w-4 mr-2" />
-              <span className="text-sm font-semibold text-foreground">Exclusive Beta Access</span>
+              <span className="font-mono text-xs font-bold uppercase tracking-wider text-foreground">Exclusive Beta Access</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
@@ -127,7 +128,7 @@ const BetaWhitelistSection = () => {
           </div>
 
           {/* Right Side - Whitelist Form */}
-          <Card className="border-2 border-muted shadow-xl bg-gradient-to-br from-background to-muted/20">
+          <Card className="border-2 border-foreground/15 shadow-none bg-card">
             <CardContent className="p-6 sm:p-8">
               {isSuccess ? (
                 <div className="text-center space-y-4 py-8">
@@ -184,7 +185,7 @@ const BetaWhitelistSection = () => {
                     />
                     
                     {error && (
-                      <p className="text-sm text-red-500 font-medium">
+                      <p className="text-sm text-destructive font-medium">
                         {error}
                       </p>
                     )}
@@ -193,7 +194,7 @@ const BetaWhitelistSection = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-12 text-base font-semibold shadow-lg hover:shadow-xl transition-all"
+                    className="w-full h-12 text-base font-semibold transition-all"
                   >
                     {isSubmitting ? (
                       <>

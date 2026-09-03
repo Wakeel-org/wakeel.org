@@ -5,6 +5,8 @@ import AppDownloadButtons from './AppDownloadButtons';
 import Link from 'next/link';
 import { Linkedin, Facebook, Instagram, Mail, MapPin } from 'lucide-react';
 import { site } from '../data/marketing';
+import { useTheme } from '../context/ThemeContext';
+import kitab from '../../styles/HomeKitab.module.css';
 
 const footerColumns = [
   {
@@ -55,6 +57,9 @@ const footerColumns = [
 ];
 
 const Layout = ({ children }) => {
+  const { darkMode } = useTheme();
+  const kitabTokens = `${kitab.page} ${darkMode ? kitab.dark : ""}`;
+
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground font-sans antialiased">
       <Head>
@@ -72,34 +77,40 @@ const Layout = ({ children }) => {
         <link rel="apple-touch-icon" href="/logo-light.png" />
         <link rel="shortcut icon" href="/logo-light.png" />
         
-        {/* Open Graph / Social Media Meta Tags */}
-        <meta property="og:title" content="Wakeel.org - Pakistan's AI Lawyer & Legal Assistant" />
-        <meta property="og:description" content={site.description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://wakeel.org" />
-        <meta property="og:image" content="https://wakeel.org/logo-og.png" />
-        <meta property="og:site_name" content="Wakeel.org" />
-        <meta property="og:locale" content="en_US" />
+        {/* Open Graph / Social Media Meta Tags — sitewide fallback for the
+            handful of pages that don't render <MarketingSEO> (404, privacy,
+            terms, the journal index). Every `property="og:..."` tag here
+            carries a `key` matching the one MarketingSEO uses on its own
+            equivalent tag: Next's <Head> only auto-dedupes tags by `name`
+            (and `key`), never by `property` alone, so without matching
+            keys a page using both components emits two conflicting og:*
+            tags — real bug this fixed, caught while correcting the
+            region-aware SEO metadata (see docs/HOMEPAGE-REDESIGN-2026.md,
+            "Pre-production QA fixes"). */}
+        <meta key="og:title" property="og:title" content="Wakeel.org - Pakistan's AI Lawyer & Legal Assistant" />
+        <meta key="og:description" property="og:description" content={site.description} />
+        <meta key="og:type" property="og:type" content="website" />
+        <meta key="og:url" property="og:url" content="https://wakeel.org" />
+        <meta key="og:image" property="og:image" content="https://wakeel.org/logo-og.png" />
+        <meta key="og:site_name" property="og:site_name" content="Wakeel.org" />
+        <meta key="og:locale" property="og:locale" content="en_US" />
         
         <meta name="AI-content-declaration" content="Wakeel.org provides AI-assisted legal information and research support with user verification required." />
       </Head>
 
-      <nav className="fixed top-0 w-full bg-background backdrop-blur-lg z-50 border-b border-border shadow-sm">
+      <nav className={`fixed top-0 w-full z-50 ${kitabTokens} ${kitab.navBar}`}>
         <Navigation />
       </nav>
-      
+
       <main className="flex-grow pt-16">
         {children}
       </main>
-      
-      <footer className="mt-auto bg-muted/50 border-t border-border">
-        <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+
+      <footer className={`mt-auto ${kitabTokens} ${kitab.footerRoot}`}>
+        <div className={`${kitab.container} ${kitab.railOffset}`} style={{ paddingBlock: "2.5rem" }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8 sm:gap-10">
             <div className="lg:col-span-2">
-              <Link 
-                href="/"
-                className="flex items-center gap-3 text-2xl font-bold text-primary hover:text-primary/80 transition-colors w-fit"
-              >
+              <Link href="/" className={kitab.navBrand} style={{ width: "fit-content" }}>
                 <div className="relative w-12 h-12 flex-shrink-0 rounded-lg overflow-hidden">
                   {/* Dark logo for light theme */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -122,43 +133,43 @@ const Layout = ({ children }) => {
                     style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   />
                 </div>
-                <span>Wakeel.org</span>
+                <span style={{ fontSize: "1.25rem" }}>Wakeel.org</span>
               </Link>
-              <p className="text-muted-foreground mb-6 max-w-md mt-4">
-                Pakistan's AI legal assistant for citizens, law students, and legal professionals.
+              <p style={{ color: "var(--ink-soft)", maxWidth: "28rem", marginTop: "1rem", marginBottom: "1.5rem" }}>
+                Pakistan&apos;s AI legal assistant for citizens, law students, and legal professionals.
               </p>
-              <p className="text-sm text-muted-foreground max-w-md mb-6">
+              <p style={{ fontSize: "0.85rem", color: "var(--ink-faint)", maxWidth: "28rem", marginBottom: "1.5rem" }}>
                 {site.disclaimer}
               </p>
               <div className="mb-6">
-                <p className="text-sm font-semibold text-foreground mb-3">
+                <p className={kitab.footerColTitle} style={{ marginBottom: "0.75rem" }}>
                   Download our mobile apps
                 </p>
                 <AppDownloadButtons />
               </div>
-              <div className="flex space-x-4">
-                <a href="https://www.facebook.com/aiwakeel" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <div className="flex gap-3">
+                <a href="https://www.facebook.com/aiwakeel" target="_blank" rel="noopener noreferrer" className={kitab.footerSocial}>
                   <span className="sr-only">Facebook</span>
-                  <Facebook className="w-5 h-5" />
+                  <Facebook className="w-4 h-4" />
                 </a>
-                <a href="https://www.instagram.com/wakeel_org" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://www.instagram.com/wakeel_org" target="_blank" rel="noopener noreferrer" className={kitab.footerSocial}>
                   <span className="sr-only">Instagram</span>
-                  <Instagram className="w-5 h-5" />
+                  <Instagram className="w-4 h-4" />
                 </a>
-                <a href="https://www.linkedin.com/company/wakeelai/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://www.linkedin.com/company/wakeelai/" target="_blank" rel="noopener noreferrer" className={kitab.footerSocial}>
                   <span className="sr-only">LinkedIn</span>
-                  <Linkedin className="w-5 h-5" />
+                  <Linkedin className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
             {footerColumns.map((col) => (
               <div key={col.title} className="space-y-4">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">{col.title}</h3>
+                <h3 className={kitab.footerColTitle}>{col.title}</h3>
                 <ul className="space-y-3">
                   {col.links.map((link) => (
                     <li key={link.href}>
-                      <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                      <Link href={link.href} className={kitab.footerLink}>
                         {link.label}
                       </Link>
                     </li>
@@ -168,34 +179,22 @@ const Layout = ({ children }) => {
             ))}
           </div>
 
-          <div className="pt-8 mt-8 border-t border-border">
+          <div className={kitab.footerBottom} style={{ paddingTop: "2rem", marginTop: "2rem" }}>
             <div className="flex flex-col gap-4 lg:flex-row justify-between lg:items-center">
-              <p className="text-muted-foreground text-sm text-center sm:text-left">
+              <p className={kitab.footerMeta} style={{ textAlign: "center" }}>
                 © {new Date().getFullYear()} Wakeel.org. All rights reserved.
               </p>
               <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
-                <span className="inline-flex items-center text-sm text-muted-foreground">
-                  <Mail className="w-4 h-4 mr-2 text-primary" />
-                  <a href={`mailto:${site.contactEmail}`} className="hover:text-primary transition-colors">
-                    {site.contactEmail}
-                  </a>
+                <span className={kitab.footerMeta} style={{ display: "inline-flex", alignItems: "center" }}>
+                  <Mail className="w-4 h-4 mr-2" style={{ color: "var(--brand)" }} />
+                  <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
                 </span>
-                <span className="inline-flex items-center text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4 mr-2 text-primary" />
+                <span className={kitab.footerMeta} style={{ display: "inline-flex", alignItems: "center" }}>
+                  <MapPin className="w-4 h-4 mr-2" style={{ color: "var(--brand)" }} />
                   Lahore, Pakistan
                 </span>
-                <Link 
-                  href="/privacy" 
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-                <Link 
-                  href="/terms" 
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                >
-                  Terms of Service
-                </Link>
+                <Link href="/privacy" className={kitab.footerLink}>Privacy Policy</Link>
+                <Link href="/terms" className={kitab.footerLink}>Terms of Service</Link>
               </div>
             </div>
           </div>

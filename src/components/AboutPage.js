@@ -5,25 +5,47 @@ import MarketingSEO from "./MarketingSEO";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { site, team } from "../data/marketing";
-import { cardBase, headingGradient, heroHeading, sectionHeading, sectionPad } from "../data/theme";
+import { cardBase, eyebrow, headingGradient, heroHeading, sectionHeading, sectionPad } from "../data/theme";
 
-const makePageSchema = (page, path) => ({
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: page.title,
-  description: page.description,
-  url: `${site.url}${path}`,
-  about: {
-    "@type": "SoftwareApplication",
-    name: "Wakeel.org",
-    applicationCategory: "LegalApplication",
-    operatingSystem: "Web, Android",
+const makePageSchema = (page, path) => [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: page.title,
+    description: page.description,
+    url: `${site.url}${path}`,
+    about: {
+      "@type": "SoftwareApplication",
+      name: "Wakeel.org",
+      applicationCategory: "LegalApplication",
+      operatingSystem: "Web, Android",
+    },
   },
-});
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Wakeel.org",
+    url: site.url,
+    founder: team
+      .filter((member) => member.role.toLowerCase().includes("co-founder"))
+      .map((member) => ({
+        "@type": "Person",
+        name: member.name,
+        jobTitle: member.role,
+        ...(member.linkedin && member.linkedin !== "#" ? { sameAs: [member.linkedin] } : {}),
+      })),
+    employee: team.map((member) => ({
+      "@type": "Person",
+      name: member.name,
+      jobTitle: member.role,
+      ...(member.linkedin && member.linkedin !== "#" ? { sameAs: [member.linkedin] } : {}),
+    })),
+  },
+];
 
 const TeamCard = ({ member }) => (
-  <div className={`${cardBase} rounded-xl border p-6 flex flex-col items-center text-center gap-4`}>
-    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 flex items-center justify-center text-primary font-bold text-2xl tracking-tight select-none">
+  <div className={`${cardBase} rounded-2xl p-6 flex flex-col items-center text-center gap-4`}>
+    <div className="w-20 h-20 rounded-full border-2 border-primary/30 bg-primary/5 flex items-center justify-center text-primary font-bold text-2xl tracking-tight select-none">
       {member.initials}
     </div>
     <div className="space-y-0.5">
@@ -55,7 +77,7 @@ const AboutPage = ({ page, path }) => (
     <section className="bg-background">
       <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
         <div className="space-y-5">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             {page.eyebrow}
           </p>
           <h1 className={`${heroHeading} ${headingGradient}`}>
@@ -111,7 +133,7 @@ const AboutPage = ({ page, path }) => (
     <section className={`bg-background ${sectionPad}`}>
       <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-3 mb-12">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">Team</p>
+          <p className={eyebrow}>Team</p>
           <h2 className={`${sectionHeading} ${headingGradient}`}>The people behind Wakeel</h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto">
             Built in Pakistan by a team focused on making legal information more accessible for everyone.

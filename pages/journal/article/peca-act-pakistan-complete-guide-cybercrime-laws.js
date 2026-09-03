@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
   { icon: ShieldAlert, title: "Unauthorized access and interference (Sections 3–10)", detail: "Cover hacking, unauthorized data access, interference with information systems, and identity theft — the technical backbone of the Act, aimed at the systems side of cybercrime." },
@@ -57,11 +57,16 @@ const schema = [
     headline: "PECA Act Pakistan: Complete Guide to Cybercrime Laws",
     description:
       "How the Prevention of Electronic Crimes Act 2016 works in Pakistan — unauthorized access, offences against dignity and modesty, cyberstalking, and the 2025 amendment that created the NCCIA.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-24",
     dateModified: "2026-02-24",
     mainEntityOfPage: `${site.url}/journal/article/peca-act-pakistan-complete-guide-cybercrime-laws`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
+      { "@type": "CreativeWork", name: "NCHR Report on PECA and the 2025 Amendments Act — National Commission for Human Rights", url: "https://nchr.gov.pk/wp-content/uploads/2026/02/NCHR-Report-on-PECA-and-the-2025-Amendments-Act.pdf" },
+      { "@type": "CreativeWork", name: "The PECA Amendment 2025: A Critical Analysis — LUMS SAHSOL", url: "https://sahsol.lums.edu.pk/node/25604" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -112,7 +117,7 @@ export default function PecaActPakistanCompleteGuideCybercrimeLaws() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published February 24, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

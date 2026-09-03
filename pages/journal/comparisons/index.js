@@ -4,6 +4,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { comparisons, site } from "../../../src/data/marketing";
+import { eyebrow } from "../../../src/data/theme";
 
 const evaluationCriteria = [
   {
@@ -58,7 +59,7 @@ export default function ComparisonsPage() {
       <section className="bg-background">
         <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
           <div className="max-w-4xl space-y-5">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            <p className={eyebrow}>
               Comparisons
             </p>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">

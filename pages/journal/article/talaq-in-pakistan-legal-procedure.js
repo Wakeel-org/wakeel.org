@@ -11,7 +11,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const steps = [
   { title: "1. Pronounce the talaq", detail: "The husband pronounces talaq. Under Islamic law as generally applied, the manner and number of pronouncements can affect how it's characterised, but under Pakistani statute law the legal process below is what actually determines when it takes effect." },
@@ -64,11 +64,14 @@ const schema = [
     headline: "Talaq in Pakistan: Legal Procedure and Requirements",
     description:
       "The exact statutory procedure for talaq in Pakistan under Section 7 of the Muslim Family Laws Ordinance 1961 — Union Council notice, the Arbitration Council, and the 90-day period.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-28",
     dateModified: "2026-05-28",
     mainEntityOfPage: `${site.url}/journal/article/talaq-in-pakistan-legal-procedure`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -125,7 +128,7 @@ export default function TalaqInPakistanLegalProcedure() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published May 28, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

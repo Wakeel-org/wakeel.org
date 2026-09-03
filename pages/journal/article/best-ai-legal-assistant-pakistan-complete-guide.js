@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const criteria = [
   { icon: FileSearch, title: "Source-aware, not just fluent", detail: "The single most important test: does it cite the actual statute or section it's relying on, so you can verify the text yourself, or does it just produce a confident-sounding paragraph you can't check?" },
@@ -64,11 +64,15 @@ const schema = [
     headline: "Best AI Legal Assistant for Pakistan: Complete Guide",
     description:
       "The evaluation criteria that actually matter when choosing an AI legal assistant in Pakistan — source-awareness, bilingual support, jurisdiction grounding, and data handling.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-31",
     dateModified: "2026-05-31",
     mainEntityOfPage: `${site.url}/journal/article/best-ai-legal-assistant-pakistan-complete-guide`,
+    citation: [
+      { "@type": "CreativeWork", name: "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (2025, peer-reviewed) — Journal of Empirical Legal Studies / Stanford RegLab", url: "https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/" },
+      { "@type": "CreativeWork", name: "Final Draft — Personal Data Protection Bill, May 2023 — Ministry of IT & Telecommunication", url: "https://moitt.gov.pk/SiteImage/Misc/files/Final%20Draft%20Personal%20Data%20Protection%20Bill%20May%202023.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -118,7 +122,7 @@ export default function BestAiLegalAssistantPakistanCompleteGuide() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             AI & the Law · Published May 31, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

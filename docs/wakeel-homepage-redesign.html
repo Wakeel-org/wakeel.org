@@ -1,0 +1,1499 @@
+<title>Wakeel Case File</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+  /* ============================================================
+     TOKENS
+     ============================================================ */
+  :root{
+    --ink:#12161c;
+    --ink-soft:#4d5768;
+    --ink-faint:#7c869a;
+    --paper:#f6f7f9;
+    --paper-raised:#ffffff;
+    --paper-sunk:#eceff4;
+    --line:#d8dee7;
+    --line-strong:#b7c0ce;
+    --brand:#14467a;
+    --brand-ink:#0e3560;
+    --brand-tint:#dceafb;
+    --brand-foreground:#ffffff;
+    --verified:#1f6b33;
+    --verified-tint:#dcf3dc;
+    --focus:#14467a;
+
+    --citizen:#14467a;      --citizen-tint:#dceafb;
+    --student:#4b2585;      --student-tint:#ebdcfb;
+    --lawyer:#8a5a12;       --lawyer-tint:#fbe9d2;
+    --judge:#1a1c1d;        --judge-tint:#f3f3f4;
+    --lawfirm:#0e5a7a;      --lawfirm-tint:#d2eefb;
+    --policymaker:#01411c;  --policymaker-tint:#dcf3dc;
+    --institution:#8a1f1f;  --institution-tint:#fbdcdc;
+
+    --font-display:'Space Grotesk', system-ui, sans-serif;
+    --font-body:'Inter', system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+    --shell-pad: clamp(1.25rem, 4vw, 3rem);
+    --radius: 10px;
+    /* Sticky nav's rendered height (padding + logo row + border), used to
+       offset the fixed docket rail below it so the two never overlap. */
+    --nav-h: 4rem;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#eef1f6;
+      --ink-soft:#a7b0be;
+      --ink-faint:#727d8f;
+      --paper:#0a0d12;
+      --paper-raised:#12161d;
+      --paper-sunk:#171c24;
+      --line:#262c36;
+      --line-strong:#3a4250;
+      --brand:#7eb3e8;
+      --brand-ink:#dceafb;
+      --brand-tint:#122a42;
+      --brand-foreground:#0e1a28;
+      --verified:#4caf72;
+      --verified-tint:#15301c;
+      --focus:#7eb3e8;
+
+      --citizen:#7eb3e8;      --citizen-tint:#122a42;
+      --student:#c79ef2;      --student-tint:#241536;
+      --lawyer:#e8b563;       --lawyer-tint:#3a2a10;
+      --judge:#f3f3f4;        --judge-tint:#2a2c2d;
+      --lawfirm:#6fcbef;      --lawfirm-tint:#0c2733;
+      --policymaker:#4caf72;  --policymaker-tint:#15301c;
+      --institution:#e58080;  --institution-tint:#351212;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#eef1f6;
+    --ink-soft:#a7b0be;
+    --ink-faint:#727d8f;
+    --paper:#0a0d12;
+    --paper-raised:#12161d;
+    --paper-sunk:#171c24;
+    --line:#262c36;
+    --line-strong:#3a4250;
+    --brand:#7eb3e8;
+    --brand-ink:#dceafb;
+    --brand-tint:#122a42;
+    --brand-foreground:#0e1a28;
+    --verified:#4caf72;
+    --verified-tint:#15301c;
+    --focus:#7eb3e8;
+
+    --citizen:#7eb3e8;      --citizen-tint:#122a42;
+    --student:#c79ef2;      --student-tint:#241536;
+    --lawyer:#e8b563;       --lawyer-tint:#3a2a10;
+    --judge:#f3f3f4;        --judge-tint:#2a2c2d;
+    --lawfirm:#6fcbef;      --lawfirm-tint:#0c2733;
+    --policymaker:#4caf72;  --policymaker-tint:#15301c;
+    --institution:#e58080;  --institution-tint:#351212;
+  }
+
+  /* ============================================================
+     RESET-ISH / BASE
+     ============================================================ */
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; }
+  h1,h2,h3,h4{
+    font-family:var(--font-display);
+    font-weight:700;
+    letter-spacing:-0.02em;
+    text-wrap:balance;
+    margin:0;
+  }
+  p{ margin:0; }
+  ul{ margin:0; padding:0; list-style:none; }
+  button,input{ font-family:inherit; font-size:inherit; color:inherit; }
+  :focus-visible{ outline:2px solid var(--focus); outline-offset:2px; border-radius:4px; }
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  .container{
+    max-width:1280px;
+    margin:0 auto;
+    padding-inline: var(--shell-pad);
+  }
+  .rail-offset{ padding-left: 0; }
+  @media (min-width:1180px){
+    .rail-offset{ padding-left: 3rem; }
+  }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:0.7rem;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brand);
+  }
+  .eyebrow.neutral{ color:var(--ink-faint); }
+
+  .lede{ color:var(--ink-soft); }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:0.5rem;
+    font-family:var(--font-body); font-weight:600; font-size:0.95rem;
+    padding:0.8rem 1.5rem;
+    border-radius:8px;
+    border:2px solid transparent;
+    cursor:pointer;
+    text-decoration:none;
+    transition:transform 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+    white-space:nowrap;
+  }
+  .btn:active{ transform:translateY(1px); }
+  .btn-primary{ background:var(--brand); color:var(--brand-foreground); border-color:var(--brand); }
+  .btn-primary:hover{ background:var(--brand-ink); border-color:var(--brand-ink); }
+  .btn-outline{ background:transparent; color:var(--ink); border-color:var(--line-strong); }
+  .btn-outline:hover{ border-color:var(--ink); }
+  .btn-ghost{ background:transparent; color:var(--brand); border-color:transparent; padding-inline:0.25rem; }
+  .btn-ghost:hover{ text-decoration:underline; }
+  .btn-sm{ padding:0.6rem 1.1rem; font-size:0.85rem; }
+  .btn-block{ width:100%; }
+
+  .card{
+    background:var(--paper-raised);
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    transition:transform 220ms ease, border-color 220ms ease;
+  }
+  .card.lift:hover{ transform:translateY(-3px); border-color:var(--line-strong); }
+
+  .section{ padding-block: clamp(3.5rem, 7vw, 6.5rem); }
+  .section-head{ max-width:640px; margin-bottom:2.75rem; }
+  .section-head h2{ font-size:clamp(1.75rem, 3vw, 2.5rem); margin-top:0.6rem; }
+  .section.on-sunk{ background:var(--paper-sunk); border-block:1px solid var(--line); }
+
+  .placeholder-badge{
+    display:inline-flex; align-items:center; gap:0.4rem;
+    font-family:var(--font-mono); font-size:0.62rem; font-weight:700;
+    letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--ink-faint);
+    background:var(--paper-sunk);
+    border:1px dashed var(--line-strong);
+    padding:0.25rem 0.55rem;
+    border-radius:999px;
+  }
+
+  .icon{ width:1.15em; height:1.15em; flex-shrink:0; }
+
+  /* ============================================================
+     DOCKET RAIL — desktop-only vertical section index
+     ============================================================ */
+  .docket-rail{
+    display:none;
+  }
+  @media (min-width:1180px){
+    .docket-rail{
+      display:flex;
+      position:fixed;
+      /* Starts below the sticky nav (not top:0) — the nav sits at z-index
+         50, above the rail's 40, so without this offset the nav visually
+         covers the top ~4rem of the rail and clips the "CASE FILE" mark
+         down to a sliver. */
+      left:0; top:var(--nav-h); bottom:0;
+      width:3rem;
+      flex-direction:column;
+      align-items:center;
+      padding-block:0.85rem;
+      border-right:1px solid var(--line);
+      background:var(--paper-sunk);
+      z-index:40;
+    }
+    .docket-rail__mark{
+      flex-shrink:0;
+      writing-mode:vertical-rl;
+      font-family:var(--font-mono);
+      font-size:0.58rem;
+      font-weight:700;
+      letter-spacing:0.13em;
+      color:var(--brand);
+      margin-bottom:0.85rem;
+      padding-bottom:0.85rem;
+      border-bottom:1px solid var(--line-strong);
+    }
+    /* Middle zone scrolls independently so the full section index always
+       fits the ribbon, however tall the browser window is — nothing gets
+       clipped, it just scrolls instead. Scrollbar hidden, still keyboard/
+       wheel/trackpad scrollable. */
+    .docket-rail__scroll{
+      flex:1;
+      min-height:0;
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow-y:auto;
+      overflow-x:hidden;
+      scrollbar-width:none;
+      -ms-overflow-style:none;
+    }
+    .docket-rail__scroll::-webkit-scrollbar{ display:none; }
+    /* NOTE: writing-mode lives on the *links*, not this flex container.
+       Putting vertical-rl on a flex-direction:column parent reinterprets
+       "column" onto the rotated block/inline axes, which stretches each
+       item to fill the full cross-axis height instead of stacking them —
+       that's what produced the single blown-up item. Keeping the
+       container in normal writing mode and only rotating the text inside
+       each link keeps column stacking (and gap) behaving normally. */
+    .docket-rail__list{
+      display:flex; flex-direction:column; align-items:center; gap:0.9rem;
+      padding-block:0.6rem;
+    }
+    .docket-rail__list a{
+      writing-mode:vertical-rl;
+      text-orientation:mixed;
+      font-family:var(--font-mono);
+      font-size:0.56rem;
+      font-weight:700;
+      letter-spacing:0.1em;
+      text-transform:uppercase;
+      color:var(--ink-faint);
+      text-decoration:none;
+      transition:color 180ms ease;
+    }
+    .docket-rail__list a:hover{ color:var(--brand); }
+    .docket-rail__num{
+      flex-shrink:0;
+      font-family:var(--font-mono);
+      font-size:0.55rem;
+      color:var(--ink-faint);
+      writing-mode:vertical-rl;
+      margin-top:0.85rem;
+      padding-top:0.85rem;
+      border-top:1px solid var(--line-strong);
+    }
+  }
+
+  /* ============================================================
+     THEME PREVIEW TOGGLE (mockup-only — lets you flip between the
+     light and dark palettes regardless of system setting)
+     ============================================================ */
+  .theme-toggle{
+    display:inline-flex; align-items:center; gap:0.4rem;
+    border:1.5px solid var(--line-strong); border-radius:999px;
+    padding:0.35rem 0.7rem; background:var(--paper-raised);
+    font-family:var(--font-mono); font-size:0.68rem; font-weight:700;
+    letter-spacing:0.06em; text-transform:uppercase; color:var(--ink-soft);
+    cursor:pointer; transition:border-color 160ms ease, color 160ms ease;
+  }
+  .theme-toggle:hover{ border-color:var(--brand); color:var(--brand); }
+  .theme-toggle svg{ width:0.95em; height:0.95em; }
+
+  /* ============================================================
+     NAV
+     ============================================================ */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav__inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-block:0.9rem;
+  }
+  .nav__brand{
+    display:flex; align-items:center; gap:0.55rem;
+    text-decoration:none;
+    font-family:var(--font-display); font-weight:700; font-size:1.15rem; color:var(--ink);
+  }
+  .nav__mark{
+    width:2rem; height:2rem; border-radius:6px;
+    background:var(--brand); color:var(--brand-foreground);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-weight:700; font-size:0.85rem;
+  }
+  .nav__links{ display:none; gap:1.9rem; align-items:center; }
+  .nav__links a{ text-decoration:none; font-size:0.9rem; font-weight:600; color:var(--ink-soft); transition:color 160ms; }
+  .nav__links a:hover{ color:var(--ink); }
+  @media (min-width:900px){ .nav__links{ display:flex; } }
+  .nav__actions{ display:flex; align-items:center; gap:0.6rem; }
+  .nav__actions .btn-outline{ display:none; }
+  @media (min-width:640px){ .nav__actions .btn-outline{ display:inline-flex; } }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero{ padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(3rem, 6vw, 5rem); position:relative; overflow:hidden; }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0 0 auto 0; height:1px;
+    background:linear-gradient(90deg, transparent, var(--line-strong), transparent);
+  }
+  .hero__grid{
+    display:grid; gap:1.75rem;
+    grid-template-columns:1fr;
+  }
+  @media (min-width:1024px){
+    .hero__grid{ grid-template-columns:1.05fr 0.95fr; align-items:stretch; gap:2rem; }
+  }
+  .hero__stamp{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    padding:0.5rem 0.85rem;
+    border:1.5px solid var(--brand);
+    background:var(--brand-tint);
+    border-radius:6px;
+    margin-bottom:1.4rem;
+    animation:rise 700ms ease both;
+  }
+  .hero h1{
+    font-size:clamp(2.1rem, 4.6vw, 3.4rem);
+    line-height:1.05;
+    animation:rise 700ms ease 60ms both;
+  }
+  .hero__sub{
+    margin-top:1.1rem; font-size:clamp(1.05rem, 1.6vw, 1.25rem);
+    font-weight:600; color:var(--ink);
+    animation:rise 700ms ease 120ms both;
+  }
+  .hero__body{
+    margin-top:0.85rem; max-width:38rem; color:var(--ink-soft);
+    animation:rise 700ms ease 160ms both;
+  }
+  .hero__proof{
+    margin-top:1.5rem; display:flex; flex-wrap:wrap; gap:0.9rem; align-items:center;
+    animation:rise 700ms ease 200ms both;
+  }
+  .proof-pill{
+    display:flex; align-items:center; gap:0.55rem;
+    border:1.5px solid var(--line); background:var(--paper-raised);
+    border-radius:8px; padding:0.55rem 0.85rem; font-size:0.83rem;
+  }
+  .proof-pill strong{ font-weight:700; }
+  .proof-avatar{
+    width:1.9rem; height:1.9rem; border-radius:50%;
+    background:var(--verified-tint); color:var(--verified);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-weight:700; font-size:0.7rem;
+    border:1.5px solid var(--verified);
+  }
+  .hero__cta{
+    margin-top:1.6rem; display:flex; flex-wrap:wrap; gap:0.85rem; align-items:center;
+    animation:rise 700ms ease 240ms both;
+  }
+  .hero__micro{ margin-top:0.65rem; font-size:0.8rem; color:var(--ink-faint); animation:rise 700ms ease 280ms both; }
+  .hero__disclaimer{
+    margin-top:1.4rem; font-size:0.76rem; color:var(--ink-faint);
+    border-top:1px solid var(--line); padding-top:1rem; max-width:38rem;
+  }
+
+  @keyframes rise{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  /* Demo card */
+  .demo{
+    display:flex; flex-direction:column;
+    border:2px solid var(--brand);
+    border-radius:var(--radius);
+    background:var(--paper-raised);
+    overflow:hidden;
+    animation:rise 700ms ease 160ms both;
+  }
+  .demo__head{
+    display:flex; align-items:center; justify-content:space-between; gap:0.5rem;
+    padding:0.9rem 1.1rem;
+    background:var(--brand-tint);
+    border-bottom:1.5px solid var(--brand);
+  }
+  .demo__head span{
+    font-family:var(--font-mono); font-size:0.68rem; font-weight:700;
+    letter-spacing:0.08em; text-transform:uppercase; color:var(--brand);
+  }
+  .demo__body{ padding:1.1rem; display:flex; flex-direction:column; gap:1rem; flex:1; }
+  .demo__tabs{ display:flex; gap:0.4rem; flex-wrap:wrap; }
+  .demo__tabs input{ position:absolute; opacity:0; pointer-events:none; }
+  .demo__tabs label{
+    font-size:0.8rem; font-weight:600; padding:0.45rem 0.8rem;
+    border:1.5px solid var(--line); border-radius:999px; cursor:pointer;
+    color:var(--ink-soft); transition:all 160ms ease;
+  }
+  .demo__panels{ position:relative; min-height:11.5rem; }
+  .demo__panel{
+    display:none; flex-direction:column; gap:0.7rem;
+    border:1.5px solid var(--line); border-radius:8px; padding:1rem;
+    background:var(--paper);
+  }
+  .demo__panel .q{ font-weight:700; font-size:0.92rem; }
+  .demo__panel .a{ font-size:0.86rem; color:var(--ink-soft); }
+  .demo__panel .tag{ font-family:var(--font-mono); font-size:0.62rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--verified); }
+  #tab-fir:checked ~ .demo__tabs label[for="tab-fir"],
+  #tab-420:checked ~ .demo__tabs label[for="tab-420"],
+  #tab-rent:checked ~ .demo__tabs label[for="tab-rent"]{
+    background:var(--brand); color:var(--brand-foreground); border-color:var(--brand);
+  }
+  #tab-fir:checked ~ .demo__panels .panel-fir,
+  #tab-420:checked ~ .demo__panels .panel-420,
+  #tab-rent:checked ~ .demo__panels .panel-rent{ display:flex; }
+  .demo__input{
+    display:flex; gap:0.5rem; border-top:1px solid var(--line); padding-top:1rem;
+  }
+  .demo__input input[type="text"]{
+    flex:1; border:1.5px solid var(--line); border-radius:8px;
+    padding:0.7rem 0.9rem; background:var(--paper); color:var(--ink);
+  }
+  .demo__input input[type="text"]::placeholder{ color:var(--ink-faint); }
+  .demo__note{ font-size:0.72rem; color:var(--ink-faint); }
+  /* Fills what used to be dead space at the bottom of the demo card (it
+     stretches to match the taller hero copy column) with something
+     useful: the two store badges, pinned to the bottom and given room
+     to breathe instead of leaving blank card. */
+  .demo__get-app{
+    margin-top:auto; padding-top:1rem; border-top:1px solid var(--line);
+    display:flex; flex-direction:column; gap:0.65rem;
+  }
+  .demo__get-app-label{
+    font-family:var(--font-mono); font-size:0.66rem; font-weight:700;
+    letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint);
+  }
+  .store-badges{ display:flex; flex-wrap:wrap; gap:0.6rem; }
+  .store-badge{
+    display:inline-flex; align-items:center; gap:0.55rem;
+    border:1.5px solid var(--line-strong); border-radius:8px;
+    padding:0.55rem 0.9rem; text-decoration:none; color:var(--ink);
+    background:var(--paper); flex:1; min-width:9.5rem;
+    transition:border-color 160ms ease, transform 160ms ease;
+  }
+  .store-badge:hover{ border-color:var(--brand); transform:translateY(-1px); }
+  .store-badge svg{ width:1.35rem; height:1.35rem; flex-shrink:0; color:var(--ink); }
+  .store-badge .lines{ display:flex; flex-direction:column; line-height:1.2; }
+  .store-badge .lines span:first-child{ font-size:0.62rem; color:var(--ink-faint); }
+  .store-badge .lines span:last-child{ font-size:0.83rem; font-weight:700; }
+
+  /* ============================================================
+     TRUST STRIP
+     ============================================================ */
+  .trust-strip{ border-block:1px solid var(--line); background:var(--paper-sunk); }
+  .trust-strip__grid{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:0.85rem;
+    padding-block:1.4rem;
+  }
+  @media (min-width:760px){ .trust-strip__grid{ grid-template-columns:repeat(4,1fr); } }
+  .trust-chip{
+    display:flex; align-items:center; gap:0.6rem;
+    background:var(--paper-raised); border:1.5px solid var(--line); border-radius:8px;
+    padding:0.75rem 0.9rem; font-size:0.82rem; font-weight:600; color:var(--ink-soft);
+  }
+  .trust-chip svg{ color:var(--brand); }
+
+  /* ============================================================
+     DIFFERENTIATION
+     ============================================================ */
+  .diff{
+    display:grid; gap:2rem; align-items:start;
+    grid-template-columns:1fr;
+  }
+  @media (min-width:960px){ .diff{ grid-template-columns:0.85fr 1.15fr; } }
+  .diff-table{
+    border:1.5px solid var(--line); border-radius:var(--radius); overflow:hidden;
+    background:var(--paper-raised);
+  }
+  .diff-row{
+    display:grid; grid-template-columns:1fr 1fr;
+    border-top:1px solid var(--line);
+  }
+  .diff-row:first-child{ border-top:none; background:var(--paper-sunk); }
+  .diff-cell{ padding:0.9rem 1.1rem; font-size:0.85rem; }
+  .diff-cell + .diff-cell{ border-left:1px solid var(--line); }
+  .diff-row:first-child .diff-cell{
+    font-family:var(--font-mono); font-size:0.68rem; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-faint);
+  }
+  .diff-row:not(:first-child) .diff-cell:first-child{ color:var(--ink-faint); }
+  .diff-row:not(:first-child) .diff-cell:last-child{ color:var(--ink); font-weight:600; }
+  .diff-row:not(:first-child) .diff-cell:last-child::before{ content:"✓ "; color:var(--verified); font-weight:700; }
+
+  /* ============================================================
+     GRIDS
+     ============================================================ */
+  .grid{ display:grid; gap:1.15rem; }
+  .grid-2{ grid-template-columns:1fr; }
+  @media (min-width:720px){ .grid-2{ grid-template-columns:1fr 1fr; } }
+  .grid-3{ grid-template-columns:1fr; }
+  @media (min-width:720px){ .grid-3{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1080px){ .grid-3{ grid-template-columns:repeat(3,1fr); } }
+  .grid-4{ grid-template-columns:1fr; }
+  @media (min-width:640px){ .grid-4{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1080px){ .grid-4{ grid-template-columns:repeat(4,1fr); } }
+  .grid-5{ grid-template-columns:1fr; }
+  @media (min-width:640px){ .grid-5{ grid-template-columns:1fr 1fr; } }
+  @media (min-width:1180px){ .grid-5{ grid-template-columns:repeat(5,1fr); } }
+
+  /* Portal cards */
+  .portal-card{ padding:1.4rem; display:flex; flex-direction:column; gap:0.9rem; border-top-width:3px; }
+  .portal-card__head{ display:flex; align-items:flex-start; justify-content:space-between; gap:0.5rem; }
+  .portal-icon{
+    width:3rem; height:3rem; border-radius:8px; border:1.5px solid;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .portal-stamp{
+    font-family:var(--font-mono); font-size:0.58rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+    border:1px solid; border-radius:999px; padding:0.2rem 0.55rem;
+  }
+  .portal-card h3{ font-size:1.15rem; }
+  .portal-card p{ font-size:0.87rem; color:var(--ink-soft); }
+  .portal-card ul{ display:flex; flex-direction:column; gap:0.4rem; }
+  .portal-card li{ font-size:0.8rem; color:var(--ink-soft); display:flex; gap:0.45rem; }
+  .portal-card li svg{ margin-top:0.15rem; }
+  .portal-card a{ font-size:0.86rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:0.35rem; margin-top:auto; }
+  .portal-card a:hover{ text-decoration:underline; }
+
+  /* Value / feature cards */
+  .value-card, .feature-card{ padding:1.5rem; display:flex; flex-direction:column; gap:0.7rem; }
+  .value-card{ border-top-width:3px; }
+  .dot{ width:0.5rem; height:0.5rem; border-radius:50%; }
+  .value-card h3, .feature-card h3{ font-size:1.05rem; }
+  .value-card p, .feature-card p{ font-size:0.86rem; color:var(--ink-soft); }
+  .feature-card .icon-tile{
+    width:2.9rem; height:2.9rem; border-radius:8px;
+    border:1.5px solid var(--brand); background:var(--brand-tint); color:var(--brand);
+    display:flex; align-items:center; justify-content:center;
+  }
+
+  /* Testimonials */
+  .testi-card{ padding:1.5rem; display:flex; flex-direction:column; gap:1rem; }
+  .testi-card__quote{ font-size:0.94rem; color:var(--ink); }
+  .testi-card__who{ display:flex; align-items:center; gap:0.7rem; margin-top:auto; }
+  .testi-avatar{
+    width:2.4rem; height:2.4rem; border-radius:50%; background:var(--paper-sunk);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-mono); font-weight:700; font-size:0.75rem; color:var(--ink-faint);
+    border:1.5px solid var(--line);
+  }
+  .testi-name{ font-weight:700; font-size:0.86rem; }
+  .testi-role{ font-size:0.76rem; color:var(--ink-faint); }
+
+  /* FAQ — two columns on wider screens, single column on mobile. Grid
+     (not columns:2) so items reflow top-to-bottom then left-to-right and
+     each card keeps its own natural height instead of getting sliced. */
+  .faq{
+    display:grid; grid-template-columns:1fr; gap:0.9rem;
+    max-width:none; align-items:start;
+  }
+  @media (min-width:760px){
+    .faq{ grid-template-columns:1fr 1fr; gap:1rem 1.25rem; }
+  }
+  .faq details{
+    border:1.5px solid var(--line); border-radius:8px; background:var(--paper-raised);
+    padding:0; overflow:hidden; height:fit-content;
+    transition:border-color 180ms ease;
+  }
+  .faq details[open]{ border-color:var(--brand); }
+  .faq summary{
+    cursor:pointer; list-style:none; padding:1.05rem 1.2rem;
+    display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    font-weight:700; font-size:0.95rem;
+  }
+  .faq summary::-webkit-details-marker{ display:none; }
+  .faq summary::after{
+    content:"+"; font-family:var(--font-mono); font-size:1.2rem; color:var(--brand); flex-shrink:0;
+    transition:transform 200ms ease;
+  }
+  .faq details[open] summary::after{ transform:rotate(45deg); }
+  .faq .faq-a{ padding:0 1.2rem 1.1rem; font-size:0.88rem; color:var(--ink-soft); }
+
+  /* Pricing */
+  .price-card{ padding:1.4rem; display:flex; flex-direction:column; gap:1rem; border-top-width:3px; }
+  .price-card .amount{ font-family:var(--font-display); font-size:1.55rem; font-weight:700; }
+  .price-card .note{ font-size:0.75rem; color:var(--ink-faint); }
+  .price-card ul{ display:flex; flex-direction:column; gap:0.5rem; flex:1; }
+  .price-card li{ font-size:0.78rem; color:var(--ink-soft); display:flex; gap:0.4rem; }
+
+  /* ============================================================
+     FINAL CTA — a deliberate single dark "ink & stamp" treatment,
+     styled after the closing/attestation page of a physical case file.
+     Colors here are literal hex, not theme tokens, on purpose: this band
+     stays the same regardless of whether the rest of the page is in
+     light or dark mode (see artifact theming rules — a band may commit
+     to one look as long as it paints every color itself, which this
+     does throughout).
+     ============================================================ */
+  .final-cta{
+    position:relative; overflow:hidden;
+    background:linear-gradient(165deg, #0a1420 0%, #123255 55%, #164a72 100%);
+    color:#f4f7fb;
+  }
+  .final-cta__stamp{
+    position:absolute; top:-7rem; right:-7rem;
+    width:28rem; height:28rem; opacity:0.14; pointer-events:none;
+    animation:spin-slow 70s linear infinite;
+  }
+  @keyframes spin-slow{ to{ transform:rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce){ .final-cta__stamp{ animation:none; } }
+
+  .final-cta__grid{
+    position:relative; z-index:1;
+    display:grid; gap:2.5rem; grid-template-columns:1fr; align-items:center;
+  }
+  @media (min-width:900px){ .final-cta__grid{ grid-template-columns:1.15fr 0.85fr; gap:3rem; } }
+
+  .final-cta .eyebrow{ color:#e8b563; }
+  .final-cta h2{ color:#f4f7fb; font-size:clamp(1.9rem, 3.6vw, 2.9rem); margin-top:0.6rem; }
+  .final-cta p.lede{ color:rgba(244,247,251,0.78); margin-top:1rem; max-width:32rem; }
+
+  .final-cta__badges{ display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.5rem; }
+  .final-cta__pill{
+    display:inline-flex; align-items:center; gap:0.5rem;
+    border:1.5px solid rgba(244,247,251,0.25); border-radius:999px;
+    padding:0.45rem 0.9rem; font-size:0.78rem; color:rgba(244,247,251,0.92);
+  }
+  .final-cta__pill svg{ color:#e8b563; flex-shrink:0; }
+
+  .final-cta__actions{ margin-top:1.7rem; display:flex; flex-direction:column; gap:1.1rem; align-items:flex-start; }
+  .final-cta__actions .btn-primary{ background:#e8b563; border-color:#e8b563; color:#1a1206; }
+  .final-cta__actions .btn-primary:hover{ background:#f2c67e; border-color:#f2c67e; }
+  .final-cta .store-badges{ max-width:26rem; }
+  .final-cta .store-badge{ background:rgba(255,255,255,0.05); border-color:rgba(244,247,251,0.25); }
+  .final-cta .store-badge:hover{ border-color:#e8b563; }
+  .final-cta .store-badge svg{ color:#f4f7fb; }
+  .final-cta .store-badge .lines span:first-child{ color:rgba(244,247,251,0.58); }
+  .final-cta .store-badge .lines span:last-child{ color:#f4f7fb; }
+
+  .final-cta__side{
+    background:rgba(255,255,255,0.045);
+    border:1.5px solid rgba(244,247,251,0.2);
+    border-radius:var(--radius);
+    padding:1.7rem;
+  }
+  .final-cta__side .mono-label{
+    font-family:var(--font-mono); font-size:0.66rem; font-weight:700;
+    letter-spacing:0.12em; text-transform:uppercase; color:#e8b563;
+    margin-bottom:0.8rem; display:block;
+  }
+  .final-cta__side h3{ color:#f4f7fb; font-size:1.15rem; margin-bottom:0.4rem; }
+  .final-cta__side p{ font-size:0.85rem; color:rgba(244,247,251,0.72); margin-bottom:1.15rem; }
+  .final-cta__side input[type="email"]{
+    width:100%; border:1.5px solid rgba(244,247,251,0.28); border-radius:8px;
+    padding:0.75rem 0.9rem; background:rgba(255,255,255,0.06); color:#f4f7fb; margin-bottom:0.7rem;
+  }
+  .final-cta__side input[type="email"]::placeholder{ color:rgba(244,247,251,0.45); }
+  .final-cta__side .btn-primary{ background:#e8b563; border-color:#e8b563; color:#1a1206; }
+  .final-cta__side .btn-primary:hover{ background:#f2c67e; border-color:#f2c67e; }
+  .final-cta__side .fine{ margin-top:0.9rem; font-size:0.72rem; color:rgba(244,247,251,0.55); }
+
+  /* Footer */
+  .footer{ border-top:1px solid var(--line); background:var(--paper-sunk); }
+  .footer__grid{ display:grid; gap:2rem; grid-template-columns:1fr; padding-block:3rem; }
+  @media (min-width:800px){ .footer__grid{ grid-template-columns:1.3fr 1fr 1fr 1fr; } }
+  .footer h4{ font-family:var(--font-mono); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:0.9rem; }
+  .footer ul{ display:flex; flex-direction:column; gap:0.55rem; }
+  .footer a{ font-size:0.85rem; color:var(--ink-soft); text-decoration:none; }
+  .footer a:hover{ color:var(--ink); text-decoration:underline; }
+  .footer__bottom{
+    border-top:1px solid var(--line); padding-block:1.3rem;
+    display:flex; flex-wrap:wrap; gap:0.8rem; justify-content:space-between;
+    font-size:0.78rem; color:var(--ink-faint);
+  }
+
+  .center{ text-align:center; margin-inline:auto; }
+  .mt-lg{ margin-top:2.2rem; }
+  .cols-tail{ text-align:center; margin-top:2.4rem; }
+</style>
+
+<!-- ================= DOCKET RAIL ================= -->
+<nav class="docket-rail" aria-label="Section index">
+  <span class="docket-rail__mark">CASE FILE</span>
+  <div class="docket-rail__scroll">
+    <div class="docket-rail__list">
+      <a href="#hero">Cover</a>
+      <a href="#demo">Consultation</a>
+      <a href="#portals">Portals</a>
+      <a href="#values">Values</a>
+      <a href="#features">Capabilities</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+  <span class="docket-rail__num">PK · EN/UR</span>
+</nav>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="container rail-offset nav__inner">
+    <a href="#hero" class="nav__brand">
+      <span class="nav__mark">W</span>
+      Wakeel.org
+    </a>
+    <nav class="nav__links">
+      <a href="#portals">Solutions</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#">Journal</a>
+    </nav>
+    <div class="nav__actions">
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Preview light or dark mode">
+        <svg id="theme-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <span id="theme-toggle-label">Light preview</span>
+      </button>
+      <a href="#" class="btn btn-outline btn-sm">Log in</a>
+      <a href="#demo" class="btn btn-primary btn-sm">Ask Wakeel Free</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="hero">
+    <div class="container rail-offset">
+      <div class="hero__grid">
+        <div>
+          <span class="hero__stamp eyebrow">Wakeel.org · Agentic legal AI for Pakistan</span>
+          <h1>Your AI lawyer and legal assistant, in your pocket.</h1>
+          <p class="hero__sub">For citizens, law students, lawyers, and institutions — ask in English or Urdu.</p>
+          <p class="hero__body">Wakeel doesn't just reply — it works agentically: planning a research path, checking it against Pakistani statutes and case law, and only then composing an answer. Understand legal documents, explore Pakistani laws, and get source-aware legal guidance built around Pakistan's legal system.</p>
+
+          <div class="hero__proof">
+            <div class="proof-pill">
+              <span class="proof-avatar">SA</span>
+              <span>Legal accuracy reviewed by <strong>Sikandar Azam</strong>, Advocate High Court</span>
+            </div>
+            <div class="proof-pill">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" style="color:var(--lawyer)"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.7 1.6 6.8L12 17l-6.2 3.5 1.6-6.8L2.2 9l6.9-.7z"/></svg>
+              <span><strong>4.6★</strong> Play Store <span class="placeholder-badge">placeholder</span></span>
+            </div>
+            <div class="proof-pill">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" style="color:var(--verified)"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h3M14 7.5l3 3M14 16.5l3-3"/></svg>
+              <span>Agentic — plans &amp; verifies, not single-turn chat</span>
+            </div>
+          </div>
+
+          <div class="hero__cta">
+            <a href="#demo" class="btn btn-primary">Ask Wakeel — try it free below</a>
+            <a href="#" class="btn btn-ghost">View Legal Sources →</a>
+          </div>
+          <p class="hero__micro">Free to start — no signup needed for a sample question.</p>
+
+          <p class="hero__disclaimer">Wakeel.org provides legal information and research support. It does not provide final legal advice, does not guarantee outcomes, and does not replace consultation with a licensed advocate.</p>
+        </div>
+
+        <div class="demo" id="demo">
+          <div class="demo__head">
+            <span>Sample consultation · Not legal advice</span>
+            <span>Docket #EN-UR-01</span>
+          </div>
+          <div class="demo__body">
+            <div class="demo__tabs">
+              <input type="radio" name="demo-tab" id="tab-fir" checked>
+              <label for="tab-fir">FIR</label>
+              <input type="radio" name="demo-tab" id="tab-420">
+              <label for="tab-420">PPC 420</label>
+              <input type="radio" name="demo-tab" id="tab-rent">
+              <label for="tab-rent">Rent deposit</label>
+
+              <div class="demo__panels">
+                <div class="demo__panel panel-fir">
+                  <span class="tag">✓ Source-aware</span>
+                  <p class="q">"Police refused to register my FIR. What can I do?"</p>
+                  <p class="a">Under Section 154 Cr.P.C., an officer in charge of a police station must register an FIR for a cognizable offence. If refused, you can write to the Superintendent of Police, or approach a Magistrate under Section 22-A/22-B Cr.P.C. to direct registration.</p>
+                </div>
+                <div class="demo__panel panel-420">
+                  <span class="tag">✓ Source-aware</span>
+                  <p class="q">"Explain PPC Section 420 in simple terms."</p>
+                  <p class="a">Section 420 PPC covers cheating and dishonestly inducing delivery of property — deceiving someone into handing over property, money, or a valuable document. It's a common section cited in fraud complaints.</p>
+                </div>
+                <div class="demo__panel panel-rent">
+                  <span class="tag">✓ Source-aware</span>
+                  <p class="q">"My landlord won't return my security deposit."</p>
+                  <p class="a">Tenancy rules vary by province, but landlords generally must return a deposit minus documented damage. Send a written demand notice first; if unresolved, file with the rent tribunal in your district.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="demo__input">
+              <input type="text" placeholder="Have your own question? Ask in English or Urdu…">
+              <button type="button" class="btn btn-primary btn-sm">Get my answer</button>
+            </div>
+            <p class="demo__note">Interactive question-answering runs in the Wakeel app — this panel previews the experience.</p>
+
+            <div class="demo__get-app">
+              <span class="demo__get-app-label">Get the full agentic experience</span>
+              <div class="store-badges">
+                <a href="#" class="store-badge">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.462 2.238-1.215 3.045-.816.873-2.16 1.548-3.24 1.458-.135-1.11.42-2.28 1.17-3.03.84-.87 2.31-1.53 3.285-1.473zM20.16 17.13c-.435.99-.645 1.44-1.2 2.31-.78 1.215-1.875 2.73-3.24 2.745-1.215.015-1.53-.78-3.18-.78-1.65 0-2.01.765-3.225.795-1.32.03-2.325-1.32-3.105-2.535-2.13-3.27-2.355-7.11-1.035-9.15.93-1.44 2.4-2.28 3.78-2.28 1.41 0 2.295.795 3.465.795 1.14 0 1.83-.795 3.465-.795 1.23 0 2.535.66 3.465 1.8-3.045 1.665-2.55 5.985.81 6.9z"/></svg>
+                  <span class="lines"><span>Download on the</span><span>App Store</span></span>
+                </a>
+                <a href="#" class="store-badge">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.6a1.2 1.2 0 0 0-.6 1.05v16.7c0 .42.22.8.6 1.05l9.35-9.4z"/><path d="M15.9 10.98l2.75-1.6c.75-.43.75-1.5 0-1.93l-2.75-1.6-3.1 3.13z" opacity=".9"/><path d="M3.4 21.75c.3.16.68.16 1 .02l11.2-6.5-3.1-3.12z"/><path d="M3.4 2.25c.3-.16.68-.16 1 .02l11.2 6.5-3.1 3.12z" opacity=".85"/></svg>
+                  <span class="lines"><span>GET IT ON</span><span>Google Play</span></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST STRIP ================= -->
+  <section class="trust-strip">
+    <div class="container rail-offset trust-strip__grid">
+      <div class="trust-chip">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/></svg>
+        Built for Pakistani law
+      </div>
+      <div class="trust-chip">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        Official legal sources
+      </div>
+      <div class="trust-chip">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+        Encrypted document processing
+      </div>
+      <div class="trust-chip">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+        Legal info, not a lawyer replacement
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DIFFERENTIATION ================= -->
+  <section class="section">
+    <div class="container rail-offset">
+      <div class="diff">
+        <div class="section-head" style="margin-bottom:0;">
+          <p class="eyebrow">Why not just ask a generic chatbot?</p>
+          <h2>Grounded in Pakistan's legal system, not the whole internet.</h2>
+          <p class="lede" style="margin-top:1rem;">Generic AI chatbots answer from wherever the internet points them, in one shot. Wakeel works agentically — it plans a research path, checks it against Pakistani statutes and procedure, and only then composes an answer — so the gap between "an answer" and "a usable answer" is smaller.</p>
+        </div>
+        <div class="diff-table">
+          <div class="diff-row">
+            <div class="diff-cell">Generic AI chatbot</div>
+            <div class="diff-cell">Wakeel.org</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-cell">Single-turn reply, best guess</div>
+            <div class="diff-cell">Agentic — plans, researches &amp; verifies in steps</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-cell">General web knowledge</div>
+            <div class="diff-cell">Pakistan-specific statutes &amp; procedure</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-cell">English only, usually</div>
+            <div class="diff-cell">Plain English or Urdu</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-cell">No source discipline</div>
+            <div class="diff-cell">Source-aware, verify-first answers</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-cell">No legal review</div>
+            <div class="diff-cell">Reviewed by a practicing advocate</div>
+          </div>
+          <div class="diff-row">
+            <div class="diff-cell">Struggles past a few pages</div>
+            <div class="diff-cell">Analyzes documents 100+ pages long</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PORTALS / AUDIENCES ================= -->
+  <section class="section on-sunk" id="portals">
+    <div class="container rail-offset">
+      <div class="section-head">
+        <p class="eyebrow neutral">Seven portals, one legal system</p>
+        <h2>Built for the people who use Pakistani law every day.</h2>
+      </div>
+      <div class="grid grid-4">
+
+        <article class="card lift portal-card" style="border-top-color:var(--citizen)">
+          <div class="portal-card__head">
+            <div class="portal-icon" style="border-color:var(--citizen); background:var(--citizen-tint); color:var(--citizen)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 18h4"/></svg>
+            </div>
+            <span class="portal-stamp" style="border-color:var(--citizen); color:var(--citizen)">Citizen</span>
+          </div>
+          <h3>Citizens</h3>
+          <p>Understand everyday legal issues from the palm of your hand — rights, notices, documents, and when to seek a licensed advocate.</p>
+          <ul>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--citizen)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Legal rights guide</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--citizen)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Document templates</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--citizen)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Legal Q&amp;A</li>
+          </ul>
+          <a href="#" style="color:var(--citizen)">Wakeel for Citizens →</a>
+        </article>
+
+        <article class="card lift portal-card" style="border-top-color:var(--student)">
+          <div class="portal-card__head">
+            <div class="portal-icon" style="border-color:var(--student); background:var(--student-tint); color:var(--student)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M7 10.5V15c0 1.5 2.5 3 5 3s5-1.5 5-3v-4.5"/></svg>
+            </div>
+            <span class="portal-stamp" style="border-color:var(--student); color:var(--student)">Student</span>
+          </div>
+          <h3>Law Students</h3>
+          <p>Structured study support, case explanations, legal concepts, and research prompts for classes, exams, and early practice.</p>
+          <ul>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--student)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Legal research</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--student)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Study resources</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--student)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Case analysis</li>
+          </ul>
+          <a href="#" style="color:var(--student)">Wakeel for Students →</a>
+        </article>
+
+        <article class="card lift portal-card" style="border-top-color:var(--lawyer)">
+          <div class="portal-card__head">
+            <div class="portal-icon" style="border-color:var(--lawyer); background:var(--lawyer-tint); color:var(--lawyer)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 3v18M7 7l-4 8a4 4 0 0 0 8 0zM21 7l-4 8a4 4 0 0 0 8 0z"/><path d="M5 7h14"/></svg>
+            </div>
+            <span class="portal-stamp" style="border-color:var(--lawyer); color:var(--lawyer)">Lawyer</span>
+          </div>
+          <h3>Lawyers</h3>
+          <p>Streamline research, drafting, client document review, and matter notes while keeping professional judgment in control.</p>
+          <ul>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--lawyer)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Case management</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--lawyer)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Document drafting</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--lawyer)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Client portal workflows</li>
+          </ul>
+          <a href="#" style="color:var(--lawyer)">Wakeel for Lawyers →</a>
+        </article>
+
+        <article class="card lift portal-card" style="border-top-color:var(--lawfirm)">
+          <div class="portal-card__head">
+            <div class="portal-icon" style="border-color:var(--lawfirm); background:var(--lawfirm-tint); color:var(--lawfirm)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>
+            </div>
+            <span class="portal-stamp" style="border-color:var(--lawfirm); color:var(--lawfirm)">Law Firm</span>
+          </div>
+          <h3>Law Firms</h3>
+          <p>Repeatable workflows for firms and legal departments that need shared research and document organization.</p>
+          <ul>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--lawfirm)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Team dashboard</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--lawfirm)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Document vault</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--lawfirm)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Shared research</li>
+          </ul>
+          <a href="#" style="color:var(--lawfirm)">Wakeel for Law Firms →</a>
+        </article>
+
+        <article class="card lift portal-card" style="border-top-color:var(--judge)">
+          <div class="portal-card__head">
+            <div class="portal-icon" style="border-color:var(--judge); background:var(--judge-tint); color:var(--judge)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 3l3 5h6l-4.5 3.5L18 17l-6-4-6 4 1.5-5.5L3 8h6z"/></svg>
+            </div>
+            <span class="portal-stamp" style="border-color:var(--judge); color:var(--judge)">Judge</span>
+          </div>
+          <h3>Judges</h3>
+          <p>A neutral research aid only — statutes, precedents, issue mapping, and document summaries.</p>
+          <ul>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--judge)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Precedent tracking</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--judge)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Issue mapping</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--judge)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Legal database review</li>
+          </ul>
+          <a href="#" style="color:var(--judge)">Wakeel for Judges →</a>
+        </article>
+
+        <article class="card lift portal-card" style="border-top-color:var(--policymaker)">
+          <div class="portal-card__head">
+            <div class="portal-icon" style="border-color:var(--policymaker); background:var(--policymaker-tint); color:var(--policymaker)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 21h16M6 21V10l6-6 6 6v11M10 21v-5h4v5"/></svg>
+            </div>
+            <span class="portal-stamp" style="border-color:var(--policymaker); color:var(--policymaker)">Policymaker</span>
+          </div>
+          <h3>Policymakers</h3>
+          <p>Data-aware legal summaries, regulation review, and comparative notes for policy research and institutional planning.</p>
+          <ul>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--policymaker)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Policy analysis</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--policymaker)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Regulatory tools</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--policymaker)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Data insights</li>
+          </ul>
+          <a href="#" style="color:var(--policymaker)">Wakeel for Policymakers →</a>
+        </article>
+
+        <article class="card lift portal-card" style="border-top-color:var(--institution)">
+          <div class="portal-card__head">
+            <div class="portal-icon" style="border-color:var(--institution); background:var(--institution-tint); color:var(--institution)">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 4v16M16 4v16M4 12h16"/></svg>
+            </div>
+            <span class="portal-stamp" style="border-color:var(--institution); color:var(--institution)">Institution</span>
+          </div>
+          <h3>Legal Institutions</h3>
+          <p>Support universities, legal aid centers, and organizations with scalable learning, training, and research workflows.</p>
+          <ul>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--institution)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Institutional access</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--institution)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Training programs</li>
+            <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--institution)" stroke-width="2"><path d="M5 12l4 4 10-10"/></svg>Research tools</li>
+          </ul>
+          <a href="#" style="color:var(--institution)">Wakeel for Institutions →</a>
+        </article>
+
+        <article class="card lift" style="display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:0.9rem; padding:1.4rem; background:var(--brand-tint); border-color:var(--brand);">
+          <p class="eyebrow" style="margin:0;">Not sure which portal?</p>
+          <h3 style="font-size:1.05rem;">Start with a question — Wakeel routes the answer to your context.</h3>
+          <a href="#demo" class="btn btn-primary btn-sm">Try the demo above</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VISION & MISSION ================= -->
+  <section class="section">
+    <div class="container rail-offset">
+      <div class="section-head center" style="max-width:640px;">
+        <p class="eyebrow">Why we exist</p>
+        <h2>Our vision &amp; mission</h2>
+      </div>
+      <div class="grid grid-2">
+        <div class="card lift" style="padding:2rem;">
+          <div class="portal-icon" style="border-color:var(--brand); background:var(--brand-tint); color:var(--brand); width:3.5rem; height:3.5rem; margin-bottom:1.1rem;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <p class="eyebrow" style="margin-bottom:0.6rem;">Vision</p>
+          <p style="font-size:1.3rem; font-weight:600; line-height:1.4;">To make Pakistani law easier to understand, access, and work with for citizens, students, legal professionals, and institutions.</p>
+        </div>
+        <div class="card lift" style="padding:2rem;">
+          <div class="portal-icon" style="border-color:var(--brand); background:var(--brand-tint); color:var(--brand); width:3.5rem; height:3.5rem; margin-bottom:1.1rem;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <p class="eyebrow" style="margin-bottom:0.6rem;">Mission</p>
+          <p style="font-size:1.3rem; font-weight:600; line-height:1.4;">To provide safe, source-aware, bilingual legal information and research support through AI-assisted tools built around Pakistan's legal system.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CORE VALUES ================= -->
+  <section class="section on-sunk" id="values">
+    <div class="container rail-offset">
+      <div class="section-head center" style="max-width:640px;">
+        <p class="eyebrow neutral">What guides the product</p>
+        <h2>Core values for responsible legal AI.</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card lift value-card" style="border-top-color:var(--citizen)">
+          <span class="dot" style="background:var(--citizen)"></span>
+          <h3>Integrity</h3>
+          <p>We keep claims honest, separate legal information from legal advice, and explain limitations clearly before users rely on an answer.</p>
+        </div>
+        <div class="card lift value-card" style="border-top-color:var(--student)">
+          <span class="dot" style="background:var(--student)"></span>
+          <h3>Trust and safety</h3>
+          <p>Every legal workflow should encourage source checks, human review, responsible uploads, and careful use before action.</p>
+        </div>
+        <div class="card lift value-card" style="border-top-color:var(--lawyer)">
+          <span class="dot" style="background:var(--lawyer)"></span>
+          <h3>Accessibility</h3>
+          <p>Pakistani law should be easier to understand in plain English and Urdu for citizens, students, and professionals at different levels.</p>
+        </div>
+        <div class="card lift value-card" style="border-top-color:var(--lawfirm)">
+          <span class="dot" style="background:var(--lawfirm)"></span>
+          <h3>Legal clarity</h3>
+          <p>The product should turn complex legal language into structured explanations, checklists, summaries, and better questions.</p>
+        </div>
+        <div class="card lift value-card" style="border-top-color:var(--policymaker)">
+          <span class="dot" style="background:var(--policymaker)"></span>
+          <h3>Innovation with responsibility</h3>
+          <p>AI can speed up research, study, and document understanding, but it must stay inside careful legal boundaries.</p>
+        </div>
+        <div class="card lift value-card" style="border-top-color:var(--institution)">
+          <span class="dot" style="background:var(--institution)"></span>
+          <h3>Professionalism</h3>
+          <p>Lawyers, firms, institutions, policymakers, and judicial researchers need tools that respect serious legal work.</p>
+        </div>
+      </div>
+      <div class="cols-tail"><a href="#" class="btn btn-outline">View all values</a></div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="section" id="features">
+    <div class="container rail-offset">
+      <div class="section-head center" style="max-width:640px;">
+        <p class="eyebrow">The highest-intent workflows</p>
+        <h2>Legal information and research, in five moves.</h2>
+      </div>
+      <div class="grid grid-5">
+        <div class="card lift feature-card">
+          <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Ask legal questions</h3>
+          <p>Explore rights, procedures, and terms in plain-language prompts connected to Pakistan's legal context.</p>
+        </div>
+        <div class="card lift feature-card">
+          <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 3v5h5M6 3h8l6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg></div>
+          <h3>Analyze documents</h3>
+          <p>Upload agreements, notices, and case files for summaries, key clauses, and risk questions — up to 100+ pages.</p>
+        </div>
+        <div class="card lift feature-card">
+          <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/></svg></div>
+          <h3>Understand notices</h3>
+          <p>Break down what a notice requires, what deadlines matter, and which facts need an advocate's review.</p>
+        </div>
+        <div class="card lift feature-card">
+          <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 3v18M7 7l-4 8a4 4 0 0 0 8 0zM21 7l-4 8a4 4 0 0 0 8 0z"/><path d="M5 7h14"/></svg></div>
+          <h3>Research law &amp; cases</h3>
+          <p>Source-aware exploration of statutes, sections, concepts, and case-law issues.</p>
+        </div>
+        <div class="card lift feature-card">
+          <div class="icon-tile"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div>
+          <h3>Draft documents safely</h3>
+          <p>Prepare notices, outlines, and first drafts with reminders to verify facts, law, and jurisdiction.</p>
+        </div>
+      </div>
+      <div class="cols-tail"><a href="#" class="btn btn-outline">Explore all features →</a></div>
+    </div>
+  </section>
+
+  <!-- ================= TRUST & SAFETY ================= -->
+  <section class="section on-sunk">
+    <div class="container rail-offset">
+      <div class="diff" style="grid-template-columns:1fr;">
+      </div>
+      <div class="grid" style="grid-template-columns:1fr; gap:2.5rem;">
+        <div style="max-width:34rem;">
+          <p class="eyebrow neutral">Trust and safety</p>
+          <h2 style="font-size:clamp(1.75rem,3vw,2.5rem); margin-top:0.6rem;">Designed for careful legal understanding.</h2>
+          <p class="lede" style="margin-top:1rem;">Wakeel is useful when it helps people ask better questions, read documents more clearly, and verify sources before acting.</p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card" style="padding:1.1rem; display:flex; gap:0.7rem; align-items:flex-start;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--verified)" stroke-width="2" style="margin-top:0.15rem;"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            <p style="font-size:0.87rem; color:var(--ink-soft);">Source-aware answers that encourage citation checks and original-source review.</p>
+          </div>
+          <div class="card" style="padding:1.1rem; display:flex; gap:0.7rem; align-items:flex-start;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--verified)" stroke-width="2" style="margin-top:0.15rem;"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            <p style="font-size:0.87rem; color:var(--ink-soft);">Pakistan-specific legal context for citizens, students, lawyers, firms, and institutions.</p>
+          </div>
+          <div class="card" style="padding:1.1rem; display:flex; gap:0.7rem; align-items:flex-start;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--verified)" stroke-width="2" style="margin-top:0.15rem;"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            <p style="font-size:0.87rem; color:var(--ink-soft);">Plain English and Urdu explanations for non-specialists and learners.</p>
+          </div>
+          <div class="card" style="padding:1.1rem; display:flex; gap:0.7rem; align-items:flex-start;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--verified)" stroke-width="2" style="margin-top:0.15rem;"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            <p style="font-size:0.87rem; color:var(--ink-soft);">Built-in disclaimers that separate legal information from final legal advice.</p>
+          </div>
+          <div class="card" style="padding:1.1rem; display:flex; gap:0.7rem; align-items:flex-start;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--verified)" stroke-width="2" style="margin-top:0.15rem;"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            <p style="font-size:0.87rem; color:var(--ink-soft);">Human lawyer recommended before filing, signing, paying, or appearing in court.</p>
+          </div>
+          <div class="card" style="padding:1.1rem; display:flex; gap:0.7rem; align-items:flex-start;">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="var(--verified)" stroke-width="2" style="margin-top:0.15rem;"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            <p style="font-size:0.87rem; color:var(--ink-soft);">Privacy-conscious document handling with reminders to avoid unnecessary sensitive data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS (PLACEHOLDER) ================= -->
+  <section class="section">
+    <div class="container rail-offset">
+      <div class="section-head">
+        <p class="eyebrow">Word from early users <span class="placeholder-badge">Illustrative — replace with real quotes</span></p>
+        <h2>What people are asking Wakeel.</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card lift testi-card">
+          <p class="testi-card__quote">"I used it to understand a legal notice at 11pm before deciding whether to reply. It broke the deadlines down clearly."</p>
+          <div class="testi-card__who">
+            <span class="testi-avatar">[N]</span>
+            <div>
+              <p class="testi-name">[Placeholder name]</p>
+              <p class="testi-role">Citizen, Lahore</p>
+            </div>
+          </div>
+        </div>
+        <div class="card lift testi-card">
+          <p class="testi-card__quote">"Explaining PPC sections in Urdu made revision so much faster before my exam."</p>
+          <div class="testi-card__who">
+            <span class="testi-avatar">[N]</span>
+            <div>
+              <p class="testi-name">[Placeholder name]</p>
+              <p class="testi-role">Law student, Karachi</p>
+            </div>
+          </div>
+        </div>
+        <div class="card lift testi-card">
+          <p class="testi-card__quote">"Useful for a first pass on client agreements — I still verify everything, but it saves an hour of reading."</p>
+          <div class="testi-card__who">
+            <span class="testi-avatar">[N]</span>
+            <div>
+              <p class="testi-name">[Placeholder name]</p>
+              <p class="testi-role">Advocate, Islamabad</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section class="section on-sunk" id="pricing">
+    <div class="container rail-offset">
+      <div class="section-head center" style="max-width:640px;">
+        <p class="eyebrow neutral">Simple, role-based pricing</p>
+        <h2>Plans for learning, practice, and teams.</h2>
+        <p class="lede" style="margin-top:1rem;">Start free and choose the workflow that fits your role. Exact paid access may be confirmed inside the app or during organization onboarding.</p>
+      </div>
+      <div class="grid grid-5">
+        <div class="card lift price-card" style="border-top-color:var(--citizen)">
+          <span class="portal-stamp" style="border-color:var(--citizen); color:var(--citizen); width:fit-content;">Citizen</span>
+          <p class="amount">PKR 0</p>
+          <p class="note">No payment required</p>
+          <h3 style="font-size:1.2rem;">Free</h3>
+          <p style="font-size:0.83rem; color:var(--ink-soft);">For individuals and beginners who need basic legal information.</p>
+          <ul>
+            <li>✓ Daily legal question allowance</li>
+            <li>✓ Know Your Rights guidance</li>
+            <li>✓ Community support</li>
+          </ul>
+          <a href="#demo" class="btn btn-outline btn-sm btn-block" style="border-color:var(--citizen); color:var(--citizen);">Try Wakeel Free</a>
+        </div>
+        <div class="card lift price-card" style="border-top-color:var(--student)">
+          <span class="portal-stamp" style="border-color:var(--student); color:var(--student); width:fit-content;">Student</span>
+          <p class="amount">PKR 199<span style="font-size:0.7rem; font-weight:500;">/mo</span></p>
+          <p class="note">For law students &amp; learners</p>
+          <h3 style="font-size:1.2rem;">Student</h3>
+          <p style="font-size:0.83rem; color:var(--ink-soft);">Structured study and research support.</p>
+          <ul>
+            <li>✓ Expanded legal questions</li>
+            <li>✓ PDF chat for notes &amp; books</li>
+            <li>✓ Case analysis tools</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-sm btn-block" style="border-color:var(--student); color:var(--student);">Start Student Mode</a>
+        </div>
+        <div class="card lift price-card" style="border-top-color:var(--lawyer)">
+          <span class="portal-stamp" style="border-color:var(--lawyer); color:var(--lawyer); width:fit-content;">Practitioner</span>
+          <p class="amount">PKR 1,499<span style="font-size:0.7rem; font-weight:500;">/mo</span></p>
+          <p class="note">Solo practitioners &amp; associates</p>
+          <h3 style="font-size:1.2rem;">Practitioner</h3>
+          <p style="font-size:0.83rem; color:var(--ink-soft);">More than study tools, not yet a full team workflow.</p>
+          <ul>
+            <li>✓ Client document review</li>
+            <li>✓ Drafting assistance</li>
+            <li>✓ Standard support</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-sm btn-block" style="border-color:var(--lawyer); color:var(--lawyer);">Try Practitioner</a>
+        </div>
+        <div class="card lift price-card" style="border-top-color:var(--judge); position:relative;">
+          <span class="portal-stamp" style="border-color:var(--judge); color:var(--judge); width:fit-content;">Professional</span>
+          <p class="amount">PKR 4,999<span style="font-size:0.7rem; font-weight:500;">/mo</span></p>
+          <p class="note">Research &amp; document workflows</p>
+          <h3 style="font-size:1.2rem;">Professional</h3>
+          <p style="font-size:0.83rem; color:var(--ink-soft);">For lawyers handling research and documents daily.</p>
+          <ul>
+            <li>✓ Case management support</li>
+            <li>✓ Client document review</li>
+            <li>✓ Priority support</li>
+          </ul>
+          <a href="#" class="btn btn-primary btn-sm btn-block">Try Legal Research</a>
+        </div>
+        <div class="card lift price-card" style="border-top-color:var(--institution)">
+          <span class="portal-stamp" style="border-color:var(--institution); color:var(--institution); width:fit-content;">Organization</span>
+          <p class="amount">From PKR 9,999<span style="font-size:0.7rem; font-weight:500;">/mo</span></p>
+          <p class="note">Teams, firms, colleges, institutions</p>
+          <h3 style="font-size:1.2rem;">Organization</h3>
+          <p style="font-size:0.83rem; color:var(--ink-soft);">Shared workflows and dedicated onboarding.</p>
+          <ul>
+            <li>✓ Team &amp; admin controls</li>
+            <li>✓ Shared research dashboard</li>
+            <li>✓ Support response targets</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-sm btn-block" style="border-color:var(--institution); color:var(--institution);">Contact for Access</a>
+        </div>
+      </div>
+      <div class="cols-tail"><a href="#" class="btn btn-ghost">Compare plans →</a></div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section" id="faq">
+    <div class="container rail-offset">
+      <div class="section-head">
+        <p class="eyebrow">Before you ask</p>
+        <h2>Frequently asked questions.</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Is my document data safe when I upload it?</summary>
+          <p class="faq-a">Document processing is encrypted, and Wakeel is built to remind users to avoid uploading unnecessary sensitive data. Full detail lives in the Privacy Policy — worth a read before uploading anything you wouldn't want stored.</p>
+        </details>
+        <details>
+          <summary>What if Wakeel's answer is wrong?</summary>
+          <p class="faq-a">Every answer is source-aware and framed as legal information, not final advice. Wakeel builds in reminders to verify citations and consult a licensed advocate before filing, signing, paying, or appearing in court.</p>
+        </details>
+        <details>
+          <summary>Do I need to pay to get real value?</summary>
+          <p class="faq-a">No — the Free plan includes a daily legal-question allowance, Know Your Rights guidance, and basic document handling with no payment required. Paid tiers add document depth, drafting, and team workflows for heavier use.</p>
+        </details>
+        <details>
+          <summary>How is this different from ChatGPT or Google?</summary>
+          <p class="faq-a">Wakeel is grounded specifically in Pakistani statutes and procedure, answers in English or Urdu, and has its legal accuracy reviewed by a practicing advocate — rather than drawing generically from the open web.</p>
+        </details>
+        <details>
+          <summary>Does Wakeel replace a lawyer?</summary>
+          <p class="faq-a">No. Wakeel provides legal information and research support. It does not provide final legal advice, does not guarantee outcomes, and does not replace consultation with a licensed advocate.</p>
+        </details>
+        <details>
+          <summary>Is Wakeel a chatbot, or does it do more?</summary>
+          <p class="faq-a">More. Wakeel works agentically — it breaks your question into research steps, checks it against Pakistani statutes and case law, and only then composes an answer, instead of generating a single guessed reply the way a plain chatbot does.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section class="section final-cta">
+    <!-- Decorative "seal" — a rotating ring of case-file text, like a
+         rubber stamp on the closing page of a legal file. Ambient motion
+         only; respects prefers-reduced-motion via the keyframe rule above. -->
+    <svg class="final-cta__stamp" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="92" fill="none" stroke="#e8b563" stroke-width="1.5"/>
+      <circle cx="100" cy="100" r="76" fill="none" stroke="#e8b563" stroke-width="1"/>
+      <path id="sealpath" d="M100,24 a76,76 0 1 1 -0.1,0" fill="none"/>
+      <text font-family="JetBrains Mono, monospace" font-size="8.5" font-weight="700" letter-spacing="3" fill="#e8b563">
+        <textPath href="#sealpath" startOffset="0%">WAKEEL.ORG · AGENTIC LEGAL AI · VERIFIED · SOURCE-AWARE · </textPath>
+      </text>
+      <path d="M78 100l14 14 30-30" fill="none" stroke="#e8b563" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="container rail-offset final-cta__grid">
+      <div class="final-cta__main">
+        <p class="eyebrow">Get started free</p>
+        <h2>Start understanding Pakistani law with Wakeel.org.</h2>
+        <p class="lede">Ask legal questions in English or Urdu, understand documents up to 100+ pages, and verify sources before taking important legal steps.</p>
+
+        <div class="final-cta__badges">
+          <span class="final-cta__pill">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="19" cy="12" r="2"/><path d="M7 12h3M14 7.5l3 3M14 16.5l3-3"/></svg>
+            Agentic — plans &amp; verifies, not single-turn chat
+          </span>
+          <span class="final-cta__pill">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+            Reviewed by Sikandar Azam, Advocate High Court
+          </span>
+        </div>
+
+        <div class="final-cta__actions">
+          <a href="#demo" class="btn btn-primary">Try Wakeel Free</a>
+          <div class="store-badges">
+            <a href="#" class="store-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.462 2.238-1.215 3.045-.816.873-2.16 1.548-3.24 1.458-.135-1.11.42-2.28 1.17-3.03.84-.87 2.31-1.53 3.285-1.473zM20.16 17.13c-.435.99-.645 1.44-1.2 2.31-.78 1.215-1.875 2.73-3.24 2.745-1.215.015-1.53-.78-3.18-.78-1.65 0-2.01.765-3.225.795-1.32.03-2.325-1.32-3.105-2.535-2.13-3.27-2.355-7.11-1.035-9.15.93-1.44 2.4-2.28 3.78-2.28 1.41 0 2.295.795 3.465.795 1.14 0 1.83-.795 3.465-.795 1.23 0 2.535.66 3.465 1.8-3.045 1.665-2.55 5.985.81 6.9z"/></svg>
+              <span class="lines"><span>Download on the</span><span>App Store</span></span>
+            </a>
+            <a href="#" class="store-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 2.6a1.2 1.2 0 0 0-.6 1.05v16.7c0 .42.22.8.6 1.05l9.35-9.4z"/><path d="M15.9 10.98l2.75-1.6c.75-.43.75-1.5 0-1.93l-2.75-1.6-3.1 3.13z" opacity=".9"/><path d="M3.4 21.75c.3.16.68.16 1 .02l11.2-6.5-3.1-3.12z"/><path d="M3.4 2.25c.3-.16.68-.16 1 .02l11.2 6.5-3.1 3.12z" opacity=".85"/></svg>
+              <span class="lines"><span>GET IT ON</span><span>Google Play</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="final-cta__side">
+        <span class="mono-label">Stay in the loop</span>
+        <h3>No spam, ever.</h3>
+        <p>One email when Wakeel ships something worth knowing about — new legal guides, features, or portals.</p>
+        <input type="email" placeholder="you@example.com">
+        <button type="button" class="btn btn-primary btn-block">Subscribe</button>
+        <p class="fine">Legal information, not a lawyer replacement.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container rail-offset footer__grid">
+    <div>
+      <a href="#hero" class="nav__brand" style="margin-bottom:0.8rem;">
+        <span class="nav__mark">W</span>
+        Wakeel.org
+      </a>
+      <p style="font-size:0.85rem; color:var(--ink-soft); max-width:20rem;">Pakistan's AI legal assistant for citizens, law students, and legal professionals — English or Urdu, on Android, iOS, and web.</p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#">AI Legal Chat</a></li>
+        <li><a href="#">Document Analysis</a></li>
+        <li><a href="#">Legal Research</a></li>
+        <li><a href="#">Drafting Support</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Solutions</h4>
+      <ul>
+        <li><a href="#portals">Citizens</a></li>
+        <li><a href="#portals">Law Students</a></li>
+        <li><a href="#portals">Lawyers</a></li>
+        <li><a href="#portals">Law Firms</a></li>
+        <li><a href="#portals">Legal Institutions</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Legal Sources</a></li>
+        <li><a href="#">Journal</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Legal Disclaimer</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container rail-offset footer__bottom">
+    <span>© 2026 Wakeel.org. Legal information, not legal advice.</span>
+    <span>Built in Pakistan.</span>
+  </div>
+</footer>
+
+<script>
+  // Preview-only toggle: lets you flip between the light and dark palette
+  // regardless of your system setting, so both can be reviewed side by
+  // side before anything is implemented in the real codebase.
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById("theme-toggle");
+    var label = document.getElementById("theme-toggle-label");
+    var icon = document.getElementById("theme-toggle-icon");
+
+    var sunPath = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+    var moonPath = '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>';
+
+    function prefersDark() {
+      return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    }
+
+    // Start on whichever mode is currently NOT showing, so the first click
+    // always reveals the other theme immediately.
+    var current = prefersDark() ? "dark" : "light";
+
+    function apply(mode) {
+      current = mode;
+      root.setAttribute("data-theme", mode);
+      if (mode === "dark") {
+        label.textContent = "Dark preview";
+        icon.innerHTML = moonPath;
+      } else {
+        label.textContent = "Light preview";
+        icon.innerHTML = sunPath;
+      }
+    }
+
+    btn.addEventListener("click", function () {
+      apply(current === "light" ? "dark" : "light");
+    });
+
+    apply(current);
+  })();
+</script>

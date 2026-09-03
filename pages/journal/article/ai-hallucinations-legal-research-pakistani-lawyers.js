@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const risks = [
   { icon: AlertOctagon, title: "Fabricated case citations", detail: "The most-cited risk: an AI tool generates a case name, citation, or quote that sounds entirely plausible but doesn't exist, or misattributes a real holding to the wrong case." },
@@ -64,11 +64,15 @@ const schema = [
     headline: "AI Hallucinations in Legal Research: Risks for Pakistani Lawyers",
     description:
       "What AI hallucination actually means for legal research, the measured rates even in leading tools, and the specific risks for lawyers researching Pakistani law.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-09",
     dateModified: "2026-07-09",
     mainEntityOfPage: `${site.url}/journal/article/ai-hallucinations-legal-research-pakistani-lawyers`,
+    citation: [
+      { "@type": "CreativeWork", name: "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (2025, peer-reviewed) — Journal of Empirical Legal Studies / Stanford RegLab", url: "https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/" },
+      { "@type": "CreativeWork", name: "Hallucinating Law: Legal Mistakes with Large Language Models are Pervasive — Stanford Law School", url: "https://law.stanford.edu/2024/01/11/hallucinating-law-legal-mistakes-with-large-language-models-are-pervasive/" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -118,7 +122,7 @@ export default function AiHallucinationsLegalResearchPakistaniLawyers() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             AI & the Law · Published July 9, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

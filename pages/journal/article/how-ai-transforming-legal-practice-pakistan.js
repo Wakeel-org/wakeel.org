@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const shifts = [
   { icon: TrendingUp, title: "Adoption is accelerating fast, globally and locally", detail: "Generative AI use among law firms and corporate legal departments nearly doubled year-over-year, with adoption becoming mainstream rather than experimental — a trend Pakistani firms and independent lawyers are increasingly part of." },
@@ -57,11 +57,14 @@ const schema = [
     headline: "How AI Is Transforming Legal Practice in Pakistan",
     description:
       "The real shifts AI is bringing to legal practice in Pakistan — accelerating adoption, research and drafting as entry points, changing client expectations, and growing verification discipline.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-25",
     dateModified: "2026-06-25",
     mainEntityOfPage: `${site.url}/journal/article/how-ai-transforming-legal-practice-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "2026 AI in Professional Services Report — Thomson Reuters Institute", url: "https://www.thomsonreuters.com/en-us/posts/technology/ai-in-professional-services-report-2026/" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -111,7 +114,7 @@ export default function HowAiTransformingLegalPracticePakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             AI & the Law · Published June 25, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

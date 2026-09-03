@@ -12,7 +12,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const questions = [
   { q: "Is there a deadline attached to what you're dealing with?", ai: "No deadline yet — you're just trying to understand something.", lawyer: "Yes — a court date, a notice response window, or a filing deadline." },
@@ -71,11 +71,15 @@ const schema = [
     headline: "Should I Use AI or Hire a Lawyer in Pakistan?",
     description:
       "A five-question self-check to decide whether an AI legal tool is enough for your situation in Pakistan, or whether it's time to bring in a licensed advocate.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-14",
     dateModified: "2026-02-14",
     mainEntityOfPage: `${site.url}/journal/article/should-i-use-ai-or-hire-a-lawyer-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (2025, peer-reviewed) — Journal of Empirical Legal Studies / Stanford RegLab", url: "https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/" },
+      { "@type": "CreativeWork", name: "Lawyers' Verification — Islamabad Bar Council", url: "https://www.ibc.org.pk/lawyers-verification/" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -125,7 +129,7 @@ export default function ShouldIUseAiOrHireALawyerPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             AI & the Law · Published February 14, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

@@ -18,8 +18,10 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
+import { CategoryChip } from "../../../src/components/ui/chip";
 import { site, guides, getGuidePath } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { getGuideCategory } from "../../../src/data/designSystem";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const gccCategories = [
   {
@@ -169,10 +171,10 @@ export default function GCCLegalIssuesPage() {
       />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
+      <section className="bg-background border-b-2 border-foreground/10 py-16 sm:py-20 lg:py-24">
         <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+            <p className={eyebrow}>
               Legal Guidance for GCC
             </p>
             <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
@@ -279,7 +281,7 @@ export default function GCCLegalIssuesPage() {
                       <Link
                         key={guide.slug}
                         href={getGuidePath(guide.slug)}
-                        className={`group ${cardBase} hover:shadow-md hover:border-primary/50 transition-all`}
+                        className={`group ${cardBase} hover:border-primary/60 transition-all`}
                       >
                         <CardContent className="p-4 sm:p-5">
                           <div className="flex items-start justify-between gap-3">
@@ -287,6 +289,7 @@ export default function GCCLegalIssuesPage() {
                               <h3 className="font-semibold text-sm sm:text-base leading-tight group-hover:text-primary transition-colors">
                                 {guide.title}
                               </h3>
+                              <CategoryChip category={getGuideCategory(guide)} showIcon={false} className="px-2 py-0.5 text-[10px]" />
                               <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">
                                 {guide.description}
                               </p>
@@ -350,7 +353,7 @@ export default function GCCLegalIssuesPage() {
               <Link
                 key={country.href}
                 href={country.href}
-                className={`group ${cardBase} hover:shadow-md hover:border-primary/50 transition-all`}
+                className={`group ${cardBase} hover:border-primary/60 transition-all`}
               >
                 <CardContent className="p-6">
                   <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors">

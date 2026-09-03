@@ -13,7 +13,7 @@ import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
 import { site } from "../../../src/data/marketing";
-import { cardBase, headingGradient, sectionHeading } from "../../../src/data/theme";
+import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
   { icon: Scale, title: "Section 375 defines the offence, Section 376 punishes it", detail: "Section 375 PPC sets out what legally constitutes rape; Section 376 PPC prescribes the punishment, which can extend to death or life imprisonment depending on the circumstances, including aggravated categories carrying enhanced punishment." },
@@ -64,11 +64,16 @@ const schema = [
     headline: "Sections 375 & 376 PPC: Rape Laws and Punishment in Pakistan",
     description:
       "What Sections 375 and 376 of the Pakistan Penal Code cover, and how the Anti-Rape (Investigation and Trial) Act 2021 changed investigation and trial timelines for these cases.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-01",
     dateModified: "2026-01-01",
     mainEntityOfPage: `${site.url}/journal/article/sections-375-376-ppc-rape-law-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Pakistan Penal Code, 1860 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lo-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Anti-Rape (Investigation and Trial) Act, 2021 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5hm-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Anti-Rape (Investigation and Trial) Act, 2021 — as passed, National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/61aa1d38e9c5d_847.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",
@@ -119,7 +124,7 @@ export default function Sections375376PpcRapeLawPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Legal Help · Published January 1, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>

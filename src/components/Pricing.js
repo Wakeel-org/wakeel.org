@@ -116,13 +116,13 @@ const Pricing = () => {
     <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6 animate-pulse">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded border-2 border-primary/30 bg-primary/5 text-primary mb-6">
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm font-semibold">
+            <span className="font-mono text-xs font-bold uppercase tracking-wider">
               Simple, Transparent Pricing
             </span>
           </div>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">
+          <h2 className="font-display text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6">
             Choose Your Plan
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-[900px] mx-auto leading-relaxed mb-8">
@@ -136,8 +136,8 @@ const Pricing = () => {
               onClick={() => setBillingCycle("monthly")}
               className={`px-4 sm:px-6 py-2 rounded-md text-xs sm:text-sm font-medium transition-all ${
                 billingCycle === "monthly"
-                  ? "bg-background text-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "bg-background text-foreground border-2 border-foreground/20"
+                  : "text-muted-foreground hover:text-foreground border-2 border-transparent"
               }`}
             >
               Monthly
@@ -146,12 +146,12 @@ const Pricing = () => {
               onClick={() => setBillingCycle("yearly")}
               className={`px-4 sm:px-6 py-2 rounded-md text-xs sm:text-sm font-medium transition-all relative ${
                 billingCycle === "yearly"
-                  ? "bg-background text-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "bg-background text-foreground border-2 border-foreground/20"
+                  : "text-muted-foreground hover:text-foreground border-2 border-transparent"
               }`}
             >
               Yearly
-              <span className="absolute -top-2 -right-1 sm:-right-2 bg-primary text-primary-foreground text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full">
+              <span className="absolute -top-2 -right-1 sm:-right-2 bg-verified text-white font-mono text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded">
                 Save 17%
               </span>
             </button>
@@ -162,26 +162,26 @@ const Pricing = () => {
           {pricingPlans.map((plan, index) => (
             <Card
               key={index}
-              className={`flex flex-col relative overflow-hidden group hover:shadow-2xl transition-all duration-500 ${
+              className={`flex flex-col relative overflow-hidden group transition-all duration-500 shadow-none ${
                 plan.popular
-                  ? "border-primary shadow-lg scale-105 z-10 bg-gradient-to-b from-primary/5 to-background"
-                  : "border-muted/50 bg-card/50 backdrop-blur-sm hover:scale-[1.02]"
+                  ? "border-primary border-[3px] z-10 bg-card"
+                  : "border-2 border-foreground/15 bg-card hover:border-foreground/50"
               }`}
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {plan.popular && (
-                <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1.5 rounded-bl-lg rounded-tr-lg flex items-center gap-1 animate-pulse">
+                <div className="absolute top-0 right-0 bg-primary text-primary-foreground font-mono text-[11px] font-bold uppercase tracking-wider px-4 py-1.5 flex items-center gap-1">
                   <Sparkles className="w-3 h-3" />
-                  POPULAR
+                  Popular
                 </div>
               )}
 
               <CardHeader className="text-center pb-8">
                 <div
-                  className={`w-16 h-16 mx-auto rounded-2xl flex items-center justify-center mb-6 transition-all duration-300 ${
+                  className={`w-16 h-16 mx-auto rounded-lg border-2 flex items-center justify-center mb-6 transition-all duration-300 ${
                     plan.popular
-                      ? "bg-gradient-to-br from-primary to-primary/60 text-primary-foreground group-hover:scale-110 group-hover:rotate-12"
-                      : "bg-gradient-to-br from-primary/20 to-primary/10 text-primary group-hover:scale-110 group-hover:-rotate-6"
+                      ? "border-primary bg-primary text-primary-foreground"
+                      : "border-primary/30 bg-primary/5 text-primary"
                   }`}
                 >
                   <plan.icon className="w-8 h-8" />
@@ -193,7 +193,7 @@ const Pricing = () => {
                   {plan.description}
                 </CardDescription>
                 <div className="mt-6">
-                  <span className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70 whitespace-pre-line">
+                  <span className="font-display text-4xl sm:text-5xl font-bold text-foreground whitespace-pre-line">
                     {billingCycle === "monthly"
                       ? plan.monthlyPrice
                       : plan.yearlyPrice}
@@ -224,11 +224,7 @@ const Pricing = () => {
 
               <CardFooter className="pt-6">
                 <Button
-                  className={`w-full text-base py-6 transition-all duration-300 ${
-                    plan.popular
-                      ? "shadow-lg hover:shadow-xl"
-                      : "hover:shadow-lg"
-                  }`}
+                  className="w-full text-base py-6 transition-all duration-300"
                   variant={
                     plan.popular
                       ? "default"
@@ -250,7 +246,7 @@ const Pricing = () => {
         </div>
 
         <div className="text-center">
-          <Card className="inline-block bg-muted/50 border-muted">
+          <Card className="inline-block bg-muted/50 border-2 border-foreground/15 shadow-none">
             <CardContent className="px-8 py-4">
               <p className="text-sm text-muted-foreground">
                 <span className="font-semibold text-foreground">

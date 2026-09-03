@@ -4,6 +4,7 @@ import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { demoQA, site } from "../data/marketing";
+import { eyebrow } from "../data/theme";
 
 // `embedded` drops the outer Card chrome so this can sit inside another
 // Card (e.g. the homepage hero) without a card-in-card look.
@@ -15,7 +16,7 @@ const WebTrialDemo = ({ className = "", embedded = false }) => {
   const Wrapper = embedded ? "div" : Card;
   const wrapperProps = embedded
     ? { className: `flex flex-1 flex-col ${className}` }
-    : { className: `border-primary/20 shadow-xl ${className}` };
+    : { className: `border-2 border-primary/20 shadow-none ${className}` };
   const Inner = embedded ? "div" : CardContent;
   const innerProps = embedded
     ? { className: "flex flex-1 flex-col space-y-5" }
@@ -26,10 +27,13 @@ const WebTrialDemo = ({ className = "", embedded = false }) => {
       <Inner {...innerProps}>
         <div className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-primary" />
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+          <p className={eyebrow}>
             Try a sample question — no install needed
           </p>
         </div>
+        <p className="text-xs text-muted-foreground -mt-3">
+          Wakeel works agentically: it plans a research step, checks it against Pakistani sources, then answers — not a single-turn chatbot reply.
+        </p>
 
         <div className="flex flex-wrap gap-2">
           {demoQA.map((item, index) => (
@@ -37,10 +41,10 @@ const WebTrialDemo = ({ className = "", embedded = false }) => {
               key={item.prompt}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`rounded-full border px-3 py-1.5 text-xs font-medium transition-colors ${
+              className={`rounded border-2 px-3 py-1.5 font-mono text-xs font-bold uppercase tracking-wide transition-colors ${
                 index === activeIndex
                   ? "border-primary bg-primary text-primary-foreground"
-                  : "border-border bg-background text-muted-foreground hover:border-primary/50"
+                  : "border-foreground/15 bg-background text-muted-foreground hover:border-primary/50"
               }`}
             >
               {item.audience}
@@ -48,9 +52,9 @@ const WebTrialDemo = ({ className = "", embedded = false }) => {
           ))}
         </div>
 
-        <div className="space-y-3 rounded-xl border border-border bg-muted/30 p-4">
+        <div className="space-y-3 rounded-xl border-2 border-foreground/15 bg-muted/30 p-4">
           <div className="flex items-start gap-2">
-            <div className="h-7 w-7 shrink-0 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+            <div className="h-7 w-7 shrink-0 rounded-lg border-2 border-primary/30 bg-primary/5 text-primary flex items-center justify-center">
               <MessageSquareText className="h-3.5 w-3.5" />
             </div>
             <p className="text-sm font-medium text-foreground pt-1">{active.prompt}</p>
