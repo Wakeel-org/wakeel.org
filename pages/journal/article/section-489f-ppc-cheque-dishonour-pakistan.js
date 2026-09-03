@@ -61,6 +61,10 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/section-489f-ppc-cheque-dishonour-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Section 489-F PPC: Object, Scope & Trial — Courting the Law", url: "https://courtingthelaw.com/2022/06/26/commentary/guest-columnists/section-489-f-ppc-object-scope-trial/" },
+      { "@type": "CreativeWork", name: "Section 489-F Can't Be Used for Recovery of Amount — The Express Tribune", url: "https://tribune.com.pk/story/2340901/section-489-f-cant-be-used-for-recovery-of-amount" },
+    ],
   },
   {
     "@context": "https://schema.org",

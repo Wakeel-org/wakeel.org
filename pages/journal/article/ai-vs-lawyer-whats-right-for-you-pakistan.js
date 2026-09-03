@@ -67,6 +67,10 @@ const schema = [
     datePublished: "2026-04-16",
     dateModified: "2026-04-16",
     mainEntityOfPage: `${site.url}/journal/article/ai-vs-lawyer-whats-right-for-you-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "2026 AI in Professional Services Report — Thomson Reuters Institute", url: "https://www.thomsonreuters.com/en-us/posts/technology/ai-in-professional-services-report-2026/" },
+      { "@type": "CreativeWork", name: "Lawyers' Verification — Islamabad Bar Council", url: "https://www.ibc.org.pk/lawyers-verification/" },
+    ],
   },
   {
     "@context": "https://schema.org",

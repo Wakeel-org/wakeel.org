@@ -61,6 +61,10 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/police-complaint-against-police-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Police Order 2002: An Introduction — CPDI Pakistan", url: "https://archive.cpdi-pakistan.org/wp-content/uploads/2014/12/The-Police-Order-2002_Booklet.pdf" },
+      { "@type": "CreativeWork", name: "The Police Order, 2002 — full text (National Reconstruction Bureau compilation)", url: "https://khalidzafar.com/wp-content/files_mf/1527157863PoliceOrder2002.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

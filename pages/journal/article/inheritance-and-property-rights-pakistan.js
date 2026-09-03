@@ -68,6 +68,10 @@ const schema = [
     datePublished: "2026-04-06",
     dateModified: "2026-04-06",
     mainEntityOfPage: `${site.url}/journal/article/inheritance-and-property-rights-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+      { "@type": "CreativeWork", name: "The Criminal Law (Third Amendment) Act, 2011 (Section 498-A PPC) — National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/1329729400_262.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

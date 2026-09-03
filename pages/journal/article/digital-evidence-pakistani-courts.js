@@ -61,6 +61,11 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/digital-evidence-pakistani-courts`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Qanun-e-Shahadat Order, 1984 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5plaw==-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Admissibility and Evidentiary Value of Electronic Evidence — Bahria University Islamabad Law Journal", url: "https://archive.bahria.edu.pk/buic/law/wp-content/uploads/2024/05/Article-2-of-2022.pdf" },
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

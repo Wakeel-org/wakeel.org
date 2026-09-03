@@ -67,6 +67,12 @@ const schema = [
     datePublished: "2026-06-27",
     dateModified: "2026-06-27",
     mainEntityOfPage: `${site.url}/journal/article/child-marriage-laws-pakistan-punjab`,
+    citation: [
+      { "@type": "CreativeWork", name: "Punjab Child Marriage Restraint Ordinance, 2026 — Punjab Code (official)", url: "https://punjabcode.punjab.gov.pk/en/show_article/BjYCNgA2BjZTOg--" },
+      { "@type": "CreativeWork", name: "The Sindh Child Marriages Restraint Act, 2013 — Sindh Laws (official)", url: "https://www.sindhlaws.gov.pk/setup/publications_SindhCode/PUB-15-000083-S.pdf" },
+      { "@type": "CreativeWork", name: "Islamabad Capital Territory Child Marriage Restraint Act, 2025 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5tlZg==-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "The Child Marriage Restraint Act, 1929 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/147a.html" },
+    ],
   },
   {
     "@context": "https://schema.org",

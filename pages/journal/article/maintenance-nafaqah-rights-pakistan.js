@@ -61,6 +61,11 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/maintenance-nafaqah-rights-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Ministry of Religious Affairs", url: "https://www.mora.gov.pk/SiteImage/Misc/files/MFLO,%201961.pdf" },
+      { "@type": "CreativeWork", name: "Maintenance (Nafaqah) in Islam and Comparative Study — Sindh Judicial Academy", url: "https://sja.gos.pk/wp-content/uploads/2025/11/Article-on-Maintenacne-of-Wife-Children-by-Noor-Kalmati.pdf" },
+      { "@type": "CreativeWork", name: "The West Pakistan Family Courts Act, 1964 — Punjab Laws", url: "http://punjablaws.gov.pk/laws/2219a.html" },
+    ],
   },
   {
     "@context": "https://schema.org",

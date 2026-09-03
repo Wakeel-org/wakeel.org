@@ -73,6 +73,10 @@ const schema = [
     datePublished: "2026-04-17",
     dateModified: "2026-04-17",
     mainEntityOfPage: `${site.url}/journal/article/how-courts-work-in-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
+      { "@type": "CreativeWork", name: "The Endless Wait: Crisis of Backlog in Pakistan's District Judiciary (2025 case-pendency figures) — Daily Pakistan", url: "https://en.dailypakistan.com.pk/25-Nov-2025/the-endless-wait-crisis-of-backlog-in-pakistans-district-judiciary" },
+    ],
   },
   {
     "@context": "https://schema.org",

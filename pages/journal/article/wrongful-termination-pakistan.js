@@ -110,6 +110,12 @@ const schema = [
     datePublished: "2026-05-15",
     dateModified: "2026-05-15",
     mainEntityOfPage: `${site.url}/journal/article/wrongful-termination-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Industrial and Commercial Employment (Standing Orders) Ordinance, 1968 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5tmaQ==-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Industrial Relations Act, 2012 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2FqaZk=-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "NATLEX — ILO database entry for the Standing Orders Ordinance, 1968", url: "https://www.ilo.org/dyn/natlex/natlex4.detail?p_lang=en&p_isn=86160" },
+      { "@type": "CreativeWork", name: "NATLEX — ILO database entry for the Industrial Relations Act, 2012", url: "https://www.ilo.org/dyn/natlex/natlex4.detail?p_lang=en&p_isn=91438" },
+    ],
   },
   {
     "@context": "https://schema.org",

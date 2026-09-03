@@ -62,6 +62,10 @@ const schema = [
     datePublished: "2026-01-31",
     dateModified: "2026-01-31",
     mainEntityOfPage: `${site.url}/journal/article/womens-rights-wani-swara-cases-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Prevention of Anti-Women Practices Act, 2011 — Punjab Commission on the Status of Women", url: "https://pcsw.punjab.gov.pk/prevention_of_anti_women_practices" },
+      { "@type": "CreativeWork", name: "The Criminal Law (Third Amendment) Act, 2011 — National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/1329729400_262.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

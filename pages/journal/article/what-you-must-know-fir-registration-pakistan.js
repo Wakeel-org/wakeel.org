@@ -69,6 +69,11 @@ const schema = [
     datePublished: "2026-05-29",
     dateModified: "2026-05-29",
     mainEntityOfPage: `${site.url}/journal/article/what-you-must-know-fir-registration-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Code of Criminal Procedure, 1898 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lp-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Section 22-A & 22-B CrPC — Punjab Advocate General's Office explainer", url: "https://advocategeneral.punjab.gov.pk/22A_22B" },
+      { "@type": "CreativeWork", name: "Mst. Sughran Bibi v. The State, PLD 2018 SC 595 — Supreme Court of Pakistan judgment", url: "https://asadrahim.com/wp-content/uploads/2018/11/pld-2018-sc-595-sughra-bibi-v-the-state.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

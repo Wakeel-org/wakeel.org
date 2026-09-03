@@ -61,6 +61,9 @@ const schema = [
     datePublished: "2026-03-29",
     dateModified: "2026-03-29",
     mainEntityOfPage: `${site.url}/journal/article/cyberbullying-online-harassment-laws-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

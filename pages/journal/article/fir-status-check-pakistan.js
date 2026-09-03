@@ -69,6 +69,11 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/fir-status-check-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Punjab Police — Criminal Record Management System (CMS)", url: "https://cms.punjabpolice.gov.pk" },
+      { "@type": "CreativeWork", name: "Islamabad Police — Copy of FIR service", url: "https://islamabadpolice.gov.pk/copy_fir.php" },
+      { "@type": "CreativeWork", name: "PITB — Electronic FIR (e-FIR) system", url: "https://pitb.gov.pk/efir" },
+    ],
   },
   {
     "@context": "https://schema.org",

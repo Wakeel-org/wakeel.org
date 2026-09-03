@@ -61,6 +61,10 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/khula-in-pakistan-procedure-rights`,
+    citation: [
+      { "@type": "CreativeWork", name: "The West Pakistan Family Courts Act, 1964 — Punjab Laws", url: "http://punjablaws.gov.pk/laws/2219a.html" },
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Ministry of Religious Affairs", url: "https://www.mora.gov.pk/SiteImage/Misc/files/MFLO,%201961.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

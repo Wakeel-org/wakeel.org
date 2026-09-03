@@ -114,6 +114,11 @@ const schema = [
     datePublished: "2026-08-15",
     dateModified: "2026-08-15",
     mainEntityOfPage: `${site.url}/journal/article/pakistan-legal-system-guide`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
+      { "@type": "CreativeWork", name: "Pakistan Penal Code, 1860 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lo-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Code of Civil Procedure, 1908 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apeb-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

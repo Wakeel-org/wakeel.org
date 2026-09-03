@@ -61,6 +61,10 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/how-to-send-a-legal-notice-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Your #1 Checklist for Sending Effective Legal Notices in Pakistan — Josh and Mak International", url: "https://joshandmakinternational.com/your-1-checklist-for-sending-effective-legal-notices-in-pakistan/" },
+      { "@type": "CreativeWork", name: "How to Send a Legal Notice in Pakistan — Pakistan Legal Services", url: "https://pakistanlegalservices.com/how-to-send-a-legal-notice-in-pakistan/" },
+    ],
   },
   {
     "@context": "https://schema.org",

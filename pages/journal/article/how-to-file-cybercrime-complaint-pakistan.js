@@ -61,6 +61,10 @@ const schema = [
     datePublished: "2026-03-18",
     dateModified: "2026-03-18",
     mainEntityOfPage: `${site.url}/journal/article/how-to-file-cybercrime-complaint-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
+      { "@type": "CreativeWork", name: "NCHR Report on PECA and the 2025 Amendments Act — National Commission for Human Rights", url: "https://nchr.gov.pk/wp-content/uploads/2026/02/NCHR-Report-on-PECA-and-the-2025-Amendments-Act.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

@@ -72,6 +72,9 @@ const schema = [
     datePublished: "2026-07-22",
     dateModified: "2026-07-22",
     mainEntityOfPage: `${site.url}/journal/article/ai-legal-research-pakistan-benefits-risks-best-practices`,
+    citation: [
+      { "@type": "CreativeWork", name: "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (2025, peer-reviewed) — Journal of Empirical Legal Studies / Stanford RegLab", url: "https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/" },
+    ],
   },
   {
     "@context": "https://schema.org",

@@ -69,6 +69,9 @@ const schema = [
     datePublished: "2026-03-09",
     dateModified: "2026-03-09",
     mainEntityOfPage: `${site.url}/journal/article/property-ownership-transfer-laws-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+    ],
   },
   {
     "@context": "https://schema.org",

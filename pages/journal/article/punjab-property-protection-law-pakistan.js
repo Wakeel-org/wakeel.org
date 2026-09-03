@@ -69,6 +69,10 @@ const schema = [
     datePublished: "2026-07-24",
     dateModified: "2026-07-24",
     mainEntityOfPage: `${site.url}/journal/article/punjab-property-protection-law-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Punjab Protection of Ownership of Immovable Property Act, 2025 — Punjab Code (official)", url: "https://punjablaws.punjab.gov.pk/uploads/articles/the-punjab-protection-of-ownership-of-immovable-property-act-2025-act-ci-of-2025-converted-pdf.pdf" },
+      { "@type": "CreativeWork", name: "The Punjab Establishment of Special Courts (Overseas Pakistanis Property) Act, 2025 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/2907.html" },
+    ],
   },
   {
     "@context": "https://schema.org",

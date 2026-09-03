@@ -67,6 +67,9 @@ const schema = [
     datePublished: "2026-03-03",
     dateModified: "2026-03-03",
     mainEntityOfPage: `${site.url}/journal/article/drug-laws-pakistan-offences-penalties`,
+    citation: [
+      { "@type": "CreativeWork", name: "Control of Narcotic Substances Act, 1997 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npaplr-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

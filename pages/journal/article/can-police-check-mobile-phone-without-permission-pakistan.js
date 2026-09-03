@@ -68,6 +68,10 @@ const schema = [
     datePublished: "2026-04-23",
     dateModified: "2026-04-23",
     mainEntityOfPage: `${site.url}/journal/article/can-police-check-mobile-phone-without-permission-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Investigation for Fair Trial Act, 2013 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2FqbZw=-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

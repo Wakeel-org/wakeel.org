@@ -69,6 +69,11 @@ const schema = [
     datePublished: "2026-01-01",
     dateModified: "2026-01-01",
     mainEntityOfPage: `${site.url}/journal/article/sections-375-376-ppc-rape-law-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Pakistan Penal Code, 1860 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lo-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Anti-Rape (Investigation and Trial) Act, 2021 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5hm-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Anti-Rape (Investigation and Trial) Act, 2021 — as passed, National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/61aa1d38e9c5d_847.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

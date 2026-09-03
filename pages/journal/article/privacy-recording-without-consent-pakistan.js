@@ -61,6 +61,10 @@ const schema = [
     datePublished: "2026-05-06",
     dateModified: "2026-05-06",
     mainEntityOfPage: `${site.url}/journal/article/privacy-recording-without-consent-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
+      { "@type": "CreativeWork", name: "The Investigation for Fair Trial Act, 2013 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2FqbZw=-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

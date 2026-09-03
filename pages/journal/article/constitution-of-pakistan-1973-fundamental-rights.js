@@ -103,6 +103,9 @@ const schema = [
     datePublished: "2026-03-12",
     dateModified: "2026-03-12",
     mainEntityOfPage: `${site.url}/journal/article/constitution-of-pakistan-1973-fundamental-rights`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

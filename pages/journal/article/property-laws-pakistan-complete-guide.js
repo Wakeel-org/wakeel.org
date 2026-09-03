@@ -72,6 +72,9 @@ const schema = [
     datePublished: "2026-01-08",
     dateModified: "2026-01-08",
     mainEntityOfPage: `${site.url}/journal/article/property-laws-pakistan-complete-guide`,
+    citation: [
+      { "@type": "CreativeWork", name: "Benami Transactions (Prohibition) Act, 2017 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2NoaJg=-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

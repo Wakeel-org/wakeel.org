@@ -61,6 +61,9 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/child-custody-laws-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Law on the Custody of Children in Pakistan: Past, Present and Future — LUMS SAHSOL", url: "https://sahsol.lums.edu.pk/node/12832" },
+    ],
   },
   {
     "@context": "https://schema.org",

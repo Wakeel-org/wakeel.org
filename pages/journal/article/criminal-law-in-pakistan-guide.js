@@ -69,6 +69,10 @@ const schema = [
     datePublished: "2026-04-08",
     dateModified: "2026-04-08",
     mainEntityOfPage: `${site.url}/journal/article/criminal-law-in-pakistan-guide`,
+    citation: [
+      { "@type": "CreativeWork", name: "Pakistan Penal Code, 1860 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lo-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Code of Criminal Procedure, 1898 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lp-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

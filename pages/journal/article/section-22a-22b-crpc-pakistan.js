@@ -69,6 +69,10 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/section-22a-22b-crpc-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "22-A & 22-B — Office of the Advocate General, Government of Punjab", url: "https://advocategeneral.punjab.gov.pk/22A_22B" },
+      { "@type": "CreativeWork", name: "PLD 2016 Supreme Court 581 — on the scope of Section 22-A CrPC", url: "http://nasirlawsite.com/historic/pld2016.htm" },
+    ],
   },
   {
     "@context": "https://schema.org",

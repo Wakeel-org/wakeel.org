@@ -69,6 +69,10 @@ const schema = [
     datePublished: "2026-04-30",
     dateModified: "2026-04-30",
     mainEntityOfPage: `${site.url}/journal/article/haq-mehr-rights-before-after-rukhsati-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+      { "@type": "CreativeWork", name: "The West Pakistan Family Courts Act, 1964 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lraQ==-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

@@ -70,6 +70,9 @@ const schema = [
     datePublished: "2026-01-28",
     dateModified: "2026-01-28",
     mainEntityOfPage: `${site.url}/journal/article/how-to-get-bail-in-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Code of Criminal Procedure, 1898 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lp-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

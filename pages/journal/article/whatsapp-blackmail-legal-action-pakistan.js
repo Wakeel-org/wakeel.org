@@ -61,6 +61,11 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/whatsapp-blackmail-legal-action-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
+      { "@type": "CreativeWork", name: "National Cyber Crime Investigation Agency (NCCIA) — official site", url: "https://www.nccia.gov.pk/" },
+      { "@type": "CreativeWork", name: "What to Do If Someone Is Blackmailing You With Photos in Pakistan — Stop Harassment Now", url: "https://stopharassmentnow.org/photos-blackmailing-in-pakistan/" },
+    ],
   },
   {
     "@context": "https://schema.org",

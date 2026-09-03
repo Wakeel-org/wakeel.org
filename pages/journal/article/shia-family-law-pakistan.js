@@ -61,6 +61,10 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/shia-family-law-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Revolutionising Inheritance Laws for the Shia Sect: Protection of Childless Widows — LUMS SAHSOL", url: "https://sahsol.lums.edu.pk/sites/default/files/2024-05/Revolutionising%20Inheritance%20Laws%20for%20the%20Shia%20Sect%20A%20Case%20for%20the%20Protection%20of%20Childless%20Widows%20of%20Shia%20Husbands.pdf" },
+      { "@type": "CreativeWork", name: "Pakistan — Campaign for Justice in Muslim Family Laws (Musawah)", url: "https://campaignforjustice.musawah.org/repository/pakistan/" },
+    ],
   },
   {
     "@context": "https://schema.org",

@@ -61,6 +61,9 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/debt-recovery-legal-procedure-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Order 37 CPC, 1908 — iPleaders", url: "https://blog.ipleaders.in/order-37-cpc-1908/" },
+    ],
   },
   {
     "@context": "https://schema.org",

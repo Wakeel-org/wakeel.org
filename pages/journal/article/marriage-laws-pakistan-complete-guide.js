@@ -70,6 +70,10 @@ const schema = [
     datePublished: "2026-01-15",
     dateModified: "2026-01-15",
     mainEntityOfPage: `${site.url}/journal/article/marriage-laws-pakistan-complete-guide`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+      { "@type": "CreativeWork", name: "Punjab Child Marriage Restraint Ordinance, 2026 — Punjab Code (official)", url: "https://punjabcode.punjab.gov.pk/en/show_article/BjYCNgA2BjZTOg--" },
+    ],
   },
   {
     "@context": "https://schema.org",

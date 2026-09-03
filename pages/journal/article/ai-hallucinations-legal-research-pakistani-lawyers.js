@@ -69,6 +69,10 @@ const schema = [
     datePublished: "2026-07-09",
     dateModified: "2026-07-09",
     mainEntityOfPage: `${site.url}/journal/article/ai-hallucinations-legal-research-pakistani-lawyers`,
+    citation: [
+      { "@type": "CreativeWork", name: "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (2025, peer-reviewed) — Journal of Empirical Legal Studies / Stanford RegLab", url: "https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/" },
+      { "@type": "CreativeWork", name: "Hallucinating Law: Legal Mistakes with Large Language Models are Pervasive — Stanford Law School", url: "https://law.stanford.edu/2024/01/11/hallucinating-law-legal-mistakes-with-large-language-models-are-pervasive/" },
+    ],
   },
   {
     "@context": "https://schema.org",

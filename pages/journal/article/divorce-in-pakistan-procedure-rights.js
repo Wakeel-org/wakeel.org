@@ -70,6 +70,11 @@ const schema = [
     datePublished: "2026-03-08",
     dateModified: "2026-03-08",
     mainEntityOfPage: `${site.url}/journal/article/divorce-in-pakistan-procedure-rights`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+      { "@type": "CreativeWork", name: "The Dissolution of Muslim Marriages Act, 1939 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-cJaW-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "The West Pakistan Family Courts Act, 1964 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lraQ==-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

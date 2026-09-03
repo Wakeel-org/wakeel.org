@@ -69,6 +69,9 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/illegal-property-occupation-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Eradication of 'Qabza' Group Activities — Pakistan Law and Justice Commission (Report 19)", url: "https://www.commonlii.org/pk/other/PKLJC/reports/19.html" },
+    ],
   },
   {
     "@context": "https://schema.org",

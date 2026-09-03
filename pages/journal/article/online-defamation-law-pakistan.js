@@ -61,6 +61,12 @@ const schema = [
     datePublished: "2026-08-29",
     dateModified: "2026-08-29",
     mainEntityOfPage: `${site.url}/journal/article/online-defamation-law-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
+      { "@type": "CreativeWork", name: "The Defamation Ordinance, 2002 — Punjab Laws", url: "http://punjablaws.gov.pk/laws/2219a.html" },
+      { "@type": "CreativeWork", name: "Section 20 of Pakistan's Prevention of Electronic Crimes Act: Urgent Reforms — Clooney Foundation for Justice", url: "https://cfj.org/wp-content/uploads/2023/10/Pakistan_PECA-Report_September-2023.pdf" },
+      { "@type": "CreativeWork", name: "Criminal Defamation Laws in Pakistan and Their Use to Silence Victims — LUMS SAHSOL", url: "https://sahsol.lums.edu.pk/node/11446" },
+    ],
   },
   {
     "@context": "https://schema.org",

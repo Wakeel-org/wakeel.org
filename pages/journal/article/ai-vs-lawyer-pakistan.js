@@ -101,6 +101,13 @@ const schema = [
     url: `${site.url}/journal/article/ai-vs-lawyer-pakistan`,
     datePublished: "2026-06-28",
     dateModified: "2026-08-15",
+    citation: [
+      { "@type": "CreativeWork", name: "Hallucinating Law: Legal Mistakes with Large Language Models are Pervasive — Stanford Law School", url: "https://law.stanford.edu/2024/01/11/hallucinating-law-legal-mistakes-with-large-language-models-are-pervasive/" },
+      { "@type": "CreativeWork", name: "Stanford RegLab / HAI study on AI legal research tool hallucination rates — LawSites coverage", url: "https://www.lawnext.com/2024/05/stanford-will-augment-its-study-finding-that-ai-legal-research-tools-hallucinate-in-17-of-queries-as-some-raise-questions-about-the-results.html" },
+      { "@type": "CreativeWork", name: "Added Aug 15, 2026 — Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (2025, peer-reviewed) — Journal of Empirical Legal Studies / Stanford RegLab", url: "https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/" },
+      { "@type": "CreativeWork", name: "Added Aug 15, 2026 — 2026 AI in Professional Services Report — Thomson Reuters Institute", url: "https://www.thomsonreuters.com/en-us/posts/technology/ai-in-professional-services-report-2026/" },
+      { "@type": "CreativeWork", name: "Added Aug 15, 2026 — The Endless Wait: Crisis of Backlog in Pakistan's District Judiciary (2025 case-pendency figures) — Daily Pakistan", url: "https://en.dailypakistan.com.pk/25-Nov-2025/the-endless-wait-crisis-of-backlog-in-pakistans-district-judiciary" },
+    ],
   },
   {
     "@context": "https://schema.org",

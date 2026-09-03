@@ -71,6 +71,10 @@ const schema = [
     datePublished: "2026-02-09",
     dateModified: "2026-02-09",
     mainEntityOfPage: `${site.url}/journal/article/nikah-nama-rights-clauses-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+      { "@type": "CreativeWork", name: "The West Pakistan Family Courts Act, 1964 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lraQ==-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

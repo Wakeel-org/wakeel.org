@@ -72,6 +72,9 @@ const schema = [
     datePublished: "2026-04-25",
     dateModified: "2026-04-25",
     mainEntityOfPage: `${site.url}/journal/article/writ-jurisdiction-high-courts-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

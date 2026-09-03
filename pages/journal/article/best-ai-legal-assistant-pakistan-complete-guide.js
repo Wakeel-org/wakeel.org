@@ -69,6 +69,10 @@ const schema = [
     datePublished: "2026-05-31",
     dateModified: "2026-05-31",
     mainEntityOfPage: `${site.url}/journal/article/best-ai-legal-assistant-pakistan-complete-guide`,
+    citation: [
+      { "@type": "CreativeWork", name: "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (2025, peer-reviewed) — Journal of Empirical Legal Studies / Stanford RegLab", url: "https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/" },
+      { "@type": "CreativeWork", name: "Final Draft — Personal Data Protection Bill, May 2023 — Ministry of IT & Telecommunication", url: "https://moitt.gov.pk/SiteImage/Misc/files/Final%20Draft%20Personal%20Data%20Protection%20Bill%20May%202023.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

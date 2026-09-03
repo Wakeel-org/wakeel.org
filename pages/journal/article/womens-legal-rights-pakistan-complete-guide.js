@@ -64,6 +64,11 @@ const schema = [
     datePublished: "2026-01-07",
     dateModified: "2026-01-07",
     mainEntityOfPage: `${site.url}/journal/article/womens-legal-rights-pakistan-complete-guide`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+      { "@type": "CreativeWork", name: "The Criminal Law (Third Amendment) Act, 2011 — National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/1329729400_262.pdf" },
+      { "@type": "CreativeWork", name: "Prevention of Anti-Women Practices Act, 2011 — Punjab Commission on the Status of Women", url: "https://pcsw.punjab.gov.pk/prevention_of_anti_women_practices" },
+    ],
   },
   {
     "@context": "https://schema.org",

@@ -62,6 +62,10 @@ const schema = [
     datePublished: "2026-06-12",
     dateModified: "2026-06-12",
     mainEntityOfPage: `${site.url}/journal/article/best-ai-tools-for-lawyers-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (2025, peer-reviewed) — Journal of Empirical Legal Studies / Stanford RegLab", url: "https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/" },
+      { "@type": "CreativeWork", name: "2026 AI in Professional Services Report — Thomson Reuters Institute", url: "https://www.thomsonreuters.com/en-us/posts/technology/ai-in-professional-services-report-2026/" },
+    ],
   },
   {
     "@context": "https://schema.org",

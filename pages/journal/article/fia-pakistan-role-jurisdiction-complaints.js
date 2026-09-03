@@ -61,6 +61,11 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/fia-pakistan-role-jurisdiction-complaints`,
+    citation: [
+      { "@type": "CreativeWork", name: "Federal Investigation Agency — official site", url: "https://www.fia.gov.pk/" },
+      { "@type": "CreativeWork", name: "Federal Investigation Agency Act, 1974 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-bpuUY2Zr-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "National Cyber Crime Investigation Agency (NCCIA) — official site", url: "https://www.nccia.gov.pk/" },
+    ],
   },
   {
     "@context": "https://schema.org",

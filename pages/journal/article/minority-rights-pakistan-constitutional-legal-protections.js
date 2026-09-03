@@ -62,6 +62,10 @@ const schema = [
     datePublished: "2026-02-12",
     dateModified: "2026-02-12",
     mainEntityOfPage: `${site.url}/journal/article/minority-rights-pakistan-constitutional-legal-protections`,
+    citation: [
+      { "@type": "CreativeWork", name: "The National Commission for Minorities Act, 2023 — National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/63f4893540676_512.pdf" },
+      { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

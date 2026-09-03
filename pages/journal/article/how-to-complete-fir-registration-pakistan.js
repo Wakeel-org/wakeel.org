@@ -69,6 +69,10 @@ const schema = [
     datePublished: "2026-01-20",
     dateModified: "2026-01-20",
     mainEntityOfPage: `${site.url}/journal/article/how-to-complete-fir-registration-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Code of Criminal Procedure, 1898 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lp-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Section 22-A & 22-B CrPC — Punjab Advocate General's Office explainer", url: "https://advocategeneral.punjab.gov.pk/22A_22B" },
+    ],
   },
   {
     "@context": "https://schema.org",

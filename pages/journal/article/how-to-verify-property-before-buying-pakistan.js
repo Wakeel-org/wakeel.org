@@ -72,6 +72,9 @@ const schema = [
     datePublished: "2026-02-11",
     dateModified: "2026-02-11",
     mainEntityOfPage: `${site.url}/journal/article/how-to-verify-property-before-buying-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Benami Transactions (Prohibition) Act, 2017 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2NoaJg=-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

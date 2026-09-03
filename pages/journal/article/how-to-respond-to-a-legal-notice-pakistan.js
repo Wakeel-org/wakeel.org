@@ -61,6 +61,10 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/how-to-respond-to-a-legal-notice-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "What to Do After Receiving a Legal Notice — Chaudhry Ghalib Asghar Law Associates", url: "https://advocateghalibasghar.com/blog/what-to-do-after-receiving-legal-notice" },
+      { "@type": "CreativeWork", name: "Legal Notices in Pakistan: A Practical Client Guide — Josh and Mak International", url: "https://joshandmakinternational.com/legal-notices-and-their-role-in-pakistani-law/" },
+    ],
   },
   {
     "@context": "https://schema.org",

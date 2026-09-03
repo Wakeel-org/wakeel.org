@@ -67,6 +67,9 @@ const schema = [
     datePublished: "2026-01-18",
     dateModified: "2026-01-18",
     mainEntityOfPage: `${site.url}/journal/article/section-377-ppc-explained-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Pakistan Penal Code, 1860 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lo-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

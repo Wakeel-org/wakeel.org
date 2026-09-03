@@ -69,6 +69,11 @@ const schema = [
     datePublished: "2026-05-08",
     dateModified: "2026-05-08",
     mainEntityOfPage: `${site.url}/journal/article/daughters-inheritance-rights-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Criminal Law (Third Amendment) Act, 2011 (Section 498-A PPC) — National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/1329729400_262.pdf" },
+      { "@type": "CreativeWork", name: "The Punjab Enforcement of Women's Property Rights Act, 2021 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/2789.html" },
+      { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/777a.html" },
+    ],
   },
   {
     "@context": "https://schema.org",

@@ -75,6 +75,10 @@ const schema = [
     datePublished: "2026-03-30",
     dateModified: "2026-03-30",
     mainEntityOfPage: `${site.url}/journal/article/civil-law-in-pakistan-guide`,
+    citation: [
+      { "@type": "CreativeWork", name: "Code of Civil Procedure, 1908 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apeb-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "The Endless Wait: Crisis of Backlog in Pakistan's District Judiciary (2025 case-pendency figures) — Daily Pakistan", url: "https://en.dailypakistan.com.pk/25-Nov-2025/the-endless-wait-crisis-of-backlog-in-pakistans-district-judiciary" },
+    ],
   },
   {
     "@context": "https://schema.org",

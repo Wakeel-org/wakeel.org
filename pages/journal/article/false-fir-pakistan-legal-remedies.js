@@ -69,6 +69,11 @@ const schema = [
     datePublished: "2026-02-15",
     dateModified: "2026-02-15",
     mainEntityOfPage: `${site.url}/journal/article/false-fir-pakistan-legal-remedies`,
+    citation: [
+      { "@type": "CreativeWork", name: "Pakistan Penal Code, 1860 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lo-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Code of Criminal Procedure, 1898 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lp-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "Inherent Powers, Quashments, Acquittals — Prosecutor General Punjab", url: "https://pg.punjab.gov.pk/inherent_powers_quashments_acquittals" },
+    ],
   },
   {
     "@context": "https://schema.org",

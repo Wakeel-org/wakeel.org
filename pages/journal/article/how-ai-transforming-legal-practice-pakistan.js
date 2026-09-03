@@ -62,6 +62,9 @@ const schema = [
     datePublished: "2026-06-25",
     dateModified: "2026-06-25",
     mainEntityOfPage: `${site.url}/journal/article/how-ai-transforming-legal-practice-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "2026 AI in Professional Services Report — Thomson Reuters Institute", url: "https://www.thomsonreuters.com/en-us/posts/technology/ai-in-professional-services-report-2026/" },
+    ],
   },
   {
     "@context": "https://schema.org",

@@ -61,6 +61,12 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/online-fraud-scams-legal-remedies-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
+      { "@type": "CreativeWork", name: "NCCIA — Financial Frauds reporting page", url: "https://www.nccia.gov.pk/financial-frauds.php" },
+      { "@type": "CreativeWork", name: "State Bank of Pakistan — Consumer Protection Department complaint mechanism", url: "https://www.sbp.org.pk/cpd/cpd-mech.asp" },
+      { "@type": "CreativeWork", name: "State Bank of Pakistan — Complaint channels", url: "https://www.sbp.org.pk/ecib/complaint.htm" },
+    ],
   },
   {
     "@context": "https://schema.org",

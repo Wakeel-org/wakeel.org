@@ -61,6 +61,9 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/salary-not-paid-employee-rights-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Payment of Wages Act, 1936 — Punjab Laws", url: "http://punjablaws.gov.pk/laws/45a.html" },
+    ],
   },
   {
     "@context": "https://schema.org",

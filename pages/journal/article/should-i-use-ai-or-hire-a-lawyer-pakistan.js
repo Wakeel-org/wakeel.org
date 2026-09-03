@@ -76,6 +76,10 @@ const schema = [
     datePublished: "2026-02-14",
     dateModified: "2026-02-14",
     mainEntityOfPage: `${site.url}/journal/article/should-i-use-ai-or-hire-a-lawyer-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools (2025, peer-reviewed) — Journal of Empirical Legal Studies / Stanford RegLab", url: "https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/" },
+      { "@type": "CreativeWork", name: "Lawyers' Verification — Islamabad Bar Council", url: "https://www.ibc.org.pk/lawyers-verification/" },
+    ],
   },
   {
     "@context": "https://schema.org",

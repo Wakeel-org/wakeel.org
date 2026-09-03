@@ -77,6 +77,10 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/cybercrime-punishments-pakistan-peca-penalties`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
+      { "@type": "CreativeWork", name: "National Cyber Crime Investigation Agency (NCCIA) — official site", url: "https://www.nccia.gov.pk/" },
+    ],
   },
   {
     "@context": "https://schema.org",

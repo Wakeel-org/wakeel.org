@@ -112,6 +112,10 @@ const schema = [
     datePublished: "2026-05-23",
     dateModified: "2026-05-23",
     mainEntityOfPage: `${site.url}/journal/article/can-ai-review-legal-document-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Personal Data Protection Bill, 2023 (final draft) — Ministry of IT & Telecommunication", url: "https://moitt.gov.pk/SiteImage/Misc/files/Final%20Draft%20Personal%20Data%20Protection%20Bill%20May%202023.pdf" },
+      { "@type": "CreativeWork", name: "Hallucinating Law: Legal Mistakes with Large Language Models are Pervasive — Stanford Law School", url: "https://law.stanford.edu/2024/01/11/hallucinating-law-legal-mistakes-with-large-language-models-are-pervasive/" },
+    ],
   },
   {
     "@context": "https://schema.org",

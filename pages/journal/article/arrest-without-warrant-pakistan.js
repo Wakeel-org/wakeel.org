@@ -69,6 +69,10 @@ const schema = [
     datePublished: "2026-02-05",
     dateModified: "2026-02-05",
     mainEntityOfPage: `${site.url}/journal/article/arrest-without-warrant-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "Code of Criminal Procedure, 1898 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lp-sg-jjjjjjjjjjjjj" },
+      { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",

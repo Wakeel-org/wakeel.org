@@ -70,6 +70,10 @@ const schema = [
     datePublished: "2026-06-16",
     dateModified: "2026-06-16",
     mainEntityOfPage: `${site.url}/journal/article/property-laws-overseas-pakistanis-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "The Punjab Establishment of Special Courts (Overseas Pakistanis Property) Act, 2025 — Punjab Laws (official)", url: "http://punjablaws.gov.pk/laws/2907.html" },
+      { "@type": "CreativeWork", name: "Benami Transactions (Prohibition) Act, 2017 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2NoaJg=-sg-jjjjjjjjjjjjj" },
+    ],
   },
   {
     "@context": "https://schema.org",

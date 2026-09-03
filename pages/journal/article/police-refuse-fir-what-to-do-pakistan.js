@@ -61,6 +61,10 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/police-refuse-fir-what-to-do-pakistan`,
+    citation: [
+      { "@type": "CreativeWork", name: "22-A & 22-B — Office of the Advocate General, Government of Punjab", url: "https://advocategeneral.punjab.gov.pk/22A_22B" },
+      { "@type": "CreativeWork", name: "The Police Order 2002: An Introduction — CPDI Pakistan", url: "https://archive.cpdi-pakistan.org/wp-content/uploads/2014/12/The-Police-Order-2002_Booklet.pdf" },
+    ],
   },
   {
     "@context": "https://schema.org",
