@@ -21,6 +21,14 @@ const framework = [
   { icon: AlertTriangle, title: "Provincial laws add extra tools in some places", detail: "Punjab, for example, has its own additional legislation — the Punjab Protection of Ownership of Immovable Property Act 2025 — specifically targeting organized land-grabbing, alongside these general national remedies." },
 ];
 
+const steps = [
+  "Document the illegal occupation — how possession was taken (fraud, intimidation, duress, or assault), when, and by whom — since this is what both the criminal and civil routes will need.",
+  "File a criminal complaint, either under the Illegal Dispossession Act 2005 (written specifically for qabza-group cases) or under Sections 447/448 PPC for criminal trespass, depending on the facts.",
+  "In parallel, file a civil suit seeking an injunction under the Specific Relief Act 1877 to stop the occupier from selling, transferring, or further damaging the property.",
+  "Ask the court for an interim stay order to freeze the property's status while your case is decided — acting quickly matters more than which law you pursue first.",
+  "Check whether provincial legislation adds extra tools — Punjab, for example, has the Punjab Protection of Ownership of Immovable Property Act 2025 for organized land-grabbing specifically.",
+];
+
 const faqs = [
   {
     question: "What can I do if my property has been illegally occupied in Pakistan?",
@@ -61,6 +69,12 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/illegal-property-occupation-pakistan`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "What to do about illegal property occupation in Pakistan",
+    step: steps.map((s, i) => ({ "@type": "HowToStep", name: `Step ${i + 1}`, text: s })),
   },
   {
     "@context": "https://schema.org",
@@ -111,7 +125,7 @@ export default function IllegalPropertyOccupationPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published November 29, 2026</p>
+          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Illegal Property Occupation in Pakistan
           </h1>
@@ -167,8 +181,31 @@ export default function IllegalPropertyOccupationPakistan() {
         </div>
       </section>
 
-      {/* Reveal: prose with inline sources */}
+      {/* Reveal: procedure steps */}
       <section className="bg-muted/40 py-16 sm:py-20">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className={sectionHeading}>What to do about illegal occupation, step by step</h2>
+          </div>
+          <Card className={cardBase}>
+            <CardContent className="p-6">
+              <ol className="space-y-3">
+                {steps.map((step, i) => (
+                  <li key={step} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <span className="flex items-center justify-center h-5 w-5 rounded-full bg-primary/10 text-primary text-xs font-semibold shrink-0 mt-0.5">
+                      {i + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Reveal: prose with inline sources */}
+      <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
           <h2 className={sectionHeading}>Why speed matters more than which law you pick first</h2>
           <p className="text-muted-foreground leading-relaxed">

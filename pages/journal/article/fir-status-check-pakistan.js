@@ -21,6 +21,14 @@ const framework = [
   { icon: AlertTriangle, title: "What you'll always need: your CNIC number", detail: "Across every provincial system, the CNIC number of the complainant (typed without dashes or spaces) is the key piece of information the portal uses to pull up FIR details — date registered, police station, and current status." },
 ];
 
+const steps = [
+  "Identify which province registered your FIR — Punjab, Sindh, Khyber Pakhtunkhwa, and Islamabad each run separate systems, so there's no single national portal to check.",
+  "Go to that province's official portal or app — for example, the Punjab Police CMS portal (cms.punjabpolice.gov.pk) or Punjab Police App, or the Sindh Police IGP Complaint Management System.",
+  "Enter your CNIC number, typed without dashes or spaces — this is the key detail every provincial system uses to pull up FIR details.",
+  "Review the status shown — date registered, police station, and current stage — but treat it as a first check, not the full picture of what's happening in the investigation.",
+  "If progress seems genuinely stalled rather than just slow to update online, follow up directly with the investigating officer or SHO, or call the Police Helpline 15 — that's a different problem with its own remedy, not something the status portal can fix.",
+];
+
 const faqs = [
   {
     question: "How can I check my FIR status online in Pakistan?",
@@ -61,6 +69,12 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/fir-status-check-pakistan`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to check your FIR status online in Pakistan",
+    step: steps.map((s, i) => ({ "@type": "HowToStep", name: `Step ${i + 1}`, text: s })),
   },
   {
     "@context": "https://schema.org",
@@ -111,7 +125,7 @@ export default function FirStatusCheckPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published November 14, 2026</p>
+          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             How to Check FIR Status in Pakistan
           </h1>
@@ -171,8 +185,31 @@ export default function FirStatusCheckPakistan() {
         </div>
       </section>
 
-      {/* Reveal: prose with inline sources */}
+      {/* Reveal: procedure steps */}
       <section className="bg-muted/40 py-16 sm:py-20">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className={sectionHeading}>How to check your FIR status, step by step</h2>
+          </div>
+          <Card className={cardBase}>
+            <CardContent className="p-6">
+              <ol className="space-y-3">
+                {steps.map((step, i) => (
+                  <li key={step} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <span className="flex items-center justify-center h-5 w-5 rounded-full bg-primary/10 text-primary text-xs font-semibold shrink-0 mt-0.5">
+                      {i + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Reveal: prose with inline sources */}
+      <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
           <h2 className={sectionHeading}>Why the status you see online isn't always the full picture</h2>
           <p className="text-muted-foreground leading-relaxed">

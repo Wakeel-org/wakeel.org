@@ -73,6 +73,12 @@ const schema = [
   },
   {
     "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How the divorce process moves in Pakistan",
+    step: procedureSteps.map((s, i) => ({ "@type": "HowToStep", name: `Step ${i + 1}`, text: s })),
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: faqs.map((f) => ({
       "@type": "Question",

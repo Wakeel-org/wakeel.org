@@ -120,7 +120,7 @@ export default function BestAiLawyerPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>AI & the Law · Published November 8, 2026</p>
+          <p className={eyebrow}>AI & the Law · Published September 3, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Best AI Lawyer in Pakistan
           </h1>

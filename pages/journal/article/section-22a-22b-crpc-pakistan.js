@@ -21,6 +21,14 @@ const framework = [
   { icon: AlertTriangle, title: "This is the remedy for a refused FIR — not for misconduct generally", detail: "A 22-A/22-B application is specifically for getting a criminal case registered or an investigation properly redirected. General police misconduct — abuse of power, rudeness, corruption — is addressed through the Police Order 2002 complaint framework, a separate process." },
 ];
 
+const steps = [
+  "Confirm the police have refused to register your FIR, mishandled the investigation, or neglected their duty — Section 22-A/22-B is specifically the remedy for this, not general police misconduct.",
+  "Prepare a well-documented application setting out the facts that constitute the alleged offence and the specific way the police failed to act — a documented application moves faster than a bare complaint that police \"aren't helping.\"",
+  "File the application with the district's Ex-Officio Justice of the Peace, typically the Sessions Judge or a nominated Additional Sessions Judge.",
+  "The Justice of Peace examines the record and hears both parties — courts have held this is a genuine, quasi-judicial application of mind, not a rubber-stamp.",
+  "If satisfied, the Justice of Peace issues a binding direction: to register the FIR, transfer the investigation to a different officer, or address the specific neglect or excess identified.",
+];
+
 const faqs = [
   {
     question: "What is Section 22-A/22-B CrPC used for?",
@@ -61,6 +69,12 @@ const schema = [
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/section-22a-22b-crpc-pakistan`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to file a Section 22-A/22-B CrPC application in Pakistan",
+    step: steps.map((s, i) => ({ "@type": "HowToStep", name: `Step ${i + 1}`, text: s })),
   },
   {
     "@context": "https://schema.org",
@@ -111,7 +125,7 @@ export default function Section22a22bCrpcPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published October 27, 2026</p>
+          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Section 22-A/22-B CrPC: The Justice of Peace Explained
           </h1>
@@ -166,6 +180,29 @@ export default function Section22a22bCrpcPakistan() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Reveal: procedure steps */}
+      <section className="bg-background py-16 sm:py-20">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className={sectionHeading}>How to file a 22-A/22-B application</h2>
+          </div>
+          <Card className={cardBase}>
+            <CardContent className="p-6">
+              <ol className="space-y-3">
+                {steps.map((step, i) => (
+                  <li key={step} className="flex items-start gap-3 text-sm text-muted-foreground">
+                    <span className="flex items-center justify-center h-5 w-5 rounded-full bg-primary/10 text-primary text-xs font-semibold shrink-0 mt-0.5">
+                      {i + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
