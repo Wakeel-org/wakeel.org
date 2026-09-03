@@ -56,7 +56,7 @@ const schema = [
     headline: "Online Fraud and Scams: Legal Remedies in Pakistan",
     description:
       "What to do in the first hour after an online scam or bank fraud in Pakistan, the PECA sections that apply, and how to file with the NCCIA and the Banking Mohtasib.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",

@@ -56,7 +56,7 @@ const schema = [
     headline: "Privacy and Recording Someone Without Consent in Pakistan",
     description:
       "The legal framework around recording and sharing someone without consent in Pakistan — Article 14 privacy, PECA Section 21, and the Investigation for Fair Trial Act 2013.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-06",
     dateModified: "2026-05-06",

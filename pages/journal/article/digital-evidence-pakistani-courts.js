@@ -56,7 +56,7 @@ const schema = [
     headline: "Digital Evidence in Pakistani Courts",
     description:
       "How digital evidence actually gets admitted in Pakistani courts — Article 164 of the Qanun-e-Shahadat Order 1984, the authenticity test, and how NCCIA forensic reports fit in.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",

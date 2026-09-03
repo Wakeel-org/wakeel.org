@@ -98,7 +98,7 @@ const schema = [
     headline: "How to Draft a Legal Contract in Pakistan",
     description:
       "The essential elements of a valid, enforceable contract in Pakistan under the Contract Act 1872 — what to include, when stamping and registration matter, and the risks of generic templates.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-01",
     dateModified: "2026-08-01",

@@ -64,7 +64,7 @@ const schema = [
     headline: "Talaq in Pakistan: Legal Procedure and Requirements",
     description:
       "The exact statutory procedure for talaq in Pakistan under Section 7 of the Muslim Family Laws Ordinance 1961 — Union Council notice, the Arbitration Council, and the 90-day period.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-28",
     dateModified: "2026-05-28",

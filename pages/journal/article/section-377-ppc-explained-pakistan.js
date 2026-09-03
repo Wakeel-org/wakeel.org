@@ -62,7 +62,7 @@ const schema = [
     headline: "Section 377 PPC: Law Explained in Pakistan",
     description:
       "What Section 377 of the Pakistan Penal Code actually states, its colonial-era origin, and how it fits into Pakistan's criminal procedure — a factual, statute-focused explainer.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-18",
     dateModified: "2026-01-18",

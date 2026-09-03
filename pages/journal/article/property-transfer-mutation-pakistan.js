@@ -99,7 +99,7 @@ const schema = [
     headline: "Property Transfer and Mutation Process in Pakistan",
     description:
       "How property transfer and mutation actually work in Pakistan — registration, stamp duty, the Patwar Khana process, and what to verify before you buy.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-04",
     dateModified: "2026-08-04",

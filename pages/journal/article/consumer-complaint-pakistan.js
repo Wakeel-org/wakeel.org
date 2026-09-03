@@ -110,7 +110,7 @@ const schema = [
     headline: "How to File a Consumer Complaint in Pakistan",
     description:
       "A practical guide to filing a consumer complaint in Pakistan — provincial consumer protection laws, evidence to collect, and how the consumer court process actually works.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-14",
     dateModified: "2026-05-14",

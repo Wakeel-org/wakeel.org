@@ -99,7 +99,7 @@ const schema = [
     headline: "Wakeel AI for Law Students in Pakistan",
     description:
       "How LLB students in Pakistan can use Wakeel.org for statute explanations, case law research, bilingual study notes, and exam prep — and where it should stop being your only source.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-10",
     dateModified: "2026-07-10",

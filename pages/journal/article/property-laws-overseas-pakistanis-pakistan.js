@@ -65,7 +65,7 @@ const schema = [
     headline: "Property Laws for Overseas Pakistanis",
     description:
       "How overseas Pakistanis can buy, verify, and defend property in Pakistan — power of attorney, NICOP requirements, benami risk, and the new Overseas Pakistanis Property special courts.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-16",
     dateModified: "2026-06-16",

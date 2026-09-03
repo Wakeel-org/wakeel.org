@@ -109,7 +109,7 @@ const schema = [
     headline: "How to File a Civil Suit in Pakistan",
     description:
       "A practical walkthrough of filing a civil suit in Pakistan under the CPC 1908 — jurisdiction, drafting the plaint, court fees, and a realistic timeline.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-31",
     dateModified: "2026-07-31",

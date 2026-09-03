@@ -86,7 +86,7 @@ const schema = [
     headline: "Using AI to Review Contracts in Pakistan",
     description:
       "What AI contract review can genuinely do for Pakistani businesses and citizens, what it misses, and how to use it as a fast first pass rather than a final sign-off.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-03",
     dateModified: "2026-08-03",

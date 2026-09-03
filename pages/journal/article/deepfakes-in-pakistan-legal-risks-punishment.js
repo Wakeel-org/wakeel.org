@@ -56,7 +56,7 @@ const schema = [
     headline: "Deepfakes in Pakistan: Legal Risks and Punishment",
     description:
       "How Pakistani law treats deepfakes — the PECA provisions used to prosecute AI-manipulated content, punishment, and what to do if you're targeted.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-11",
     dateModified: "2026-04-11",

@@ -71,7 +71,7 @@ const schema = [
     headline: "Should I Use AI or Hire a Lawyer in Pakistan?",
     description:
       "A five-question self-check to decide whether an AI legal tool is enough for your situation in Pakistan, or whether it's time to bring in a licensed advocate.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-14",
     dateModified: "2026-02-14",

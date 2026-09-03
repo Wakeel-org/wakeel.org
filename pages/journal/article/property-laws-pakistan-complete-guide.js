@@ -67,7 +67,7 @@ const schema = [
     headline: "Property Laws in Pakistan: Complete Guide to Buying, Selling and Ownership",
     description:
       "The core legal framework behind property in Pakistan — the Transfer of Property Act, Registration Act, Stamp Act, and land revenue system — and how buying, selling, and ownership actually work.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-08",
     dateModified: "2026-01-08",

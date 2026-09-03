@@ -64,7 +64,7 @@ const schema = [
     headline: "What You Must Know About FIR Registration in Pakistan",
     description:
       "Common misconceptions about FIR registration in Pakistan, corrected — plus the rights every citizen actually has under Section 154 CrPC.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-29",
     dateModified: "2026-05-29",

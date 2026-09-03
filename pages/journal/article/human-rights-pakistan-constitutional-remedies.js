@@ -57,7 +57,7 @@ const schema = [
     headline: "Human Rights in Pakistan: Constitutional Rights and Remedies",
     description:
       "How human rights are protected in Pakistan — the Fundamental Rights chapter, the writ jurisdiction and Article 184(3) enforcement routes, and the National Commission for Human Rights.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-21",
     dateModified: "2026-01-21",

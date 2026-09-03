@@ -89,7 +89,7 @@ const schema = [
     headline: "Best Legal Apps for Pakistani Citizens",
     description:
       "A category-by-category look at the legal apps available to Pakistani citizens — AI assistants, drafting tools, case trackers, and lawyer directories — and how to judge whether one is trustworthy.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-29",
     dateModified: "2026-07-29",

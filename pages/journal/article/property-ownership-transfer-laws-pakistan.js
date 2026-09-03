@@ -64,7 +64,7 @@ const schema = [
     headline: "Property Ownership and Transfer Laws in Pakistan",
     description:
       "The types of property ownership in Pakistan — freehold, leasehold, and co-ownership — and the legal instruments used to transfer it: sale, gift, will, and court decree.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-09",
     dateModified: "2026-03-09",

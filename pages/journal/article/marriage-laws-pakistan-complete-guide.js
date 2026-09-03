@@ -65,7 +65,7 @@ const schema = [
     headline: "Marriage Laws in Pakistan: Complete Guide",
     description:
       "How marriage law actually works in Pakistan — the essentials of a valid nikah, mandatory registration, the nikah nama, provincial minimum age rules, and second marriage requirements.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-15",
     dateModified: "2026-01-15",

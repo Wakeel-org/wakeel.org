@@ -110,7 +110,7 @@ const schema = [
     headline: "Tenant Rights Under Pakistan's Rent Laws",
     description:
       "A practical guide to tenant rights in Pakistan — written agreements, eviction protections, rent increase rules, and how to resolve a landlord-tenant dispute under provincial rent laws.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-26",
     dateModified: "2026-05-26",

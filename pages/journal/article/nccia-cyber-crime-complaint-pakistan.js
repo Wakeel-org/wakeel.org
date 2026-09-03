@@ -99,7 +99,7 @@ const schema = [
     headline: "How to File a Cyber Crime Complaint in Pakistan (FIA / NCCIA)",
     description:
       "A practical guide to filing a cybercrime complaint in Pakistan under PECA 2016 — evidence to collect, the FIA Cyber Crime Wing / NCCIA transition, and how to track your complaint.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-02",
     dateModified: "2026-07-02",

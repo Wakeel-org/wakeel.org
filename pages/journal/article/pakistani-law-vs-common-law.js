@@ -100,7 +100,7 @@ const schema = [
     headline: "Pakistani Law vs Common Law: What's Actually Different",
     description:
       "Pakistan's legal system explained honestly — how it inherited common law, where it diverges through codification, the Constitution, and the Federal Shariat Court.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-01",
     dateModified: "2026-07-01",

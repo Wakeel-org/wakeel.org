@@ -105,7 +105,7 @@ const schema = [
     headline: "Wrongful Termination in Pakistan: Know Your Rights",
     description:
       "A practical guide to wrongful termination in Pakistan under the Standing Orders Ordinance 1968 and the Industrial Relations Act 2012 — notice, misconduct inquiries, retrenchment rules, and how to challenge an unlawful dismissal.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-15",
     dateModified: "2026-05-15",

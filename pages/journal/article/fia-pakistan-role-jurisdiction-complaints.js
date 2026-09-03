@@ -56,7 +56,7 @@ const schema = [
     headline: "FIA Pakistan: Role, Jurisdiction, and How to File a Complaint",
     description:
       "What the Federal Investigation Agency actually handles in Pakistan today — immigration, human smuggling, and federal crimes — and why cybercrime complaints now go to the NCCIA instead.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-09-03",
     dateModified: "2026-09-03",

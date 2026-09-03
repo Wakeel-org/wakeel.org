@@ -56,7 +56,7 @@ const schema = [
     headline: "How to File a Cybercrime Complaint in Pakistan",
     description:
       "A step-by-step guide to filing a cybercrime complaint with the NCCIA in Pakistan — preserving evidence, identifying the right PECA offence, and following up.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-18",
     dateModified: "2026-03-18",

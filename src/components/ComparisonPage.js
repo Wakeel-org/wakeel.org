@@ -79,6 +79,12 @@ const makeSchemas = (comparison, path, faqs) => [
     name: comparison.title,
     description: `${comparison.positioning} A factual comparison of Wakeel.org and ${comparison.competitor} for Pakistani legal help, based on publicly available information.`,
     url: `${site.url}${path}`,
+    author: {
+      "@type": "Person",
+      name: "Majid Hussain Malik",
+      jobTitle: "Co-Founder",
+      sameAs: ["https://www.linkedin.com/in/majidhussainmalik/"],
+    },
   },
   {
     "@context": "https://schema.org",

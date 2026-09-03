@@ -62,7 +62,7 @@ const schema = [
     headline: "Kidnapping, Extortion and Sexual Assault Laws in Pakistan",
     description:
       "What the Pakistan Penal Code says about kidnapping, extortion, and assault on modesty — the relevant sections, punishment, and how they're procedurally treated.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-23",
     dateModified: "2026-02-23",

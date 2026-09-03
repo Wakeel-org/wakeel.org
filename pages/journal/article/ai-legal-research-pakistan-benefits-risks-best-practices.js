@@ -67,7 +67,7 @@ const schema = [
     headline: "AI Legal Research in Pakistan: Benefits, Risks and Best Practices",
     description:
       "The genuine benefits and real risks of using AI for legal research in Pakistan, and the best practices — verification, primary sourcing — that make it safe to use.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-22",
     dateModified: "2026-07-22",

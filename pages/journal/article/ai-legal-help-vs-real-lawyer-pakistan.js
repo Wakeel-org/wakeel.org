@@ -63,7 +63,7 @@ const schema = [
     headline: "When to Use AI Legal Help vs a Real Lawyer in Pakistan",
     description:
       "Why AI legal help and a real lawyer work best as a sequence, not a binary choice — a five-stage workflow for using both effectively on the same legal matter in Pakistan.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-08",
     dateModified: "2026-07-08",

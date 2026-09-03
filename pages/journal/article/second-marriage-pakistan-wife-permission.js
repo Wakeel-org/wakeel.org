@@ -64,7 +64,7 @@ const schema = [
     headline: "Second Marriage in Pakistan: Is Wife's Permission Required?",
     description:
       "What Section 6 of the Muslim Family Laws Ordinance 1961 actually requires before a second marriage in Pakistan — the Arbitration Council process, the existing wife's role, and the consequences of skipping it.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-03",
     dateModified: "2026-04-03",

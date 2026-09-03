@@ -64,7 +64,7 @@ const schema = [
     headline: "Daughters' Inheritance Rights in Pakistan: Islamic and Legal Perspective",
     description:
       "A daughter's inheritance rights in Pakistan — the Islamic legal basis, Section 498-A PPC, and the Punjab Enforcement of Women's Property Rights Act 2021 remedy for deprivation.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-08",
     dateModified: "2026-05-08",

@@ -87,7 +87,7 @@ const schema = [
     headline: "NADRA Biometric Verification Issues in Pakistan: What to Do",
     description:
       "Why NADRA biometric verification fails, how it affects SIM cards and bank accounts, and the practical steps to resolve it.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-07",
     dateModified: "2026-08-07",

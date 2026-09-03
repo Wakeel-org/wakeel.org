@@ -66,7 +66,7 @@ const schema = [
     headline: "Nikah Nama in Pakistan: Rights, Clauses and Legal Requirements",
     description:
       "What each key clause of the nikah nama actually means legally — haq mehr, talaq-e-tafweez (column 18), conditions, and prior-marriage disclosure — and what rights they confer.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-09",
     dateModified: "2026-02-09",

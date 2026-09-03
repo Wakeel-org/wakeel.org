@@ -56,7 +56,7 @@ const schema = [
     headline: "Online Defamation Law in Pakistan",
     description:
       "How online defamation actually works in Pakistan — the civil route under the Defamation Ordinance 2002, the criminal route under PECA Section 20, and where each one applies.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-29",
     dateModified: "2026-08-29",

@@ -85,7 +85,7 @@ const schema = [
     headline: "FIR Registration in Pakistan: A Step-by-Step Guide",
     description:
       "A numbered, practical walkthrough of registering an FIR in Pakistan under Section 154 CrPC — from identifying the right station to what happens after registration.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-22",
     dateModified: "2026-03-22",

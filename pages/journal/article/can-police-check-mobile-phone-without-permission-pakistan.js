@@ -63,7 +63,7 @@ const schema = [
     headline: "Can Police Check Your Mobile Phone Without Permission?",
     description:
       "The constitutional and statutory principles that govern police access to a phone in Pakistan — Article 14 privacy, CrPC search powers, self-incrimination, and the Investigation for Fair Trial Act 2013.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-23",
     dateModified: "2026-04-23",

@@ -63,7 +63,7 @@ const schema = [
     headline: "Inheritance and Property Rights in Pakistan",
     description:
       "How inheritance works in Pakistan — the governing law for Muslims and non-Muslims, who typically inherits, and the inheritance mutation process that formally transfers ownership.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-06",
     dateModified: "2026-04-06",

@@ -99,7 +99,7 @@ const schema = [
     headline: "Understanding Legal Notices in Pakistan",
     description:
       "What a legal notice in Pakistan actually means, why you receive one, how to read it without panicking, and how to respond properly and on time.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-14",
     dateModified: "2026-06-14",

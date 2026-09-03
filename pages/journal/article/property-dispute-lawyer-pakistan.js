@@ -93,7 +93,7 @@ const schema = [
     headline: "Finding a Property Dispute Lawyer in Pakistan",
     description:
       "How to vet and hire a property dispute lawyer in Pakistan — bar council verification, experience checks, fee conversations, and red flags to watch for.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-02",
     dateModified: "2026-08-02",

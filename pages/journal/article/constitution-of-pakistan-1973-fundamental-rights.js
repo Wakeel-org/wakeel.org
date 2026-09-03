@@ -98,7 +98,7 @@ const schema = [
     headline: "Constitution of Pakistan 1973: Complete Guide to Fundamental Rights",
     description:
       "A plain-language guide to the Fundamental Rights chapter of Pakistan's 1973 Constitution — what Articles 8 to 28 actually protect, what the 18th Amendment added, and how these rights get enforced.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-12",
     dateModified: "2026-03-12",

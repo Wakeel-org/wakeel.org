@@ -93,7 +93,7 @@ const schema = [
     headline: "Section 420 PPC: Fraud and Cheating Charges in Pakistan",
     description:
       "What Section 420 of the Pakistan Penal Code actually covers, the ingredients that must be proven, how it differs from a civil dispute, and what to do if you're involved in a case.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-23",
     dateModified: "2026-07-23",

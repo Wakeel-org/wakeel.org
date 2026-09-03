@@ -107,7 +107,7 @@ const schema = [
     headline: "Can AI Review a Legal Document in Pakistan?",
     description:
       "A practical guide to what AI-powered tools can and cannot do when reviewing contracts, agreements, and legal notices in Pakistan — what to check before uploading a document, and when you still need a licensed advocate.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-23",
     dateModified: "2026-05-23",

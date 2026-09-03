@@ -65,7 +65,7 @@ const schema = [
     headline: "Bail in Pakistan: How to Get Bail in a Criminal Case",
     description:
       "How bail actually works in Pakistan under Sections 497 and 498 CrPC — bailable vs non-bailable offences, pre-arrest vs post-arrest bail, and the process for a bail application.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-28",
     dateModified: "2026-01-28",

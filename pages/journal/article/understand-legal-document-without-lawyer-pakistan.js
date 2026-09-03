@@ -100,7 +100,7 @@ const schema = [
     headline: "How to Understand a Legal Document Without a Lawyer",
     description:
       "A practical method for reading contracts, notices, and agreements in Pakistan without a law degree — what to look for, what red flags mean, and when you actually need a lawyer.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-22",
     dateModified: "2026-06-22",

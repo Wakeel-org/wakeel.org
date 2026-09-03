@@ -64,7 +64,7 @@ const schema = [
     headline: "Criminal Law in Pakistan: Complete Guide",
     description:
       "How criminal law works in Pakistan — the Pakistan Penal Code, the CrPC's investigation and trial process, cognizable vs non-cognizable offences, and where special laws take over.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-08",
     dateModified: "2026-04-08",

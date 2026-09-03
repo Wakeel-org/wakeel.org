@@ -63,7 +63,7 @@ const schema = [
     headline: "Sections 392–402 PPC: Robbery, Theft and Dacoity Laws in Pakistan",
     description:
       "What Sections 379 through 402 of the Pakistan Penal Code cover — the legal difference between theft, robbery, and dacoity, and how punishment escalates with each.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-10",
     dateModified: "2026-01-10",

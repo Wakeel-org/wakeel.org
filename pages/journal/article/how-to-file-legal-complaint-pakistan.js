@@ -99,7 +99,7 @@ const schema = [
     headline: "How to File a Legal Complaint in Pakistan: Step-by-Step Guide",
     description:
       "A practical map of where to file a legal complaint in Pakistan depending on what happened — criminal, consumer, cyber, labour, civil, or against a public authority — plus the steps that apply across all of them.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-04",
     dateModified: "2026-05-04",

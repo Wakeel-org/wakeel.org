@@ -59,7 +59,7 @@ const schema = [
     headline: "Women's Legal Rights in Pakistan: Complete Guide",
     description:
       "A foundational guide to women's legal rights in Pakistan — constitutional equality, marriage and inheritance protections, anti-violence laws, and workplace harassment remedies.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-07",
     dateModified: "2026-01-07",

@@ -57,7 +57,7 @@ const schema = [
     headline: "Women's Rights in Wani and Swara Cases",
     description:
       "What Vani and Swara are, why they're criminal offences under Section 310-A of the Pakistan Penal Code, and what a woman's legal options are if she's being compelled into one.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-31",
     dateModified: "2026-01-31",

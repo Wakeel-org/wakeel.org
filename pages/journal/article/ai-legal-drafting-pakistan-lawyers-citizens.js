@@ -57,7 +57,7 @@ const schema = [
     headline: "AI Legal Drafting in Pakistan: How Lawyers and Citizens Can Use AI",
     description:
       "Where AI drafting genuinely helps in Pakistan — contracts, legal notices, pleadings — and where it cannot substitute for a licensed advocate's judgment and sign-off.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-10",
     dateModified: "2026-08-10",

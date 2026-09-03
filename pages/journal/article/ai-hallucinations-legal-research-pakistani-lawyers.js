@@ -64,7 +64,7 @@ const schema = [
     headline: "AI Hallucinations in Legal Research: Risks for Pakistani Lawyers",
     description:
       "What AI hallucination actually means for legal research, the measured rates even in leading tools, and the specific risks for lawyers researching Pakistani law.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-09",
     dateModified: "2026-07-09",

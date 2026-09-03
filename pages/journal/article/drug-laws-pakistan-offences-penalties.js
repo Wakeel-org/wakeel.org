@@ -62,7 +62,7 @@ const schema = [
     headline: "Drug Laws in Pakistan: Offences, Penalties and Bail",
     description:
       "How the Control of Narcotic Substances Act, 1997 structures drug offences in Pakistan — quantity-based punishment, special courts, and how bail is approached.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-03",
     dateModified: "2026-03-03",

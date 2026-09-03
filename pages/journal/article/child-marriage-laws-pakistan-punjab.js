@@ -62,7 +62,7 @@ const schema = [
     headline: "Child Marriage Laws in Pakistan and Punjab",
     description:
       "How child marriage law differs by province in Pakistan — Sindh, Islamabad, and Punjab's 2026 reform set 18 for both sexes, while KP and Balochistan still apply the older 1929 standard.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-27",
     dateModified: "2026-06-27",

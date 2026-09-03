@@ -120,7 +120,7 @@ const schema = [
     headline: "How to Register an FIR in Pakistan (2026 Guide)",
     description:
       "A plain-language walkthrough of how FIR registration works under Section 154 CrPC, what to do if police refuse, and how to prepare your facts before you go.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-03",
     dateModified: "2026-05-03",

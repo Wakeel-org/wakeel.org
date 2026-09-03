@@ -56,7 +56,7 @@ const schema = [
     headline: "Cyberbullying and Online Harassment Laws in Pakistan",
     description:
       "The PECA provisions that cover cyberbullying and online harassment in Pakistan — cyberstalking, dignity, and modesty offences — and the removal and complaint remedies available.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-29",
     dateModified: "2026-03-29",

@@ -63,7 +63,7 @@ const schema = [
     headline: "Section 302 PPC: Murder Law and Punishment in Pakistan",
     description:
       "What Section 302 of the Pakistan Penal Code actually covers — qatl-i-amd, the Qisas and Diyat framework, and how punishment and procedure work in a murder case.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-17",
     dateModified: "2026-08-17",

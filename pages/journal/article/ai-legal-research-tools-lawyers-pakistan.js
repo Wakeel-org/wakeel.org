@@ -119,7 +119,7 @@ const schema = [
     headline: "AI Legal Research Tools for Lawyers in Pakistan",
     description:
       "An honest look at how AI legal research and document review tools fit into a Pakistani lawyer's actual practice — where they save real time, and where professional judgment still has to take over.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-19",
     dateModified: "2026-07-19",

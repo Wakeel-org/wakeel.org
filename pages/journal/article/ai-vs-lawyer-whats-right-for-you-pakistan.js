@@ -62,7 +62,7 @@ const schema = [
     headline: "AI vs Lawyer in Pakistan: What's Right for You?",
     description:
       "A cost-and-value comparison of AI legal tools versus hiring a lawyer in Pakistan — what each actually costs, what free legal aid exists, and how to decide based on your situation.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-16",
     dateModified: "2026-04-16",

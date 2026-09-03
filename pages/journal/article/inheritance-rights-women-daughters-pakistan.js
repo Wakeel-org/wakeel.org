@@ -63,7 +63,7 @@ const schema = [
     headline: "Inheritance Rights of Women and Daughters in Pakistan",
     description:
       "The inheritance rights of wives, mothers, daughters, and sisters in Pakistan under Islamic law, and the legal remedies — Section 498-A PPC and the Ombudsperson route — when those rights are denied.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-28",
     dateModified: "2026-07-28",

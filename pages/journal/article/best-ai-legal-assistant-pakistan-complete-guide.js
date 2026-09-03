@@ -64,7 +64,7 @@ const schema = [
     headline: "Best AI Legal Assistant for Pakistan: Complete Guide",
     description:
       "The evaluation criteria that actually matter when choosing an AI legal assistant in Pakistan — source-awareness, bilingual support, jurisdiction grounding, and data handling.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-31",
     dateModified: "2026-05-31",

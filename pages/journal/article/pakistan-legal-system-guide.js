@@ -109,7 +109,7 @@ const schema = [
     headline: "Pakistan Law: Complete Guide to the Legal System",
     description:
       "A foundational guide to how Pakistan's legal system actually works — the Constitution, the federal-provincial split, the court hierarchy, and how civil and criminal law fit together.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-15",
     dateModified: "2026-08-15",

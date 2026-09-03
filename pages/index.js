@@ -57,6 +57,12 @@ const homeSchema = [
     alternateName: ["Wakeel AI", "AI Wakeel"],
     url: site.url,
     logo: `${site.url}/logo-og.png`,
+    founder: {
+      "@type": "Person",
+      name: "Majid Hussain Malik",
+      jobTitle: "Co-Founder",
+      sameAs: ["https://www.linkedin.com/in/majidhussainmalik/"],
+    },
     sameAs: [
       "https://www.facebook.com/aiwakeel",
       "https://www.instagram.com/wakeel_org",

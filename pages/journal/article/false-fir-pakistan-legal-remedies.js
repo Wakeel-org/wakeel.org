@@ -64,7 +64,7 @@ const schema = [
     headline: "False FIR in Pakistan: Legal Remedies and Consequences",
     description:
       "The legal routes available for a false FIR in Pakistan — quashing under Section 561-A CrPC, and prosecuting false information under Sections 182 and 211 PPC.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-15",
     dateModified: "2026-02-15",

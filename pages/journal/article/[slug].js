@@ -55,7 +55,9 @@ const ArticlePage = ({ post }) => {
       "@type": "Article",
       headline: post.title,
       description,
-      author: post.author ? { "@type": "Person", name: post.author } : undefined,
+      author: post.author
+        ? { "@type": "Person", name: post.author }
+        : { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
       datePublished: post.createdAt || undefined,
       publisher: {
         "@type": "Organization",

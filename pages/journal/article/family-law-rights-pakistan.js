@@ -120,7 +120,7 @@ const schema = [
     headline: "Common Family Law Rights in Pakistan",
     description:
       "A clear guide to family law rights in Pakistan — khula, talaq, custody, maintenance, and haq mehr — grounded in the actual statutes and leading case law.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-05",
     dateModified: "2026-06-05",

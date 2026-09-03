@@ -67,7 +67,7 @@ const schema = [
     headline: "Writ Jurisdiction of High Courts in Pakistan Explained",
     description:
       "What Article 199 of Pakistan's Constitution actually covers — the five writs (mandamus, prohibition, certiorari, quo warranto, habeas corpus), when they apply, and how they differ from the Supreme Court's Article 184(3) jurisdiction.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-25",
     dateModified: "2026-04-25",

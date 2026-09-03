@@ -64,7 +64,7 @@ const schema = [
     headline: "Sections 375 & 376 PPC: Rape Laws and Punishment in Pakistan",
     description:
       "What Sections 375 and 376 of the Pakistan Penal Code cover, and how the Anti-Rape (Investigation and Trial) Act 2021 changed investigation and trial timelines for these cases.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-01",
     dateModified: "2026-01-01",

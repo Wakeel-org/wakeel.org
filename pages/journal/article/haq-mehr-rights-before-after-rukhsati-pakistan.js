@@ -64,7 +64,7 @@ const schema = [
     headline: "Haq Mehr in Pakistan: Rights Before and After Rukhsati",
     description:
       "What haq mehr actually is under Pakistani and Islamic law, the difference between prompt and deferred mehr, and how it's enforced through the Family Court if unpaid.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-30",
     dateModified: "2026-04-30",

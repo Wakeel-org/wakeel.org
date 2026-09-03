@@ -85,7 +85,7 @@ const schema = [
     headline: "The Exit Control List (ECL) in Pakistan: What It Means",
     description:
       "What the Exit Control List is under the Exit from Pakistan (Control) Ordinance 1981, who can place a name on it, how to check your status, and the removal process.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-16",
     dateModified: "2026-08-16",

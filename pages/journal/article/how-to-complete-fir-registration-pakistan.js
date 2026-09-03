@@ -64,7 +64,7 @@ const schema = [
     headline: "How to Complete FIR Registration in Pakistan",
     description:
       "What a properly completed FIR in Pakistan must actually contain under Section 154 CrPC, and the checklist to confirm before you leave the police station.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-20",
     dateModified: "2026-01-20",

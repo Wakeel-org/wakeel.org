@@ -57,7 +57,7 @@ const schema = [
     headline: "PECA Act Pakistan: Complete Guide to Cybercrime Laws",
     description:
       "How the Prevention of Electronic Crimes Act 2016 works in Pakistan — unauthorized access, offences against dignity and modesty, cyberstalking, and the 2025 amendment that created the NCCIA.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-24",
     dateModified: "2026-02-24",

@@ -93,7 +93,7 @@ const schema = [
     headline: "How to Register a Nikah Nama in Pakistan",
     description:
       "What the nikah nama actually records, who registers it, the columns worth reading carefully (including talaq-e-tafweez), and how to get a certified copy.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-14",
     dateModified: "2026-07-14",

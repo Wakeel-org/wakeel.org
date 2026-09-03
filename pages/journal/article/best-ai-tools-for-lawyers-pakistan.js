@@ -57,7 +57,7 @@ const schema = [
     headline: "Best AI Tools for Lawyers in Pakistan",
     description:
       "The categories of AI tools genuinely useful for a Pakistani lawyer's practice — legal research, document review and drafting, client intake, and case management.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-12",
     dateModified: "2026-06-12",

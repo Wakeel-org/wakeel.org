@@ -7,19 +7,41 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { site, team } from "../data/marketing";
 import { cardBase, eyebrow, headingGradient, heroHeading, sectionHeading, sectionPad } from "../data/theme";
 
-const makePageSchema = (page, path) => ({
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: page.title,
-  description: page.description,
-  url: `${site.url}${path}`,
-  about: {
-    "@type": "SoftwareApplication",
-    name: "Wakeel.org",
-    applicationCategory: "LegalApplication",
-    operatingSystem: "Web, Android",
+const makePageSchema = (page, path) => [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: page.title,
+    description: page.description,
+    url: `${site.url}${path}`,
+    about: {
+      "@type": "SoftwareApplication",
+      name: "Wakeel.org",
+      applicationCategory: "LegalApplication",
+      operatingSystem: "Web, Android",
+    },
   },
-});
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Wakeel.org",
+    url: site.url,
+    founder: team
+      .filter((member) => member.role.toLowerCase().includes("co-founder"))
+      .map((member) => ({
+        "@type": "Person",
+        name: member.name,
+        jobTitle: member.role,
+        ...(member.linkedin && member.linkedin !== "#" ? { sameAs: [member.linkedin] } : {}),
+      })),
+    employee: team.map((member) => ({
+      "@type": "Person",
+      name: member.name,
+      jobTitle: member.role,
+      ...(member.linkedin && member.linkedin !== "#" ? { sameAs: [member.linkedin] } : {}),
+    })),
+  },
+];
 
 const TeamCard = ({ member }) => (
   <div className={`${cardBase} rounded-2xl p-6 flex flex-col items-center text-center gap-4`}>

@@ -58,7 +58,7 @@ const schema = [
     headline: "Social Media Laws in Pakistan: What You Can and Cannot Post",
     description:
       "What Pakistani law actually restricts on social media — defamation, non-consensual content, cyberstalking, and the debated new Section 26-A offence for content causing fear or unrest.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-18",
     dateModified: "2026-05-18",

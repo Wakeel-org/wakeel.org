@@ -57,7 +57,7 @@ const schema = [
     headline: "Minority Rights in Pakistan: Constitutional and Legal Protections",
     description:
       "The constitutional protections for religious minorities in Pakistan — Articles 20, 22, and 36 — and the National Commission for Minorities Act 2023.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-12",
     dateModified: "2026-02-12",

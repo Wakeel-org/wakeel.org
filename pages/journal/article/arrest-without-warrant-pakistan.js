@@ -64,7 +64,7 @@ const schema = [
     headline: "Arrest Without Warrant in Pakistan: When Is It Legal?",
     description:
       "The specific grounds under Section 54 CrPC that let police arrest without a warrant in Pakistan, and the constitutional safeguards (Article 10) that apply immediately after arrest.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-05",
     dateModified: "2026-02-05",

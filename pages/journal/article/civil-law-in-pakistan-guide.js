@@ -70,7 +70,7 @@ const schema = [
     headline: "Civil Law in Pakistan: Complete Guide",
     description:
       "How civil law works in Pakistan — the key statutes (Contract Act, CPC 1908, Transfer of Property Act, Limitation Act), the stages of a civil suit, and how it differs from criminal law.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-30",
     dateModified: "2026-03-30",

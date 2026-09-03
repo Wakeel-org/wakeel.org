@@ -68,7 +68,7 @@ const schema = [
     headline: "How Courts Work in Pakistan: Complete Guide to Court Procedures",
     description:
       "Pakistan's court hierarchy explained — the Supreme Court, High Courts, the Federal Shariat Court, the district judiciary, and special tribunals — plus the basics of filing and appeals.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-17",
     dateModified: "2026-04-17",

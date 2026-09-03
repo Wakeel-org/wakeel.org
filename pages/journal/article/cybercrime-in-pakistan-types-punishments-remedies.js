@@ -63,7 +63,7 @@ const schema = [
     headline: "Cybercrime in Pakistan: Types, Punishments and Legal Remedies",
     description:
       "The main types of cybercrime in Pakistan under PECA 2016 — unauthorized access, dignity and modesty offences, cyberstalking, and the 2025 amendment's new offences — with punishments and remedies.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-06",
     dateModified: "2026-03-06",

@@ -57,7 +57,7 @@ const schema = [
     headline: "How AI Is Transforming Legal Practice in Pakistan",
     description:
       "The real shifts AI is bringing to legal practice in Pakistan — accelerating adoption, research and drafting as entry points, changing client expectations, and growing verification discipline.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-25",
     dateModified: "2026-06-25",

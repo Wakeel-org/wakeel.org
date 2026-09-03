@@ -65,7 +65,7 @@ const schema = [
     headline: "Divorce in Pakistan: Procedure, Rights and Legal Requirements",
     description:
       "How divorce actually works in Pakistan — talaq, khula, judicial divorce, and talaq-e-tafweez — the Union Council notice procedure, the 90-day period, and the Family Court process.",
-    author: { "@type": "Organization", name: "Wakeel.org" },
+    author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-08",
     dateModified: "2026-03-08",
