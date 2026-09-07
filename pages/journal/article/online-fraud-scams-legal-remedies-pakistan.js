@@ -58,8 +58,8 @@ const schema = [
       "What to do in the first hour after an online scam or bank fraud in Pakistan, the PECA sections that apply, and how to file with the NCCIA and the Banking Mohtasib.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-03",
-    dateModified: "2026-09-03",
+    datePublished: "2026-08-12",
+    dateModified: "2026-08-12",
     mainEntityOfPage: `${site.url}/journal/article/online-fraud-scams-legal-remedies-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
@@ -117,7 +117,7 @@ export default function OnlineFraudScamsLegalRemediesPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 12, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Online Fraud and Scams: Legal Remedies in Pakistan
           </h1>

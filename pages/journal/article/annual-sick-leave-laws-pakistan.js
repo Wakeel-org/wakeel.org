@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {
   CheckCircle2,
-  Landmark,
-  Gavel,
-  Clock,
+  Calendar,
+  Heart,
+  FileText,
   HelpCircle,
   AlertTriangle,
 } from "lucide-react";
@@ -15,37 +15,37 @@ import { site } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
-  { icon: Landmark, title: "A regular civil suit works, but it's slow", detail: "You can always sue for recovery of money as an ordinary civil suit, but ordinary suits go through full trial procedure — written statements, evidence, cross-examination — which can take years even where the debt itself isn't seriously disputed." },
-  { icon: Clock, title: "Order 37 CPC exists specifically to skip that delay", detail: "Where the debt is a fixed, liquidated amount backed by a written agreement, a bill of exchange, or a promissory note, Order 37 of the Civil Procedure Code allows a summary suit — a much faster process built to stop debtors from dragging out cases where they don't actually have a real defense." },
-  { icon: Gavel, title: "The defendant has to actually justify contesting it", detail: "Under Order 37, the person being sued must appear within 10 days and formally apply for \"leave to defend\" — meaning they have to show the court a genuine, substantial defense. If they can't, the court can issue judgment for the plaintiff without a full trial." },
-  { icon: AlertTriangle, title: "Written proof of the debt is what makes this route available", detail: "Order 37 depends on the debt being clear from documents — a signed agreement, an acknowledged invoice, a bounced cheque, or a promissory note. Without that kind of paper trail, you're generally looking at an ordinary civil suit instead." },
+  { icon: Calendar, title: "Annual leave: 14 days after a year of service", detail: "Under the Factories Act 1934 and the Shops and Establishments Ordinance, employees generally become entitled to 14 consecutive days of paid annual leave after completing 12 months of continuous service." },
+  { icon: Heart, title: "Sick leave varies by law and by province", detail: "Under the Factories Act, workers in the federal system, Punjab, and KP generally get 16 days of sick leave at half wages per year; Sindh workers get 16 days at full wages; Balochistan workers get 20 days at full pay. Under the Shops and Establishments Ordinance, the entitlement is typically 8 days per year." },
+  { icon: FileText, title: "Casual leave is a separate entitlement again", detail: "On top of annual and sick leave, a regular employee is generally entitled to around 10 days of fully paid casual leave per year — a distinct category from both vacation and medical leave, meant for short, unplanned absences." },
+  { icon: AlertTriangle, title: "Which law applies to you actually matters", detail: "Whether you're covered by the Factories Act (typically industrial workers) or the Shops and Establishments Ordinance (typically commercial/office employees) changes your exact entitlements — the two frameworks aren't identical, and neither is guaranteed to be more generous across the board." },
 ];
 
 const faqs = [
   {
-    question: "What is the fastest legal way to recover a debt in Pakistan?",
+    question: "How many days of annual leave am I entitled to in Pakistan?",
     answer:
-      "Where the debt is a fixed amount backed by a written agreement, promissory note, or bill of exchange, a summary suit under Order 37 of the Civil Procedure Code 1908 is generally much faster than an ordinary civil suit, because the defendant must justify any defense before the case proceeds to trial.",
+      "Generally 14 consecutive days of paid annual leave after completing 12 months of continuous service, under the Factories Act 1934 and the Shops and Establishments Ordinance.",
   },
   {
-    question: "What documents do I need to file a debt recovery suit?",
+    question: "How much sick leave am I entitled to in Pakistan?",
     answer:
-      "Ideally, a signed loan agreement, a promissory note, an acknowledged invoice, or a bounced cheque — anything in writing that clearly shows the debt exists and its exact amount. The stronger and clearer the documentation, the more likely a summary suit under Order 37 CPC is available to you.",
+      "It depends on which law and province applies. Under the Factories Act: 16 days at half wages (federal, Punjab, KP), 16 days at full wages (Sindh), or 20 days at full pay (Balochistan). Under the Shops and Establishments Ordinance, it's typically 8 days per year.",
   },
   {
-    question: "What happens if the person who owes me money doesn't respond to the suit?",
+    question: "What is casual leave and is it separate from sick leave?",
     answer:
-      "Under Order 37 CPC, the defendant must appear within 10 days of being served and apply for \"leave to defend,\" showing a real defense. If they fail to do this, the court can issue a judgment in your favor without a full trial.",
+      "Yes, it's a separate entitlement — generally around 10 days of fully paid casual leave per year, intended for short, unplanned absences, distinct from both annual (vacation) leave and medical/sick leave.",
   },
   {
-    question: "Is debt recovery a civil or criminal matter in Pakistan?",
+    question: "Does my leave entitlement depend on which law covers my job?",
     answer:
-      "Generally civil — recovering money owed is handled through a civil suit. However, if the debt was tied to a cheque that bounced, a separate criminal complaint under Section 489-F PPC may also be available alongside the civil recovery suit.",
+      "Yes. Industrial workers are typically covered by the Factories Act 1934, while commercial and office employees usually fall under the Shops and Establishments Ordinance — the specific entitlement numbers differ between the two frameworks, so it's worth confirming which one applies to your role.",
   },
   {
-    question: "Can Wakeel.org help me recover a debt someone owes me?",
+    question: "Can Wakeel.org tell me exactly how much leave I'm owed?",
     answer:
-      "Wakeel.org can explain the ordinary suit and summary suit (Order 37) processes and what documentation typically qualifies. It cannot draft or file the suit, or represent you in court — a licensed advocate should handle that.",
+      "Wakeel.org can explain the general leave entitlement framework and which law typically applies to different kinds of jobs. It cannot calculate your specific accrued leave or review your employment records — your HR department or a licensed labour law advocate can confirm that.",
   },
 ];
 
@@ -53,16 +53,17 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Debt Recovery in Pakistan: Legal Procedure",
+    headline: "Annual Leave and Sick Leave Laws in Pakistan",
     description:
-      "How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need.",
+      "How annual, sick, and casual leave entitlements work in Pakistan under the Factories Act 1934 and the Shops and Establishments Ordinance — and how they differ by province and by law.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-05",
-    dateModified: "2026-09-05",
-    mainEntityOfPage: `${site.url}/journal/article/debt-recovery-legal-procedure-pakistan`,
+    datePublished: "2026-07-18",
+    dateModified: "2026-07-18",
+    mainEntityOfPage: `${site.url}/journal/article/annual-sick-leave-laws-pakistan`,
     citation: [
-      { "@type": "CreativeWork", name: "Order 37 CPC, 1908 — iPleaders", url: "https://blog.ipleaders.in/order-37-cpc-1908/" },
+      { "@type": "CreativeWork", name: "Leave Policy in Pakistan — Skuad", url: "https://www.skuad.io/leave-policy/pakistan" },
+      { "@type": "CreativeWork", name: "Leave Entitlement at Work in Pakistan — Pakera", url: "https://pakera.pk/leave-entitlement-work-pakistan/" },
     ],
   },
   {
@@ -83,29 +84,29 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Debt Recovery in Pakistan: Legal Procedure",
-        item: `${site.url}/journal/article/debt-recovery-legal-procedure-pakistan`,
+        name: "Annual Leave and Sick Leave Laws in Pakistan",
+        item: `${site.url}/journal/article/annual-sick-leave-laws-pakistan`,
       },
     ],
   },
 ];
 
 const keywords = [
-  "debt recovery pakistan legal procedure",
-  "order 37 cpc summary suit pakistan",
-  "recover money owed pakistan",
-  "money recovery suit pakistan",
-  "how to sue someone for debt pakistan",
-  "summary suit leave to defend",
+  "annual leave law pakistan",
+  "sick leave entitlement pakistan",
+  "casual leave pakistan",
+  "factories act 1934 leave",
+  "shops and establishments ordinance leave",
+  "how many leave days pakistan employee",
 ].join(", ");
 
-export default function DebtRecoveryLegalProcedurePakistan() {
+export default function AnnualSickLeaveLawsPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Debt Recovery in Pakistan: Legal Procedure"
-        description="How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need."
-        path="/journal/article/debt-recovery-legal-procedure-pakistan"
+        title="Annual Leave and Sick Leave Laws in Pakistan"
+        description="How annual, sick, and casual leave entitlements work in Pakistan under the Factories Act 1934 and the Shops and Establishments Ordinance — and how they differ by province and by law."
+        path="/journal/article/annual-sick-leave-laws-pakistan"
         schema={schema}
         keywords={keywords}
         region="pk"
@@ -114,13 +115,13 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 5, 2026</p>
+          <p className={eyebrow}>Legal Help · Published July 18, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Debt Recovery in Pakistan: Legal Procedure
+            Annual Leave and Sick Leave Laws in Pakistan
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            If someone owes you money and won't pay, the law has a fast lane for exactly this
-            situation — if you have the paperwork to use it.
+            Three different kinds of leave, and the exact numbers depend on which law — and which
+            province — covers your job.
           </p>
         </div>
       </section>
@@ -132,12 +133,13 @@ export default function DebtRecoveryLegalProcedurePakistan() {
             <CardContent className="p-6 space-y-3">
               <p className="text-sm font-semibold text-primary">Quick answer</p>
               <p className="text-muted-foreground leading-relaxed">
-                If the debt is a fixed amount backed by a written agreement, promissory note, or
-                bounced cheque, you can file a <strong>summary suit under Order 37 of the Civil
-                Procedure Code 1908</strong> — a fast-tracked process where the defendant has only
-                10 days to show a genuine defense, or the court can rule in your favor without a
-                full trial. Without that kind of documentation, you'd generally file an{" "}
-                <strong>ordinary civil suit</strong>, which takes considerably longer.
+                After 12 months of service, expect around{" "}
+                <strong>14 days of paid annual leave</strong>. Sick leave ranges from{" "}
+                <strong>8 to 20 days</strong> depending on whether the Factories Act or the Shops
+                and Establishments Ordinance applies, and which province you're in. On top of
+                that, a further <strong>~10 days of casual leave</strong> is typically available
+                for short, unplanned absences. Confirm which specific law covers your job to get
+                your exact numbers.
               </p>
             </CardContent>
           </Card>
@@ -172,24 +174,24 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* Reveal: prose with inline sources */}
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
-          <h2 className={sectionHeading}>Why the "10 days" detail actually matters to your outcome</h2>
+          <h2 className={sectionHeading}>Why the exact numbers genuinely differ by province</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Order 37's entire purpose, as explained in detailed breakdowns of the procedure like{" "}
-            <a href="https://blog.ipleaders.in/order-37-cpc-1908/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
-              iPleaders' overview of Order 37 CPC
-            </a>
-            , is to stop a debtor with no real defense from simply delaying the case for years by
-            filing routine denials. Once a summary suit is filed and served, the defendant has a
-            short window to appear and formally justify why they should be allowed to defend the
-            case at all — not just deny the claim in general terms. Courts scrutinize that
-            application; a defendant who can't show a substantial, documented defense loses the
-            right to drag the case through a full trial.
+            Comparative summaries like{" "}
+            <a href="https://pakera.pk/leave-entitlement-work-pakistan/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+              Pakera's leave entitlement guide
+            </a>{" "}
+            highlight something people often assume incorrectly — that leave law is uniform across
+            Pakistan. It isn't. Sindh's sick leave rules pay full wages for the same 16-day period
+            that federal, Punjab, and KP rules pay only half wages for, and Balochistan goes
+            further still with 20 days at full pay. This isn't a minor technicality; for a longer
+            illness, the difference between half and full pay for 16 days is a meaningful amount
+            of money.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            The practical takeaway: before you lend money, or before you sue to recover it, having
-            something written and signed — even a simple acknowledgment — is what determines
-            whether you can use this faster route later. A purely verbal loan, however genuine,
-            usually leaves you with the slower ordinary suit as your only option.
+            The practical step worth taking: confirm which specific law (Factories Act vs. Shops
+            and Establishments Ordinance) and which province's rules apply to your employment,
+            rather than relying on a generic national figure — your employment contract or HR
+            policy should specify this, and it's worth asking directly if it doesn't.
           </p>
         </div>
       </section>
@@ -205,8 +207,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Explaining the difference between an ordinary suit and a summary suit, and what
-                  documentation typically qualifies for the faster route.
+                  Explaining how the leave entitlement rules generally differ by law and province,
+                  in plain English or Urdu.
                 </p>
               </CardContent>
             </Card>
@@ -217,8 +219,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  It cannot draft or file your suit or represent you in court — a licensed
-                  advocate should handle that.
+                  It cannot calculate your specific accrued leave or review your employment
+                  records — your HR department or a licensed advocate can confirm that.
                 </p>
               </CardContent>
             </Card>
@@ -226,7 +228,7 @@ export default function DebtRecoveryLegalProcedurePakistan() {
           <div className="text-center mt-8">
             <Button asChild size="lg" className="cta-try-free">
               <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
-                Ask Wakeel about recovering a debt — free
+                Ask Wakeel about leave entitlements — free
               </a>
             </Button>
           </div>
@@ -263,7 +265,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
           <h2 className="text-lg font-semibold text-foreground mb-4">Sources — check these directly to verify</h2>
           <ul className="space-y-2">
             {[
-              { label: "Order 37 CPC, 1908 — iPleaders", href: "https://blog.ipleaders.in/order-37-cpc-1908/" },
+              { label: "Leave Policy in Pakistan — Skuad", href: "https://www.skuad.io/leave-policy/pakistan" },
+              { label: "Leave Entitlement at Work in Pakistan — Pakera", href: "https://pakera.pk/leave-entitlement-work-pakistan/" },
             ].map((s) => (
               <li key={s.href}>
                 <a href={s.href} target="_blank" rel="noopener noreferrer nofollow" className="text-sm text-primary hover:underline">
@@ -280,20 +283,20 @@ export default function DebtRecoveryLegalProcedurePakistan() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/article/section-489f-ppc-cheque-dishonour-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 489-F PPC: Cheque Dishonour</p>
+            <Link href="/journal/article/overtime-laws-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Overtime Laws in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/civil-suit-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to File a Civil Suit in Pakistan</p>
+            <Link href="/journal/article/employment-contract-essentials-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Employment Contract in Pakistan: What Should It Include?</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/draft-legal-contract-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Draft a Legal Contract in Pakistan</p>
+            <Link href="/journal/article/gratuity-provident-fund-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Employee Gratuity and Provident Fund in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/how-to-send-a-legal-notice-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Send a Legal Notice in Pakistan</p>
+            <Link href="/journal/article/salary-not-paid-employee-rights-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Salary Not Paid: Employee Legal Rights in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
           </div>
@@ -303,10 +306,10 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* CTA */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-          <h2 className={sectionHeading}>Trying to recover money someone owes you?</h2>
+          <h2 className={sectionHeading}>Unsure about your leave entitlement?</h2>
           <p className="text-muted-foreground">
-            Ask Wakeel which route fits your documentation — then verify with a licensed advocate
-            before you file.
+            Ask Wakeel how the leave rules generally work — then confirm with HR or a licensed
+            advocate.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" className="cta-try-free">

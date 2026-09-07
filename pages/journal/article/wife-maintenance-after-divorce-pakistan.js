@@ -2,8 +2,8 @@ import Link from "next/link";
 import {
   CheckCircle2,
   Wallet,
+  Calendar,
   Gavel,
-  Users,
   HelpCircle,
   AlertTriangle,
 } from "lucide-react";
@@ -15,37 +15,37 @@ import { site } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
-  { icon: Wallet, title: "Nafaqah is a legal duty, not a favor", detail: "Maintenance — nafaqah — is a husband's legal obligation to financially support his wife during a valid marriage, and a father's obligation to support his children until they reach adulthood, drawn from Islamic law and enforced through Pakistani statute, not something either party can simply opt out of." },
-  { icon: Gavel, title: "Two laws work together to enforce it", detail: "The Muslim Family Laws Ordinance 1961 sets out the Arbitration Council route — a wife can apply to the Union Council Chairman, who constitutes an Arbitration Council to determine the maintenance amount if the husband fails to pay adequately. The Family Courts Act 1964 is the litigation route, letting a wife or a child (through a guardian) file a maintenance suit directly in Family Court." },
-  { icon: Users, title: "Maintenance can be ordered as an interim measure", detail: "Family Courts can grant interim maintenance while a case is still pending, so a wife or children aren't left without support for the months or years a full case can take — a meaningful protection separate from the final maintenance order." },
-  { icon: AlertTriangle, title: "Evasion is the practical problem, not the law itself", detail: "The maintenance process is procedurally simple on paper, but its effectiveness often breaks down when a respondent evades service of the court notice or conceals income — which is why documenting a husband's actual income and assets matters as much as the legal filing itself." },
+  { icon: Calendar, title: "Iddat maintenance is the clearest post-divorce entitlement", detail: "A divorced wife is generally entitled to maintenance during her iddat period — the waiting period after divorce (roughly three menstrual cycles, or until childbirth if pregnant) — regardless of the reason for the divorce, as a matter of Islamic and Pakistani family law." },
+  { icon: Wallet, title: "Beyond iddat, entitlement depends on the specific facts", detail: "Whether maintenance continues meaningfully past the iddat period depends on factors like any agreement between the parties, unpaid dower still owed, and — separately — the father's ongoing duty to maintain any children, which continues regardless of the parents' marital status." },
+  { icon: Gavel, title: "The claim route is the same Family Court system", detail: "A maintenance claim after divorce, like maintenance during marriage, can be pursued through the Arbitration Council under the Muslim Family Laws Ordinance 1961 or by filing directly in the Family Court under the Family Courts Act 1964." },
+  { icon: AlertTriangle, title: "Don't confuse maintenance with Haq Mehr", detail: "Unpaid Mehr (dower) and post-divorce maintenance are two separate legal claims — a wife may be owed both, but they're assessed and pursued differently, and settling one doesn't automatically resolve the other." },
 ];
 
 const faqs = [
   {
-    question: "What is nafaqah in Pakistani law?",
+    question: "Can a wife claim maintenance after divorce in Pakistan?",
     answer:
-      "Nafaqah is maintenance — the legal obligation of a husband to financially support his wife during a valid marriage, and of a father to support his children until adulthood, recognised in Islamic law and enforced under the Muslim Family Laws Ordinance 1961 and the Family Courts Act 1964.",
+      "Yes, at minimum during her iddat period — the waiting period following divorce — as a matter of Islamic and Pakistani family law. Whether maintenance extends meaningfully beyond iddat depends on the specific facts, including any unresolved Mehr and the terms of the divorce itself.",
   },
   {
-    question: "How does a wife claim maintenance in Pakistan?",
+    question: "What is iddat and why does it matter for maintenance?",
     answer:
-      "She can apply to the Union Council Chairman under the Muslim Family Laws Ordinance 1961 to constitute an Arbitration Council, or file a maintenance suit directly in the Family Court under the Family Courts Act 1964 — the Family Court route also allows a request for interim maintenance while the case is pending.",
+      "Iddat is the waiting period a woman observes after divorce (or her husband's death) — typically around three menstrual cycles, or until childbirth if she's pregnant. A divorced wife is generally entitled to maintenance from her former husband during this period.",
   },
   {
-    question: "Can children claim maintenance separately from the mother?",
+    question: "Does a father still have to pay child maintenance after divorce?",
     answer:
-      "Yes. A father's duty to maintain his children is a separate legal obligation from any duty owed to the wife, and a maintenance suit for children can be filed through a guardian in the Family Court under the Family Courts Act 1964.",
+      "Yes. A father's duty to maintain his children is a separate legal obligation from any maintenance owed to the wife, and it continues after divorce regardless of the parents' marital status — this is a distinct claim from post-divorce spousal maintenance.",
   },
   {
-    question: "Does maintenance stop after divorce in Pakistan?",
+    question: "How do I claim maintenance after my divorce in Pakistan?",
     answer:
-      "A husband's maintenance obligation to a wife is generally tied to a subsisting marriage, but obligations toward children continue regardless of the parents' marital status, and a wife may be entitled to maintenance during her iddat period after divorce — the specifics depend on the facts and are worth confirming with a lawyer.",
+      "The same two routes used during marriage apply: applying to an Arbitration Council under the Muslim Family Laws Ordinance 1961, or filing a maintenance suit directly in the Family Court under the Family Courts Act 1964, which can also grant interim maintenance while the case is pending.",
   },
   {
-    question: "Can Wakeel.org tell me how much maintenance I'm entitled to?",
+    question: "Can Wakeel.org calculate my post-divorce maintenance entitlement?",
     answer:
-      "Wakeel.org can explain how the maintenance process generally works under the Muslim Family Laws Ordinance 1961 and the Family Courts Act 1964. It cannot calculate a specific maintenance amount, file a case, or represent you — a licensed family law advocate should handle that.",
+      "Wakeel.org can explain how iddat maintenance and post-divorce claims generally work. It cannot calculate a specific entitlement amount or file a claim on your behalf — a licensed family law advocate should handle that.",
   },
 ];
 
@@ -53,18 +53,17 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Maintenance (Nafaqah) Rights in Pakistan",
+    headline: "Wife Maintenance After Divorce in Pakistan",
     description:
-      "How maintenance (nafaqah) works in Pakistan — the Arbitration Council route under the Muslim Family Laws Ordinance 1961, the Family Court route, and interim maintenance.",
+      "What a divorced wife is entitled to in Pakistan — iddat-period maintenance, how it differs from Haq Mehr, and how to pursue a post-divorce maintenance claim.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-08-20",
-    dateModified: "2026-08-20",
-    mainEntityOfPage: `${site.url}/journal/article/maintenance-nafaqah-rights-pakistan`,
+    datePublished: "2026-07-06",
+    dateModified: "2026-07-06",
+    mainEntityOfPage: `${site.url}/journal/article/wife-maintenance-after-divorce-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "The Muslim Family Laws Ordinance, 1961 — Ministry of Religious Affairs", url: "https://www.mora.gov.pk/SiteImage/Misc/files/MFLO,%201961.pdf" },
       { "@type": "CreativeWork", name: "Maintenance (Nafaqah) in Islam and Comparative Study — Sindh Judicial Academy", url: "https://sja.gos.pk/wp-content/uploads/2025/11/Article-on-Maintenacne-of-Wife-Children-by-Noor-Kalmati.pdf" },
-      { "@type": "CreativeWork", name: "The West Pakistan Family Courts Act, 1964 — Punjab Laws", url: "http://punjablaws.gov.pk/laws/2219a.html" },
     ],
   },
   {
@@ -85,29 +84,29 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Maintenance (Nafaqah) Rights in Pakistan",
-        item: `${site.url}/journal/article/maintenance-nafaqah-rights-pakistan`,
+        name: "Wife Maintenance After Divorce in Pakistan",
+        item: `${site.url}/journal/article/wife-maintenance-after-divorce-pakistan`,
       },
     ],
   },
 ];
 
 const keywords = [
-  "nafaqah pakistan",
-  "maintenance rights wife pakistan",
-  "muslim family laws ordinance 1961 maintenance",
-  "child maintenance pakistan family court",
-  "interim maintenance pakistan",
-  "arbitration council maintenance",
+  "wife maintenance after divorce pakistan",
+  "iddat maintenance pakistan",
+  "can wife claim maintenance after divorce",
+  "post divorce maintenance pakistan",
+  "nafaqah after talaq pakistan",
+  "maintenance vs haq mehr",
 ].join(", ");
 
-export default function MaintenanceNafaqahRightsPakistan() {
+export default function WifeMaintenanceAfterDivorcePakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Maintenance (Nafaqah) Rights in Pakistan"
-        description="How maintenance (nafaqah) works in Pakistan — the Arbitration Council route under the Muslim Family Laws Ordinance 1961, the Family Court route, and interim maintenance."
-        path="/journal/article/maintenance-nafaqah-rights-pakistan"
+        title="Wife Maintenance After Divorce in Pakistan"
+        description="What a divorced wife is entitled to in Pakistan — iddat-period maintenance, how it differs from Haq Mehr, and how to pursue a post-divorce maintenance claim."
+        path="/journal/article/wife-maintenance-after-divorce-pakistan"
         schema={schema}
         keywords={keywords}
         region="pk"
@@ -116,13 +115,13 @@ export default function MaintenanceNafaqahRightsPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published August 20, 2026</p>
+          <p className={eyebrow}>Legal Help · Published July 6, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Maintenance (Nafaqah) Rights in Pakistan
+            Wife Maintenance After Divorce in Pakistan
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A husband's and father's duty to provide financial support is a legal obligation with
-            two enforcement routes — here's how each one actually works.
+            Maintenance doesn't automatically stop the day a marriage ends — here's what actually
+            continues, and for how long.
           </p>
         </div>
       </section>
@@ -134,16 +133,13 @@ export default function MaintenanceNafaqahRightsPakistan() {
             <CardContent className="p-6 space-y-3">
               <p className="text-sm font-semibold text-primary">Quick answer</p>
               <p className="text-muted-foreground leading-relaxed">
-                A wife or a father's minor children can claim maintenance (nafaqah) either through
-                an <strong>Arbitration Council</strong> under the{" "}
-                <a href="https://www.mora.gov.pk/SiteImage/Misc/files/MFLO,%201961.pdf" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
-                  Muslim Family Laws Ordinance 1961
-                </a>{" "}
-                (via the Union Council Chairman), or by filing a{" "}
-                <strong>maintenance suit directly in the Family Court</strong> under the Family
-                Courts Act 1964 — which also allows the court to grant{" "}
-                <strong>interim maintenance</strong> while the case is still pending, so support
-                isn't delayed until final judgment.
+                A divorced wife is generally entitled to maintenance during her{" "}
+                <strong>iddat period</strong> — the waiting period after divorce — regardless of
+                why the marriage ended. Beyond that, entitlement depends on the specific facts,
+                including any <strong>unpaid Mehr</strong> (a separate claim). A father's duty to
+                maintain his <strong>children</strong> continues regardless of the parents'
+                marital status. Claims run through the same{" "}
+                <strong>Arbitration Council or Family Court</strong> system used during marriage.
               </p>
             </CardContent>
           </Card>
@@ -178,24 +174,24 @@ export default function MaintenanceNafaqahRightsPakistan() {
       {/* Reveal: prose with inline sources */}
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
-          <h2 className={sectionHeading}>Where nafaqah cases actually stall — and why documentation matters</h2>
+          <h2 className={sectionHeading}>Why three separate claims often get bundled into one conversation</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Academic analysis of maintenance law in Pakistan, including work published through the{" "}
+            Comparative research on maintenance published through the{" "}
             <a href="https://sja.gos.pk/wp-content/uploads/2025/11/Article-on-Maintenacne-of-Wife-Children-by-Noor-Kalmati.pdf" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
               Sindh Judicial Academy
-            </a>
-            , points to a consistent practical gap: the maintenance framework itself is
-            procedurally straightforward, but enforcement weakens when a husband evades being
-            formally served with notice, or when his real income is hard to verify — especially in
-            informal or cash-based employment. This is exactly why maintenance cases move faster
-            and settle more favourably when the applicant comes in with concrete evidence of the
-            husband's income, assets, or standard of living, rather than relying on the court to
-            uncover it.
+            </a>{" "}
+            lays out how nafaqah, Mehr, and child maintenance are each grounded in different legal
+            reasoning, even though they're often discussed together after a divorce. Iddat
+            maintenance is tied to the woman's status during the waiting period specifically; Mehr
+            is a contractual entitlement from the marriage itself, unrelated to how or why it
+            ended; and child maintenance flows from the parent-child relationship, not the marital
+            relationship at all.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            It's also why running the Family Court route (with its interim maintenance option) is
-            often more practical than the Arbitration Council route alone for a wife or children who
-            need support now rather than after a lengthy proceeding concludes.
+            Treating these as one lump "maintenance" claim tends to produce weaker outcomes than
+            pursuing each on its own legal footing — which is exactly why a lawyer typically
+            structures a post-divorce settlement or claim as separate, clearly itemized demands
+            rather than a single vague request.
           </p>
         </div>
       </section>
@@ -211,8 +207,8 @@ export default function MaintenanceNafaqahRightsPakistan() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Explaining how the Arbitration Council and Family Court maintenance routes
-                  generally work, and what evidence tends to strengthen a claim.
+                  Explaining how iddat maintenance, Mehr, and child maintenance differ, and how
+                  the claim process generally works.
                 </p>
               </CardContent>
             </Card>
@@ -223,8 +219,8 @@ export default function MaintenanceNafaqahRightsPakistan() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  It cannot calculate what maintenance amount you're owed, file a case, or represent
-                  you — a licensed family law advocate should handle that.
+                  It cannot calculate what you're specifically owed or file a claim — a licensed
+                  family law advocate should handle that.
                 </p>
               </CardContent>
             </Card>
@@ -232,7 +228,7 @@ export default function MaintenanceNafaqahRightsPakistan() {
           <div className="text-center mt-8">
             <Button asChild size="lg" className="cta-try-free">
               <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
-                Ask Wakeel about maintenance — free
+                Ask Wakeel about post-divorce maintenance — free
               </a>
             </Button>
           </div>
@@ -266,12 +262,11 @@ export default function MaintenanceNafaqahRightsPakistan() {
       {/* Sources */}
       <section className="bg-background py-14 sm:py-16">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-lg font-semibold text-foreground mb-4">Sources and further reading</h2>
+          <h2 className="text-lg font-semibold text-foreground mb-4">Sources — check these directly to verify</h2>
           <ul className="space-y-2">
             {[
               { label: "The Muslim Family Laws Ordinance, 1961 — Ministry of Religious Affairs", href: "https://www.mora.gov.pk/SiteImage/Misc/files/MFLO,%201961.pdf" },
               { label: "Maintenance (Nafaqah) in Islam and Comparative Study — Sindh Judicial Academy", href: "https://sja.gos.pk/wp-content/uploads/2025/11/Article-on-Maintenacne-of-Wife-Children-by-Noor-Kalmati.pdf" },
-              { label: "The West Pakistan Family Courts Act, 1964 — Punjab Laws", href: "http://punjablaws.gov.pk/laws/2219a.html" },
             ].map((s) => (
               <li key={s.href}>
                 <a href={s.href} target="_blank" rel="noopener noreferrer nofollow" className="text-sm text-primary hover:underline">
@@ -284,24 +279,24 @@ export default function MaintenanceNafaqahRightsPakistan() {
       </section>
 
       {/* Related reading */}
-      <section className="bg-background py-16 sm:py-20">
+      <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
           <div className="grid sm:grid-cols-2 gap-4">
+            <Link href="/journal/article/maintenance-nafaqah-rights-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Maintenance (Nafaqah) Rights in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            </Link>
+            <Link href="/journal/article/haq-mehr-rights-before-after-rukhsati-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Haq Mehr: Rights Before and After Rukhsati in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            </Link>
+            <Link href="/journal/article/how-to-get-divorce-certificate-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Get a Divorce Certificate in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            </Link>
             <Link href="/journal/article/child-custody-laws-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
               <p className="font-semibold text-sm group-hover:text-primary transition-colors">Child Custody Laws in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/journal/article/khula-in-pakistan-procedure-rights" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Khula in Pakistan: Procedure and Rights</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/journal/article/divorce-in-pakistan-procedure-rights" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Divorce in Pakistan: Procedure and Rights</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/journal/article/womens-legal-rights-pakistan-complete-guide" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Women's Legal Rights in Pakistan: Complete Guide</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
           </div>
@@ -311,10 +306,10 @@ export default function MaintenanceNafaqahRightsPakistan() {
       {/* CTA */}
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-          <h2 className={sectionHeading}>Not receiving maintenance you're owed?</h2>
+          <h2 className={sectionHeading}>Working out what you're owed after divorce?</h2>
           <p className="text-muted-foreground">
-            Ask Wakeel how the process generally works — then verify with a licensed family law
-            advocate before you file.
+            Ask Wakeel to explain the different claims — then verify with a licensed family law
+            advocate.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" className="cta-try-free">

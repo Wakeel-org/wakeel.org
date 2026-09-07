@@ -58,8 +58,8 @@ const schema = [
       "A plain-language explanation of fard, intiqal, and registry in Pakistan — three different property documents that prove three different things, and why you need all of them.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-03",
-    dateModified: "2026-09-03",
+    datePublished: "2026-08-30",
+    dateModified: "2026-08-30",
     mainEntityOfPage: `${site.url}/journal/article/fard-vs-intiqal-vs-registry-pakistan`,
   },
   {
@@ -111,7 +111,7 @@ export default function FardVsIntiqalVsRegistryPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 30, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Fard vs Intiqal vs Registry: Difference Explained
           </h1>

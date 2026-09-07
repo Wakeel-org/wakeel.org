@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {
   CheckCircle2,
+  FileText,
   Landmark,
-  Gavel,
-  Clock,
+  Scale,
   HelpCircle,
   AlertTriangle,
 } from "lucide-react";
@@ -15,37 +15,37 @@ import { site } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
-  { icon: Landmark, title: "A regular civil suit works, but it's slow", detail: "You can always sue for recovery of money as an ordinary civil suit, but ordinary suits go through full trial procedure — written statements, evidence, cross-examination — which can take years even where the debt itself isn't seriously disputed." },
-  { icon: Clock, title: "Order 37 CPC exists specifically to skip that delay", detail: "Where the debt is a fixed, liquidated amount backed by a written agreement, a bill of exchange, or a promissory note, Order 37 of the Civil Procedure Code allows a summary suit — a much faster process built to stop debtors from dragging out cases where they don't actually have a real defense." },
-  { icon: Gavel, title: "The defendant has to actually justify contesting it", detail: "Under Order 37, the person being sued must appear within 10 days and formally apply for \"leave to defend\" — meaning they have to show the court a genuine, substantial defense. If they can't, the court can issue judgment for the plaintiff without a full trial." },
-  { icon: AlertTriangle, title: "Written proof of the debt is what makes this route available", detail: "Order 37 depends on the debt being clear from documents — a signed agreement, an acknowledged invoice, a bounced cheque, or a promissory note. Without that kind of paper trail, you're generally looking at an ordinary civil suit instead." },
+  { icon: FileText, title: "It should be in writing — and specific", detail: "A rent agreement should clearly state both parties' names and contact details, a description of the property, the tenancy duration, the rent amount and due date, payment method, any rent-increase clause, and the security deposit amount." },
+  { icon: Landmark, title: "Stamp duty and registration are separate steps", disc: "", detail: "The agreement is drafted under the Contract Act 1872, with stamp duty payable under the Stamp Act 1899 based on the lease value and duration, and can be registered under the Registration Act 1908 — for short (11-month) leases, registration is often optional, but it's strongly recommended for longer tenancies." },
+  { icon: Scale, title: "Registration status affects your day in court", detail: "If a tenancy agreement isn't registered, the Rent Tribunal generally won't accept a tenancy dispute without the filing party first paying a penalty — reportedly around 5% of annual rent for tenants and 10% for landlords — before the case can even be heard." },
+  { icon: AlertTriangle, title: "The clauses people skip are the ones that cause disputes", detail: "Who pays for what repairs, whether subletting is allowed, the exact notice period for ending the tenancy, and what happens to the deposit at move-out are the details most verbal or informal agreements never nail down — and exactly what triggers the worst landlord-tenant disputes later." },
 ];
 
 const faqs = [
   {
-    question: "What is the fastest legal way to recover a debt in Pakistan?",
+    question: "Does a rent agreement need to be registered in Pakistan?",
     answer:
-      "Where the debt is a fixed amount backed by a written agreement, promissory note, or bill of exchange, a summary suit under Order 37 of the Civil Procedure Code 1908 is generally much faster than an ordinary civil suit, because the defendant must justify any defense before the case proceeds to trial.",
+      "It depends on the lease length and province, but registration under the Registration Act 1908 is strongly recommended, especially for tenancies longer than 11 months. An unregistered agreement can mean the Rent Tribunal won't hear a dispute without a penalty being paid first.",
   },
   {
-    question: "What documents do I need to file a debt recovery suit?",
+    question: "What must a rent agreement in Pakistan include?",
     answer:
-      "Ideally, a signed loan agreement, a promissory note, an acknowledged invoice, or a bounced cheque — anything in writing that clearly shows the debt exists and its exact amount. The stronger and clearer the documentation, the more likely a summary suit under Order 37 CPC is available to you.",
+      "At minimum: both parties' names and contact details, the property's description, tenancy duration, rent amount and due date, payment method, any rent-increase terms, and the security deposit amount and conditions for its return.",
   },
   {
-    question: "What happens if the person who owes me money doesn't respond to the suit?",
+    question: "Who pays stamp duty on a rent agreement?",
     answer:
-      "Under Order 37 CPC, the defendant must appear within 10 days of being served and apply for \"leave to defend,\" showing a real defense. If they fail to do this, the court can issue a judgment in your favor without a full trial.",
+      "Stamp duty, calculated based on the lease value and duration under the Stamp Act 1899, is usually shared between the landlord and tenant, though this can be negotiated and specified in the agreement itself.",
   },
   {
-    question: "Is debt recovery a civil or criminal matter in Pakistan?",
+    question: "What happens if I don't have a written rent agreement?",
     answer:
-      "Generally civil — recovering money owed is handled through a civil suit. However, if the debt was tied to a cheque that bounced, a separate criminal complaint under Section 489-F PPC may also be available alongside the civil recovery suit.",
+      "You still have some legal protections under provincial rent laws, but without a written agreement, disputes over rent amount, deposit, or terms become much harder to prove — a written, ideally registered, agreement is your strongest evidence if something goes wrong later.",
   },
   {
-    question: "Can Wakeel.org help me recover a debt someone owes me?",
+    question: "Can Wakeel.org review my rent agreement?",
     answer:
-      "Wakeel.org can explain the ordinary suit and summary suit (Order 37) processes and what documentation typically qualifies. It cannot draft or file the suit, or represent you in court — a licensed advocate should handle that.",
+      "Wakeel.org can summarize a rent agreement and flag unusual or one-sided clauses worth verifying. It cannot draft the final agreement, register it, or confirm its legal enforceability — a licensed advocate should handle that.",
   },
 ];
 
@@ -53,16 +53,17 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Debt Recovery in Pakistan: Legal Procedure",
+    headline: "Rent Agreement in Pakistan: Legal Requirements",
     description:
-      "How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need.",
+      "What a legally sound rent agreement in Pakistan actually needs — required clauses, stamp duty, registration, and why unregistered agreements struggle in the Rent Tribunal.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-05",
-    dateModified: "2026-09-05",
-    mainEntityOfPage: `${site.url}/journal/article/debt-recovery-legal-procedure-pakistan`,
+    datePublished: "2026-06-30",
+    dateModified: "2026-06-30",
+    mainEntityOfPage: `${site.url}/journal/article/rent-agreement-legal-requirements-pakistan`,
     citation: [
-      { "@type": "CreativeWork", name: "Order 37 CPC, 1908 — iPleaders", url: "https://blog.ipleaders.in/order-37-cpc-1908/" },
+      { "@type": "CreativeWork", name: "Tenancy Registration in Pakistan and 8 Essentials of a Rent Agreement — Lex", url: "https://lex.com.pk/blogs/tenancy-registration-in-pakistan/" },
+      { "@type": "CreativeWork", name: "How to Register Rent Deed in Pakistan — Hamza and Hamza", url: "https://hamzaandhamza.com/how-to-register-rent-deed-in-pakistan/" },
     ],
   },
   {
@@ -83,29 +84,29 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Debt Recovery in Pakistan: Legal Procedure",
-        item: `${site.url}/journal/article/debt-recovery-legal-procedure-pakistan`,
+        name: "Rent Agreement in Pakistan: Legal Requirements",
+        item: `${site.url}/journal/article/rent-agreement-legal-requirements-pakistan`,
       },
     ],
   },
 ];
 
 const keywords = [
-  "debt recovery pakistan legal procedure",
-  "order 37 cpc summary suit pakistan",
-  "recover money owed pakistan",
-  "money recovery suit pakistan",
-  "how to sue someone for debt pakistan",
-  "summary suit leave to defend",
+  "rent agreement pakistan legal requirements",
+  "tenancy agreement registration pakistan",
+  "stamp duty rent agreement pakistan",
+  "rent agreement clauses pakistan",
+  "unregistered rent agreement pakistan",
+  "rent deed registration pakistan",
 ].join(", ");
 
-export default function DebtRecoveryLegalProcedurePakistan() {
+export default function RentAgreementLegalRequirementsPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Debt Recovery in Pakistan: Legal Procedure"
-        description="How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need."
-        path="/journal/article/debt-recovery-legal-procedure-pakistan"
+        title="Rent Agreement in Pakistan: Legal Requirements"
+        description="What a legally sound rent agreement in Pakistan actually needs — required clauses, stamp duty, registration, and why unregistered agreements struggle in the Rent Tribunal."
+        path="/journal/article/rent-agreement-legal-requirements-pakistan"
         schema={schema}
         keywords={keywords}
         region="pk"
@@ -114,13 +115,13 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 5, 2026</p>
+          <p className={eyebrow}>Legal Help · Published June 30, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Debt Recovery in Pakistan: Legal Procedure
+            Rent Agreement in Pakistan: Legal Requirements
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            If someone owes you money and won't pay, the law has a fast lane for exactly this
-            situation — if you have the paperwork to use it.
+            The clauses a rent agreement needs to actually protect you — and why skipping
+            registration can come back to bite you later.
           </p>
         </div>
       </section>
@@ -132,12 +133,13 @@ export default function DebtRecoveryLegalProcedurePakistan() {
             <CardContent className="p-6 space-y-3">
               <p className="text-sm font-semibold text-primary">Quick answer</p>
               <p className="text-muted-foreground leading-relaxed">
-                If the debt is a fixed amount backed by a written agreement, promissory note, or
-                bounced cheque, you can file a <strong>summary suit under Order 37 of the Civil
-                Procedure Code 1908</strong> — a fast-tracked process where the defendant has only
-                10 days to show a genuine defense, or the court can rule in your favor without a
-                full trial. Without that kind of documentation, you'd generally file an{" "}
-                <strong>ordinary civil suit</strong>, which takes considerably longer.
+                A rent agreement should be in writing and cover both parties' details, the
+                property description, duration, rent and payment terms, any increase clause, and
+                the security deposit. Stamp duty applies under the{" "}
+                <strong>Stamp Act 1899</strong>, and registering the agreement under the{" "}
+                <strong>Registration Act 1908</strong> is strongly recommended for longer
+                tenancies — an unregistered agreement can mean paying a penalty before a Rent
+                Tribunal will even hear your dispute.
               </p>
             </CardContent>
           </Card>
@@ -172,24 +174,24 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* Reveal: prose with inline sources */}
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
-          <h2 className={sectionHeading}>Why the "10 days" detail actually matters to your outcome</h2>
+          <h2 className={sectionHeading}>The registration penalty most tenants and landlords don't know about</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Order 37's entire purpose, as explained in detailed breakdowns of the procedure like{" "}
-            <a href="https://blog.ipleaders.in/order-37-cpc-1908/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
-              iPleaders' overview of Order 37 CPC
-            </a>
-            , is to stop a debtor with no real defense from simply delaying the case for years by
-            filing routine denials. Once a summary suit is filed and served, the defendant has a
-            short window to appear and formally justify why they should be allowed to defend the
-            case at all — not just deny the claim in general terms. Courts scrutinize that
-            application; a defendant who can't show a substantial, documented defense loses the
-            right to drag the case through a full trial.
+            Guidance from{" "}
+            <a href="https://lex.com.pk/blogs/tenancy-registration-in-pakistan/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+              Lex
+            </a>{" "}
+            highlights a specific consequence that surprises a lot of people: if your tenancy
+            agreement was never registered, filing a rent dispute can require paying a penalty
+            first — commonly cited as around 5% of annual rent for a tenant and 10% for a
+            landlord — before the Rent Tribunal will even take up the case. That's on top of
+            whatever the underlying dispute is actually about.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            The practical takeaway: before you lend money, or before you sue to recover it, having
-            something written and signed — even a simple acknowledgment — is what determines
-            whether you can use this faster route later. A purely verbal loan, however genuine,
-            usually leaves you with the slower ordinary suit as your only option.
+            For an 11-month lease, many people treat registration as optional and skip it,
+            reasoning that a short lease doesn't need the formality. That's often true — but if a
+            dispute does arise, that's exactly when the missing registration turns into an
+            unexpected cost, which is worth weighing against the (usually modest) expense of
+            registering the agreement upfront.
           </p>
         </div>
       </section>
@@ -205,8 +207,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Explaining the difference between an ordinary suit and a summary suit, and what
-                  documentation typically qualifies for the faster route.
+                  Summarizing a rent agreement and flagging clauses worth verifying, in plain
+                  English or Urdu.
                 </p>
               </CardContent>
             </Card>
@@ -217,8 +219,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  It cannot draft or file your suit or represent you in court — a licensed
-                  advocate should handle that.
+                  It cannot draft or register your agreement or confirm its legal enforceability —
+                  a licensed advocate should handle that.
                 </p>
               </CardContent>
             </Card>
@@ -226,7 +228,7 @@ export default function DebtRecoveryLegalProcedurePakistan() {
           <div className="text-center mt-8">
             <Button asChild size="lg" className="cta-try-free">
               <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
-                Ask Wakeel about recovering a debt — free
+                Ask Wakeel about a rent agreement — free
               </a>
             </Button>
           </div>
@@ -263,7 +265,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
           <h2 className="text-lg font-semibold text-foreground mb-4">Sources — check these directly to verify</h2>
           <ul className="space-y-2">
             {[
-              { label: "Order 37 CPC, 1908 — iPleaders", href: "https://blog.ipleaders.in/order-37-cpc-1908/" },
+              { label: "Tenancy Registration in Pakistan and 8 Essentials of a Rent Agreement — Lex", href: "https://lex.com.pk/blogs/tenancy-registration-in-pakistan/" },
+              { label: "How to Register Rent Deed in Pakistan — Hamza and Hamza", href: "https://hamzaandhamza.com/how-to-register-rent-deed-in-pakistan/" },
             ].map((s) => (
               <li key={s.href}>
                 <a href={s.href} target="_blank" rel="noopener noreferrer nofollow" className="text-sm text-primary hover:underline">
@@ -280,20 +283,20 @@ export default function DebtRecoveryLegalProcedurePakistan() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/article/section-489f-ppc-cheque-dishonour-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 489-F PPC: Cheque Dishonour</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/journal/article/civil-suit-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to File a Civil Suit in Pakistan</p>
+            <Link href="/journal/article/tenant-rights-rent-law-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Tenant Rights Under Pakistan's Rent Laws</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
             <Link href="/journal/article/draft-legal-contract-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
               <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Draft a Legal Contract in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/how-to-send-a-legal-notice-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Send a Legal Notice in Pakistan</p>
+            <Link href="/journal/article/property-power-of-attorney-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Property Power of Attorney in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            </Link>
+            <Link href="/journal/article/property-dispute-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Property Dispute Lawyer in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
           </div>
@@ -303,10 +306,10 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* CTA */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-          <h2 className={sectionHeading}>Trying to recover money someone owes you?</h2>
+          <h2 className={sectionHeading}>Drafting or reviewing a rent agreement?</h2>
           <p className="text-muted-foreground">
-            Ask Wakeel which route fits your documentation — then verify with a licensed advocate
-            before you file.
+            Ask Wakeel to help you understand it — then get a licensed advocate to finalize and,
+            where needed, register it.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" className="cta-try-free">

@@ -1935,7 +1935,7 @@ export const articles = [
       "What to do after an online scam or bank fraud in Pakistan — the PECA sections that apply, how to freeze a transaction, and how to file with the NCCIA and the Banking Mohtasib.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-12",
   },
   {
     slug: "digital-evidence-pakistani-courts",
@@ -1944,7 +1944,7 @@ export const articles = [
       "How digital evidence gets admitted in Pakistani courts — Article 164 of the Qanun-e-Shahadat Order 1984, the authenticity test, and how NCCIA forensic reports fit in.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-13",
   },
   {
     slug: "cybercrime-punishments-pakistan-peca-penalties",
@@ -1953,7 +1953,7 @@ export const articles = [
       "A section-by-section reference to PECA 2016 punishments — imprisonment terms and fines for hacking, electronic fraud, online defamation, cyberstalking, and more.",
     category: "Legal Help",
     readTime: "7 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-14",
   },
   {
     slug: "khula-in-pakistan-procedure-rights",
@@ -1962,7 +1962,7 @@ export const articles = [
       "How khula works in Pakistan — a wife's right to dissolve a marriage without her husband's consent, the Family Court procedure, and the dower trade-off involved.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-18",
   },
   {
     slug: "child-custody-laws-pakistan",
@@ -1971,7 +1971,7 @@ export const articles = [
       "How child custody works in Pakistan under the Guardian and Wards Act 1890 — the welfare-of-the-minor standard, the hizanat principle, and how guardianship and custody can split between parents.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-19",
   },
   {
     slug: "maintenance-nafaqah-rights-pakistan",
@@ -1980,7 +1980,7 @@ export const articles = [
       "How maintenance (nafaqah) works in Pakistan — the Arbitration Council route under the Muslim Family Laws Ordinance 1961, the Family Court route, and interim maintenance.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-20",
   },
   {
     slug: "shia-family-law-pakistan",
@@ -1989,7 +1989,7 @@ export const articles = [
       "How Shia family law works in Pakistan — statutory recognition, how Shia inheritance differs structurally from Sunni inheritance, and the mut'ah marriage distinction.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-21",
   },
   {
     slug: "fia-pakistan-role-jurisdiction-complaints",
@@ -1998,7 +1998,7 @@ export const articles = [
       "What the Federal Investigation Agency actually handles in Pakistan today, and why cybercrime complaints now go to the NCCIA instead of the FIA Cybercrime Wing.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-22",
   },
   {
     slug: "police-complaint-against-police-pakistan",
@@ -2007,7 +2007,7 @@ export const articles = [
       "How to escalate a complaint against police misconduct in Pakistan — the SHO-to-CCPO chain, Section 155-C of the Police Order 2002, and the Public Safety Commissions.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-23",
   },
   {
     slug: "section-22a-22b-crpc-pakistan",
@@ -2016,7 +2016,7 @@ export const articles = [
       "How Sections 22-A and 22-B CrPC work in Pakistan — the Ex-Officio Justice of Peace's power to direct FIR registration and investigation transfers when police refuse to act.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-24",
   },
   {
     slug: "how-to-respond-to-a-legal-notice-pakistan",
@@ -2025,7 +2025,7 @@ export const articles = [
       "What to do after receiving a legal notice in Pakistan — the deadline, evidence to preserve, and how to prepare a measured, document-based response.",
     category: "Legal Help",
     readTime: "5 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-25",
   },
   {
     slug: "best-ai-lawyer-pakistan",
@@ -2034,7 +2034,7 @@ export const articles = [
       "What people actually mean by \"AI lawyer,\" the criteria that separate a genuinely useful Pakistan-specific legal AI assistant from a generic chatbot, and how to evaluate your options.",
     category: "AI & the Law",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-26",
   },
   {
     slug: "fir-status-check-pakistan",
@@ -2043,7 +2043,7 @@ export const articles = [
       "A simple guide to checking your FIR status online in Pakistan — which portal to use for Punjab, Sindh, and other provinces, and what information you need.",
     category: "Legal Help",
     readTime: "5 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-27",
   },
   {
     slug: "police-refuse-fir-what-to-do-pakistan",
@@ -2052,7 +2052,7 @@ export const articles = [
       "A plain-language, step-by-step guide for what to do when police in Pakistan refuse to register your FIR — escalating to the SHO, the SP, and the Justice of Peace.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-28",
   },
   {
     slug: "fard-vs-intiqal-vs-registry-pakistan",
@@ -2061,7 +2061,7 @@ export const articles = [
       "A plain-language explanation of fard, intiqal, and registry in Pakistan — three different property documents that prove three different things, and why you need all of them.",
     category: "Legal Help",
     readTime: "5 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-30",
   },
   {
     slug: "illegal-property-occupation-pakistan",
@@ -2070,7 +2070,7 @@ export const articles = [
       "A plain-language guide to illegal property occupation (qabza) in Pakistan — the Illegal Dispossession Act 2005, criminal trespass, and the civil injunction route.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-08-31",
   },
   {
     slug: "whatsapp-blackmail-legal-action-pakistan",
@@ -2079,7 +2079,7 @@ export const articles = [
       "What to do if someone is blackmailing you on WhatsApp in Pakistan — the PECA sections that apply, what evidence to preserve, and how to report it to the NCCIA.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-09-01",
   },
   {
     slug: "whatsapp-messages-evidence-pakistani-courts",
@@ -2088,7 +2088,7 @@ export const articles = [
       "Can WhatsApp chats be used as evidence in Pakistan? A plain-language explanation of Article 164 of the Qanun-e-Shahadat Order 1984 and how to preserve chat evidence properly.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-09-02",
   },
   {
     slug: "salary-not-paid-employee-rights-pakistan",
@@ -2106,7 +2106,7 @@ export const articles = [
       "How Section 489-F of the Pakistan Penal Code works when a cheque bounces — what has to be proven, the punishment, and why it's not a substitute for a civil recovery suit.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-09-04",
   },
   {
     slug: "debt-recovery-legal-procedure-pakistan",
@@ -2115,7 +2115,7 @@ export const articles = [
       "How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need.",
     category: "Legal Help",
     readTime: "6 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-09-05",
   },
   {
     slug: "how-to-send-a-legal-notice-pakistan",
@@ -2124,7 +2124,349 @@ export const articles = [
       "A plain-language guide to sending a legal notice in Pakistan — what it should include, when it's legally required, and how it's properly delivered.",
     category: "Legal Help",
     readTime: "5 min read",
-    publishedAt: "2026-09-03",
+    publishedAt: "2026-09-06",
+  },
+  {
+    slug: "criminal-defamation-law-pakistan",
+    title: "Criminal Defamation Law in Pakistan",
+    excerpt:
+      "How criminal defamation works under Sections 499 and 500 of the Pakistan Penal Code — what has to be proven, the exceptions, and how it differs from PECA's online defamation provision.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-11",
+  },
+  {
+    slug: "police-investigation-procedure-pakistan",
+    title: "Police Investigation Procedure in Pakistan",
+    excerpt:
+      "What happens after an FIR is filed in Pakistan — the investigating officer's role, the 14-day timeline, and the Section 173 CrPC police report (challan).",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-09-07",
+  },
+  {
+    slug: "writ-petition-high-court-pakistan",
+    title: "How to File a Writ Petition in High Court Pakistan",
+    excerpt:
+      "The Article 199 writ petition process in Pakistan — when it applies, the limitation period, and the documents a High Court petition actually needs.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-06-23",
+  },
+  {
+    slug: "section-154-crpc-fir-registration-law-pakistan",
+    title: "Section 154 CrPC: FIR Registration Law in Pakistan",
+    excerpt:
+      "The statutory basis for every FIR in Pakistan — what Section 154 of the CrPC requires, why registration is mandatory, and the one legitimate ground for refusal.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-24",
+  },
+  {
+    slug: "how-to-check-fard-online-pakistan",
+    title: "How to Check Fard Online in Pakistan",
+    excerpt:
+      "How to search and download a fard (land record extract) online in Pakistan — the PLRA portal for Punjab, what information you need, and its limits.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-26",
+  },
+  {
+    slug: "property-power-of-attorney-pakistan",
+    title: "Property Power of Attorney in Pakistan",
+    excerpt:
+      "How power of attorney works for property in Pakistan — General vs Special POA, the Registration Act 1908 requirement, and how to safely revoke one.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-06-29",
+  },
+  {
+    slug: "rent-agreement-legal-requirements-pakistan",
+    title: "Rent Agreement in Pakistan: Legal Requirements",
+    excerpt:
+      "What a legally sound rent agreement in Pakistan actually needs — required clauses, stamp duty, registration, and why unregistered agreements struggle in the Rent Tribunal.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-06-30",
+  },
+  {
+    slug: "dowry-laws-pakistan",
+    title: "Dowry Laws in Pakistan",
+    excerpt:
+      "How dowry is legally restricted in Pakistan under the Dowry and Bridal Gifts (Restriction) Act 1976 — how it differs from Haq Mehr, and the penalties for violations.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-07-03",
+  },
+  {
+    slug: "domestic-violence-laws-pakistan",
+    title: "Domestic Violence Laws in Pakistan",
+    excerpt:
+      "How domestic violence protection works in Pakistan — the provincial laws, the four types of protective orders, and how to seek help.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-04",
+  },
+  {
+    slug: "how-to-get-divorce-certificate-pakistan",
+    title: "How to Get a Divorce Certificate in Pakistan",
+    excerpt:
+      "The Union Council process for getting a divorce certificate in Pakistan — the 90-day reconciliation period and when the certificate is actually issued.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-07-05",
+  },
+  {
+    slug: "wife-maintenance-after-divorce-pakistan",
+    title: "Wife Maintenance After Divorce in Pakistan",
+    excerpt:
+      "What a divorced wife is entitled to in Pakistan — iddat-period maintenance, how it differs from Haq Mehr, and how to pursue a post-divorce maintenance claim.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-06",
+  },
+  {
+    slug: "fake-social-media-account-report-pakistan",
+    title: "Fake Facebook/Instagram Account: How to Report It Legally",
+    excerpt:
+      "What to do about a fake social media account impersonating you in Pakistan — the PECA Section 16 identity theft provision, the PTA takedown route, and how to report to the NCCIA.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-07",
+  },
+  {
+    slug: "notice-period-employment-law-pakistan",
+    title: "Notice Period in Pakistan: Employee and Employer Rights",
+    excerpt:
+      "How the notice period works for ending employment in Pakistan under the Standing Orders Ordinance 1968 — the one-month rule, pay in lieu, and the written termination requirement.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-11",
+  },
+  {
+    slug: "employment-contract-essentials-pakistan",
+    title: "Employment Contract in Pakistan: What Should It Include?",
+    excerpt:
+      "The essential terms a Pakistani employment contract needs — required clauses under the Standing Orders Ordinance 1968, and the protective terms worth adding.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-13",
+  },
+  {
+    slug: "workplace-harassment-complaint-procedure-pakistan",
+    title: "Workplace Harassment Laws in Pakistan: Legal Complaint Procedure",
+    excerpt:
+      "How the Protection Against Harassment of Women at the Workplace Act 2010 works — filing a complaint, the Inquiry Committee process, and the appeal route through the Ombudsperson.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-15",
+  },
+  {
+    slug: "gratuity-provident-fund-pakistan",
+    title: "Employee Gratuity and Provident Fund in Pakistan",
+    excerpt:
+      "How gratuity and provident fund entitlements work in Pakistan under the Standing Orders Ordinance 1968 — the calculation, who's covered, and why you often get one benefit, not both.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-16",
+  },
+  {
+    slug: "overtime-laws-pakistan",
+    title: "Overtime Laws in Pakistan",
+    excerpt:
+      "How overtime pay works in Pakistan under the Factories Act 1934 — the working hour limits, the double-pay rate, and how rest-day work is treated.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-07-17",
+  },
+  {
+    slug: "annual-sick-leave-laws-pakistan",
+    title: "Annual Leave and Sick Leave Laws in Pakistan",
+    excerpt:
+      "How annual, sick, and casual leave entitlements work in Pakistan under the Factories Act 1934 and the Shops and Establishments Ordinance — and how they differ by province and by law.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-18",
+  },
+  {
+    slug: "resignation-vs-termination-pakistan",
+    title: "Resignation vs Termination: Legal Differences in Pakistan",
+    excerpt:
+      "How resignation and termination differ legally in Pakistan — notice requirements, gratuity entitlement, and what happens when misconduct is involved.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-20",
+  },
+  {
+    slug: "how-to-register-a-company-pakistan",
+    title: "How to Register a Company in Pakistan",
+    excerpt:
+      "The SECP company registration process in Pakistan — the eZfile portal, Digital Signature Certificate, MOA/AOA, and typical timeline and cost.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-21",
+  },
+  {
+    slug: "sole-proprietorship-vs-partnership-vs-company-pakistan",
+    title: "Sole Proprietorship vs Partnership vs Private Limited Company in Pakistan",
+    excerpt:
+      "How sole proprietorship, partnership, and private limited company structures differ in Pakistan — liability, taxation, and registration requirements compared.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-25",
+  },
+  {
+    slug: "partnership-deed-pakistan-legal-guide",
+    title: "Partnership Deed in Pakistan: Legal Guide",
+    excerpt:
+      "What a partnership deed in Pakistan needs to include under the Partnership Act 1932 — essential clauses, the partner limits, and why registration matters even though it's optional.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-26",
+  },
+  {
+    slug: "non-disclosure-agreement-nda-pakistan",
+    title: "Non-Disclosure Agreement (NDA) in Pakistan",
+    excerpt:
+      "How NDAs are enforced in Pakistan under the Contract Act 1872 — what makes one legally solid, and the common weaknesses that get scrutinized.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-07-27",
+  },
+  {
+    slug: "website-terms-and-conditions-pakistan",
+    title: "Terms and Conditions for Pakistani Websites",
+    excerpt:
+      "The legal framework behind website terms and conditions in Pakistan — the Electronic Transactions Ordinance 2002, PECA's data provisions, and what terms should cover.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-07-30",
+  },
+  {
+    slug: "privacy-policy-requirements-pakistan-websites",
+    title: "Privacy Policy Requirements for Pakistani Websites",
+    excerpt:
+      "Pakistan's current legal landscape for website privacy policies — the pending Personal Data Protection Bill, PECA Section 38's data provisions, and what a policy should cover today.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-05",
+  },
+  {
+    slug: "ecommerce-refund-return-laws-pakistan",
+    title: "E-Commerce Refund and Return Laws in Pakistan",
+    excerpt:
+      "How consumer protection applies to online shopping in Pakistan — the provincial consumer protection acts, the 2025 Punjab amendment covering online transactions, and what to do when a store won't refund you.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-06",
+  },
+  {
+    slug: "business-partnership-dispute-pakistan",
+    title: "Business Partnership Dispute in Pakistan",
+    excerpt:
+      "How business partnership disputes are resolved in Pakistan under the Partnership Act 1932 — the deed's role, registration's impact, and dissolution and mediation options.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-08",
+  },
+  {
+    slug: "breach-of-contract-legal-remedies-pakistan",
+    title: "Breach of Contract in Pakistan: Legal Remedies",
+    excerpt:
+      "The remedies available for breach of contract in Pakistan — damages under the Contract Act 1872, liquidated damages clauses, and when specific performance is actually available.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-08-09",
+  },
+  {
+    slug: "legal-notice-format-pakistan",
+    title: "Legal Notice Format in Pakistan",
+    excerpt:
+      "The standard structure of a legal notice in Pakistan — header, facts and demand, deadline, and delivery — plus how to generate a first draft with Wakeel.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-07",
+  },
+  {
+    slug: "rent-agreement-format-pakistan",
+    title: "Rent Agreement Format in Pakistan",
+    excerpt:
+      "The standard structure of a rent agreement in Pakistan — parties, terms, notice period, and stamp duty/registration — plus how to generate a first draft with Wakeel.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-08",
+  },
+  {
+    slug: "employment-contract-format-pakistan",
+    title: "Employment Contract Format in Pakistan",
+    excerpt:
+      "The standard structure of an employment contract in Pakistan — role and compensation, probation and benefits, termination terms — plus how to generate a first draft with Wakeel.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-09",
+  },
+  {
+    slug: "partnership-agreement-format-pakistan",
+    title: "Partnership Agreement Format in Pakistan",
+    excerpt:
+      "The standard structure of a partnership agreement (deed) in Pakistan under the Partnership Act 1932 — essential clauses, dissolution terms, and how to generate a first draft with Wakeel.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-10",
+  },
+  {
+    slug: "affidavit-in-pakistan-types-format-legal-requirements",
+    title: "Affidavit in Pakistan: Types, Format and Legal Requirements",
+    excerpt:
+      "How affidavits work in Pakistan under the Oaths Act 1873 — the standard format, common types, attestation requirements, and how to generate a first draft with Wakeel.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-13",
+  },
+  {
+    slug: "power-of-attorney-in-pakistan",
+    title: "Power of Attorney in Pakistan",
+    excerpt:
+      "How power of attorney works in Pakistan under the Powers of Attorney Act 1882 — General vs Special POA, registration requirements, and how to generate a first draft with Wakeel.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-15",
+  },
+  {
+    slug: "sale-agreement-for-property-pakistan",
+    title: "Sale Agreement for Property in Pakistan",
+    excerpt:
+      "The standard structure of a property sale agreement in Pakistan — price, earnest money, title guarantee — and how it differs from a sale deed. Plus how to generate a first draft with Wakeel.",
+    category: "Legal Help",
+    readTime: "6 min read",
+    publishedAt: "2026-06-17",
+  },
+  {
+    slug: "demand-notice-recovery-of-money-pakistan",
+    title: "Demand Notice for Recovery of Money in Pakistan",
+    excerpt:
+      "The standard structure of a demand notice for recovering money owed in Pakistan — the debt, supporting documents, deadline, and legal consequence. Plus how to generate a first draft with Wakeel.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-18",
+  },
+  {
+    slug: "divorce-notice-in-pakistan",
+    title: "Divorce Notice in Pakistan",
+    excerpt:
+      "How the mandatory divorce (talaq) notice works in Pakistan under Section 7 of the Muslim Family Laws Ordinance 1961 — what it must state, and how to generate a first draft with Wakeel.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-19",
+  },
+  {
+    slug: "nda-format-in-pakistan",
+    title: "NDA Format in Pakistan",
+    excerpt:
+      "The standard structure of a Non-Disclosure Agreement in Pakistan under the Contract Act 1872 — what to include, common weaknesses, and how to generate a first draft with Wakeel.",
+    category: "Legal Help",
+    readTime: "5 min read",
+    publishedAt: "2026-06-20",
   },
 ];
 

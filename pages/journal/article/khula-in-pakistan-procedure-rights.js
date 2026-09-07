@@ -58,8 +58,8 @@ const schema = [
       "How khula works in Pakistan — the wife's right to dissolve a marriage without her husband's consent under the Family Courts Act 1964, the Khurshid Bibi principle, and the dower trade-off.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-03",
-    dateModified: "2026-09-03",
+    datePublished: "2026-08-18",
+    dateModified: "2026-08-18",
     mainEntityOfPage: `${site.url}/journal/article/khula-in-pakistan-procedure-rights`,
     citation: [
       { "@type": "CreativeWork", name: "The West Pakistan Family Courts Act, 1964 — Punjab Laws", url: "http://punjablaws.gov.pk/laws/2219a.html" },
@@ -115,7 +115,7 @@ export default function KhulaInPakistanProcedureRights() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 18, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Khula in Pakistan: Procedure and Rights
           </h1>

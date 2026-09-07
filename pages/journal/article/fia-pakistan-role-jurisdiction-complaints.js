@@ -58,8 +58,8 @@ const schema = [
       "What the Federal Investigation Agency actually handles in Pakistan today — immigration, human smuggling, and federal crimes — and why cybercrime complaints now go to the NCCIA instead.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-03",
-    dateModified: "2026-09-03",
+    datePublished: "2026-08-22",
+    dateModified: "2026-08-22",
     mainEntityOfPage: `${site.url}/journal/article/fia-pakistan-role-jurisdiction-complaints`,
     citation: [
       { "@type": "CreativeWork", name: "Federal Investigation Agency — official site", url: "https://www.fia.gov.pk/" },
@@ -116,7 +116,7 @@ export default function FiaPakistanRoleJurisdictionComplaints() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 22, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             FIA Pakistan: Role, Jurisdiction, and How to File a Complaint
           </h1>

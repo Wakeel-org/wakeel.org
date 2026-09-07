@@ -58,8 +58,8 @@ const schema = [
       "What to do after receiving a legal notice in Pakistan — the deadline, evidence to preserve, and how to prepare a measured, document-based response.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-03",
-    dateModified: "2026-09-03",
+    datePublished: "2026-08-25",
+    dateModified: "2026-08-25",
     mainEntityOfPage: `${site.url}/journal/article/how-to-respond-to-a-legal-notice-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "What to Do After Receiving a Legal Notice — Chaudhry Ghalib Asghar Law Associates", url: "https://advocateghalibasghar.com/blog/what-to-do-after-receiving-legal-notice" },
@@ -115,7 +115,7 @@ export default function HowToRespondToALegalNoticePakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 25, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             How to Respond to a Legal Notice in Pakistan
           </h1>

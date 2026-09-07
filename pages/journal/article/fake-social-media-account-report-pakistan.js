@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {
   CheckCircle2,
-  MessageSquare,
+  ShieldAlert,
+  Smartphone,
   Gavel,
-  ShieldCheck,
   HelpCircle,
   AlertTriangle,
 } from "lucide-react";
@@ -15,37 +15,37 @@ import { site } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
-  { icon: Gavel, title: "Yes, WhatsApp messages can be used as evidence", detail: "Under Article 164 of the Qanun-e-Shahadat Order 1984, Pakistani courts have discretion to admit evidence that has become available because of modern devices — which covers WhatsApp chats, voice notes, and shared media." },
-  { icon: MessageSquare, title: "A plain screenshot is the weakest version of this evidence", detail: "A standalone screenshot is just an image file — it doesn't, on its own, prove who sent it, when, or that it wasn't edited. Courts routinely see this challenged, especially where the outcome of a case depends heavily on the chat's authenticity." },
-  { icon: ShieldCheck, title: "What actually strengthens WhatsApp evidence", detail: "Keeping the original device with the chat intact (not just a screenshot), noting the sender's number and the date/time shown in the app itself, and — for serious matters — getting a forensic extraction with a documented chain of custody, all significantly improve the odds a court accepts the evidence as genuine." },
-  { icon: AlertTriangle, title: "The other side can, and often will, dispute it", detail: "Expect the opposing party to argue a screenshot was edited, taken out of context, or sent by someone else using the same number. Being ready to show the original chat on the original device — not just a printed screenshot — is your strongest response to that challenge." },
+  { icon: ShieldAlert, title: "This is Section 16 territory — identity theft", detail: "PECA Section 16 covers someone obtaining, using, or transmitting your identity information without authorization — which specifically includes a fake Facebook, Instagram, or WhatsApp profile using your name, photos, or details. Punishment is up to 3 years' imprisonment, a fine up to PKR 5 million, or both." },
+  { icon: Smartphone, title: "There's a faster route than a criminal case: the PTA takedown", detail: "Under Section 16(2), you can apply directly to the Pakistan Telecommunication Authority to have the impersonating identity information secured, blocked, or destroyed — separately from, and generally faster than, waiting for a criminal case to resolve." },
+  { icon: Gavel, title: "Section 20 often applies alongside it", detail: "If the fake account is also being used to post false, harmful information about you — not just use your identity — Section 20 (offences against dignity) can apply in addition to Section 16, especially where the account is defaming you or damaging your reputation." },
+  { icon: AlertTriangle, title: "Report to the platform and the NCCIA, not just one or the other", detail: "Reporting the fake account directly to Facebook/Instagram/Meta for impersonation removes it fastest in many cases, but a formal NCCIA complaint is what creates a legal record and opens the door to further action against whoever created it." },
 ];
 
 const faqs = [
   {
-    question: "Can WhatsApp screenshots be used as evidence in a Pakistani court?",
+    question: "What law covers a fake Facebook or Instagram account impersonating me?",
     answer:
-      "Yes, courts have discretion to admit them under Article 164 of the Qanun-e-Shahadat Order 1984. However, a plain screenshot is the weakest form of this evidence and can be challenged as edited or out of context — showing the original chat on the original device, or getting a forensic extraction, makes it much stronger.",
+      "Section 16 of PECA 2016 covers unauthorized use of someone's identity information, which includes fake social media profiles using your name or photos — punishable with up to 3 years' imprisonment and a fine up to PKR 5 million. Section 20 can apply additionally if the account is also spreading false, harmful information.",
   },
   {
-    question: "How do I make my WhatsApp evidence stronger for a court case?",
+    question: "How do I get a fake account impersonating me taken down quickly?",
     answer:
-      "Keep the original device and chat intact rather than deleting the app or switching phones. Take clear, uncropped screenshots showing the date, time, and sender's number. For serious cases, consider a professional forensic extraction, which documents the chain of custody and is much harder to challenge than a screenshot alone.",
+      "Report it directly to the platform (Facebook, Instagram, etc.) as impersonation for the fastest removal, and separately apply to the Pakistan Telecommunication Authority (PTA) under Section 16(2) of PECA to have the identity information blocked — this can happen independently of a criminal case.",
   },
   {
-    question: "Can the other side argue my WhatsApp screenshots were faked?",
+    question: "Should I also report a fake account to the NCCIA?",
     answer:
-      "Yes, this is a common challenge, and screenshots alone are relatively easy to dispute. If authenticity becomes contested, being able to produce the original device and chat, or a forensic report, is what typically resolves the dispute in court.",
+      "Yes, if you want a formal legal record and the possibility of action against whoever created it — platform reporting and PTA takedown remove the account quickly, but an NCCIA complaint is what pursues the person behind it.",
   },
   {
-    question: "Do I need a forensic expert for WhatsApp evidence in every case?",
+    question: "What evidence should I collect about a fake account?",
     answer:
-      "Not necessarily — for many everyday disputes, clear screenshots plus the original device may be enough. Forensic extraction becomes more important in serious or heavily contested cases, such as criminal matters or where the other party is likely to challenge the evidence's authenticity.",
+      "Screenshots of the fake profile (photos, bio, posts), its exact URL or username, any messages sent from it, and screenshots of anyone who mistook it for the real you or was deceived by it — the more specific and dated the evidence, the stronger the report.",
   },
   {
-    question: "Can Wakeel.org tell me if my WhatsApp chats will be accepted as evidence?",
+    question: "Can Wakeel.org help me report a fake account?",
     answer:
-      "Wakeel.org can explain how the admissibility rules generally work and how to preserve WhatsApp evidence properly. It cannot predict how a specific judge will rule on your specific chats or represent you in court — a licensed advocate should handle that.",
+      "Wakeel.org can explain which PECA sections apply and how the PTA takedown and NCCIA complaint routes generally work. It cannot file the report or contact the platform on your behalf — you'd do that directly, or with a licensed advocate's help for the legal side.",
   },
 ];
 
@@ -53,17 +53,17 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "WhatsApp Messages as Evidence in Pakistani Courts",
+    headline: "Fake Facebook/Instagram Account: How to Report It Legally",
     description:
-      "Can WhatsApp chats be used as evidence in Pakistan? A plain-language explanation of Article 164 of the Qanun-e-Shahadat Order 1984 and how to preserve chat evidence properly.",
+      "What to do about a fake social media account impersonating you in Pakistan — the PECA Section 16 identity theft provision, the PTA takedown route, and how to report to the NCCIA.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-02",
-    dateModified: "2026-09-02",
-    mainEntityOfPage: `${site.url}/journal/article/whatsapp-messages-evidence-pakistani-courts`,
+    datePublished: "2026-07-07",
+    dateModified: "2026-07-07",
+    mainEntityOfPage: `${site.url}/journal/article/fake-social-media-account-report-pakistan`,
     citation: [
-      { "@type": "CreativeWork", name: "The Qanun-e-Shahadat Order, 1984 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5plaw==-sg-jjjjjjjjjjjjj" },
-      { "@type": "CreativeWork", name: "Admissibility and Evidentiary Value of Electronic Evidence — Bahria University Islamabad Law Journal", url: "https://archive.bahria.edu.pk/buic/law/wp-content/uploads/2024/05/Article-2-of-2022.pdf" },
+      { "@type": "CreativeWork", name: "PECA 2016 Explained: Cyber Harassment Rights in Pakistan — Stop Harassment Now", url: "https://stopharassmentnow.org/peca-2016-explained/" },
+      { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
     ],
   },
   {
@@ -84,29 +84,29 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "WhatsApp Messages as Evidence in Pakistani Courts",
-        item: `${site.url}/journal/article/whatsapp-messages-evidence-pakistani-courts`,
+        name: "Fake Facebook/Instagram Account: How to Report It Legally",
+        item: `${site.url}/journal/article/fake-social-media-account-report-pakistan`,
       },
     ],
   },
 ];
 
 const keywords = [
-  "whatsapp messages evidence pakistan",
-  "whatsapp screenshot court pakistan",
-  "are whatsapp chats admissible pakistan",
-  "digital evidence whatsapp pakistan",
-  "article 164 qanun-e-shahadat whatsapp",
-  "forensic whatsapp extraction pakistan",
+  "fake facebook account report pakistan",
+  "fake instagram account legal action pakistan",
+  "identity theft peca section 16",
+  "impersonation social media pakistan law",
+  "pta takedown fake account",
+  "how to report impersonation pakistan",
 ].join(", ");
 
-export default function WhatsappMessagesEvidencePakistaniCourts() {
+export default function FakeSocialMediaAccountReportPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="WhatsApp Messages as Evidence in Pakistani Courts"
-        description="Can WhatsApp chats be used as evidence in Pakistan? A plain-language explanation of Article 164 of the Qanun-e-Shahadat Order 1984 and how to preserve chat evidence properly."
-        path="/journal/article/whatsapp-messages-evidence-pakistani-courts"
+        title="Fake Facebook/Instagram Account: How to Report It Legally"
+        description="What to do about a fake social media account impersonating you in Pakistan — the PECA Section 16 identity theft provision, the PTA takedown route, and how to report to the NCCIA."
+        path="/journal/article/fake-social-media-account-report-pakistan"
         schema={schema}
         keywords={keywords}
         region="pk"
@@ -115,13 +115,13 @@ export default function WhatsappMessagesEvidencePakistaniCourts() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 2, 2026</p>
+          <p className={eyebrow}>Legal Help · Published July 7, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            WhatsApp Messages as Evidence in Pakistani Courts
+            Fake Facebook/Instagram Account: How to Report It Legally
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A screenshot can be evidence — but it's also the easiest kind of evidence to challenge.
-            Here's how to make yours count.
+            Someone impersonating you online isn't just annoying — it's a specific crime with a
+            specific, fast takedown route.
           </p>
         </div>
       </section>
@@ -133,16 +133,15 @@ export default function WhatsappMessagesEvidencePakistaniCourts() {
             <CardContent className="p-6 space-y-3">
               <p className="text-sm font-semibold text-primary">Quick answer</p>
               <p className="text-muted-foreground leading-relaxed">
-                Yes — WhatsApp messages, voice notes, and shared media can be used as evidence in
-                Pakistani courts under{" "}
-                <a href="https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5plaw==-sg-jjjjjjjjjjjjj" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
-                  Article 164 of the Qanun-e-Shahadat Order 1984
-                </a>
-                . But a plain screenshot is the weakest form of this evidence — it can be argued to
-                be edited or out of context. Keep the <strong>original device and chat intact</strong>,
-                take clear screenshots showing the date/time and sender's number, and for serious
-                cases consider a <strong>forensic extraction</strong> to make the evidence far
-                harder to dispute.
+                A fake account using your identity falls under{" "}
+                <strong>Section 16 of PECA 2016</strong> (identity theft) — up to 3 years'
+                imprisonment and a fine up to PKR 5 million. Report the account to the{" "}
+                <strong>platform</strong> directly for the fastest removal, apply to the{" "}
+                <strong>PTA</strong> under Section 16(2) for a formal takedown, and file with the{" "}
+                <a href="https://www.nccia.gov.pk/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+                  NCCIA
+                </a>{" "}
+                if you want action taken against whoever created it.
               </p>
             </CardContent>
           </Card>
@@ -174,23 +173,27 @@ export default function WhatsappMessagesEvidencePakistaniCourts() {
         </div>
       </section>
 
-      {/* Reveal: prose */}
+      {/* Reveal: prose with inline sources */}
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
-          <h2 className={sectionHeading}>Why "just a screenshot" is a phrase lawyers hear constantly</h2>
+          <h2 className={sectionHeading}>Why running both routes together beats picking just one</h2>
           <p className="text-muted-foreground leading-relaxed">
-            A common mistake is treating a screenshot as self-explanatory proof — but a screenshot
-            is just an image, and anyone can edit an image. What actually convinces a court is
-            context around it: does the number match the person you're accusing? Does the timeline
-            make sense with other evidence in the case? Can you show the original conversation on
-            the actual device it was sent to, not just a printed page? Courts weigh all of this
-            together, not the screenshot in isolation.
+            Guidance on PECA's identity and dignity provisions, summarized by{" "}
+            <a href="https://stopharassmentnow.org/peca-2016-explained/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+              Stop Harassment Now
+            </a>
+            , points to a documented real-world case where a fake Facebook profile was used to
+            extort money by impersonating a news anchor — illustrating that identity theft cases
+            aren't always about reputation alone; they're frequently the setup for a further scam.
+            This is exactly why speed matters: reporting to the platform stops the immediate
+            damage (people being deceived right now), while the PTA and NCCIA routes address the
+            legal accountability, and running them in parallel rather than sequentially gets both
+            outcomes faster.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            The most practical habit worth building: the moment a WhatsApp conversation becomes
-            relevant to a legal issue — a threat, a fraud, an admission, a harassment case — stop
-            deleting anything, back up the chat, and if the stakes are high, talk to a lawyer about
-            whether a forensic copy is worth getting before you do anything else with that phone.
+            It's also worth telling people in your network directly that the account is fake, once
+            you've confirmed it — since a fake profile's real damage often comes from people who
+            trust it enough to share information or send money before the takedown completes.
           </p>
         </div>
       </section>
@@ -206,8 +209,8 @@ export default function WhatsappMessagesEvidencePakistaniCourts() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Explaining how the admissibility rules generally work and how to preserve
-                  WhatsApp evidence properly before you see a lawyer.
+                  Explaining which PECA sections apply and how the PTA and NCCIA routes generally
+                  work, in plain English or Urdu.
                 </p>
               </CardContent>
             </Card>
@@ -218,8 +221,8 @@ export default function WhatsappMessagesEvidencePakistaniCourts() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  It cannot perform forensic analysis or predict whether a specific judge will
-                  admit your specific chats — a licensed advocate should handle that.
+                  It cannot report the account to the platform, file with the PTA or NCCIA, or
+                  represent you — those steps require you directly, or a licensed advocate.
                 </p>
               </CardContent>
             </Card>
@@ -227,7 +230,7 @@ export default function WhatsappMessagesEvidencePakistaniCourts() {
           <div className="text-center mt-8">
             <Button asChild size="lg" className="cta-try-free">
               <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
-                Ask Wakeel about WhatsApp evidence — free
+                Ask Wakeel about a fake account — free
               </a>
             </Button>
           </div>
@@ -264,8 +267,8 @@ export default function WhatsappMessagesEvidencePakistaniCourts() {
           <h2 className="text-lg font-semibold text-foreground mb-4">Sources — check these directly to verify</h2>
           <ul className="space-y-2">
             {[
-              { label: "The Qanun-e-Shahadat Order, 1984 — Pakistan Code (Ministry of Law and Justice)", href: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5plaw==-sg-jjjjjjjjjjjjj" },
-              { label: "Admissibility and Evidentiary Value of Electronic Evidence — Bahria University Islamabad Law Journal", href: "https://archive.bahria.edu.pk/buic/law/wp-content/uploads/2024/05/Article-2-of-2022.pdf" },
+              { label: "PECA 2016 Explained: Cyber Harassment Rights in Pakistan — Stop Harassment Now", href: "https://stopharassmentnow.org/peca-2016-explained/" },
+              { label: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", href: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
             ].map((s) => (
               <li key={s.href}>
                 <a href={s.href} target="_blank" rel="noopener noreferrer nofollow" className="text-sm text-primary hover:underline">
@@ -282,16 +285,16 @@ export default function WhatsappMessagesEvidencePakistaniCourts() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/article/digital-evidence-pakistani-courts" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Digital Evidence in Pakistani Courts</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
             <Link href="/journal/article/whatsapp-blackmail-legal-action-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
               <p className="font-semibold text-sm group-hover:text-primary transition-colors">Blackmail on WhatsApp: Legal Action in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/civil-suit-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to File a Civil Suit in Pakistan</p>
+            <Link href="/journal/article/online-defamation-law-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Online Defamation Law in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            </Link>
+            <Link href="/journal/article/cyberbullying-online-harassment-laws-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Cyberbullying and Online Harassment Laws in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
             <Link href="/journal/article/nccia-cyber-crime-complaint-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
@@ -305,10 +308,9 @@ export default function WhatsappMessagesEvidencePakistaniCourts() {
       {/* CTA */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-          <h2 className={sectionHeading}>Building a case around WhatsApp chats?</h2>
+          <h2 className={sectionHeading}>Found a fake account impersonating you?</h2>
           <p className="text-muted-foreground">
-            Ask Wakeel how to preserve them properly — then verify with a licensed advocate before
-            you rely on them in court.
+            Ask Wakeel what to do first — then report to the platform, the PTA, and the NCCIA.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" className="cta-try-free">

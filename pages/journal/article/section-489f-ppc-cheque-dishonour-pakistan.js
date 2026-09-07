@@ -58,8 +58,8 @@ const schema = [
       "How Section 489-F of the Pakistan Penal Code works when a cheque bounces — what has to be proven, the punishment, and why it's not a substitute for a civil recovery suit.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-03",
-    dateModified: "2026-09-03",
+    datePublished: "2026-09-04",
+    dateModified: "2026-09-04",
     mainEntityOfPage: `${site.url}/journal/article/section-489f-ppc-cheque-dishonour-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Section 489-F PPC: Object, Scope & Trial — Courting the Law", url: "https://courtingthelaw.com/2022/06/26/commentary/guest-columnists/section-489-f-ppc-object-scope-trial/" },
@@ -115,7 +115,7 @@ export default function Section489fPpcChequeDishonourPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
+          <p className={eyebrow}>Legal Help · Published September 4, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Section 489-F PPC: Cheque Dishonour
           </h1>
