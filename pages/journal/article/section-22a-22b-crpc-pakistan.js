@@ -66,8 +66,8 @@ const schema = [
       "How Sections 22-A and 22-B CrPC work in Pakistan — the Ex-Officio Justice of Peace's power to direct FIR registration and investigation transfers when police refuse to act.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-03",
-    dateModified: "2026-09-03",
+    datePublished: "2026-08-24",
+    dateModified: "2026-08-24",
     mainEntityOfPage: `${site.url}/journal/article/section-22a-22b-crpc-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "22-A & 22-B — Office of the Advocate General, Government of Punjab", url: "https://advocategeneral.punjab.gov.pk/22A_22B" },
@@ -129,7 +129,7 @@ export default function Section22a22bCrpcPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 24, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Section 22-A/22-B CrPC: The Justice of Peace Explained
           </h1>

@@ -74,8 +74,8 @@ const schema = [
       "A section-by-section reference to PECA 2016 punishments — imprisonment terms and fines for hacking, electronic fraud, online defamation, cyberstalking, and more.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-03",
-    dateModified: "2026-09-03",
+    datePublished: "2026-08-14",
+    dateModified: "2026-08-14",
     mainEntityOfPage: `${site.url}/journal/article/cybercrime-punishments-pakistan-peca-penalties`,
     citation: [
       { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
@@ -131,7 +131,7 @@ export default function CybercrimePunishmentsPakistanPecaPenalties() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 14, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Cybercrime Punishments in Pakistan
           </h1>

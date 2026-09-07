@@ -67,8 +67,8 @@ const schema = [
       "What people actually mean by \"AI lawyer,\" the criteria that separate a genuinely useful Pakistan-specific legal AI assistant from a generic chatbot, and how to evaluate your options.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-03",
-    dateModified: "2026-09-03",
+    datePublished: "2026-08-26",
+    dateModified: "2026-08-26",
     mainEntityOfPage: `${site.url}/journal/article/best-ai-lawyer-pakistan`,
   },
   {
@@ -120,7 +120,7 @@ export default function BestAiLawyerPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>AI & the Law · Published September 3, 2026</p>
+          <p className={eyebrow}>AI & the Law · Published August 26, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Best AI Lawyer in Pakistan
           </h1>

@@ -190,15 +190,15 @@ export const getCategoryStyle = (category) => {
 // ─────────────────────────────────────────────────────────────────────────
 const GUIDE_CATEGORY_KEYWORDS = [
   ["Constitutional", ["constitution", "fundamental right", "writ", "article 199", "human right", "minority right", "high court jurisdiction"]],
-  ["Family", ["marriage", "divorce", "talaq", "custody", "nikah", "inheritance", "daughter", "wani", "swara", "haq mehr", "family law", "guardianship", "domestic", "khula", "nafaqah", "shia"]],
-  ["Cyber", ["cyber", "online fraud", "hacking", "nccia", "peca", "deepfake", "social media law", "biometric", "nadra", "privacy recording", "harassment online", "defamation", "digital evidence", "whatsapp"]],
+  ["Family", ["marriage", "divorce", "talaq", "custody", "nikah", "inheritance", "daughter", "wani", "swara", "haq mehr", "family law", "guardianship", "domestic", "khula", "nafaqah", "shia", "dowry"]],
+  ["Cyber", ["cyber", "online fraud", "hacking", "nccia", "peca", "deepfake", "social media law", "biometric", "nadra", "privacy recording", "harassment online", "defamation", "digital evidence", "whatsapp", "facebook", "instagram", "privacy policy"]],
   ["Criminal", ["fir", "arrest", "bail", "murder", "rape", "theft", "robbery", "dacoity", "criminal law", "ppc", "crpc", "police", "kidnap", "extortion", "assault", "drug law", "false fir", "section 302", "section 377", "section 420", "section 375", "section 376", "fia"]],
   ["Tax", ["tax"]],
-  ["Finance", ["loan", "debt", "bank", "finance"]],
+  ["Finance", ["loan", "debt", "bank", "finance", "recovery of money"]],
   ["Property", ["property", "rent", "tenant", "landlord", "mutation", "real estate", "land dispute", "buying", "fard", "intiqal", "registry"]],
-  ["Labour", ["employment", "labor", "labour", "wrongful termination", "workplace", "salary", "wages"]],
-  ["Corporate", ["business law", "company", "corporate", "commercial law"]],
-  ["Civil", ["civil suit", "civil law", "consumer complaint", "legal notice", "contract", "legal document", "dispute"]],
+  ["Labour", ["employment", "labor", "labour", "wrongful termination", "workplace", "salary", "wages", "gratuity", "overtime", "sick leave", "annual leave", "resignation", "termination"]],
+  ["Corporate", ["business law", "company", "corporate", "commercial law", "partnership", "nda"]],
+  ["Civil", ["civil suit", "civil law", "consumer complaint", "legal notice", "contract", "legal document", "dispute", "terms and conditions", "ecommerce", "affidavit", "power of attorney"]],
 ];
 
 export const getGuideCategory = (guide) => {

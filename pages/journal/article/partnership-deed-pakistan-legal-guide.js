@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {
   CheckCircle2,
-  Landmark,
+  FileText,
+  Users,
   Gavel,
-  Clock,
   HelpCircle,
   AlertTriangle,
 } from "lucide-react";
@@ -15,37 +15,37 @@ import { site } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
-  { icon: Landmark, title: "A regular civil suit works, but it's slow", detail: "You can always sue for recovery of money as an ordinary civil suit, but ordinary suits go through full trial procedure — written statements, evidence, cross-examination — which can take years even where the debt itself isn't seriously disputed." },
-  { icon: Clock, title: "Order 37 CPC exists specifically to skip that delay", detail: "Where the debt is a fixed, liquidated amount backed by a written agreement, a bill of exchange, or a promissory note, Order 37 of the Civil Procedure Code allows a summary suit — a much faster process built to stop debtors from dragging out cases where they don't actually have a real defense." },
-  { icon: Gavel, title: "The defendant has to actually justify contesting it", detail: "Under Order 37, the person being sued must appear within 10 days and formally apply for \"leave to defend\" — meaning they have to show the court a genuine, substantial defense. If they can't, the court can issue judgment for the plaintiff without a full trial." },
-  { icon: AlertTriangle, title: "Written proof of the debt is what makes this route available", detail: "Order 37 depends on the debt being clear from documents — a signed agreement, an acknowledged invoice, a bounced cheque, or a promissory note. Without that kind of paper trail, you're generally looking at an ordinary civil suit instead." },
+  { icon: FileText, title: "The deed is what actually defines the partnership", detail: "A partnership deed should cover the firm's name and business, capital contributions, profit and loss sharing ratios, each partner's rights, duties, and management role, accounting procedures, and how disputes will be resolved." },
+  { icon: Users, title: "There's a legal cap on how many partners you can have", detail: "Under the Partnership Act 1932, a partnership can have a minimum of two partners, with a maximum of ten for a banking business and twenty for any other kind of business." },
+  { icon: Gavel, title: "Registration is optional to form, essential to enforce", detail: "You don't need to register a partnership to start operating, but an unregistered firm loses its ability to sue third parties to enforce contracts or recover debts — registration is what unlocks that legal remedy." },
+  { icon: AlertTriangle, title: "Dissolution needs its own clause, not an afterthought", detail: "A well-drafted deed spells out how and when the partnership can be dissolved — voluntarily, by a partner's exit, or otherwise — since disagreements about ending a partnership are exactly where an unclear deed causes the most damage." },
 ];
 
 const faqs = [
   {
-    question: "What is the fastest legal way to recover a debt in Pakistan?",
+    question: "What should a partnership deed in Pakistan include?",
     answer:
-      "Where the debt is a fixed amount backed by a written agreement, promissory note, or bill of exchange, a summary suit under Order 37 of the Civil Procedure Code 1908 is generally much faster than an ordinary civil suit, because the defendant must justify any defense before the case proceeds to trial.",
+      "The firm's name and nature of business, capital contributions, profit and loss sharing arrangement, partners' rights and duties, management responsibilities, accounting procedures, dispute resolution mechanisms, and the process for dissolving the firm.",
   },
   {
-    question: "What documents do I need to file a debt recovery suit?",
+    question: "Is it mandatory to register a partnership in Pakistan?",
     answer:
-      "Ideally, a signed loan agreement, a promissory note, an acknowledged invoice, or a bounced cheque — anything in writing that clearly shows the debt exists and its exact amount. The stronger and clearer the documentation, the more likely a summary suit under Order 37 CPC is available to you.",
+      "No, registration under the Partnership Act 1932 isn't mandatory to form a partnership. However, an unregistered partnership firm cannot sue a third party to enforce a contract or recover a debt — which is a significant practical reason to register anyway.",
   },
   {
-    question: "What happens if the person who owes me money doesn't respond to the suit?",
+    question: "How many partners can a partnership have in Pakistan?",
     answer:
-      "Under Order 37 CPC, the defendant must appear within 10 days of being served and apply for \"leave to defend,\" showing a real defense. If they fail to do this, the court can issue a judgment in your favor without a full trial.",
+      "Minimum two, with a maximum of ten partners for a banking business and twenty partners for any other business, under the Partnership Act 1932.",
   },
   {
-    question: "Is debt recovery a civil or criminal matter in Pakistan?",
+    question: "What happens if a partnership doesn't have a written deed?",
     answer:
-      "Generally civil — recovering money owed is handled through a civil suit. However, if the debt was tied to a cheque that bounced, a separate criminal complaint under Section 489-F PPC may also be available alongside the civil recovery suit.",
+      "The partnership can still exist based on the partners' agreement, but without a written deed, proving the exact terms — profit shares, responsibilities, exit terms — becomes much harder if a dispute arises. A written, ideally registered, deed is your strongest evidence in that case.",
   },
   {
-    question: "Can Wakeel.org help me recover a debt someone owes me?",
+    question: "Can Wakeel.org draft a partnership deed for me?",
     answer:
-      "Wakeel.org can explain the ordinary suit and summary suit (Order 37) processes and what documentation typically qualifies. It cannot draft or file the suit, or represent you in court — a licensed advocate should handle that.",
+      "Wakeel.org can explain what a partnership deed generally needs to include and how registration works. It cannot draft the final deed or register your partnership — a licensed advocate or company secretary should handle that.",
   },
 ];
 
@@ -53,16 +53,17 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Debt Recovery in Pakistan: Legal Procedure",
+    headline: "Partnership Deed in Pakistan: Legal Guide",
     description:
-      "How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need.",
+      "What a partnership deed in Pakistan needs to include under the Partnership Act 1932 — essential clauses, the partner limits, and why registration matters even though it's optional.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-05",
-    dateModified: "2026-09-05",
-    mainEntityOfPage: `${site.url}/journal/article/debt-recovery-legal-procedure-pakistan`,
+    datePublished: "2026-07-26",
+    dateModified: "2026-07-26",
+    mainEntityOfPage: `${site.url}/journal/article/partnership-deed-pakistan-legal-guide`,
     citation: [
-      { "@type": "CreativeWork", name: "Order 37 CPC, 1908 — iPleaders", url: "https://blog.ipleaders.in/order-37-cpc-1908/" },
+      { "@type": "CreativeWork", name: "The Partnership Act, 1932 — Khalid Zafar & Associates", url: "https://khalidzafar.com/laws-of-pakistan/partnership-act-1932/" },
+      { "@type": "CreativeWork", name: "How to Draft & Register Partnership Deed in Pakistan — Tenco Consulting", url: "https://tencoconsulting.com/partnership-deed-pakistan/" },
     ],
   },
   {
@@ -83,29 +84,29 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Debt Recovery in Pakistan: Legal Procedure",
-        item: `${site.url}/journal/article/debt-recovery-legal-procedure-pakistan`,
+        name: "Partnership Deed in Pakistan: Legal Guide",
+        item: `${site.url}/journal/article/partnership-deed-pakistan-legal-guide`,
       },
     ],
   },
 ];
 
 const keywords = [
-  "debt recovery pakistan legal procedure",
-  "order 37 cpc summary suit pakistan",
-  "recover money owed pakistan",
-  "money recovery suit pakistan",
-  "how to sue someone for debt pakistan",
-  "summary suit leave to defend",
+  "partnership deed pakistan",
+  "partnership act 1932 pakistan",
+  "how to register partnership firm pakistan",
+  "partnership deed clauses pakistan",
+  "unregistered partnership pakistan",
+  "partnership dissolution pakistan",
 ].join(", ");
 
-export default function DebtRecoveryLegalProcedurePakistan() {
+export default function PartnershipDeedPakistanLegalGuide() {
   return (
     <Layout>
       <MarketingSEO
-        title="Debt Recovery in Pakistan: Legal Procedure"
-        description="How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need."
-        path="/journal/article/debt-recovery-legal-procedure-pakistan"
+        title="Partnership Deed in Pakistan: Legal Guide"
+        description="What a partnership deed in Pakistan needs to include under the Partnership Act 1932 — essential clauses, the partner limits, and why registration matters even though it's optional."
+        path="/journal/article/partnership-deed-pakistan-legal-guide"
         schema={schema}
         keywords={keywords}
         region="pk"
@@ -114,13 +115,13 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 5, 2026</p>
+          <p className={eyebrow}>Legal Help · Published July 26, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Debt Recovery in Pakistan: Legal Procedure
+            Partnership Deed in Pakistan: Legal Guide
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            If someone owes you money and won't pay, the law has a fast lane for exactly this
-            situation — if you have the paperwork to use it.
+            Registration is optional — until you actually need to sue someone. Here's what the
+            deed should cover either way.
           </p>
         </div>
       </section>
@@ -132,12 +133,13 @@ export default function DebtRecoveryLegalProcedurePakistan() {
             <CardContent className="p-6 space-y-3">
               <p className="text-sm font-semibold text-primary">Quick answer</p>
               <p className="text-muted-foreground leading-relaxed">
-                If the debt is a fixed amount backed by a written agreement, promissory note, or
-                bounced cheque, you can file a <strong>summary suit under Order 37 of the Civil
-                Procedure Code 1908</strong> — a fast-tracked process where the defendant has only
-                10 days to show a genuine defense, or the court can rule in your favor without a
-                full trial. Without that kind of documentation, you'd generally file an{" "}
-                <strong>ordinary civil suit</strong>, which takes considerably longer.
+                A partnership deed under the <strong>Partnership Act 1932</strong> should cover
+                the firm's name, capital contributions, profit/loss sharing, partners' roles, and
+                a clear <strong>dissolution</strong> process. Partnerships can have{" "}
+                <strong>2 to 20 partners</strong> (10 for banking). Registration isn't mandatory
+                to form a partnership, but an <strong>unregistered</strong> firm can't sue third
+                parties to enforce contracts or recover debts — a real practical reason to
+                register anyway.
               </p>
             </CardContent>
           </Card>
@@ -172,24 +174,24 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* Reveal: prose with inline sources */}
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
-          <h2 className={sectionHeading}>Why the "10 days" detail actually matters to your outcome</h2>
+          <h2 className={sectionHeading}>Why the dissolution clause matters more than founders usually think</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Order 37's entire purpose, as explained in detailed breakdowns of the procedure like{" "}
-            <a href="https://blog.ipleaders.in/order-37-cpc-1908/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
-              iPleaders' overview of Order 37 CPC
-            </a>
-            , is to stop a debtor with no real defense from simply delaying the case for years by
-            filing routine denials. Once a summary suit is filed and served, the defendant has a
-            short window to appear and formally justify why they should be allowed to defend the
-            case at all — not just deny the claim in general terms. Courts scrutinize that
-            application; a defendant who can't show a substantial, documented defense loses the
-            right to drag the case through a full trial.
+            A practical drafting guide from{" "}
+            <a href="https://tencoconsulting.com/partnership-deed-pakistan/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+              Tenco Consulting
+            </a>{" "}
+            makes a point worth taking seriously: partnerships are usually formed during an
+            optimistic, cooperative moment — which is exactly when the founders are least
+            motivated to think carefully about how things end badly. But it's precisely the
+            dissolution and exit terms that come under the most pressure during an actual dispute,
+            when trust has already broken down and everyone is reading the deed adversarially for
+            the first time.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            The practical takeaway: before you lend money, or before you sue to recover it, having
-            something written and signed — even a simple acknowledgment — is what determines
-            whether you can use this faster route later. A purely verbal loan, however genuine,
-            usually leaves you with the slower ordinary suit as your only option.
+            A deed that clearly spells out how a partner can exit, how their share is valued, and
+            what happens to ongoing obligations does far more real protective work than most
+            founders expect at signing — worth the extra time to get right before you actually
+            need it.
           </p>
         </div>
       </section>
@@ -205,8 +207,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Explaining the difference between an ordinary suit and a summary suit, and what
-                  documentation typically qualifies for the faster route.
+                  Explaining what a partnership deed generally needs to include and how
+                  registration works, in plain English or Urdu.
                 </p>
               </CardContent>
             </Card>
@@ -217,8 +219,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  It cannot draft or file your suit or represent you in court — a licensed
-                  advocate should handle that.
+                  It cannot draft or register the deed for you — a licensed advocate or company
+                  secretary should handle that.
                 </p>
               </CardContent>
             </Card>
@@ -226,7 +228,7 @@ export default function DebtRecoveryLegalProcedurePakistan() {
           <div className="text-center mt-8">
             <Button asChild size="lg" className="cta-try-free">
               <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
-                Ask Wakeel about recovering a debt — free
+                Ask Wakeel about a partnership deed — free
               </a>
             </Button>
           </div>
@@ -263,7 +265,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
           <h2 className="text-lg font-semibold text-foreground mb-4">Sources — check these directly to verify</h2>
           <ul className="space-y-2">
             {[
-              { label: "Order 37 CPC, 1908 — iPleaders", href: "https://blog.ipleaders.in/order-37-cpc-1908/" },
+              { label: "The Partnership Act, 1932 — Khalid Zafar & Associates", href: "https://khalidzafar.com/laws-of-pakistan/partnership-act-1932/" },
+              { label: "How to Draft & Register Partnership Deed in Pakistan — Tenco Consulting", href: "https://tencoconsulting.com/partnership-deed-pakistan/" },
             ].map((s) => (
               <li key={s.href}>
                 <a href={s.href} target="_blank" rel="noopener noreferrer nofollow" className="text-sm text-primary hover:underline">
@@ -280,20 +283,20 @@ export default function DebtRecoveryLegalProcedurePakistan() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/article/section-489f-ppc-cheque-dishonour-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 489-F PPC: Cheque Dishonour</p>
+            <Link href="/journal/article/sole-proprietorship-vs-partnership-vs-company-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Sole Proprietorship vs Partnership vs Private Limited Company</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/civil-suit-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to File a Civil Suit in Pakistan</p>
+            <Link href="/journal/article/business-partnership-dispute-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Business Partnership Dispute in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/draft-legal-contract-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Draft a Legal Contract in Pakistan</p>
+            <Link href="/journal/article/how-to-register-a-company-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register a Company in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/how-to-send-a-legal-notice-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Send a Legal Notice in Pakistan</p>
+            <Link href="/journal/article/breach-of-contract-legal-remedies-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Breach of Contract in Pakistan: Legal Remedies</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
           </div>
@@ -303,10 +306,10 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* CTA */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-          <h2 className={sectionHeading}>Trying to recover money someone owes you?</h2>
+          <h2 className={sectionHeading}>Starting or drafting a partnership?</h2>
           <p className="text-muted-foreground">
-            Ask Wakeel which route fits your documentation — then verify with a licensed advocate
-            before you file.
+            Ask Wakeel what a solid deed should cover — then get a licensed advocate to draft and
+            register it.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" className="cta-try-free">

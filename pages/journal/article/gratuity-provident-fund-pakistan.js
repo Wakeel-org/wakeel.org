@@ -1,9 +1,9 @@
 import Link from "next/link";
 import {
   CheckCircle2,
+  Wallet,
   Landmark,
-  Gavel,
-  Clock,
+  Scale,
   HelpCircle,
   AlertTriangle,
 } from "lucide-react";
@@ -15,37 +15,37 @@ import { site } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
-  { icon: Landmark, title: "A regular civil suit works, but it's slow", detail: "You can always sue for recovery of money as an ordinary civil suit, but ordinary suits go through full trial procedure — written statements, evidence, cross-examination — which can take years even where the debt itself isn't seriously disputed." },
-  { icon: Clock, title: "Order 37 CPC exists specifically to skip that delay", detail: "Where the debt is a fixed, liquidated amount backed by a written agreement, a bill of exchange, or a promissory note, Order 37 of the Civil Procedure Code allows a summary suit — a much faster process built to stop debtors from dragging out cases where they don't actually have a real defense." },
-  { icon: Gavel, title: "The defendant has to actually justify contesting it", detail: "Under Order 37, the person being sued must appear within 10 days and formally apply for \"leave to defend\" — meaning they have to show the court a genuine, substantial defense. If they can't, the court can issue judgment for the plaintiff without a full trial." },
-  { icon: AlertTriangle, title: "Written proof of the debt is what makes this route available", detail: "Order 37 depends on the debt being clear from documents — a signed agreement, an acknowledged invoice, a bounced cheque, or a promissory note. Without that kind of paper trail, you're generally looking at an ordinary civil suit instead." },
+  { icon: Landmark, title: "Employers must offer at least one retirement benefit", detail: "Standing Order 12(6) of the Industrial and Commercial Employment (Standing Orders) Ordinance 1968 requires commercial establishments with 20+ workers, or industrial establishments with 49+ workers, to offer at least a Gratuity, a Provident Fund, or an Approved Pension Fund." },
+  { icon: Wallet, title: "Gratuity is a lump-sum, service-based payout", detail: "A worker who resigns or whose service is terminated for any reason other than misconduct is entitled to gratuity equal to twenty days' wages for every completed year of service (or part of a year beyond six months)." },
+  { icon: Scale, title: "You generally get one or the other, not both", detail: "Where an employer has established a Provident Fund with employer contributions at least equal to the employee's own contributions, gratuity generally isn't payable for the period that fund existed — the law expects one meaningful retirement benefit, not a stack of them." },
+  { icon: AlertTriangle, title: "Check which one your employer actually offers", detail: "Employees don't automatically have a legal right to both gratuity and a provident fund — confirming which benefit (or combination) your specific employer has established, and its exact contribution terms, is the only way to know what you're actually entitled to." },
 ];
 
 const faqs = [
   {
-    question: "What is the fastest legal way to recover a debt in Pakistan?",
+    question: "Am I entitled to both gratuity and a provident fund in Pakistan?",
     answer:
-      "Where the debt is a fixed amount backed by a written agreement, promissory note, or bill of exchange, a summary suit under Order 37 of the Civil Procedure Code 1908 is generally much faster than an ordinary civil suit, because the defendant must justify any defense before the case proceeds to trial.",
+      "Not automatically. The Standing Orders Ordinance 1968 requires an employer to offer at least one retirement benefit — gratuity, a provident fund, or an approved pension fund. Where an employer runs a provident fund with matching contributions, gratuity generally isn't payable for that period.",
   },
   {
-    question: "What documents do I need to file a debt recovery suit?",
+    question: "How is gratuity calculated in Pakistan?",
     answer:
-      "Ideally, a signed loan agreement, a promissory note, an acknowledged invoice, or a bounced cheque — anything in writing that clearly shows the debt exists and its exact amount. The stronger and clearer the documentation, the more likely a summary suit under Order 37 CPC is available to you.",
+      "Gratuity is generally calculated at twenty days' wages for every completed year of service, including any part of a year exceeding six months, payable when an employee resigns or their service ends for any reason other than misconduct.",
   },
   {
-    question: "What happens if the person who owes me money doesn't respond to the suit?",
+    question: "Which employers are legally required to offer gratuity or provident fund?",
     answer:
-      "Under Order 37 CPC, the defendant must appear within 10 days of being served and apply for \"leave to defend,\" showing a real defense. If they fail to do this, the court can issue a judgment in your favor without a full trial.",
+      "Under Standing Order 12(6), commercial establishments employing 20 or more workers, or industrial establishments employing 49 or more workers (in the preceding 12 months), are required to offer at least one of these retirement benefits.",
   },
   {
-    question: "Is debt recovery a civil or criminal matter in Pakistan?",
+    question: "Do I lose my gratuity if I resign, rather than being terminated?",
     answer:
-      "Generally civil — recovering money owed is handled through a civil suit. However, if the debt was tied to a cheque that bounced, a separate criminal complaint under Section 489-F PPC may also be available alongside the civil recovery suit.",
+      "Generally no — the entitlement applies whether service ends by resignation or termination, as long as the termination wasn't for misconduct. The key exclusion is misconduct-based dismissal, not simply who initiated the end of employment.",
   },
   {
-    question: "Can Wakeel.org help me recover a debt someone owes me?",
+    question: "Can Wakeel.org calculate my gratuity or provident fund entitlement?",
     answer:
-      "Wakeel.org can explain the ordinary suit and summary suit (Order 37) processes and what documentation typically qualifies. It cannot draft or file the suit, or represent you in court — a licensed advocate should handle that.",
+      "Wakeel.org can explain how gratuity and provident fund rules generally work. It cannot calculate your specific entitlement or verify your employer's fund contributions — a licensed labour law advocate or your employer's HR records can confirm that.",
   },
 ];
 
@@ -53,16 +53,17 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Debt Recovery in Pakistan: Legal Procedure",
+    headline: "Employee Gratuity and Provident Fund in Pakistan",
     description:
-      "How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need.",
+      "How gratuity and provident fund entitlements work in Pakistan under the Standing Orders Ordinance 1968 — the calculation, who's covered, and why you often get one benefit, not both.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-05",
-    dateModified: "2026-09-05",
-    mainEntityOfPage: `${site.url}/journal/article/debt-recovery-legal-procedure-pakistan`,
+    datePublished: "2026-07-16",
+    dateModified: "2026-07-16",
+    mainEntityOfPage: `${site.url}/journal/article/gratuity-provident-fund-pakistan`,
     citation: [
-      { "@type": "CreativeWork", name: "Order 37 CPC, 1908 — iPleaders", url: "https://blog.ipleaders.in/order-37-cpc-1908/" },
+      { "@type": "CreativeWork", name: "Gratuity Law in Pakistan — WageIndicator", url: "https://wageindicator.org/en-pk/work-in-pakistan/labour-law/social-security/gratuity-law-in-pakistan/" },
+      { "@type": "CreativeWork", name: "Gratuity and Provident Fund Rules in Pakistan — Pakera", url: "https://pakera.pk/gratuity-provident-fund-pakistan/" },
     ],
   },
   {
@@ -83,29 +84,29 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Debt Recovery in Pakistan: Legal Procedure",
-        item: `${site.url}/journal/article/debt-recovery-legal-procedure-pakistan`,
+        name: "Employee Gratuity and Provident Fund in Pakistan",
+        item: `${site.url}/journal/article/gratuity-provident-fund-pakistan`,
       },
     ],
   },
 ];
 
 const keywords = [
-  "debt recovery pakistan legal procedure",
-  "order 37 cpc summary suit pakistan",
-  "recover money owed pakistan",
-  "money recovery suit pakistan",
-  "how to sue someone for debt pakistan",
-  "summary suit leave to defend",
+  "gratuity law pakistan",
+  "provident fund pakistan employee rights",
+  "gratuity calculation pakistan",
+  "standing order 12 gratuity",
+  "gratuity vs provident fund pakistan",
+  "retirement benefits employment pakistan",
 ].join(", ");
 
-export default function DebtRecoveryLegalProcedurePakistan() {
+export default function GratuityProvidentFundPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Debt Recovery in Pakistan: Legal Procedure"
-        description="How to legally recover money someone owes you in Pakistan — the ordinary civil suit route versus the faster Order 37 CPC summary suit, and what documents you need."
-        path="/journal/article/debt-recovery-legal-procedure-pakistan"
+        title="Employee Gratuity and Provident Fund in Pakistan"
+        description="How gratuity and provident fund entitlements work in Pakistan under the Standing Orders Ordinance 1968 — the calculation, who's covered, and why you often get one benefit, not both."
+        path="/journal/article/gratuity-provident-fund-pakistan"
         schema={schema}
         keywords={keywords}
         region="pk"
@@ -114,13 +115,13 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 5, 2026</p>
+          <p className={eyebrow}>Legal Help · Published July 16, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Debt Recovery in Pakistan: Legal Procedure
+            Employee Gratuity and Provident Fund in Pakistan
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            If someone owes you money and won't pay, the law has a fast lane for exactly this
-            situation — if you have the paperwork to use it.
+            Two retirement benefits, one legal requirement to offer at least one — here's how to
+            tell which one applies to you.
           </p>
         </div>
       </section>
@@ -132,12 +133,13 @@ export default function DebtRecoveryLegalProcedurePakistan() {
             <CardContent className="p-6 space-y-3">
               <p className="text-sm font-semibold text-primary">Quick answer</p>
               <p className="text-muted-foreground leading-relaxed">
-                If the debt is a fixed amount backed by a written agreement, promissory note, or
-                bounced cheque, you can file a <strong>summary suit under Order 37 of the Civil
-                Procedure Code 1908</strong> — a fast-tracked process where the defendant has only
-                10 days to show a genuine defense, or the court can rule in your favor without a
-                full trial. Without that kind of documentation, you'd generally file an{" "}
-                <strong>ordinary civil suit</strong>, which takes considerably longer.
+                Employers with 20+ (commercial) or 49+ (industrial) workers must offer at least
+                one retirement benefit — <strong>gratuity</strong>, a{" "}
+                <strong>provident fund</strong>, or an approved pension fund. Gratuity is generally{" "}
+                <strong>20 days' wages per completed year</strong> of service, payable unless
+                termination was for misconduct. If your employer runs a matching provident fund,
+                you typically get that instead of gratuity, not both — check your specific
+                employer's arrangement.
               </p>
             </CardContent>
           </Card>
@@ -172,24 +174,23 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* Reveal: prose with inline sources */}
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5">
-          <h2 className={sectionHeading}>Why the "10 days" detail actually matters to your outcome</h2>
+          <h2 className={sectionHeading}>Why "matching contributions" is the detail worth confirming</h2>
           <p className="text-muted-foreground leading-relaxed">
-            Order 37's entire purpose, as explained in detailed breakdowns of the procedure like{" "}
-            <a href="https://blog.ipleaders.in/order-37-cpc-1908/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
-              iPleaders' overview of Order 37 CPC
-            </a>
-            , is to stop a debtor with no real defense from simply delaying the case for years by
-            filing routine denials. Once a summary suit is filed and served, the defendant has a
-            short window to appear and formally justify why they should be allowed to defend the
-            case at all — not just deny the claim in general terms. Courts scrutinize that
-            application; a defendant who can't show a substantial, documented defense loses the
-            right to drag the case through a full trial.
+            Practical guidance from{" "}
+            <a href="https://pakera.pk/gratuity-provident-fund-pakistan/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary hover:underline">
+              Pakera
+            </a>{" "}
+            points out that the gratuity-versus-provident-fund question isn't just theoretical —
+            the law's exemption from paying gratuity depends specifically on the employer's
+            provident fund contributions being <strong>at least equal</strong> to the employee's
+            own. If an employer's provident fund contributes less than the employee, that
+            condition isn't met, and the gratuity obligation may still apply on top of it.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            The practical takeaway: before you lend money, or before you sue to recover it, having
-            something written and signed — even a simple acknowledgment — is what determines
-            whether you can use this faster route later. A purely verbal loan, however genuine,
-            usually leaves you with the slower ordinary suit as your only option.
+            This is exactly the kind of detail that's easy to overlook in an offer letter but
+            makes a real financial difference over years of employment — worth confirming directly
+            with HR, in writing, rather than assuming the standard arrangement applies to your
+            specific employer.
           </p>
         </div>
       </section>
@@ -205,8 +206,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Explaining the difference between an ordinary suit and a summary suit, and what
-                  documentation typically qualifies for the faster route.
+                  Explaining how gratuity and provident fund rules generally work, in plain
+                  English or Urdu.
                 </p>
               </CardContent>
             </Card>
@@ -217,8 +218,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  It cannot draft or file your suit or represent you in court — a licensed
-                  advocate should handle that.
+                  It cannot calculate your specific entitlement or verify your employer's fund
+                  terms — a licensed labour law advocate can help with that.
                 </p>
               </CardContent>
             </Card>
@@ -226,7 +227,7 @@ export default function DebtRecoveryLegalProcedurePakistan() {
           <div className="text-center mt-8">
             <Button asChild size="lg" className="cta-try-free">
               <a href={site.appUrl} target="_blank" rel="noopener noreferrer">
-                Ask Wakeel about recovering a debt — free
+                Ask Wakeel about gratuity or PF — free
               </a>
             </Button>
           </div>
@@ -263,7 +264,8 @@ export default function DebtRecoveryLegalProcedurePakistan() {
           <h2 className="text-lg font-semibold text-foreground mb-4">Sources — check these directly to verify</h2>
           <ul className="space-y-2">
             {[
-              { label: "Order 37 CPC, 1908 — iPleaders", href: "https://blog.ipleaders.in/order-37-cpc-1908/" },
+              { label: "Gratuity Law in Pakistan — WageIndicator", href: "https://wageindicator.org/en-pk/work-in-pakistan/labour-law/social-security/gratuity-law-in-pakistan/" },
+              { label: "Gratuity and Provident Fund Rules in Pakistan — Pakera", href: "https://pakera.pk/gratuity-provident-fund-pakistan/" },
             ].map((s) => (
               <li key={s.href}>
                 <a href={s.href} target="_blank" rel="noopener noreferrer nofollow" className="text-sm text-primary hover:underline">
@@ -280,20 +282,20 @@ export default function DebtRecoveryLegalProcedurePakistan() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/article/section-489f-ppc-cheque-dishonour-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 489-F PPC: Cheque Dishonour</p>
+            <Link href="/journal/article/resignation-vs-termination-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Resignation vs Termination: Legal Differences in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/civil-suit-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to File a Civil Suit in Pakistan</p>
+            <Link href="/journal/article/notice-period-employment-law-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Notice Period in Pakistan: Employee and Employer Rights</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/draft-legal-contract-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Draft a Legal Contract in Pakistan</p>
+            <Link href="/journal/article/salary-not-paid-employee-rights-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Salary Not Paid: Employee Legal Rights in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
-            <Link href="/journal/article/how-to-send-a-legal-notice-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Send a Legal Notice in Pakistan</p>
+            <Link href="/journal/article/wrongful-termination-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Wrongful Termination in Pakistan</p>
               <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
             </Link>
           </div>
@@ -303,10 +305,10 @@ export default function DebtRecoveryLegalProcedurePakistan() {
       {/* CTA */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
-          <h2 className={sectionHeading}>Trying to recover money someone owes you?</h2>
+          <h2 className={sectionHeading}>Unsure about your retirement benefit entitlement?</h2>
           <p className="text-muted-foreground">
-            Ask Wakeel which route fits your documentation — then verify with a licensed advocate
-            before you file.
+            Ask Wakeel how gratuity and provident fund rules generally work — then verify with a
+            licensed advocate.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button asChild size="lg" className="cta-try-free">

@@ -58,8 +58,8 @@ const schema = [
       "How Shia family law works in Pakistan — statutory recognition, how Shia inheritance differs structurally from Sunni inheritance, and the mut'ah marriage distinction.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
-    datePublished: "2026-09-03",
-    dateModified: "2026-09-03",
+    datePublished: "2026-08-21",
+    dateModified: "2026-08-21",
     mainEntityOfPage: `${site.url}/journal/article/shia-family-law-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Revolutionising Inheritance Laws for the Shia Sect: Protection of Childless Widows — LUMS SAHSOL", url: "https://sahsol.lums.edu.pk/sites/default/files/2024-05/Revolutionising%20Inheritance%20Laws%20for%20the%20Shia%20Sect%20A%20Case%20for%20the%20Protection%20of%20Childless%20Widows%20of%20Shia%20Husbands.pdf" },
@@ -115,7 +115,7 @@ export default function ShiaFamilyLawPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published September 3, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 21, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Shia Family Law in Pakistan
           </h1>
