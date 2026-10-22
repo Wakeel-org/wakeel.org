@@ -1,9 +1,15 @@
 import React from 'react';
 import Layout from '../src/components/Layout';
+import MarketingSEO from '../src/components/MarketingSEO';
 
 const TermsOfService = () => {
   return (
     <Layout>
+      <MarketingSEO
+        title="Terms of Service | Wakeel.org"
+        description="Read the Terms of Service for Wakeel.org, Pakistan's AI legal assistant: how you can use the platform, your responsibilities, and our commitments to you."
+        path="/terms"
+      />
       <div className="pt-16 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
@@ -16,7 +22,7 @@ const TermsOfService = () => {
         
         <div className="prose prose-lg dark:prose-invert max-w-4xl mx-auto text-muted-foreground">
           <div className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">Last Updated: {new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">Last Updated: October 22, 2026</h2>
             <p className="mb-4">
               Welcome! Before you start using Wakeel.org, we need to go over some important rules and agreements. This document is called "Terms of Service," and it's basically a contract between you and us. We know legal documents can be boring and confusing, so we've written this in simple, clear language that anyone can understand - whether you're 18 or 80, a law student or a Supreme Court judge!
             </p>

@@ -1282,18 +1282,16 @@ export const articles = [
   },
   {
     slug: "best-ai-legal-assistant-pakistan-complete-guide",
-    title: "Best AI Legal Assistant for Pakistan: Complete Guide",
-    excerpt:
-      "The evaluation criteria that actually matter when choosing an AI legal assistant in Pakistan — source-awareness, bilingual support, and data handling.",
+    title: "How to Choose an AI Legal Assistant in Pakistan: A Test-It-Yourself Checklist",
+    excerpt: "How to test and choose an AI legal assistant in Pakistan yourself: four criteria, simple test questions to try, the red flags to walk away from, and how to check its answers against the Pakistan Code.",
     category: "AI & the Law",
     readTime: "6 min read",
     publishedAt: "2026-05-31",
   },
   {
     slug: "best-ai-tools-for-lawyers-pakistan",
-    title: "Best AI Tools for Lawyers in Pakistan",
-    excerpt:
-      "The categories of AI tools genuinely useful for a Pakistani lawyer's practice — legal research, document review and drafting, intake, and case management.",
+    title: "AI Tools for Lawyers in Pakistan: Research, Drafting, Intake and Practice Management",
+    excerpt: "For advocates and law firms: the categories of AI tools useful in a Pakistani legal practice (research, drafting, intake and case management) and how to use them without risking professional duties.",
     category: "AI & the Law",
     readTime: "6 min read",
     publishedAt: "2026-06-12",
@@ -1525,7 +1523,7 @@ export const articles = [
   },
   {
     slug: "false-fir-pakistan-legal-remedies",
-    title: "False FIR in Pakistan: Legal Remedies and Consequences",
+    title: "False FIR Against You in Pakistan: Quashing and Legal Remedies",
     excerpt:
       "The legal routes available for a false FIR in Pakistan — quashing under Section 561-A CrPC, and prosecuting false information under Sections 182 and 211 PPC.",
     category: "Legal Help",
@@ -1552,9 +1550,8 @@ export const articles = [
   },
   {
     slug: "how-to-complete-fir-registration-pakistan",
-    title: "How to Complete FIR Registration in Pakistan",
-    excerpt:
-      "What a properly completed FIR must actually contain under Section 154 CrPC, and the checklist to confirm before you leave the police station.",
+    title: "FIR Checklist Pakistan: What to Bring and What to Verify Before You Sign",
+    excerpt: "A practical FIR checklist for Pakistan: the documents and evidence to bring, what a complete FIR must record, and what to check before you sign.",
     category: "Legal Help",
     readTime: "6 min read",
     publishedAt: "2026-01-20",
@@ -1570,27 +1567,24 @@ export const articles = [
   },
   {
     slug: "fir-registration-step-by-step-guide-pakistan",
-    title: "FIR Registration in Pakistan: A Step-by-Step Guide",
-    excerpt:
-      "A numbered, practical walkthrough of registering an FIR in Pakistan under Section 154 CrPC — from the right station to what happens after registration.",
+    title: "At the Police Station: What Happens When You File an FIR in Pakistan",
+    excerpt: "A step-by-step walkthrough of what happens inside a Pakistani police station when you report a crime: who you speak to, how your statement is written and read back, and what you leave with.",
     category: "Legal Help",
     readTime: "7 min read",
     publishedAt: "2026-03-22",
   },
   {
     slug: "ai-vs-lawyer-whats-right-for-you-pakistan",
-    title: "AI vs Lawyer in Pakistan: What's Right for You?",
-    excerpt:
-      "A cost-and-value comparison of AI legal tools versus hiring a lawyer in Pakistan — what each actually costs, what free legal aid exists, and how to decide.",
+    title: "AI or a Lawyer in Pakistan? A Cost and Budget Guide",
+    excerpt: "Deciding on budget? What AI legal tools and lawyers cost in Pakistan, where free legal aid is available, and how to spend a limited budget wisely on a legal problem.",
     category: "AI & the Law",
     readTime: "6 min read",
     publishedAt: "2026-04-16",
   },
   {
     slug: "what-you-must-know-fir-registration-pakistan",
-    title: "What You Must Know About FIR Registration in Pakistan",
-    excerpt:
-      "Common misconceptions about FIR registration in Pakistan, corrected — plus the rights every citizen actually has under Section 154 CrPC.",
+    title: "FIR Myths vs Facts in Pakistan: What the Law Actually Says",
+    excerpt: "Six common myths about FIRs in Pakistan, from 'only the victim can file' to 'an FIR means instant arrest', corrected against the CrPC, plus the rights every informant has.",
     category: "Legal Help",
     readTime: "6 min read",
     publishedAt: "2026-05-29",
@@ -1678,7 +1672,7 @@ export const articles = [
   },
   {
     slug: "wrongful-termination-pakistan",
-    title: "Wrongful Termination in Pakistan: Know Your Rights",
+    title: "Wrongful Termination in Pakistan: How to Challenge an Unfair Dismissal",
     excerpt:
       "What counts as wrongful termination under the Standing Orders Ordinance 1968 and Industrial Relations Act 2012 — notice, misconduct inquiries, retrenchment rules, and how to challenge an unlawful dismissal.",
     category: "Legal Help",
@@ -1714,9 +1708,8 @@ export const articles = [
   },
   {
     slug: "ai-vs-lawyer-pakistan",
-    title: "Will AI Replace Lawyers? AI vs Hiring a Lawyer in Pakistan",
-    excerpt:
-      "A clear, honest comparison of what AI legal tools do well, what only a licensed advocate can do, and when to use each.",
+    title: "AI vs Hiring a Lawyer in Pakistan: What Each Can and Can't Do",
+    excerpt: "Will AI replace lawyers in Pakistan? A capability comparison of what AI legal tools do well, what only a licensed advocate can legally do, how accurate AI is, and when to use each.",
     category: "AI & the Law",
     readTime: "6 min read",
     publishedAt: "2026-06-28",
@@ -1741,9 +1734,8 @@ export const articles = [
   },
   {
     slug: "how-to-register-fir-pakistan",
-    title: "How to Register an FIR in Pakistan",
-    excerpt:
-      "A plain-language, fact-checked walkthrough of FIR registration under Section 154 CrPC — what officers must legally do, and what to do if they refuse.",
+    title: "How to Register an FIR in Pakistan: Complete Guide",
+    excerpt: "The complete guide to registering an FIR in Pakistan: what an FIR is, cognizable vs non-cognizable offences, the five stages from incident to investigation, and where to go next.",
     category: "Legal Help",
     readTime: "7 min read",
     publishedAt: "2026-05-03",
@@ -1966,7 +1958,7 @@ export const articles = [
   },
   {
     slug: "child-custody-laws-pakistan",
-    title: "Child Custody Laws in Pakistan",
+    title: "Child Custody Laws in Pakistan: Guardian and Wards Act, Hizanat and the Welfare Test",
     excerpt:
       "How child custody works in Pakistan under the Guardian and Wards Act 1890 — the welfare-of-the-minor standard, the hizanat principle, and how guardianship and custody can split between parents.",
     category: "Legal Help",
@@ -2029,16 +2021,15 @@ export const articles = [
   },
   {
     slug: "best-ai-lawyer-pakistan",
-    title: "Best AI Lawyer in Pakistan (2026 Guide)",
-    excerpt:
-      "What people actually mean by \"AI lawyer,\" the criteria that separate a genuinely useful Pakistan-specific legal AI assistant from a generic chatbot, and how to evaluate your options.",
+    title: "Is There an AI Lawyer in Pakistan? What 'AI Lawyer' Really Means (2026)",
+    excerpt: "Searching for an 'AI lawyer' in Pakistan? No AI can practise law. Here's what an AI legal assistant can and can't legally do for you, task by task, and how it fits alongside an advocate.",
     category: "AI & the Law",
     readTime: "6 min read",
     publishedAt: "2026-08-26",
   },
   {
     slug: "fir-status-check-pakistan",
-    title: "How to Check FIR Status in Pakistan",
+    title: "How to Check FIR Status Online in Pakistan (After Registration)",
     excerpt:
       "A simple guide to checking your FIR status online in Pakistan — which portal to use for Punjab, Sindh, and other provinces, and what information you need.",
     category: "Legal Help",
@@ -2047,9 +2038,8 @@ export const articles = [
   },
   {
     slug: "police-refuse-fir-what-to-do-pakistan",
-    title: "Police Refuse to Register FIR: What Can You Do?",
-    excerpt:
-      "A plain-language, step-by-step guide for what to do when police in Pakistan refuse to register your FIR — escalating to the SHO, the SP, and the Justice of Peace.",
+    title: "Police Won't Register Your FIR in Pakistan? A 4-Step Escalation Path",
+    excerpt: "Police refused your FIR? Follow the escalation path in Pakistan: a written application to the SHO, then the SP or DPO, then a Section 22-A/22-B CrPC petition to the Justice of the Peace, or a private complaint.",
     category: "Legal Help",
     readTime: "6 min read",
     publishedAt: "2026-08-28",
@@ -2155,9 +2145,8 @@ export const articles = [
   },
   {
     slug: "section-154-crpc-fir-registration-law-pakistan",
-    title: "Section 154 CrPC: FIR Registration Law in Pakistan",
-    excerpt:
-      "The statutory basis for every FIR in Pakistan — what Section 154 of the CrPC requires, why registration is mandatory, and the one legitimate ground for refusal.",
+    title: "Section 154 CrPC Explained: The Legal Duty to Register an FIR in Pakistan",
+    excerpt: "What Section 154 CrPC requires, how it differs from Section 155 for non-cognizable cases, why courts treat registration as mandatory, and what Sughran Bibi (PLD 2018 SC 595) says about second FIRs.",
     category: "Legal Help",
     readTime: "5 min read",
     publishedAt: "2026-06-24",
@@ -2473,7 +2462,7 @@ export const articles = [
 export const guides = [
   {
     slug: "fir-refused-pakistan",
-    title: "What to Do if Police Refuse to Register an FIR in Pakistan",
+    title: "FIR Refused in Pakistan? Organise Your Case Before You Escalate",
     description:
       "Educational guidance on FIR refusal in Pakistan, possible complaint paths, and how Wakeel.org can help you understand next steps.",
     problem:
@@ -5033,7 +5022,7 @@ export const guides = [
       "What are my rights as a worker in France?",
       "Explain business and family law in France.",
     ],
-    related: ["/journal/legal-issues-global/germany-legal-guide", "/spain-legal-guide", "/journal/legal-issues-global/international-employment-law"],
+    related: ["/journal/legal-issues-global/germany-legal-guide", "/journal/legal-issues-global/spain-southern-europe-legal-guide", "/journal/legal-issues-global/international-employment-law"],
     body: [
       {
         heading: "The Napoleonic Code, still in force, still shaping civil law globally",
@@ -5213,7 +5202,7 @@ export const guides = [
       "What are my rights in Indonesia?",
       "Explain employment and business law in Indonesia.",
     ],
-    related: ["/journal/legal-issues-global/malaysia-legal-guide", "/thailand-legal-guide", "/journal/legal-issues-global/international-employment-law"],
+    related: ["/journal/legal-issues-global/malaysia-legal-guide", "/journal/legal-issues-global/thailand-southeast-asia-legal-guide", "/journal/legal-issues-global/international-employment-law"],
     body: [
       {
         heading: "A Dutch-colonial civil-law base, with Pancasila as the constitutional anchor",
@@ -5595,7 +5584,7 @@ export const guides = [
   },
   {
     slug: "fir-registration-pakistan",
-    title: "How to Register an FIR in Pakistan",
+    title: "FIR Registration Help in Pakistan: Prepare Your Statement with Wakeel",
     description:
       "Plain-language guide on filing a police complaint and registering an FIR in Pakistan, plus what to prepare before you go to the station.",
     problem:
@@ -5649,7 +5638,7 @@ export const guides = [
   },
   {
     slug: "child-custody-pakistan",
-    title: "Child Custody Law in Pakistan",
+    title: "Child Custody Help in Pakistan: Prepare for Your Family Court Case",
     description:
       "Educational overview of how child custody matters are typically approached in Pakistan, including guardianship and welfare considerations.",
     problem:

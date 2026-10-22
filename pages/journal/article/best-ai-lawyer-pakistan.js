@@ -22,47 +22,60 @@ const framework = [
 ];
 
 const criteria = [
-  { name: "Pakistani-law grounding", detail: "Does it answer with reference to actual Pakistani statutes and sections, or generic legal knowledge?" },
-  { name: "English + Urdu support", detail: "Can you genuinely ask and receive answers in Urdu, not just English with occasional Urdu words?" },
-  { name: "Document analysis", detail: "Can it read and explain a real document you upload — a contract, notice, or lease — not just answer typed questions?" },
-  { name: "Source transparency", detail: "Does it show which law, section, or source an answer is based on, so you can verify it yourself?" },
-  { name: "Verification prompts", detail: "Does it clearly remind you to confirm with a licensed advocate before you rely on an answer for something consequential?" },
-  { name: "Free access", detail: "Can you actually use it without paying first, or is meaningful use locked behind a paywall?" },
+  {
+    "name": "Explain a law or section",
+    "detail": "Yes. A Pakistan-grounded assistant can explain what a statute or section says in plain English or Urdu."
+  },
+  {
+    "name": "Read a notice, contract or lease",
+    "detail": "Yes, as a first read. It can summarise and flag clauses to ask about. A lawyer should confirm anything you'll act on."
+  },
+  {
+    "name": "Prepare you for a consultation",
+    "detail": "Yes. It can organise facts into a timeline and list questions and documents to bring."
+  },
+  {
+    "name": "Give advice on your specific case",
+    "detail": "No. Advice that you rely on should come from an advocate who has reviewed your facts and carries professional responsibility."
+  },
+  {
+    "name": "File, sign or appear in court",
+    "detail": "No. Only advocates enrolled with a Bar Council under the Legal Practitioners and Bar Councils Act, 1973 can represent you."
+  },
+  {
+    "name": "Negotiate or send legal notices on your behalf",
+    "detail": "No. A lawyer, or you yourself, has to do this."
+  }
 ];
 
 const faqs = [
   {
-    question: "Is there a real AI lawyer in Pakistan?",
-    answer:
-      "No — no AI tool is licensed to practice law in Pakistan or can represent you in court. What exists are AI legal assistants that can explain Pakistani law, analyze documents, and help you prepare before seeing a licensed advocate. \"AI lawyer\" is a common but technically inaccurate way people search for this category.",
+    "question": "Is there a real AI lawyer in Pakistan?",
+    "answer": "No. In Pakistan only advocates enrolled with a Bar Council can practise law and represent clients. Tools sold as 'AI lawyers' are AI legal assistants that explain law and help you prepare."
   },
   {
-    question: "What should I look for in an AI legal assistant in Pakistan?",
-    answer:
-      "Grounding in actual Pakistani statutes (not generic legal knowledge), genuine English and Urdu support, the ability to analyze uploaded documents, transparency about its sources, and honest reminders to verify important answers with a licensed advocate.",
+    "question": "Is it legal to use an AI legal assistant in Pakistan?",
+    "answer": "Yes. Using an AI tool to understand law or prepare documents for yourself is lawful. The tool cannot give you representation or professional legal services."
   },
   {
-    question: "Can ChatGPT or Gemini act as an AI lawyer for Pakistan?",
-    answer:
-      "They can discuss law generally, but they aren't grounded in Pakistani law specifically and can confidently cite the wrong section, the wrong jurisdiction, or an outdated version of a statute. A Pakistan-specific legal AI tool is generally more reliable for Pakistani legal questions.",
+    "question": "Who is responsible if an AI legal answer is wrong?",
+    "answer": "Generally you are, which is why AI answers should be verified. An advocate owes professional duties to a client; an AI tool does not."
   },
   {
-    question: "Is Wakeel.org free to use?",
-    answer:
-      "Wakeel.org has a free plan, alongside paid Student, Professional, and Organization tiers, and is available on Android, iOS, and web.",
+    "question": "What is the closest thing to an AI lawyer I can use?",
+    "answer": "A Pakistan-grounded AI legal assistant that cites statutes and works in Urdu, used alongside an advocate for anything consequential. To compare specific apps, see our best AI legal apps guide."
   },
   {
-    question: "Can an AI legal assistant replace hiring a lawyer in Pakistan?",
-    answer:
-      "No, not for anything that requires representation, filing, or a binding legal judgment call. An AI legal assistant is best used to understand your situation and prepare before you see a lawyer, not as a substitute for one — see our comparison of AI help versus hiring a real lawyer for a fuller breakdown.",
-  },
+    "question": "Is Wakeel.org free to use?",
+    "answer": "Wakeel.org has a free plan, alongside paid Student, Professional and Organization tiers, and is available on Android, iOS and web."
+  }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Best AI Lawyer in Pakistan (2026 Guide)",
+    headline: "Is There an AI Lawyer in Pakistan? What 'AI Lawyer' Really Means (2026)",
     description:
       "What people actually mean by \"AI lawyer,\" the criteria that separate a genuinely useful Pakistan-specific legal AI assistant from a generic chatbot, and how to evaluate your options.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
@@ -89,7 +102,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Best AI Lawyer in Pakistan (2026 Guide)",
+        name: "Is There an AI Lawyer in Pakistan? What 'AI Lawyer' Really Means (2026)",
         item: `${site.url}/journal/article/best-ai-lawyer-pakistan`,
       },
     ],
@@ -97,20 +110,20 @@ const schema = [
 ];
 
 const keywords = [
-  "best ai lawyer pakistan",
   "ai lawyer pakistan",
-  "ai legal assistant pakistan",
-  "pakistan legal ai comparison",
-  "ai lawyer vs real lawyer pakistan",
-  "wakeel ai legal assistant",
+  "is there an ai lawyer in pakistan",
+  "can ai be a lawyer pakistan",
+  "ai lawyer urdu",
+  "what can ai lawyer do",
+  "online ai lawyer pakistan"
 ].join(", ");
 
 export default function BestAiLawyerPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Best AI Lawyer in Pakistan (2026 Guide)"
-        description="What people actually mean by 'AI lawyer,' the criteria that separate a genuinely useful Pakistan-specific legal AI assistant from a generic chatbot, and how to evaluate your options."
+        title="Is There an AI Lawyer in Pakistan? What 'AI Lawyer' Really Means (2026)"
+        description="Searching for an 'AI lawyer' in Pakistan? No AI can practise law. Here's what an AI legal assistant can and can't legally do for you, task by task, and how it fits alongside an advocate."
         path="/journal/article/best-ai-lawyer-pakistan"
         schema={schema}
         keywords={keywords}
@@ -122,7 +135,7 @@ export default function BestAiLawyerPakistan() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>AI & the Law · Published August 26, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Best AI Lawyer in Pakistan
+            Is There an AI Lawyer in Pakistan?
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             No AI tool is actually a lawyer — here's what "AI lawyer" really means, what to look
@@ -138,12 +151,11 @@ export default function BestAiLawyerPakistan() {
             <CardContent className="p-6 space-y-3">
               <p className="text-sm font-semibold text-primary">Quick answer</p>
               <p className="text-muted-foreground leading-relaxed">
-                Nothing marketed as an "AI lawyer" in Pakistan is a licensed lawyer — what you're
-                actually choosing between is <strong>AI legal assistants</strong>. The best ones for
-                Pakistan are grounded in actual Pakistani statutes, work in both English and Urdu,
-                can analyze real documents you upload, cite their sources, and remind you to verify
-                important answers with a licensed advocate. Judge any tool — Wakeel.org included —
-                against those criteria rather than marketing claims.
+                No. There is no AI lawyer in Pakistan. Only advocates enrolled with a <strong>Bar
+                Council</strong> can practise law, sign filings or appear in court. What exists are{" "}
+                <strong>AI legal assistants</strong>, which can explain Pakistani law, read documents and
+                help you prepare, but cannot represent you or take responsibility for advice. Use one to
+                understand and prepare, and use an advocate to act.
               </p>
             </CardContent>
           </Card>
@@ -179,14 +191,14 @@ export default function BestAiLawyerPakistan() {
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className={sectionHeading}>Six things worth checking before you trust any of them</h2>
+            <h2 className={sectionHeading}>What an 'AI lawyer' can and can't do for you</h2>
           </div>
           <div className="overflow-x-auto rounded-lg border-2 border-foreground/15 bg-card">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b-2 border-foreground/15 bg-muted/60 text-left">
-                  <th className="px-4 py-3 font-semibold">Criterion</th>
-                  <th className="px-4 py-3 font-semibold">What to check</th>
+                  <th className="px-4 py-3 font-semibold">Task</th>
+                  <th className="px-4 py-3 font-semibold">Can an AI assistant do it?</th>
                 </tr>
               </thead>
               <tbody>
@@ -293,25 +305,25 @@ export default function BestAiLawyerPakistan() {
       </section>
 
       {/* Related reading */}
-      <section className="bg-muted/40 py-16 sm:py-20">
+      <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             <Link href="/journal/article/best-ai-legal-apps-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
               <p className="font-semibold text-sm group-hover:text-primary transition-colors">Best AI Legal Apps in Pakistan (2026)</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="text-xs text-muted-foreground mt-1">Named apps compared side by side</p>
+            </Link>
+            <Link href="/journal/article/best-ai-legal-assistant-pakistan-complete-guide" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Choose an AI Legal Assistant</p>
+              <p className="text-xs text-muted-foreground mt-1">A test-it-yourself evaluation checklist</p>
             </Link>
             <Link href="/journal/article/ai-vs-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI vs. Lawyer: Which Is Right for You in Pakistan?</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI vs Hiring a Lawyer: What Each Can and Can't Do</p>
+              <p className="text-xs text-muted-foreground mt-1">A capability comparison</p>
             </Link>
-            <Link href="/journal/article/ai-legal-research-tools-lawyers-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI Legal Research Tools for Lawyers in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/journal/article/wakeel-vs-pakistanlawbot" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Wakeel.org vs. PakistanLawBot</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/best-ai-tools-for-lawyers-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI Tools for Lawyers in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">For advocates and law firms</p>
             </Link>
           </div>
         </div>

@@ -158,8 +158,8 @@ export default function AIvsLawyerPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="AI vs Hiring a Lawyer in Pakistan"
-        description="Will AI replace lawyers in Pakistan? An honest comparison of what AI legal tools do well, what only a licensed advocate can do, and when to use each."
+        title="AI vs Hiring a Lawyer in Pakistan: What Each Can and Can't Do"
+        description="Will AI replace lawyers in Pakistan? A capability comparison of what AI legal tools do well, what only a licensed advocate can legally do, how accurate AI is, and when to use each."
         path="/journal/article/ai-vs-lawyer-pakistan"
         schema={schema}
         keywords={keywords}
@@ -414,6 +414,31 @@ export default function AIvsLawyerPakistan() {
                 {l.label}
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related reading */}
+      <section className="bg-background py-16 sm:py-20">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related guides</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Link href="/journal/article/ai-vs-lawyer-whats-right-for-you-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI or a Lawyer? A Cost and Budget Guide</p>
+              <p className="text-xs text-muted-foreground mt-1">Fees, free legal aid and when the cost is worth it</p>
+            </Link>
+            <Link href="/journal/article/best-ai-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Is There an AI Lawyer in Pakistan?</p>
+              <p className="text-xs text-muted-foreground mt-1">What 'AI lawyer' can legally mean</p>
+            </Link>
+            <Link href="/journal/article/best-ai-legal-apps-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Best AI Legal Apps in Pakistan (2026)</p>
+              <p className="text-xs text-muted-foreground mt-1">Named apps compared side by side</p>
+            </Link>
+            <Link href="/journal/article/best-ai-legal-assistant-pakistan-complete-guide" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Choose an AI Legal Assistant</p>
+              <p className="text-xs text-muted-foreground mt-1">A test-it-yourself evaluation checklist</p>
+            </Link>
           </div>
         </div>
       </section>

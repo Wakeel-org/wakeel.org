@@ -18,12 +18,12 @@ const myths = [
   { myth: "\"Police can refuse if they think it's a 'civil matter.'\"", truth: "For a genuinely cognizable offence, that judgment call isn't the officer's to make at the registration stage. Section 154 CrPC makes registration mandatory once the information discloses a cognizable offence — whether it's ultimately proven is a question for investigation and trial, not a reason to refuse recording it." },
   { myth: "\"You need to know the exact PPC section to file an FIR.\"", truth: "You don't. You report what happened in your own words; the police officer is responsible for identifying and recording the applicable section(s) of law based on your account." },
   { myth: "\"An FIR automatically means someone will be arrested immediately.\"", truth: "Registration and arrest are two separate steps. Registration starts investigation; arrest depends on the nature of the offence, the evidence, and whether it's bailable or non-bailable — it isn't an automatic next step." },
-  { myth: "\"If police refuse, there's nothing more you can do.\"", truth: "There is: applying to the Ex-Officio Justice of the Peace under Sections 22-A/22-B CrPC to direct registration, or filing a private complaint directly with a Magistrate under Section 200 CrPC." },
-  { myth: "\"You have to file at the exact station where the crime happened, no exceptions.\"", truth: "That's the general rule, but in urgent situations any station can register a \"Zero FIR\" and transfer it to the station with jurisdiction, rather than turning you away entirely." },
+  { myth: "\"If police refuse, there's nothing more you can do.\"", truth: "There is a defined legal route: written escalation to senior police officers, an application to the Ex-Officio Justice of the Peace under Sections 22-A/22-B CrPC, or a private complaint to a Magistrate under Section 200 CrPC. Our escalation guide covers each step." },
+  { myth: "\"Only the victim can file an FIR.\"", truth: "Section 154 CrPC speaks of information given by an informant, not only the victim. A relative, a witness or anyone with knowledge of a cognizable offence can report it." },
 ];
 
 const mustKnowRights = [
-  "You're entitled to a free copy of the FIR as registered — this isn't a favour, it's your legal right under Section 154 CrPC.",
+  "You're entitled to a copy of the FIR free of cost. It isn't a favour.",
   "You have the right to have the written FIR read back to you before you sign or give a thumb impression.",
   "You can escalate a refusal in writing through the Justice of the Peace or a private complaint — you're not stuck if the station says no.",
   "There's no fee for registering an FIR — if anyone at the station suggests otherwise, that's worth reporting to a senior officer.",
@@ -31,39 +31,38 @@ const mustKnowRights = [
 
 const faqs = [
   {
-    question: "What's the biggest misconception about FIR registration in Pakistan?",
-    answer:
-      "Probably that police have discretion to refuse a cognizable offence because they consider it a \"civil matter\" or think the complaint is weak. Under Section 154 CrPC, registration is mandatory once the information discloses a cognizable offence — the strength of the case is for investigation and trial to determine, not a reason to withhold registration.",
+    "question": "What's the biggest myth about FIRs in Pakistan?",
+    "answer": "Probably that police can decline a cognizable complaint because they think it's weak or a 'civil matter'. Under Section 154 CrPC, recording information about a cognizable offence is a duty. Whether it's true is tested in investigation and trial."
   },
   {
-    question: "Do I need a lawyer to file an FIR?",
-    answer:
-      "No — any citizen can report a cognizable offence directly to the police. A lawyer becomes genuinely useful if the police refuse to register it, if the matter is legally complex, or once the case moves toward trial.",
+    "question": "Can someone other than the victim file an FIR?",
+    "answer": "Yes. Any person with information about a cognizable offence can report it, such as a family member or a witness. The informant signs the information they give."
   },
   {
-    question: "Does registering an FIR mean the accused will be arrested right away?",
-    answer:
-      "No. Registration begins the investigation process; arrest is a separate decision that depends on the offence, the evidence gathered, and whether it's classified as bailable or non-bailable. The two shouldn't be assumed to happen automatically together.",
+    "question": "Do I have to know which PPC section applies?",
+    "answer": "No. Describe what happened in your own words. The officer identifies the applicable sections of the Pakistan Penal Code."
   },
   {
-    question: "What can I do if police still refuse to register my FIR?",
-    answer:
-      "Apply to the Ex-Officio Justice of the Peace under Sections 22-A/22-B CrPC, which can direct the police to register it, or file a private complaint directly with a Magistrate under Section 200 CrPC. Both routes exist specifically for this situation.",
+    "question": "Does an FIR mean the accused will be arrested immediately?",
+    "answer": "No. Arrest is a separate decision that depends on the offence, the evidence and whether it is bailable. Registration only starts the investigation."
   },
   {
-    question: "Can Wakeel.org help me understand my rights around FIR registration?",
-    answer:
-      "Wakeel.org can explain what the law actually requires, correct common misconceptions in plain English or Urdu, and help you understand your options if a station refuses to act. It cannot file anything for you or guarantee an outcome — for escalation, a licensed advocate is the right next step.",
+    "question": "Is there any fee for registering an FIR?",
+    "answer": "No. Registering an FIR is free, and so is your copy. A request for money is misconduct you can report to a senior officer."
   },
+  {
+    "question": "Can Wakeel.org check whether something I've heard about FIRs is true?",
+    "answer": "Yes. Wakeel can explain what the CrPC actually says in plain English or Urdu. For decisions about your own case, speak to a licensed advocate."
+  }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "What You Must Know About FIR Registration in Pakistan",
+    headline: "FIR Myths vs Facts in Pakistan: What the Law Actually Says",
     description:
-      "Common misconceptions about FIR registration in Pakistan, corrected — plus the rights every citizen actually has under Section 154 CrPC.",
+      "Six common myths about FIRs in Pakistan, from 'only the victim can file' to 'an FIR means instant arrest', corrected against the CrPC, plus the rights every informant has.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-29",
@@ -93,7 +92,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "What You Must Know About FIR Registration in Pakistan",
+        name: "FIR Myths vs Facts in Pakistan: What the Law Actually Says",
         item: `${site.url}/journal/article/what-you-must-know-fir-registration-pakistan`,
       },
     ],
@@ -101,20 +100,20 @@ const schema = [
 ];
 
 const keywords = [
-  "fir registration myths pakistan",
+  "fir myths pakistan",
+  "fir facts pakistan",
+  "who can file fir pakistan",
   "fir rights pakistan",
-  "what you must know fir pakistan",
-  "fir refusal pakistan",
-  "cognizable offence pakistan",
-  "section 154 crpc rights",
+  "is fir free pakistan",
+  "fir arrest myth"
 ].join(", ");
 
 export default function WhatYouMustKnowFirRegistrationPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="What You Must Know About FIR Registration in Pakistan"
-        description="Common misconceptions about FIR registration in Pakistan, corrected — plus the rights every citizen actually has under Section 154 CrPC."
+        title="FIR Myths vs Facts in Pakistan: What the Law Actually Says"
+        description="Six common myths about FIRs in Pakistan, from 'only the victim can file' to 'an FIR means instant arrest', corrected against the CrPC, plus the rights every informant has."
         path="/journal/article/what-you-must-know-fir-registration-pakistan"
         schema={schema}
         keywords={keywords}
@@ -128,7 +127,7 @@ export default function WhatYouMustKnowFirRegistrationPakistan() {
             Legal Help · Published May 29, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            What You Must Know About FIR Registration in Pakistan
+            FIR Myths vs Facts in Pakistan: What the Law Actually Says
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Most of the friction people run into at a police station comes from believing something
@@ -161,7 +160,7 @@ export default function WhatYouMustKnowFirRegistrationPakistan() {
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className={sectionHeading}>Six things people get wrong about FIRs</h2>
+            <h2 className={sectionHeading}>Myth vs fact: six FIR misconceptions</h2>
           </div>
           <div className="space-y-4">
             {myths.map((m) => (
@@ -290,23 +289,23 @@ export default function WhatYouMustKnowFirRegistrationPakistan() {
       {/* Related reading */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related FIR guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/article/fir-registration-step-by-step-guide-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Registration in Pakistan: A Step-by-Step Guide</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/how-to-register-fir-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan: Complete Guide</p>
+              <p className="text-xs text-muted-foreground mt-1">Start here: the full FIR journey in one page</p>
             </Link>
-            <Link href="/journal/article/how-to-complete-fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Complete FIR Registration in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/section-154-crpc-fir-registration-law-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 154 CrPC Explained</p>
+              <p className="text-xs text-muted-foreground mt-1">The legal duty to register, and what courts say</p>
             </Link>
-            <Link href="/journal/legal-issues-pakistan/fir-refused-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">What to Do if Police Refuse to Register an FIR</p>
-              <p className="text-xs text-muted-foreground mt-1">Guide · Wakeel Journal</p>
+            <Link href="/journal/article/police-refuse-fir-what-to-do-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Police Won't Register Your FIR? The Escalation Path</p>
+              <p className="text-xs text-muted-foreground mt-1">SHO → SP/DPO → Justice of the Peace</p>
             </Link>
-            <Link href="/legal-sources" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Our Approach to Legal Sources</p>
-              <p className="text-xs text-muted-foreground mt-1">How Wakeel grounds answers in Pakistani law</p>
+            <Link href="/journal/article/false-fir-pakistan-legal-remedies" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">False FIR Against You? Legal Remedies</p>
+              <p className="text-xs text-muted-foreground mt-1">For the accused: quashing and Sections 182/211 PPC</p>
             </Link>
           </div>
         </div>
