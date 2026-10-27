@@ -11,7 +11,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
@@ -57,9 +57,10 @@ const schema = [
     description:
       "The legal framework behind website terms and conditions in Pakistan — the Electronic Transactions Ordinance 2002, PECA's data provisions, and what terms should cover.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-30",
-    dateModified: "2026-07-30",
+    dateModified: "2026-09-07",
     mainEntityOfPage: `${site.url}/journal/article/website-terms-and-conditions-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "The Electronic Transactions Ordinance, 2002 — Pakistan Code", url: "https://pakistancode.gov.pk/pdffiles/administratordbc98dd49f2df3b1d07bb986dcceb9a3.pdf" },
@@ -115,7 +116,7 @@ export default function WebsiteTermsAndConditionsPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published July 30, 2026</p>
+          <p className={eyebrow}>Legal Help · Published July 30, 2026 · Updated September 7, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Terms and Conditions for Pakistani Websites
           </h1>

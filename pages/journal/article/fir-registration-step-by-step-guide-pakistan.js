@@ -9,7 +9,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const steps = [
@@ -81,9 +81,10 @@ const schema = [
     description:
       "A step-by-step walkthrough of what happens inside a Pakistani police station when you report a crime: who you speak to, how your statement is written and read back, and what you leave with.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-22",
-    dateModified: "2026-03-22",
+    dateModified: "2026-10-22",
     mainEntityOfPage: `${site.url}/journal/article/fir-registration-step-by-step-guide-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Code of Criminal Procedure, 1898 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lp-sg-jjjjjjjjjjjjj" },
@@ -147,8 +148,7 @@ export default function FirRegistrationStepByStepGuidePakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Legal Help · Published March 22, 2026
-          </p>
+            Legal Help · Published March 22, 2026 · Updated October 22, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             At the Police Station: What Happens When You File an FIR in Pakistan
           </h1>

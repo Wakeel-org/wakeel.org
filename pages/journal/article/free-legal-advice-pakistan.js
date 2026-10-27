@@ -17,7 +17,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const freeWithWakeel = [
@@ -128,8 +128,9 @@ const schema = [
     description:
       "How to get free and online legal help in Pakistan — free legal information with Wakeel.org plus government legal aid, helplines, bar associations, and legal aid NGOs.",
     url: `${site.url}/journal/article/free-legal-advice-pakistan`,
+    reviewedBy: reviewerSchema,
     datePublished: "2026-06-21",
-    dateModified: "2026-06-21",
+    dateModified: "2026-08-26",
   },
   {
     "@context": "https://schema.org",
@@ -185,8 +186,7 @@ export default function FreeLegalAdvicePakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
           <p className={eyebrow}>
-            Free legal help · Pakistan
-          </p>
+            Free legal help · Pakistan · Updated August 26, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Free &amp; online legal help in Pakistan
           </h1>

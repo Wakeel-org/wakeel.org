@@ -18,6 +18,16 @@ export const site = {
   contactEmail: "info@wakeel.org",
 };
 
+// Named reviewer entity used in Article schema (`reviewedBy`) and shown on
+// article pages. Deliberately a team label: do not add individual advocate
+// names, bar enrolment or credentials here until they are real and verifiable.
+export const reviewerSchema = {
+  "@type": "Person",
+  name: "Legal Team DIGIT",
+  jobTitle: "Legal content review",
+  worksFor: { "@type": "Organization", name: "Wakeel.org", url: site.url },
+};
+
 export const productLinks = [
   { label: "AI Legal Chat", href: "/features#ai-legal-chat" },
   { label: "Document Analysis", href: "/features#document-analysis" },

@@ -14,7 +14,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const commonCauses = [
@@ -88,9 +88,10 @@ const schema = [
     description:
       "Why NADRA biometric verification fails, how it affects SIM cards and bank accounts, and the practical steps to resolve it.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-07",
-    dateModified: "2026-08-07",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/nadra-biometric-verification-pakistan`,
   },
   {
@@ -142,8 +143,7 @@ export default function NadraBiometricVerificationPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Legal Help · Published August 7, 2026
-          </p>
+            Legal Help · Published August 7, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             NADRA Biometric Verification Issues in Pakistan
           </h1>

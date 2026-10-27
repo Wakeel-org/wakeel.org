@@ -12,7 +12,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const facts = [
@@ -58,9 +58,10 @@ const schema = [
     description:
       "What Vani and Swara are, why they're criminal offences under Section 310-A of the Pakistan Penal Code, and what a woman's legal options are if she's being compelled into one.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-31",
-    dateModified: "2026-01-31",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/womens-rights-wani-swara-cases-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Prevention of Anti-Women Practices Act, 2011 — Punjab Commission on the Status of Women", url: "https://pcsw.punjab.gov.pk/prevention_of_anti_women_practices" },
@@ -117,8 +118,7 @@ export default function WomensRightsWaniSwaraCasesPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Legal Help · Published January 31, 2026
-          </p>
+            Legal Help · Published January 31, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Women's Rights in Wani and Swara Cases
           </h1>

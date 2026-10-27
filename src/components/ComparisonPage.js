@@ -4,7 +4,7 @@ import Layout from "./Layout";
 import MarketingSEO from "./MarketingSEO";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { site } from "../data/marketing";
+import { site, reviewerSchema } from "../data/marketing";
 import { cardBase, eyebrow, headingGradient, heroHeading, sectionHeading } from "../data/theme";
 
 // Wakeel.org capabilities are stated as verified facts (our own product).
@@ -79,6 +79,7 @@ const makeSchemas = (comparison, path, faqs) => [
     name: comparison.title,
     description: `${comparison.positioning} A factual comparison of Wakeel.org and ${comparison.competitor} for Pakistani legal help, based on publicly available information.`,
     url: `${site.url}${path}`,
+    reviewedBy: reviewerSchema,
     author: {
       "@type": "Person",
       name: "Majid Hussain Malik",

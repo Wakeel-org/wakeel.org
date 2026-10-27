@@ -14,7 +14,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const canDo = [
@@ -108,9 +108,10 @@ const schema = [
     description:
       "A practical guide to what AI-powered tools can and cannot do when reviewing contracts, agreements, and legal notices in Pakistan — what to check before uploading a document, and when you still need a licensed advocate.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-23",
-    dateModified: "2026-05-23",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/can-ai-review-legal-document-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Personal Data Protection Bill, 2023 (final draft) — Ministry of IT & Telecommunication", url: "https://moitt.gov.pk/SiteImage/Misc/files/Final%20Draft%20Personal%20Data%20Protection%20Bill%20May%202023.pdf" },
@@ -167,8 +168,7 @@ export default function CanAiReviewLegalDocumentPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            AI & the Law · Published May 23, 2026
-          </p>
+            AI & the Law · Published May 23, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Can AI Review a Legal Document in Pakistan?
           </h1>

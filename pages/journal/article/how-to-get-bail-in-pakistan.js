@@ -12,7 +12,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const concepts = [
@@ -66,9 +66,10 @@ const schema = [
     description:
       "How bail actually works in Pakistan under Sections 497 and 498 CrPC — bailable vs non-bailable offences, pre-arrest vs post-arrest bail, and the process for a bail application.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-28",
-    dateModified: "2026-01-28",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/how-to-get-bail-in-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Code of Criminal Procedure, 1898 — Pakistan Code (Ministry of Law and Justice)", url: "https://pakistancode.gov.pk/english/UY2FqaJw1-apaUY2Fqa-apaUY2Npa5lp-sg-jjjjjjjjjjjjj" },
@@ -124,8 +125,7 @@ export default function HowToGetBailInPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Legal Help · Published January 28, 2026
-          </p>
+            Legal Help · Published January 28, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Bail in Pakistan: How to Get Bail in a Criminal Case
           </h1>

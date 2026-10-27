@@ -11,7 +11,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const sections = [
@@ -52,9 +52,10 @@ const schema = [
     description:
       "The standard structure of a Non-Disclosure Agreement in Pakistan under the Contract Act 1872 — what to include, common weaknesses, and how to generate a first draft with Wakeel.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-20",
-    dateModified: "2026-06-20",
+    dateModified: "2026-09-07",
     mainEntityOfPage: `${site.url}/journal/article/nda-format-in-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Non-Disclosure Agreements for Startups in Pakistan: A Complete Guide — Startup.pk", url: "https://www.startup.pk/non-disclosure-agreements-for-startups-in-pakistan-a-complete-guide/" },
@@ -110,7 +111,7 @@ export default function NdaFormatInPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published June 20, 2026</p>
+          <p className={eyebrow}>Legal Help · Published June 20, 2026 · Updated September 7, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             NDA Format in Pakistan
           </h1>

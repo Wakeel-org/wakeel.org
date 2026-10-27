@@ -11,7 +11,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const steps = [
@@ -56,9 +56,10 @@ const schema = [
     description:
       "Police refused your FIR? Follow the escalation path in Pakistan: a written application to the SHO, then the SP or DPO, then a Section 22-A/22-B CrPC petition to the Justice of the Peace, or a private complaint.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-28",
-    dateModified: "2026-08-28",
+    dateModified: "2026-10-22",
     mainEntityOfPage: `${site.url}/journal/article/police-refuse-fir-what-to-do-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "22-A & 22-B — Office of the Advocate General, Government of Punjab", url: "https://advocategeneral.punjab.gov.pk/22A_22B" },
@@ -120,7 +121,7 @@ export default function PoliceRefuseFirWhatToDoPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published August 28, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 28, 2026 · Updated October 22, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Police Won't Register Your FIR in Pakistan? A 4-Step Escalation Path
           </h1>

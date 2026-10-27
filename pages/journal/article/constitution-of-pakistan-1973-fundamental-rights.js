@@ -14,7 +14,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const rights = [
@@ -99,9 +99,10 @@ const schema = [
     description:
       "A plain-language guide to the Fundamental Rights chapter of Pakistan's 1973 Constitution — what Articles 8 to 28 actually protect, what the 18th Amendment added, and how these rights get enforced.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-12",
-    dateModified: "2026-03-12",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/constitution-of-pakistan-1973-fundamental-rights`,
     citation: [
       { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
@@ -159,8 +160,7 @@ export default function ConstitutionFundamentalRights() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Law Study & Research · Published March 12, 2026
-          </p>
+            Law Study & Research · Published March 12, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Constitution of Pakistan 1973: Complete Guide to Fundamental Rights
           </h1>

@@ -11,7 +11,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
@@ -52,9 +52,10 @@ const schema = [
     description:
       "How power of attorney works in Pakistan under the Powers of Attorney Act 1882 — General vs Special POA, registration requirements, and how to generate a first draft with Wakeel.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-15",
-    dateModified: "2026-06-15",
+    dateModified: "2026-09-07",
     mainEntityOfPage: `${site.url}/journal/article/power-of-attorney-in-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Power of Attorney in Pakistan: The Powers of Attorney Act 1882, Types, Registration — LexForm", url: "https://lex-form.com/blog/power-of-attorney-pakistan.html" },
@@ -110,7 +111,7 @@ export default function PowerOfAttorneyInPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published June 15, 2026</p>
+          <p className={eyebrow}>Legal Help · Published June 15, 2026 · Updated September 7, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Power of Attorney in Pakistan
           </h1>

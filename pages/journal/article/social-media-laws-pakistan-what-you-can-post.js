@@ -12,7 +12,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const restrictions = [
@@ -59,9 +59,10 @@ const schema = [
     description:
       "What Pakistani law actually restricts on social media — defamation, non-consensual content, cyberstalking, and the debated new Section 26-A offence for content causing fear or unrest.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-18",
-    dateModified: "2026-05-18",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/social-media-laws-pakistan-what-you-can-post`,
     citation: [
       { "@type": "CreativeWork", name: "The Prevention of Electronic Crimes Act, 2016 — Pakistan Code (Ministry of Law and Justice)", url: "https://www.pakistancode.gov.pk/pdffiles/administrator6a061efe0ed5bd153fa8b79b8eb4cba7.pdf" },
@@ -119,8 +120,7 @@ export default function SocialMediaLawsPakistanWhatYouCanPost() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Legal Help · Published May 18, 2026
-          </p>
+            Legal Help · Published May 18, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Social Media Laws in Pakistan: What You Can and Cannot Post
           </h1>

@@ -14,7 +14,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const foundations = [
@@ -101,9 +101,10 @@ const schema = [
     description:
       "Pakistan's legal system explained honestly — how it inherited common law, where it diverges through codification, the Constitution, and the Federal Shariat Court.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-01",
-    dateModified: "2026-07-01",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/pakistani-law-vs-common-law`,
   },
   {
@@ -156,8 +157,7 @@ export default function PakistaniLawVsCommonLaw() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Law Study &amp; Research · Published July 1, 2026
-          </p>
+            Law Study &amp; Research · Published July 1, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Pakistani Law vs Common Law: What's Actually Different
           </h1>

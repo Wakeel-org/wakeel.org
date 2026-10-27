@@ -11,7 +11,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
@@ -57,9 +57,10 @@ const schema = [
     description:
       "How consumer protection applies to online shopping in Pakistan — the provincial consumer protection acts, the 2025 Punjab amendment covering online transactions, and what to do when a store won't refund you.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-06",
-    dateModified: "2026-08-06",
+    dateModified: "2026-09-07",
     mainEntityOfPage: `${site.url}/journal/article/ecommerce-refund-return-laws-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "A Critical Appraisal of Consumer Protection Laws and E-Commerce in Pakistan — Pakistan Journal of Law, Analysis and Wisdom", url: "https://pjlaw.com.pk/index.php/Journal/article/view/v3i7-131-139" },
@@ -115,7 +116,7 @@ export default function EcommerceRefundReturnLawsPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published August 6, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 6, 2026 · Updated September 7, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             E-Commerce Refund and Return Laws in Pakistan
           </h1>

@@ -11,7 +11,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
@@ -65,9 +65,10 @@ const schema = [
     description:
       "A plain-language guide to illegal property occupation (qabza) in Pakistan — the Illegal Dispossession Act 2005, criminal trespass, and the civil injunction route.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-31",
-    dateModified: "2026-08-31",
+    dateModified: "2026-09-07",
     mainEntityOfPage: `${site.url}/journal/article/illegal-property-occupation-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Eradication of 'Qabza' Group Activities — Pakistan Law and Justice Commission (Report 19)", url: "https://www.commonlii.org/pk/other/PKLJC/reports/19.html" },
@@ -128,7 +129,7 @@ export default function IllegalPropertyOccupationPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published August 31, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 31, 2026 · Updated September 7, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Illegal Property Occupation in Pakistan
           </h1>

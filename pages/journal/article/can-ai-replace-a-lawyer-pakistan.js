@@ -4,7 +4,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const whyNotReasons = [
@@ -74,6 +74,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    reviewedBy: reviewerSchema,
     name: "Can AI Replace a Lawyer for Pakistani Legal Questions?",
     description:
       "A direct, honest answer to whether AI can replace a lawyer in Pakistan — what AI legal tools can do today, and why licensed advocates remain essential.",
@@ -129,7 +130,7 @@ export default function CanAiReplaceALawyerPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            AI &amp; the law
+            AI &amp; the law · Reviewed by Legal Team DIGIT
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Can AI replace a lawyer for Pakistani legal questions?

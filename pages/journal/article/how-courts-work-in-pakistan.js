@@ -14,7 +14,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const hierarchy = [
@@ -69,9 +69,10 @@ const schema = [
     description:
       "Pakistan's court hierarchy explained — the Supreme Court, High Courts, the Federal Shariat Court, the district judiciary, and special tribunals — plus the basics of filing and appeals.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-04-17",
-    dateModified: "2026-04-17",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/how-courts-work-in-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "The Constitution of the Islamic Republic of Pakistan, 1973 (up to date, official) — National Assembly of Pakistan", url: "https://www.na.gov.pk/uploads/documents/1549886415_632.pdf" },
@@ -129,8 +130,7 @@ export default function HowCourtsWorkInPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Law Study & Research · Published April 17, 2026
-          </p>
+            Law Study & Research · Published April 17, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             How Courts Work in Pakistan: Complete Guide to Court Procedures
           </h1>

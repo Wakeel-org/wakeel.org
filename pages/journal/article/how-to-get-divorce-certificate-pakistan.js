@@ -11,7 +11,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const steps = [
@@ -57,9 +57,10 @@ const schema = [
     description:
       "The Union Council process for getting a divorce certificate in Pakistan — the 90-day reconciliation period and when the certificate is actually issued.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-05",
-    dateModified: "2026-07-05",
+    dateModified: "2026-09-07",
     mainEntityOfPage: `${site.url}/journal/article/how-to-get-divorce-certificate-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Step by Step Divorce Process at Union Council in Pakistan — PakLegal", url: "https://pklegal.org/blog/step-by-step-divorce-process-at-union-council-in-pakistan/" },
@@ -121,7 +122,7 @@ export default function HowToGetDivorceCertificatePakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published July 5, 2026</p>
+          <p className={eyebrow}>Legal Help · Published July 5, 2026 · Updated September 7, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             How to Get a Divorce Certificate in Pakistan
           </h1>

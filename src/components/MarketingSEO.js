@@ -10,6 +10,11 @@ const MarketingSEO = ({
   region = "pk",
   language = "en",
   keywords = "",
+  // Optional Urdu counterpart path (e.g. "/ur/khula-ka-tarika"). Only pass this
+  // when a real translated page exists, so hreflang pairs are always genuine.
+  urduPath = null,
+  // For Urdu pages: the English counterpart path.
+  englishPath = null,
 }) => {
   const pageTitle = title?.includes("Wakeel")
     ? title
@@ -58,9 +63,19 @@ const MarketingSEO = ({
           hrefLang when it differs from the generic "en" below it — for
           global content (no `geo`) they're the same value, and duplicating
           an identical hrefLang tag is redundant markup. */}
-      {geo && <link rel="alternate" hrefLang={hrefLangCode} href={canonical} />}
-      <link rel="alternate" hrefLang="en" href={canonical} />
-      <link rel="alternate" hrefLang="x-default" href={canonical} />
+      {urduPath || englishPath ? (
+        <>
+          <link rel="alternate" hrefLang="en-PK" href={`${site.url}${englishPath || path}`} />
+          <link rel="alternate" hrefLang="ur-PK" href={`${site.url}${urduPath || path}`} />
+          <link rel="alternate" hrefLang="x-default" href={`${site.url}${englishPath || path}`} />
+        </>
+      ) : (
+        <>
+          {geo && <link rel="alternate" hrefLang={hrefLangCode} href={canonical} />}
+          <link rel="alternate" hrefLang="en" href={canonical} />
+          <link rel="alternate" hrefLang="x-default" href={canonical} />
+        </>
+      )}
 
       {/* Open Graph — `key`s here match Layout.js's fallback OG tags so
           Next's <Head> dedup collapses to this page-specific version

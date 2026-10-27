@@ -14,7 +14,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const criteria = [
@@ -172,8 +172,9 @@ const schema = [
     description:
       "An honest comparison of the best AI legal apps available in Pakistan, with the criteria that matter most: Pakistani-law grounding, Urdu support, document analysis, and safety.",
     url: `${site.url}/journal/article/best-ai-legal-apps-pakistan`,
+    reviewedBy: reviewerSchema,
     datePublished: "2026-06-11",
-    dateModified: "2026-06-11",
+    dateModified: "2026-10-22",
   },
   {
     "@context": "https://schema.org",
@@ -238,8 +239,7 @@ export default function BestAILegalAppsPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Comparison · Updated June 2026
-          </p>
+            Comparison · Updated June 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Best AI Legal Apps in Pakistan
           </h1>

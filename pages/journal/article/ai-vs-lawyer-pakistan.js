@@ -4,7 +4,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const aiDoesWell = [
@@ -99,8 +99,9 @@ const schema = [
     description:
       "A clear look at what AI legal tools can and cannot do compared with a licensed advocate in Pakistan — and how to use each one well.",
     url: `${site.url}/journal/article/ai-vs-lawyer-pakistan`,
+    reviewedBy: reviewerSchema,
     datePublished: "2026-06-28",
-    dateModified: "2026-08-15",
+    dateModified: "2026-10-22",
     citation: [
       { "@type": "CreativeWork", name: "Hallucinating Law: Legal Mistakes with Large Language Models are Pervasive — Stanford Law School", url: "https://law.stanford.edu/2024/01/11/hallucinating-law-legal-mistakes-with-large-language-models-are-pervasive/" },
       { "@type": "CreativeWork", name: "Stanford RegLab / HAI study on AI legal research tool hallucination rates — LawSites coverage", url: "https://www.lawnext.com/2024/05/stanford-will-augment-its-study-finding-that-ai-legal-research-tools-hallucinate-in-17-of-queries-as-some-raise-questions-about-the-results.html" },
@@ -170,8 +171,7 @@ export default function AIvsLawyerPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            AI &amp; the law · Published June 28, 2026 · Updated August 15, 2026
-          </p>
+            AI &amp; the law · Published June 28, 2026 · Updated October 22, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Will AI replace lawyers?
           </h1>

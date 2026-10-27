@@ -11,7 +11,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
@@ -57,9 +57,10 @@ const schema = [
     description:
       "How child custody works in Pakistan under the Guardian and Wards Act 1890 — the welfare-of-the-minor standard, the hizanat principle, and how guardianship and custody can split between parents.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-19",
-    dateModified: "2026-08-19",
+    dateModified: "2026-10-22",
     mainEntityOfPage: `${site.url}/journal/article/child-custody-laws-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "Law on the Custody of Children in Pakistan: Past, Present and Future — LUMS SAHSOL", url: "https://sahsol.lums.edu.pk/node/12832" },
@@ -114,7 +115,7 @@ export default function ChildCustodyLawsPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published August 19, 2026</p>
+          <p className={eyebrow}>Legal Help · Published August 19, 2026 · Updated October 22, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Child Custody Laws in Pakistan: Guardian and Wards Act, Hizanat and the Welfare Test
           </h1>

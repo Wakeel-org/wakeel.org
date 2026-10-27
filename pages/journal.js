@@ -508,6 +508,34 @@ const JournalPage = ({ initialPosts = [] }) => {
         </div>
       </section>
 
+      {/* Crawlable directory: the grid above paginates client-side, so only the
+          first page of articles is linked in the static HTML. This plain list
+          links every article so crawlers can discover them all. */}
+      <section className="py-14 bg-background" aria-labelledby="all-articles-heading">
+        <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="all-articles-heading" className="text-2xl font-bold text-foreground mb-6">
+            All articles
+          </h2>
+          {[...new Set(staticArticlePosts.map((p) => p.category))].map((cat) => (
+            <div key={cat} className="mb-8">
+              <h3 className="text-lg font-semibold text-foreground mb-3">{cat}</h3>
+              <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+                {staticArticlePosts
+                  .filter((p) => p.category === cat)
+                  .sort((a, b) => a.title.localeCompare(b.title))
+                  .map((p) => (
+                    <li key={p.id}>
+                      <Link href={`/journal/article/${p.id}`} className="text-sm text-primary hover:underline">
+                        {p.title}
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Newsletter CTA */}
       <section className="py-16 bg-muted/40 border-y-2 border-foreground/10">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

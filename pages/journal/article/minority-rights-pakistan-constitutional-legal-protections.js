@@ -12,7 +12,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const protections = [
@@ -58,9 +58,10 @@ const schema = [
     description:
       "The constitutional protections for religious minorities in Pakistan — Articles 20, 22, and 36 — and the National Commission for Minorities Act 2023.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-02-12",
-    dateModified: "2026-02-12",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/minority-rights-pakistan-constitutional-legal-protections`,
     citation: [
       { "@type": "CreativeWork", name: "The National Commission for Minorities Act, 2023 — National Assembly of Pakistan", url: "https://na.gov.pk/uploads/documents/63f4893540676_512.pdf" },
@@ -117,8 +118,7 @@ export default function MinorityRightsPakistanConstitutionalLegalProtections() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Legal Help · Published February 12, 2026
-          </p>
+            Legal Help · Published February 12, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Minority Rights in Pakistan: Constitutional and Legal Protections
           </h1>

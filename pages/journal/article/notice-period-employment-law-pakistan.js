@@ -11,7 +11,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
@@ -57,9 +57,10 @@ const schema = [
     description:
       "How the notice period works for ending employment in Pakistan under the Standing Orders Ordinance 1968 — the one-month rule, pay in lieu, and the written termination requirement.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-11",
-    dateModified: "2026-07-11",
+    dateModified: "2026-09-07",
     mainEntityOfPage: `${site.url}/journal/article/notice-period-employment-law-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "The Industrial and Commercial Employment (Standing Orders) Ordinance, 1968 — Punjab Laws", url: "http://punjablaws.gov.pk/laws/222.html" },
@@ -115,7 +116,7 @@ export default function NoticePeriodEmploymentLawPakistan() {
       {/* Hero */}
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <p className={eyebrow}>Legal Help · Published July 11, 2026</p>
+          <p className={eyebrow}>Legal Help · Published July 11, 2026 · Updated September 7, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Notice Period in Pakistan: Employee and Employer Rights
           </h1>

@@ -12,7 +12,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const keyPoints = [
@@ -65,9 +65,10 @@ const schema = [
     description:
       "What the Punjab Protection of Ownership of Immovable Property Act 2025 (and its 2026 amendment) actually does — targeting illegal occupation and land grabbing in Punjab.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-07-24",
-    dateModified: "2026-07-24",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/punjab-property-protection-law-pakistan`,
     citation: [
       { "@type": "CreativeWork", name: "The Punjab Protection of Ownership of Immovable Property Act, 2025 — Punjab Code (official)", url: "https://punjablaws.punjab.gov.pk/uploads/articles/the-punjab-protection-of-ownership-of-immovable-property-act-2025-act-ci-of-2025-converted-pdf.pdf" },
@@ -123,8 +124,7 @@ export default function PunjabPropertyProtectionLawPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Legal Help · Published July 24, 2026
-          </p>
+            Legal Help · Published July 24, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             Punjab Property Protection Law: Complete Guide
           </h1>

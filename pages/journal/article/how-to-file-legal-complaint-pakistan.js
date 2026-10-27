@@ -14,7 +14,7 @@ import Layout from "../../../src/components/Layout";
 import MarketingSEO from "../../../src/components/MarketingSEO";
 import { Button } from "../../../src/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "../../../src/components/ui/card";
-import { site } from "../../../src/data/marketing";
+import { site, reviewerSchema } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const routes = [
@@ -100,9 +100,10 @@ const schema = [
     description:
       "A practical map of where to file a legal complaint in Pakistan depending on what happened — criminal, consumer, cyber, labour, civil, or against a public authority — plus the steps that apply across all of them.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
+    reviewedBy: reviewerSchema,
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-04",
-    dateModified: "2026-05-04",
+    dateModified: "2026-09-03",
     mainEntityOfPage: `${site.url}/journal/article/how-to-file-legal-complaint-pakistan`,
   },
   {
@@ -156,8 +157,7 @@ export default function HowToFileLegalComplaintPakistan() {
       <section className="bg-gradient-to-b from-primary/10 to-background py-16 sm:py-20 lg:py-24">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>
-            Legal Help · Published May 4, 2026
-          </p>
+            Legal Help · Published May 4, 2026 · Updated September 3, 2026 · Reviewed by Legal Team DIGIT</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
             How to File a Legal Complaint in Pakistan: Step-by-Step Guide
           </h1>
