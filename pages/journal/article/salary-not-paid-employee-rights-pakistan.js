@@ -107,7 +107,7 @@ export default function SalaryNotPaidEmployeeRightsPakistan() {
         title="Salary Not Paid: Employee Legal Rights in Pakistan"
         description="What to do if your employer hasn't paid your salary in Pakistan — the Payment of Wages Act 1936, the Section 9-A Authority, and the escalation path to the Labour Court."
         path="/journal/article/salary-not-paid-employee-rights-pakistan"
-        urduPath="/ur/tankhwah-na-milne-par-qanooni-haq"
+        urduPath="/journal/ur/article/tankhwah-na-milne-par-qanooni-haq"
         schema={schema}
         keywords={keywords}
         region="pk"

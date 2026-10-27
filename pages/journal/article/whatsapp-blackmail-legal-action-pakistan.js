@@ -109,7 +109,7 @@ export default function WhatsappBlackmailLegalActionPakistan() {
         title="Blackmail on WhatsApp: Legal Action in Pakistan"
         description="What to do if someone is blackmailing you on WhatsApp in Pakistan — the PECA sections that apply, what evidence to preserve, and how to report it to the NCCIA."
         path="/journal/article/whatsapp-blackmail-legal-action-pakistan"
-        urduPath="/ur/whatsapp-blackmail-qanooni-karwai"
+        urduPath="/journal/ur/article/whatsapp-blackmail-qanooni-karwai"
         schema={schema}
         keywords={keywords}
         region="pk"

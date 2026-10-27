@@ -108,7 +108,7 @@ export default function KhulaInPakistanProcedureRights() {
         title="Khula in Pakistan: Procedure and Rights"
         description="How khula works in Pakistan — a wife's right to dissolve a marriage without her husband's consent, the Family Court procedure, and the dower trade-off involved."
         path="/journal/article/khula-in-pakistan-procedure-rights"
-        urduPath="/ur/khula-ka-tarika"
+        urduPath="/journal/ur/article/khula-ka-tarika"
         schema={schema}
         keywords={keywords}
         region="pk"

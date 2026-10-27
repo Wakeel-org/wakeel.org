@@ -32,7 +32,7 @@ export default function UrduArticlePage({
   sources,
   related,
 }) {
-  const path = `/ur/${slug}`;
+  const path = `/journal/ur/article/${slug}`;
   const schema = [
     {
       "@context": "https://schema.org",

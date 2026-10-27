@@ -10,7 +10,7 @@ const MarketingSEO = ({
   region = "pk",
   language = "en",
   keywords = "",
-  // Optional Urdu counterpart path (e.g. "/ur/khula-ka-tarika"). Only pass this
+  // Optional Urdu counterpart path (e.g. "/journal/ur/article/khula-ka-tarika"). Only pass this
   // when a real translated page exists, so hreflang pairs are always genuine.
   urduPath = null,
   // For Urdu pages: the English counterpart path.

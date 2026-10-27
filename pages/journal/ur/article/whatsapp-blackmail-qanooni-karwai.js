@@ -1,4 +1,4 @@
-import UrduArticlePage from "../../src/components/UrduArticlePage";
+import UrduArticlePage from "../../../../src/components/UrduArticlePage";
 
 const data = {
   slug: "whatsapp-blackmail-qanooni-karwai",
