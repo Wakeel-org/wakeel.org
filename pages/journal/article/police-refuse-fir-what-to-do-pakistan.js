@@ -23,39 +23,38 @@ const steps = [
 
 const faqs = [
   {
-    question: "What can I do if the police refuse to register my FIR?",
-    answer:
-      "First put your complaint in writing to the SHO. If that doesn't work, escalate in writing to the SP or DPO. If police still refuse, you can apply to the district's Ex-Officio Justice of the Peace under Sections 22-A and 22-B of the CrPC, who has the legal power to direct the police to register the FIR.",
+    "question": "What should I do first if the police refuse to register my FIR?",
+    "answer": "Ask whether they consider the matter non-cognizable. That is the one lawful reason not to register an FIR, and under Section 155 CrPC it means going to a Magistrate. If the offence is cognizable, submit a written application to the SHO and keep a dated, receipted copy."
   },
   {
-    question: "Do I need a lawyer to apply to the Justice of Peace?",
-    answer:
-      "It's strongly recommended. While the law doesn't require you to have a lawyer, an application to the Justice of Peace needs to lay out the facts clearly enough for the judge to be satisfied that an offence has occurred — a lawyer significantly improves the odds it's accepted.",
+    "question": "Who is the Justice of the Peace for FIR matters?",
+    "answer": "Under Section 22-A CrPC, Sessions Judges, and Additional Sessions Judges nominated by them, act as Ex-Officio Justices of the Peace for their districts. Under Section 22-A(6) they can issue directions to police on non-registration of a criminal case."
   },
   {
-    question: "How long does it take to get an FIR registered through the Justice of Peace?",
-    answer:
-      "It varies by court and how contested the matter is, but this route is generally faster than most alternatives specifically because it was designed to force quick police action — courts handling these applications typically move them along without long delays.",
+    "question": "Do I need a lawyer for a 22-A/22-B petition?",
+    "answer": "It isn't legally required, but it is strongly recommended. The petition has to show clearly that a cognizable offence is disclosed and that the police failed to act. A lawyer also attends the hearing."
   },
   {
-    question: "Can the police be punished for refusing to register an FIR without a good reason?",
-    answer:
-      "Yes — under the Police Order 2002, a case can be registered against an officer for misconduct, including refusing a legitimate complaint, separately from the Justice of Peace process that gets your own FIR registered.",
+    "question": "Is a private complaint under Section 200 CrPC an alternative?",
+    "answer": "Yes. Instead of forcing police registration, you can file a complaint directly before a Magistrate, who examines you on oath and decides whether to proceed. A lawyer can advise which route suits your facts."
   },
   {
-    question: "Can Wakeel.org help me if police refuse to register my FIR?",
-    answer:
-      "Wakeel.org can explain the escalation steps and what a Justice of Peace application generally involves, in plain English or Urdu. It cannot draft or file the application, or represent you in front of a judge — a licensed advocate should handle that.",
+    "question": "Can police officers face action for refusing a valid FIR?",
+    "answer": "Unjustified refusal can be reported to senior officers and may lead to departmental proceedings for misconduct. Keep dated records of every visit and application, because those records support both your escalation and any complaint."
   },
+  {
+    "question": "Can Wakeel.org help me escalate a refused FIR?",
+    "answer": "Wakeel can explain each escalation step and help you organise a dated record of your attempts, in English or Urdu. It cannot draft or file the court petition, or appear before the Justice of the Peace."
+  }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Police Refuse to Register FIR: What Can You Do?",
+    headline: "Police Won't Register Your FIR in Pakistan? A 4-Step Escalation Path",
     description:
-      "A plain-language, step-by-step guide for what to do when police in Pakistan refuse to register your FIR — escalating to the SHO, the SP, and the Justice of Peace.",
+      "Police refused your FIR? Follow the escalation path in Pakistan: a written application to the SHO, then the SP or DPO, then a Section 22-A/22-B CrPC petition to the Justice of the Peace, or a private complaint.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-08-28",
@@ -90,7 +89,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Police Refuse to Register FIR: What Can You Do?",
+        name: "Police Won't Register Your FIR in Pakistan? A 4-Step Escalation Path",
         item: `${site.url}/journal/article/police-refuse-fir-what-to-do-pakistan`,
       },
     ],
@@ -99,19 +98,19 @@ const schema = [
 
 const keywords = [
   "police refuse to register fir pakistan",
-  "what to do if fir not registered",
-  "fir not lodged police station",
+  "fir not registered what to do",
+  "22a 22b crpc petition",
   "justice of peace fir application",
-  "how to force police to register fir",
-  "22a 22b crpc application",
+  "escalate fir refusal sp dpo",
+  "private complaint section 200 crpc"
 ].join(", ");
 
 export default function PoliceRefuseFirWhatToDoPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Police Refuse to Register FIR: What Can You Do?"
-        description="A plain-language, step-by-step guide for what to do when police in Pakistan refuse to register your FIR — escalating to the SHO, the SP, and the Justice of Peace."
+        title="Police Won't Register Your FIR in Pakistan? A 4-Step Escalation Path"
+        description="Police refused your FIR? Follow the escalation path in Pakistan: a written application to the SHO, then the SP or DPO, then a Section 22-A/22-B CrPC petition to the Justice of the Peace, or a private complaint."
         path="/journal/article/police-refuse-fir-what-to-do-pakistan"
         schema={schema}
         keywords={keywords}
@@ -123,11 +122,11 @@ export default function PoliceRefuseFirWhatToDoPakistan() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>Legal Help · Published August 28, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Police Refuse to Register FIR: What Can You Do?
+            Police Won't Register Your FIR in Pakistan? A 4-Step Escalation Path
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The law doesn't leave you stuck if a police station won't file your complaint. Here's
-            the exact path around them, step by step.
+            A refusal at the front desk is not the end of the road. This guide covers only that
+            situation: how to escalate, in order, until your FIR is registered.
           </p>
         </div>
       </section>
@@ -284,25 +283,25 @@ export default function PoliceRefuseFirWhatToDoPakistan() {
       </section>
 
       {/* Related reading */}
-      <section className="bg-muted/40 py-16 sm:py-20">
+      <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related FIR guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/article/section-22a-22b-crpc-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 22-A/22-B CrPC: The Justice of Peace Explained</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
             <Link href="/journal/article/how-to-register-fir-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan: Complete Guide</p>
+              <p className="text-xs text-muted-foreground mt-1">Start here: the full FIR journey in one page</p>
             </Link>
-            <Link href="/journal/article/fir-status-check-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Check FIR Status in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/section-154-crpc-fir-registration-law-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 154 CrPC Explained</p>
+              <p className="text-xs text-muted-foreground mt-1">The legal duty to register, and what courts say</p>
             </Link>
-            <Link href="/journal/article/police-complaint-against-police-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to File a Complaint Against the Police in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/what-you-must-know-fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Myths vs Facts in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Misconceptions corrected, rights listed</p>
+            </Link>
+            <Link href="/journal/legal-issues-pakistan/fir-refused-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Refused: Prepare Your Next Step</p>
+              <p className="text-xs text-muted-foreground mt-1">How Wakeel helps organise a refusal case</p>
             </Link>
           </div>
         </div>

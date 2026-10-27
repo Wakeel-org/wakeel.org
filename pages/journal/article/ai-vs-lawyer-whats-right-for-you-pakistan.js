@@ -29,37 +29,32 @@ const rightForYouIf = [
 
 const faqs = [
   {
-    question: "Is AI legal help actually cheaper than hiring a lawyer in Pakistan?",
-    answer:
-      "For the preparation and understanding stage, yes — AI tools are typically free or low-cost, while a lawyer charges professional fees that vary by seniority, city, and case complexity. But cost comparisons only make sense stage by stage: AI can't replace what a lawyer does once you need someone to sign, file, negotiate, or represent you, no matter how much cheaper it is.",
+    "question": "Is AI legal help cheaper than a lawyer in Pakistan?",
+    "answer": "For understanding a problem and preparing, yes: many AI legal assistants are free or charge a low flat subscription. Once you need someone to file, sign, negotiate or appear for you, cost isn't the comparison, because only a licensed advocate can do that."
   },
   {
-    question: "How much does a lawyer consultation cost in Pakistan?",
-    answer:
-      "There's no single published fee schedule — costs vary by the advocate's seniority, city, and the complexity of the matter. Rather than relying on a number you've heard informally, ask directly when you contact a lawyer's office, and consider that a short initial consultation is often more affordable than people assume.",
+    "question": "How much does a lawyer consultation cost in Pakistan?",
+    "answer": "There's no national fee schedule. Fees depend on the advocate's seniority, the city and the complexity of the matter. Ask the lawyer's office for the consultation fee upfront, and ask whether a short first meeting is billed differently."
   },
   {
-    question: "Is there free legal help available in Pakistan if I can't afford a lawyer?",
-    answer:
-      "Yes — District Legal Empowerment Committees, bar association free-consultation initiatives, and legal aid NGOs exist specifically for this. Our dedicated guide on free legal advice in Pakistan covers these options in detail.",
+    "question": "Where can I get free legal help in Pakistan if I can't afford a lawyer?",
+    "answer": "Options include District Legal Empowerment Committees, free-consultation programmes run by bar associations, and legal aid NGOs. Eligibility and availability vary by district, so check what operates where you live."
   },
   {
-    question: "What's the actual financial risk of only using AI for a legal matter?",
-    answer:
-      "The risk isn't the AI's cost — it's that an unverified AI answer, if wrong, can lead to a missed deadline, an unenforceable contract clause, or a wrongly filed case, each of which typically costs far more in time and money to fix than a lawyer's consultation fee would have been upfront.",
+    "question": "How can I spend less on a lawyer?",
+    "answer": "Prepare before you pay. Bring a dated timeline, copies of every document and a short list of questions, so the paid time goes on advice rather than background. An AI assistant can help you prepare this."
   },
   {
-    question: "Can Wakeel.org help me get more value out of a paid lawyer consultation?",
-    answer:
-      "Yes — by helping you organize your facts, documents, and questions in advance, Wakeel.org can help make a lawyer's paid time go further, since less of that time is spent on background explanation. It cannot negotiate the lawyer's fee or replace the consultation itself.",
-  },
+    "question": "When is paying for a lawyer worth it even on a tight budget?",
+    "answer": "When there's a deadline, a court date, property or a job at stake, or a document you're about to sign. Fixing a mistake in these situations usually costs far more than the consultation would have."
+  }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "AI vs Lawyer in Pakistan: What's Right for You?",
+    headline: "AI or a Lawyer in Pakistan? A Cost and Budget Guide",
     description:
       "A cost-and-value comparison of AI legal tools versus hiring a lawyer in Pakistan — what each actually costs, what free legal aid exists, and how to decide based on your situation.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
@@ -90,7 +85,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "AI vs Lawyer in Pakistan: What's Right for You?",
+        name: "AI or a Lawyer in Pakistan? A Cost and Budget Guide",
         item: `${site.url}/journal/article/ai-vs-lawyer-whats-right-for-you-pakistan`,
       },
     ],
@@ -98,20 +93,20 @@ const schema = [
 ];
 
 const keywords = [
-  "ai vs lawyer pakistan",
-  "legal ai pakistan cost",
+  "ai vs lawyer cost pakistan",
   "lawyer fees pakistan",
-  "ai lawyer vs advocate pakistan",
   "free legal aid pakistan",
-  "cost of hiring a lawyer pakistan",
+  "cheap legal help pakistan",
+  "is ai legal help free",
+  "lawyer consultation cost pakistan"
 ].join(", ");
 
 export default function AiVsLawyerWhatsRightForYouPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="AI vs Lawyer in Pakistan: What's Right for You?"
-        description="A cost-and-value comparison of AI legal tools versus hiring a lawyer in Pakistan — what each actually costs, what free legal aid exists, and how to decide."
+        title="AI or a Lawyer in Pakistan? A Cost and Budget Guide"
+        description="Deciding on budget? What AI legal tools and lawyers cost in Pakistan, where free legal aid is available, and how to spend a limited budget wisely on a legal problem."
         path="/journal/article/ai-vs-lawyer-whats-right-for-you-pakistan"
         schema={schema}
         keywords={keywords}
@@ -125,12 +120,11 @@ export default function AiVsLawyerWhatsRightForYouPakistan() {
             AI & the Law · Published April 16, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            AI vs Lawyer in Pakistan: What's Right for You?
+            AI or a Lawyer in Pakistan? A Cost and Budget Guide
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Cost is usually the real question underneath "AI or lawyer?" — so let's actually look at
-            it: what each genuinely costs, where free help exists, and what skipping a lawyer can
-            end up costing you instead.
+            This guide is for people deciding on budget. For a capability comparison of what AI can
+            and can't do legally, see our main AI vs lawyer guide.
           </p>
         </div>
       </section>
@@ -294,23 +288,23 @@ export default function AiVsLawyerWhatsRightForYouPakistan() {
       {/* Related reading */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/article/should-i-use-ai-or-hire-a-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Should I Use AI or Hire a Lawyer in Pakistan?</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/journal/article/free-legal-advice-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Free & Online Legal Advice in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
             <Link href="/journal/article/ai-vs-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Will AI Replace Lawyers? AI vs Hiring a Lawyer in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI vs Hiring a Lawyer: What Each Can and Can't Do</p>
+              <p className="text-xs text-muted-foreground mt-1">A capability comparison</p>
             </Link>
-            <Link href="/legal-sources" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Our Approach to Legal Sources</p>
-              <p className="text-xs text-muted-foreground mt-1">How Wakeel grounds answers in Pakistani law</p>
+            <Link href="/journal/article/best-ai-legal-apps-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Best AI Legal Apps in Pakistan (2026)</p>
+              <p className="text-xs text-muted-foreground mt-1">Named apps compared side by side</p>
+            </Link>
+            <Link href="/journal/article/best-ai-legal-assistant-pakistan-complete-guide" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Choose an AI Legal Assistant</p>
+              <p className="text-xs text-muted-foreground mt-1">A test-it-yourself evaluation checklist</p>
+            </Link>
+            <Link href="/journal/article/best-ai-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Is There an AI Lawyer in Pakistan?</p>
+              <p className="text-xs text-muted-foreground mt-1">What 'AI lawyer' can legally mean</p>
             </Link>
           </div>
         </div>

@@ -376,6 +376,31 @@ export default function BestAILegalAppsPakistan() {
         </div>
       </section>
 
+      {/* Related reading */}
+      <section className="bg-background py-16 sm:py-20">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related guides</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Link href="/journal/article/best-ai-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Is There an AI Lawyer in Pakistan?</p>
+              <p className="text-xs text-muted-foreground mt-1">What 'AI lawyer' can legally mean</p>
+            </Link>
+            <Link href="/journal/article/best-ai-legal-assistant-pakistan-complete-guide" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Choose an AI Legal Assistant</p>
+              <p className="text-xs text-muted-foreground mt-1">A test-it-yourself evaluation checklist</p>
+            </Link>
+            <Link href="/journal/article/best-ai-tools-for-lawyers-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI Tools for Lawyers in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">For advocates and law firms</p>
+            </Link>
+            <Link href="/journal/article/ai-vs-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI vs Hiring a Lawyer: What Each Can and Can't Do</p>
+              <p className="text-xs text-muted-foreground mt-1">A capability comparison</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

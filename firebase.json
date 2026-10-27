@@ -360,6 +360,16 @@
         "type": 301
       },
       {
+        "source": "/spain-legal-guide",
+        "destination": "/journal/legal-issues-global/spain-southern-europe-legal-guide",
+        "type": 301
+      },
+      {
+        "source": "/thailand-legal-guide",
+        "destination": "/journal/legal-issues-global/thailand-southeast-asia-legal-guide",
+        "type": 301
+      },
+      {
         "source": "/spain-southern-europe-legal-guide",
         "destination": "/journal/legal-issues-global/spain-southern-europe-legal-guide",
         "type": 301

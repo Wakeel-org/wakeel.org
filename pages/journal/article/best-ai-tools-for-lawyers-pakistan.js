@@ -54,9 +54,9 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Best AI Tools for Lawyers in Pakistan",
+    headline: "AI Tools for Lawyers in Pakistan: Research, Drafting, Intake and Practice Management",
     description:
-      "The categories of AI tools genuinely useful for a Pakistani lawyer's practice — legal research, document review and drafting, client intake, and case management.",
+      "For advocates and law firms: the categories of AI tools useful in a Pakistani legal practice (research, drafting, intake and case management) and how to use them without risking professional duties.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-12",
@@ -85,7 +85,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Best AI Tools for Lawyers in Pakistan",
+        name: "AI Tools for Lawyers in Pakistan: Research, Drafting, Intake and Practice Management",
         item: `${site.url}/journal/article/best-ai-tools-for-lawyers-pakistan`,
       },
     ],
@@ -104,8 +104,8 @@ export default function BestAiToolsForLawyersPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Best AI Tools for Lawyers in Pakistan"
-        description="The categories of AI tools genuinely useful for a Pakistani lawyer's practice — legal research, document review and drafting, client intake, and case management."
+        title="AI Tools for Lawyers in Pakistan: Research, Drafting, Intake and Practice Management"
+        description="For advocates and law firms: the categories of AI tools useful in a Pakistani legal practice (research, drafting, intake and case management) and how to use them without risking professional duties."
         path="/journal/article/best-ai-tools-for-lawyers-pakistan"
         schema={schema}
         keywords={keywords}
@@ -119,7 +119,7 @@ export default function BestAiToolsForLawyersPakistan() {
             AI & the Law · Published June 12, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Best AI Tools for Lawyers in Pakistan
+            AI Tools for Lawyers in Pakistan: Research, Drafting, Intake and Practice Management
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Rather than one "best" tool, it's four distinct categories — research, drafting,
@@ -283,23 +283,23 @@ export default function BestAiToolsForLawyersPakistan() {
       {/* Related reading */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/article/ai-legal-research-tools-lawyers-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI Legal Research Tools for Lawyers in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/best-ai-legal-assistant-pakistan-complete-guide" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Choose an AI Legal Assistant</p>
+              <p className="text-xs text-muted-foreground mt-1">A test-it-yourself evaluation checklist</p>
             </Link>
-            <Link href="/journal/article/ai-hallucinations-legal-research-pakistani-lawyers" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI Hallucinations in Legal Research: Risks for Pakistani Lawyers</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/best-ai-legal-apps-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Best AI Legal Apps in Pakistan (2026)</p>
+              <p className="text-xs text-muted-foreground mt-1">Named apps compared side by side</p>
             </Link>
-            <Link href="/journal/article/ai-legal-drafting-pakistan-lawyers-citizens" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI Legal Drafting in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/ai-vs-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI vs Hiring a Lawyer: What Each Can and Can't Do</p>
+              <p className="text-xs text-muted-foreground mt-1">A capability comparison</p>
             </Link>
-            <Link href="/legal-sources" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Our Approach to Legal Sources</p>
-              <p className="text-xs text-muted-foreground mt-1">How Wakeel grounds answers in Pakistani law</p>
+            <Link href="/journal/article/best-ai-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Is There an AI Lawyer in Pakistan?</p>
+              <p className="text-xs text-muted-foreground mt-1">What 'AI lawyer' can legally mean</p>
             </Link>
           </div>
         </div>

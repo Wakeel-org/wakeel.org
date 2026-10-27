@@ -102,7 +102,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Wrongful Termination in Pakistan: Know Your Rights",
+    headline: "Wrongful Termination in Pakistan: How to Challenge an Unfair Dismissal",
     description:
       "A practical guide to wrongful termination in Pakistan under the Standing Orders Ordinance 1968 and the Industrial Relations Act 2012 — notice, misconduct inquiries, retrenchment rules, and how to challenge an unlawful dismissal.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
@@ -135,7 +135,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Wrongful Termination in Pakistan: Know Your Rights",
+        name: "Wrongful Termination in Pakistan: How to Challenge an Unfair Dismissal",
         item: `${site.url}/journal/article/wrongful-termination-pakistan`,
       },
     ],
@@ -158,7 +158,7 @@ export default function WrongfulTerminationPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Wrongful Termination in Pakistan: Know Your Rights"
+        title="Wrongful Termination in Pakistan: How to Challenge an Unfair Dismissal"
         description="What counts as wrongful termination under Pakistan's Standing Orders Ordinance 1968 and Industrial Relations Act 2012 — notice, misconduct inquiries, retrenchment rules, and how to challenge an unlawful dismissal."
         path="/journal/article/wrongful-termination-pakistan"
         schema={schema}
@@ -173,7 +173,7 @@ export default function WrongfulTerminationPakistan() {
             Legal Help · Published May 15, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Wrongful Termination in Pakistan: Know Your Rights
+            Wrongful Termination in Pakistan: How to Challenge an Unfair Dismissal
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Being let go without warning, without notice, and without a clear reason feels
@@ -373,42 +373,17 @@ export default function WrongfulTerminationPakistan() {
       </section>
 
       {/* Related reading */}
-      <section className="bg-muted/40 py-16 sm:py-20">
+      <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link
-              href="/journal/article/understanding-legal-notices-pakistan"
-              className={`group ${cardBase} block rounded-lg p-5`}
-            >
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">
-                Understanding Legal Notices in Pakistan
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/resignation-vs-termination-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Resignation vs Termination: Legal Differences</p>
+              <p className="text-xs text-muted-foreground mt-1">Notice, gratuity and forced resignation</p>
             </Link>
-            <Link
-              href="/journal/article/consumer-complaint-pakistan"
-              className={`group ${cardBase} block rounded-lg p-5`}
-            >
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">
-                How to File a Consumer Complaint in Pakistan
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link
-              href="/journal/article/draft-legal-contract-pakistan"
-              className={`group ${cardBase} block rounded-lg p-5`}
-            >
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">
-                How to Draft a Legal Contract in Pakistan
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/legal-sources" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">
-                Our Approach to Legal Sources
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">How Wakeel grounds answers in Pakistani law</p>
+            <Link href="/journal/legal-issues-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Browse all legal guides</p>
+              <p className="text-xs text-muted-foreground mt-1">Wakeel Journal</p>
             </Link>
           </div>
         </div>

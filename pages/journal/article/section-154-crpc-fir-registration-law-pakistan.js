@@ -15,47 +15,42 @@ import { site } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const framework = [
-  { icon: FileText, title: "Section 154 is the actual legal basis for every FIR", detail: "It requires the officer in charge of a police station to accurately record, in a prescribed government register, any information given about the commission of a cognizable offence — this single provision is what an FIR legally is." },
-  { icon: Gavel, title: "Registration is mandatory, not discretionary", detail: "Courts have repeatedly held that registering an FIR for a cognizable offence is a mandatory duty, not something left to the police officer's personal judgment about whether the complaint sounds credible." },
-  { icon: ShieldAlert, title: "Credibility is assessed after registration, not before", detail: "The genuineness of the information is not a precondition for registering the case — it's only relevant once the case has been registered and the investigation actually begins." },
-  { icon: AlertTriangle, title: "One real limit: it has to describe a cognizable offence", detail: "The police officer is expected to know the law well enough to assess whether the information describes a cognizable offence at all. If it doesn't, they aren't legally required to register a case — this is the one legitimate basis for refusal, separate from doubting whether the complaint is true." },
+  { icon: FileText, title: "What the text requires", detail: "Information about a cognizable offence given orally to the officer in charge must be reduced to writing, read over to the informant and signed by them. Its substance is then entered in a book kept in the form the Provincial Government prescribes. That entry is the FIR." },
+  { icon: Gavel, title: "Registration is a duty, not a discretion", detail: "Pakistan's superior courts have repeatedly held that once information discloses a cognizable offence, recording it is mandatory. Whether it is true is tested during investigation, not at the desk." },
+  { icon: ShieldAlert, title: "Section 155 is the counterpart", detail: "For non-cognizable offences, Section 155 CrPC applies instead. The officer enters the substance of the information and refers the informant to a Magistrate, and police cannot investigate without a Magistrate's order." },
+  { icon: AlertTriangle, title: "One FIR per occurrence", detail: "In Mst. Sughran Bibi v. The State (PLD 2018 SC 595), the Supreme Court held that there is generally one FIR for an occurrence. Later or different versions are recorded as statements under Section 161 CrPC during the same investigation, not as a fresh FIR." },
 ];
 
 const faqs = [
   {
-    question: "What does Section 154 CrPC actually say?",
-    answer:
-      "It requires the officer in charge of a police station to accurately record any information about a cognizable offence in a prescribed register — this recorded information is what becomes the FIR (First Information Report).",
+    "question": "What does Section 154 CrPC say?",
+    "answer": "It provides that information about a cognizable offence given to the officer in charge of a police station must be reduced to writing if given orally, read over to the informant and signed by them. Its substance must be entered in a book in the form prescribed by the Provincial Government. That record is the FIR."
   },
   {
-    question: "Is it mandatory for police to register an FIR under Section 154?",
-    answer:
-      "Yes. Courts have consistently held that registering an FIR for a cognizable offence is a mandatory legal duty, not a discretionary choice based on whether the officer personally believes the complaint.",
+    "question": "What is the difference between Section 154 and Section 155 CrPC?",
+    "answer": "Section 154 governs cognizable offences, where police register an FIR and can investigate. Section 155 governs non-cognizable offences: the information is noted and the informant is referred to a Magistrate, and police need a Magistrate's order to investigate."
   },
   {
-    question: "Can police refuse to register an FIR because they think the complaint is false?",
-    answer:
-      "Generally, no. The genuineness or credibility of the information isn't a legal precondition for registration — it only becomes relevant after the FIR is registered and the investigation proceeds. The one legitimate ground for refusal is that the information doesn't describe a cognizable offence at all.",
+    "question": "Can a second FIR be registered for the same incident?",
+    "answer": "Generally no. Under Mst. Sughran Bibi v. The State (PLD 2018 SC 595), a different version of the same occurrence is recorded as a statement under Section 161 CrPC during investigation rather than as a new FIR."
   },
   {
-    question: "What's the difference between Section 154 and Sections 22-A/22-B CrPC?",
-    answer:
-      "Section 154 is the provision that creates the police's duty to register an FIR in the first place. Sections 22-A and 22-B are the remedy — they let you apply to an Ex-Officio Justice of the Peace to force registration if the police unlawfully refuse to comply with Section 154.",
+    "question": "Which law enforces Section 154 if police don't comply?",
+    "answer": "Sections 22-A and 22-B CrPC empower the Ex-Officio Justice of the Peace to issue directions to police on non-registration of a criminal case. Section 154 creates the duty, and Section 22-A provides the remedy."
   },
   {
-    question: "Can Wakeel.org tell me if my complaint describes a cognizable offence?",
-    answer:
-      "Wakeel.org can explain how Section 154 generally works and what \"cognizable\" typically means. It cannot definitively classify your specific facts or guarantee an FIR will be registered — a licensed advocate can assess that.",
-  },
+    "question": "Can Wakeel.org explain how Section 154 applies to my facts?",
+    "answer": "Wakeel can explain the provision and the cognizable/non-cognizable distinction in plain English or Urdu. Whether your specific facts disclose a cognizable offence is a question for a licensed advocate."
+  }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Section 154 CrPC: FIR Registration Law in Pakistan",
+    headline: "Section 154 CrPC Explained: The Legal Duty to Register an FIR in Pakistan",
     description:
-      "The statutory basis for every FIR in Pakistan — what Section 154 of the CrPC requires, why registration is mandatory, and the one legitimate ground for refusal.",
+      "What Section 154 CrPC requires, how it differs from Section 155 for non-cognizable cases, why courts treat registration as mandatory, and what Sughran Bibi (PLD 2018 SC 595) says about second FIRs.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-06-24",
@@ -84,7 +79,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Section 154 CrPC: FIR Registration Law in Pakistan",
+        name: "Section 154 CrPC Explained: The Legal Duty to Register an FIR in Pakistan",
         item: `${site.url}/journal/article/section-154-crpc-fir-registration-law-pakistan`,
       },
     ],
@@ -92,20 +87,20 @@ const schema = [
 ];
 
 const keywords = [
-  "section 154 crpc pakistan",
-  "fir registration law pakistan",
-  "is fir registration mandatory pakistan",
-  "cognizable offence pakistan fir",
-  "section 154 vs 22a 22b crpc",
-  "police duty register fir",
+  "section 154 crpc",
+  "section 154 crpc pakistan explained",
+  "section 154 vs 155 crpc",
+  "second fir pakistan sughran bibi",
+  "pld 2018 sc 595",
+  "fir legal basis pakistan"
 ].join(", ");
 
 export default function Section154CrpcFirRegistrationLawPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Section 154 CrPC: FIR Registration Law in Pakistan"
-        description="The statutory basis for every FIR in Pakistan — what Section 154 of the CrPC requires, why registration is mandatory, and the one legitimate ground for refusal."
+        title="Section 154 CrPC Explained: The Legal Duty to Register an FIR in Pakistan"
+        description="What Section 154 CrPC requires, how it differs from Section 155 for non-cognizable cases, why courts treat registration as mandatory, and what Sughran Bibi (PLD 2018 SC 595) says about second FIRs."
         path="/journal/article/section-154-crpc-fir-registration-law-pakistan"
         schema={schema}
         keywords={keywords}
@@ -117,11 +112,11 @@ export default function Section154CrpcFirRegistrationLawPakistan() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>Legal Help · Published June 24, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Section 154 CrPC: FIR Registration Law in Pakistan
+            Section 154 CrPC Explained: The Legal Duty to Register an FIR in Pakistan
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            One short provision is the entire legal reason an FIR has to be registered at all —
-            here's exactly what it requires.
+            The legal side of FIRs: what the provision says, how it sits alongside Sections 155 and
+            22-A, and the leading Supreme Court ruling on second FIRs.
           </p>
         </div>
       </section>
@@ -133,13 +128,12 @@ export default function Section154CrpcFirRegistrationLawPakistan() {
             <CardContent className="p-6 space-y-3">
               <p className="text-sm font-semibold text-primary">Quick answer</p>
               <p className="text-muted-foreground leading-relaxed">
-                <strong>Section 154 of the CrPC</strong> requires the officer in charge of a police
-                station to accurately record information about a{" "}
-                <strong>cognizable offence</strong> — this is what makes registering an FIR{" "}
-                <strong>mandatory</strong>, not optional. Whether the complaint sounds credible
-                isn't a legal reason to refuse; that question is only assessed after registration,
-                during investigation. The one legitimate ground for refusal is that the
-                information doesn't describe a cognizable offence at all.
+                <strong>Section 154 CrPC</strong> obliges the officer in charge of a police station to put
+                information about a <strong>cognizable offence</strong> in writing, read it back to the
+                informant, have it signed and enter it in the prescribed register. Courts treat this as a{" "}
+                <strong>mandatory duty</strong>. Non-cognizable matters fall under <strong>Section
+                155</strong> and go to a Magistrate, and under <strong>Sughran Bibi (PLD 2018 SC
+                595)</strong> there is generally only one FIR per occurrence.
               </p>
             </CardContent>
           </Card>
@@ -279,25 +273,25 @@ export default function Section154CrpcFirRegistrationLawPakistan() {
       </section>
 
       {/* Related reading */}
-      <section className="bg-muted/40 py-16 sm:py-20">
+      <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related FIR guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             <Link href="/journal/article/how-to-register-fir-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan: Complete Guide</p>
+              <p className="text-xs text-muted-foreground mt-1">Start here: the full FIR journey in one page</p>
+            </Link>
+            <Link href="/journal/article/what-you-must-know-fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Myths vs Facts in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Misconceptions corrected, rights listed</p>
             </Link>
             <Link href="/journal/article/police-refuse-fir-what-to-do-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Police Refuse to Register FIR: What Can You Do?</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Police Won't Register Your FIR? The Escalation Path</p>
+              <p className="text-xs text-muted-foreground mt-1">SHO → SP/DPO → Justice of the Peace</p>
             </Link>
-            <Link href="/journal/article/section-22a-22b-crpc-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 22-A/22-B CrPC: The Justice of Peace Explained</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/journal/article/police-investigation-procedure-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Police Investigation Procedure in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/false-fir-pakistan-legal-remedies" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">False FIR Against You? Legal Remedies</p>
+              <p className="text-xs text-muted-foreground mt-1">For the accused: quashing and Sections 182/211 PPC</p>
             </Link>
           </div>
         </div>

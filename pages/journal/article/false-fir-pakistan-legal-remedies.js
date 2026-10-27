@@ -61,7 +61,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "False FIR in Pakistan: Legal Remedies and Consequences",
+    headline: "False FIR Against You in Pakistan: Quashing and Legal Remedies",
     description:
       "The legal routes available for a false FIR in Pakistan — quashing under Section 561-A CrPC, and prosecuting false information under Sections 182 and 211 PPC.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
@@ -93,7 +93,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "False FIR in Pakistan: Legal Remedies and Consequences",
+        name: "False FIR Against You in Pakistan: Quashing and Legal Remedies",
         item: `${site.url}/journal/article/false-fir-pakistan-legal-remedies`,
       },
     ],
@@ -113,7 +113,7 @@ export default function FalseFirPakistanLegalRemedies() {
   return (
     <Layout>
       <MarketingSEO
-        title="False FIR in Pakistan: Legal Remedies and Consequences"
+        title="False FIR Against You in Pakistan: Quashing and Legal Remedies"
         description="The legal routes available for a false FIR in Pakistan — quashing under Section 561-A CrPC, and prosecuting false information under Sections 182 and 211 PPC."
         path="/journal/article/false-fir-pakistan-legal-remedies"
         schema={schema}
@@ -128,7 +128,7 @@ export default function FalseFirPakistanLegalRemedies() {
             Legal Help · Published February 15, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            False FIR in Pakistan: Legal Remedies and Consequences
+            False FIR Against You in Pakistan: Quashing and Legal Remedies
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Believing an FIR against you is false is common — proving it, legally, is a specific
@@ -288,23 +288,23 @@ export default function FalseFirPakistanLegalRemedies() {
       {/* Related reading */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related FIR guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/legal-issues-pakistan/fir-refused-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">What to Do if Police Refuse to Register an FIR</p>
-              <p className="text-xs text-muted-foreground mt-1">Guide · Wakeel Journal</p>
+            <Link href="/journal/article/how-to-register-fir-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan: Complete Guide</p>
+              <p className="text-xs text-muted-foreground mt-1">Start here: the full FIR journey in one page</p>
             </Link>
-            <Link href="/journal/article/how-to-get-bail-in-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Bail in Pakistan: How to Get Bail in a Criminal Case</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/section-154-crpc-fir-registration-law-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 154 CrPC Explained</p>
+              <p className="text-xs text-muted-foreground mt-1">The legal duty to register, and what courts say</p>
+            </Link>
+            <Link href="/journal/article/fir-status-check-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Check FIR Status Online in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Tracking your case after registration</p>
             </Link>
             <Link href="/journal/article/what-you-must-know-fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">What You Must Know About FIR Registration in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/legal-sources" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Our Approach to Legal Sources</p>
-              <p className="text-xs text-muted-foreground mt-1">How Wakeel grounds answers in Pakistani law</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Myths vs Facts in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Misconceptions corrected, rights listed</p>
             </Link>
           </div>
         </div>

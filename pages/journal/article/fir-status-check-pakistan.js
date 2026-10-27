@@ -61,7 +61,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "How to Check FIR Status in Pakistan",
+    headline: "How to Check FIR Status Online in Pakistan (After Registration)",
     description:
       "A simple guide to checking your FIR status online in Pakistan — which portal to use for Punjab, Sindh, and other provinces, and what information you need.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
@@ -99,7 +99,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "How to Check FIR Status in Pakistan",
+        name: "How to Check FIR Status Online in Pakistan (After Registration)",
         item: `${site.url}/journal/article/fir-status-check-pakistan`,
       },
     ],
@@ -119,7 +119,7 @@ export default function FirStatusCheckPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="How to Check FIR Status in Pakistan"
+        title="How to Check FIR Status Online in Pakistan (After Registration)"
         description="A simple guide to checking your FIR status online in Pakistan — which portal to use for Punjab, Sindh, and other provinces, and what information you need."
         path="/journal/article/fir-status-check-pakistan"
         schema={schema}
@@ -132,7 +132,7 @@ export default function FirStatusCheckPakistan() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>Legal Help · Published August 27, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            How to Check FIR Status in Pakistan
+            How to Check FIR Status Online in Pakistan (After Registration)
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             You don't need to visit the police station every time. Here's how to check an FIR
@@ -326,25 +326,25 @@ export default function FirStatusCheckPakistan() {
       </section>
 
       {/* Related reading */}
-      <section className="bg-muted/40 py-16 sm:py-20">
+      <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related FIR guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             <Link href="/journal/article/how-to-register-fir-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan: Complete Guide</p>
+              <p className="text-xs text-muted-foreground mt-1">Start here: the full FIR journey in one page</p>
             </Link>
-            <Link href="/journal/article/police-refuse-fir-what-to-do-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Police Refuse to Register FIR: What Can You Do?</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/journal/article/section-22a-22b-crpc-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 22-A/22-B CrPC: The Justice of Peace Explained</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/fir-registration-step-by-step-guide-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">At the Police Station: What Happens When You File an FIR</p>
+              <p className="text-xs text-muted-foreground mt-1">The in-person walkthrough, desk to signed copy</p>
             </Link>
             <Link href="/journal/article/false-fir-pakistan-legal-remedies" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">False FIR in Pakistan: Legal Remedies</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">False FIR Against You? Legal Remedies</p>
+              <p className="text-xs text-muted-foreground mt-1">For the accused: quashing and Sections 182/211 PPC</p>
+            </Link>
+            <Link href="/journal/article/how-to-complete-fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Checklist: What to Bring and Verify Before You Sign</p>
+              <p className="text-xs text-muted-foreground mt-1">Documents to prepare and details to check</p>
             </Link>
           </div>
         </div>

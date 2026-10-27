@@ -14,77 +14,72 @@ import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src
 
 const steps = [
   {
-    title: "Identify the right police station",
-    detail: "An FIR is generally filed at the police station with territorial jurisdiction over where the offence occurred. If you're unsure which station that is, any station should be able to point you to the correct one, or in genuine emergencies, register a \"Zero FIR\" that later transfers to the right jurisdiction.",
+    "title": "Ask for the officer who records FIRs",
+    "detail": "At the front desk, say you want to report an offence and register an FIR. The statement is usually taken by the duty officer or the moharrir (clerk) under the Station House Officer (SHO), who is the officer in charge."
   },
   {
-    title: "Prepare your account before you go",
-    detail: "Write down what happened in the order it occurred — date, time, place, what you saw or experienced, and any names, descriptions, or evidence you have. A clear account speeds up registration and reduces the chance of details being missed.",
+    "title": "Give your account, spoken or written",
+    "detail": "You can tell the officer what happened or hand in a signed written application. Many people bring a typed or handwritten application and keep a stamped copy. Describe events in order and stick to what you saw or experienced."
   },
   {
-    title: "Report to the officer in charge",
-    detail: "Give your account to the Station House Officer (SHO) or the duty officer. For a cognizable offence, Section 154 CrPC makes registration mandatory — the officer does not have discretion to refuse simply because they disagree with your account.",
+    "title": "The officer reduces it to writing",
+    "detail": "If you speak, Section 154 CrPC requires the officer to write your information down. The officer, not you, identifies the Pakistan Penal Code sections that apply."
   },
   {
-    title: "Have your statement read back and confirmed",
-    detail: "The officer must have the written FIR read over to you before you sign it or give a thumb impression. Listen carefully and flag anything that doesn't match what you actually said.",
+    "title": "Listen to it read back, then sign",
+    "detail": "The written information must be read over to you before you sign or give a thumb impression. Ask for any mistake or omission to be corrected now, because it is much harder to correct later."
   },
   {
-    title: "Collect your free copy and note the FIR number",
-    detail: "You are entitled to a copy of the FIR free of cost. Keep the FIR number, the police station name, and the date — you'll need all three for any follow-up.",
+    "title": "Wait for the FIR number and your copy",
+    "detail": "The substance is entered in the FIR register and given a number. Ask for your free copy, and note the FIR number, the date and the station name before you leave."
   },
   {
-    title: "If registration is refused, escalate in writing",
-    detail: "If the police decline to register a cognizable offence, you can apply to the Ex-Officio Justice of the Peace under Sections 22-A/22-B CrPC to direct registration, or file a private complaint directly with a Magistrate under Section 200 CrPC.",
-  },
-  {
-    title: "Track what happens after registration",
-    detail: "Once registered, the case moves into investigation — statements under Sections 161 and 164 CrPC, and eventually a police report (challan) under Section 173 CrPC. Ask the investigating officer how to follow up on progress.",
-  },
+    "title": "Ask what happens next at the station",
+    "detail": "Ask who the investigating officer is and how to contact them. In injury cases, police usually issue a letter for a medico-legal examination at a government hospital. Ask for it if you were hurt."
+  }
 ];
 
 const commonMistakes = [
-  "Waiting too long to report — delay can weaken a case, even though there's no fixed deadline for reporting most offences.",
-  "Giving a vague or disorganized account that leaves out dates, places, or the sequence of events.",
-  "Leaving the station without confirming the FIR number or collecting a free copy.",
-  "Assuming a verbal complaint or a diary entry (\"roznamcha\") counts as an FIR — it doesn't, until it's formally registered with a number under Section 154.",
+  "Signing before the statement has been read back in full, or signing a version you didn't fully understand.",
+  "Adding guesses about motive or legal labels. Facts help the investigation; speculation gives the defence material to attack later.",
+  "Leaving without the investigating officer's name or contact details, which makes later follow-up much slower.",
+  "Not asking for a medico-legal letter in an injury case, since medical evidence is time-sensitive."
 ];
 
 const faqs = [
   {
-    question: "What are the steps to register an FIR in Pakistan?",
-    answer:
-      "Broadly: identify the right police station, prepare a clear factual account, report it to the officer in charge, have the written FIR read back to you before signing, collect your free copy and the FIR number, and if registration is refused, escalate through the Justice of the Peace (Sections 22-A/22-B CrPC) or a private complaint under Section 200 CrPC.",
+    "question": "Can I submit a written application instead of speaking at the station?",
+    "answer": "Yes. Section 154 CrPC covers information given orally or in writing. A written, signed application with a dated copy for your own records is common practice and keeps your wording intact."
   },
   {
-    question: "Do I have to go to the police station in person to file an FIR?",
-    answer:
-      "Traditionally yes, though some provinces have introduced online or helpline reporting for certain categories of complaint. For most cognizable offences, reporting in person at the station with jurisdiction remains the standard route, and it's worth confirming what digital options (if any) your provincial police department currently offers.",
+    "question": "Who writes the FIR at a police station?",
+    "answer": "The officer in charge of the station (the SHO) is responsible. In practice the duty officer or moharrir often writes it under the SHO's direction. Either way, it must be read back to you and signed by you."
   },
   {
-    question: "What is a Zero FIR?",
-    answer:
-      "A Zero FIR is one registered at a police station that doesn't have territorial jurisdiction over the offence, used in urgent situations so the report is recorded without delay — it's later transferred to the station that does have jurisdiction for investigation.",
+    "question": "Can I take someone with me when I file an FIR?",
+    "answer": "Yes. You can bring a relative, a witness or a lawyer. A companion can help you remember details and witness what was read back to you."
   },
   {
-    question: "How long does FIR registration itself take?",
-    answer:
-      "Registration is meant to be immediate once a cognizable offence is reported — Section 154 CrPC doesn't build in a waiting period. Investigation afterward can take considerably longer, but the act of registering the report shouldn't itself be delayed.",
+    "question": "How long does it take to register an FIR at the station?",
+    "answer": "Registration is meant to happen when the information is given; Section 154 CrPC sets no waiting period. In practice it can take from under an hour to several hours, depending on how busy the station is."
   },
   {
-    question: "Can Wakeel.org walk me through the FIR process step by step?",
-    answer:
-      "Yes — Wakeel.org can explain each step in plain English or Urdu and help you organize your account before you go to the station. It cannot register the FIR for you or guarantee the police follow the process correctly — if they don't, a licensed advocate can help you escalate.",
+    "question": "What should I do if I was injured?",
+    "answer": "Ask the police for a letter referring you for a medico-legal examination at a government hospital, and keep any medical reports. Injuries are documented best when they are fresh."
   },
+  {
+    "question": "Can Wakeel.org prepare me for the station visit?",
+    "answer": "Yes. Wakeel can help you write a clear, chronological account in English or Urdu before you go. It cannot go with you or register the FIR."
+  }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "FIR Registration in Pakistan: A Step-by-Step Guide",
+    headline: "At the Police Station: What Happens When You File an FIR in Pakistan",
     description:
-      "A numbered, practical walkthrough of registering an FIR in Pakistan under Section 154 CrPC — from identifying the right station to what happens after registration.",
+      "A step-by-step walkthrough of what happens inside a Pakistani police station when you report a crime: who you speak to, how your statement is written and read back, and what you leave with.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-03-22",
@@ -120,7 +115,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "FIR Registration in Pakistan: A Step-by-Step Guide",
+        name: "At the Police Station: What Happens When You File an FIR in Pakistan",
         item: `${site.url}/journal/article/fir-registration-step-by-step-guide-pakistan`,
       },
     ],
@@ -128,20 +123,20 @@ const schema = [
 ];
 
 const keywords = [
-  "fir registration step by step pakistan",
-  "how to file fir pakistan",
-  "fir process pakistan",
-  "zero fir pakistan",
-  "section 154 crpc steps",
-  "fir registration guide pakistan",
+  "what happens at police station fir pakistan",
+  "fir filing process at police station",
+  "how fir is written pakistan",
+  "fir read back sign",
+  "moharrir fir",
+  "file fir in person pakistan"
 ].join(", ");
 
 export default function FirRegistrationStepByStepGuidePakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="FIR Registration in Pakistan: A Step-by-Step Guide"
-        description="A numbered, practical walkthrough of registering an FIR in Pakistan under Section 154 CrPC — from identifying the right station to what happens after registration."
+        title="At the Police Station: What Happens When You File an FIR in Pakistan"
+        description="A step-by-step walkthrough of what happens inside a Pakistani police station when you report a crime: who you speak to, how your statement is written and read back, and what you leave with."
         path="/journal/article/fir-registration-step-by-step-guide-pakistan"
         schema={schema}
         keywords={keywords}
@@ -155,11 +150,11 @@ export default function FirRegistrationStepByStepGuidePakistan() {
             Legal Help · Published March 22, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            FIR Registration in Pakistan: A Step-by-Step Guide
+            At the Police Station: What Happens When You File an FIR in Pakistan
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Seven steps, in order, from deciding which station to go to, through what happens if
-            the police push back, to what comes next once your FIR is actually on record.
+            What to expect inside the station, in order: who takes your statement, how it is written
+            and read back, and what you should have in hand before you walk out.
           </p>
         </div>
       </section>
@@ -171,12 +166,12 @@ export default function FirRegistrationStepByStepGuidePakistan() {
             <CardContent className="p-6 space-y-3">
               <p className="text-sm font-semibold text-primary">Quick answer</p>
               <p className="text-muted-foreground leading-relaxed">
-                Report a cognizable offence to the police station with jurisdiction; registration
-                under <strong>Section 154 CrPC</strong> is mandatory, not discretionary. Confirm
-                your written statement is read back accurately, collect your{" "}
-                <strong>free copy</strong> and FIR number, and if the police refuse to register it,
-                escalate through the <strong>Justice of the Peace</strong> (Sections 22-A/22-B
-                CrPC) or a private complaint under <strong>Section 200 CrPC</strong>.
+                At the station you give your account to the duty officer or moharrir, orally or as a written
+                application. Under <strong>Section 154 CrPC</strong> it is written down, <strong>read back
+                to you</strong> and signed by you, then entered in the FIR register with a number. Before
+                you leave, collect your <strong>free copy</strong>, the FIR number and the investigating
+                officer's details. Preparing documents beforehand is covered in our FIR checklist, and
+                refusals are covered in our escalation guide.
               </p>
             </CardContent>
           </Card>
@@ -187,7 +182,7 @@ export default function FirRegistrationStepByStepGuidePakistan() {
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className={sectionHeading}>The process, step by step</h2>
+            <h2 className={sectionHeading}>Inside the station, step by step</h2>
           </div>
           <Card className={cardBase}>
             <CardContent className="p-6">
@@ -213,7 +208,7 @@ export default function FirRegistrationStepByStepGuidePakistan() {
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className={sectionHeading}>Mistakes that slow this process down</h2>
+            <h2 className={sectionHeading}>Mistakes people make at the desk</h2>
           </div>
           <Card className={cardBase}>
             <CardContent className="p-6">
@@ -317,23 +312,23 @@ export default function FirRegistrationStepByStepGuidePakistan() {
       {/* Related reading */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related FIR guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
+            <Link href="/journal/article/how-to-register-fir-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan: Complete Guide</p>
+              <p className="text-xs text-muted-foreground mt-1">Start here: the full FIR journey in one page</p>
+            </Link>
             <Link href="/journal/article/how-to-complete-fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Complete FIR Registration in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Checklist: What to Bring and Verify Before You Sign</p>
+              <p className="text-xs text-muted-foreground mt-1">Documents to prepare and details to check</p>
             </Link>
-            <Link href="/journal/article/what-you-must-know-fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">What You Must Know About FIR Registration in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/police-refuse-fir-what-to-do-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Police Won't Register Your FIR? The Escalation Path</p>
+              <p className="text-xs text-muted-foreground mt-1">SHO → SP/DPO → Justice of the Peace</p>
             </Link>
-            <Link href="/journal/legal-issues-pakistan/fir-refused-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">What to Do if Police Refuse to Register an FIR</p>
-              <p className="text-xs text-muted-foreground mt-1">Guide · Wakeel Journal</p>
-            </Link>
-            <Link href="/legal-sources" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Our Approach to Legal Sources</p>
-              <p className="text-xs text-muted-foreground mt-1">How Wakeel grounds answers in Pakistani law</p>
+            <Link href="/journal/article/fir-status-check-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Check FIR Status Online in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Tracking your case after registration</p>
             </Link>
           </div>
         </div>

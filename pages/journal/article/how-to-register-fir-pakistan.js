@@ -19,105 +19,54 @@ import { site } from "../../../src/data/marketing";
 import { cardBase, eyebrow, headingGradient, sectionHeading } from "../../../src/data/theme";
 
 const steps = [
-  {
-    icon: FileText,
-    title: "1. Write down the facts while they're fresh",
-    detail:
-      "Date, time, exact location, names or descriptions of people involved, what was said or done, and any witnesses. Memory fades fast under stress — a simple written timeline is the single most useful thing you can bring to a police station.",
-  },
-  {
-    icon: ShieldAlert,
-    title: "2. Go to the police station with jurisdiction",
-    detail:
-      "An FIR is normally registered at the police station covering the area where the offence happened (Section 154, Code of Criminal Procedure, 1898). Under Section 154 CrPC, the officer in charge must record information about a cognizable offence in the prescribed FIR book, in the language the informant understands where practicable, and give the informant a free copy.",
-  },
-  {
-    icon: Gavel,
-    title: "3. Know the difference: cognizable vs non-cognizable",
-    detail:
-      "Police can register an FIR and investigate without a magistrate's order only for cognizable offences (generally the more serious ones, such as theft, assault causing hurt, or fraud under the Pakistan Penal Code, 1860). For non-cognizable offences, police typically need a magistrate's permission — this is often the real reason an officer says 'we can't register this,' and it's worth asking which category applies to your facts.",
-  },
-  {
-    icon: Clock,
-    title: "4. Ask for the FIR number and a copy immediately",
-    detail:
-      "Once recorded, you are entitled to a free copy of the FIR. Note the FIR number, the police station name, and the date/time it was registered — you will need these for any complaint, bail application, or lawyer consultation later.",
-  },
-  {
-    icon: AlertTriangle,
-    title: "5. If they refuse, escalate in writing",
-    detail:
-      "If an officer refuses to register a cognizable offence, Section 154(3) CrPC allows the informant to send the complaint in writing, by post, to the relevant Superintendent of Police (SP), who can direct that the FIR be registered or investigate the matter personally. Keep a copy of what you sent and proof of delivery.",
-  },
-  {
-    icon: BookOpen,
-    title: "6. Know your fallback: Section 22-A/22-B applications",
-    detail:
-      "In practice, many people move directly to a Section 22-A/22-B Cr.P.C. application before a Magistrate (Ex-Officio Justice of the Peace) when police refuse or delay registering an FIR. This is a well-established route in Pakistani criminal procedure, but the paperwork and hearing process are exactly where a licensed advocate earns their fee — get one involved here if you can.",
-  },
+  { icon: FileText, title: "1. Record the facts while they're fresh", detail: "Date, time, exact place, who was involved, what was said or done, and who saw it. A short written timeline is the most useful thing you can carry to the station. Our FIR checklist covers exactly what to bring." },
+  { icon: Gavel, title: "2. Check whether the offence is cognizable", detail: "Police can register an FIR and investigate without a Magistrate's order only for cognizable offences (theft, robbery, hurt, fraud and other serious offences under the Pakistan Penal Code, 1860). For non-cognizable matters, Section 155 CrPC applies instead: the officer notes the information and refers you to a Magistrate." },
+  { icon: ShieldAlert, title: "3. Report it at the station with jurisdiction", detail: "Go to the police station covering the area where the offence happened. You can speak your account or hand in a written application; under Section 154 CrPC the officer must reduce oral information to writing, read it back to you and have you sign it." },
+  { icon: Clock, title: "4. Leave with the FIR number and a copy", detail: "Note the FIR number, police station and date of registration, and ask for your free copy. These three details are needed for every later step: tracking, bail matters or seeing a lawyer." },
+  { icon: AlertTriangle, title: "5. If the station won't register it, escalate", detail: "A refusal is not the end. The usual route is a written application to senior police officers, then an application to the Ex-Officio Justice of the Peace under Sections 22-A/22-B CrPC. Our escalation guide sets out each step." },
+  { icon: BookOpen, title: "6. After registration: investigation begins", detail: "An investigating officer records statements (Section 161 CrPC), collects evidence and eventually submits a report to court under Section 173 CrPC (the challan). You can follow progress through your province's police portal or the station." },
 ];
 
 const commonMistakes = [
-  "Waiting too long to report — some offences carry limitation concerns, and memory and evidence both degrade with time.",
-  "Signing a statement you haven't read carefully, or one written in language you don't fully follow.",
-  "Not asking for the FIR number or a copy — without it, you have no formal proof a report was ever made.",
-  "Assuming a verbal 'we can't help' from a duty officer is the final word — it usually isn't, and it's rarely explained clearly.",
-  "Going alone to escalate a refusal without first writing down exactly what happened and when, in your own words, dated.",
+  "Treating a roznamcha (daily diary) entry or an informal note as an FIR. Without a number in the FIR register, nothing has been formally registered.",
+  "Reporting a non-cognizable matter and expecting an FIR. Ask the officer which category your facts fall into.",
+  "Going to the wrong station and leaving when redirected, instead of asking which station has jurisdiction and going there the same day.",
+  "Waiting weeks to report. There is usually no fixed deadline, but unexplained delay is often used to question an FIR later.",
+  "Not keeping a dated record of each visit if the station delays. That record is what any escalation relies on."
 ];
 
 const faqs = [
   {
-    question: "What is Section 154 CrPC and why does it matter for an FIR?",
-    answer:
-      "Section 154 of the Code of Criminal Procedure, 1898 is the provision that obliges an officer in charge of a police station to record information relating to a cognizable offence in writing, in the FIR register, and to give the informant a free copy. It's the legal basis for the entire FIR process in Pakistan, and it's also the section people quote when police refuse to register a report.",
+    "question": "What is an FIR in Pakistan?",
+    "answer": "An FIR (First Information Report) is the written record of information about a cognizable offence, entered by the officer in charge of a police station in the register kept under Section 154 of the Code of Criminal Procedure, 1898. It is the formal starting point of a police investigation, not a finding that anyone is guilty."
   },
   {
-    question: "What can I do if police refuse to register an FIR?",
-    answer:
-      "First, ask clearly and calmly why — it may genuinely be a non-cognizable matter needing a magistrate's order, not a refusal. If it is a cognizable offence and they still refuse, Section 154(3) CrPC lets you send the complaint in writing to the Superintendent of Police. Many people in Pakistan also file a Section 22-A/22-B Cr.P.C. application before a Magistrate, who can direct the police to register the FIR. This is a real legal remedy, not just a suggestion — but a lawyer's help with the drafting and hearing genuinely matters here.",
+    "question": "Which offences need an FIR, and which don't?",
+    "answer": "FIRs are registered for cognizable offences, which police can investigate and arrest for without a warrant. These are listed in Schedule II of the CrPC and include most serious offences such as theft, robbery, hurt and fraud. For non-cognizable offences, Section 155 CrPC applies: the officer records the substance of the information and refers you to a Magistrate."
   },
   {
-    question: "Is an FIR the same as a formal criminal charge?",
-    answer:
-      "No. An FIR is the starting point of a police investigation into an alleged cognizable offence — it is not a conviction, a charge sheet, or proof of guilt. What happens after registration (investigation, challan, trial) is a separate, longer process, and the outcome depends on evidence gathered along the way.",
+    "question": "Is filing an FIR free in Pakistan?",
+    "answer": "Yes. There is no fee to register an FIR, and you are entitled to a copy free of cost. If anyone at a station asks for money, note their name and raise it with a senior officer."
   },
   {
-    question: "Can Wakeel.org help me register an FIR?",
-    answer:
-      "Wakeel.org cannot file an FIR, contact police on your behalf, or guarantee that a report will be registered — no AI tool can do that, and be cautious of anything that claims otherwise. What it can genuinely help with is organizing your facts into a clear timeline, explaining terms like 'cognizable offence' or 'Section 154' in plain English or Urdu, and preparing questions to bring to a lawyer or the police station. Always verify next steps with a licensed advocate before you act.",
+    "question": "Is an FIR the same as a criminal charge?",
+    "answer": "No. An FIR starts an investigation. Charges are framed later by a court, after police submit their report under Section 173 CrPC, and a conviction requires a trial."
   },
   {
-    question: "Do I need a lawyer to register an FIR?",
-    answer:
-      "Not strictly — registering an FIR itself doesn't legally require a lawyer, and many people do it on their own. But if police are refusing, if the matter is serious, or if you're heading toward a Section 22-A/22-B application, a licensed advocate familiar with the local police station and magistrate's court will usually save you real time and stress.",
+    "question": "Do I need a lawyer to register an FIR?",
+    "answer": "No. Any person can report a cognizable offence directly. A lawyer becomes valuable if the police refuse to register it, if you are applying to the Justice of the Peace, or once the case moves toward trial."
   },
   {
-    question: "What can I do if police refuse to register my FIR in Pakistan, and it's already been days?",
-    answer:
-      "Don't wait indefinitely on a verbal refusal. Put your complaint in writing and send it to the Superintendent of Police under Section 154(3) CrPC, with proof of when you first tried to report it. If there's still no movement, a Section 22-A/22-B Cr.P.C. application before a Magistrate (Ex-Officio Justice of the Peace) is the standard next step — a lawyer can usually get this filed and heard faster than repeated visits to the same police station.",
-  },
-  {
-    question: "How do I file a complaint against police in Pakistan for misconduct or inaction?",
-    answer:
-      "For refusal to register a cognizable offence, use the Section 154(3) written complaint to the SP or a Section 22-A/22-B application to a Magistrate — both are described above. For broader police misconduct (harassment, corruption, abuse), complaints can be filed with the relevant Police Complaints Authority where one exists in your province, or with the SP/DPO's office directly. Keep a written, dated record of the officer's name, station, and what happened — vague complaints are far harder to act on than specific ones.",
-  },
-  {
-    question: "How do I register an FIR in Pakistan step by step?",
-    answer:
-      "Write down what happened while it's fresh — date, time, location, people involved, witnesses. Go to the police station covering the area where it happened and ask the duty officer to record it under Section 154 CrPC. If it's a cognizable offence, they're required to register it in the FIR book and give you a free copy on request. Note the FIR number before you leave — you'll need it for anything that follows.",
-  },
-  {
-    question: "What happens after an FIR is filed in Pakistan?",
-    answer:
-      "Once registered, the police begin investigating — collecting evidence, recording statements, and, depending on the offence, potentially making arrests. The investigation typically concludes with a report (challan) submitted to the court, after which the matter proceeds to trial if there's sufficient evidence. This process can take anywhere from weeks to well over a year depending on the case's complexity and the court's caseload — ask the investigating officer or your lawyer for updates rather than assuming no news means no progress.",
-  },
+    "question": "Can Wakeel.org register an FIR for me?",
+    "answer": "No. Wakeel.org cannot file an FIR or contact the police. It can help you turn what happened into a clear, dated account, explain terms like 'cognizable' in plain English or Urdu, and help you prepare questions for a lawyer."
+  }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "How to Register an FIR in Pakistan (2026 Guide)",
+    headline: "How to Register an FIR in Pakistan: Complete Guide (2026 Guide)",
     description:
       "A plain-language walkthrough of how FIR registration works under Section 154 CrPC, what to do if police refuse, and how to prepare your facts before you go.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
@@ -154,7 +103,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "How to Register an FIR in Pakistan",
+        name: "How to Register an FIR in Pakistan: Complete Guide",
         item: `${site.url}/journal/article/how-to-register-fir-pakistan`,
       },
     ],
@@ -162,27 +111,21 @@ const schema = [
 ];
 
 const keywords = [
+  "how to register fir in pakistan",
   "fir registration pakistan",
-  "police refuse fir",
-  "section 154 crpc",
-  "how to file fir pakistan",
   "fir process pakistan",
-  "22a 22b application pakistan",
+  "what is fir pakistan",
   "cognizable offence pakistan",
-  "what can i do if police refuse to register my fir in pakistan",
-  "how do i file a complaint against police in pakistan",
-  "police complaint pakistan",
-  "how to register fir",
-  "how do i register an fir in pakistan",
-  "what happens after an fir is filed in pakistan",
+  "section 154 crpc",
+  "fir guide pakistan"
 ].join(", ");
 
 export default function HowToRegisterFirPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="How to Register an FIR in Pakistan"
-        description="How FIR registration works in Pakistan under Section 154 CrPC — what officers must legally do, and what to do if police refuse to register your complaint."
+        title="How to Register an FIR in Pakistan: Complete Guide"
+        description="The complete guide to registering an FIR in Pakistan: what an FIR is, cognizable vs non-cognizable offences, the five stages from incident to investigation, and where to go next."
         path="/journal/article/how-to-register-fir-pakistan"
         schema={schema}
         keywords={keywords}
@@ -196,12 +139,12 @@ export default function HowToRegisterFirPakistan() {
             Legal Help · Published May 3, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            How to Register an FIR in Pakistan
+            How to Register an FIR in Pakistan: Complete Guide
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            If you've ever stood at a police station counter being told, in one form or another,
-            "come back later" — you're not imagining the frustration. Here's what the law actually
-            says, in plain words, and what to do if the front desk isn't giving you straight answers.
+            Everything you need to know about the FIR process in Pakistan, from what counts as a
+            reportable offence to what happens after registration, with links to a detailed guide
+            for each stage.
           </p>
         </div>
       </section>
@@ -213,12 +156,13 @@ export default function HowToRegisterFirPakistan() {
             <CardContent className="p-6 space-y-3">
               <p className="text-sm font-semibold text-primary">Quick answer</p>
               <p className="text-muted-foreground leading-relaxed">
-                Under <strong>Section 154 of the Code of Criminal Procedure, 1898</strong>, a
-                police officer is legally required to record a report of a cognizable offence and
-                give you a free copy. If they refuse, you can put your complaint in writing to the
-                Superintendent of Police under Section 154(3), or apply to a Magistrate under{" "}
-                <strong>Section 22-A/22-B Cr.P.C.</strong> Bring a clear, dated, written account of
-                what happened — it is the single biggest thing that speeds this process up.
+                To register an FIR in Pakistan, report a <strong>cognizable offence</strong> at the police
+                station covering the place where it happened. Under <strong>Section 154 CrPC</strong> the
+                officer in charge must write down your information, read it back to you, have you sign
+                it and enter it in the FIR register. Leave with the <strong>FIR number</strong> and a
+                free copy. Non-cognizable matters go to a Magistrate under <strong>Section 155</strong>,
+                and if police refuse a cognizable case you can apply to the <strong>Justice of the
+                Peace</strong> under Sections 22-A/22-B CrPC.
               </p>
             </CardContent>
           </Card>
@@ -229,7 +173,7 @@ export default function HowToRegisterFirPakistan() {
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className={sectionHeading}>The FIR process, step by step</h2>
+            <h2 className={sectionHeading}>The FIR journey at a glance</h2>
             <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
               This isn't a copy-paste of the law — it's what actually helps once you're standing
               in front of a duty officer with a real problem and limited time.
@@ -348,37 +292,39 @@ export default function HowToRegisterFirPakistan() {
       {/* Related reading */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Detailed FIR guides for each situation</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link
-              href="/journal/legal-issues-pakistan/fir-refused-pakistan"
-              className={`group ${cardBase} block rounded-lg p-5`}
-            >
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">
-                What to Do if Police Refuse to Register an FIR
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">Guide · Wakeel Journal</p>
+            <Link href="/journal/article/fir-registration-step-by-step-guide-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">At the Police Station: What Happens When You File an FIR</p>
+              <p className="text-xs text-muted-foreground mt-1">The in-person walkthrough, desk to signed copy</p>
             </Link>
-            <Link
-              href="/journal/article/understanding-legal-notices-pakistan"
-              className={`group ${cardBase} block rounded-lg p-5`}
-            >
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">
-                Understanding Legal Notices in Pakistan
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/how-to-complete-fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Checklist: What to Bring and Verify Before You Sign</p>
+              <p className="text-xs text-muted-foreground mt-1">Documents to prepare and details to check</p>
             </Link>
-            <Link href="/citizens" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">
-                Wakeel.org for Citizens
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">How Wakeel helps everyday legal problems</p>
+            <Link href="/journal/article/what-you-must-know-fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Myths vs Facts in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Misconceptions corrected, rights listed</p>
             </Link>
-            <Link href="/legal-sources" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">
-                Our Approach to Legal Sources
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">How Wakeel grounds answers in Pakistani law</p>
+            <Link href="/journal/article/police-refuse-fir-what-to-do-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Police Won't Register Your FIR? The Escalation Path</p>
+              <p className="text-xs text-muted-foreground mt-1">SHO → SP/DPO → Justice of the Peace</p>
+            </Link>
+            <Link href="/journal/article/section-154-crpc-fir-registration-law-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Section 154 CrPC Explained</p>
+              <p className="text-xs text-muted-foreground mt-1">The legal duty to register, and what courts say</p>
+            </Link>
+            <Link href="/journal/article/fir-status-check-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Check FIR Status Online in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Tracking your case after registration</p>
+            </Link>
+            <Link href="/journal/article/false-fir-pakistan-legal-remedies" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">False FIR Against You? Legal Remedies</p>
+              <p className="text-xs text-muted-foreground mt-1">For the accused: quashing and Sections 182/211 PPC</p>
+            </Link>
+            <Link href="/journal/legal-issues-pakistan/fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Registration Help with Wakeel</p>
+              <p className="text-xs text-muted-foreground mt-1">Prepare your written statement with Wakeel</p>
             </Link>
           </div>
         </div>

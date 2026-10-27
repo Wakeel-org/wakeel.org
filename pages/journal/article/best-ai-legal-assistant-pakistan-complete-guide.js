@@ -31,39 +31,34 @@ const redFlags = [
 
 const faqs = [
   {
-    question: "What makes an AI legal assistant good for Pakistan specifically?",
-    answer:
-      "Source-aware answers grounded in actual Pakistani statutes (not generic or foreign legal content), genuine bilingual English/Urdu support, and honest data handling given Pakistan's still-developing privacy law framework. A tool that clearly states its limits is more trustworthy than one that answers everything with false confidence.",
+    "question": "How can I test an AI legal assistant before trusting it?",
+    "answer": "Ask it a question whose answer you can check, such as what a specific CrPC or PPC section says, and compare its answer with the official text on the Pakistan Code website. Then ask the same question in Urdu, and ask which section it relied on."
   },
   {
-    question: "Can an AI legal assistant replace a lawyer in Pakistan?",
-    answer:
-      "No, and a well-built one should say so directly. It's genuinely useful for understanding documents, learning the law, and preparing for a consultation — but final legal advice, representation, and filing require a licensed advocate.",
+    "question": "What questions reveal whether a tool knows Pakistani law?",
+    "answer": "Ask about procedures unique to Pakistan, such as Sections 22-A/22-B CrPC or khula under the Family Courts Act, 1964. A tool that answers with Indian, UK or US concepts isn't properly grounded."
   },
   {
-    question: "How do I know if an AI legal tool's answers about Pakistani law are accurate?",
-    answer:
-      "Check whether it cites the actual statute or section it's relying on, so you can verify the text against the official Pakistan Code or another primary source yourself, rather than trusting a paraphrase you can't check.",
+    "question": "What should I check in an AI tool's privacy policy?",
+    "answer": "Check whether uploads are encrypted, how long documents are kept, whether they're used to train models and whether you can delete them. Pakistan does not yet have a fully enacted general data protection law, so the tool's own policy matters."
   },
   {
-    question: "Is it safe to upload legal documents to an AI assistant in Pakistan?",
-    answer:
-      "It depends on the specific tool's data practices — check its stated encryption and retention policy before uploading anything sensitive, since Pakistan doesn't yet have a fully enacted data protection law to fall back on as a guarantee.",
+    "question": "How do I verify an AI's legal citation?",
+    "answer": "Look up the statute and section on pakistancode.gov.pk, and look up any case citation in a law report or court website. Treat a citation you cannot find as unreliable."
   },
   {
-    question: "How does Wakeel.org fit this criteria?",
-    answer:
-      "Wakeel.org is built to be source-aware, explain answers in plain English or Urdu, and process documents with encryption — while consistently telling you when a question needs a licensed advocate rather than pretending to cover everything. It provides legal information and research support, not final legal advice.",
-  },
+    "question": "Does Wakeel.org pass these tests?",
+    "answer": "Wakeel.org is built to cite the provisions it relies on, answer in English or Urdu and encrypt documents. Test it against the checklist yourself, as you would any tool."
+  }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Best AI Legal Assistant for Pakistan: Complete Guide",
+    headline: "How to Choose an AI Legal Assistant in Pakistan: A Test-It-Yourself Checklist",
     description:
-      "The evaluation criteria that actually matter when choosing an AI legal assistant in Pakistan — source-awareness, bilingual support, jurisdiction grounding, and data handling.",
+      "How to test and choose an AI legal assistant in Pakistan yourself: four criteria, simple test questions to try, the red flags to walk away from, and how to check its answers against the Pakistan Code.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-05-31",
@@ -92,7 +87,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Best AI Legal Assistant for Pakistan: Complete Guide",
+        name: "How to Choose an AI Legal Assistant in Pakistan: A Test-It-Yourself Checklist",
         item: `${site.url}/journal/article/best-ai-legal-assistant-pakistan-complete-guide`,
       },
     ],
@@ -100,19 +95,19 @@ const schema = [
 ];
 
 const keywords = [
-  "best ai legal assistant pakistan",
-  "ai legal assistant pakistan guide",
-  "how to choose ai lawyer pakistan",
-  "trustworthy ai legal tool pakistan",
-  "ai legal app criteria pakistan",
+  "how to choose ai legal assistant pakistan",
+  "evaluate legal ai tool",
+  "ai legal assistant checklist",
+  "verify ai legal answer pakistan code",
+  "ai legal tool privacy pakistan"
 ].join(", ");
 
 export default function BestAiLegalAssistantPakistanCompleteGuide() {
   return (
     <Layout>
       <MarketingSEO
-        title="Best AI Legal Assistant for Pakistan: Complete Guide"
-        description="The evaluation criteria that actually matter when choosing an AI legal assistant in Pakistan — source-awareness, bilingual support, jurisdiction grounding, and data handling."
+        title="How to Choose an AI Legal Assistant in Pakistan: A Test-It-Yourself Checklist"
+        description="How to test and choose an AI legal assistant in Pakistan yourself: four criteria, simple test questions to try, the red flags to walk away from, and how to check its answers against the Pakistan Code."
         path="/journal/article/best-ai-legal-assistant-pakistan-complete-guide"
         schema={schema}
         keywords={keywords}
@@ -126,12 +121,11 @@ export default function BestAiLegalAssistantPakistanCompleteGuide() {
             AI & the Law · Published May 31, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Best AI Legal Assistant for Pakistan: Complete Guide
+            How to Choose an AI Legal Assistant in Pakistan: A Test-It-Yourself Checklist
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Rather than ranking specific products, here's the actual criteria worth evaluating —
-            the questions that separate a genuinely useful tool from one that just sounds
-            confident.
+            Don't take any ranking on trust, including ours. This guide shows you how to test an AI
+            legal assistant yourself in ten minutes before you rely on it.
           </p>
         </div>
       </section>
@@ -159,7 +153,7 @@ export default function BestAiLegalAssistantPakistanCompleteGuide() {
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className={sectionHeading}>The four criteria that actually matter</h2>
+            <h2 className={sectionHeading}>Four criteria to test</h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
             {criteria.map((r) => {
@@ -284,23 +278,23 @@ export default function BestAiLegalAssistantPakistanCompleteGuide() {
       {/* Related reading */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             <Link href="/journal/article/best-ai-legal-apps-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
               <p className="font-semibold text-sm group-hover:text-primary transition-colors">Best AI Legal Apps in Pakistan (2026)</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="text-xs text-muted-foreground mt-1">Named apps compared side by side</p>
             </Link>
-            <Link href="/journal/article/can-ai-review-legal-document-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Can AI Review a Legal Document in Pakistan?</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/article/best-ai-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Is There an AI Lawyer in Pakistan?</p>
+              <p className="text-xs text-muted-foreground mt-1">What 'AI lawyer' can legally mean</p>
             </Link>
             <Link href="/journal/article/ai-vs-lawyer-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Will AI Replace Lawyers? AI vs Hiring a Lawyer in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI vs Hiring a Lawyer: What Each Can and Can't Do</p>
+              <p className="text-xs text-muted-foreground mt-1">A capability comparison</p>
             </Link>
-            <Link href="/legal-sources" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Our Approach to Legal Sources</p>
-              <p className="text-xs text-muted-foreground mt-1">How Wakeel grounds answers in Pakistani law</p>
+            <Link href="/journal/article/best-ai-tools-for-lawyers-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">AI Tools for Lawyers in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">For advocates and law firms</p>
             </Link>
           </div>
         </div>

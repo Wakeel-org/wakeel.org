@@ -53,7 +53,7 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "Child Custody Laws in Pakistan",
+    headline: "Child Custody Laws in Pakistan: Guardian and Wards Act, Hizanat and the Welfare Test",
     description:
       "How child custody works in Pakistan under the Guardian and Wards Act 1890 — the welfare-of-the-minor standard, the hizanat principle, and how guardianship and custody can split between parents.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
@@ -83,7 +83,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "Child Custody Laws in Pakistan",
+        name: "Child Custody Laws in Pakistan: Guardian and Wards Act, Hizanat and the Welfare Test",
         item: `${site.url}/journal/article/child-custody-laws-pakistan`,
       },
     ],
@@ -103,7 +103,7 @@ export default function ChildCustodyLawsPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="Child Custody Laws in Pakistan"
+        title="Child Custody Laws in Pakistan: Guardian and Wards Act, Hizanat and the Welfare Test"
         description="How child custody works in Pakistan under the Guardian and Wards Act 1890 — the welfare-of-the-minor standard, the hizanat principle, and how guardianship and custody can split between parents."
         path="/journal/article/child-custody-laws-pakistan"
         schema={schema}
@@ -116,7 +116,7 @@ export default function ChildCustodyLawsPakistan() {
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <p className={eyebrow}>Legal Help · Published August 19, 2026</p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            Child Custody Laws in Pakistan
+            Child Custody Laws in Pakistan: Guardian and Wards Act, Hizanat and the Welfare Test
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Custody, guardianship, and hizanat are not the same thing under Pakistani law — and
@@ -281,23 +281,15 @@ export default function ChildCustodyLawsPakistan() {
       {/* Related reading */}
       <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
-            <Link href="/journal/article/divorce-in-pakistan-procedure-rights" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Divorce in Pakistan: Procedure and Rights</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/legal-issues-pakistan/child-custody-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Child Custody Help: Prepare for Family Court</p>
+              <p className="text-xs text-muted-foreground mt-1">Organise facts and questions with Wakeel</p>
             </Link>
-            <Link href="/journal/article/khula-in-pakistan-procedure-rights" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Khula in Pakistan: Procedure and Rights</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/journal/article/maintenance-nafaqah-rights-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Maintenance (Nafaqah) Rights in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
-            </Link>
-            <Link href="/journal/article/family-law-rights-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Family Law Rights in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+            <Link href="/journal/legal-issues-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Browse all legal guides</p>
+              <p className="text-xs text-muted-foreground mt-1">Wakeel Journal</p>
             </Link>
           </div>
         </div>

@@ -1,9 +1,15 @@
 import React from 'react';
 import Layout from '../src/components/Layout';
+import MarketingSEO from '../src/components/MarketingSEO';
 
 const PrivacyPolicy = () => {
   return (
     <Layout>
+      <MarketingSEO
+        title="Privacy Policy | Wakeel.org"
+        description="How Wakeel.org collects, uses and protects your personal information when you use Pakistan's AI legal assistant, and the choices you have."
+        path="/privacy"
+      />
       <div className="pt-16 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
@@ -16,7 +22,7 @@ const PrivacyPolicy = () => {
         
         <div className="prose prose-lg dark:prose-invert max-w-4xl mx-auto text-muted-foreground">
           <div className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">Last Updated: {new Date().toLocaleDateString('en-US', {month: 'long', day: 'numeric', year: 'numeric'})}</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-foreground">Last Updated: October 22, 2026</h2>
             <p className="mb-4">
               Welcome to Wakeel.org! We're really happy you're here. This page is called a "Privacy Policy," and it's basically a promise from us about how we handle your information. Think of it like this: when you visit our website or use our services, you might share some things with us - like your name or email address. We want you to know exactly what we do with that information, how we protect it, and why we need it.
             </p>

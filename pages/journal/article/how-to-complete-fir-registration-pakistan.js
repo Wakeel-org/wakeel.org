@@ -23,47 +23,48 @@ const mustHave = [
 ];
 
 const beforeYouLeave = [
-  "Ask for a free certified copy of the FIR as filed — you are legally entitled to it, and it's your only independent record of exactly what was registered.",
-  "Read the narrative back before you sign or give a thumb impression — check it matches what you actually said, not a shortened or altered version.",
-  "Note the FIR number, the police station, and the date — you'll need these for any follow-up, including a Justice of the Peace application if things stall.",
-  "If the officer records only some of what you reported, or downgrades a serious offence to a lesser one, say so on record and consider raising it with a senior officer or a lawyer promptly.",
+  "Bring your CNIC (or the informant's CNIC) and a phone number the police can reach you on.",
+  "Bring a written, dated timeline of events, plus a spare copy for yourself.",
+  "Bring copies of supporting evidence: photos, screenshots, CCTV clips, receipts, or the IMEI and purchase slip for a stolen phone. Keep the originals.",
+  "Bring witness names and phone numbers, and vehicle registration numbers if any vehicle was involved.",
+  "For injuries, bring any hospital or medical paperwork you already have.",
+  "Before signing, check that names, CNIC, dates, place and the sequence of events match what you said, then confirm the FIR number and collect your free copy."
 ];
 
 const faqs = [
   {
-    question: "What information is legally required to complete an FIR in Pakistan?",
-    answer:
-      "Section 154 of the Code of Criminal Procedure, 1898 requires the substance of the information disclosing a cognizable offence to be reduced to writing, read over to the informant, and signed by them. In practice, a properly completed FIR records the complainant's details, the date/time/place of the incident, a factual narrative, details of the accused (if known), the section(s) applied, and an FIR number.",
+    "question": "What documents do I need to file an FIR in Pakistan?",
+    "answer": "No document is legally required to report a cognizable offence, but bring your CNIC, a written timeline, copies of any evidence (photos, screenshots, receipts, IMEI for a phone), witness contacts and any medical papers. Keep the originals yourself."
   },
   {
-    question: "How do I know if my FIR was completed correctly?",
-    answer:
-      "Before leaving the station, confirm it has an assigned FIR number, that the narrative read back to you matches what you reported, and that you've received a free copy. If any of these is missing, the FIR may not be properly completed — raise it immediately rather than assuming it will be fixed later.",
+    "question": "Can I file an FIR without a CNIC?",
+    "answer": "The duty to record information about a cognizable offence doesn't depend on a CNIC. Stations usually record the informant's CNIC, though, so bring it or a copy if you can, and give whatever other identification and contact details you have."
   },
   {
-    question: "Am I entitled to a free copy of my FIR?",
-    answer:
-      "Yes. Under Section 154 CrPC, the informant is entitled to a copy of the FIR free of cost. If a station refuses or asks for payment, that's worth noting and raising with a senior officer or a lawyer.",
+    "question": "Should I attach photos or screenshots to my FIR application?",
+    "answer": "Attach copies to your written application and keep the originals and digital files safe. The investigating officer may ask for originals later, and digital evidence may need to be preserved unedited."
   },
   {
-    question: "What if the officer records the wrong section or leaves out details I reported?",
-    answer:
-      "You can point this out on the spot and ask for it to be corrected before you sign. If it's already recorded and you believe it's materially wrong or incomplete, you can approach a senior police officer, or in serious cases, apply to the Ex-Officio Justice of the Peace under Sections 22-A/22-B CrPC — the same route used when police refuse to register an FIR at all.",
+    "question": "What should I check on the FIR before signing?",
+    "answer": "Check that your name and CNIC are correct, the date, time and place are accurate, events are in the right order, and nothing you reported has been left out or softened. Ask for corrections before you sign. Afterwards, corrections are much harder."
   },
   {
-    question: "Can Wakeel.org help me prepare before I go file an FIR?",
-    answer:
-      "Wakeel.org can help you organize the facts of an incident into a clear, chronological narrative, explain what a complete FIR should contain, and translate the process into plain English or Urdu. It cannot file the FIR for you, accompany you to the station, or guarantee the police record it correctly — a licensed advocate can help if the process runs into trouble.",
+    "question": "What if the FIR records the wrong offence or leaves details out?",
+    "answer": "Point it out before signing. If it has already been registered, raise it in writing with a senior officer and give the full account to the investigating officer, who records further statements under Section 161 CrPC. A lawyer can advise on the next step."
   },
+  {
+    "question": "Can Wakeel.org help me prepare my FIR documents?",
+    "answer": "Yes. Wakeel can turn your notes into a clear, dated account and a checklist of evidence to bring, in English or Urdu. It cannot file the FIR or check what the station records."
+  }
 ];
 
 const schema = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "How to Complete FIR Registration in Pakistan",
+    headline: "FIR Checklist Pakistan: What to Bring and What to Verify Before You Sign",
     description:
-      "What a properly completed FIR in Pakistan must actually contain under Section 154 CrPC, and the checklist to confirm before you leave the police station.",
+      "A practical FIR checklist for Pakistan: the documents and evidence to bring, what a complete FIR must record, and what to check before you sign.",
     author: { "@type": "Organization", name: "Wakeel.org Legal Team", url: site.url },
     publisher: { "@type": "Organization", name: "Wakeel.org", url: site.url },
     datePublished: "2026-01-20",
@@ -92,7 +93,7 @@ const schema = [
       {
         "@type": "ListItem",
         position: 3,
-        name: "How to Complete FIR Registration in Pakistan",
+        name: "FIR Checklist Pakistan: What to Bring and What to Verify Before You Sign",
         item: `${site.url}/journal/article/how-to-complete-fir-registration-pakistan`,
       },
     ],
@@ -100,20 +101,20 @@ const schema = [
 ];
 
 const keywords = [
-  "how to complete fir registration pakistan",
-  "fir registration pakistan",
   "fir checklist pakistan",
-  "section 154 crpc",
-  "free copy of fir pakistan",
-  "fir requirements pakistan",
+  "documents required for fir pakistan",
+  "what to bring to police station fir",
+  "fir contents section 154",
+  "check fir before signing",
+  "free copy of fir"
 ].join(", ");
 
 export default function HowToCompleteFirRegistrationPakistan() {
   return (
     <Layout>
       <MarketingSEO
-        title="How to Complete FIR Registration in Pakistan"
-        description="What a properly completed FIR in Pakistan must actually contain under Section 154 CrPC, and the checklist to confirm before you leave the police station."
+        title="FIR Checklist Pakistan: What to Bring and What to Verify Before You Sign"
+        description="A practical FIR checklist for Pakistan: the documents and evidence to bring, what a complete FIR must record, and what to check before you sign."
         path="/journal/article/how-to-complete-fir-registration-pakistan"
         schema={schema}
         keywords={keywords}
@@ -127,7 +128,7 @@ export default function HowToCompleteFirRegistrationPakistan() {
             Legal Help · Published January 20, 2026
           </p>
           <h1 className={`text-4xl sm:text-5xl font-bold ${headingGradient}`}>
-            How to Complete FIR Registration in Pakistan
+            FIR Checklist Pakistan: What to Bring and What to Verify Before You Sign
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Getting an FIR "registered" and getting one properly <em>completed</em> aren't always
@@ -149,7 +150,7 @@ export default function HowToCompleteFirRegistrationPakistan() {
                 the section(s) of law applied, and a formal <strong>FIR number</strong> — plus your
                 signature or thumb impression on a narrative you've confirmed is accurate. You are
                 entitled to a <strong>free copy</strong>. Confirm all of this before you leave the
-                station, not after.
+                station, not after. Bring your CNIC, a written timeline and copies of evidence.
               </p>
             </CardContent>
           </Card>
@@ -182,7 +183,7 @@ export default function HowToCompleteFirRegistrationPakistan() {
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h2 className={sectionHeading}>The four checks to do before you leave the station</h2>
+            <h2 className={sectionHeading}>What to bring, and what to check before you sign</h2>
           </div>
           <Card className={cardBase}>
             <CardContent className="p-6">
@@ -284,25 +285,25 @@ export default function HowToCompleteFirRegistrationPakistan() {
       </section>
 
       {/* Related reading */}
-      <section className="bg-muted/40 py-16 sm:py-20">
+      <section className="bg-background py-16 sm:py-20">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className={`${sectionHeading} text-center mb-8`}>Related reading</h2>
+          <h2 className={`${sectionHeading} text-center mb-8`}>Related FIR guides</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             <Link href="/journal/article/how-to-register-fir-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Register an FIR in Pakistan: Complete Guide</p>
+              <p className="text-xs text-muted-foreground mt-1">Start here: the full FIR journey in one page</p>
             </Link>
             <Link href="/journal/article/fir-registration-step-by-step-guide-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Registration in Pakistan: A Step-by-Step Guide</p>
-              <p className="text-xs text-muted-foreground mt-1">Article · Wakeel Journal</p>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">At the Police Station: What Happens When You File an FIR</p>
+              <p className="text-xs text-muted-foreground mt-1">The in-person walkthrough, desk to signed copy</p>
             </Link>
-            <Link href="/journal/legal-issues-pakistan/fir-refused-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">What to Do if Police Refuse to Register an FIR</p>
-              <p className="text-xs text-muted-foreground mt-1">Guide · Wakeel Journal</p>
+            <Link href="/journal/article/what-you-must-know-fir-registration-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">FIR Myths vs Facts in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Misconceptions corrected, rights listed</p>
             </Link>
-            <Link href="/legal-sources" className={`group ${cardBase} block rounded-lg p-5`}>
-              <p className="font-semibold text-sm group-hover:text-primary transition-colors">Our Approach to Legal Sources</p>
-              <p className="text-xs text-muted-foreground mt-1">How Wakeel grounds answers in Pakistani law</p>
+            <Link href="/journal/article/fir-status-check-pakistan" className={`group ${cardBase} block rounded-lg p-5`}>
+              <p className="font-semibold text-sm group-hover:text-primary transition-colors">How to Check FIR Status Online in Pakistan</p>
+              <p className="text-xs text-muted-foreground mt-1">Tracking your case after registration</p>
             </Link>
           </div>
         </div>

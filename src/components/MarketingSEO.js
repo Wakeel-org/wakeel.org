@@ -14,7 +14,7 @@ const MarketingSEO = ({
   const pageTitle = title?.includes("Wakeel")
     ? title
     : `${title} | Wakeel.org`;
-  const canonical = `${site.url}${path === "/" ? "" : path}`;
+  const canonical = `${site.url}${path}`;
   const imageUrl = image.startsWith("http") ? image : `${site.url}${image}`;
   const schemaItems = Array.isArray(schema) ? schema : [schema];
 
