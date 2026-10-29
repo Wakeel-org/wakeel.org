@@ -1,0 +1,897 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wakeel — Justice begins with understanding</title>
+<meta name="description" content="Wakeel reasons through your legal matter the way a court would — facts, issue, law and a clear next step — in Urdu or English. Built for Pakistan, with guidance for the GCC and 15+ countries. Free to start.">
+<meta name="theme-color" content="#121212">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Public+Sans:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Wakeel","operatingSystem":"Android, iOS","applicationCategory":"LegalApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"PKR"},"inLanguage":["en","ur"],"description":"AI legal assistant built for Pakistan, with guidance for the GCC and 15+ countries."}
+</script>
+<style>
+/* ───────── Version 3 tokens: "Marble & Robe" ─────────
+   The visual grammar of courts everywhere: white marble, black robes,
+   a single claret (the bench's upholstery), and bronze patina for what is settled. */
+:root{
+  --marble:#F6F4EF; --marble-2:#ECE8E0; --stone:#FFFFFF;
+  --robe:#121212; --robe-2:#1E1E1E;
+  --ink:#16140F; --ink-2:#4F4A42; --ink-3:#7F786D;
+  --vein:#DCD6CA; --vein-2:#C6BFB1;
+  --claret:#7A1F2B; --claret-hover:#64161F; --claret-ink:#FFFFFF; --claret-soft:#F3E4E4;
+  --patina:#3E7C72; --patina-soft:#E1EEEB;
+  --on-robe:#F1EEE7; --on-robe-2:#ABA597; --robe-line:#33302B;
+  --shadow:0 1px 2px rgba(22,20,15,.05),0 14px 34px -18px rgba(22,20,15,.28);
+  --display:"Cormorant Garamond",Garamond,"Times New Roman",serif;
+  --carve:"Cinzel","Trajan Pro",serif;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --urdu:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq",serif;
+  --max:1200px; --r:4px; --r-lg:6px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --marble:#101010; --marble-2:#181817; --stone:#1C1B19;
+    --ink:#F1EEE7; --ink-2:#BDB7AB; --ink-3:#8E887D;
+    --vein:#2C2A26; --vein-2:#3C3934;
+    --claret:#C9596A; --claret-hover:#D86F7F; --claret-ink:#170709; --claret-soft:#33181C;
+    --patina:#79C2B5; --patina-soft:#14302B;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 16px 36px -18px rgba(0,0,0,.75);
+  }
+}
+:root[data-theme="dark"]{
+  --marble:#101010; --marble-2:#181817; --stone:#1C1B19;
+  --ink:#F1EEE7; --ink-2:#BDB7AB; --ink-3:#8E887D;
+  --vein:#2C2A26; --vein-2:#3C3934;
+  --claret:#C9596A; --claret-hover:#D86F7F; --claret-ink:#170709; --claret-soft:#33181C;
+  --patina:#79C2B5; --patina-soft:#14302B;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 16px 36px -18px rgba(0,0,0,.75);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;color:var(--ink);font:400 1rem/1.65 var(--sans);overflow-x:hidden;
+  background:var(--marble);
+  /* faint marble veining */
+  background-image:radial-gradient(120% 60% at 10% 0%,rgba(0,0,0,.025),transparent 60%),radial-gradient(90% 50% at 100% 30%,rgba(0,0,0,.02),transparent 60%)}
+[dir="rtl"] body{font-family:var(--urdu);line-height:2.05}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.01em;line-height:1.05;margin:0}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3{font-family:var(--urdu);font-weight:600;letter-spacing:0;line-height:1.85}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+section{padding:88px 0}
+@media(min-width:960px){section{padding:120px 0}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--claret);outline-offset:3px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--robe);color:var(--on-robe);padding:10px 14px;z-index:200}
+.skip:focus{top:12px}
+
+/* Carved, inscription-style labels */
+.carve{font:600 .78rem/1.2 var(--carve);letter-spacing:.22em;text-transform:uppercase;color:var(--claret)}
+[dir="rtl"] .carve{font-family:var(--urdu);letter-spacing:0;text-transform:none;font-size:.98rem;line-height:1.8}
+/* Article-style section head: § numeral, centred, double rule */
+.shead{display:grid;justify-items:center;text-align:center;gap:14px;max-width:820px;margin:0 auto 56px}
+.num{font:500 .95rem/1 var(--carve);letter-spacing:.2em;color:var(--ink-3)}
+.shead h2{font-size:clamp(2.2rem,5vw,3.8rem)}
+[dir="rtl"] .shead h2{font-size:clamp(1.7rem,3.8vw,2.6rem)}
+.shead h2 i{font-style:italic;color:var(--claret)}
+[dir="rtl"] .shead h2 i{font-style:normal}
+.shead p{font-size:1.1rem;color:var(--ink-2);max-width:60ch}
+.rule{width:min(240px,60%);height:7px;border-block:1px solid var(--vein-2);position:relative}
+.rule::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:9px;background:var(--marble);border:1px solid var(--claret);transform:translate(-50%,-50%) rotate(45deg)}
+
+/* ───────── Buttons ───────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:var(--r);font:600 .95rem/1 var(--sans);letter-spacing:.02em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .15s,border-color .15s,transform .15s}
+[dir="rtl"] .btn{font-family:var(--urdu);letter-spacing:0;line-height:1.9}
+.btn:active{transform:translateY(1px)}
+.btn-claret{background:var(--claret);color:var(--claret-ink)}
+.btn-claret:hover{background:var(--claret-hover)}
+.btn-line{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--marble)}
+.btn svg{flex:none}
+.seg{display:inline-flex;border:1px solid var(--vein-2);border-radius:var(--r);padding:2px;background:var(--stone)}
+.seg button{border:0;background:transparent;min-height:32px;padding:0 12px;border-radius:2px;font:600 .74rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);cursor:pointer}
+.seg button.ur{font-family:var(--urdu);font-size:.9rem;letter-spacing:0;text-transform:none}
+[dir="rtl"] .seg button{font-family:var(--urdu);letter-spacing:0;text-transform:none;font-size:.86rem}
+.seg button[aria-pressed="true"]{background:var(--robe);color:var(--on-robe)}
+
+/* ───────── Header: symmetric, crest in the centre on desktop ───────── */
+header.top{position:sticky;top:0;z-index:80;background:color-mix(in srgb,var(--marble) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--vein)}
+.bar{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;min-height:72px}
+.crest{display:flex;align-items:center;gap:10px;text-decoration:none}
+.crest .mk{width:38px;height:38px;border:1px solid var(--ink);display:grid;place-items:center;color:var(--ink)}
+.crest b{font:600 1.05rem/1 var(--carve);letter-spacing:.24em}
+nav.links{display:none}
+.bar-r{display:flex;align-items:center;gap:10px;justify-content:flex-end}
+.bar .btn{min-height:42px;padding:0 16px;font-size:.86rem;white-space:nowrap}
+@media(max-width:420px){.bar .btn svg{display:none}.bar .btn{padding:0 12px}.bar .crest b{display:none}}
+@media(min-width:1040px){
+  .bar{grid-template-columns:1fr auto 1fr}
+  .crest{order:2;flex-direction:column;gap:4px}
+  .crest .mk{width:34px;height:34px}
+  .crest b{font-size:.9rem}
+  nav.links{display:flex;gap:30px;order:1}
+  .bar-r{order:3}
+  nav.links a{text-decoration:none;font:600 .74rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+  [dir="rtl"] nav.links a{font-family:var(--urdu);letter-spacing:0;font-size:.95rem;line-height:1.8;text-transform:none}
+  nav.links a:hover{color:var(--claret)}
+}
+
+/* ───────── Hero: pediment, frieze, columns ───────── */
+.hero{position:relative;padding:56px 0 88px;overflow:hidden}
+@media(min-width:960px){.hero{padding:72px 0 112px}}
+.pediment{width:min(760px,92%);margin:0 auto;height:56px;position:relative}
+.pediment svg{width:100%;height:100%}
+.frieze{width:min(820px,96%);margin:0 auto;border-block:1px solid var(--ink);padding:10px 0;text-align:center;font:600 .78rem/1.2 var(--carve);letter-spacing:.42em;color:var(--ink)}
+[dir="rtl"] .frieze{font-family:var(--urdu);letter-spacing:0;font-size:1rem;line-height:1.9}
+.hero-in{max-width:880px;margin:0 auto;text-align:center;display:grid;justify-items:center;padding-top:44px}
+.emblem{width:72px;height:72px;color:var(--claret);margin-bottom:22px}
+.emblem .beam{transform-origin:50px 30px;transition:transform 1.2s cubic-bezier(.3,1.6,.4,1)}
+.hero h1{font-size:clamp(2.8rem,7.4vw,6rem);font-weight:500;line-height:.98}
+.hero h1 i{font-style:italic;color:var(--claret)}
+[dir="rtl"] .hero h1{font-size:clamp(2.1rem,5.4vw,3.8rem);line-height:1.75}
+[dir="rtl"] .hero h1 i{font-style:normal}
+.hero .lede{font-size:1.18rem;color:var(--ink-2);max-width:60ch;margin:26px 0 34px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.oath{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 26px;margin-top:22px;font-size:.88rem;color:var(--ink-2)}
+.oath span{display:inline-flex;align-items:center;gap:8px}
+.oath span::before{content:"";width:5px;height:5px;background:var(--claret);transform:rotate(45deg)}
+/* Fluted pilasters framing the hero on wide screens */
+.pilaster{display:none;position:absolute;top:120px;bottom:60px;width:58px}
+.pilaster.l{left:max(16px,calc(50% - 640px))}.pilaster.r{right:max(16px,calc(50% - 640px))}
+.pilaster i{position:absolute;inset:26px 6px 26px;background:repeating-linear-gradient(90deg,var(--vein) 0 2px,transparent 2px 9px);border-inline:1px solid var(--vein-2)}
+.pilaster::before,.pilaster::after{content:"";position:absolute;left:0;right:0;height:14px;border:1px solid var(--vein-2);background:var(--marble-2)}
+.pilaster::before{top:0;box-shadow:0 8px 0 -4px var(--marble-2),0 8px 0 -3px var(--vein-2)}
+.pilaster::after{bottom:0;box-shadow:0 -8px 0 -4px var(--marble-2),0 -8px 0 -3px var(--vein-2)}
+@media(min-width:1180px){.pilaster{display:block}}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);margin:56px auto 0;max-width:880px;border-top:1px solid var(--ink);border-bottom:1px solid var(--vein-2)}
+@media(min-width:720px){.facts{grid-template-columns:repeat(4,1fr)}}
+.facts div{padding:18px 12px;text-align:center;border-inline-end:1px solid var(--vein)}
+.facts div:last-child{border-inline-end:0}
+.facts b{display:block;font:600 2.1rem/1 var(--display);direction:ltr;unicode-bidi:isolate}
+.facts span{font-size:.8rem;color:var(--ink-3);letter-spacing:.04em}
+
+/* ───────── § I  Cause list + brief ───────── */
+.court{background:var(--marble-2);border-block:1px solid var(--vein)}
+.hall{display:grid;gap:22px}
+@media(min-width:1000px){.hall{grid-template-columns:.85fr 1.15fr;gap:28px;align-items:start}}
+.board{background:var(--robe);color:var(--on-robe);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow)}
+@media(min-width:1000px){.board{position:sticky;top:96px}}
+.led{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;background:#070707;border-bottom:1px solid var(--robe-line);font:600 .78rem/1.3 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;color:#FF5A4E;text-shadow:0 0 8px rgba(255,70,60,.6);direction:ltr}
+.led .blink{animation:blink 1.4s steps(1) infinite}
+@keyframes blink{50%{opacity:.25}}
+.board-h{padding:18px 18px 10px;display:grid;gap:4px;border-bottom:1px solid var(--robe-line)}
+.board-h b{font:600 .82rem/1.3 var(--carve);letter-spacing:.2em}
+[dir="rtl"] .board-h b{font-family:var(--urdu);letter-spacing:0;font-size:1rem;line-height:1.9}
+.board-h small{color:var(--on-robe-2);font-size:.8rem}
+.items{list-style:none;margin:0;padding:6px}
+.item{width:100%;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;text-align:start;padding:12px;border:0;background:transparent;color:var(--on-robe);border-radius:var(--r);cursor:pointer;transition:background .15s}
+.item:hover{background:rgba(255,255,255,.05)}
+.item[aria-pressed="true"]{background:rgba(201,89,106,.16);box-shadow:inset 3px 0 0 #C9596A}
+[dir="rtl"] .item[aria-pressed="true"]{box-shadow:inset -3px 0 0 #C9596A}
+.item .no{font:600 .9rem/1 ui-monospace,Menlo,monospace;color:var(--on-robe-2);direction:ltr}
+.item .t{font-weight:500;font-size:.95rem;line-height:1.35}
+.item .k{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-robe-2);border:1px solid var(--robe-line);padding:4px 7px;border-radius:2px;white-space:nowrap}
+[dir="rtl"] .item .k{letter-spacing:0;font-size:.8rem;line-height:1.6}
+
+.brief{background:var(--stone);border:1px solid var(--vein-2);border-radius:var(--r-lg);box-shadow:var(--shadow);position:relative}
+.brief::before{content:"";position:absolute;inset:8px;border:1px solid var(--vein);pointer-events:none;border-radius:2px}
+.brief-top{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:22px 26px 0}
+.brief-top .carve{color:var(--ink-3)}
+.brief-body{padding:10px 26px 24px;transition:opacity .25s}
+.brief-body.fade{opacity:0}
+.matter{text-align:center;padding:20px 0 18px;border-bottom:1px double var(--vein-2);margin-bottom:8px}
+.matter small{display:block;font:600 .72rem/1 var(--carve);letter-spacing:.26em;color:var(--ink-3);margin-bottom:10px}
+[dir="rtl"] .matter small{font-family:var(--urdu);letter-spacing:0;font-size:.95rem;line-height:1.8}
+.matter h3{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:600}
+.matter .forum{margin-top:8px;font-size:.85rem;color:var(--ink-2)}
+.matter .forum b{color:var(--patina);font-weight:600}
+.part{padding:16px 0 4px}
+.part h4{margin:0 0 8px;font:600 .74rem/1 var(--carve);letter-spacing:.24em;color:var(--claret);text-align:center}
+[dir="rtl"] .part h4{font-family:var(--urdu);letter-spacing:0;font-size:1rem;line-height:1.8}
+.para{display:grid;grid-template-columns:2.2em 1fr;gap:6px;color:var(--ink-2);font-size:.98rem;margin:6px 0}
+.para::before{content:attr(data-n) ".";font:500 .95rem/1.7 var(--display);color:var(--ink-3);direction:ltr}
+[dir="rtl"] .para::before{line-height:2.1}
+.cites{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:4px 0}
+.cites span{font:500 .78rem/1 var(--sans);padding:7px 10px;border:1px solid var(--vein-2);border-radius:2px;background:var(--marble);direction:ltr}
+.counsel{margin-top:10px;padding:14px 16px;border-inline-start:3px solid var(--claret);background:var(--claret-soft);font-size:.92rem;color:var(--ink)}
+.counsel b{display:block;font:600 .7rem/1 var(--carve);letter-spacing:.2em;color:var(--claret);margin-bottom:6px}
+[dir="rtl"] .counsel b{font-family:var(--urdu);letter-spacing:0;font-size:.9rem;line-height:1.8}
+.brief-foot{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:16px 26px 24px;border-top:1px solid var(--vein)}
+.brief-foot p{font-size:.8rem;color:var(--ink-3);max-width:40ch}
+
+/* ───────── § II  Court hierarchy as courthouse steps ───────── */
+.steps-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:1000px){.steps-grid{grid-template-columns:1.1fr .9fr;gap:56px}}
+.tiers{display:grid;gap:8px;justify-items:center}
+.tier{display:flex;align-items:center;justify-content:center;gap:12px;min-height:64px;padding:10px 18px;border:1px solid var(--vein-2);background:var(--stone);border-radius:2px;cursor:pointer;text-align:center;transition:background .2s,border-color .2s,color .2s;width:var(--w)}
+.tier:hover{border-color:var(--ink)}
+.tier[aria-pressed="true"]{background:var(--robe);color:var(--on-robe);border-color:var(--robe)}
+.tier .lvl{font:600 .7rem/1 var(--carve);letter-spacing:.18em;opacity:.6;direction:ltr}
+.tier b{font:600 1.15rem/1.2 var(--display)}
+[dir="rtl"] .tier b{font-family:var(--urdu);font-size:1rem;line-height:1.8}
+@media(max-width:640px){.tier{width:calc(var(--w) * .4 + 60%)}.tier b{font-size:1.02rem}}
+.tiers .base{width:100%;height:10px;border:1px solid var(--vein-2);border-top:0;background:var(--marble-2)}
+.tier-info{background:var(--stone);border:1px solid var(--vein-2);border-radius:var(--r-lg);padding:30px;box-shadow:var(--shadow);display:grid;gap:14px}
+.tier-info h3{font-size:2rem}
+.tier-info p{color:var(--ink-2)}
+.tier-info dl{margin:0;display:grid;gap:12px}
+.tier-info dt{font:600 .7rem/1 var(--carve);letter-spacing:.2em;color:var(--claret)}
+[dir="rtl"] .tier-info dt{font-family:var(--urdu);letter-spacing:0;font-size:.9rem;line-height:1.8}
+.tier-info dd{margin:4px 0 0;color:var(--ink-2)}
+.note{font-size:.84rem;color:var(--ink-3);border-top:1px solid var(--vein);padding-top:12px}
+
+/* ───────── § III  The method: five columns ───────── */
+.colonnade{display:grid;gap:14px}
+@media(min-width:700px){.colonnade{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.colonnade{grid-template-columns:repeat(5,1fr)}}
+.col{position:relative;padding:44px 20px 40px;text-align:center;background:var(--stone);border-inline:1px solid var(--vein-2)}
+.col::before,.col::after{content:"";position:absolute;left:-10px;right:-10px;height:12px;background:var(--marble-2);border:1px solid var(--vein-2)}
+.col::before{top:0}.col::after{bottom:0}
+.col .flutes{position:absolute;inset:12px 0;background:repeating-linear-gradient(90deg,transparent 0 14px,var(--vein) 14px 15px);opacity:.45;pointer-events:none}
+.col>*{position:relative}
+.col .rn{font:600 .9rem/1 var(--carve);letter-spacing:.2em;color:var(--claret)}
+.col h3{font-size:1.65rem;margin:12px 0 10px}
+.col p{color:var(--ink-2);font-size:.94rem}
+.col em{display:block;margin-top:14px;font-family:var(--display);font-size:1.05rem;color:var(--ink)}
+[dir="rtl"] .col em{font-family:var(--urdu);font-style:normal;font-size:.95rem}
+
+/* ───────── § IV  Two benches ───────── */
+.benches{display:grid;gap:0;border:1px solid var(--ink);background:var(--stone)}
+@media(min-width:900px){.benches{grid-template-columns:1fr 1fr}}
+.bench{padding:36px 30px;display:grid;gap:16px;align-content:start}
+.bench+.bench{border-top:1px solid var(--ink)}
+@media(min-width:900px){.bench+.bench{border-top:0;border-inline-start:1px solid var(--ink)}}
+.bench.dark{background:var(--robe);color:var(--on-robe)}
+.bench.dark .carve{color:#E7A0AA}
+.bench h3{font-size:2.1rem}
+.bench .who{display:flex;flex-wrap:wrap;gap:8px}
+.bench .who a{font-size:.82rem;padding:6px 12px;border:1px solid currentColor;border-radius:2px;text-decoration:none;opacity:.85}
+.bench .who a:hover{opacity:1}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ticks li{display:grid;grid-template-columns:18px 1fr;gap:12px;align-items:start}
+.ticks li::before{content:"";width:8px;height:8px;margin-top:9px;background:var(--claret);transform:rotate(45deg)}
+.bench.dark .ticks li::before{background:#E7A0AA}
+.bench.dark .ticks li{color:var(--on-robe-2)}
+.bench .ticks li{color:var(--ink-2)}
+
+/* ───────── § V  Documents: judgment + headnote ───────── */
+.doc-grid{display:grid;gap:28px;align-items:start}
+@media(min-width:1000px){.doc-grid{grid-template-columns:1.2fr .8fr;gap:44px}}
+.report{background:#FFFEFB;color:#1B1914;border:1px solid var(--vein-2);padding:36px 34px;font:400 1rem/1.85 Georgia,"Times New Roman",serif;box-shadow:var(--shadow);direction:ltr;text-align:left;position:relative}
+.report .rh{text-align:center;border-bottom:1px solid #D9D2C4;padding-bottom:14px;margin-bottom:16px}
+.report .rh b{display:block;font:600 .78rem/1.4 "Cinzel",serif;letter-spacing:.2em}
+.report .rh small{font:400 .78rem/1.4 var(--sans);color:#7F786D}
+.report p{margin:0 0 12px;text-indent:2em}
+.report mark{background:#F4DEE1;color:inherit;padding:0 2px}
+.report .tag{position:absolute;top:12px;right:12px;font:600 .62rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#7F786D;border:1px solid #D9D2C4;padding:4px 6px}
+.headnote{background:var(--robe);color:var(--on-robe);padding:28px;border-radius:var(--r-lg);display:grid;gap:14px}
+.headnote .carve{color:#E7A0AA}
+.headnote h3{font-size:1.7rem}
+.headnote p{color:var(--on-robe-2);font-size:.95rem}
+.headnote .held{border-inline-start:2px solid #E7A0AA;padding-inline-start:14px;color:var(--on-robe)}
+.headnote .held b{font-family:var(--carve);letter-spacing:.14em;font-size:.78rem;display:block;margin-bottom:4px;color:#E7A0AA}
+[dir="rtl"] .headnote .held b{font-family:var(--urdu);letter-spacing:0;font-size:.9rem}
+.caps{display:flex;flex-wrap:wrap;gap:8px}
+.caps span{font-size:.8rem;padding:6px 10px;border:1px solid var(--robe-line);border-radius:2px;color:var(--on-robe)}
+
+/* ───────── § VI  Principles ───────── */
+.articles{display:grid;gap:0;border-top:1px solid var(--ink)}
+@media(min-width:900px){.articles{grid-template-columns:repeat(3,1fr)}}
+.article{padding:30px 24px;border-bottom:1px solid var(--vein-2)}
+@media(min-width:900px){.article{border-bottom:0;border-inline-end:1px solid var(--vein-2)}.article:last-child{border-inline-end:0}}
+.article .carve{color:var(--ink-3)}
+.article h3{font-size:1.75rem;margin:10px 0 10px}
+.article p{color:var(--ink-2)}
+.statutes{margin-top:34px;text-align:center;display:grid;gap:14px;justify-items:center}
+.statutes .list{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.statutes .list span{font-family:var(--display);font-size:1.05rem;padding:6px 14px;border:1px solid var(--vein-2);background:var(--stone)}
+.disclaim{margin:34px auto 0;max-width:780px;text-align:center;font-size:.9rem;color:var(--ink-3);font-style:italic}
+
+/* ───────── FAQ ───────── */
+.faq{max-width:860px;margin:0 auto;border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--vein-2)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 4px;display:flex;justify-content:space-between;align-items:center;gap:16px;font:600 1.35rem/1.3 var(--display);min-height:60px}
+[dir="rtl"] .faq summary{font-family:var(--urdu);font-size:1.05rem;line-height:1.9}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 1.6rem/1 var(--display);color:var(--claret);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 4px 22px;color:var(--ink-2)}
+
+/* ───────── Final: the call of the matter ───────── */
+.final{background:var(--robe);color:var(--on-robe);text-align:center;position:relative;overflow:hidden}
+.final .frieze{border-color:var(--on-robe-2);color:var(--on-robe-2)}
+.final h2{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:500;margin:36px auto 18px;max-width:16ch}
+.final h2 i{font-style:italic;color:#E7A0AA}
+[dir="rtl"] .final h2{font-size:clamp(1.8rem,4.2vw,2.9rem);max-width:none}
+[dir="rtl"] .final h2 i{font-style:normal}
+.final .lede{color:var(--on-robe-2);max-width:52ch;margin:0 auto 32px;font-size:1.1rem}
+.stores{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.store{display:inline-flex;align-items:center;gap:12px;min-height:58px;padding:0 22px;border:1px solid var(--on-robe-2);border-radius:var(--r);color:var(--on-robe);text-decoration:none;direction:ltr;text-align:left;transition:background .15s,color .15s}
+.store:hover{background:var(--on-robe);color:var(--robe)}
+.store small{display:block;font-size:.7rem;opacity:.7;line-height:1.2}
+.store span{font-weight:600;font-size:1.02rem;line-height:1.2}
+.qr-row{display:none;justify-content:center;gap:18px;margin-top:34px}
+@media(min-width:900px){.qr-row{display:flex}}
+.qr-card{background:#fff;padding:12px;display:grid;gap:8px;justify-items:center;color:#16140F;font:600 .74rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.qr-card .code{width:120px;height:120px;display:grid;place-items:center;color:#7F786D;font-size:.7rem;font-weight:400}
+.qr-card .code svg{width:120px;height:120px}
+.final .oath{color:var(--on-robe-2)}
+.final .oath span::before{background:#E7A0AA}
+
+footer{padding:56px 0 110px;color:var(--ink-3);font-size:.88rem}
+@media(min-width:1000px){footer{padding-bottom:48px}}
+.foot{display:grid;gap:28px}
+@media(min-width:860px){.foot{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.foot h4{margin:0 0 10px;color:var(--ink);font:600 .72rem/1.4 var(--carve);letter-spacing:.2em}
+[dir="rtl"] .foot h4{font-family:var(--urdu);letter-spacing:0;font-size:.95rem}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot a{text-decoration:none}.foot a:hover{color:var(--claret)}
+.legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--vein);font-size:.82rem;line-height:1.6}
+
+/* Mobile sticky CTA */
+.sticky{position:fixed;inset-inline:0;bottom:0;z-index:70;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--marble) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--ink);display:flex;gap:8px;transform:translateY(110%);transition:transform .3s}
+.sticky.show{transform:none}
+.sticky .btn{flex:1;min-height:50px}
+.sticky .btn-line{flex:0 0 auto;padding:0 16px}
+@media(min-width:1000px){.sticky{display:none}}
+
+dialog{border:1px solid var(--ink);border-radius:var(--r-lg);padding:0;max-width:min(520px,calc(100vw - 32px));background:var(--stone);color:var(--ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
+dialog::backdrop{background:rgba(18,18,18,.65);backdrop-filter:blur(3px)}
+.dlg{padding:36px 30px 30px;display:grid;gap:16px;text-align:center;justify-items:center;position:relative}
+.dlg h3{font-size:2rem}
+.dlg p{color:var(--ink-2)}
+.dlg .qr-card{border:1px solid var(--vein-2)}
+.dlg .pair{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.dlg .x{position:absolute;top:12px;inset-inline-end:12px;width:40px;height:40px;border:1px solid var(--vein-2);background:var(--marble);cursor:pointer;font-size:1.2rem}
+.dlg .links{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;font-size:.9rem}
+.dlg .links a{color:var(--claret);font-weight:600}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-ur="مرکزی مواد پر جائیں">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-scales" viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7a3.5 3.5 0 006 0zM19 7l-3 7a3.5 3.5 0 006 0zM8 21h8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 20 20"><rect x="5.5" y="2" width="9" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M9 15h2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M4 2.8v18.4c0 .5.5.8 1 .6l15.6-9.2c.5-.3.5-1 0-1.3L5 2.2c-.5-.2-1 .1-1 .6z" fill="currentColor"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8 2.3-1.3 3.1-2.5c1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z" fill="currentColor"/></symbol>
+</svg>
+
+<header class="top" id="top">
+  <div class="wrap bar">
+    <a class="crest" href="#main" aria-label="Wakeel home"><span class="mk" aria-hidden="true"><svg width="20" height="20"><use href="#i-scales"/></svg></span><b>WAKEEL</b></a>
+    <nav class="links" aria-label="Main">
+      <a href="#hearing" data-ur="سماعت">The hearing</a>
+      <a href="#courts" data-ur="عدالتیں">Courts</a>
+      <a href="#method" data-ur="طریقہ">Method</a>
+      <a href="#faq" data-ur="سوالات">Questions</a>
+    </nav>
+    <div class="bar-r">
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ur" aria-pressed="false" class="ur">اردو</button>
+      </div>
+      <a class="btn btn-claret" href="#get" data-get data-cta="header"><svg width="16" height="16"><use href="#i-phone"/></svg><span data-ur="ایپ حاصل کریں">Get the app</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═════════ HERO ═════════ -->
+<section class="hero" id="hero">
+  <span class="pilaster l" aria-hidden="true"><i></i></span>
+  <span class="pilaster r" aria-hidden="true"><i></i></span>
+  <div class="wrap">
+    <div class="pediment" aria-hidden="true">
+      <svg viewBox="0 0 760 56" preserveAspectRatio="none"><path d="M10 54 L380 4 L750 54 Z" fill="none" stroke="currentColor" stroke-width="1.2" style="color:var(--ink)"/><path d="M60 50 L380 12 L700 50" fill="none" stroke="currentColor" stroke-width=".8" style="color:var(--vein-2)"/></svg>
+    </div>
+    <div class="frieze" data-ur="انصاف کا آغاز سمجھ سے ہوتا ہے">JUSTICE · BEGINS · WITH · UNDERSTANDING</div>
+
+    <div class="hero-in">
+      <svg class="emblem" viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M50 14v70M34 86h32M50 14l-3 6h6z"/>
+          <g class="beam" id="beam">
+            <path d="M18 30h64"/>
+            <path d="M22 30l-10 24h20zM78 30l-10 24h20z"/>
+            <path d="M12 54a10 6 0 0020 0M68 54a10 6 0 0020 0"/>
+          </g>
+        </g>
+      </svg>
+      <h1 data-ur="ہر شخص کا حق ہے کہ وہ <i>قانون کو سمجھے</i>۔">Everyone deserves to <i>understand the law.</i></h1>
+      <p class="lede" data-ur="وکیل آپ کے معاملے کو ویسے پرکھتا ہے جیسے عدالت پرکھتی ہے — حقائق، سوال، قانون، اور واضح اگلا قدم — اردو یا انگریزی میں۔ عام شہری کے لیے آسان، ماہرِ قانون کے لیے حوالہ جاتی۔">Wakeel reasons through your matter the way a court would — the facts, the issue, the law and a clear next step — in Urdu or English. Plain for the public. Precise for the profession.</p>
+      <div class="cta-row">
+        <a class="btn btn-claret" href="#get" data-get data-cta="hero"><svg width="18" height="18" class="get-ic"><use href="#i-phone"/></svg><span class="get-label">Get the free app</span></a>
+        <a class="btn btn-line" href="#hearing" data-cta="hero-hear" data-ur="ایک مقدمہ سنیں">Hear a sample matter</a>
+      </div>
+      <div class="oath">
+        <span data-ur="عوام کے لیے مفت">Free for the public</span>
+        <span data-ur="اردو اور انگریزی">Urdu &amp; English</span>
+        <span data-ur="ہر جواب میں قانونی حوالہ">Every answer cites the law</span>
+      </div>
+    </div>
+    <div class="facts reveal">
+      <div><b>71</b><span data-ur="قانونی رہنمائیاں">legal guides</span></div>
+      <div><b>15+</b><span data-ur="ممالک">countries</span></div>
+      <div><b>100+</b><span data-ur="صفحات کی فائلیں">page files read</span></div>
+      <div><b>2</b><span data-ur="زبانیں">languages</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ § I  THE HEARING ═════════ -->
+<section class="court" id="hearing">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="num">§ I</span>
+      <h2 data-ur="آج کی <i>کاز لسٹ</i>">Today's <i>cause list</i></h2>
+      <div class="rule"></div>
+      <p data-ur="کوئی معاملہ منتخب کریں اور دیکھیں کہ وکیل اسے کیسے پرکھتا ہے — بالکل ایک فیصلے کی ترتیب میں۔">Call a matter from the list and watch Wakeel reason through it — set out the way a judgment is.</p>
+    </div>
+    <div class="hall">
+      <div class="board reveal" aria-label="Cause list">
+        <div class="led"><span>COURT 01</span><span id="ledItem">ITEM 01</span><span class="blink">● NOW HEARING</span></div>
+        <div class="board-h"><b data-ur="کاز لسٹ · وکیل">CAUSE LIST · WAKEEL</b><small id="today"></small></div>
+        <ul class="items" id="items"></ul>
+      </div>
+      <article class="brief reveal" aria-live="polite">
+        <div class="brief-top">
+          <span class="carve" data-ur="بریف">The brief</span>
+          <div class="seg" role="group" aria-label="Reading level">
+            <button type="button" data-level="plain" aria-pressed="true" data-ur="عام فہم">Plain</button>
+            <button type="button" data-level="counsel" aria-pressed="false" data-ur="وکیل کے لیے">Counsel</button>
+          </div>
+        </div>
+        <div class="brief-body" id="brief"></div>
+        <div class="brief-foot">
+          <p data-ur="یہ قانونی معلومات ہے — فیصلہ یا حتمی قانونی مشورہ نہیں۔ اہم اقدامات سے پہلے ایڈووکیٹ سے تصدیق کریں۔">Legal information — not a judgment or final legal advice. Confirm important steps with an advocate.</p>
+          <a class="btn btn-claret" href="#get" data-get data-cta="brief" style="min-height:46px"><span data-ur="اپنا معاملہ ایپ میں پیش کریں">Bring your own matter — free</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ § II  THE COURTS ═════════ -->
+<section id="courts">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="num">§ II</span>
+      <h2 data-ur="آپ کا معاملہ <i>کہاں</i> جاتا ہے؟">Where does your matter <i>go?</i></h2>
+      <div class="rule"></div>
+      <p data-ur="غلط فورم میں درخواست دینے سے مہینے ضائع ہو جاتے ہیں۔ پاکستان کی عدالتی سیڑھی پر کسی بھی درجے کو منتخب کریں۔">Filing in the wrong forum costs months. Step onto any level of Pakistan's courts to see what it hears.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="tiers reveal" id="tiers"></div>
+      <div class="tier-info reveal" id="tierInfo" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ § III  THE METHOD ═════════ -->
+<section class="court" id="method">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="num">§ III</span>
+      <h2 data-ur="ہر جواب، <i>فیصلے کی طرح</i> مدلل۔">Every answer, reasoned <i>like a judgment.</i></h2>
+      <div class="rule"></div>
+      <p data-ur="قانون کے طلباء اسے IRAC کہتے ہیں۔ ججز اسی ترتیب میں لکھتے ہیں۔ عام شہری کے لیے اس کا مطلب ہے: ایک واضح، قابلِ اعتماد ترتیب۔">Law students call it IRAC. Judges write in this order. For everyone else it simply means an answer with a spine you can follow.</p>
+    </div>
+    <div class="colonnade">
+      <div class="col reveal"><span class="flutes"></span><span class="rn">I</span><h3 data-ur="حقائق">Facts</h3><p data-ur="آپ کی کہانی، آپ کے الفاظ میں — ترتیب دی گئی۔">Your story, in your words — put in order.</p><em data-ur="“کیا ہوا؟”">“What happened?”</em></div>
+      <div class="col reveal"><span class="flutes"></span><span class="rn">II</span><h3 data-ur="سوال">Issue</h3><p data-ur="اصل قانونی سوال جس کا جواب درکار ہے۔">The real legal question that needs answering.</p><em data-ur="“اصل مسئلہ کیا ہے؟”">“What is really in dispute?”</em></div>
+      <div class="col reveal"><span class="flutes"></span><span class="rn">III</span><h3 data-ur="قانون">Law</h3><p data-ur="متعلقہ آئینی شق، دفعہ یا قانون — حوالے کے ساتھ۔">The governing article, section or statute — cited.</p><em data-ur="“قانون کیا کہتا ہے؟”">“What does the law say?”</em></div>
+      <div class="col reveal"><span class="flutes"></span><span class="rn">IV</span><h3 data-ur="اطلاق">Application</h3><p data-ur="قانون آپ کی صورتحال پر کیسے لاگو ہوتا ہے، آسان زبان میں۔">How that law applies to you, in plain words.</p><em data-ur="“میرے لیے اس کا مطلب؟”">“What does it mean for me?”</em></div>
+      <div class="col reveal"><span class="flutes"></span><span class="rn">V</span><h3 data-ur="اگلا قدم">Next step</h3><p data-ur="کاغذات، فورم، مہلت — اور ایڈووکیٹ سے کیا پوچھنا ہے۔">Papers, forum, deadline — and what to ask an advocate.</p><em data-ur="“اب میں کیا کروں؟”">“What do I do now?”</em></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ § IV  TWO BENCHES ═════════ -->
+<section>
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="num">§ IV</span>
+      <h2 data-ur="دو بینچ۔ <i>ایک معاون۔</i>">Two benches. <i>One assistant.</i></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="benches reveal">
+      <div class="bench">
+        <span class="carve" data-ur="عوام کے لیے">For the public</span>
+        <h3 data-ur="سمجھیں، پھر قدم اٹھائیں">Understand before you act</h3>
+        <ul class="ticks">
+          <li data-ur="نوٹس، معاہدے اور عدالتی کاغذات آسان اردو یا انگریزی میں">Notices, agreements and court papers in plain Urdu or English</li>
+          <li data-ur="پولیس، مالک مکان اور آجر کے سامنے اپنے حقوق جانیں">Know your rights with the police, a landlord or an employer</li>
+          <li data-ur="بیرون ملک سے پاکستان میں جائیداد اور وراثت کے معاملات">Property and inheritance back home, from wherever you live</li>
+          <li data-ur="ایڈووکیٹ کے پاس سوالات کی فہرست کے ساتھ جائیں">Arrive at an advocate's office with the right questions</li>
+        </ul>
+        <div class="who"><a href="https://wakeel.org/citizens" data-ur="شہری">Citizens</a><a href="https://wakeel.org/legal-issues-gcc" data-ur="بیرون ملک پاکستانی">Overseas Pakistanis</a><a href="https://wakeel.org/legal-issues-global" data-ur="15+ ممالک">15+ countries</a></div>
+      </div>
+      <div class="bench dark">
+        <span class="carve" data-ur="پیشہ ور افراد کے لیے">For the profession</span>
+        <h3 data-ur="کم تلاش، زیادہ دلائل">Less searching, more argument</h3>
+        <ul class="ticks">
+          <li data-ur="فیصلوں، درخواستوں اور 100+ صفحات کی فائلوں کا خلاصہ">Summaries of judgments, pleadings and 100+ page files</li>
+          <li data-ur="آئین، PPC، CrPC اور CPC پر دفعہ وار تحقیق">Section-level research across the Constitution, PPC, CrPC and CPC</li>
+          <li data-ur="نوٹس، جوابات اور معاہدوں کے پہلے مسودے">First drafts of notices, replies and agreements</li>
+          <li data-ur="ججز اور پالیسی سازوں کے لیے غیر جانبدار تحقیقی معاون">A neutral research aid for judges and policymakers</li>
+        </ul>
+        <div class="who"><a href="https://wakeel.org/law-students" data-ur="طلباء">Law students</a><a href="https://wakeel.org/lawyers" data-ur="وکلاء">Advocates</a><a href="https://wakeel.org/law-firms" data-ur="لا فرمز">Firms</a><a href="https://wakeel.org/judges" data-ur="ججز">Judges</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ § V  DOCUMENTS ═════════ -->
+<section class="court">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="num">§ V</span>
+      <h2 data-ur="وکیل کی طرح <i>پڑھیں</i>۔">Read it <i>like counsel.</i></h2>
+      <div class="rule"></div>
+      <p data-ur="فیصلہ، نوٹس یا معاہدہ اپ لوڈ کریں۔ وکیل اہم حصے نشان زد کرتا ہے اور لا رپورٹ کی طرح ہیڈنوٹ لکھتا ہے۔">Upload a judgment, notice or contract. Wakeel marks what matters and writes a headnote, the way a law report does.</p>
+    </div>
+    <div class="doc-grid">
+      <div class="report reveal">
+        <span class="tag">Illustrative sample</span>
+        <div class="rh"><b>In the Court of the Sessions Judge</b><small>Petition under Section 22-A(6), Cr.P.C.</small></div>
+        <p>The petitioner states that on reporting the theft of his motorcycle at the police station, the officer in charge declined to record the information, advising him to return at a later date.</p>
+        <p>It is trite that where information discloses the commission of a cognizable offence, <mark>the officer in charge is bound to reduce it into writing under Section 154 of the Code</mark>; he is not to sit in judgment over its truth at that stage.</p>
+        <p>Accordingly, <mark>the SHO concerned is directed to record the statement of the petitioner</mark> and proceed in accordance with law.</p>
+      </div>
+      <aside class="headnote reveal">
+        <span class="carve" data-ur="وکیل کا ہیڈنوٹ">Headnote by Wakeel</span>
+        <h3 data-ur="ایک نظر میں">At a glance</h3>
+        <div class="held"><b data-ur="قرار پایا">HELD</b><span data-ur="قابلِ دست اندازی جرم کی اطلاع درج کرنا پولیس پر لازم ہے؛ سچائی کی جانچ بعد کا مرحلہ ہے۔">Information disclosing a cognizable offence must be recorded; its truth is tested later, not at the police station door.</span></div>
+        <p data-ur="عام فہم: اگر تھانہ انکار کرے، تو سیشن جج (جسٹس آف پیس) پولیس کو FIR درج کرنے کی ہدایت دے سکتا ہے۔">In plain words: if the police station refuses, the Sessions Judge (as Justice of Peace) can direct it to register your FIR.</p>
+        <div class="caps"><span data-ur="خلاصے">Summaries</span><span data-ur="ہیڈنوٹس">Headnotes</span><span data-ur="خطرناک شقیں">Risky clauses</span><span data-ur="مہلتیں">Deadlines</span><span data-ur="100+ صفحات">100+ pages</span></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ § VI  PRINCIPLES ═════════ -->
+<section id="trust">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="num">§ VI</span>
+      <h2 data-ur="اصولوں کا <i>پابند</i>۔">Bound by <i>principle.</i></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="articles reveal">
+      <div class="article"><span class="carve" data-ur="شق 1">Article 1</span><h3 data-ur="ذریعہ دکھائیں">Show the source</h3><p data-ur="ہر جواب متعلقہ قانون اور دفعہ کا حوالہ دیتا ہے، تاکہ آپ یا آپ کا ایڈووکیٹ تصدیق کر سکے۔">Every answer points to the statute and section it relies on, so you — or your advocate — can verify it.</p></div>
+      <div class="article"><span class="carve" data-ur="شق 2">Article 2</span><h3 data-ur="حدود جانیں">Know the limits</h3><p data-ur="وکیل ایپ ایڈووکیٹ کی جگہ نہیں لیتی۔ سنگین یا غیر واضح معاملات میں یہ صاف کہتی ہے: ایڈووکیٹ سے ملیں۔">Wakeel does not replace an advocate. When a matter is serious or the law unsettled, it says so plainly.</p></div>
+      <div class="article"><span class="carve" data-ur="شق 3">Article 3</span><h3 data-ur="رازداری رکھیں">Keep it confidential</h3><p data-ur="آپ کی گفتگو اور دستاویزات آپ کی ہیں۔ تفصیل ہماری پرائیویسی پالیسی میں ہے۔">Your conversations and documents are yours. Our privacy policy sets out how they are handled.</p></div>
+    </div>
+    <div class="statutes reveal">
+      <span class="carve" data-ur="جن قوانین پر مبنی">Grounded in</span>
+      <div class="list"><span>Constitution of Pakistan</span><span>Pakistan Penal Code</span><span>Code of Criminal Procedure</span><span>Code of Civil Procedure</span><span>Qanun-e-Shahadat</span><span>Muslim Family Laws Ordinance</span><span>Succession Act</span><span>PECA 2016</span></div>
+    </div>
+    <p class="disclaim" data-ur="وکیل قانونی معلومات اور تحقیقی معاونت فراہم کرتا ہے۔ یہ حتمی قانونی مشورہ نہیں، نتائج کی ضمانت نہیں دیتا، اور لائسنس یافتہ ایڈووکیٹ کا متبادل نہیں۔">Wakeel provides legal information and research support. It is not final legal advice, does not guarantee outcomes, and does not replace a licensed advocate.</p>
+  </div>
+</section>
+
+<!-- ═════════ FAQ ═════════ -->
+<section id="faq" class="court">
+  <div class="wrap">
+    <div class="shead reveal">
+      <span class="num">§ VII</span>
+      <h2 data-ur="بینچ کے سامنے <i>سوالات</i>">Questions before <i>the bench</i></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="faq reveal">
+      <details open><summary data-ur="کیا یہ مفت ہے؟">Is it free?</summary><p data-ur="جی ہاں — قانونی سوال و جواب، حقوق کی رہنمائی اور بنیادی دستاویز فہمی عوام کے لیے مفت ہیں۔ طلباء، وکلاء اور اداروں کے لیے اضافی پلان موجود ہیں۔">Yes — legal chat, know-your-rights guidance and basic document understanding are free for the public. Paid plans add study, drafting and professional tools.</p></details>
+      <details><summary data-ur="کیا یہ ایڈووکیٹ کی جگہ لے سکتا ہے؟">Does it replace an advocate?</summary><p data-ur="نہیں۔ یہ سمجھنے اور تیاری میں مدد دیتا ہے۔ عدالت میں نمائندگی کے لیے لائسنس یافتہ ایڈووکیٹ ضروری ہے۔">No. It helps you understand and prepare. Representation in court requires a licensed advocate — you will simply arrive better prepared.</p></details>
+      <details><summary data-ur="مجھے کیسے پتا چلے کہ جواب درست ہے؟">How can I trust the answer?</summary><p data-ur="ہر جواب اپنا قانونی حوالہ دکھاتا ہے تاکہ اس کی تصدیق ہو سکے۔ اہم فیصلوں سے پہلے ایڈووکیٹ سے ضرور تصدیق کریں۔">Every answer shows the law it relies on so it can be checked. Before important decisions, always confirm with an advocate.</p></details>
+      <details><summary data-ur="کیا میں رومن اردو یا آواز میں پوچھ سکتا ہوں؟">Can I ask in Roman Urdu, or by voice?</summary><p data-ur="جی ہاں — اردو، انگریزی، رومن اردو یا ملی جلی زبان، جیسے آپ عام طور پر بات کرتے ہیں۔">Yes — Urdu, English, Roman Urdu or a mix of them, however you naturally speak.</p></details>
+      <details><summary data-ur="کیا یہ پاکستان سے باہر کام کرتا ہے؟">Does it work outside Pakistan?</summary><p data-ur="جی ہاں۔ یہ پاکستانی قانون کے لیے بنایا گیا ہے، اور خلیجی ممالک اور 15+ دیگر ممالک کی رہنمائی بھی دیتا ہے۔">Yes. It is built around Pakistani law, with guidance for the GCC and 15+ other countries.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ FINAL ═════════ -->
+<section class="final" id="get-section">
+  <div class="wrap">
+    <div class="frieze" data-ur="جب آپ کا مقدمہ پکارا جائے">WHEN · YOUR · MATTER · IS · CALLED</div>
+    <h2 class="reveal" data-ur="جب آپ کا مقدمہ پکارا جائے، <i>تیار رہیں۔</i>">When your matter is called, <i>be ready.</i></h2>
+    <p class="lede reveal" data-ur="وکیل مفت ڈاؤن لوڈ کریں۔ اپنی زبان میں پوچھیں۔ ہر دفتر اور ہر عدالت میں تیاری کے ساتھ جائیں۔">Download Wakeel free. Ask in your own language. Walk into any office — or any courtroom — prepared.</p>
+    <div class="stores reveal">
+      <a class="store" href="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel" data-cta="final-android"><svg width="24" height="24"><use href="#i-play"/></svg><span><small>Get it on</small>Google Play</span></a>
+      <a class="store" href="https://testflight.apple.com/join/ZVgHgqF7" data-cta="final-ios"><svg width="22" height="24"><use href="#i-apple"/></svg><span><small>iPhone beta on</small>TestFlight</span></a>
+    </div>
+    <div class="qr-row">
+      <div class="qr-card"><div class="code" data-qr="android">Android</div>Android</div>
+      <div class="qr-card"><div class="code" data-qr="ios">iPhone</div>iPhone</div>
+    </div>
+    <div class="oath">
+      <span data-ur="عوام کے لیے مفت">Free for the public</span>
+      <span data-ur="Android اور iOS">Android &amp; iOS</span>
+      <span data-ur="اردو اور انگریزی">Urdu &amp; English</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="crest" href="#main" style="margin-bottom:12px;color:var(--ink)"><span class="mk" aria-hidden="true"><svg width="20" height="20"><use href="#i-scales"/></svg></span><b>WAKEEL</b></a>
+        <p data-ur="پاکستان کے لیے بنایا گیا AI قانونی معاون — خلیجی اور 15+ ممالک کی رہنمائی کے ساتھ۔">The AI legal assistant built for Pakistan — with guidance for the GCC and 15+ countries.</p>
+      </div>
+      <div><h4 data-ur="کس کے لیے">For</h4><ul>
+        <li><a href="https://wakeel.org/citizens" data-ur="شہری">Citizens</a></li>
+        <li><a href="https://wakeel.org/law-students" data-ur="قانون کے طلباء">Law students</a></li>
+        <li><a href="https://wakeel.org/lawyers" data-ur="وکلاء">Lawyers</a></li>
+        <li><a href="https://wakeel.org/judges" data-ur="ججز">Judges</a></li>
+      </ul></div>
+      <div><h4 data-ur="رہنمائی">Guides</h4><ul>
+        <li><a href="https://wakeel.org/legal-issues-pakistan" data-ur="پاکستان">Pakistan</a></li>
+        <li><a href="https://wakeel.org/legal-issues-gcc" data-ur="خلیجی ممالک">GCC</a></li>
+        <li><a href="https://wakeel.org/legal-issues-global" data-ur="عالمی">Global</a></li>
+        <li><a href="https://wakeel.org/court-procedures-pakistan" data-ur="عدالتی طریقہ کار">Court procedures</a></li>
+      </ul></div>
+      <div><h4 data-ur="ادارہ">Wakeel</h4><ul>
+        <li><a href="https://wakeel.org/about" data-ur="ہمارے بارے میں">About</a></li>
+        <li><a href="https://wakeel.org/legal-sources" data-ur="قانونی ذرائع">Legal sources</a></li>
+        <li><a href="https://wakeel.org/pricing" data-ur="پلان">Plans</a></li>
+        <li><a href="https://wakeel.org/privacy" data-ur="پرائیویسی">Privacy</a></li>
+      </ul></div>
+    </div>
+    <p class="legal" data-ur="Wakeel.org قانونی معلومات اور تحقیقی معاونت فراہم کرتا ہے۔ یہ حتمی قانونی مشورہ نہیں دیتا، نتائج کی ضمانت نہیں دیتا، اور لائسنس یافتہ ایڈووکیٹ سے مشاورت کا متبادل نہیں۔">Wakeel.org provides legal information and research support. It does not provide final legal advice, does not guarantee outcomes, and does not replace consultation with a licensed advocate.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn btn-line" href="#hearing" data-cta="sticky-hear" data-ur="مثال">Sample</a>
+  <a class="btn btn-claret" href="#get" data-get data-cta="sticky"><svg width="18" height="18" class="get-ic"><use href="#i-phone"/></svg><span class="get-label">Get the free app</span></a>
+</div>
+
+<dialog id="getDialog" aria-labelledby="dlgTitle">
+  <div class="dlg">
+    <button type="button" class="x" id="dlgClose" aria-label="Close">×</button>
+    <span class="carve" data-ur="مفت">Free</span>
+    <h3 id="dlgTitle" data-ur="اپنے فون پر وکیل حاصل کریں">Wakeel, on your phone</h3>
+    <p data-ur="اپنے فون کا کیمرا کوڈ کی طرف کریں۔">Point your phone's camera at the code.</p>
+    <div class="pair">
+      <div class="qr-card"><div class="code" data-qr="android">Android</div>Android</div>
+      <div class="qr-card"><div class="code" data-qr="ios">iPhone</div>iPhone</div>
+    </div>
+    <div class="links">
+      <a href="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel" data-cta="dialog-android">Google Play →</a>
+      <a href="https://testflight.apple.com/join/ZVgHgqF7" data-cta="dialog-ios">iPhone (TestFlight) →</a>
+    </div>
+  </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" defer></script>
+<script>
+(function(){
+  var LINKS = { android:"https://play.google.com/store/apps/details?id=pk.digit.aiwakeel", ios:"https://testflight.apple.com/join/ZVgHgqF7" };
+  var ua = navigator.userAgent || "";
+  var platform = /android/i.test(ua) ? "android"
+    : (/iphone|ipad|ipod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) ? "ios" : "desktop";
+  var state = { lang:"en", level:"plain", m:"fir", tier:"dc" };
+  try { var p = JSON.parse(localStorage.getItem("wakeel-v3") || "{}"); if (p.lang) state.lang = p.lang; } catch(e){}
+  var $ = function(s, r){ return (r||document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  function L(o){ return o[state.lang] || o.en; }
+  function track(event, detail){ (window.dataLayer = window.dataLayer || []).push(Object.assign({ event:event, platform:platform, lang:state.lang }, detail || {})); }
+
+  /* ───────── Platform-aware CTA + QR dialog ───────── */
+  var GET = {
+    android:{ en:"Get it on Google Play", ur:"گوگل پلے سے حاصل کریں", icon:"#i-play" },
+    ios:{ en:"Get the iPhone app", ur:"آئی فون ایپ حاصل کریں", icon:"#i-apple" },
+    desktop:{ en:"Get the free app", ur:"مفت ایپ حاصل کریں", icon:"#i-phone" }
+  };
+  function paintGet(){
+    var g = GET[platform];
+    $$(".get-label").forEach(function(el){ el.textContent = L(g); });
+    $$(".get-ic use").forEach(function(u){ u.setAttribute("href", g.icon); });
+    $$("[data-get]").forEach(function(a){ a.href = platform === "desktop" ? "#get" : LINKS[platform]; });
+  }
+  var dlg = $("#getDialog");
+  function drawQR(){
+    if (!window.qrcode) return;
+    $$("[data-qr]").forEach(function(box){
+      if (box.dataset.drawn) return;
+      var q = qrcode(0, "M"); q.addData(LINKS[box.dataset.qr]); q.make();
+      box.innerHTML = q.createSvgTag({ cellSize:4, margin:0, scalable:true }); box.dataset.drawn = "1";
+    });
+  }
+  addEventListener("load", drawQR);
+  function openGet(src){
+    track("get_app_click", { source:src });
+    if (platform !== "desktop") { location.href = LINKS[platform]; return; }
+    drawQR(); if (dlg.showModal) dlg.showModal(); else location.href = LINKS.android;
+  }
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("[data-get]");
+    if (a) { e.preventDefault(); openGet(a.dataset.cta || "unknown"); return; }
+    var c = e.target.closest("[data-cta]"); if (c) track("cta_click", { source:c.dataset.cta });
+  });
+  $("#dlgClose").addEventListener("click", function(){ dlg.close(); });
+  dlg.addEventListener("click", function(e){ if (e.target === dlg) dlg.close(); });
+
+  /* ───────── § I  Matters on the cause list, set out like a judgment ───────── */
+  var M = [
+    { id:"notice", kind:{en:"Civil",ur:"دیوانی"}, t:{en:"Legal notice for recovery of money",ur:"رقم کی وصولی کا قانونی نوٹس"},
+      forum:{en:"Civil Court — only if a suit is actually filed",ur:"سول کورٹ — صرف اس صورت میں جب مقدمہ دائر ہو"},
+      facts:{en:"You receive a legal notice from an advocate demanding Rs. 850,000 under an old agreement, with 15 days to reply.",ur:"آپ کو ایک وکیل کی جانب سے پرانے معاہدے کے تحت 8 لاکھ 50 ہزار روپے کی ادائیگی کا نوٹس ملتا ہے، جواب کے لیے 15 دن۔"},
+      issue:{en:"Must you pay — and what happens if you don't reply?",ur:"کیا آپ کو ادائیگی کرنی ہوگی — اور جواب نہ دینے پر کیا ہوگا؟"},
+      cite:["CPC 1908","s.80 CPC (notice to Govt.)","Limitation Act 1908"],
+      app:{en:"A legal notice is a formal demand, not a court order. It usually comes before a lawsuit. You are not bound to pay a claim you dispute, but silence can be used against you later.",ur:"قانونی نوٹس ایک رسمی مطالبہ ہے، عدالتی حکم نہیں۔ عموماً یہ مقدمے سے پہلے آتا ہے۔ جس دعوے سے آپ متفق نہیں اسے ادا کرنا لازم نہیں، لیکن خاموشی بعد میں آپ کے خلاف استعمال ہو سکتی ہے۔"},
+      steps:{en:["Note the date of receipt and keep the envelope.","Compare the claim with your agreement and payment records.","Reply in writing within the period — ideally through an advocate."],ur:["وصولی کی تاریخ لکھیں اور لفافہ سنبھال کر رکھیں۔","دعوے کا اپنے معاہدے اور ادائیگیوں کے ریکارڈ سے موازنہ کریں۔","مقررہ مدت میں تحریری جواب دیں — بہتر ہے وکیل کے ذریعے۔"]},
+      counsel:{en:"No statutory form governs private legal notices; they evidence demand and good faith. Against Government or a public officer, notice under s.80 CPC is a pre-condition to suit. Check limitation on the underlying claim before replying.",ur:"نجی قانونی نوٹس کا کوئی قانونی فارم مقرر نہیں؛ یہ مطالبے اور نیک نیتی کا ثبوت ہے۔ حکومت کے خلاف دعوے میں دفعہ 80 CPC کا نوٹس لازمی ہے۔ جواب سے پہلے میعاد چیک کریں۔"} },
+    { id:"fir", kind:{en:"Criminal",ur:"فوجداری"}, t:{en:"Refusal to register an FIR",ur:"FIR درج کرنے سے انکار"},
+      forum:{en:"SSP / DPO, then the Sessions Judge as Justice of Peace",ur:"SSP / DPO، پھر سیشن جج بطور جسٹس آف پیس"},
+      facts:{en:"Your motorcycle is stolen. At the police station, the duty officer refuses to register an FIR and tells you to come back later.",ur:"آپ کی موٹر سائیکل چوری ہو جاتی ہے۔ تھانے میں ڈیوٹی افسر FIR درج کرنے سے انکار کر کے کہتا ہے کہ بعد میں آئیں۔"},
+      issue:{en:"Can the police refuse — and where do you go next?",ur:"کیا پولیس انکار کر سکتی ہے — اور اب آپ کہاں جائیں؟"},
+      cite:["s.154 CrPC","s.22-A(6) CrPC","s.200 CrPC"],
+      app:{en:"Theft is a cognizable offence, so the officer in charge is legally bound to record your information. A refusal is not the end of the road — higher remedies exist.",ur:"چوری قابلِ دست اندازی جرم ہے، اس لیے تھانے کا انچارج قانوناً آپ کی اطلاع درج کرنے کا پابند ہے۔ انکار آخری راستہ نہیں — اعلیٰ سطح پر داد رسی موجود ہے۔"},
+      steps:{en:["Write the complaint down and keep a dated copy.","Submit it to the SSP / DPO of the district.","If still refused, petition the Justice of Peace (Sessions Judge)."],ur:["شکایت تحریری طور پر لکھیں اور تاریخ والی نقل رکھیں۔","ضلع کے SSP / DPO کو جمع کروائیں۔","پھر بھی انکار ہو تو جسٹس آف پیس (سیشن جج) کو درخواست دیں۔"]},
+      counsel:{en:"s.154 CrPC casts a mandatory duty to record information disclosing a cognizable offence. On refusal, the Ex-officio Justice of Peace may issue directions under s.22-A(6)(i) CrPC; a private complaint under s.200 CrPC remains available.",ur:"دفعہ 154 CrPC کے تحت قابلِ دست اندازی جرم کی اطلاع درج کرنا لازم ہے۔ انکار پر جسٹس آف پیس دفعہ 22-A(6)(i) کے تحت ہدایت دے سکتا ہے؛ دفعہ 200 کے تحت نجی استغاثہ بھی ممکن ہے۔"} },
+    { id:"salary", kind:{en:"Labour",ur:"لیبر"}, t:{en:"Recovery of unpaid wages",ur:"واجب الادا تنخواہ کی وصولی"},
+      forum:{en:"Authority under the Payment of Wages law of your province",ur:"صوبائی Payment of Wages قانون کے تحت اتھارٹی"},
+      facts:{en:"Your employer has not paid your salary for two months and has stopped answering your calls.",ur:"آپ کے آجر نے دو ماہ سے تنخواہ نہیں دی اور فون بھی نہیں اٹھا رہا۔"},
+      issue:{en:"Can you recover your wages — and before which forum?",ur:"کیا آپ اپنی اجرت وصول کر سکتے ہیں — اور کس فورم کے سامنے؟"},
+      cite:["Payment of Wages Act 1936, s.15","Provincial labour laws"],
+      app:{en:"Earned wages must be paid on time; it is a legal duty, not a favour. You can claim the wages and, in many cases, compensation for the delay.",ur:"کمائی ہوئی اجرت وقت پر ادا کرنا قانونی فرض ہے، احسان نہیں۔ آپ اجرت اور کئی صورتوں میں تاخیر کا معاوضہ بھی طلب کر سکتے ہیں۔"},
+      steps:{en:["Gather your appointment letter, payslips and bank statements.","Send a written demand to your employer and keep proof.","File a claim before the wages Authority."],ur:["تقرری نامہ، تنخواہ کی پرچیاں اور بینک اسٹیٹمنٹ جمع کریں۔","آجر کو تحریری مطالبہ بھیجیں اور ثبوت رکھیں۔","اجرت اتھارٹی کے سامنے دعویٰ دائر کریں۔"]},
+      counsel:{en:"Claims for delayed or deducted wages lie before the Authority under s.15 of the Payment of Wages Act 1936 (or the provincial successor statute), which may award compensation. Check coverage thresholds and limitation from when payment fell due.",ur:"تاخیر یا کٹوتی شدہ اجرت کا دعویٰ Payment of Wages Act 1936 کی دفعہ 15 (یا صوبائی متبادل) کے تحت اتھارٹی کے سامنے ہوتا ہے، جو معاوضہ بھی دے سکتی ہے۔"} },
+    { id:"fraud", kind:{en:"Cyber",ur:"سائبر"}, t:{en:"Money lost to an online scam",ur:"آن لائن فراڈ میں رقم کا نقصان"},
+      forum:{en:"Your bank first, then the NCCIA",ur:"پہلے آپ کا بینک، پھر NCCIA"},
+      facts:{en:"A caller posing as your bank asks for an OTP; minutes later Rs. 120,000 leaves your account.",ur:"بینک کا نمائندہ بن کر ایک کالر OTP مانگتا ہے؛ چند منٹ بعد اکاؤنٹ سے ایک لاکھ 20 ہزار روپے نکل جاتے ہیں۔"},
+      issue:{en:"What must you do now — and is this a crime?",ur:"اب آپ کو کیا کرنا چاہیے — اور کیا یہ جرم ہے؟"},
+      cite:["PECA 2016, s.14","PPC s.420","Qanun-e-Shahadat Art.164"],
+      app:{en:"Yes, it is a crime. Speed matters most: the sooner the bank is told, the better the chance of stopping the money. Evidence you save now decides what happens later.",ur:"جی ہاں، یہ جرم ہے۔ رفتار سب سے اہم ہے: جتنی جلدی بینک کو بتائیں، رقم روکنے کا امکان اتنا زیادہ۔ جو ثبوت ابھی محفوظ کریں گے، وہی بعد میں فیصلہ کن ہوگا۔"},
+      steps:{en:["Call your bank's helpline now and ask to block the transaction.","Screenshot every call log, number, account and message.","File a cybercrime complaint with the NCCIA online."],ur:["ابھی بینک ہیلپ لائن پر کال کر کے ٹرانزیکشن رکوائیں۔","ہر کال لاگ، نمبر، اکاؤنٹ اور پیغام کا اسکرین شاٹ لیں۔","NCCIA کو آن لائن سائبر کرائم شکایت درج کریں۔"]},
+      counsel:{en:"Electronic fraud is an offence under s.14 PECA 2016, often read with s.420 PPC; complaints lie with the National Cyber Crime Investigation Agency. Preserve evidence in original form — Art.164 Qanun-e-Shahadat governs evidence from modern devices.",ur:"الیکٹرانک فراڈ PECA 2016 کی دفعہ 14 کے تحت جرم ہے، عموماً PPC 420 کے ساتھ؛ شکایات NCCIA کے پاس۔ ثبوت اصل حالت میں رکھیں — قانونِ شہادت کا آرٹیکل 164۔"} },
+    { id:"property", kind:{en:"Property",ur:"جائیداد"}, t:{en:"Verification before buying land",ur:"زمین خریدنے سے پہلے تصدیق"},
+      forum:{en:"Land record centre and Sub-Registrar",ur:"اراضی ریکارڈ سینٹر اور سب رجسٹرار"},
+      facts:{en:"A dealer offers a plot at a good price and shows you a file and a stamp-paper agreement.",ur:"ایک ڈیلر اچھی قیمت پر پلاٹ پیش کرتا ہے اور فائل اور اسٹامپ پیپر کا معاہدہ دکھاتا ہے۔"},
+      issue:{en:"How do you confirm the seller actually owns it?",ur:"آپ کیسے یقین کریں کہ بیچنے والا واقعی مالک ہے؟"},
+      cite:["Registration Act 1908, s.17","TPA 1882, s.54","Land Revenue Acts"],
+      app:{en:"A file or stamp paper alone proves little. Ownership is checked in the official land record, and a sale must be completed by a registered deed.",ur:"صرف فائل یا اسٹامپ پیپر سے بہت کم ثابت ہوتا ہے۔ ملکیت سرکاری ریکارڈ میں چیک کی جاتی ہے، اور فروخت رجسٹرڈ بیع نامے سے مکمل ہوتی ہے۔"},
+      steps:{en:["Obtain the latest fard from the land record centre or portal.","Match the seller's CNIC with the owner in the fard and mutation.","Pay through the bank and register the sale deed."],ur:["اراضی ریکارڈ سینٹر یا پورٹل سے تازہ فرد حاصل کریں۔","بیچنے والے کا شناختی کارڈ فرد اور انتقال میں مالک سے ملائیں۔","بینک کے ذریعے ادائیگی کریں اور بیع نامہ رجسٹر کروائیں۔"]},
+      counsel:{en:"Sale of immovable property worth Rs.100 or more requires a registered instrument (s.54 TPA; s.17 Registration Act). Mutation entries are fiscal and do not by themselves confer title — verify the chain of title, encumbrances and pending litigation.",ur:"100 روپے یا زائد مالیت کی غیر منقولہ جائیداد کی فروخت کے لیے رجسٹرڈ دستاویز ضروری ہے۔ انتقال بذاتِ خود ملکیت نہیں دیتا — ملکیت کا سلسلہ اور زیرِ التوا مقدمات چیک کریں۔"} },
+    { id:"inherit", kind:{en:"Family",ur:"عائلی"}, t:{en:"A daughter's share in inheritance",ur:"وراثت میں بیٹی کا حصہ"},
+      forum:{en:"NADRA succession unit or Civil Court",ur:"نادرا سکسیشن یونٹ یا سول کورٹ"},
+      facts:{en:"After your father's death, your brothers say daughters have no share in his land.",ur:"والد کی وفات کے بعد آپ کے بھائی کہتے ہیں کہ بیٹیوں کا زمین میں کوئی حصہ نہیں۔"},
+      issue:{en:"Do daughters inherit — and how is the share enforced?",ur:"کیا بیٹیاں وارث ہیں — اور حصہ کیسے حاصل کیا جائے؟"},
+      cite:["Shariat Application Act 1962","Succession Act 1925","PPC s.498-A"],
+      app:{en:"They are wrong. A daughter has a fixed legal share of her father's estate. Family pressure or a verbal agreement cannot take it away, and depriving her of it can be a crime.",ur:"یہ درست نہیں۔ بیٹی کا والد کی جائیداد میں مقررہ قانونی حصہ ہے۔ خاندانی دباؤ یا زبانی معاہدہ اسے ختم نہیں کر سکتا، اور اسے محروم کرنا جرم ہو سکتا ہے۔"},
+      steps:{en:["Collect the death certificate and NADRA family registration certificate.","Obtain the fard / mutation record of the property.","Apply for a succession certificate or file for partition."],ur:["وفات کا سرٹیفکیٹ اور نادرا فیملی رجسٹریشن سرٹیفکیٹ حاصل کریں۔","جائیداد کا فرد / انتقال ریکارڈ نکلوائیں۔","وراثتی سرٹیفکیٹ کی درخواست دیں یا تقسیم کا دعویٰ کریں۔"]},
+      counsel:{en:"Succession among Muslims follows personal law under the 1962 Act; a daughter takes half a son's share. Depriving a woman of inheritance by deceitful or illegal means is an offence under s.498-A PPC. Succession certificates under the 1925 Act or via NADRA succession facilitation units.",ur:"مسلمانوں میں وراثت 1962 کے قانون کے تحت؛ بیٹی کا حصہ بیٹے کا نصف ہے۔ عورت کو دھوکے سے وراثت سے محروم کرنا PPC کی دفعہ 498-A کے تحت جرم ہے۔"} }
+  ];
+  var BL = {
+    matter:{en:"In the matter of",ur:"بمقدمہ"}, forum:{en:"Forum",ur:"فورم"},
+    facts:{en:"Facts",ur:"حقائق"}, issue:{en:"Issue",ur:"سوال"}, law:{en:"The law",ur:"قانون"}, app:{en:"Application",ur:"اطلاق"}, next:{en:"Next steps",ur:"اگلے قدم"}, counsel:{en:"Note for counsel",ur:"وکیل کے لیے نوٹ"}
+  };
+  function byId(id){ for (var i = 0; i < M.length; i++) if (M[i].id === id) return M[i]; return M[0]; }
+
+  function renderItems(){
+    $("#items").innerHTML = M.map(function(m, i){
+      return '<li><button type="button" class="item" data-m="' + m.id + '" aria-pressed="' + (m.id === state.m) + '">' +
+        '<span class="no">' + String(i + 1).padStart(2, "0") + '</span><span class="t">' + L(m.t) + '</span><span class="k">' + L(m.kind) + '</span></button></li>';
+    }).join("");
+    $$(".item").forEach(function(b){ b.addEventListener("click", function(){ state.m = b.dataset.m; track("cause_item", { matter:state.m }); renderItems(); renderBrief(true); }); });
+    var idx = M.indexOf(byId(state.m)) + 1;
+    $("#ledItem").textContent = "ITEM " + String(idx).padStart(2, "0");
+  }
+  function renderBrief(animate){
+    var m = byId(state.m), el = $("#brief"), n = 0;
+    function para(t){ n++; return '<p class="para" data-n="' + n + '">' + t + '</p>'; }
+    var html =
+      '<div class="matter"><small>' + L(BL.matter) + '</small><h3>' + L(m.t) + '</h3><p class="forum">' + L(BL.forum) + ': <b>' + L(m.forum) + '</b></p></div>' +
+      '<div class="part"><h4>' + L(BL.facts) + '</h4>' + para(L(m.facts)) + '</div>' +
+      '<div class="part"><h4>' + L(BL.issue) + '</h4>' + para(L(m.issue)) + '</div>' +
+      '<div class="part"><h4>' + L(BL.law) + '</h4><div class="cites">' + m.cite.map(function(c){ return "<span>" + c + "</span>"; }).join("") + '</div></div>' +
+      '<div class="part"><h4>' + L(BL.app) + '</h4>' + para(L(m.app)) + '</div>' +
+      '<div class="part"><h4>' + L(BL.next) + '</h4>' + L(m.steps).map(para).join("") +
+      (state.level === "counsel" ? '<div class="counsel"><b>' + L(BL.counsel) + '</b>' + L(m.counsel) + '</div>' : '') + '</div>';
+    if (!animate) { el.innerHTML = html; return; }
+    el.classList.add("fade"); tilt();
+    setTimeout(function(){ el.innerHTML = html; el.classList.remove("fade"); }, 200);
+  }
+  /* The scales tip, then settle, each time a matter is weighed */
+  var beam = $("#beam");
+  function tilt(){
+    if (!beam) return;
+    beam.style.transition = "none"; beam.style.transform = "rotate(" + (Math.random() > .5 ? 9 : -9) + "deg)";
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ beam.style.transition = ""; beam.style.transform = "rotate(0deg)"; }); });
+  }
+  $$("[data-level]").forEach(function(b){ b.addEventListener("click", function(){
+    state.level = b.dataset.level;
+    $$("[data-level]").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); });
+    track("reading_level", { level:state.level }); renderBrief(true);
+  }); });
+
+  /* ───────── § II  Court hierarchy ───────── */
+  var T = [
+    { id:"sc", w:"42%", lvl:"I", n:{en:"Supreme Court",ur:"سپریم کورٹ"}, full:{en:"Supreme Court of Pakistan",ur:"سپریم کورٹ آف پاکستان"},
+      hears:{en:"The final court of appeal. Hears appeals from the High Courts and questions of law of public importance.",ur:"حتمی اپیلیٹ عدالت۔ ہائی کورٹس کے فیصلوں کے خلاف اپیلیں اور عوامی اہمیت کے قانونی سوالات سنتی ہے۔"},
+      eg:{en:"Leave to appeal · Final civil and criminal appeals",ur:"اپیل کی اجازت · حتمی دیوانی و فوجداری اپیلیں"},
+      how:{en:"Summarises precedents and prepares research notes for counsel.",ur:"نظائر کا خلاصہ اور وکیل کے لیے تحقیقی نوٹس تیار کرتا ہے۔"} },
+    { id:"hc", w:"58%", lvl:"II", n:{en:"High Courts · Federal Shariat Court",ur:"ہائی کورٹس · وفاقی شرعی عدالت"}, full:{en:"High Courts & the Federal Shariat Court",ur:"ہائی کورٹس اور وفاقی شرعی عدالت"},
+      hears:{en:"High Courts hear writ petitions to enforce rights (Article 199) and appeals and revisions from district courts. The Federal Shariat Court examines laws against Islamic injunctions.",ur:"ہائی کورٹس حقوق کے نفاذ کے لیے رٹ پٹیشنز (آرٹیکل 199) اور ضلعی عدالتوں سے اپیلیں اور نگرانیاں سنتی ہیں۔ وفاقی شرعی عدالت قوانین کا اسلامی احکام سے جائزہ لیتی ہے۔"},
+      eg:{en:"Writ petitions · Bail after refusal below · Civil revisions",ur:"رٹ پٹیشنز · ماتحت عدالت سے انکار کے بعد ضمانت · دیوانی نگرانی"},
+      how:{en:"Finds the governing provision and outlines possible grounds.",ur:"متعلقہ قانونی شق تلاش کرتا ہے اور ممکنہ بنیادوں کا خاکہ دیتا ہے۔"} },
+    { id:"dc", w:"72%", lvl:"III", n:{en:"District & Sessions Courts",ur:"ڈسٹرکٹ اینڈ سیشنز کورٹس"}, full:{en:"District & Sessions Courts",ur:"ڈسٹرکٹ اینڈ سیشنز کورٹس"},
+      hears:{en:"The Sessions Judge tries serious criminal cases, hears bail and Justice of Peace petitions. The District Judge hears civil appeals from civil judges.",ur:"سیشن جج سنگین فوجداری مقدمات، ضمانت اور جسٹس آف پیس کی درخواستیں سنتا ہے۔ ڈسٹرکٹ جج سول ججوں کے فیصلوں کے خلاف دیوانی اپیلیں سنتا ہے۔"},
+      eg:{en:"Bail · s.22-A petitions · Civil appeals",ur:"ضمانت · دفعہ 22-A کی درخواستیں · دیوانی اپیلیں"},
+      how:{en:"Tells you whether your matter belongs here, and which papers to bring.",ur:"بتاتا ہے کہ آپ کا معاملہ یہاں آتا ہے یا نہیں، اور کون سے کاغذات لانے ہیں۔"} },
+    { id:"civ", w:"86%", lvl:"IV", n:{en:"Civil Judges · Magistrates · Family Courts",ur:"سول جج · مجسٹریٹ · فیملی کورٹس"}, full:{en:"Civil Judges, Magistrates & Family Courts",ur:"سول جج، مجسٹریٹ اور فیملی کورٹس"},
+      hears:{en:"Where most matters begin: civil suits for money, property and injunctions; lesser criminal offences; and khula, maintenance, custody and dower under the Family Courts Act 1964.",ur:"جہاں زیادہ تر معاملات شروع ہوتے ہیں: رقم، جائیداد اور حکمِ امتناعی کے دیوانی مقدمات؛ کم سنگین جرائم؛ اور فیملی کورٹس ایکٹ 1964 کے تحت خلع، نان نفقہ، حضانت اور حق مہر۔"},
+      eg:{en:"Recovery suits · Khula · Maintenance · Injunctions",ur:"وصولی کے مقدمات · خلع · نان نفقہ · حکمِ امتناعی"},
+      how:{en:"Explains the procedure, the deadlines and your rights at the first hearing.",ur:"طریقہ کار، مہلتیں اور پہلی سماعت پر آپ کے حقوق سمجھاتا ہے۔"} },
+    { id:"spec", w:"100%", lvl:"V", n:{en:"Special Courts & Tribunals",ur:"خصوصی عدالتیں اور ٹریبونلز"}, full:{en:"Special Courts & Tribunals",ur:"خصوصی عدالتیں اور ٹریبونلز"},
+      hears:{en:"Focused forums with their own rules: consumer courts, labour courts, banking courts, rent controllers, anti-terrorism courts and others.",ur:"اپنے قواعد کے ساتھ مخصوص فورمز: صارف عدالتیں، لیبر کورٹس، بینکنگ کورٹس، رینٹ کنٹرولرز، انسدادِ دہشت گردی عدالتیں اور دیگر۔"},
+      eg:{en:"Consumer complaints · Wage claims · Rent disputes",ur:"صارف شکایات · اجرت کے دعوے · کرایہ داری تنازعات"},
+      how:{en:"Points you to the right forum first — the most expensive mistake is the wrong one.",ur:"پہلے درست فورم کی نشاندہی کرتا ہے — سب سے مہنگی غلطی غلط فورم ہے۔"} }
+  ];
+  var TL = { hears:{en:"What it hears",ur:"کیا سنتی ہے"}, eg:{en:"Typical matters",ur:"عام معاملات"}, how:{en:"How Wakeel helps",ur:"وکیل کیسے مدد کرتا ہے"},
+    note:{en:"Recent constitutional amendments have changed how some constitutional cases are heard. Ask Wakeel for the current position.",ur:"حالیہ آئینی ترامیم سے کچھ آئینی مقدمات کی سماعت کا طریقہ بدلا ہے۔ موجودہ صورتحال کے لیے وکیل سے پوچھیں۔"} };
+  function renderTiers(){
+    $("#tiers").innerHTML = T.map(function(t){
+      return '<button type="button" class="tier" style="--w:' + t.w + '" data-t="' + t.id + '" aria-pressed="' + (t.id === state.tier) + '"><span class="lvl">' + t.lvl + '</span><b>' + L(t.n) + '</b></button>';
+    }).join("") + '<span class="base" aria-hidden="true"></span>';
+    $$(".tier").forEach(function(b){ b.addEventListener("click", function(){ state.tier = b.dataset.t; track("court_tier", { tier:state.tier }); renderTiers(); }); });
+    var t = T.filter(function(x){ return x.id === state.tier; })[0];
+    $("#tierInfo").innerHTML = '<span class="carve">' + t.lvl + '</span><h3>' + L(t.full) + '</h3>' +
+      '<dl><div><dt>' + L(TL.hears) + '</dt><dd>' + L(t.hears) + '</dd></div><div><dt>' + L(TL.eg) + '</dt><dd>' + L(t.eg) + '</dd></div><div><dt>' + L(TL.how) + '</dt><dd>' + L(t.how) + '</dd></div></dl>' +
+      '<p class="note">' + L(TL.note) + '</p>';
+  }
+
+  function renderDate(){
+    try { $("#today").textContent = new Date().toLocaleDateString(state.lang === "ur" ? "ur-PK" : "en-GB", { weekday:"long", day:"numeric", month:"long", year:"numeric" }); } catch(e){}
+  }
+
+  /* ───────── Language ───────── */
+  function applyLang(){
+    var ur = state.lang === "ur", html = document.documentElement;
+    html.lang = ur ? "ur" : "en"; html.dir = ur ? "rtl" : "ltr";
+    $$("[data-ur]").forEach(function(el){
+      if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+      el.innerHTML = ur ? el.dataset.ur : el.dataset.en;
+    });
+    $$("[data-lang]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.lang === state.lang)); });
+    paintGet(); renderItems(); renderBrief(false); renderTiers(); renderDate();
+  }
+  $$("[data-lang]").forEach(function(b){ b.addEventListener("click", function(){
+    if (state.lang === b.dataset.lang) return;
+    state.lang = b.dataset.lang; try { localStorage.setItem("wakeel-v3", JSON.stringify({ lang:state.lang })); } catch(e){}
+    track("lang_switch"); applyLang();
+  }); });
+
+  /* ───────── Sticky CTA + reveal ───────── */
+  var hero = $("#hero"), sticky = $("#sticky"), final = $("#get-section");
+  function onScroll(){
+    var fr = final.getBoundingClientRect();
+    sticky.classList.toggle("show", scrollY > hero.offsetHeight * .7 && !(fr.top < innerHeight && fr.bottom > 0));
+  }
+  addEventListener("scroll", onScroll, { passive:true }); onScroll();
+  var io = "IntersectionObserver" in window ? new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold:.1 }) : null;
+  $$(".reveal").forEach(function(el){ io ? io.observe(el) : el.classList.add("in"); });
+
+  applyLang();
+  setTimeout(tilt, 400);
+})();
+</script>
+</body>
+</html>

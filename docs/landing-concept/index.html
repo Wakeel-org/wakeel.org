@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wakeel — Legal clarity, in your language</title>
+<meta name="description" content="Describe your legal situation in plain English or Urdu. Wakeel explains where you stand, which law applies, and what to do next — built for Pakistan, with guidance for the GCC and 15+ countries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ───────── Tokens ─────────
+   Paper, ink and one emerald. A yellow "highlighter" is the only loud colour:
+   it marks what matters, the way a careful reader marks a document. */
+:root{
+  --paper:#F7F5F0; --paper-2:#EFECE4; --card:#FFFFFF;
+  --ink:#16201C; --ink-2:#47524D; --ink-3:#6E7873;
+  --line:#E2DED4; --line-2:#CFCABD;
+  --emerald:#0D5C46; --emerald-ink:#FFFFFF; --emerald-soft:#E3EFE9;
+  --mark:#FFE58A; --mark-ink:#16201C;
+  --warn:#9A3B1F; --warn-soft:#F8E9E2;
+  --shadow:0 1px 2px rgba(22,32,28,.05),0 8px 28px -12px rgba(22,32,28,.18);
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --urdu:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq",serif;
+  --r:14px; --r-lg:22px; --max:1180px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1513; --paper-2:#151D1A; --card:#18211E;
+    --ink:#ECEFEA; --ink-2:#B5BEB8; --ink-3:#8B958F;
+    --line:#26312D; --line-2:#34423C;
+    --emerald:#4FC79C; --emerald-ink:#0B1411; --emerald-soft:#173029;
+    --mark:#5C4F12; --mark-ink:#FFF4C2;
+    --warn:#F0A388; --warn-soft:#2E1C16;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -12px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1513; --paper-2:#151D1A; --card:#18211E;
+  --ink:#ECEFEA; --ink-2:#B5BEB8; --ink-3:#8B958F;
+  --line:#26312D; --line-2:#34423C;
+  --emerald:#4FC79C; --emerald-ink:#0B1411; --emerald-soft:#173029;
+  --mark:#5C4F12; --mark-ink:#FFF4C2;
+  --warn:#F0A388; --warn-soft:#2E1C16;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px -12px rgba(0,0,0,.6);
+}
+
+/* ───────── Base ───────── */
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:100%;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+html.large{font-size:115%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1rem/1.6 var(--sans);overflow-x:hidden}
+[dir="rtl"] body{font-family:var(--urdu);line-height:2.1}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;letter-spacing:-.015em;line-height:1.12;margin:0}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3{font-family:var(--urdu);font-weight:600;letter-spacing:0;line-height:1.9}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
+@media(min-width:720px){.wrap{padding:0 32px}}
+section{padding:72px 0}
+@media(min-width:960px){section{padding:104px 0}}
+.mark{background:linear-gradient(transparent 12%,var(--mark) 12%,var(--mark) 88%,transparent 88%);color:var(--mark-ink);padding:0 .12em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.kicker{font:600 .78rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--emerald)}
+[dir="rtl"] .kicker{font-family:var(--urdu);letter-spacing:0;text-transform:none;font-size:.95rem;line-height:1.8}
+.lede{font-size:1.125rem;color:var(--ink-2);max-width:60ch}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--emerald);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:var(--paper);padding:10px 14px;border-radius:8px;z-index:100}
+.skip:focus{top:12px}
+.pro-only{display:none}
+body.pro .pro-only{display:revert}
+body.pro .plain-only{display:none}
+
+/* ───────── Buttons & controls ───────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:999px;font:600 .95rem/1 var(--sans);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s,background .15s,border-color .15s}
+[dir="rtl"] .btn{font-family:var(--urdu);font-size:.95rem;line-height:1.8}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--emerald);color:var(--emerald-ink)}
+.btn-primary:hover{filter:brightness(1.08)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn-ghost:hover{border-color:var(--ink)}
+.seg{display:inline-flex;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:3px}
+.seg button{border:0;background:transparent;color:var(--ink-2);font:500 .82rem/1 var(--sans);padding:0 12px;min-height:34px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:var(--shadow)}
+.seg .ur{font-family:var(--urdu);font-size:.9rem;line-height:1}
+
+/* ───────── Header ───────── */
+header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:16px;min-height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 1.25rem/1 var(--serif)}
+.logo-mark{width:34px;height:34px;border-radius:10px;background:var(--emerald);color:var(--emerald-ink);display:grid;place-items:center}
+.logo small{font:400 1rem/1 var(--urdu);color:var(--ink-3);margin-inline-start:2px}
+nav.links{display:none;gap:26px;margin-inline-start:24px}
+nav.links a{text-decoration:none;color:var(--ink-2);font-size:.92rem}
+nav.links a:hover{color:var(--ink)}
+.bar-right{margin-inline-start:auto;display:flex;align-items:center;gap:10px}
+.bar-right .btn{min-height:40px;padding:0 16px;font-size:.88rem}
+.hide-sm{display:none}
+@media(min-width:1000px){nav.links{display:flex}.hide-sm{display:inline-flex}}
+.tools{border-bottom:1px solid var(--line);background:var(--paper)}
+.tools .wrap{display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;white-space:nowrap;gap:10px 18px;align-items:center;padding-top:8px;padding-bottom:8px;font-size:.82rem;color:var(--ink-3)}
+.tools label{display:flex;align-items:center;gap:8px}
+@media(min-width:1000px){.tools{display:none}.bar-right .seg{display:inline-flex}}
+@media(max-width:999px){.bar-right .seg{display:none}}
+
+/* ───────── Hero ───────── */
+.hero{padding:48px 0 64px}
+@media(min-width:960px){.hero{padding:80px 0 96px}}
+.hero-grid{display:grid;gap:44px}
+@media(min-width:1000px){.hero-grid{grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}}
+.where{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 8px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:.85rem;color:var(--ink-2)}
+.where .dot{width:8px;height:8px;border-radius:50%;background:var(--emerald);box-shadow:0 0 0 4px var(--emerald-soft)}
+.hero h1{font-size:clamp(2.4rem,6.2vw,4.4rem);margin:22px 0 20px}
+[dir="rtl"] .hero h1{font-size:clamp(2rem,5vw,3.4rem)}
+.hero .lede{margin-bottom:28px}
+
+.ask{background:var(--card);border:1px solid var(--line-2);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:14px}
+.ask label{display:block;font-weight:600;font-size:.92rem;padding:4px 6px 8px}
+.ask textarea{width:100%;min-height:96px;resize:vertical;border:0;background:transparent;color:var(--ink);font:400 1.05rem/1.55 var(--sans);padding:6px;outline:none}
+[dir="rtl"] .ask textarea{font-family:var(--urdu);line-height:2.1}
+.ask textarea::placeholder{color:var(--ink-3)}
+.ask-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:6px}
+.icon-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink-2);font:500 .88rem/1 var(--sans);cursor:pointer}
+[dir="rtl"] .icon-btn{font-family:var(--urdu);line-height:1.8}
+.icon-btn:hover{color:var(--ink);border-color:var(--line-2)}
+.ask-row .btn{margin-inline-start:auto}
+.ask-note{font-size:.8rem;color:var(--ink-3);margin-top:10px;padding:0 6px}
+
+.chips-label{font-size:.85rem;color:var(--ink-3);margin:22px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);font:500 .88rem/1 var(--sans);cursor:pointer;transition:background .15s,border-color .15s}
+[dir="rtl"] .chip{font-family:var(--urdu);line-height:1.8}
+.chip:hover{border-color:var(--emerald)}
+.chip[aria-pressed="true"]{background:var(--emerald-soft);border-color:var(--emerald);color:var(--ink)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:28px;font-size:.88rem;color:var(--ink-2)}
+.facts span{display:inline-flex;align-items:center;gap:8px}
+.facts svg{color:var(--emerald)}
+
+/* The answer sheet: shows the shape of every Wakeel answer */
+.sheet{background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);overflow:hidden;position:relative}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--paper-2);font-size:.8rem;color:var(--ink-3)}
+.sheet-head b{color:var(--ink);font-weight:600}
+.sheet-body{padding:22px 22px 8px}
+.q{font-family:var(--serif);font-size:1.25rem;line-height:1.35;margin-bottom:18px;padding-inline-end:104px}
+[dir="rtl"] .q{font-family:var(--urdu);line-height:2}
+.part{padding:14px 0;border-top:1px dashed var(--line)}
+.part:first-of-type{border-top:0;padding-top:0}
+.part h4{margin:0 0 6px;font:600 .74rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);display:flex;align-items:center;gap:8px}
+[dir="rtl"] .part h4{font-family:var(--urdu);letter-spacing:0;text-transform:none;font-size:.9rem;line-height:1.8}
+.part h4 i{font-style:normal;width:20px;height:20px;border-radius:6px;display:grid;place-items:center;background:var(--emerald-soft);color:var(--emerald);font-size:.7rem}
+.part p,.part li{color:var(--ink-2);font-size:.95rem}
+.part ol{margin:0;padding-inline-start:20px}
+.part li{margin:4px 0}
+.cite{display:flex;flex-wrap:wrap;gap:6px}
+.cite span{font:500 .78rem/1 var(--sans);padding:7px 10px;border-radius:8px;background:var(--paper-2);border:1px solid var(--line);color:var(--ink)}
+.sheet-foot{display:flex;gap:10px;align-items:flex-start;margin:6px 22px 22px;padding:12px 14px;border-radius:12px;background:var(--warn-soft);color:var(--warn);font-size:.84rem;line-height:1.5}
+.sheet-foot svg{flex:none;margin-top:2px}
+.sheet-body{transition:opacity .25s}
+.sheet-body.fade{opacity:0}
+.stamp{position:absolute;top:58px;inset-inline-end:16px;font:600 .68rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--emerald);border:1.5px solid var(--emerald);padding:6px 8px;border-radius:6px;transform:rotate(4deg);opacity:.85;background:var(--card)}
+[dir="rtl"] .stamp{font-family:var(--urdu);letter-spacing:0;font-size:.8rem;line-height:1.6;transform:rotate(-4deg)}
+
+/* ───────── Section heads ───────── */
+.head{display:grid;gap:14px;margin-bottom:44px;max-width:720px}
+.head h2{font-size:clamp(1.9rem,4vw,2.9rem)}
+[dir="rtl"] .head h2{font-size:clamp(1.6rem,3.4vw,2.3rem)}
+
+/* ───────── How it works ───────── */
+.steps{display:grid;gap:16px;counter-reset:s}
+@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr);gap:20px}}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.step .n{font:500 2.6rem/1 var(--serif);color:var(--emerald);margin-bottom:18px}
+.step h3{font-size:1.35rem;margin-bottom:8px}
+.step p{color:var(--ink-2)}
+.step .eg{margin-top:16px;padding:12px 14px;border-radius:10px;background:var(--paper-2);font-size:.88rem;color:var(--ink-2);font-style:italic}
+[dir="rtl"] .step .eg{font-style:normal}
+
+/* ───────── Audience ───────── */
+.band{background:var(--paper-2);border-block:1px solid var(--line)}
+.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;margin-bottom:22px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line-2);background:var(--card);color:var(--ink-2);font:500 .92rem/1 var(--sans);cursor:pointer}
+[dir="rtl"] .tab{font-family:var(--urdu);line-height:1.8}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.panel{display:grid;gap:28px;background:var(--card);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px}
+@media(min-width:900px){.panel{grid-template-columns:1fr 1fr;padding:40px;gap:48px}}
+.panel h3{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:12px}
+.panel .lede{font-size:1.02rem}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-2)}
+.ticks svg{flex:none;color:var(--emerald);margin-top:3px}
+.panel .btn{margin-top:22px}
+.quote{border-inline-start:3px solid var(--mark);padding-inline-start:16px;font-family:var(--serif);font-size:1.15rem;line-height:1.45;color:var(--ink);margin-top:24px}
+[dir="rtl"] .quote{font-family:var(--urdu);line-height:2.1}
+
+/* ───────── Situations ───────── */
+.grid{display:grid;gap:12px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1000px){.grid{grid-template-columns:repeat(4,1fr)}}
+.sit{display:flex;flex-direction:column;gap:6px;min-height:132px;padding:20px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);text-decoration:none;transition:border-color .15s,transform .15s}
+.sit:hover{border-color:var(--emerald);transform:translateY(-2px)}
+.sit .cat{font-size:.75rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.07em;font-weight:600}
+[dir="rtl"] .sit .cat{text-transform:none;letter-spacing:0;font-size:.85rem}
+.sit b{font-family:var(--serif);font-weight:500;font-size:1.12rem;line-height:1.3}
+[dir="rtl"] .sit b{font-family:var(--urdu);line-height:1.9}
+.sit .go{margin-top:auto;font-size:.85rem;color:var(--emerald);font-weight:600}
+.regions{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;align-items:center;font-size:.9rem;color:var(--ink-2)}
+.regions a{color:var(--emerald);font-weight:600;text-decoration:none}
+.regions a:hover{text-decoration:underline}
+
+/* ───────── Document reader ───────── */
+.doc-grid{display:grid;gap:28px}
+@media(min-width:960px){.doc-grid{grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}}
+.paper{background:#FFFEFA;color:#1D2420;border:1px solid var(--line-2);border-radius:6px;box-shadow:var(--shadow);padding:28px 26px;font:400 .9rem/1.75 Georgia,serif;position:relative;direction:ltr;text-align:left}
+.paper::before{content:"";position:absolute;inset:10px;border:1px solid #ECE7DA;pointer-events:none;border-radius:2px}
+.paper .t{font:600 .78rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;text-align:center;margin-bottom:18px;color:#5B635E}
+.paper p{margin:0 0 10px}
+.hl{background:#FFE58A;color:#1D2420;padding:1px 2px;border-radius:2px;cursor:pointer;border:0;font:inherit;text-align:inherit;transition:box-shadow .15s}
+.hl.on,.hl:hover{box-shadow:0 0 0 2px #0D5C46}
+.hl sup{font:700 .62rem/1 var(--sans);color:#0D5C46;margin-inline-start:2px}
+.notes{display:grid;gap:12px}
+.note{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:16px 18px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);transition:border-color .15s,box-shadow .15s}
+.note.on{border-color:var(--emerald);box-shadow:var(--shadow)}
+.note .num{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--mark);color:var(--mark-ink);font:700 .8rem/1 var(--sans)}
+.note b{display:block;margin-bottom:2px}
+.note p{color:var(--ink-2);font-size:.93rem}
+.caps{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.caps span{font-size:.82rem;padding:6px 12px;border-radius:999px;background:var(--emerald-soft);color:var(--ink)}
+
+/* ───────── Trust ───────── */
+.trust{display:grid;gap:16px}
+@media(min-width:900px){.trust{grid-template-columns:1fr 1fr}}
+.tcard{border-radius:var(--r-lg);padding:28px;border:1px solid var(--line);background:var(--card)}
+.tcard h3{font-size:1.4rem;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.tcard.no{background:transparent;border-style:dashed}
+.tcard.no .ticks svg{color:var(--warn)}
+.sources{margin-top:28px;display:grid;gap:12px}
+@media(min-width:900px){.sources{grid-template-columns:auto 1fr;align-items:center;gap:24px}}
+.sources .list{display:flex;flex-wrap:wrap;gap:8px}
+.sources .list span{font-size:.85rem;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card)}
+.pillars{display:grid;gap:12px;margin-top:16px}
+@media(min-width:760px){.pillars{grid-template-columns:repeat(3,1fr)}}
+.pillar{padding:20px;border-radius:var(--r);background:var(--paper-2)}
+.pillar b{display:block;margin-bottom:4px}
+.pillar p{font-size:.92rem;color:var(--ink-2)}
+
+/* ───────── Plans ───────── */
+.plans{display:grid;gap:12px}
+@media(min-width:700px){.plans{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1080px){.plans{grid-template-columns:repeat(4,1fr)}}
+.plan{display:flex;flex-direction:column;gap:10px;padding:24px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--card)}
+.plan.feature{border:2px solid var(--emerald)}
+.plan .who{font-size:.8rem;color:var(--ink-3)}
+.plan h3{font-size:1.5rem}
+.plan .p{color:var(--ink-2);font-size:.93rem}
+.plan ul{margin:6px 0 0;padding:0;list-style:none;display:grid;gap:8px;font-size:.9rem;color:var(--ink-2)}
+.plan li::before{content:"— ";color:var(--emerald)}
+[dir="rtl"] .plan li::before{content:"— "}
+.plan .btn{margin-top:auto}
+.fine{margin-top:18px;font-size:.84rem;color:var(--ink-3)}
+
+/* ───────── FAQ ───────── */
+.faq{display:grid;gap:10px;max-width:860px}
+.faq details{border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 20px;font-weight:600;display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:56px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:400 1.4rem/1 var(--sans);color:var(--emerald);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 20px 20px;color:var(--ink-2)}
+
+/* ───────── Final CTA ───────── */
+.final{background:var(--emerald);color:var(--emerald-ink);border-radius:28px;padding:44px 24px;display:grid;gap:28px;text-align:center;justify-items:center}
+@media(min-width:800px){.final{padding:72px 48px}}
+.final h2{font-size:clamp(2rem,4.6vw,3.3rem);max-width:18ch}
+[dir="rtl"] .final h2{font-size:clamp(1.7rem,3.8vw,2.6rem);max-width:none}
+.final p{opacity:.85;max-width:52ch}
+.stores{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.store{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 20px;border-radius:14px;background:var(--emerald-ink);color:var(--emerald);text-decoration:none;font-weight:600;text-align:start;direction:ltr}
+.store small{display:block;font-weight:400;font-size:.7rem;opacity:.75;line-height:1.2}
+.store span{line-height:1.2}
+
+footer{padding:56px 0 40px;color:var(--ink-3);font-size:.88rem}
+.foot{display:grid;gap:28px}
+@media(min-width:860px){.foot{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.foot h4{margin:0 0 10px;color:var(--ink);font:600 .85rem/1.4 var(--sans)}
+[dir="rtl"] .foot h4{font-family:var(--urdu)}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--ink)}
+.legal{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:.82rem;line-height:1.6}
+
+/* Mobile sticky action — one tap to start, always in reach of the thumb */
+.dock{position:fixed;inset-inline:12px;bottom:12px;z-index:60;display:flex;gap:8px;padding:8px;border-radius:999px;background:var(--ink);box-shadow:0 10px 30px -10px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .3s}
+.dock.show{transform:none}
+.dock a{flex:1;min-height:46px;border-radius:999px;display:grid;place-items:center;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--paper)}
+.dock a.primary{background:var(--emerald);color:var(--emerald-ink)}
+@media(min-width:1000px){.dock{display:none}}
+
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-ur="مرکزی مواد پر جائیں">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-info" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 9v5M10 6.2v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 20 20"><rect x="7" y="2.5" width="6" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M4.5 9.5a5.5 5.5 0 0011 0M10 15v3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 20 20"><path d="M5 2.5h6.5L15 6v11.5H5z M11.5 2.5V6H15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 20 20"><rect x="4" y="9" width="12" height="8.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7 9V6.5a3 3 0 016 0V9" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 20 20"><circle cx="10" cy="10" r="7.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M2.5 10h15M10 2.5c2.2 2.3 2.2 12.7 0 15M10 2.5c-2.2 2.3-2.2 12.7 0 15" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 20 20"><path d="M4 10h11M11 5.5l4.5 4.5-4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="#" aria-label="Wakeel home">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7a3.5 3.5 0 006 0zM19 7l-3 7a3.5 3.5 0 006 0zM8 21h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      Wakeel <small aria-hidden="true">وکیل</small>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#how" data-ur="یہ کیسے کام کرتا ہے">How it works</a>
+      <a href="#who" data-ur="کس کے لیے">Who it's for</a>
+      <a href="#documents" data-ur="دستاویزات">Documents</a>
+      <a href="#trust" data-ur="اعتماد">Trust</a>
+      <a href="#plans" data-ur="پلان">Plans</a>
+    </nav>
+    <div class="bar-right">
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ur" aria-pressed="false" class="ur">اردو</button>
+      </div>
+      <div class="seg" role="group" aria-label="Reading level">
+        <button type="button" data-mode="plain" aria-pressed="true" data-ur="آسان">Simple</button>
+        <button type="button" data-mode="pro" aria-pressed="false" data-ur="پیشہ ور">Professional</button>
+      </div>
+      <button type="button" class="icon-btn" data-size aria-pressed="false" aria-label="Larger text" title="Larger text">A<span style="font-size:1.2em">A</span></button>
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel" data-ur="مفت شروع کریں">Start free</a>
+    </div>
+  </div>
+  <div class="tools">
+    <div class="wrap">
+      <label><span data-ur="زبان">Language</span>
+        <span class="seg" role="group" aria-label="Language">
+          <button type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="ur" aria-pressed="false" class="ur">اردو</button>
+        </span>
+      </label>
+      <label><span data-ur="انداز">Explain it</span>
+        <span class="seg" role="group" aria-label="Reading level">
+          <button type="button" data-mode="plain" aria-pressed="true" data-ur="آسان">Simple</button>
+          <button type="button" data-mode="pro" aria-pressed="false" data-ur="پیشہ ور">Professional</button>
+        </span>
+      </label>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═════════ HERO ═════════ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="where"><span class="dot" aria-hidden="true"></span>
+        <span data-ur="پاکستانی قانون کے لیے بنایا گیا · خلیجی ممالک اور 15+ ممالک کی رہنمائی">Built for Pakistani law · guidance for the GCC and 15+ countries</span>
+      </span>
+      <h1>
+        <span class="plain-only" data-ur="اپنی قانونی صورتحال <span class='mark'>اپنی زبان میں</span> سمجھیں۔">Understand your legal situation, <span class="mark">in your own words.</span></span>
+        <span class="pro-only" data-ur="پاکستانی قانون پر تحقیق، <span class='mark'>حوالوں کے ساتھ</span>۔">Research Pakistani law <span class="mark">with the sources attached.</span></span>
+      </h1>
+      <p class="lede plain-only" data-ur="بتائیں کیا ہوا ہے — انگریزی یا اردو میں، جیسے کسی دوست کو بتاتے ہیں۔ وکیل آپ کو سمجھائے گا کہ آپ کہاں کھڑے ہیں، کون سا قانون لاگو ہوتا ہے، اور اگلا قدم کیا ہے۔">Tell us what happened — in English or Urdu, the way you'd tell a friend. Wakeel explains where you stand, which law applies, and what to do next. No jargon, no appointment, no fee to start.</p>
+      <p class="lede pro-only" data-ur="آئین، PPC، CrPC، CPC اور فیملی قوانین پر مبنی سوال و جواب، 100+ صفحات کی دستاویزات کا تجزیہ، اور ڈرافٹنگ — ہر جواب میں قانونی حوالہ موجود۔">Statute-aware answers across the Constitution, PPC, CrPC, CPC and family law. Review 100+ page documents, prepare research notes and draft faster — with every answer pointing to the provision it relies on.</p>
+
+      <form class="ask" id="ask" action="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel">
+        <label for="q" data-ur="آپ کے ساتھ کیا ہو رہا ہے؟">What's going on?</label>
+        <textarea id="q" name="_" placeholder="e.g. My landlord is asking me to leave in 7 days and keeping my deposit…" data-ur-placeholder="مثلاً: مالک مکان 7 دن میں گھر خالی کرنے کا کہہ رہا ہے اور میری سیکیورٹی واپس نہیں کر رہا…"></textarea>
+        <div class="ask-row">
+          <button type="button" class="icon-btn"><svg width="18" height="18"><use href="#i-mic"/></svg><span data-ur="بول کر بتائیں">Speak instead</span></button>
+          <button type="button" class="icon-btn"><svg width="18" height="18"><use href="#i-doc"/></svg><span data-ur="دستاویز شامل کریں">Add a document</span></button>
+          <button class="btn btn-primary" type="submit"><span data-ur="جواب حاصل کریں">Get clarity</span><svg width="18" height="18" class="flip"><use href="#i-arrow"/></svg></button>
+        </div>
+        <p class="ask-note" id="askNote" aria-live="polite" data-ur="یہ نمونہ صفحہ ہے — آپ کا متن کہیں نہیں بھیجا جاتا۔">This is a preview — nothing you type here is sent anywhere.</p>
+      </form>
+
+      <p class="chips-label" data-ur="یا کوئی عام صورتحال منتخب کریں:">Or start from a common situation:</p>
+      <div class="chips" id="chips">
+        <button class="chip" type="button" data-s="notice" aria-pressed="true" data-ur="قانونی نوٹس ملا">I got a legal notice</button>
+        <button class="chip" type="button" data-s="fir" aria-pressed="false" data-ur="پولیس FIR درج نہیں کر رہی">Police won't register my FIR</button>
+        <button class="chip" type="button" data-s="salary" aria-pressed="false" data-ur="تنخواہ نہیں ملی">My salary wasn't paid</button>
+        <button class="chip" type="button" data-s="fraud" aria-pressed="false" data-ur="آن لائن فراڈ ہوا">I was scammed online</button>
+        <button class="chip" type="button" data-s="property" aria-pressed="false" data-ur="پلاٹ خریدنے سے پہلے">Buying a plot</button>
+        <button class="chip" type="button" data-s="inherit" aria-pressed="false" data-ur="وراثت کا حصہ">My share of inheritance</button>
+      </div>
+
+      <div class="facts">
+        <span><svg width="18" height="18"><use href="#i-check"/></svg><span data-ur="مفت آغاز">Free to start</span></span>
+        <span><svg width="18" height="18"><use href="#i-globe"/></svg><span data-ur="انگریزی اور اردو">English &amp; Urdu</span></span>
+        <span><svg width="18" height="18"><use href="#i-lock"/></svg><span data-ur="Android، iOS اور ویب">Android, iOS &amp; web</span></span>
+      </div>
+    </div>
+
+    <aside class="sheet" aria-label="Example answer" aria-live="polite">
+      <div class="sheet-head">
+        <span><b data-ur="نمونہ جواب">Example answer</b> · <span id="sheetJur" data-ur="پاکستان">Pakistan</span></span>
+        <span class="plain-only" data-ur="آسان انداز">Simple view</span>
+        <span class="pro-only" data-ur="پیشہ ور انداز">Professional view</span>
+      </div>
+      <span class="stamp" data-ur="حوالہ شدہ">Source-aware</span>
+      <div class="sheet-body" id="sheet"></div>
+      <div class="sheet-foot"><svg width="16" height="16"><use href="#i-info"/></svg>
+        <span data-ur="یہ قانونی معلومات ہے، حتمی قانونی مشورہ نہیں۔ اہم فیصلوں سے پہلے لائسنس یافتہ وکیل سے تصدیق کریں۔">This is legal information, not final legal advice. Confirm important decisions with a licensed advocate.</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ═════════ HOW ═════════ -->
+<section id="how" class="band">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker" data-ur="یہ کیسے کام کرتا ہے">How it works</span>
+      <h2 data-ur="الجھن سے وضاحت تک، تین قدموں میں۔">From confusion to a clear next step, in three moves.</h2>
+    </div>
+    <div class="steps">
+      <article class="step reveal">
+        <div class="n">1</div>
+        <h3 data-ur="بتائیں">Tell</h3>
+        <p data-ur="اپنی بات اپنے الفاظ میں لکھیں یا بولیں۔ قانونی اصطلاحات جاننے کی ضرورت نہیں۔ نوٹس، معاہدہ یا فیصلہ ہو تو اس کی تصویر یا PDF لگا دیں۔">Type or speak in your own words — no legal terms needed. Got a notice, contract or judgment? Snap a photo or attach the PDF.</p>
+        <p class="eg" data-ur="“میرے بھائی وراثت کی زمین میں میرا حصہ نہیں دے رہے۔”">“My brothers won't give me my share of our father's land.”</p>
+      </article>
+      <article class="step reveal">
+        <div class="n">2</div>
+        <h3 data-ur="سمجھیں">Understand</h3>
+        <p data-ur="وکیل آسان زبان میں بتاتا ہے کہ آپ کے حقوق کیا ہیں، کون سا قانون لاگو ہوتا ہے، اور آپ کے پاس کیا راستے ہیں — قانون کے حوالے کے ساتھ۔">Wakeel explains your rights, the law that applies and the options you actually have — and shows the provision behind each point.</p>
+        <p class="eg" data-ur="آپ کا حصہ شریعت کے مطابق مقرر ہے؛ وراثتی سرٹیفکیٹ اور تقسیم کا دعویٰ ممکنہ راستے ہیں۔">Your share is fixed by Islamic law; succession certificate and partition suit are your routes.</p>
+      </article>
+      <article class="step reveal">
+        <div class="n">3</div>
+        <h3 data-ur="عمل کریں">Act</h3>
+        <p data-ur="ایک واضح فہرست حاصل کریں: کون سے کاغذات جمع کرنے ہیں، کس ادارے سے رابطہ کرنا ہے، اور وکیل سے کیا پوچھنا ہے۔">Leave with a checklist: which papers to gather, which office to approach, and the right questions to ask an advocate.</p>
+        <p class="eg" data-ur="فرد، انتقال کی نقل، وفات سرٹیفکیٹ، اور خاندانی رجسٹریشن سرٹیفکیٹ جمع کریں۔">Collect the fard, mutation copy, death certificate and NADRA family registration certificate.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ WHO ═════════ -->
+<section id="who">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker" data-ur="کس کے لیے">Who it's for</span>
+      <h2 data-ur="ایک ہی وکیل — ہر شخص کی سطح پر بات کرتا ہے۔">One assistant. It meets you at your level.</h2>
+      <p class="lede" data-ur="پہلی بار عدالت کا نوٹس دیکھنے والے شہری سے لے کر روزانہ پیش ہونے والے ایڈووکیٹ تک۔">From someone reading their first court notice to an advocate in court every morning.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Audience">
+      <button class="tab" role="tab" aria-selected="true" data-t="citizen" data-ur="شہری">Citizens</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="overseas" data-ur="بیرون ملک پاکستانی">Overseas Pakistanis</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="student" data-ur="قانون کے طلباء">Law students</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="lawyer" data-ur="وکلاء">Lawyers</button>
+      <button class="tab" role="tab" aria-selected="false" data-t="org" data-ur="فرمز اور ادارے">Firms &amp; institutions</button>
+    </div>
+    <div class="panel reveal" role="tabpanel" id="panel"></div>
+  </div>
+</section>
+
+<!-- ═════════ SITUATIONS ═════════ -->
+<section class="band" id="situations">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker" data-ur="عام مسائل">Common situations</span>
+      <h2 data-ur="لوگ زیادہ تر یہ سوال پوچھتے ہیں۔">What people in Pakistan ask about most.</h2>
+    </div>
+    <div class="grid">
+      <a class="sit reveal" href="https://wakeel.org/legal-notice-pakistan"><span class="cat" data-ur="دیوانی">Civil</span><b data-ur="قانونی نوٹس کو سمجھنا اور جواب دینا">Reading and replying to a legal notice</b><span class="go" data-ur="رہنمائی پڑھیں ←">Read the guide →</span></a>
+      <a class="sit reveal" href="https://wakeel.org/fir-refused-pakistan"><span class="cat" data-ur="فوجداری">Criminal</span><b data-ur="پولیس FIR درج کرنے سے انکار کرے تو">When police refuse to register an FIR</b><span class="go" data-ur="رہنمائی پڑھیں ←">Read the guide →</span></a>
+      <a class="sit reveal" href="https://wakeel.org/family-law-guidance-pakistan"><span class="cat" data-ur="عائلی">Family</span><b data-ur="نکاح، طلاق، خلع، نان نفقہ اور حضانت">Nikah, divorce, khula, maintenance &amp; custody</b><span class="go" data-ur="رہنمائی پڑھیں ←">Read the guide →</span></a>
+      <a class="sit reveal" href="https://wakeel.org/inheritance-succession-pakistan"><span class="cat" data-ur="وراثت">Inheritance</span><b data-ur="وراثت کی تقسیم اور خواتین کا حصہ">Dividing an estate and women's shares</b><span class="go" data-ur="رہنمائی پڑھیں ←">Read the guide →</span></a>
+      <a class="sit reveal" href="https://wakeel.org/property-document-check-pakistan"><span class="cat" data-ur="جائیداد">Property</span><b data-ur="فرد، انتقال اور رجسٹری کی جانچ">Checking fard, intiqal and registry</b><span class="go" data-ur="رہنمائی پڑھیں ←">Read the guide →</span></a>
+      <a class="sit reveal" href="https://wakeel.org/tenant-rights-pakistan"><span class="cat" data-ur="کرایہ داری">Tenancy</span><b data-ur="کرایہ، بے دخلی اور سیکیورٹی ڈپازٹ">Rent, eviction and security deposits</b><span class="go" data-ur="رہنمائی پڑھیں ←">Read the guide →</span></a>
+      <a class="sit reveal" href="https://wakeel.org/employment-law-pakistan"><span class="cat" data-ur="ملازمت">Employment</span><b data-ur="تنخواہ، برطرفی اور گریجویٹی">Unpaid wages, dismissal and gratuity</b><span class="go" data-ur="رہنمائی پڑھیں ←">Read the guide →</span></a>
+      <a class="sit reveal" href="https://wakeel.org/cybercrime-online-safety-pakistan"><span class="cat" data-ur="سائبر">Cyber</span><b data-ur="آن لائن فراڈ، ہراسانی اور جعلی اکاؤنٹس">Online fraud, harassment and fake accounts</b><span class="go" data-ur="رہنمائی پڑھیں ←">Read the guide →</span></a>
+    </div>
+    <div class="regions reveal">
+      <svg width="18" height="18" style="color:var(--emerald)"><use href="#i-globe"/></svg>
+      <span data-ur="پاکستان سے باہر؟">Outside Pakistan?</span>
+      <a href="https://wakeel.org/legal-issues-gcc" data-ur="خلیجی ممالک کی رہنمائی">GCC guides — UAE, Saudi Arabia, Qatar &amp; more</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://wakeel.org/legal-issues-global" data-ur="عالمی رہنمائی">Global guides for 15+ countries</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ DOCUMENTS ═════════ -->
+<section id="documents">
+  <div class="wrap doc-grid">
+    <div class="reveal">
+      <div class="paper" role="group" aria-label="Sample legal notice with highlighted clauses">
+        <div class="t">Legal Notice</div>
+        <p>To: Mr. A. Rehman, House 14, Street 3, Lahore</p>
+        <p>Under instructions from my client, you are hereby called upon to
+          <button type="button" class="hl" data-n="1">pay the outstanding sum of Rs. 850,000<sup>1</sup></button>
+          towards the agreement dated 2 March, failing which my client shall be constrained to
+          <button type="button" class="hl" data-n="2">initiate civil and criminal proceedings against you<sup>2</sup></button>,
+          entirely at your risk as to costs.</p>
+        <p>You are further required to
+          <button type="button" class="hl" data-n="3">reply within fifteen (15) days of receipt<sup>3</sup></button>
+          of this notice, after which it shall be presumed that
+          <button type="button" class="hl" data-n="4">you admit the claim in its entirety<sup>4</sup></button>.</p>
+        <p style="margin-top:18px;text-align:right">— Advocate, High Court</p>
+      </div>
+    </div>
+    <div>
+      <div class="head reveal" style="margin-bottom:24px">
+        <span class="kicker" data-ur="دستاویزات">Documents</span>
+        <h2 data-ur="مشکل کاغذ؟ ہم ہر سطر کا مطلب بتاتے ہیں۔">Dense paperwork, explained line by line.</h2>
+        <p class="lede" data-ur="نوٹس، معاہدے، کرایہ نامے، نکاح نامے اور فیصلے — 100+ صفحات تک۔ ہائی لائٹ پر ٹیپ کریں۔">Notices, contracts, rent agreements, nikah nama, judgments — up to 100+ pages. Tap a highlight to see what it really means.</p>
+      </div>
+      <div class="notes" id="notes">
+        <div class="note" data-n="1"><span class="num">1</span><div><b data-ur="مطالبہ">The demand</b><p data-ur="یہ رقم کا دعویٰ ہے، ثابت شدہ قرض نہیں۔ اپنے معاہدے اور ادائیگیوں کا ریکارڈ سے موازنہ کریں۔">This is a claim, not a proven debt. Check it against your agreement and payment records.</p></div></div>
+        <div class="note" data-n="2"><span class="num">2</span><div><b data-ur="دھمکی">The warning</b><p data-ur="نوٹس بذات خود کوئی مقدمہ نہیں۔ صرف رقم کا تنازعہ عام طور پر دیوانی معاملہ ہوتا ہے۔">A notice is not a case. A purely money dispute is usually a civil matter, whatever the letter says.</p></div></div>
+        <div class="note" data-n="3"><span class="num">3</span><div><b data-ur="مہلت">The deadline</b><p data-ur="تاریخ وصولی نوٹ کریں اور لفافہ سنبھال کر رکھیں۔ تحریری جواب، ترجیحاً وکیل کے ذریعے، رسید کے ساتھ بھیجیں۔">Note the date you received it and keep the envelope. Reply in writing — ideally through an advocate — with proof of delivery.</p></div></div>
+        <div class="note" data-n="4"><span class="num">4</span><div><b data-ur="مفروضہ">The presumption</b><p data-ur="خاموشی سے دعویٰ قانوناً تسلیم نہیں ہوتا، لیکن بعد میں عدالت میں آپ کے خلاف استعمال ہو سکتی ہے۔ جواب دینا بہتر ہے۔">Silence doesn't legally admit the claim, but it can be used against you later. Replying is the safer path.</p></div></div>
+      </div>
+      <div class="caps reveal">
+        <span data-ur="خلاصہ">Summaries</span><span data-ur="خطرناک شقوں کی نشاندہی">Risky-clause flags</span><span data-ur="تاریخیں اور مہلتیں">Dates &amp; deadlines</span><span data-ur="جواب کا مسودہ">Reply drafts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ TRUST ═════════ -->
+<section id="trust" class="band">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker" data-ur="اعتماد">Trust</span>
+      <h2 data-ur="ہم کیا ہیں — اور کیا نہیں، صاف صاف۔">What Wakeel is — and isn't. Plainly.</h2>
+      <p class="lede" data-ur="قانون میں غلط اعتماد نقصان دہ ہے۔ اس لیے ہم اپنی حدود پہلے بتاتے ہیں۔">In law, false confidence does real harm. So we state our limits up front.</p>
+    </div>
+    <div class="trust">
+      <div class="tcard reveal">
+        <h3 data-ur="وکیل یہ ہے">Wakeel is</h3>
+        <ul class="ticks">
+          <li><svg width="18" height="18"><use href="#i-check"/></svg><span data-ur="قانونی معلومات اور تحقیق میں مدد، آسان زبان میں">Legal information and research support, in plain language</span></li>
+          <li><svg width="18" height="18"><use href="#i-check"/></svg><span data-ur="ہر جواب میں متعلقہ قانون اور دفعہ کا حوالہ">Source-aware — answers point to the statute or section</span></li>
+          <li><svg width="18" height="18"><use href="#i-check"/></svg><span data-ur="وکیل سے ملنے سے پہلے تیاری کا بہترین ذریعہ">The best way to prepare before you meet an advocate</span></li>
+          <li><svg width="18" height="18"><use href="#i-check"/></svg><span data-ur="پیشہ ور افراد کے لیے تیز تحقیق اور ڈرافٹنگ">A faster research and drafting desk for professionals</span></li>
+        </ul>
+      </div>
+      <div class="tcard no reveal">
+        <h3 data-ur="وکیل یہ نہیں ہے">Wakeel is not</h3>
+        <ul class="ticks">
+          <li><svg width="18" height="18"><use href="#i-x"/></svg><span data-ur="لائسنس یافتہ وکیل کا متبادل">A replacement for a licensed advocate</span></li>
+          <li><svg width="18" height="18"><use href="#i-x"/></svg><span data-ur="حتمی قانونی مشورہ یا نتیجے کی ضمانت">Final legal advice, or a guarantee of any outcome</span></li>
+          <li><svg width="18" height="18"><use href="#i-x"/></svg><span data-ur="وکیل اور موکل کا تعلق">A lawyer–client relationship</span></li>
+          <li><svg width="18" height="18"><use href="#i-x"/></svg><span data-ur="عدالت میں نمائندگی">Representation in court</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sources reveal">
+      <b data-ur="جن قوانین پر مبنی ہے:">Grounded in, among others:</b>
+      <div class="list">
+        <span>Constitution of Pakistan, 1973</span><span>Pakistan Penal Code</span><span>Code of Criminal Procedure</span><span>Code of Civil Procedure</span><span>Muslim Family Laws Ordinance, 1961</span><span>Family Courts Act, 1964</span><span>Succession Act, 1925</span><span>PECA, 2016</span><span>Qanun-e-Shahadat, 1984</span>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar reveal"><b data-ur="ذمہ دار جواب">Honest answers</b><p data-ur="جب قانون غیر واضح ہو یا آپ کا معاملہ سنگین ہو، تو وکیل صاف بتاتا ہے کہ ایڈووکیٹ سے ملیں۔">When the law is unsettled or your matter is serious, Wakeel says so — and tells you to see an advocate.</p></div>
+      <div class="pillar reveal"><b data-ur="آپ کی رازداری">Your privacy</b><p data-ur="آپ کی گفتگو اور دستاویزات آپ کی ہیں۔ تفصیل ہماری پرائیویسی پالیسی میں ہے۔">Your conversations and documents are yours. Details are in our privacy policy.</p></div>
+      <div class="pillar reveal"><b data-ur="ماہرین کا جائزہ">Reviewed guides</b><p data-ur="ہماری قانونی رہنمائیاں قانونی ٹیم جائزہ لیتی اور اپ ڈیٹ کرتی ہے۔">Our published legal guides are reviewed and kept up to date by our legal content team.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ PLANS ═════════ -->
+<section id="plans">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker" data-ur="پلان">Plans</span>
+      <h2 data-ur="مفت شروع کریں۔ ضرورت ہو تو آگے بڑھیں۔">Start free. Grow into it when you need to.</h2>
+    </div>
+    <div class="plans">
+      <div class="plan feature reveal">
+        <span class="who" data-ur="ہر شہری کے لیے">For everyone</span>
+        <h3 data-ur="مفت">Free</h3>
+        <p class="p" data-ur="کوئی اصطلاح سمجھیں، حقائق ترتیب دیں، اور وکیل سے پہلے بہتر سوال تیار کریں۔">Understand a term, organise your facts, and prepare better questions before seeing an advocate.</p>
+        <ul><li data-ur="قانونی سوال و جواب">Legal chat</li><li data-ur="اپنے حقوق جانیں">Know-your-rights guidance</li><li data-ur="بنیادی دستاویز فہمی">Basic document understanding</li></ul>
+        <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel" data-ur="مفت شروع کریں">Start free</a>
+      </div>
+      <div class="plan reveal">
+        <span class="who" data-ur="طلباء کے لیے">For law students</span>
+        <h3 data-ur="اسٹوڈنٹ">Student</h3>
+        <p class="p" data-ur="PPC، CrPC اور آئین کی تیاری، کیس خلاصے اور تحقیقی نوٹس۔">Study PPC, CrPC and the Constitution with case summaries and research notes.</p>
+        <ul><li data-ur="مطالعاتی PDFs">Study PDFs</li><li data-ur="دستاویزی ٹیمپلیٹس">Document templates</li><li data-ur="کیس تجزیہ">Case analysis</li></ul>
+        <a class="btn btn-ghost" href="https://wakeel.org/pricing" data-ur="تفصیل دیکھیں">See details</a>
+      </div>
+      <div class="plan reveal">
+        <span class="who" data-ur="وکلاء کے لیے">For advocates</span>
+        <h3 data-ur="پروفیشنل">Professional</h3>
+        <p class="p" data-ur="کلائنٹ دستاویزات، ڈرافٹنگ، جدید تحقیق اور کیس مینجمنٹ۔">Client documents, drafting, advanced research and case management support.</p>
+        <ul><li data-ur="جدید تحقیق">Advanced research</li><li data-ur="ڈرافٹنگ ورک فلو">Drafting workflow</li><li data-ur="ترجیحی سپورٹ">Priority support</li></ul>
+        <a class="btn btn-ghost" href="https://wakeel.org/pricing" data-ur="تفصیل دیکھیں">See details</a>
+      </div>
+      <div class="plan reveal">
+        <span class="who" data-ur="ٹیموں کے لیے">For teams</span>
+        <h3 data-ur="ادارہ">Organization</h3>
+        <p class="p" data-ur="لا فرمز، قانونی امداد کے ادارے اور یونیورسٹیاں — مشترکہ تحقیق اور ایڈمن کنٹرول۔">Law firms, legal aid bodies and universities — shared research and admin controls.</p>
+        <ul><li data-ur="ٹیم ٹیمپلیٹس">Team templates</li><li data-ur="مشترکہ ورک فلو">Shared workflows</li><li data-ur="آن بورڈنگ">Onboarding</li></ul>
+        <a class="btn btn-ghost" href="https://wakeel.org/contact" data-ur="رابطہ کریں">Talk to us</a>
+      </div>
+    </div>
+    <p class="fine" data-ur="قیمتیں بلنگ چینل، ٹیکس اور ایپ اسٹور قواعد کے مطابق مختلف ہو سکتی ہیں۔ سبسکرائب کرنے سے پہلے ایپ میں تصدیق کریں۔">Prices can vary by billing channel, taxes and app-store rules — confirm current pricing in the app before subscribing.</p>
+  </div>
+</section>
+
+<!-- ═════════ FAQ ═════════ -->
+<section id="faq" class="band">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="kicker" data-ur="سوالات">Questions</span>
+      <h2 data-ur="جو لوگ پوچھتے ہیں۔">What people ask before they start.</h2>
+    </div>
+    <div class="faq">
+      <details><summary data-ur="کیا یہ واقعی مفت ہے؟">Is it really free?</summary><p data-ur="جی ہاں، بنیادی قانونی سوال و جواب اور حقوق کی رہنمائی مفت ہے۔ طلباء اور پیشہ ور افراد کے لیے اضافی پلان موجود ہیں۔">Yes. Basic legal chat and know-your-rights guidance are free. Paid plans add study, drafting and professional tools.</p></details>
+      <details><summary data-ur="کیا میں اردو میں سوال کر سکتا ہوں؟">Can I ask in Urdu — or Roman Urdu?</summary><p data-ur="جی ہاں۔ اردو، انگریزی یا رومن اردو میں لکھیں یا بولیں، جواب اسی زبان میں ملے گا۔">Yes. Write or speak in Urdu, English or a mix of both, the way you naturally would.</p></details>
+      <details><summary data-ur="کیا یہ وکیل کی جگہ لے سکتا ہے؟">Can this replace my lawyer?</summary><p data-ur="نہیں۔ وکیل آپ کو صورتحال سمجھنے اور تیاری میں مدد دیتا ہے۔ عدالتی معاملات اور اہم فیصلوں کے لیے لائسنس یافتہ ایڈووکیٹ ضروری ہے۔">No. Wakeel helps you understand your situation and prepare. For court matters and important decisions you need a licensed advocate — and you'll arrive far better prepared.</p></details>
+      <details><summary data-ur="کیا میری معلومات محفوظ ہیں؟">Is what I share kept private?</summary><p data-ur="آپ کی گفتگو اور دستاویزات آپ کی ہیں۔ ہماری پرائیویسی پالیسی میں تفصیل سے بتایا گیا ہے کہ ڈیٹا کیسے سنبھالا جاتا ہے۔">Your conversations and documents are yours. Our privacy policy explains exactly how data is handled and stored.</p></details>
+      <details><summary data-ur="میں پاکستان سے باہر رہتا ہوں۔">I live outside Pakistan. Does it still help?</summary><p data-ur="جی ہاں۔ بیرون ملک پاکستانی پاکستان میں جائیداد، وراثت اور خاندانی معاملات میں مدد لے سکتے ہیں، اور خلیجی و 15+ ممالک کی رہنمائی بھی دستیاب ہے۔">Yes. Overseas Pakistanis use it for property, inheritance and family matters back home, and there's guidance for the GCC and 15+ other countries.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ FINAL ═════════ -->
+<section>
+  <div class="wrap">
+    <div class="final reveal">
+      <h2 data-ur="جو بات آپ کو پریشان کر رہی ہے، آج ہی سمجھیں۔">The thing that's worrying you — understand it today.</h2>
+      <p data-ur="مفت شروع کریں۔ اپنے فون پر، اپنی زبان میں، جب چاہیں۔">Start free. On your phone, in your language, whenever you need it.</p>
+      <div class="stores">
+        <a class="store" href="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.8v18.4c0 .5.5.8 1 .6l15.6-9.2c.5-.3.5-1 0-1.3L5 2.2c-.5-.2-1 .1-1 .6z" fill="currentColor"/></svg>
+          <span><small>Get it on</small>Google Play</span>
+        </a>
+        <a class="store" href="https://testflight.apple.com/join/ZVgHgqF7">
+          <svg width="20" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.4 12.6c0-2.6 2.1-3.8 2.2-3.9-1.2-1.8-3.1-2-3.7-2-1.6-.2-3.1.9-3.9.9-.8 0-2-.9-3.4-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.9 1.2 1.9 2.6 3.2 2.6 1.3-.1 1.8-.8 3.3-.8s2 .8 3.4.8 2.3-1.3 3.1-2.5c1-1.4 1.4-2.8 1.4-2.9-.1 0-2.7-1-2.7-4.1zM13.9 4.9c.7-.9 1.2-2 1-3.2-1 0-2.3.7-3 1.6-.7.8-1.3 2-1.1 3.1 1.2.1 2.3-.6 3.1-1.5z" fill="currentColor"/></svg>
+          <span><small>Join the beta on</small>iOS · TestFlight</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#" style="margin-bottom:12px"><span class="logo-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7a3.5 3.5 0 006 0zM19 7l-3 7a3.5 3.5 0 006 0zM8 21h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Wakeel</a>
+        <p data-ur="پاکستان کا AI قانونی معاون — شہریوں، طلباء اور قانونی ماہرین کے لیے۔">An AI legal assistant built for Pakistan — for citizens, students and legal professionals.</p>
+      </div>
+      <div><h4 data-ur="کس کے لیے">For you</h4><ul>
+        <li><a href="https://wakeel.org/citizens" data-ur="شہری">Citizens</a></li>
+        <li><a href="https://wakeel.org/law-students" data-ur="قانون کے طلباء">Law students</a></li>
+        <li><a href="https://wakeel.org/lawyers" data-ur="وکلاء">Lawyers</a></li>
+        <li><a href="https://wakeel.org/law-firms" data-ur="لا فرمز">Law firms</a></li>
+      </ul></div>
+      <div><h4 data-ur="رہنمائی">Guides</h4><ul>
+        <li><a href="https://wakeel.org/legal-issues-pakistan" data-ur="پاکستان">Pakistan</a></li>
+        <li><a href="https://wakeel.org/legal-issues-gcc" data-ur="خلیجی ممالک">GCC</a></li>
+        <li><a href="https://wakeel.org/legal-issues-global" data-ur="عالمی">Global</a></li>
+        <li><a href="https://wakeel.org/journal" data-ur="جرنل">Journal</a></li>
+      </ul></div>
+      <div><h4 data-ur="ادارہ">Company</h4><ul>
+        <li><a href="https://wakeel.org/about" data-ur="ہمارے بارے میں">About</a></li>
+        <li><a href="https://wakeel.org/legal-sources" data-ur="قانونی ذرائع">Legal sources</a></li>
+        <li><a href="https://wakeel.org/privacy" data-ur="پرائیویسی">Privacy</a></li>
+        <li><a href="https://wakeel.org/contact" data-ur="رابطہ">Contact</a></li>
+      </ul></div>
+    </div>
+    <p class="legal" data-ur="Wakeel.org قانونی معلومات اور تحقیقی معاونت فراہم کرتا ہے۔ یہ حتمی قانونی مشورہ نہیں دیتا، نتائج کی ضمانت نہیں دیتا، اور لائسنس یافتہ ایڈووکیٹ سے مشاورت کا متبادل نہیں۔">Wakeel.org provides legal information and research support. It does not provide final legal advice, does not guarantee outcomes, and does not replace consultation with a licensed advocate.</p>
+  </div>
+</footer>
+
+<div class="dock" id="dock">
+  <a href="#main" data-ur="سوال پوچھیں">Ask a question</a>
+  <a class="primary" href="https://play.google.com/store/apps/details?id=pk.digit.aiwakeel" data-ur="ایپ حاصل کریں">Get the app</a>
+</div>
+
+<script>
+(function(){
+  var state = { lang: "en", mode: "plain", s: "notice", t: "citizen" };
+  try { var saved = JSON.parse(localStorage.getItem("wakeel-prefs") || "{}"); Object.assign(state, saved); } catch(e){}
+  function save(){ try { localStorage.setItem("wakeel-prefs", JSON.stringify({lang:state.lang,mode:state.mode,large:document.documentElement.classList.contains("large")})); } catch(e){} }
+
+  /* ── Example answers. Each has a plain layer (laypeople) and a pro layer (citations). ── */
+  var S = {
+    notice: {
+      q:{en:"“I received a legal notice demanding money. Do I have to pay?”", ur:"“مجھے رقم کی ادائیگی کا قانونی نوٹس ملا ہے۔ کیا مجھے ادا کرنا ہوگا؟”"},
+      sum:{en:"Not automatically. A legal notice is a formal demand, not a court order. It usually comes before a lawsuit, so how you respond matters more than panicking.", ur:"ضروری نہیں۔ قانونی نوٹس ایک رسمی مطالبہ ہے، عدالتی حکم نہیں۔ عموماً یہ مقدمے سے پہلے آتا ہے، اس لیے گھبرانے کے بجائے سوچ سمجھ کر جواب دینا اہم ہے۔"},
+      steps:{en:["Note the date you received it and keep the envelope.","Compare the claim with your agreement and payment records.","Reply in writing within the deadline — ideally through an advocate."], ur:["نوٹس ملنے کی تاریخ لکھیں اور لفافہ سنبھال کر رکھیں۔","دعوے کا اپنے معاہدے اور ادائیگیوں سے موازنہ کریں۔","مقررہ مدت میں تحریری جواب دیں — بہتر ہے وکیل کے ذریعے۔"]},
+      cite:["CPC 1908 — civil suit","Section 80 CPC (notices to Govt.)","Limitation Act 1908"],
+      pro:{en:"No statutory format governs private legal notices; they serve as evidence of demand and good faith. Where the defendant is Government or a public officer, notice under s.80 CPC is a pre-condition to suit. Check limitation for the underlying claim before replying.", ur:"نجی قانونی نوٹس کا کوئی قانونی فارمیٹ مقرر نہیں؛ یہ مطالبے اور نیک نیتی کا ثبوت ہوتا ہے۔ حکومت کے خلاف دعوے میں دفعہ 80 CPC کے تحت نوٹس لازمی ہے۔ جواب سے پہلے میعاد (limitation) چیک کریں۔"}
+    },
+    fir: {
+      q:{en:"“The police station refused to register my FIR. What can I do?”", ur:"“تھانے نے میری FIR درج کرنے سے انکار کر دیا۔ میں کیا کروں؟”"},
+      sum:{en:"For a cognizable offence, the officer in charge is required by law to record your complaint. If they refuse, you have higher options — you don't have to give up.", ur:"قابلِ دست اندازی جرم کی صورت میں تھانے کا انچارج قانوناً آپ کی شکایت درج کرنے کا پابند ہے۔ انکار ہو تو آپ کے پاس اعلیٰ سطح پر راستے موجود ہیں۔"},
+      steps:{en:["Write your complaint down and keep a copy with the date.","Submit it to the SSP / DPO of your district.","If still refused, petition the Justice of Peace (Sessions Judge)."], ur:["اپنی شکایت تحریری طور پر لکھیں اور تاریخ کے ساتھ نقل رکھیں۔","ضلع کے SSP یا DPO کو جمع کروائیں۔","پھر بھی انکار ہو تو جسٹس آف پیس (سیشن جج) کو درخواست دیں۔"]},
+      cite:["Section 154 CrPC","Section 22-A(6) CrPC","Police Order 2002"],
+      pro:{en:"s.154 CrPC casts a mandatory duty to record information disclosing a cognizable offence. On refusal, the Ex-officio Justice of Peace may issue directions under s.22-A(6)(i) CrPC. Alternatively, a private complaint under s.200 CrPC remains available.", ur:"دفعہ 154 CrPC کے تحت قابلِ دست اندازی جرم کی اطلاع درج کرنا لازمی ہے۔ انکار پر جسٹس آف پیس دفعہ 22-A(6)(i) کے تحت ہدایت جاری کر سکتا ہے۔ متبادل کے طور پر دفعہ 200 CrPC کے تحت نجی استغاثہ دائر کیا جا سکتا ہے۔"}
+    },
+    salary: {
+      q:{en:"“My employer hasn't paid my salary for two months.”", ur:"“میرے آجر نے دو ماہ سے تنخواہ نہیں دی۔”"},
+      sum:{en:"Wages earned must be paid on time — this is a legal right, not a favour. You can claim unpaid wages, and in many cases compensation on top.", ur:"کمائی ہوئی اجرت وقت پر ادا کرنا قانونی ذمہ داری ہے، احسان نہیں۔ آپ واجب الادا تنخواہ اور کئی صورتوں میں معاوضے کا دعویٰ کر سکتے ہیں۔"},
+      steps:{en:["Gather your appointment letter, payslips and bank statements.","Send a written demand to your employer and keep proof.","File a claim before the Authority under the wages law of your province."], ur:["تقرری نامہ، تنخواہ کی پرچیاں اور بینک اسٹیٹمنٹ جمع کریں۔","آجر کو تحریری مطالبہ بھیجیں اور ثبوت رکھیں۔","اپنے صوبے کے اجرت قانون کے تحت اتھارٹی کے سامنے دعویٰ دائر کریں۔"]},
+      cite:["Payment of Wages Act 1936","Provincial wages / labour codes","Industrial Relations Acts"],
+      pro:{en:"Claims for delayed or deducted wages lie before the Authority under s.15 of the Payment of Wages Act 1936 (or the provincial successor statute), which may also award compensation. Check provincial coverage thresholds and limitation from the date payment fell due.", ur:"تاخیر یا کٹوتی شدہ اجرت کا دعویٰ Payment of Wages Act 1936 کی دفعہ 15 (یا صوبائی متبادل قانون) کے تحت اتھارٹی کے سامنے دائر ہوتا ہے، جو معاوضہ بھی دے سکتی ہے۔ صوبائی حدود اور میعاد چیک کریں۔"}
+    },
+    fraud: {
+      q:{en:"“Someone tricked me into sending money online.”", ur:"“کسی نے دھوکے سے مجھ سے آن لائن پیسے منگوا لیے۔”"},
+      sum:{en:"Act fast — the first hours matter most. Online fraud is a crime in Pakistan, and both your bank and the cybercrime authority can act on it.", ur:"فوراً کارروائی کریں — ابتدائی چند گھنٹے سب سے اہم ہیں۔ آن لائن فراڈ پاکستان میں جرم ہے، اور آپ کا بینک اور سائبر کرائم ادارہ دونوں کارروائی کر سکتے ہیں۔"},
+      steps:{en:["Call your bank or wallet helpline now and ask to block the transaction.","Screenshot every chat, number, account and receipt.","File a cybercrime complaint with the NCCIA online."], ur:["ابھی اپنے بینک یا والیٹ کی ہیلپ لائن پر کال کریں اور ٹرانزیکشن رکوانے کا کہیں۔","ہر چیٹ، نمبر، اکاؤنٹ اور رسید کا اسکرین شاٹ لیں۔","NCCIA کو آن لائن سائبر کرائم شکایت درج کریں۔"]},
+      cite:["PECA 2016 — s.14 electronic fraud","PPC s.420","NCCIA complaint"],
+      pro:{en:"Electronic fraud is an offence under s.14 PECA 2016, often read with s.420 PPC. Complaints now lie with the National Cyber Crime Investigation Agency. Preserve evidence in its original form — Article 164 Qanun-e-Shahadat governs admissibility of modern-device evidence.", ur:"الیکٹرانک فراڈ PECA 2016 کی دفعہ 14 کے تحت جرم ہے، عموماً PPC کی دفعہ 420 کے ساتھ۔ شکایات اب NCCIA کے پاس جاتی ہیں۔ ثبوت اصل حالت میں محفوظ رکھیں — قانونِ شہادت کا آرٹیکل 164 جدید آلات کے ثبوت سے متعلق ہے۔"}
+    },
+    property: {
+      q:{en:"“I'm about to buy a plot. How do I know the seller really owns it?”", ur:"“میں پلاٹ خریدنے والا ہوں۔ کیسے یقین کروں کہ بیچنے والا اصل مالک ہے؟”"},
+      sum:{en:"Never rely on a file or a stamp paper alone. Check the official land record yourself before paying anything — most property fraud is caught at this step.", ur:"صرف فائل یا اسٹامپ پیپر پر بھروسہ نہ کریں۔ کوئی ادائیگی کرنے سے پہلے سرکاری ریکارڈ خود چیک کریں — زیادہ تر فراڈ اسی مرحلے پر پکڑا جاتا ہے۔"},
+      steps:{en:["Get the latest fard from the land record centre or online portal.","Match the seller's CNIC with the owner in the fard and mutation (intiqal).","Pay through bank instruments and register the sale deed."], ur:["اراضی ریکارڈ سینٹر یا آن لائن پورٹل سے تازہ فرد حاصل کریں۔","بیچنے والے کا شناختی کارڈ فرد اور انتقال میں مالک سے ملائیں۔","بینک کے ذریعے ادائیگی کریں اور بیع نامہ رجسٹر کروائیں۔"]},
+      cite:["Registration Act 1908","Transfer of Property Act 1882","Provincial Land Revenue Acts"],
+      pro:{en:"Sale of immovable property of value Rs.100 or more requires a registered instrument (s.54 TPA, s.17 Registration Act). Mutation entries are fiscal records and do not by themselves confer title; verify the chain of title and any pending litigation or encumbrance.", ur:"100 روپے یا زائد مالیت کی غیر منقولہ جائیداد کی فروخت کے لیے رجسٹرڈ دستاویز ضروری ہے (دفعہ 54 TPA، دفعہ 17 رجسٹریشن ایکٹ)۔ انتقال بذاتِ خود ملکیت نہیں دیتا؛ ملکیت کا سلسلہ اور زیرِ التوا مقدمات چیک کریں۔"}
+    },
+    inherit: {
+      q:{en:"“My brothers say sisters don't get a share of our father's land.”", ur:"“میرے بھائی کہتے ہیں کہ بہنوں کا والد کی زمین میں حصہ نہیں۔”"},
+      sum:{en:"That isn't true. Daughters have a fixed legal share of their father's estate, and it cannot be taken away by family pressure or a verbal agreement.", ur:"یہ درست نہیں۔ بیٹیوں کا والد کی جائیداد میں مقررہ قانونی حصہ ہے، جو خاندانی دباؤ یا زبانی معاہدے سے ختم نہیں کیا جا سکتا۔"},
+      steps:{en:["Collect the death certificate and NADRA family registration certificate.","Get the fard / mutation record of your father's property.","Apply for a succession certificate or file for partition."], ur:["وفات کا سرٹیفکیٹ اور نادرا فیملی رجسٹریشن سرٹیفکیٹ حاصل کریں۔","والد کی جائیداد کا فرد / انتقال ریکارڈ نکلوائیں۔","وراثتی سرٹیفکیٹ کے لیے درخواست دیں یا تقسیم کا دعویٰ کریں۔"]},
+      cite:["Muslim Personal Law (Shariat) Application Act 1962","Succession Act 1925","PPC s.498-A"],
+      pro:{en:"Succession among Muslims is governed by personal law under the 1962 Act; a daughter takes half the share of a son. Depriving a woman of inheritance by deceitful or illegal means is an offence under s.498-A PPC. Letters of administration / succession certificates under the Succession Act 1925, or NADRA succession facilitation units.", ur:"مسلمانوں میں وراثت 1962 کے قانون کے تحت شخصی قانون سے طے ہوتی ہے؛ بیٹی کا حصہ بیٹے کا نصف ہے۔ عورت کو دھوکے یا غیر قانونی طریقے سے وراثت سے محروم کرنا PPC کی دفعہ 498-A کے تحت جرم ہے۔ وراثتی سرٹیفکیٹ Succession Act 1925 یا نادرا سہولت مراکز سے۔"}
+    }
+  };
+  var L = {
+    en:{sum:"In short", steps:"What to do next", law:"Law it relies on", pro:"Practitioner note", jur:"Pakistan"},
+    ur:{sum:"مختصر جواب", steps:"اگلا قدم", law:"متعلقہ قانون", pro:"پیشہ ورانہ نوٹ", jur:"پاکستان"}
+  };
+
+  function renderSheet(){
+    var d = S[state.s], l = state.lang, lb = L[l], el = document.getElementById("sheet");
+    el.classList.add("fade");
+    setTimeout(function(){
+      el.innerHTML =
+        '<p class="q">'+d.q[l]+'</p>'+
+        '<div class="part"><h4><i>1</i>'+lb.sum+'</h4><p>'+d.sum[l]+'</p></div>'+
+        '<div class="part"><h4><i>2</i>'+lb.steps+'</h4><ol>'+d.steps[l].map(function(x){return "<li>"+x+"</li>";}).join("")+'</ol></div>'+
+        '<div class="part"><h4><i>§</i>'+lb.law+'</h4><div class="cite">'+d.cite.map(function(x){return '<span dir="ltr">'+x+'</span>';}).join("")+'</div></div>'+
+        (state.mode==="pro" ? '<div class="part"><h4><i>✎</i>'+lb.pro+'</h4><p>'+d.pro[l]+'</p></div>' : '');
+      el.classList.remove("fade");
+    }, 160);
+  }
+
+  /* ── Audience panels ── */
+  var T = {
+    citizen:{h:{en:"Know where you stand — before you spend on fees.",ur:"فیس خرچ کرنے سے پہلے جانیں کہ آپ کہاں کھڑے ہیں۔"},
+      p:{en:"Most people meet the law in a moment of stress: a notice, a dispute, a police station. Wakeel gives you calm, plain answers first.",ur:"زیادہ تر لوگ پریشانی کے لمحے میں قانون سے ملتے ہیں: نوٹس، تنازعہ، تھانہ۔ وکیل پہلے آپ کو پرسکون اور آسان جواب دیتا ہے۔"},
+      li:{en:["Ask in Urdu, English or Roman Urdu — typed or spoken","Understand notices, agreements and court papers","Know your rights with the police, landlord or employer","Walk into an advocate's office already prepared"],ur:["اردو، انگریزی یا رومن اردو میں — لکھ کر یا بول کر","نوٹس، معاہدے اور عدالتی کاغذات سمجھیں","پولیس، مالک مکان یا آجر کے سامنے اپنے حقوق جانیں","وکیل کے دفتر تیاری کے ساتھ جائیں"]},
+      q:{en:"“I finally understood what the notice meant — and what to ask my lawyer.”",ur:"“آخرکار مجھے نوٹس کا مطلب سمجھ آیا — اور یہ بھی کہ وکیل سے کیا پوچھنا ہے۔”"},
+      cta:{en:"For citizens",ur:"شہریوں کے لیے"}, href:"https://wakeel.org/citizens"},
+    overseas:{h:{en:"Handle matters back home, from wherever you are.",ur:"جہاں بھی ہوں، وطن کے معاملات سنبھالیں۔"},
+      p:{en:"Property, inheritance, family and power-of-attorney questions don't wait for your next trip. Get clarity across time zones.",ur:"جائیداد، وراثت، خاندانی اور مختار نامے کے سوالات اگلے سفر کا انتظار نہیں کرتے۔ کسی بھی وقت وضاحت حاصل کریں۔"},
+      li:{en:["Verify property records before family or agents act","Understand inheritance and succession for your share","Know what a special power of attorney allows","Guidance for UAE, Saudi Arabia, Qatar and 15+ countries"],ur:["گھر والوں یا ایجنٹ کے عمل سے پہلے جائیداد کا ریکارڈ چیک کریں","اپنے حصے کے لیے وراثت کا طریقہ کار سمجھیں","جانیں کہ مختار نامہ خاص کیا اجازت دیتا ہے","متحدہ عرب امارات، سعودی عرب، قطر اور 15+ ممالک کی رہنمائی"]},
+      q:{en:"“From Dubai, I could check what my cousin was really asking me to sign.”",ur:"“دبئی سے ہی میں جان سکا کہ کزن مجھ سے اصل میں کیا دستخط کروانا چاہ رہا تھا۔”"},
+      cta:{en:"GCC guides",ur:"خلیجی رہنمائی"}, href:"https://wakeel.org/legal-issues-gcc"},
+    student:{h:{en:"Study the law the way it's actually argued.",ur:"قانون ویسے پڑھیں جیسے عدالت میں بحث ہوتی ہے۔"},
+      p:{en:"PPC, CrPC and the Constitution, explained section by section — with case summaries and notes you can revise from.",ur:"PPC، CrPC اور آئین — دفعہ وار وضاحت، کیس خلاصوں اور نوٹس کے ساتھ جن سے آپ دہرائی کر سکیں۔"},
+      li:{en:["Section-by-section explanations in simple English","Case summaries and research notes","Upload study PDFs and ask questions about them","Practise drafting with templates"],ur:["آسان انگریزی میں دفعہ وار وضاحت","کیس خلاصے اور تحقیقی نوٹس","مطالعاتی PDF اپ لوڈ کر کے سوال کریں","ٹیمپلیٹس کے ساتھ ڈرافٹنگ کی مشق"]},
+      q:{en:"“It's like having a senior who never gets tired of my questions.”",ur:"“جیسے ایک سینیئر جو میرے سوالات سے کبھی نہیں تھکتا۔”"},
+      cta:{en:"For law students",ur:"طلباء کے لیے"}, href:"https://wakeel.org/law-students"},
+    lawyer:{h:{en:"Less time searching. More time arguing.",ur:"تلاش میں کم وقت، دلائل میں زیادہ۔"},
+      p:{en:"A research and drafting desk that reads 100+ page files, surfaces the relevant provisions and gives you a first draft to refine.",ur:"تحقیق اور ڈرافٹنگ کی میز جو 100+ صفحات کی فائلیں پڑھتی ہے، متعلقہ دفعات نکالتی ہے اور پہلا مسودہ دیتی ہے۔"},
+      li:{en:["Summarise judgments, pleadings and client documents","Statute-aware research with provisions cited","Draft notices, replies and agreements faster","Organise matters and research notes"],ur:["فیصلوں، درخواستوں اور کلائنٹ دستاویزات کا خلاصہ","دفعات کے حوالے کے ساتھ تحقیق","نوٹس، جوابات اور معاہدے تیزی سے ڈرافٹ کریں","مقدمات اور تحقیقی نوٹس منظم کریں"]},
+      q:{en:"“The first draft is ready before my tea is. I spend my time on the argument.”",ur:"“چائے سے پہلے پہلا مسودہ تیار۔ میرا وقت دلائل پر لگتا ہے۔”"},
+      cta:{en:"For lawyers",ur:"وکلاء کے لیے"}, href:"https://wakeel.org/lawyers"},
+    org:{h:{en:"Shared legal research for teams that can't afford mistakes.",ur:"ان ٹیموں کے لیے مشترکہ تحقیق جو غلطی کی متحمل نہیں۔"},
+      p:{en:"Law firms, legal aid organisations, universities and public bodies use Wakeel to standardise research and train people faster.",ur:"لا فرمز، قانونی امداد کے ادارے، یونیورسٹیاں اور سرکاری ادارے تحقیق کو یکساں بنانے اور تربیت کے لیے وکیل استعمال کرتے ہیں۔"},
+      li:{en:["Team templates and shared workflows","Admin controls and onboarding","Neutral research aid for judges and policymakers","Response-time support targets"],ur:["ٹیم ٹیمپلیٹس اور مشترکہ ورک فلو","ایڈمن کنٹرول اور آن بورڈنگ","ججوں اور پالیسی سازوں کے لیے غیر جانبدار تحقیقی معاون","مقررہ وقت میں سپورٹ"]},
+      q:{en:"“Our juniors now arrive at meetings with the research already done.”",ur:"“ہمارے جونیئرز اب تحقیق مکمل کر کے میٹنگ میں آتے ہیں۔”"},
+      cta:{en:"Talk to us",ur:"رابطہ کریں"}, href:"https://wakeel.org/contact"}
+  };
+  function renderPanel(){
+    var d=T[state.t], l=state.lang, el=document.getElementById("panel");
+    el.innerHTML='<div><h3>'+d.h[l]+'</h3><p class="lede">'+d.p[l]+'</p><p class="quote">'+d.q[l]+'</p></div>'+
+      '<div><ul class="ticks">'+d.li[l].map(function(x){return '<li><svg width="18" height="18"><use href="#i-check"/></svg><span>'+x+'</span></li>';}).join("")+'</ul>'+
+      '<a class="btn btn-primary" href="'+d.href+'">'+d.cta[l]+'</a></div>';
+  }
+
+  /* ── Language ── */
+  function applyLang(){
+    var ur = state.lang==="ur", html=document.documentElement;
+    html.lang = ur ? "ur" : "en"; html.dir = ur ? "rtl" : "ltr";
+    document.querySelectorAll("[data-ur]").forEach(function(el){
+      if(el.dataset.en===undefined) el.dataset.en = el.innerHTML;
+      el.innerHTML = ur ? el.dataset.ur : el.dataset.en;
+    });
+    var q=document.getElementById("q");
+    if(!q.dataset.enPh) q.dataset.enPh=q.placeholder;
+    q.placeholder = ur ? q.dataset.urPlaceholder : q.dataset.enPh;
+    document.querySelectorAll(".flip").forEach(function(s){ s.style.transform = ur ? "scaleX(-1)" : ""; });
+    document.querySelectorAll("[data-lang]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.lang===state.lang)); });
+    renderSheet(); renderPanel();
+  }
+  function applyMode(){
+    document.body.classList.toggle("pro", state.mode==="pro");
+    document.querySelectorAll("[data-mode]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.mode===state.mode)); });
+    renderSheet();
+  }
+
+  document.querySelectorAll("[data-lang]").forEach(function(b){ b.addEventListener("click",function(){ state.lang=b.dataset.lang; applyLang(); save(); }); });
+  document.querySelectorAll("[data-mode]").forEach(function(b){ b.addEventListener("click",function(){ state.mode=b.dataset.mode; applyMode(); save(); }); });
+  document.querySelectorAll("[data-size]").forEach(function(b){ b.addEventListener("click",function(){
+    var on=document.documentElement.classList.toggle("large");
+    document.querySelectorAll("[data-size]").forEach(function(x){ x.setAttribute("aria-pressed", String(on)); }); save();
+  }); });
+  document.querySelectorAll(".chip").forEach(function(c){ c.addEventListener("click",function(){
+    state.s=c.dataset.s;
+    document.querySelectorAll(".chip").forEach(function(x){ x.setAttribute("aria-pressed", String(x===c)); });
+    renderSheet();
+  }); });
+  document.querySelectorAll(".tab").forEach(function(t){ t.addEventListener("click",function(){
+    state.t=t.dataset.t;
+    document.querySelectorAll(".tab").forEach(function(x){ x.setAttribute("aria-selected", String(x===t)); });
+    renderPanel();
+  }); });
+
+  /* Preview form: never sends the text anywhere */
+  document.getElementById("ask").addEventListener("submit",function(e){
+    e.preventDefault();
+    var n=document.getElementById("askNote");
+    n.textContent = state.lang==="ur" ? "مکمل جواب کے لیے وکیل ایپ کھولیں — مفت۔" : "Open the Wakeel app to get your full answer — it's free.";
+  });
+
+  /* Document highlights ↔ margin notes */
+  function focusNote(n){
+    document.querySelectorAll(".hl,.note").forEach(function(x){ x.classList.toggle("on", x.dataset.n===n); });
+  }
+  document.querySelectorAll(".hl").forEach(function(h){ h.addEventListener("click",function(){ focusNote(h.dataset.n); }); h.addEventListener("mouseenter",function(){ focusNote(h.dataset.n); }); });
+  focusNote("1");
+
+  /* Reveal on scroll + mobile dock */
+  var io = "IntersectionObserver" in window ? new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }); },{threshold:.12}) : null;
+  document.querySelectorAll(".reveal").forEach(function(el){ io ? io.observe(el) : el.classList.add("in"); });
+  var dock=document.getElementById("dock");
+  window.addEventListener("scroll",function(){ dock.classList.toggle("show", window.scrollY>700); },{passive:true});
+
+  try { if(JSON.parse(localStorage.getItem("wakeel-prefs")||"{}").large){ document.documentElement.classList.add("large"); document.querySelectorAll("[data-size]").forEach(function(x){x.setAttribute("aria-pressed","true");}); } } catch(e){}
+  document.querySelectorAll(".chip").forEach(function(x){ x.setAttribute("aria-pressed", String(x.dataset.s===state.s)); });
+  applyMode(); applyLang();
+})();
+</script>
+</body>
+</html>
